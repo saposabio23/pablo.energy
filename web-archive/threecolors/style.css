@@ -1,0 +1,146 @@
+body {
+  margin: 0px;
+  overflow: hidden;
+}
+
+#wip{
+  padding-left: 30px;
+  font-family: 'Inconsolata', monospace;
+  font-size: 150px;
+  color: white
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  /* remove scrollbar space */
+  background: transparent;
+  /* optional: just make scrollbar invisible */
+}
+
+a, a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+#top {
+  position: fixed;
+  width: 80%;
+  height: 30px;
+  background: -moz-linear-gradient(top, #ff3232 0%, transparent 100%);
+  background: -webkit-linear-gradient(top, #ff3232 0%, transparent 100%);
+  background: linear-gradient(to bottom, #ff3232 0%, transparent 100%);
+  padding-top: 20px;
+  z-index: 99;
+}
+
+#bottom {
+  position: fixed;
+  width: 80%;
+  height: 30px;
+  background: -moz-linear-gradient(top, transparent 0%, #ff3232 100%);
+  background: -webkit-linear-gradient(top, transparent 0%, #ff3232 100%);
+  background: linear-gradient(top, transparent 0%, #ff3232 100%);
+  padding-top: 20px;
+  z-index: 99;
+  bottom: 5vh;
+}
+
+/*------------PROJETS------------*/
+#projets {
+  float: left;
+  width: 80vw;
+  height: 95vh;
+  background-color: red;
+  overflow-y: scroll;
+}
+
+#cont-projets{
+  margin: 20px;
+}
+
+.pro {
+  max-height: auto;
+  max-width: 300px;
+  padding: 10px;
+  border: 0px solid black;
+}
+
+#quit {
+  position: relative;
+  float: right;
+  top: 10px;
+  right: 30px;
+  color: white;
+  font-size: 30px;
+  font-weight: 100;
+  font-family: sans-serif;
+}
+
+/*------------INFO------------*/
+#info {
+  float: right;
+  width: 20vw;
+  height: 70vh;
+  background-color: blue;
+  overflow-y: scroll;
+}
+
+#text-info {
+  font-family: sans-serif;
+  font-size: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 0px;
+  color: white;
+  text-align: center;
+}
+
+#boite{
+  width: 70%;
+}
+/*------------VIDEOS------------*/
+#videos {
+  float: right;
+  width: 20vw;
+  height: 30vh;
+}
+
+#videos:hover {
+  float: right;
+  width: 20vw;
+  height: 70vh;
+  margin-top: -40vh;
+}
+
+/*------------CONTACT------------*/
+#contact {
+  float: left;
+  width: 80vw;
+  height: 5vh;
+  background-color: yellow;
+}
+
+#text-cont1 {
+  float: left;
+  font-family: 'Inconsolata', monospace;
+  font-size: 15px;
+  padding-left: 15px;
+  margin-top: 8px;
+}
+
+#text-cont2 {
+  float: right;
+  font-family: 'Inconsolata', monospace;
+  font-size: 15px;
+  padding-right: 15px;
+  margin-top: 8px;
+}
+
+#bold {
+  font-weight: 700;
+}

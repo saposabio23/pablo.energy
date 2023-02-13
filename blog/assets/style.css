@@ -129,11 +129,12 @@ ul {
 /* INFOS */
 
 .info {
-  position: absolute;
+  position: relative;
   bottom: var(--spacing-s);
   opacity: 0.3;
   width: auto;
   display: flex;
+  justify-content: center;
 }
 
 
