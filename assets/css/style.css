@@ -80,13 +80,14 @@ SCREEN HOME
 }
 
 .middle{
-  position: absolute;
+  position: fixed;
   top: 50vh; left: 50vw;
   transform: translate(-50%, -50%);
   display: grid;
   justify-items: center;
   font-size: 1.3rem;
 
+  z-index: 1;
 }
 /* -----------------------------------
 CARD STUFF
@@ -335,12 +336,17 @@ h1{
 
 
 .second {
-  height: 100vh;
-  width: 100vw;
+  margin-bottom: 10px;
+  left: 10px;
+  height: calc(100vh - 20px);
+  width: calc(100vw - 20px);
   background-color: greenyellow;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
+  position: relative;
+  border-radius: var(--border-rad);
 }
 
 td > a {
