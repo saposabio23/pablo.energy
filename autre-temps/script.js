@@ -65,7 +65,7 @@ var letters = [
   'z'
 ]
 
-var pseudo_time = [0,10,11,8,0,19,-1,-1];
+var pseudo_time = [-1,-1,-1,-1,-1,-1,-1,-1];
 
 var goon = function(){
   pseudo_time[0]+=1;
