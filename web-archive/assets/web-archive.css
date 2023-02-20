@@ -60,7 +60,7 @@ td {
   background-color: snow;
   padding: 6px 12px;
   border-radius: 20px;
-  font-size: 1rem;
+  font-size: .8rem;
   font-family: sans-serif;
   position: fixed;
   z-index: 3;
@@ -83,7 +83,7 @@ td {
   border: none;
   transition: all .2s ease-in-out;
   background-color: transparent;
-  font-size: 1rem;
+  font-size: .8rem;
 }
 
 /*IE*/
