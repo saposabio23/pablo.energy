@@ -2,7 +2,7 @@
 @media screen and (max-width: 650px) {
 
   html {
-    font-size: 1.3rem;
+    font-size: 1rem;
     line-height: 1.4;
   }
 
@@ -22,7 +22,7 @@
   .card-text p{
     margin: var(--spacing-s) 10px var(--spacing-s) var(--spacing-s);
   }
-
+/* 
   .projects {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -39,6 +39,9 @@
 
   .col2, .col3, .col4 {
     grid-template-columns: 1fr !important;
-  }
+  } */
 
+  .second {
+    grid-template-columns: 1fr;
+  }
 }

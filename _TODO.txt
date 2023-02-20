@@ -1,10 +1,5 @@
-- blog
-- computer things
-- your world of text
 
 
-
-----------
 
     <!-- <div class="screen-projects" id="screen-projects">
       <div class="controls">

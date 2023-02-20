@@ -1,4 +1,4 @@
-// window.onload = isItNight()
+window.onload = isItNight()
 
 /* -----------------------------------
 CSS COLOOOORS
@@ -63,8 +63,7 @@ function isItNight() {
   }
 
   function offAtNight() {
-    document.querySelector('.screen-home').remove();
-    document.querySelector('.screen-projects').remove();
+    document.querySelector('.nonight').remove();
    }
 
 
