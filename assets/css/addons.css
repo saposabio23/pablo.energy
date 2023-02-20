@@ -31,9 +31,10 @@ MAIL STUFF
   z-index: 1;
   width: 80%;
   text-align: center;
-  background-color: salmon;
+  background-color: black;
   transform: translateY(-100%);
   position: relative;
+  color: white;
   z-index: 1;
   }
 
@@ -67,7 +68,7 @@ CONTROLS
   z-index: 2;
   background-color: var(--projectsBack);
   border-bottom: 1px solid var(--thisColor);
-  border-radius: var(--border-rad) var(--border-rad) 0 0;
+  /*! border-radius: var(--border-rad) var(--border-rad) 0 0; */
 }
 
 .controls > div > div > span {

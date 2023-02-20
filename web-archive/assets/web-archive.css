@@ -33,10 +33,9 @@ tr:nth-last-child(-n+1) > td:nth-last-child(odd) {
 
 table{
   border-radius: 20px;
-  background-color: whitesmoke;
-  margin: auto;
+  background-color: snow;
   font-size: 1rem;
-  max-width: 90%;
+  max-width: 720px;
 }
 
 th {
@@ -48,7 +47,7 @@ th {
 }
 
 td {
-  padding: 6px 10px;
+  padding: 10px 4px 10px 4px;
 }
 
 /* -----------------------------------
@@ -60,11 +59,12 @@ td {
   left: 20px;
   background-color: snow;
   padding: 6px 12px;
-  border-radius: var(--border-rad);
+  border-radius: 20px;
   font-size: 1rem;
   font-family: sans-serif;
   position: fixed;
   z-index: 3;
+  border: 1px solid greenyellow;
 }
 
 #back {
@@ -83,6 +83,7 @@ td {
   border: none;
   transition: all .2s ease-in-out;
   background-color: transparent;
+  font-size: 1rem;
 }
 
 /*IE*/
@@ -108,7 +109,7 @@ td {
     left: 0;
   }
 
-  #servedFrame, body {
+  #servedFrame {
     margin: 0;
     padding: 0;
     position: absolute;
