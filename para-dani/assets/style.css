@@ -1,0 +1,189 @@
+:root {
+
+    --spacing: 15px;
+    --transition: all .4s ease-in-out;
+
+}
+
+body {
+    background-color: beige;
+}
+
+.windows {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+}
+
+.windows div {
+    border: 1px solid white;
+    height: 50vh;
+    width: 25vw;
+    box-sizing: border-box;
+    padding: var(--spacing);
+}
+
+.windows img, video {
+    height: 50vh;
+    width: 25vw;
+    object-fit: cover;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    filter: blur(10px);
+    transition: var(--transition);
+}
+
+#un{
+    left: calc(25vw * 0);
+    top: calc(50vh * 0);
+}
+
+#dos{
+    left: calc(25vw * 1);
+    top: calc(50vh * 0);
+}
+
+#tres{
+    left: calc(25vw * 2);
+    top: calc(50vh * 0);
+}
+
+#cuatro{
+    left: calc(25vw * 3);
+    top: calc(50vh * 0);
+}
+
+#cinco{
+    left: calc(25vw * 0);
+    top: calc(50vh * 1);
+}
+
+#seis{
+    left: calc(25vw * 1);
+    top: calc(50vh * 1);
+}
+
+#siete{
+    left: calc(25vw * 2);
+    top: calc(50vh * 1);
+}
+
+#ocho{
+    left: calc(25vw * 3);
+    top: calc(50vh * 1);
+}
+
+
+
+
+.windows p {
+    margin: 0 0 var(--spacing) 0;
+    padding: 0;
+    z-index: 2;
+    position: relative;
+    color: blue;
+
+    opacity: 1;
+    transition: var(--transition);
+
+    /*! filter: invert(1); */
+    mix-blend-mode: multiply;
+
+    font-family: sans-serif;
+    font-weight: 900;
+    text-shadow: 0px 0 6px beige;
+}
+
+
+.windows div:hover > img{
+    filter: blur(0px) !important;
+    transition: var(--transition);
+}
+
+.windows p:hover > img{
+    filter: blur(0px) !important;
+    transition: var(--transition);
+}
+
+.windows div:hover > video{
+    filter: blur(0px) !important;
+    transition: var(--transition);
+}
+
+.windows p:hover > video{
+    filter: blur(0px) !important;
+    transition: var(--transition);
+}
+
+.windows div:hover > p {
+    opacity: 0 !important;
+    transition: var(--transition);
+}
+
+
+@media (max-width: 650px) {
+    /* … */
+
+    .windows {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0;
+      }
+      
+    .windows div {
+        height: 60vh;
+        width: 100vw;
+    }
+
+    .windows img, video {
+        height: 60vh;
+        width: 100vw;
+    }
+
+    #un{
+        left: calc(50vw * 0);
+        top: calc(60vh * 0);
+    }
+    
+    #dos{
+        left: calc(50vw * 0);
+        top: calc(60vh * 1);
+    }
+    
+    #tres{
+        left: calc(50vw * 0);
+        top: calc(60vh * 2);
+    }
+    
+    #cuatro{
+        left: calc(50vw * 0);
+        top: calc(60vh * 3);
+    }
+    
+    #cinco{
+        left: calc(50vw * 0);
+        top: calc(60vh * 4);
+    }
+    
+    #seis{
+        left: calc(50vw * 0);
+        top: calc(60vh * 5);
+    }
+    
+    #siete{
+        left: calc(50vw * 0);
+        top: calc(60vh * 6);
+    }
+    
+    #ocho{
+        left: calc(50vw * 0);
+        top: calc(60vh * 7);
+    }
+    
+
+
+
+
+  }
