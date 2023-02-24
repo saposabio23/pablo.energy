@@ -142,13 +142,13 @@ CARD STUFF
 }
 
 .card-contact > a:nth-child(1):hover, .card-contact > a:nth-child(1):active {
-  background: greenyellow;
+  background: dodgerblue;
   text-decoration: none;
   cursor: pointer;
 }
 
 .card-contact > a:nth-child(2):hover, .card-contact > a:nth-child(2):active  {
-  background: greenyellow;
+  background: gold;
   text-decoration: none;
   cursor:ne-resize;
 }
@@ -333,63 +333,98 @@ h1{
 
 
 
+/* -----------------------------------
+PROJETS HOME
+-------------------------------------- */
 
 .second {
-  height: calc(100vh - 0px);
-  width: calc(100vw - 0px);
+  width: calc(100vw - 60px);
   display: grid;
-  grid-template-columns: 35% 35% 30%;
-  align-items: center;
-  justify-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 60px;
+  row-gap: 50px;
   z-index: 2;
+  margin: 30px 30px 80px 30px;
 }
 
-.second div {
-  height: 20vh;
-  width: 30vw;
-  border-radius: 50%;
-  box-shadow: 0 0 20px hsla(0, 0%, 0%, 0.2);
+.second a {
+  height: fit-content;
+}
+
+.second a:hover {
+  cursor: ne-resize;
+}
+
+.second span {
+  border: 1px solid #808080cc;
+  border-radius: 9999px;
+  padding: 0px 4px;
+  font-size: 80%;
+  color: #808080cc;
+}
+
+.second img{
+  width: 100%;
+  border-radius: 10px;
+  filter: blur(4px);
+  transition: all .3s ease-in-out;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+.second a:hover > img{
+  filter: blur(0px);
+  transition: all .3s ease-in-out;
+}
+
+small {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+
+.more{
+  font-size: 1rem;
+  height: 35px;
+  width: 35px;
+  background: snow;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  min-width: 300px;
+  border-radius: 100%;
+  box-shadow: 0 0 20px hsl(0deg 0% 0% / 20%);
+  transition: all .3s ease-in-out;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }
 
-.second div:hover{
-  transform: scale(1.2);
+.more:hover {
+  transform: scale(1.1);
+  transition: all .3s ease-in-out;
+  cursor: pointer;
+
 }
 
 
-.now {
-  transform: rotate(-20deg);
-  background: salmon;
-}
 
-.works{
-  transform: rotate(20deg);
-  background: dodgerblue;
-}
 
-.more{
-  font-size: 4rem !important;
-  height: 13vh !important;
-  width: 13vh !important;
-  background: gold;
-  min-width:  inherit !important;
-}
 
+/* -----------------------------------
+TABLES
+-------------------------------------- */
 td > a {
   text-decoration: underline;
 }
 
-
-
 .center{
   min-height: calc(100vh);
   width: calc(100vw);
+  max-width: 600px;
   display: flex;
-  align-items: center;
+  margin: auto;
+  align-items: start;
   justify-content: center;
   z-index: 2;
   position: relative;
@@ -397,11 +432,15 @@ td > a {
   padding: 20px;
 }
 
+.center p{
+margin-bottom: 20px;
+}
+
 .center a{
   margin-top: var(--spacing-s);
   transition: all .3s ease-in-out;
   border: 1px solid black;
-  padding: 5px 8px;
+  padding: 2px 6px;
   border-radius: 15px;
   text-decoration: none;
   line-height: 1.7;
@@ -413,3 +452,15 @@ td > a {
   color: white;
   transition: all .3s ease-in-out;
 }
+
+/* .center{
+  min-height: calc(100vh);
+  width: calc(100vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
+  flex-direction: column;
+  padding: 20px;
+} */

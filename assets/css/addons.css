@@ -31,10 +31,11 @@ MAIL STUFF
   z-index: 1;
   width: 80%;
   text-align: center;
-  background-color: black;
+  background-color: tomato;
   transform: translateY(-100%);
   position: relative;
-  color: white;
+  color: black;
+  font-size: 80%;
   z-index: 1;
   }
 

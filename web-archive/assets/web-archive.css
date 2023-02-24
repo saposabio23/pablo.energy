@@ -64,7 +64,7 @@ td {
   font-family: sans-serif;
   position: fixed;
   z-index: 3;
-  border: 1px solid greenyellow;
+  border: 1px solid #80808040;
 }
 
 #back {
@@ -84,6 +84,11 @@ td {
   transition: all .2s ease-in-out;
   background-color: transparent;
   font-size: .8rem;
+}
+
+.archive-selector:hover {
+  cursor: pointer;
+
 }
 
 /*IE*/
