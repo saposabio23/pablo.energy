@@ -344,7 +344,7 @@ PROJETS HOME
   column-gap: 60px;
   row-gap: 50px;
   z-index: 2;
-  margin: 30px 30px 80px 30px;
+  padding: 30px 30px 80px 30px;
 }
 
 .second a {
