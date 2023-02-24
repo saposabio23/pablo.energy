@@ -338,7 +338,6 @@ PROJETS HOME
 -------------------------------------- */
 
 .second {
-  width: calc(100vw - 60px);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 60px;
