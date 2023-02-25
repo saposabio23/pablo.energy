@@ -272,42 +272,42 @@ span {
     }
 
     #un{
-        left: calc(50vw * 0);
+        left: 0;
         top: calc(100vw * 0);
     }
     
     #dos{
-        left: calc(50vw * 0);
+        left: 0;
         top: calc(100vw * 1);
     }
     
     #tres{
-        left: calc(50vw * 0);
+        left: 0;
         top: calc(100vw * 2);
     }
     
     #cuatro{
-        left: calc(50vw * 0);
+        left: 0;
         top: calc(100vw * 3);
     }
     
     #cinco{
-        left: calc(50vw * 0);
+        left: 0;
         top: calc(100vw * 4);
     }
     
     #seis{
-        left: calc(50vw * 0);
+        left: 0;
         top: calc(100vw * 5);
     }
     
     #siete{
-        left: calc(50vw * 0);
+        left: 0;
         top: calc(100vw * 6);
     }
     
     #ocho{
-        left: calc(50vw * 0);
+        left: 0;
         top: calc(100vw * 7);
     }
 
