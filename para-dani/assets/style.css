@@ -269,48 +269,48 @@ span {
     }
 
     .windows img, video {
-        height: calc(var(--vh, 1vh) * 60);;
+        height: 100vw;
         width: 100vw;
     }
 
     #un{
         left: calc(50vw * 0);
-        top: calc(calc(var(--vh, 1vh) * 60) * 0);
+        top: calc(100vw * 0);
     }
     
     #dos{
         left: calc(50vw * 0);
-        top: calc(calc(var(--vh, 1vh) * 60) * 1);
+        top: calc(100vw * 1);
     }
     
     #tres{
         left: calc(50vw * 0);
-        top: calc(calc(var(--vh, 1vh) * 60) * 2);
+        top: calc(100vw * 2);
     }
     
     #cuatro{
         left: calc(50vw * 0);
-        top: calc(calc(var(--vh, 1vh) * 60) * 3);
+        top: calc(100vw * 3);
     }
     
     #cinco{
         left: calc(50vw * 0);
-        top: calc(calc(var(--vh, 1vh) * 60) * 4);
+        top: calc(100vw * 4);
     }
     
     #seis{
         left: calc(50vw * 0);
-        top: calc(calc(var(--vh, 1vh) * 60) * 5);
+        top: calc(100vw * 5);
     }
     
     #siete{
         left: calc(50vw * 0);
-        top: calc(calc(var(--vh, 1vh) * 60) * 6);
+        top: calc(100vw * 6);
     }
     
     #ocho{
         left: calc(50vw * 0);
-        top: calc(calc(var(--vh, 1vh) * 60) * 7);
+        top: calc(100vw * 7);
     }
 
 
