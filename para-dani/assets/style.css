@@ -253,8 +253,8 @@ span {
     }
 
     .bottom {
-        height: 90vh;
-        top: 10vh;
+        height: calc(var(--vh, 1vh) * 90);
+        top: calc(var(--vh, 1vh) * 10);
     }
 
     .windows {
@@ -264,53 +264,53 @@ span {
       }
       
     .windows div {
-        height: 60vh;
+        height: calc(var(--vh, 1vh) * 60);
         width: 100vw;
     }
 
     .windows img, video {
-        height: 60vh;
+        height: calc(var(--vh, 1vh) * 60);;
         width: 100vw;
     }
 
     #un{
         left: calc(50vw * 0);
-        top: calc(60vh * 0);
+        top: calc(calc(var(--vh, 1vh) * 60) * 0);
     }
     
     #dos{
         left: calc(50vw * 0);
-        top: calc(60vh * 1);
+        top: calc(calc(var(--vh, 1vh) * 60) * 1);
     }
     
     #tres{
         left: calc(50vw * 0);
-        top: calc(60vh * 2);
+        top: calc(calc(var(--vh, 1vh) * 60) * 2);
     }
     
     #cuatro{
         left: calc(50vw * 0);
-        top: calc(60vh * 3);
+        top: calc(calc(var(--vh, 1vh) * 60) * 3);
     }
     
     #cinco{
         left: calc(50vw * 0);
-        top: calc(60vh * 4);
+        top: calc(calc(var(--vh, 1vh) * 60) * 4);
     }
     
     #seis{
         left: calc(50vw * 0);
-        top: calc(60vh * 5);
+        top: calc(calc(var(--vh, 1vh) * 60) * 5);
     }
     
     #siete{
         left: calc(50vw * 0);
-        top: calc(60vh * 6);
+        top: calc(calc(var(--vh, 1vh) * 60) * 6);
     }
     
     #ocho{
         left: calc(50vw * 0);
-        top: calc(60vh * 7);
+        top: calc(calc(var(--vh, 1vh) * 60) * 7);
     }
 
 
