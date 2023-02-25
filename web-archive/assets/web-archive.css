@@ -57,7 +57,6 @@ td {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  background-color: snow;
   padding: 6px 12px;
   border-radius: 20px;
   font-size: .8rem;
@@ -65,6 +64,9 @@ td {
   position: fixed;
   z-index: 3;
   border: 1px solid #80808040;
+  backdrop-filter: blur(10px) saturate(100%);
+  -webkit-backdrop-filter: blur(10px) saturate(100%);
+  background-color: rgba(255, 255, 255, 0.8)
 }
 
 #back {
