@@ -245,8 +245,6 @@ span {
 
 
 @media (max-width: 650px) {
-    /* … */
-
     body {
         overflow-x: hidden;
         overflow-y: scroll;
@@ -264,7 +262,7 @@ span {
       }
       
     .windows div {
-        height: calc(var(--vh, 1vh) * 60);
+        height: 100vw;
         width: 100vw;
     }
 
