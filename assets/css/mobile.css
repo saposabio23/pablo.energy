@@ -22,6 +22,14 @@
   .card-text p{
     margin: var(--spacing-s) 10px var(--spacing-s) var(--spacing-s);
   }
+
+  .moreBottom {
+  font-size: 2rem;
+  height: 50px;
+  width: calc(100% - 40px);
+  border-radius: 10px;
+
+}
 /* 
   .projects {
     grid-template-columns: repeat(2, 1fr);
@@ -49,4 +57,13 @@
   .center {
     justify-content: start;
   }
+}
+
+@media screen and (max-width: 350px) {
+
+  .second {
+  grid-template-columns: repeat(1, 1fr);
+  padding: 30px 30px 50px 30px;
+}
+
 }

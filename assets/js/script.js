@@ -45,6 +45,23 @@ function copyMail() {
       }, 1500);
 }
 
+// /* -----------------------------------
+// BOTTOM OF THE PAGE
+// -------------------------------------- */
+var $more = document.querySelector(".more");
+
+
+window.onscroll = function() {
+  if ((window.innerHeight + Math.ceil(window.pageYOffset)) >= document.body.offsetHeight) {
+    $more.classList.add("moreBottom")
+  }
+  else if ((window.innerHeight + Math.ceil(window.pageYOffset)) <= document.body.offsetHeight) {
+    $more.classList.remove("moreBottom")
+  }
+}
+
+
+
 
 // /* -----------------------------------
 // SLEEP WEB
