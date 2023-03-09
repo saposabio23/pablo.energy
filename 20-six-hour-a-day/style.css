@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+  }
+
+  #link {
+    position: fixed;
+    left: 50vw;
+    bottom: 30px;
+    transform: translateX(-50%);
+
+    color: grey;
+    font-size: 80%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: none;
+
+    z-index: 3;
+  }
+
+  #link:hover{
+    animation: flash .1s linear infinite;
+  }
+
+  @-webkit-keyframes flash {
+    from {
+      opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+  }
+
+  .video{
+    height: 200vh;
+    width: 200vw;
+    position: fixed;
+    left: -50vw;
+    top: -50vh;
+    z-index: 1;
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(45vw at 50% 50%);
+  }
+  
+
+@media screen and (min-width: 1000px) {
+
+    .video {
+    height: 90vh;
+    width: 90vw;
+    position: fixed;
+    left: 5vw;
+    top: 5vh;
+    z-index: 1;
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(20vw at 50% 50%);
+    }
+
+  }
