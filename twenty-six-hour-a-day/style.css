@@ -51,6 +51,12 @@ body{
     z-index: 1;
     -webkit-clip-path: circle(45vw at 50% 50%);
     clip-path: circle(45vw at 50% 50%);
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -khtml-user-select: none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
   }
 
   .video{
