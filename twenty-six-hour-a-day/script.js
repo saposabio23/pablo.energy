@@ -47,6 +47,7 @@ ROTATIONS
 // -------------------------------------- */
 var $rot= document.querySelector('.rot');
 var $theme= document.querySelector('.theme');
+var $round= document.querySelector('.round');
 
 var rotate = false;
 var runner;
@@ -57,22 +58,12 @@ function start(){
         degrees++;
         $rot.style.webkitTransform = 'rotate(' + degrees + 'deg)';
     },50)
+    $round.classList.add("roundOn");
 }
 
 function stop(){
     clearInterval(runner);
 }
-
-function roration(){
-    if (!rotate){
-        rotate = true;
-        start();
-    } else {
-        rotate = false;
-        stop();
-    }
-}
-
 
 function fingerIn() {
     stop();

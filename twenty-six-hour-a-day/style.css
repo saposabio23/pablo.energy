@@ -59,6 +59,24 @@ body{
     user-select:none;
     }
 
+  .round{
+    height: 0vh;
+    width: 0vh;
+    background-color: black;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    transition: all 1.5s ease-in-out;
+
+  }
+
+  .roundOn{
+    height: 3vh;
+    width: 3vh;
+    transition: all 1.5s ease-in-out;
+  }
+
   .video{
     height: 100%;
     width: 100%;
