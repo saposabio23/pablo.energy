@@ -1,4 +1,22 @@
- // 2. This code loads the IFrame Player API code asynchronously.
+/* -----------------------------------
+IPHONE HEIGHT
+// -------------------------------------- */
+window.onload = mobileWindow();
+
+function mobileWindow() {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+  console.log("VH on mobiles", vh);
+}
+
+window.addEventListener("resize", mobileWindow, false);
+window.addEventListener("orientationchange", mobileWindow, false);
+
+
+
+/* -----------------------------------
+YOUTUBE IFRAM
+// -------------------------------------- */
  var tag = document.createElement('script');
 
  tag.src = "https://www.youtube.com/iframe_api";
@@ -24,8 +42,11 @@
 
 
 
- var $rot= document.querySelector('.rot');
- var $theme= document.querySelector('.theme');
+ /* -----------------------------------
+ROTATIONS
+// -------------------------------------- */
+var $rot= document.querySelector('.rot');
+var $theme= document.querySelector('.theme');
 
 var rotate = false;
 var runner;
