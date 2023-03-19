@@ -129,14 +129,14 @@ button:hover{
   font-family: Arial, Helvetica, sans-serif;
 
   font-size: var(--text-size);
-  color: grey;
+  color: white;
   text-align: center;
 
   z-index: 1;
   animation: sunset 5s ease-in;
   animation-delay: 0ms;
 
-  /* background-image: url(../cloud.png); */
+  background-image: url(../cloud.png);
   height: 200px;
   width: 400px;
   background-position: center;
