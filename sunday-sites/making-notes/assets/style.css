@@ -62,7 +62,7 @@ a, a:visited {
 
 
 .area {
-  height: 70px;
+  height: fit-content;
   width: 90vw;
   resize: none;
   outline: none;
@@ -76,9 +76,7 @@ a, a:visited {
   display: flex;
   align-items: center;
 
-  -ms-overflow-style: none; /* for Internet Explorer, Edge */
-  scrollbar-width: none; /* for Firefox */
-  overflow-y: scroll; 
+
 }
 
 #input {
