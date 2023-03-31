@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'rubikregular';
-    src: url('../fonts/Inter/rubik-regular-webfont.woff2') format('woff2'),
-         url('../fonts/Inter/rubik-regular-webfont.woff') format('woff');
+    src: url('../fonts/Rubik/rubik-regular-webfont.woff2') format('woff2'),
+         url('../fonts/Rubik/rubik-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap
@@ -9,8 +9,8 @@
 
 @font-face {
     font-family: 'rubikbold';
-    src: url('../fonts/Inter/rubik-bold-webfont.woff2') format('woff2'),
-         url('../fonts/Inter/rubik-bold-webfont.woff') format('woff');
+    src: url('../fonts/Rubik/rubik-bold-webfont.woff2') format('woff2'),
+         url('../fonts/Rubik/rubik-bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap
@@ -18,8 +18,8 @@
 
 @font-face {
     font-family: 'rubikitalic';
-    src: url('../fonts/Inter/rubik-italic-webfont.woff2') format('woff2'),
-         url('../fonts/Inter/rubik-italic-webfont.woff') format('woff');
+    src: url('../fonts/Rubik/rubik-italic-webfont.woff2') format('woff2'),
+         url('../fonts/Rubik/rubik-italic-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap
