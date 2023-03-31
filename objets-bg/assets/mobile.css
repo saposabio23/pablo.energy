@@ -1,4 +1,4 @@
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 900px) {
     
 .grid {
   grid-template-columns: repeat(1, auto);
@@ -11,5 +11,28 @@
 button {
     font-size: 100%;
 }
+
+.outro{
+  padding: 20px;
+}
+
+.outro > p {
+  font-size: 2rem;
+}
+
+.outro > div > span {
+  display: flex;
+  margin-bottom: 30px;
+  width: fit-content;
+}
+
+.buttonBig {
+  font-size: 1.2rem;
+}
+
+.calculs{
+  font-size: 1rem;
+}
+
 
 }

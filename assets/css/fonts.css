@@ -178,3 +178,12 @@
     src: url("../fonts/Inter/Inter-BlackItalic.woff2") format("woff2"),
          url("../fonts/Inter/Inter-BlackItalic.woff") format("woff");
   }
+
+  @font-face {
+     font-family: 'dt_world_tour_regular';
+     src: url('../fonts/DTWorldTour/dtworldtour-regular-webfont.woff2') format('woff2'),
+          url('../fonts/DTWorldTour/dtworldtour-regular-webfont.woffdtworldtour-regular-webfont.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+ 
+ }
