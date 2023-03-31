@@ -3,9 +3,11 @@ console.log("hellos")
 var grid = document.querySelector('.grid')
 var object = document.querySelector('.object')
 var hours = document.querySelector('#hours')
+var route = document.querySelector('#route')
+var levax = document.querySelector('#levax')
 
-// var intro = document.querySelector('.intro')
-// var enter = document.querySelector('.enter')
+var intro = document.querySelector('.intro')
+var enter = document.querySelector('.enter')
 
 var outro = document.querySelector('.outro')
 var restart = document.querySelector('.restart')
@@ -15,6 +17,24 @@ var play = document.querySelector('.calculs')
 var nece = document.querySelector('#nece')
 var lancer = document.querySelector('#lancer')
 
+var credits = document.querySelector('#credits')
+var readme = document.querySelector('#readme')
+
+/*************** CREDITS ****************/
+function clickCred(){
+  readme.classList.remove("hide")
+  credits.style.opacity = 0;
+}
+credits.addEventListener("click", clickCred)
+
+
+function removeCred(){
+  readme.classList.add("hide")
+  credits.style.opacity = "1";
+}
+readme.addEventListener("click", removeCred)
+
+/*************** LANCER ****************/
 function onLancer(){
   nece.classList.add("hide")
   lancer.classList.remove("hide")
@@ -27,14 +47,12 @@ function outLancer(){
 }
 play.addEventListener("mouseleave", outLancer)
 
-
-// function clickStart(){
-//   intro.classList.add("startBack")
-//   setTimeout(() => {
-//     intro.style.display = "none";
-//   }, "500"); 
-// }
-// enter.addEventListener("click", clickStart)
+function clickPlay(){
+  route.innerHTML = timeTotal + " heures";
+  levax.innerHTML = moneyTotal + " levas";
+  outro.classList.remove("outroBack")
+}
+play.addEventListener("click", clickPlay)
 
 function clickRestart(){
   location.reload();
@@ -42,31 +60,16 @@ function clickRestart(){
 }
 restart.addEventListener("click", clickRestart)
 
-
-function clickPlay(){
-  outro.classList.remove("outroBack")
-}
-play.addEventListener("click", clickPlay)
-
 function clickReplay(){
   outro.classList.add("outroBack")
 }
 replay.addEventListener("click", clickReplay)
 
 
-
+/*************** OBJECTS ****************/
 
 var timeTotal = 0;
 var moneyTotal = 0;
-
-// function hoverRap(e){
-//   e.target.classList.add("fondo");
-//   setTimeout(() => {
-//     e.target.classList.remove("fondo");
-//   }, "100"); 
-// }
-
-// object.addEventListener("mouseenter", hoverRap)
 
 function createHyundai() {
   var newObject = document.createElement('div')
@@ -82,7 +85,7 @@ function createHyundai() {
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/hyundai.jpg";
+  imagen.src = "img/hyundai.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -103,6 +106,8 @@ function createHyundai() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+
+  console.log(moneyTotal)
 }
 
 
@@ -120,7 +125,7 @@ function create160() {
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/160.jpg";
+  imagen.src = "img/160.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -157,7 +162,7 @@ function createAlbert1() {
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/albert1.jpeg";
+  imagen.src = "img/albert1.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -195,7 +200,7 @@ function createAlbert2() {
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/albert2.jpg";
+  imagen.src = "img/albert2.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -232,7 +237,7 @@ function createAquarium() {
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/aquarium.JPG";
+  imagen.src = "img/aquarium.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -270,7 +275,7 @@ function createArsloun() {
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/arsloun.JPG";
+  imagen.src = "img/arsloun.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -303,12 +308,12 @@ function createBonnet1() {
   
   var title = document.createElement("p");
   title.className = 'title';
-  title.innerHTML = "Bonnets 1"
+  title.innerHTML = "Bonnet 1"
   newObject.appendChild(title)
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/bonnet1.JPG";
+  imagen.src = "img/bonnet1.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -319,7 +324,7 @@ function createBonnet1() {
 
   var money = document.createElement("span");
   money.className = 'levas';
-  let monex = "?";
+  let monex = 0;
   money.innerHTML = monex +"лв"
   divInfo.appendChild(money)
 
@@ -341,12 +346,12 @@ function createBonnet2() {
   
   var title = document.createElement("p");
   title.className = 'title';
-  title.innerHTML = "Bonnets 2"
+  title.innerHTML = "Bonnet 2"
   newObject.appendChild(title)
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/bonnet2.JPG";
+  imagen.src = "img/bonnet2.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -357,7 +362,7 @@ function createBonnet2() {
 
   var money = document.createElement("span");
   money.className = 'levas';
-  let monex = "?";
+  let monex = 0;
   money.innerHTML = monex +"лв"
   divInfo.appendChild(money)
 
@@ -378,12 +383,12 @@ function createBonnet3() {
   
   var title = document.createElement("p");
   title.className = 'title';
-  title.innerHTML = "Bonnets 3"
+  title.innerHTML = "Bonnet 3"
   newObject.appendChild(title)
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/bonnet1.JPG";
+  imagen.src = "img/bonnet3.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -394,7 +399,7 @@ function createBonnet3() {
 
   var money = document.createElement("span");
   money.className = 'levas';
-  let monex = "?";
+  let monex = 0;
   money.innerHTML = monex +"лв"
   divInfo.appendChild(money)
 
@@ -416,12 +421,12 @@ function createBizarre() {
   
   var title = document.createElement("p");
   title.className = 'title';
-  title.innerHTML = "Truc bizarre"
+  title.innerHTML = "Homme-chèvre"
   newObject.appendChild(title)
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/bonnet3.JPG";
+  imagen.src = "img/bizarre.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -432,7 +437,7 @@ function createBizarre() {
 
   var money = document.createElement("span");
   money.className = 'levas';
-  let monex = "666";
+  let monex = 666;
   money.innerHTML = monex +"лв"
   divInfo.appendChild(money)
 
@@ -459,7 +464,7 @@ function createBuste() {
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/buste.JPG";
+  imagen.src = "img/buste.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -496,7 +501,7 @@ function createBuzbu() {
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/buzbu.JPG";
+  imagen.src = "img/buzbu.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -534,7 +539,7 @@ function createCafe() {
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/cafe.JPG";
+  imagen.src = "img/cafe.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -571,7 +576,7 @@ function createCheval() {
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/cafe.JPG";
+  imagen.src = "img/cafe.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -609,7 +614,7 @@ function createDegrad() {
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/degrad.JPG";
+  imagen.src = "img/degrad.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -641,12 +646,12 @@ function createDejeuner() {
   
   var title = document.createElement("p");
   title.className = 'title';
-  title.innerHTML = "Deuj"
+  title.innerHTML = "Déjeuner"
   newObject.appendChild(title)
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/deujener.JPG";
+  imagen.src = "img/deujener.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -683,7 +688,7 @@ function createDrapeau1() {
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/drapeau1.JPG";
+  imagen.src = "img/drapeau1.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -721,7 +726,7 @@ function createDrapeau2() {
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/drapeau2.JPG";
+  imagen.src = "img/drapeau2.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -758,7 +763,7 @@ function createEglise() {
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/eglise.JPG";
+  imagen.src = "img/eglise.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -795,7 +800,7 @@ function createFlixbus() {
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/Flixbus.JPG";
+  imagen.src = "img/Flixbus.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -833,7 +838,7 @@ function createGraff() {
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/graff.JPG";
+  imagen.src = "img/graff.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -871,7 +876,7 @@ function createJacuzzi() {
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/jacuzzi.JPG";
+  imagen.src = "img/jacuzzi.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -909,7 +914,7 @@ function createLivre() {
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/livre.JPG";
+  imagen.src = "img/livre.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -946,7 +951,7 @@ function createLumiere() {
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/lumiere.JPG";
+  imagen.src = "img/lumiere.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -984,7 +989,7 @@ function createMarta() {
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/marta.JPG";
+  imagen.src = "img/marta.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -1017,12 +1022,12 @@ function createMonastere() {
   
   var title = document.createElement("p");
   title.className = 'title';
-  title.innerHTML = "Monastere"
+  title.innerHTML = "Monastère de Rila" 
   newObject.appendChild(title)
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/monastere.JPG";
+  imagen.src = "img/monastere.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -1059,7 +1064,7 @@ function createMonnaie() {
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/monnaie.JPG";
+  imagen.src = "img/monnaie.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -1096,7 +1101,7 @@ function createPhotographe() {
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/photographe.JPG";
+  imagen.src = "img/photographe.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -1133,7 +1138,7 @@ function createPoisson() {
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/poisson.JPG";
+  imagen.src = "img/poisson.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -1170,7 +1175,7 @@ function createPomme() {
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/pomme.JPG";
+  imagen.src = "img/pomme.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -1207,7 +1212,7 @@ function createPub() {
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/pub.JPG";
+  imagen.src = "img/pub.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -1245,7 +1250,7 @@ function createSaucisse() {
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/saucisse.JPG";
+  imagen.src = "img/saucisse.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -1283,7 +1288,7 @@ function createStatue() {
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/statue.JPG";
+  imagen.src = "img/statue.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -1321,7 +1326,7 @@ function createVoiture() {
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/voiture.JPG";
+  imagen.src = "img/voiture.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -1332,7 +1337,7 @@ function createVoiture() {
 
   var money = document.createElement("span");
   money.className = 'levas';
-  let monex = "?";
+  let monex = 0;
   money.innerHTML = monex +"лв"
   divInfo.appendChild(money)
 
