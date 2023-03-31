@@ -383,7 +383,7 @@ function createBonnet3() {
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/bonnet3.JPG";
+  imagen.src = "img/bonnet1.JPG";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
@@ -395,6 +395,44 @@ function createBonnet3() {
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = "?";
+  money.innerHTML = monex +"лв"
+  divInfo.appendChild(money)
+
+  grid.prepend(newObject)
+  newObject.appendChild(divInfo)
+
+  timeTotal += timex;
+  moneyTotal += monex;
+  hours.innerHTML = timeTotal;
+}
+
+
+function createBizarre() {
+  var newObject = document.createElement('div')
+  newObject.classList.add("object")
+
+  var divInfo = document.createElement('div')
+  divInfo.classList.add("divInfo")
+  
+  var title = document.createElement("p");
+  title.className = 'title';
+  title.innerHTML = "Truc bizarre"
+  newObject.appendChild(title)
+
+  var imagen = document.createElement("img");
+  imagen.className = 'imagen';
+  imagen.src = "img/bonnet3.JPG";
+  newObject.appendChild(imagen)
+
+  var time = document.createElement("span");
+  time.className = 'hour';
+  let timex = 0;
+  time.innerHTML = timex +"h"
+  divInfo.appendChild(time)
+
+  var money = document.createElement("span");
+  money.className = 'levas';
+  let monex = "666";
   money.innerHTML = monex +"лв"
   divInfo.appendChild(money)
 

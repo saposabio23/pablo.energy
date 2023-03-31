@@ -67,7 +67,7 @@ button:nth-child(even){
     box-shadow: 0 0 10px 0px var(--rougeBG);
 }
 
-button:hover{
+button:hover, button:active{
     box-shadow: 0 0 20px 10px black;
     background-color: black;
     color: white;
@@ -95,7 +95,10 @@ button:hover{
 
 .object {
     border: 1px solid gainsboro;
+
     width: 100%;
+    max-width: calc(100vw/5);
+
     height: auto;
     border-radius: 20px;
     flex-direction: column;
@@ -103,7 +106,6 @@ button:hover{
     padding: var(--spacingS);
     justify-content: space-between;
     box-sizing: border-box;
-    max-width: calc(100vw/5);
 
     background-color: transparent;
     backdrop-filter: blur(4px);
@@ -118,7 +120,7 @@ button:hover{
 
 @keyframes appear {
     0% {
-      transform: translateY(-100%);
+      transform: translateX(-100%);
       opacity: 0;
     }
     100% {
@@ -131,7 +133,7 @@ button:hover{
 .title {
     font-family: "Inter";
     font-weight: 600;
-    margin-bottom: var(--spacingM);
+    margin-bottom: var(--spacingS);
     font-size: 1.2rem;
     text-transform: uppercase;
 }
@@ -153,7 +155,7 @@ button:hover{
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-top: var(--spacingM);
+    margin-top: var(--spacingS);
     font-weight: 600;
     font-size: 1rem;
 }
@@ -244,10 +246,10 @@ button:hover{
 
 
 .outro {
-    width: calc(100% - var(--spacingS) * 2);
-    height: calc(100% - var(--spacingS) * 2);
+    width: calc(100% - 10px * 2);
+    height: calc(100% - 10px * 2);
     position: fixed;
-    margin: var(--spacingS);
+    margin: 10px;
     background-color: black;
     color: white;
     box-shadow: 0 0 20px 10px black;
