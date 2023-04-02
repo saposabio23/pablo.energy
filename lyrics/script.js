@@ -1,13 +1,14 @@
-var $miniBlock = document.querySelector(".mini-block");
+/* -----------------------------------
+IPHONE HEIGHT
+// -------------------------------------- */
+window.onload = mobileWindow();
 
-function onHover() {
-    $miniBlock.classList.add("bkHover")
+function mobileWindow() {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+  console.log("VH on mobiles", vh);
 }
 
-$miniBlock.addEventListener("mouseenter", onHover)
+window.addEventListener("resize", mobileWindow, false);
+window.addEventListener("orientationchange", mobileWindow, false);
 
-function outHover(){
-    $miniBlock.classList.remove("bkHover")
-
-}
-$miniBlock.addEventListener("mouseleave", outHover)
