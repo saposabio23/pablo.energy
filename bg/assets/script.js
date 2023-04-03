@@ -21,47 +21,52 @@ var credits = document.querySelector('#credits')
 var readme = document.querySelector('#readme')
 
 /*************** CREDITS ****************/
-function clickCred(){
+function clickCred() {
   readme.classList.remove("hide")
   credits.style.opacity = 0;
 }
 credits.addEventListener("click", clickCred)
 
 
-function removeCred(){
+function removeCred() {
   readme.classList.add("hide")
   credits.style.opacity = "1";
 }
 readme.addEventListener("click", removeCred)
 
 /*************** LANCER ****************/
-function onLancer(){
+
+
+function onLancer() {
   nece.classList.add("hide")
   lancer.classList.remove("hide")
 }
 play.addEventListener("mouseenter", onLancer)
 
-function outLancer(){
+function outLancer() {
   nece.classList.remove("hide")
   lancer.classList.add("hide")
 }
 play.addEventListener("mouseleave", outLancer)
 
-function clickPlay(){
+function clickPlay() {
   route.innerHTML = timeTotal + " heures";
   levax.innerHTML = moneyTotal + " levas";
   outro.classList.remove("outroBack")
+  jeremotor.play();
 }
 play.addEventListener("click", clickPlay)
+play.addEventListener("click", clickPlay)
 
-function clickRestart(){
+function clickRestart() {
   location.reload();
   return false;
 }
 restart.addEventListener("click", clickRestart)
 
-function clickReplay(){
+function clickReplay() {
   outro.classList.add("outroBack")
+  jeremotor.pause();
 }
 replay.addEventListener("click", clickReplay)
 
@@ -77,7 +82,7 @@ function createHyundai() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Hyundai Jérémie"
@@ -91,15 +96,15 @@ function createHyundai() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 3;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
-  
+
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 700;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
-  
+
   grid.prepend(newObject)
   newObject.appendChild(divInfo)
 
@@ -107,6 +112,7 @@ function createHyundai() {
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
 
+  magic.play();
   console.log(moneyTotal)
 }
 
@@ -117,7 +123,7 @@ function create160() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "160"
@@ -131,13 +137,13 @@ function create160() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 1;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 20;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -146,6 +152,8 @@ function create160() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 function createAlbert1() {
@@ -154,7 +162,7 @@ function createAlbert1() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Albert 1"
@@ -168,13 +176,13 @@ function createAlbert1() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 5;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 80;
-  money.innerHTML = monex +"€"
+  money.innerHTML = monex + "€"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -183,6 +191,8 @@ function createAlbert1() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 
@@ -192,7 +202,7 @@ function createAlbert2() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Albert 2"
@@ -206,13 +216,13 @@ function createAlbert2() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 5;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 5;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -221,6 +231,8 @@ function createAlbert2() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 function createAquarium() {
@@ -229,7 +241,7 @@ function createAquarium() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Aquarium beaux-arts"
@@ -243,13 +255,13 @@ function createAquarium() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 0.5;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 20;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -258,6 +270,8 @@ function createAquarium() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 
@@ -267,7 +281,7 @@ function createArsloun() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Peinture Arsloun"
@@ -281,13 +295,13 @@ function createArsloun() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 6;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 0;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -296,6 +310,8 @@ function createArsloun() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 
@@ -305,7 +321,7 @@ function createBonnet1() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Bonnet 1"
@@ -319,13 +335,13 @@ function createBonnet1() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 2;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 0;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -334,6 +350,8 @@ function createBonnet1() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 
@@ -343,7 +361,7 @@ function createBonnet2() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Bonnet 2"
@@ -357,13 +375,13 @@ function createBonnet2() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 2;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 0;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -372,6 +390,8 @@ function createBonnet2() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 function createBonnet3() {
@@ -380,7 +400,7 @@ function createBonnet3() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Bonnet 3"
@@ -394,13 +414,13 @@ function createBonnet3() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 2;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 0;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -409,6 +429,8 @@ function createBonnet3() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 
@@ -418,7 +440,7 @@ function createBizarre() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Homme-chèvre"
@@ -432,13 +454,13 @@ function createBizarre() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 0;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 666;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -447,6 +469,8 @@ function createBizarre() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 
@@ -456,7 +480,7 @@ function createBuste() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Buste au musée"
@@ -470,13 +494,13 @@ function createBuste() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 1.5;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 2;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -485,6 +509,8 @@ function createBuste() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 function createBuzbu() {
@@ -493,7 +519,7 @@ function createBuzbu() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Buzludzha dur"
@@ -507,13 +533,13 @@ function createBuzbu() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 3;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 0;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -522,6 +548,8 @@ function createBuzbu() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 
@@ -531,7 +559,7 @@ function createCafe() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Super café"
@@ -545,13 +573,13 @@ function createCafe() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 1;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 2;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -560,6 +588,8 @@ function createCafe() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 function createCheval() {
@@ -568,7 +598,7 @@ function createCheval() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Cheval"
@@ -582,13 +612,13 @@ function createCheval() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 1;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 2;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -597,6 +627,8 @@ function createCheval() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 
@@ -606,7 +638,7 @@ function createDegrad() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Tag"
@@ -620,13 +652,13 @@ function createDegrad() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 2;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 0;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -635,6 +667,8 @@ function createDegrad() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 function createDejeuner() {
@@ -643,7 +677,7 @@ function createDejeuner() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Déjeuner"
@@ -657,13 +691,13 @@ function createDejeuner() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 2;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 15;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -672,6 +706,8 @@ function createDejeuner() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 function createDrapeau1() {
@@ -680,7 +716,7 @@ function createDrapeau1() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Drapeau 1"
@@ -694,13 +730,13 @@ function createDrapeau1() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 6;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 63;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -709,6 +745,8 @@ function createDrapeau1() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 
@@ -718,7 +756,7 @@ function createDrapeau2() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Drapeau 2"
@@ -732,13 +770,13 @@ function createDrapeau2() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = .5;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 0;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -747,6 +785,8 @@ function createDrapeau2() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 function createEglise() {
@@ -755,7 +795,7 @@ function createEglise() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Eglise"
@@ -769,13 +809,13 @@ function createEglise() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 2;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 5;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -784,6 +824,8 @@ function createEglise() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 function createFlixbus() {
@@ -792,7 +834,7 @@ function createFlixbus() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Flixbus"
@@ -806,13 +848,13 @@ function createFlixbus() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 45;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 100;
-  money.innerHTML = monex +"€"
+  money.innerHTML = monex + "€"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -821,6 +863,8 @@ function createFlixbus() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 
@@ -830,7 +874,7 @@ function createGraff() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Graff"
@@ -844,13 +888,13 @@ function createGraff() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 2;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 0;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -859,6 +903,8 @@ function createGraff() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 
@@ -868,7 +914,7 @@ function createJacuzzi() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Jacuzzi"
@@ -882,13 +928,13 @@ function createJacuzzi() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 2;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 0;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -897,6 +943,8 @@ function createJacuzzi() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 
@@ -906,7 +954,7 @@ function createLivre() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Livre"
@@ -920,13 +968,13 @@ function createLivre() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 0;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 0;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -935,6 +983,8 @@ function createLivre() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 function createLumiere() {
@@ -943,7 +993,7 @@ function createLumiere() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Lumiere"
@@ -957,13 +1007,13 @@ function createLumiere() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 0;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 4;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -972,6 +1022,8 @@ function createLumiere() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 
@@ -981,7 +1033,7 @@ function createMarta() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Baba Marta"
@@ -995,13 +1047,13 @@ function createMarta() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 24;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 1;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -1010,6 +1062,8 @@ function createMarta() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 
@@ -1019,10 +1073,10 @@ function createMonastere() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
-  title.innerHTML = "Monastère de Rila" 
+  title.innerHTML = "Monastère de Rila"
   newObject.appendChild(title)
 
   var imagen = document.createElement("img");
@@ -1033,13 +1087,13 @@ function createMonastere() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 4;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 12;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -1048,6 +1102,8 @@ function createMonastere() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 function createMonnaie() {
@@ -1056,7 +1112,7 @@ function createMonnaie() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Monnaie"
@@ -1070,13 +1126,13 @@ function createMonnaie() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 1;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 1;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -1085,6 +1141,8 @@ function createMonnaie() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 function createPhotographe() {
@@ -1093,7 +1151,7 @@ function createPhotographe() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Photographe"
@@ -1107,13 +1165,13 @@ function createPhotographe() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 1;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 0;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -1122,6 +1180,8 @@ function createPhotographe() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 function createPoisson() {
@@ -1130,7 +1190,7 @@ function createPoisson() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Poisson"
@@ -1144,13 +1204,13 @@ function createPoisson() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 1;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 10;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -1159,6 +1219,8 @@ function createPoisson() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 function createPomme() {
@@ -1167,7 +1229,7 @@ function createPomme() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Pomme"
@@ -1181,13 +1243,13 @@ function createPomme() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 2;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 23;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -1196,6 +1258,8 @@ function createPomme() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 function createPub() {
@@ -1204,7 +1268,7 @@ function createPub() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Pub"
@@ -1218,13 +1282,13 @@ function createPub() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 0;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 1;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -1233,6 +1297,8 @@ function createPub() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 
@@ -1242,7 +1308,7 @@ function createSaucisse() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Saucisse"
@@ -1256,13 +1322,13 @@ function createSaucisse() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 3;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 100;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -1271,6 +1337,8 @@ function createSaucisse() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 
@@ -1280,7 +1348,7 @@ function createStatue() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Statue"
@@ -1294,13 +1362,13 @@ function createStatue() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 1;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 2;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -1309,6 +1377,8 @@ function createStatue() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
 
@@ -1318,7 +1388,7 @@ function createVoiture() {
 
   var divInfo = document.createElement('div')
   divInfo.classList.add("divInfo")
-  
+
   var title = document.createElement("p");
   title.className = 'title';
   title.innerHTML = "Voiture"
@@ -1332,13 +1402,13 @@ function createVoiture() {
   var time = document.createElement("span");
   time.className = 'hour';
   let timex = 4;
-  time.innerHTML = timex +"h"
+  time.innerHTML = timex + "h"
   divInfo.appendChild(time)
 
   var money = document.createElement("span");
   money.className = 'levas';
   let monex = 0;
-  money.innerHTML = monex +"лв"
+  money.innerHTML = monex + "лв"
   divInfo.appendChild(money)
 
   grid.prepend(newObject)
@@ -1347,5 +1417,7 @@ function createVoiture() {
   timeTotal += timex;
   moneyTotal += monex;
   hours.innerHTML = timeTotal;
+  magic.play();
+
 }
 
