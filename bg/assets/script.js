@@ -606,7 +606,7 @@ function createCheval() {
 
   var imagen = document.createElement("img");
   imagen.className = 'imagen';
-  imagen.src = "img/cafe.png";
+  imagen.src = "img/cheval.png";
   newObject.appendChild(imagen)
 
   var time = document.createElement("span");
