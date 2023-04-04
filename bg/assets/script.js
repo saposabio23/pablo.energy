@@ -85,7 +85,7 @@ function createHyundai() {
 
   var title = document.createElement("p");
   title.className = 'title';
-  title.innerHTML = "Hyundai Jérémie"
+  title.innerHTML = "Hyundai Jérémy"
   newObject.appendChild(title)
 
   var imagen = document.createElement("img");
