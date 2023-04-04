@@ -13,19 +13,11 @@ body {
     background-color: var(--background);
 }
 
-.blocks {
-    height: calc(var(--vh, 1vh) * 100);
-    width: 100vw;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-}
-
 a {
     color: black;
     text-decoration: none;
     transition: all .3s ease-in-out;
-    height: 100%;
-    width: 100%;
+
 }
 
 a:visited {
@@ -64,6 +56,13 @@ span {
     background-color: var(--high);
 }
 
+.blocks {
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
 .block {
     border: 1px solid var(--lines);
     border-width: 0px 1px 1px 0px;
@@ -72,7 +71,6 @@ span {
     height: 100%;
     box-sizing: border-box;
 }
-
 
 .songContent {
     display: flex;
@@ -123,21 +121,24 @@ span {
 
 @media screen and (max-width: 650px) {
 
+    #credits {
+        display: none;
+    }
+
     .songContent {
         flex-direction: column;
     }
 
     .mini-block {
         width: 50vw;
+        height: 50vw;
         box-sizing: border-box;
     }
 
     .mini-blocks {
         display: grid;
         grid-template-columns: repeat(2, auto);
-        width: 100%;
-        box-sizing: border-box;
-
     }
+
 
 }
