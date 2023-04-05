@@ -41,11 +41,32 @@ a:hover {
 
 .hidded {
   display: none;
+  opacity: 0;
+  transition: all .5s ease-in-out;
 }
 
 .showed {
   display: block;
+  opacity: 1;
+  transition: all .5s ease-in-out;
+  animation: appear .5s ease-in;
 }
+
+@keyframes appear {
+0% {
+  display: none;
+  opacity: 0;
+}
+1% {
+  display: block;
+  opacity: 0;
+}
+100% {
+  opacity: 1;
+}
+}
+
+
 
 form {
   padding: 10px;
