@@ -206,6 +206,7 @@ button:hover, button:active{
     font-weight: 400;
     font-size: 1.3rem;
     width: max-content;
+    border: 1px solid red;
     transition: all .5s ease-in-out;
 
     animation: box 3s ease-in-out;
