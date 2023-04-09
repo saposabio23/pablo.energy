@@ -88,6 +88,7 @@ SCREEN HOME
   font-size: 1.3rem;
   z-index: 1;
 }
+
 /* -----------------------------------
 CARD STUFF
 -------------------------------------- */
@@ -400,3 +401,44 @@ small {
 }
 
 
+/* -----------------------------------
+TABLES
+-------------------------------------- */
+td > a {
+  text-decoration: underline;
+}
+
+.center{
+  min-height: calc(100vh);
+  width: calc(100vw);
+  max-width: 600px;
+  display: flex;
+  margin: auto;
+  align-items: start;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.center p{
+margin-bottom: 20px;
+}
+
+.center a{
+  margin-top: var(--spacing-s);
+  transition: all .3s ease-in-out;
+  border: 1px solid black;
+  padding: 2px 6px;
+  border-radius: 15px;
+  text-decoration: none;
+  line-height: 1.7;
+  word-wrap: anywhere;
+}
+
+.center a:hover{
+  background-color: black;
+  color: white;
+  transition: all .3s ease-in-out;
+}
