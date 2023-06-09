@@ -1,4 +1,8 @@
-window.onload = isItNight()
+function init() {
+  isItNight()
+  witchColor()
+  whatNew()
+}
 
 /* -----------------------------------
 CSS COLOOOORS
@@ -48,19 +52,41 @@ function copyMail() {
 // /* -----------------------------------
 // BOTTOM OF THE PAGE
 // -------------------------------------- */
-var $more = document.querySelector(".more");
+var observer = new IntersectionObserver(function (entries) {
+var meCircle = document.getElementById("meCircle");
+  if (!entries[0].isIntersecting) {
+    meCircle.classList.add("circling")
+    console.log('out!')
+  }
+  else {
+    meCircle.classList.remove("circling")
+    console.log('inside!')
 
 
-window.onscroll = function() {
-  if ((window.innerHeight + Math.ceil(window.pageYOffset)) >= document.body.offsetHeight) {
-    $more.classList.add("moreBottom")
   }
-  else if ((window.innerHeight + Math.ceil(window.pageYOffset)) <= document.body.offsetHeight) {
-    $more.classList.remove("moreBottom")
-  }
+});
+
+observer.observe(document.querySelector("#app"))
+
+// /* -----------------------------------
+// RANDOM PRESENTATION
+// -------------------------------------- */
+function whatNew() {
+  var frases = Array(
+    'wazzzzup?',
+    'giving ⚡️',
+    'lot of ⚡️ 4 the 🌏',
+    "how's the day?",
+    "have a good day!",
+    "send me a pic of your sky! 🌄",
+    "how many time you spend on internet today?")
+
+  const queHay = document.getElementById("whatNew");
+
+  var frase = frases[Math.floor(Math.random() * frases.length)];
+  console.log(frase)
+  queHay.innerHTML = frase;
 }
-
-
 
 
 // /* -----------------------------------
@@ -171,3 +197,6 @@ function isItNight() {
 //   }
 // }
 // $buttonPrint.addEventListener('click', highlightPrint);
+
+
+init()
