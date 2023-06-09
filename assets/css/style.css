@@ -1,3 +1,10 @@
+/*
+* Prefixed by:
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 :root {
   --spacing-l: 30px;
   --spacing-m: 25px;
@@ -50,7 +57,8 @@ html {
 }
 
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 a {
@@ -64,10 +72,11 @@ a:hover {
 }
 
 h3 {
-  margin: 5px;
+  margin: 7px;
   color: var(--highlight);
   text-align: center;
 }
+
 
 p {
   margin-bottom: var(--spacing-s);
@@ -80,17 +89,21 @@ SCREEN HOME
   height: 100vh;
   width: 100vw;
   z-index: 2;
-  position: relative;
-  backdrop-filter: blur(10px) saturate(100%);
-  background-color: #fffafa69;
-  margin-bottom: 100vh;
+  /*! position: relative; */
+  /* -webkit-backdrop-filter: blur(10px) saturate(100%);
+          backdrop-filter: blur(10px) saturate(100%); */
+  background-color: var(--white);
+  /*! margin-bottom: 100vh; */
 }
 
 .middle {
   position: absolute;
   top: 50vh;
   left: 50vw;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -ms-grid;
   display: grid;
   justify-items: center;
   z-index: 1;
@@ -108,8 +121,14 @@ MENU
 
   z-index: 999;
 
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 
   /* display: none; */
 }
@@ -119,40 +138,68 @@ MENU
   height: 45px;
   width: 45px;
   border-radius: 100%;
-  box-shadow: 0 0 10px var(--thisColor);
+  -webkit-box-shadow: 0 0 10px var(--thisColor);
+          box-shadow: 0 0 10px var(--thisColor);
   z-index: 3;
 
-  animation: energy 3s ease-in-out;
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
-  animation-delay: 0ms;
+  -webkit-animation: energy 3s ease-in-out;
 
+          animation: energy 3s ease-in-out;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
+
+}
+
+@-webkit-keyframes energy {
+  0% {
+    -webkit-box-shadow: 0 0 0px var(--thisColor);
+            box-shadow: 0 0 0px var(--thisColor);
+  }
+
+  100% {
+    -webkit-box-shadow: 0 0 30px var(--thisColor);
+            box-shadow: 0 0 30px var(--thisColor);
+  }
 }
 
 @keyframes energy {
   0% {
-    box-shadow: 0 0 0px var(--thisColor);
+    -webkit-box-shadow: 0 0 0px var(--thisColor);
+            box-shadow: 0 0 0px var(--thisColor);
   }
 
   100% {
-    box-shadow: 0 0 30px var(--thisColor);
+    -webkit-box-shadow: 0 0 30px var(--thisColor);
+            box-shadow: 0 0 30px var(--thisColor);
   }
 }
 
 
 #meCircle {
   opacity: 0;
-  transform: rotate(-120deg);
+  -webkit-transform: rotate(-120deg);
+      -ms-transform: rotate(-120deg);
+          transform: rotate(-120deg);
   height: 101%;
   width: 101%;
   border-radius: 100%;
+  -webkit-transition: all .5s cubic-bezier(.55,0,.07,1);
+  -o-transition: all .5s cubic-bezier(.55,0,.07,1);
   transition: all .5s cubic-bezier(.55,0,.07,1);;
 
 }
 
 .circling {
   opacity: 1 !important;
-  transform: rotate(0deg) !important;
+  -webkit-transform: rotate(0deg) !important;
+      -ms-transform: rotate(0deg) !important;
+          transform: rotate(0deg) !important;
+  -webkit-transition: all .5s cubic-bezier(.55,0,.07,1);
+  -o-transition: all .5s cubic-bezier(.55,0,.07,1);
   transition: all .5s cubic-bezier(.55,0,.07,1);;
 }
 
@@ -165,7 +212,9 @@ MENU
   background-color: snow;
   border-radius: var(--radius-soft);
 
-  box-shadow: 0 0 20px var(--highlight);
+  -webkit-box-shadow: 0 0 20px var(--highlight);
+
+          box-shadow: 0 0 20px var(--highlight);
 
   z-index: 2;
 }
@@ -175,15 +224,23 @@ MENU
   text-decoration: none;
   background-color: var(--grey);
   padding: 10px 24px;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
   border-right: 1px solid var(--grey-dark);
   height: 50px;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .left a:hover {
   background-color: var(--dark);
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
 
@@ -197,7 +254,8 @@ CARD STUFF
 -------------------------------------- */
 .card {
   width: 420px;
-  box-shadow: 0 0 20px hsla(0, 0%, 0%, 0.2);
+  -webkit-box-shadow: 0 0 20px hsla(0, 0%, 0%, 0.2);
+          box-shadow: 0 0 20px hsla(0, 0%, 0%, 0.2);
   background-color: var(--white);
   border-radius: var(--radius-hard);
   position: relative;
@@ -205,6 +263,8 @@ CARD STUFF
 }
 
 .card-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   font-size: var(--font-normal);
 }
@@ -222,10 +282,14 @@ CARD STUFF
 }
 
 .card-contact {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 0px 1fr;
   grid-template-columns: repeat(2, 1fr);
   gap: 0px;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
   border-top: 1px solid #80808040;
 }
@@ -274,6 +338,8 @@ NOW
   border: 1px dotted var(--highlight);
   border-radius: 500px;
   padding: 3px 5px;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
 
@@ -288,13 +354,17 @@ PROJETS HOME
 -------------------------------------- */
 
 .second {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 40px 1fr;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 40px;
+  -webkit-column-gap: 40px;
+     -moz-column-gap: 40px;
+          column-gap: 40px;
   row-gap: 50px;
   z-index: 1;
   padding: 100px 40px 40px 40px;
-  position: fixed;
+  /*! position: fixed; */
   top: 0;
   overflow-y: scroll;
   width: 100dvw;
@@ -302,10 +372,16 @@ PROJETS HOME
 }
 
 .projects {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   row-gap: 12px;
-  box-shadow: 0 0 20px hsla(0, 0%, 0%, 0.2);
+  -webkit-box-shadow: 0 0 20px hsla(0, 0%, 0%, 0.2);
+          box-shadow: 0 0 20px hsla(0, 0%, 0%, 0.2);
   background-color: var(--white);
   border-radius: var(--radius-hard);
   padding: var(--spacing-s);
@@ -315,32 +391,49 @@ PROJETS HOME
 }
 
 .projects  > a {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   height: 40px;
   gap: 10px;
-  box-shadow: 0 0 20px hsla(0, 0%, 0%, 0.1);
+  -webkit-box-shadow: 0 0 20px hsla(0, 0%, 0%, 0.1);
+          box-shadow: 0 0 20px hsla(0, 0%, 0%, 0.1);
   background-color: var(--white);
   border-radius: var(--radius-soft);
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding-right: var(--spacing-s);
 
 }
 
 .projects>a>div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: var(--spacing-s);
 }
 
 .projects > a:hover {
-  box-shadow: inset 0 0px 10px var(--highlight);
+  -webkit-box-shadow: inset 0 0px 10px var(--highlight);
+          box-shadow: inset 0 0px 10px var(--highlight);
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
 
 .wip {
-  box-shadow: inset 0 0px 10px orange
+  -webkit-box-shadow: inset 0 0px 10px orange;
+          box-shadow: inset 0 0px 10px orange
 }
 
 .second a:hover {
@@ -352,9 +445,12 @@ PROJETS HOME
   height: 40px;
 
   border-radius: 10px;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
   aspect-ratio: 4/3;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .projects span {
@@ -364,9 +460,13 @@ PROJETS HOME
 }
 
 .others{
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr var(--spacing-s) 1fr var(--spacing-s) 1fr;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: var(--spacing-s);
+  -webkit-column-gap: var(--spacing-s);
+     -moz-column-gap: var(--spacing-s);
+          column-gap: var(--spacing-s);
   row-gap: var(--spacing-s);
 }
 
@@ -375,9 +475,12 @@ PROJETS HOME
   height: auto;
 
   border-radius: 10px;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
   aspect-ratio: 3/2;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .others a:hover{
@@ -394,13 +497,22 @@ td>a {
   min-height: calc(100vh);
   width: calc(100vw);
   max-width: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin: auto;
-  align-items: start;
-  justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   z-index: 2;
   position: relative;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   padding: 20px;
 }
 
@@ -410,6 +522,8 @@ td>a {
 
 .center a {
   margin-top: var(--spacing-s);
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
   border: 1px solid black;
   padding: 2px 6px;
@@ -422,5 +536,7 @@ td>a {
 .center a:hover {
   background-color: black;
   color: white;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
