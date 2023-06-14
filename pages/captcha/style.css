@@ -1,0 +1,528 @@
+body {
+  margin: 0px;
+  background-color: #DEBE8B;
+  overflow: scroll;
+}
+
+::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+  height: 8px;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #72613D;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: blue;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: inherit;
+}
+
+p {
+  margin: 0;
+  font-family: Roboto Mono;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.header {
+  position: fixed;
+  width: 100vw;
+  background-color: #FFD895;
+  border-bottom: 1px solid #A48B58;
+  padding: 1.5vh 0 1vh 0;
+  font-family: Roboto Mono;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  color: black;
+  z-index: 99;
+  user-select: none;
+  text-align: center;
+  cursor: default;
+}
+
+.titre {
+  text-decoration: none;
+  position: relative;
+  font-family: Roboto Mono;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 16px;
+  color: black;
+}
+
+.legende {
+  margin-top: 10px;
+  font-family: Roboto Mono;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  color: black;
+}
+
+.date {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* BULES HEADER */
+#index{
+  position: relative;
+  text-decoration: none;
+  float:left;
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+#index:hover{
+  text-decoration: underline;
+}
+
+#index-quit {
+  display: none;
+}
+#index-quit:checked + #index:after {
+  content: "✗";
+  position: absolute;
+  text-align: left;
+  top: -2px;
+  left: -2px;
+  padding-left: 6px;
+  right: 0;
+  bottom: 0;
+  font-size: 30px;
+  background-color: #FFD895;
+}
+
+#indexwindow {
+  z-index: 3;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 400px;
+  bottom: 0px;
+  border-right: 1px solid #A48B58;
+    border-bottom: 1px solid #A48B58;
+  background-color: #FFD895;
+  display: none;
+  padding: calc(2vh + 30px) 15px 2vh 10px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: none;
+}
+
+#info{
+  text-decoration: none;
+  position: relative;
+  float: right;
+  margin-right: 10px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+#info:hover{
+  text-decoration: underline;
+}
+
+#info-quit {
+  display: none;
+}
+#info-quit:checked + #info:after {
+  content: "✗";
+  position: absolute;
+  text-align: right;
+  top: -2px;
+  left: 0;
+  right: -2px;
+  padding-right: 4px;
+  padding-left: 4px;
+  bottom: 0;
+  font-size: 30px;
+  background-color: #FFD895;
+}
+
+
+#infowindow {
+  z-index: 3;
+  position: fixed;
+  right: -8px;
+  float: right;
+  bottom: 0px;
+  top: 0px;
+  width: 25vw;
+  background-color: #FFD895;
+  display: none;
+  border-left: 1px solid #A48B58;
+  border-bottom: 1px solid #A48B58;
+  padding: calc(2vh + 30px) 15px 2vh 10px;
+  z-index: 98;
+  opacity: 1;
+  overflow: scroll;
+}
+
+/* #infowindow {
+  z-index: 3;
+  position: fixed;
+  top: calc(2vh + 30px)
+  left: 0px;
+  height: calc(100vh - 2vh - 30px);
+  width: 100vw;
+  background-color: #FFD895;
+  display: none;
+  padding: calc(2vh + 30px) 15px 2vh 10px;
+  z-index: 98;
+  opacity: 0.8;
+  cursor: default;
+} */
+
+.indexcontent{
+  width: 430px;
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #A48B58;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  color: black !important;
+}
+
+.texteindex{
+    width: 150px;
+    color: black !important;
+}
+
+.legendeindex {
+  width: 250px;
+  margin-left: 10px;
+  font-family: Roboto Mono;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  color: black;
+  color: black !important;
+}
+
+.dateindex {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 18px;
+  color: black !important;
+}
+
+/* .arrowhor{
+  position: absolute;
+  width: 98vw;
+  height: 94vh;
+}
+
+.evol {
+  position: absolute;
+left: calc(50vw - 60px);
+top: 9vh;
+}
+
+.hist{
+  position: absolute;
+  transform: rotate(-90deg);
+  top: 50vh;
+  left: 0px;
+} */
+
+/* .infobox {
+  width: 25vw;
+  height: 70vh;
+  top: 20vh;
+  left: calc(50vw - 12.5vw);
+  position: absolute;
+  background-color: #FFD895;
+  border: 1px solid #A48B58;
+  opacity: 1 !important;
+  padding: 15px 10px 10px 15px;
+} */
+
+
+/* CONTENU */
+
+#oldchambers {
+  position: absolute;
+  width: 300px;
+  left: 100px;
+  top: 150px;
+}
+
+#oldform {
+  position: absolute;
+  width: 210px;
+  left: 200px;
+  top: 700px;
+}
+
+#oldtexte {
+  position: absolute;
+  width: 301px;
+  left: 573px;
+  top: 700px;
+}
+
+#article {
+  position: absolute;
+  width: 800px;
+  left: 4305px;
+  top: 889px;
+}
+
+.articletexte {
+  width: 800px;
+  height: 600px;
+  overflow: scroll;
+  border: 2px solid black;
+  -webkit-box-shadow: 0px 0px 6px 2px blue;
+-moz-box-shadow: 0px 0px 6px 2px blue;
+box-shadow: 0px 0px 6px 2px blue;
+  padding: 10px 20px 10px 20px;
+}
+
+h1 {
+  font-family: Roboto Mono;
+  font-weight: 700;
+  font-size: 42px;
+  margin: 0;
+}
+
+.subtitle {
+  font-style: normal;
+  font-weight: 700;
+  padding: 15px 0 15px 0;
+}
+
+.credits {
+  padding-top: 15px;
+  font-style: italic;
+  font-weight: 700;
+}
+
+#oldmiller {
+  position: absolute;
+  width: 300px;
+  left: 155px;
+  top: 1723px;
+}
+
+#oldtableau {
+  position: absolute;
+  width: 700px;
+  left: 455px;
+  top: 2274px;
+  padding-bottom: 100px;
+}
+
+#secapple {
+  position: absolute;
+  width: 433.68px;
+  left: 1278px;
+  top: 124px;
+}
+
+#turing {
+  position: absolute;
+  width: 500px;
+  left: 2011px;
+  top: 124px;
+}
+
+#leet {
+position: absolute;
+width: 300px;
+left: 1333px;
+top: 830px;
+}
+
+#ocr {
+  position: absolute;
+width: 500px;
+left: 1938px;
+top: 1031px;
+}
+
+#recaptcha {
+  position: absolute;
+  width: 350px;
+  left: 2641px;
+  top: 991px;
+}
+
+#captchavolume {
+  position: absolute;
+  width: 300px;
+  left: 1539px;
+  top: 1515px;
+}
+
+#captchalove {
+  position: absolute;
+width: 300px;
+left: 2235px;
+top: 1714px;
+}
+
+#captchaobj {
+  position: absolute;
+  width: 400px;
+  left: 1539px;
+  top: 2188px;
+}
+
+#captchadraw {
+  position: absolute;
+width: 400px;
+left: 2181px;
+top: 2508px;
+}
+
+#captchacook{
+  position: absolute;
+width: 500px;
+left: 2823px;
+top: 2239px;
+}
+
+#timecaptcha{
+  position: absolute;
+  width: 300px;
+  left: 3023px;
+  top: 1437px;
+}
+
+#captchamap{
+  position: absolute;
+  width: 300px;
+  left: 3837px;
+  top: 1524px;
+}
+
+#captcahfarm{
+  position: absolute;
+  width: 400px;
+  left: 3900px;
+  top: 2327px;
+}
+
+#captchacar{
+  position: absolute;
+  width: 300px;
+  left: 3023px;
+  top: 131px;
+}
+
+#sectexte{
+  position: absolute;
+  width: 500px;
+  left: 3691px;
+  top: 124px;
+}
+
+#captchanum{
+  position: absolute;
+  width: 300px;
+  left: 3541px;
+  top: 889px;
+}
+
+#captchaauto{
+  position: absolute;
+  width: 400px;
+  left: 4165px;
+  top: 547px;
+}
+
+#captcharobot{
+  position: absolute;
+  width: 560px;
+  left: 4928px;
+  top: 137px;
+  padding-right: 100px;
+}
+
+@media only screen and (max-width: 700px) {
+
+  .titre {
+    text-decoration: none;
+    position: relative;
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 14px;
+    color: black;
+  }
+
+  #indexwindow {
+  z-index: 98;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  bottom: 0px;
+  background-color: #FFD895;
+  display: none;
+  padding: 50px 15px 15px 15px;
+  overflow: scroll;
+}
+
+  #infowindow {
+    position: fixed;
+    top: 0;
+    left: 0px;
+    width: 93vw;
+    height:  auto;
+    /* bottom: 0px; */
+    background-color: #FFD895;
+    display: none;
+    padding: 50px 15px 15px 15px;
+    z-index: 98;
+    overflow: scroll;
+  }
+
+  .indexcontent{
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #A48B58;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    color: black !important;
+  }
+
+  .texteindex{
+      width: 30vw;
+      color: black !important;
+  }
+
+  .legendeindex {
+    width: 50vw;
+    margin-left: 10px;
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    color: black;
+    color: black !important;
+  }
