@@ -1,0 +1,24 @@
+html {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+/* hide scrollbar but allow scrolling */
+html {
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll; 
+}
+
+html::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+
+body{
+  background-color: burlywood;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+p {
+  margin: 0;
+}
