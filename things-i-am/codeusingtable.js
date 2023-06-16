@@ -33,7 +33,7 @@ $(document).ready(function () {
       let div = $(`<tr> 
         <td class="tool">` + row.tool +`</td>
         <td>` +  row.description + `</td>
-        <td><images src="img/` + row.filename + `.jpg"></td>
+        <td><img src="images/` + row.filename + `.jpg"></td>
         </tr>`)
       .appendTo("#content table"); // # refers to div id
   
