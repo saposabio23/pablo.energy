@@ -281,7 +281,7 @@ function click_on_tag(tagName, direction, projectPosition) {
   let indexDisplayedProject = displayedProjects.length - 1
 
   // on écrit le tag dans l'historique
-  let lastTag = document.createElement('span')
+  let lastTag = document.createElement('button')
   lastTag.innerHTML = tagName;
   lastTag.className = 'tagNormal';
   lastTag.dataset.indexDisplayedProject = indexDisplayedProject
@@ -362,23 +362,24 @@ function display_project(data, x, y) {
   newBlock.dataset.projectIndex = curProjectIndex++
   newBlock.className = 'newBlock'
   carto.appendChild(newBlock)
-
+  
   // memorise la position du projet dans la carto
   if (data.projectPosition === undefined) {
     data.projectPosition = { x: x, y: y }
   }
-
+  
   //crée l'image
   let image = document.createElement('img')
   image.src = './assets/img/' + filename + '.png'
   image.className = 'imageBlock'
   newBlock.appendChild(image)
-
+  
   //crée les buttons dans les coins
   create_image_corners_buttons(newBlock, data)
-
+  
   //crée le block d'informations
   let infoBlock = document.createElement('div')
+  newBlock.setAttribute = 'nochilddrag'
   infoBlock.className = 'infoBlock'
 
   let infoTitle = document.createElement('h3')
@@ -447,3 +448,4 @@ document.addEventListener("keydown", hideTagList)
 
 
 init()
+
