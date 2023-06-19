@@ -18,18 +18,22 @@ body {
 }
 
 a {
-    color: black;
     text-decoration: none;
     transition: all .3s ease-in-out;
-
-}
-
-a:visited {
     color: black;
+    border: 1px dotted black;
+    border-radius: 110px;
+    aspect-ratio: 1/1;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 
 a:hover {
-    text-decoration: underline;
+    background-color: var(--high);
     transition: all .3s ease-in-out;
 }
 
@@ -94,7 +98,7 @@ span {
     box-sizing: border-box;
 
     text-overflow: ellipsis;
-overflow: hidden;
+    overflow: hidden;
 }
 
 .songContent {
@@ -109,6 +113,11 @@ overflow: hidden;
     box-sizing: border-box;
     height: calc(var(--vh, 1vh) * 100);
 
+}
+
+.songs>div {
+    display: flex;
+    justify-content: space-between;
 }
 
 .songs {
@@ -142,7 +151,7 @@ overflow: hidden;
     .songContent {
         border: 0px solid var(--lines);
         width: 100vw;
-    height: calc(var(--vh, 1vh) * 100 - 100px);
+        height: calc(var(--vh, 1vh) * 100 - 100px);
 
 
     }

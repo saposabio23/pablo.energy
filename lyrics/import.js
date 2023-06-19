@@ -38,8 +38,11 @@ $(document).ready(function () {
         .appendTo("#blocks"); // # refers to div id
 
       let song = $(
-        `<div class="songs" id="` + row.list + `"> 
-      <h2>` + row.artist + `</h2>
+        `<div class="songs" id="` + row.list + `">
+        <div>
+        <h2>` + row.artist + `</h2>
+        <a href="` + row.url + `" target="_blank">▶❖</a>
+      </div>
       <h1>` + row.song + `</h1>
       <p>` + row.lyrics + `</p>`)
         .appendTo(".songContent"); // # refers to div id
