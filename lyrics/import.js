@@ -41,7 +41,7 @@ $(document).ready(function () {
         `<div class="songs" id="` + row.list + `">
         <div>
         <h2>` + row.artist + `</h2>
-        <a href="` + row.url + `" target="_blank">❖</a>
+        <a href="` + row.url + `" target="_blank">▶︎</a>
       </div>
       <h1>` + row.song + `</h1>
       <p>` + row.lyrics + `</p>`)
