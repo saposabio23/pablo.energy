@@ -103,7 +103,7 @@ span {
 
 .songContent {
     border: 1px solid var(--lines);
-    border-width: 0px 1px 1px 0px;
+    border-width: 0px 1px 0px 0px;
     line-height: 1.3;
     padding: var(--spacing);
 

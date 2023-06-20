@@ -24,10 +24,10 @@ $(document).ready(function () {
 
   $.getJSON("https://opensheet.elk.sh/" + SPREADSHEET_ID_AND_TAB, function (data) {
 
+    console.log(data);
 
     data.forEach(function (row, index) {
 
-      console.log(data.row);
 
       if (index == 0) return;
 
