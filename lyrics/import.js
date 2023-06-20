@@ -28,9 +28,6 @@ $(document).ready(function () {
 
     data.forEach(function (row, index) {
 
-
-      if (index == 0) return;
-
       let miniBlock = $(
         `<div class="miniBlock" id="` + row.list + `"> 
         <h3>` + row.artist + `</h3>
@@ -39,14 +36,12 @@ $(document).ready(function () {
 
       let song = $(
         `<div class="songs" id="` + row.list + `">
-        <div>
+        <button onclick="checkUrl(this)" url="` + row.url + `">▶︎</button>
         <h2>` + row.artist + `</h2>
-        <a href="` + row.url + `" target="_blank">▶︎</a>
-      </div>
       <h1>` + row.song + `</h1>
       <p>` + row.lyrics + `</p>`)
         .appendTo(".songContent"); // # refers to div id
-
     });
   });
 });
+

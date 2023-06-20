@@ -20,8 +20,8 @@ body {
 a {
     text-decoration: none;
     transition: all .3s ease-in-out;
-    color: black;
-    border: 1px dotted black;
+    color: var(--lines);
+    border: 1px dotted var(--lines);
     border-radius: 110px;
     aspect-ratio: 1/1;
     height: 25px;
@@ -29,11 +29,13 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 10px;
 }
 
 
 a:hover {
     background-color: var(--high);
+    color: var(--background);
     transition: all .3s ease-in-out;
 }
 
@@ -76,6 +78,9 @@ span {
     background-color: var(--high);
 }
 
+button {
+    margin-bottom: 5px;
+}
 
 #blocks {
     overflow-y: scroll;
@@ -84,6 +89,7 @@ span {
     width: 50vw;
     height: calc(var(--vh, 1vh) * 100);
     align-content: start;
+    overflow-y: scroll;
 }
 
 .miniBlock {
@@ -115,9 +121,10 @@ span {
 
 }
 
-.songs>div {
-    display: flex;
-    justify-content: space-between;
+#video {
+    position: fixed;
+    bottom: 0;
+    right: 0;
 }
 
 .songs {
@@ -175,5 +182,9 @@ span {
         height: 100px;
         width: 100px;
         overflow: visible;
+    }
+
+    #video {
+        display: none;
     }
 }

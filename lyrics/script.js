@@ -35,7 +35,17 @@ blocks.addEventListener('click', (event) => {
   songToLoad = event.target.id
   var thesong = document.getElementById(songToLoad);
   thesong.classList.add('show')
-
 })
+
+
+
+function checkUrl(e) {
+  var video = document.getElementById('video');
+
+  var urlNeeded = e.getAttribute('url');
+  console.log(urlNeeded)
+
+  video.src = 'https://www.youtube.com/embed/' + urlNeeded + '?autoplay=1'
+}
 
 
