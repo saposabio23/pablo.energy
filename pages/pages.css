@@ -1,0 +1,148 @@
+:root {
+
+  --white: snow;
+  --highlight: rgb(203, 203, 203);
+  --dark: dimgray;
+
+}
+
+html,
+body,
+div,
+p {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  font-family: 'rubikregular';
+  scrollbar-width: none;
+}
+
+
+html {
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  height: 100%;
+  width: 100%;
+  line-height: 1.4;
+  overflow: scroll;
+  overflow-x: hidden;
+  /* cursor: url(../pointer/blue.cur), pointer; */
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: var(--thisColor);
+}
+
+.secret {
+  display: none;
+}
+
+
+.contenu{
+  margin: 10px;
+  height: calc(100dvh - 20px);
+  width: calc(100dvw - 20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* -----------------------------------
+  TABLE LAYOUT
+-------------------------------------- */
+#header {
+  position: sticky;
+  top: 2px;
+}
+
+table {
+  width: 100%;
+  border-radius: 20px;
+  background-color: snow;
+  font-size: 1rem;
+  border: 1px solid black;
+  overflow: scroll;
+  height: 100%;
+}
+
+.tableHeader{
+  background-color: black;
+  color: white;
+}
+
+.tableHeader:first-child {
+  border-radius: 16px 0 0 0;
+
+}
+
+.tableHeader:last-child{
+  border-radius: 0 16px 0 0;
+
+}
+
+.tableHeader:hover {
+  cursor: pointer;
+}
+
+th {
+  box-shadow: 0 0 20px hsla(0, 0%, 0%, 0.1);
+  padding: 10px 24px;
+}
+
+th:hover {
+  background-color: aqua;
+}
+
+.enter > input{
+  background-color: black;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 20px;
+  border: navajowhite;
+  width: inherit;
+}
+
+.enter {
+  display: flex;
+  width: 100%;
+  margin: 10px 0 0 0;
+  position: relative;
+  bottom: 0;
+  flex-grow: revert-layer;
+}
+
+#button {
+  width: 80px;
+  margin-left: 2px;
+}
+
+/* -----------------------------------
+  PASSWORD PROTECTION
+-------------------------------------- */
+
+
+.hide{
+  opacity:0;
+  transition: all 1s ease-in-out;
+}
+
+.show{
+  display: revert;
+  transition: all 1s ease-in-out;
+}
+
+
+
+
+@media only screen and (max-width: 800px) {
+  th:nth-child(4) {
+    display:none;
+  }
+}
