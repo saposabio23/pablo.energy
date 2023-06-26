@@ -7,14 +7,15 @@ function init() {
 IPHONE HEIGHT
 // -------------------------------------- */
 
-// function mobileWindow() {
-//   let vh = window.innerHeight * 0.01;
-//   document.documentElement.style.setProperty('--vh', `${vh}px`);
-//   console.log("VH on mobiles", vh);
-// }
+function mobileWindow() {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+  console.log("VH on mobiles", vh);
+}
 
-// window.addEventListener("resize", mobileWindow, false);
-// window.addEventListener("orientationchange", mobileWindow, false);
+window.addEventListener("resize", mobileWindow, false);
+window.addEventListener("orientationchange", mobileWindow, false);
+
 
 
 /* -----------------------------------
@@ -57,11 +58,11 @@ function whatNew() {
   var frases = Array(
     'wazzzzup?',
     'giving ⚡️',
+    '⚡️⚡️⚡️',
     'lot of ⚡️ 4 the 🌏',
     "how's the day?",
     "have a good day!",
-    "send me a pic of your sky! 🌄",
-    "how many time you spend on internet today?")
+    "send me a pic of your sky! 🌄",)
 
   const queHay = document.getElementById("whatNew");
 
