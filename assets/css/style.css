@@ -90,6 +90,7 @@ SCREEN HOME
   width: 100vw;
   z-index: 2;
   position: relative;
+  display: block;
   -webkit-backdrop-filter: blur(10px) saturate(100%);
           backdrop-filter: blur(10px) saturate(100%);
   background-color: #fffafa69;
