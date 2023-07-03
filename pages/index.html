@@ -20,21 +20,20 @@
 <body>
 
   <div class="contenu">
-    <table id="music">
+    <table id="data">
       <tr data-sort-method='none' id="header">
-        <th class="tableHeader">Updated</th>
-        <th class="tableHeader">Title</th>
-        <th class="tableHeader">URL</th>
-        <th class="tableHeader">Description</th>
+        <td data-sort-default class="normalArrow" onclick="invertArrow(this)">Updated</td>
+        <td class="normalArrow" onclick="invertArrow(this)">Title</td>
+        <td data-sort-method='none' class="nopointer">Description</td>
       </tr>
     </table>
-
-    <!-- <form name="form" class="enter">
-      <input id="button" name="submit" placeholder="password"/>
-      <input id="texte" type='text' name='texte' placeholder="password" onkeypress="clickPress(event)" />
-    </form>
-     -->
   </div>
+
+  <form name="form" class="enter">
+    <input id="button" name="submit" style="display:none"/>
+    <input id="texte" type='text' name='texte' value='⊙.☉' onkeypress="clickPress(event)" />
+  </form>
+  
 
 
 

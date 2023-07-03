@@ -1,8 +1,15 @@
-:root {
+@import url(../assets/fonts/fonts.css);
 
+:root {
   --white: snow;
   --highlight: rgb(203, 203, 203);
   --dark: dimgray;
+
+  --secret: navajowhite;
+
+  --tran-short: all .s ease-in-out;
+  --tran-long: all 1s ease-in-out;
+
 
 }
 
@@ -28,12 +35,14 @@ html {
   line-height: 1.4;
   overflow: scroll;
   overflow-x: hidden;
+  font-size: 1rem;
+
   /* cursor: url(../pointer/blue.cur), pointer; */
 }
 
 * {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -42,85 +51,130 @@ body {
 
 .secret {
   display: none;
+  box-shadow: inset 0 0px 10px var(--thisColor);
 }
 
 
-.contenu{
+.contenu {
   margin: 10px;
-  height: calc(100dvh - 20px);
-  width: calc(100dvw - 20px);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
+
+.nopointer {
+  cursor: initial !important;
+}
+
 
 /* -----------------------------------
   TABLE LAYOUT
 -------------------------------------- */
 #header {
-  position: sticky;
-  top: 2px;
+  background-color: inherit;
 }
+
+
+.invertArrow:after {
+  border-width: 4px 4px 0px !important;
+}
+
+.normalArrow:hover:after {
+  visibility: visible;
+  cursor: pointer !important;
+
+}
+
+.normalArrow:after {
+  content: '';
+  float: right;
+  margin: .5rem 0 0 .5rem;
+  border-width: 0 4px 4px;
+  border-style: solid;
+  border-color: white transparent;
+  visibility: hidden;
+}
+
 
 table {
-  width: 100%;
   border-radius: 20px;
   background-color: snow;
-  font-size: 1rem;
-  border: 1px solid black;
   overflow: scroll;
-  height: 100%;
 }
 
-.tableHeader{
+#header td {
   background-color: black;
   color: white;
 }
 
-.tableHeader:first-child {
+#header td:first-child {
   border-radius: 16px 0 0 0;
 
 }
 
-.tableHeader:last-child{
+#header td:last-child {
   border-radius: 0 16px 0 0;
 
 }
 
-.tableHeader:hover {
-  cursor: pointer;
-}
 
-th {
+td {
   box-shadow: 0 0 20px hsla(0, 0%, 0%, 0.1);
   padding: 10px 24px;
+  text-transform: capitalize;
 }
 
-th:hover {
-  background-color: aqua;
+tr {
+  transition: var(--tran-short);
+
 }
 
-.enter > input{
+tr:hover {
+  background-color: grey;
+  color: white;
+  cursor: pointer;
+  transition: var(--tran-short);
+}
+
+
+
+.enter>input {
   background-color: black;
   color: white;
   padding: 10px 24px;
-  border-radius: 20px;
-  border: navajowhite;
-  width: inherit;
+  border-radius: 50%;
+  width: 150px;
+  border: none;
+  height: 150px;
+  text-align: center;
+  font-size: 3rem;
+
+  animation: tourning 10s linear infinite;
+  transition: var(--tran-long);
+
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+
+  outline: none;
 }
 
-.enter {
-  display: flex;
-  width: 100%;
-  margin: 10px 0 0 0;
-  position: relative;
-  bottom: 0;
-  flex-grow: revert-layer;
+@keyframes tourning {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-#button {
-  width: 80px;
-  margin-left: 2px;
+.badpass {
+  font-size: 15rem !important;
+  height: calc(100vh - 4px) !important;
+  width: calc(100vh - 4px) !important;
+  bottom: 2px !important;
+  right: calc(50vw - 50vh) !important;
+  position: fixed !important;
+  max-width: 100vw !important;
+
 }
 
 /* -----------------------------------
@@ -128,21 +182,20 @@ th:hover {
 -------------------------------------- */
 
 
-.hide{
-  opacity:0;
-  transition: all 1s ease-in-out;
+.hide {
+  opacity: 0;
+  transition: var(--tran-short);
 }
 
-.show{
+.show {
   display: revert;
-  transition: all 1s ease-in-out;
+  transition: var(--tran-short);
 }
-
 
 
 
 @media only screen and (max-width: 800px) {
-  th:nth-child(4) {
-    display:none;
+  td:nth-child(4) {
+    display: none;
   }
 }

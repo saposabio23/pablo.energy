@@ -1,6 +1,17 @@
 const table = document.querySelector('tbody')
 
-function init() {
+function init () {
+  createData()
+  
+  var table = document.getElementById('data');
+  var sort = new Tablesort(table);
+  // new Tablesort(table), {
+  //   descending: false
+  // };
+
+}
+
+function createData() {
   console.log(allData)
 
   allData.forEach(function (allData) {
@@ -12,31 +23,41 @@ function init() {
 
     let block = document.createElement("tr");
     block.className = allData.status;
+    block.setAttribute("onClick", "location.href='" + allData.url + "'");
 
-    let updated = document.createElement("th");
+
+
+    let updated = document.createElement("td");
     updated.innerHTML = allData.updated;
     block.appendChild(updated);
 
-    let title = document.createElement("th");
+    let title = document.createElement("td");
     title.innerHTML = allData.title;
     title.id = 'change';
     block.appendChild(title);
 
-
-    let url = document.createElement("th");
-    url.innerHTML = "<a href=" + allData.url + ">☞</a>"
-    block.appendChild(url);
-
-    let description = document.createElement("th");
+    let description = document.createElement("td");
     description.innerHTML = allData.description;
     block.appendChild(description);
 
     table.appendChild(block);
-
   });
+
+
 }
 
-new Tablesort(document.getElementById('music'));
+// var arrowUp1 = document.querySelector('.normalArrow1')
+
+// function invertArrow () {
+//   arrowUp1.classList.toggle("invertArrow");
+// }
+// arrowUp1.addEventListener('click', invertArrow);
+
+
+function invertArrow(e) {
+  e.classList.toggle("invertArrow");
+}
+
 
 
 init()
@@ -46,28 +67,30 @@ var $enquin = document.querySelector('.enter');
 const secret = document.querySelectorAll('.secret')
 
 function showSecrets() {
-  for(let i = 0, max = secret.length; i < max; i++){
+  for (let i = 0, max = secret.length; i < max; i++) {
     secret[i].classList.add("show");
   }
 }
 
 function clickPress(event) {
-    if (event.key == "Enter") {
-        var passw = "sagesse";
-        if(document.form.texte.value.match(passw)) { 
-          showSecrets()
-        }
-        else { 
-            document.querySelector('.enter').classList.add("hide");
-            // setTimeout(function(){
-            //     window.location.reload();
-            // }, 1000);
-        }
+  if (event.key == "Enter") {
+    const passw = "23";
+    if (document.form.texte.value.match(passw)) {
+      showSecrets()
+      document.querySelector('#texte').classList.remove('badpass');
+      document.querySelector('.contenu').style.display = 'block';
+
     }
+    else {
+      document.querySelector('#texte').classList.add('badpass');
+      document.querySelector('#texte').value = '⊙.☉';
+      document.querySelector('.contenu').style.display = 'none';
+    }
+  }
 }
 
 
-document.addEventListener("keypress", function(event) {
+document.addEventListener("keypress", function (event) {
   if (event.keyCode == 83) {
     showSecrets()
   }

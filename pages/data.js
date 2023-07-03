@@ -37,12 +37,12 @@ let allData = [
   {
     title: 'glace-sans-tain',
     updated: '2021',
-    url: 'glace-sans-tain',
+    url: '/glace-sans-tain',
     description: 'nananan',
     status: ''
   },
   {
-    title: 'juliettaytristan',
+    title: 'julietta y tristan',
     updated: '2021',
     url: '/juliettaytristan',
     description: 'nananan',
