@@ -14,7 +14,8 @@ body {
     font-family: "Inter";
     background-color: var(--background);
     display: flex;
-    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 
@@ -87,6 +88,12 @@ height: 90vh;
     opacity: 0.3;
 }
 
+span {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    font-size: 80%;
+}
 
 @media screen and (max-width: 800px) {
 
