@@ -8,7 +8,6 @@ function init () {
   // new Tablesort(table), {
   //   descending: false
   // };
-
 }
 
 function createData() {
@@ -42,36 +41,28 @@ function createData() {
 
     table.appendChild(block);
   });
-
-
 }
-
-// var arrowUp1 = document.querySelector('.normalArrow1')
-
-// function invertArrow () {
-//   arrowUp1.classList.toggle("invertArrow");
-// }
-// arrowUp1.addEventListener('click', invertArrow);
-
 
 function invertArrow(e) {
   e.classList.toggle("invertArrow");
 }
 
-
-
 init()
 
-/* --------------PASSW------------- */
-var $enquin = document.querySelector('.enter');
+
+
+// THIS IS ABOUT THE PASSWORD
 const secret = document.querySelectorAll('.secret')
 
+
+// here when the passwords matchs it show the hidden
 function showSecrets() {
   for (let i = 0, max = secret.length; i < max; i++) {
     secret[i].classList.add("show");
   }
 }
 
+// the password script
 function clickPress(event) {
   if (event.key == "Enter") {
     const passw = "23";
@@ -88,11 +79,3 @@ function clickPress(event) {
     }
   }
 }
-
-
-document.addEventListener("keypress", function (event) {
-  if (event.keyCode == 83) {
-    showSecrets()
-  }
-});
-/* --------------EACH COLOR------------- */
