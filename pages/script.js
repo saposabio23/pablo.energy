@@ -24,8 +24,6 @@ function createData() {
     block.className = allData.status;
     block.setAttribute("onClick", "location.href='" + allData.url + "'");
 
-
-
     let updated = document.createElement("td");
     updated.innerHTML = allData.updated;
     block.appendChild(updated);
