@@ -1,0 +1,387 @@
+:root {
+  --font-std: 1rem;
+  --font-little: 0.8rem;
+
+  --font--regular: 400;
+  --font--bold: 600;
+
+  --spacing-s: 15px;
+  --spacing-m: 30px;
+  --spacing-l: 50px;
+  --spacing-xl: 70px;
+
+  --border: 10px;
+
+  --highlight: rgba(0, 0, 0, .20);
+  --highlight-hover: rgba(0, 0, 0, .05);
+
+  --color-primary: #484F3A;
+  --color-text: #FDF7CC;
+  
+  --transition-short: all .3s ease-in-out;
+  --transition-long: all .6s ease-in-out;
+}
+
+  html::-webkit-scrollbar {
+    width: 8px;
+    height: 6px;
+  }
+  html::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: transparent;
+  }
+  html::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: var(--highlight);
+    border: 1px solid var(--highlight-hover);
+  }
+  html::-webkit-scrollbar-thumb:hover{
+  	background: var(--highlight-hover);
+  }
+  html::-webkit-scrollbar-thumb:active{
+  	background: var(--highlight);
+  }
+
+
+
+html,
+body,
+div,
+p {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary);
+}
+
+p {
+  margin-bottom: var(--spacing-m);
+}
+
+
+body{
+  background-color: var(--color-primary);
+  font-size: var(--font-std);
+  font-family: 'rubikregular';
+  line-height: 1.4;
+  overflow-x: hidden;
+  color: var(--color-text);
+}
+
+/*/////////////// HOME /////////////////*/
+
+.header {
+  width: calc(100vw);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-little);
+  background-color: var(--color-primary);
+  top: 0;
+  padding: var(--spacing-m) var(--spacing-l);
+  align-content: center;
+  align-items: center;
+}
+
+.contact > a {
+  margin-left: var(--spacing-s);
+  border-radius: var(--border);
+  padding: 15px 15px 12px 15px;
+  transition: var(--transition-short);
+  background-color: var(--highlight);
+  border: 1px solid var(--color-text);;
+}
+
+.contact > a:hover {
+  background-color: var(--highlight-hover);
+  cursor: pointer;
+}
+
+
+h1{
+  font-size: 1.8rem;
+  transition: var(--transition-short);
+}
+
+h1:hover, #rel:hover, .descrip a:hover{
+  opacity: .3;
+  transition: var(--transition-short);
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: var(--spacing-xl);
+}
+
+h3{
+  font-size: 1.8rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: var(--font--bold);
+  margin-bottom: var(--spacing-s);
+}
+
+
+/*/////////////// CARDS /////////////////*/
+.contenu{
+  max-width: 60rem;
+  margin: auto;
+  padding: var(--spacing-l) var(--spacing-l) var(--spacing-s) var(--spacing-l);
+  display: flex;
+align-items: center;
+flex-direction: column;
+}
+
+.center {
+  display: flex;
+  justify-content: center;  
+}
+
+.firma{
+  font-size: 1rem;
+  color: var(--highlight);
+  text-align: center;
+  bottom: var(--spacing-s);
+  position: absolute;
+  margin: auto;
+  width: 100vw;
+}
+
+.cards{
+  display: flex;
+  grid-gap: var(--spacing-m);
+  height: calc(100vh - var(--spacing-l)*4);
+  margin: auto;
+  padding: var(--spacing-l) var(--spacing-l) var(--spacing-l) var(--spacing-l);
+}
+
+.card {
+  border-radius: var(--border);
+  text-align: center;
+  box-shadow: 0 0 10px 1px var(--highlight);
+  transition: var(--transition-short);
+  height: auto;
+  width: 100%;
+}
+
+.card:hover{
+  transition: var(--transition-short);
+}
+
+#card1{
+  background-image: url("../../img/planetario_1.webp");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-color: var(--color-primary);
+}
+
+#card2{
+  background-image: url("../../img/portugal_1.webp");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-color: var(--color-primary);
+}
+
+#card3{
+  background-image: url("../../img/multisport_8.webp");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-color: var(--color-primary);
+}
+
+#card4{
+  background-image: url("../../img/ascensor_1.webp");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-color: var(--color-primary);
+}
+
+#card5{
+  background-image: url("../../img/residencia_1.webp");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-color: var(--color-primary);
+}
+
+#card6{
+  background-image: url("../../img/pielagos_1.webp");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-color: var(--color-primary);
+}
+
+#card7{
+  background-image: url("../../img/museo_2.webp");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-color: var(--color-primary);
+}
+
+.filter {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border);
+  align-content: center;
+  display: grid;
+  transition: var(--transition-short);
+  opacity: 0;
+  background-color: black;
+}
+
+.filter:hover {
+  cursor: pointer;
+  opacity: .4;
+  transition: var(--transition-short);
+}
+
+/*/////////////// PROJECTS /////////////////*/
+
+.iframe {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: calc(var(--border) + 3px);
+  margin-bottom: var(--spacing-l);
+  background-color: black;
+  object-fit: cover;
+  width: 100%;
+}
+
+iframe {
+  border-radius: var(--border);
+}
+
+.projets img {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  object-fit: cover;
+  border-radius: var(--border);
+}
+
+.iframe:nth-last-child(1) {
+  margin-bottom: var(--spacing-s);
+}
+
+.close {
+  width: 30px;
+  height: 30px;
+  padding: 15px;
+  box-sizing: content-box;
+  border-radius: 50%;
+  margin: var(--spacing-m) auto var(--spacing-m) auto;
+  transition: var(--transition-short);
+  background-color: var(--highlight);
+  border: 1px solid var(--highlight-hover);
+  display: block;
+}
+
+.close:hover {
+  background-color: var(--highlight-hover);
+  cursor: pointer;
+}
+
+.descrip {
+  margin: var(--spacing-s) 0 var(--spacing-s) 0;
+  max-width: 35rem;
+}
+
+.descrip a {
+  text-decoration: underline;
+}
+
+.images{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-m);
+}
+
+
+/*/////////////// CONTACT /////////////////*/
+
+.center-contact{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 60vh;
+  justify-content: space-between;
+  align-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.gauche{
+  border-right: 1px solid var(--highlight);
+}
+
+.center-contact a {
+  border-radius: var(--border);
+  padding: var(--spacing-s);
+  transition: var(--transition-short);
+  background-color: var(--highlight);
+  border: 1px solid var(--highlight-hover);
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.center-contact a:hover {
+  background-color: var(--highlight-hover);
+  cursor: pointer;
+}
+
+.center-contact img{
+  max-width: 100px;
+  max-height: 100px;
+  width: auto;
+  height: auto;
+}
+
+.filter-color{
+  filter: invert(96%) sepia(79%) saturate(321%) hue-rotate(358deg) brightness(108%) contrast(98%);
+}
+/*/////////////// A PROPOS /////////////////*/
+
+.center-apropos{
+  display: flex;
+  gap: var(--spacing-l);
+  height: fit-content;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  max-width: 100%;
+  width: 700px;
+}
+
+.center-apropos p{
+  margin-bottom: var(--spacing-m);
+}
+
+.center-apropos a{
+  text-decoration: underline;
+}
+
+.center-apropos a:hover{
+}
+
+.center-apropos img{
+  border-radius: 50%;
+  max-width: 200px;
+  border: 1px solid var(--color-text);
+}
+
+  #line{
+  display: none;
+}
