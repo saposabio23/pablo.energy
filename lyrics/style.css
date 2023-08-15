@@ -87,7 +87,7 @@ button {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: 50vw;
-    height: calc(var(--vh, 1vh) * 100);
+    height: calc(var(--vh, 1vh) * 65);
     align-content: start;
     overflow-y: scroll;
 }
@@ -105,6 +105,7 @@ button {
 
     text-overflow: ellipsis;
     overflow: hidden;
+    height: 100%;
 }
 
 .songContent {
@@ -125,6 +126,9 @@ button {
     position: fixed;
     bottom: 0;
     right: 0;
+    width: calc(50vw);
+    border: none;
+    height: 35vh;
 }
 
 .songs {
@@ -142,15 +146,31 @@ button {
 
 }
 
-#credits {
+#spreadsheet {
+    display: none;
     position: fixed;
-    bottom: 0;
-    right: 0;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #00000085;
+    border: none;
+}
+
+.showspread {
+    display: block !important;
+}
+
+#open {
+    position: fixed;
+    bottom: 5px;
+    left: 50vw;
+    transform: translateX(-50%);
+    width: fit-content;
+    z-index: 99;
     border: 1px solid var(--lines);
-    background-color: var(--high);
-    border-width: 1px 0px 0px 1px;
-    padding: 4px 8px;
-    font-size: 80%;
+    border-radius: 5px;
+    padding: 3px 7px;
 }
 
 @media screen and (max-width: 800px) {
@@ -184,7 +204,9 @@ button {
         overflow: visible;
     }
 
-    #video {
+    #video,
+    #open {
         display: none;
     }
+
 }

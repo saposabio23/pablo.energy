@@ -23,7 +23,7 @@ var close = document.querySelector('#close');
 
 function hideSong() {
   var songs = document.querySelectorAll('.songs');
-  for(let i = 0, max = songs.length; i < max; i++){
+  for (let i = 0, max = songs.length; i < max; i++) {
     songs[i].classList.remove("show");
   }
 }
@@ -49,3 +49,30 @@ function checkUrl(e) {
 }
 
 
+
+
+var spreadsheet = document.querySelector('#spreadsheet');
+var open = document.querySelector('#open');
+
+function whatToDo() {
+  if (spreadsheet.classList.contains("showspread")) {
+    closeSpreadsheet()
+  }
+  else {
+    openSpreadsheet()
+  }
+}
+
+function openSpreadsheet() {
+  spreadsheet.classList.add("showspread");
+  open.innerHTML = 'close spreadsheet'
+}
+
+function closeSpreadsheet() {
+  spreadsheet.classList.remove("showspread");
+  open.innerHTML = 'open spreadsheet'
+}
+
+
+
+open.addEventListener("click", whatToDo);
