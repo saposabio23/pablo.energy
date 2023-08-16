@@ -13,12 +13,16 @@
 body {
     font-family: "Inter";
     background-color: var(--background);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 100vw;
 }
 
 a {
     text-decoration: none;
+    -webkit-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
     color: var(--lines);
     border: 1px dotted var(--lines);
@@ -26,9 +30,15 @@ a {
     aspect-ratio: 1/1;
     height: 25px;
     width: 25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-bottom: 10px;
 }
 
@@ -36,6 +46,8 @@ a {
 a:hover {
     background-color: var(--high);
     color: var(--background);
+    -webkit-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
 }
 
@@ -92,7 +104,8 @@ button {
     grid-template-columns: repeat(3, 1fr);
     width: 50vw;
     height: calc(var(--vh, 1vh) * 65);
-    align-content: start;
+    -ms-flex-line-pack: start;
+        align-content: start;
     overflow-y: scroll;
 }
 
@@ -102,12 +115,17 @@ button {
     border: 1px solid var(--lines);
     border-width: 0px 1px 1px 0px;
     padding: 4px 8px;
+    -webkit-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
     aspect-ratio: 1/1;
     text-transform: initial;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 
-    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+
+       text-overflow: ellipsis;
     overflow: hidden;
     height: 100%;
 }
@@ -121,7 +139,8 @@ button {
     width: 50vw;
 
     overflow-y: scroll;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     height: calc(var(--vh, 1vh) * 100);
 
 }
@@ -146,6 +165,8 @@ button {
 .miniBlock:hover,
 .miniBlock:active {
     background-color: var(--high);
+    -webkit-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
 
 }
@@ -155,7 +176,8 @@ button {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     padding: 25px;
     background-color: transparent;
     border: none;
@@ -171,7 +193,9 @@ button {
     position: fixed;
     bottom: 10px;
     left: 50vw;
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
@@ -193,9 +217,12 @@ button {
 
     #blocks {
         overflow-x: scroll;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         width: 100vw;
-        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
         position: fixed;
         bottom: 0;
         border: 1px solid var(--lines);
