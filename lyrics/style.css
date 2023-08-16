@@ -60,6 +60,8 @@ h3 {
     margin-bottom: 4px;
     font-weight: 600;
     text-transform: uppercase;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
 }
 
@@ -67,6 +69,8 @@ h4 {
     margin: 0;
     font-size: 100%;
     font-weight: 400;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
 }
 
@@ -155,7 +159,8 @@ button {
     padding: 25px;
     background-color: transparent;
     border: none;
-    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
 }
 
 .showspread {
@@ -167,6 +172,8 @@ button {
     bottom: 10px;
     left: 50vw;
     transform: translateX(-50%);
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     z-index: 99;
     border: 1px solid var(--lines);
@@ -193,6 +200,8 @@ button {
         bottom: 0;
         border: 1px solid var(--lines);
         border-width: 1px 0 0 0;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
         height: fit-content;
 
 
