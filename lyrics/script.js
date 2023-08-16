@@ -73,6 +73,7 @@ function openSpreadsheet() {
       setTimeout(function () {
         open.innerHTML = 'wait...'
         setTimeout(function () {
+          spreadsheet.style.filter = "blur(0px)";
           open.innerHTML = 'close'
         }, 1000)
       }, 1000)
@@ -83,6 +84,7 @@ function openSpreadsheet() {
 
 function closeSpreadsheet() {
   spreadsheet.src = ""
+  spreadsheet.removeAttribute("style")
   spreadsheet.classList.remove("showspread");
   open.innerHTML = 'add + lyrics'
 }

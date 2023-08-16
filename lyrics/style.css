@@ -34,11 +34,11 @@ a {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     margin-bottom: 10px;
 }
 
@@ -105,7 +105,7 @@ button {
     width: 50vw;
     height: calc(var(--vh, 1vh) * 65);
     -ms-flex-line-pack: start;
-        align-content: start;
+    align-content: start;
     overflow-y: scroll;
 }
 
@@ -121,11 +121,11 @@ button {
     aspect-ratio: 1/1;
     text-transform: initial;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
 
     -o-text-overflow: ellipsis;
 
-       text-overflow: ellipsis;
+    text-overflow: ellipsis;
     overflow: hidden;
     height: 100%;
 }
@@ -140,7 +140,7 @@ button {
 
     overflow-y: scroll;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     height: calc(var(--vh, 1vh) * 100);
 
 }
@@ -173,16 +173,17 @@ button {
 
 #spreadsheet {
     display: none;
+
     position: fixed;
     width: 100vw;
     height: 100vh;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     padding: 25px;
-    background-color: transparent;
+    background-color: #000000b2;
     border: none;
-    -webkit-backdrop-filter: blur(4px);
-            backdrop-filter: blur(4px);
+    -webkit-filter: blur(4px);
+    filter: blur(4px);
 }
 
 .showspread {
@@ -194,8 +195,8 @@ button {
     bottom: 10px;
     left: 50vw;
     -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-            transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
@@ -222,7 +223,7 @@ button {
         display: flex;
         width: 100vw;
         -webkit-box-sizing: border-box;
-                box-sizing: border-box;
+        box-sizing: border-box;
         position: fixed;
         bottom: 0;
         border: 1px solid var(--lines);
