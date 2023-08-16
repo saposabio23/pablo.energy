@@ -118,7 +118,6 @@ table {
 td {
   box-shadow: 0 0 20px hsla(0, 0%, 0%, 0.1);
   padding: 10px 24px;
-  text-transform: capitalize;
 }
 
 tr {

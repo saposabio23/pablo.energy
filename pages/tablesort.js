@@ -5,7 +5,9 @@
     if (!el || el.tagName !== 'TABLE') {
       throw new Error('Element must be a table');
     }
-    this.init(el, options || {});
+    this.init(el, options || {
+        descending: true
+    });
   }
 
   var sortOptions = [];
@@ -275,4 +277,5 @@
     window.Tablesort = Tablesort;
   }
 })();
+
 
