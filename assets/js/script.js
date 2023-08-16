@@ -57,12 +57,11 @@ observer.observe(document.querySelector("#app"))
 function whatNew() {
   var frases = Array(
     'wazzzzup?',
-    'giving ⚡️',
     '⚡️⚡️⚡️',
-    'lot of ⚡️ 4 the 🌏',
+    'lot of ⚡️ 4 u',
+    'around the 🌏',
     "how's the day?",
-    "have a good day!",
-    "send me a pic of your sky! 🌄",)
+    "have a good day!",)
 
   const queHay = document.getElementById("whatNew");
 
