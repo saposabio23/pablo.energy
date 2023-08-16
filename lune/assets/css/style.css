@@ -1,0 +1,188 @@
+@import url("../../../assets/fonts/fonts.css");
+
+body {
+    font-family: "Inter";
+    font-weight: 400;
+    background-color: black;
+}
+
+body:hover {
+    cursor: pointer;
+}
+
+.night {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    top: 0;
+    left: 0;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.sky {
+    background-image: -o-radial-gradient(circle, transparent 20vmin, darkslateblue 100vmin);
+    background-image: radial-gradient(circle, transparent 20vmin, darkslateblue 100vmin);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    -webkit-animation: sky 5s linear;
+            animation: sky 5s linear;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+}
+
+@-webkit-keyframes sky {
+    0% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.7);
+                transform: scale(1.7);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+}
+
+@keyframes sky {
+    0% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.5);
+                transform: scale(1.5);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+}
+
+.moon {
+    height: 90vmin;
+}
+
+.info {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    top: 0;
+    left: 0;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    z-index: 2;
+
+    color: snow;
+    background-image: -o-radial-gradient(circle, rgba(0, 0, 0, 0.5) 0vmin, black 100vmin);
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.5) 0vmin, black 100vmin);
+    opacity: 0;
+
+    -webkit-transition: all 3s ease-in-out;
+
+    -o-transition: all 3s ease-in-out;
+
+    transition: all 3s ease-in-out;
+}
+
+.opening {
+    -webkit-animation: opening 3s ease-in-out forwards;
+    animation: opening 3s ease-in-out forwards;
+}
+
+@-webkit-keyframes opening {
+    0% {
+        opacity: 0;
+        display: none;
+    }
+
+    99% {
+        display: none;
+    }
+
+    100% {
+        opacity: 1;
+        display: block;
+    }
+}
+
+@keyframes opening {
+    0% {
+        opacity: 0;
+        display: none;
+    }
+
+    99% {
+        display: none;
+    }
+
+    100% {
+        opacity: 1;
+        display: block;
+    }
+}
+
+.closing {
+    -webkit-animation: closing 2s ease-in-out forwards;
+    animation: closing 2s ease-in-out forwards;
+}
+
+@-webkit-keyframes closing {
+    0% {
+        opacity: 1;
+        display: block;
+    }
+
+    99% {
+        display: block;
+    }
+
+    100% {
+
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes closing {
+    0% {
+        opacity: 1;
+        display: block;
+    }
+
+    99% {
+        display: block;
+    }
+
+    100% {
+
+        opacity: 0;
+        display: none;
+    }
+}
