@@ -152,9 +152,10 @@ button {
     width: 100vw;
     height: 100vh;
     box-sizing: border-box;
-    padding: 20px;
-    background-color: #00000085;
+    padding: 25px;
+    background-color: transparent;
     border: none;
+    backdrop-filter: blur(4px);
 }
 
 .showspread {
@@ -163,7 +164,7 @@ button {
 
 #open {
     position: fixed;
-    bottom: 5px;
+    bottom: 10px;
     left: 50vw;
     transform: translateX(-50%);
     width: fit-content;

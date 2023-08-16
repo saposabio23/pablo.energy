@@ -64,15 +64,27 @@ function whatToDo() {
 }
 
 function openSpreadsheet() {
+  spreadsheet.src = "https://docs.google.com/spreadsheets/d/1RfXl7_9w-Sz1luLR-E_XNnl5DG4kEL4grT9gPMiO1tI/edit#gid=0";
   spreadsheet.classList.add("showspread");
-  open.innerHTML = 'close spreadsheet'
+  setTimeout(function () {
+    open.innerHTML = 'wait.'
+    setTimeout(function () {
+      open.innerHTML = 'wait..'
+      setTimeout(function () {
+        open.innerHTML = 'wait...'
+        setTimeout(function () {
+          open.innerHTML = 'close'
+        }, 1000)
+      }, 1000)
+    }, 1000)
+  }, 0)
+
 }
 
 function closeSpreadsheet() {
+  spreadsheet.src = ""
   spreadsheet.classList.remove("showspread");
-  open.innerHTML = 'open spreadsheet'
+  open.innerHTML = 'add + lyrics'
 }
-
-
 
 open.addEventListener("click", whatToDo);
