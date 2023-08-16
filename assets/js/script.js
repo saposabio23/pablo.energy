@@ -1,4 +1,5 @@
 function init() {
+  mobileWindow()
   isItNight()
   whatNew()
 }
