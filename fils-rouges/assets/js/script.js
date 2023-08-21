@@ -32,8 +32,8 @@ var box1 = document.querySelector('.overlayg')
 var box2 = document.querySelector('.overlayd')
 
 function switchHoles(){
-    box1.classList.toggle("hide");
-    box2.classList.toggle("hide");
+    box1.classList.toggle("show");
+    box2.classList.toggle("show");
 }
 
 trous.addEventListener('click', switchHoles)

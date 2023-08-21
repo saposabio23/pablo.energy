@@ -216,7 +216,7 @@ P {
 
     z-index: 2;
 
-    /* display: none; */
+    display: none;
 }
 
 .hide {
