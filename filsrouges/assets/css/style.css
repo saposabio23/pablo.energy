@@ -1,0 +1,380 @@
+@font-face {
+    font-family: 'boris';
+    src: url('../fonts/boris-webfont.woff2') format('woff2'),
+        url('../fonts/boris-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+:root {
+    --spacing-l: 30px;
+    --spacing-m: 20px;
+    --spacing-s: 10px;
+
+    --color-primary: red;
+
+    --radius-soft: 10px;
+    --radius-hard: 20px;
+
+    --font-super: 4rem;
+    --font-big: 1.7rem;
+    --font-normal: 1.5rem;
+    --font-small: 1.2rem;
+
+}
+
+html,
+body,
+div,
+p {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    /* scrollbar-width: none; */
+    color: var(--color-primary);
+}
+
+body {
+    background-color: var(--color-primary);
+}
+
+body::-webkit-scrollbar {
+    /* display: none; */
+}
+
+html {
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+    font-family: 'boris', Arial, Helvetica, sans-serif;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: underline;
+    color: inherit;
+    display: inline;
+    text-decoration-style: dashed;
+}
+
+a:hover {
+    color: inherit;
+    animation: clignottement .1s infinite linear;
+}
+
+@keyframes clignottement {
+    0% {
+        color: var(--color-primary);
+    }
+
+    100% {
+        color: white;
+    }
+}
+
+
+/* TITRES */
+h1 {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    top: var(--spacing-m);
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    z-index: 3;
+
+    font-size: var(--font-super);
+
+    text-shadow: 0 0 3px var(--color-primary);
+}
+
+h1>a,
+h2>a {
+    text-decoration: none;
+}
+
+h2 {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    bottom: var(--spacing-m);
+    font-weight: 100;
+    text-decoration: none;
+    color: white;
+    z-index: 3;
+
+    font-size: 2rem;
+    text-shadow: 0 0 2px var(--color-primary);
+
+}
+
+h3 {
+    margin: 0;
+    text-align: center;
+    /* text-transform: uppercase; */
+    font-size: 1.7rem;
+}
+
+
+h4 {
+    margin: 0;
+    text-align: center;
+    font-size: 1.7rem;
+}
+
+
+/* MISCELANIOUS */
+small {
+    margin: 5px 0 var(--spacing-s) 0;
+    border: 1px dashed var(--color-primary);
+    border-radius: 999px;
+    padding: 8px 10px 5px 10px;
+    opacity: 1;
+    text-align: center;
+    max-width: 400px;
+
+    font-size: 1rem;
+}
+
+P {
+    text-align: center;
+    width: 80%;
+    font-size: 1.2rem;
+
+}
+
+.gauche img {
+    width: 100%;
+    border-radius: 50%;
+    height: 100%;
+    object-fit: cover;
+
+    filter: grayscale(100%) sepia(100%) hue-rotate(300deg);
+
+}
+
+.big a, .big p{
+    font-size: 2rem;
+}
+
+
+
+.center {
+    text-align: center;
+}
+
+.mood {
+    height: 15px;
+    width: 15px;
+    background-color: grey;
+    border-radius: 50%;
+}
+
+.final p {
+    margin-bottom: var(--spacing-s) !important;
+}
+
+/* OVERLAYS */
+.box {
+    margin: auto;
+    position: fixed;
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    background-color: transparent;
+    align-items: center;
+    pointer-events: none;
+
+    background-image: url(../red_vert.svg);
+    background-position: center;
+    background-size: cover;
+
+    z-index: 2;
+
+    display: none;
+}
+
+.overlayd {
+    right: 0;
+    width: calc(50vw + 1px);
+}
+
+.overlayg {
+    left: 0;
+    width: calc(50vw + 1px);
+}
+
+
+/* BLOCKS */
+
+.block {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+
+    align-content: center;
+
+    justify-content: space-around;
+    align-items: center;
+
+    z-index: 1;
+    position: relative;
+}
+
+.cote {
+    height: 44vw;
+    width: 44vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid white;
+    box-shadow: 0 0px 40px hsla(0, 0%, 0%, 0.1);
+
+}
+
+.gauche {}
+
+.droite {
+    padding: 30px;
+}
+
+
+
+.turn {
+    animation: tourning 4s linear infinite;
+}
+
+@keyframes tourning {
+0% {
+  transform: rotate(0);
+}
+
+100% {
+  transform: rotate(360deg);
+}
+}
+
+
+/* LIGNES */
+
+.line {
+    position: fixed;
+    z-index: 0;
+    height: 100vh;
+    width: 2px;
+    top: 0;
+    /* background-color: white; */
+    border: 1.5px dashed white;
+}
+
+.one {
+    top: 0;
+    left: 25vw;
+}
+
+.two {
+    top: 0;
+    right: 25vw;
+}
+
+.three {
+    height: 2px;
+    width: 100vw;
+    top: 50vh;
+    left: 0;
+}
+
+
+@media screen and (max-width: 700px) and (orientation: portrait) {
+    h1 {
+        transform: rotate(-180deg);
+        width: fit-content;
+        writing-mode: vertical-rl;
+        left: var(--spacing-s);
+        top: 0;
+        height: 100vh;
+        text-align: center;
+
+        font-size: var(--font-normal);
+    }
+
+    h2 {
+        writing-mode: vertical-rl;
+        right: var(--spacing-s);
+        top: 0;
+        width: inherit;
+        height: 100vh;
+        text-align: center;
+
+        font-size: var(--font-normal);
+    }
+
+    p {
+        width: 100%;
+    }
+
+    .normal {
+        font-size: var(--font-small);
+    }
+
+    .one {
+        top: 0;
+        left: 50vw;
+    }
+
+    .two {
+        display: none;
+    }
+
+    .three {
+        display: none;
+    }
+
+    .box {
+        width: 100vw !important;
+        height: 50vh;
+        background-image: url(../red_hor.svg) !important;
+    }
+
+    .overlayd {
+        top: 0;
+    }
+
+    .overlayg {
+        bottom: 0px;
+        height: calc(50vh + 1px);
+    }
+
+    .block {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .cote {
+        height: 45vh;
+        width: 45vh;
+        display: flex;
+    }
+
+
+}

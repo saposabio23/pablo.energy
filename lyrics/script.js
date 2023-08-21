@@ -86,7 +86,7 @@ function closeSpreadsheet() {
   spreadsheet.src = ""
   spreadsheet.removeAttribute("style")
   spreadsheet.classList.remove("showspread");
-  open.innerHTML = 'add + lyrics'
+  open.innerHTML = ''
 }
 
 open.addEventListener("click", whatToDo);
