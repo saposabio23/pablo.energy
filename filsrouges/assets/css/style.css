@@ -166,7 +166,8 @@ P {
 
 }
 
-.big a, .big p{
+.big a,
+.big p {
     font-size: 2rem;
 }
 
@@ -192,7 +193,7 @@ P {
     margin: auto;
     position: fixed;
     width: 50vw;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     display: flex;
     background-color: transparent;
     align-items: center;
@@ -222,7 +223,7 @@ P {
 
 .block {
     display: flex;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     width: 100vw;
 
     align-content: center;
@@ -254,6 +255,14 @@ P {
     padding: 30px;
 }
 
+#video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100vw;
+    object-fit: cover;
+}
 
 
 .turn {
@@ -261,13 +270,13 @@ P {
 }
 
 @keyframes tourning {
-0% {
-  transform: rotate(0);
-}
+    0% {
+        transform: rotate(0);
+    }
 
-100% {
-  transform: rotate(360deg);
-}
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 
@@ -276,7 +285,7 @@ P {
 .line {
     position: fixed;
     z-index: 0;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     width: 2px;
     top: 0;
     /* background-color: white; */
@@ -296,7 +305,7 @@ P {
 .three {
     height: 2px;
     width: 100vw;
-    top: 50vh;
+    top: calc(var(--vh, 1vh) * 50);
     left: 0;
 }
 
@@ -308,7 +317,7 @@ P {
         writing-mode: vertical-rl;
         left: var(--spacing-s);
         top: 0;
-        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
         text-align: center;
 
         font-size: var(--font-normal);
@@ -319,7 +328,7 @@ P {
         right: var(--spacing-s);
         top: 0;
         width: inherit;
-        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
         text-align: center;
 
         font-size: var(--font-normal);
@@ -348,7 +357,7 @@ P {
 
     .box {
         width: 100vw !important;
-        height: 50vh;
+        height: calc(var(--vh, 1vh) * 50);
         background-image: url(../red_hor.svg) !important;
     }
 
@@ -358,7 +367,7 @@ P {
 
     .overlayg {
         bottom: 0px;
-        height: calc(50vh + 1px);
+        height: calc(var(--vh, 1vh) * 100 + 1px);
     }
 
     .block {
@@ -366,13 +375,13 @@ P {
         align-items: center;
         justify-content: space-around;
         flex-direction: column;
-        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
         width: 100vw;
     }
 
     .cote {
-        height: 45vh;
-        width: 45vh;
+        height: calc(var(--vh, 1vh) * 45);
+        width: calc(var(--vh, 1vh) * 45);
         display: flex;
     }
 
