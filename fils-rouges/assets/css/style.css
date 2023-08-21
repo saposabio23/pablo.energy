@@ -65,13 +65,13 @@ a {
     color: inherit;
     display: inline;
     -webkit-text-decoration-style: dashed;
-            text-decoration-style: dashed;
+    text-decoration-style: dashed;
 }
 
 a:hover {
     color: inherit;
     -webkit-animation: clignottement .1s infinite linear;
-            animation: clignottement .1s infinite linear;
+    animation: clignottement .1s infinite linear;
 }
 
 @-webkit-keyframes clignottement {
@@ -173,10 +173,11 @@ P {
     border-radius: 50%;
     height: 100%;
     -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
+}
 
-    /* filter: grayscale(100%) sepia(100%) hue-rotate(300deg); */
-
+.filtre-nb {
+    filter: grayscale(100%) sepia(100%) hue-rotate(300deg);
 }
 
 .center {
@@ -205,8 +206,8 @@ P {
     display: flex;
     background-color: transparent;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     pointer-events: none;
 
     background-image: url(../red_vert.svg);
@@ -216,6 +217,14 @@ P {
     z-index: 2;
 
     /* display: none; */
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block !important;
 }
 
 .overlayd {
@@ -240,14 +249,14 @@ P {
 
     -ms-flex-line-pack: center;
 
-        align-content: center;
+    align-content: center;
 
     -ms-flex-pack: distribute;
 
-        justify-content: space-around;
+    justify-content: space-around;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
 
     z-index: 1;
     position: relative;
@@ -261,19 +270,19 @@ P {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     border-radius: 50%;
     background-color: white;
     border: 2px solid white;
     -webkit-box-shadow: 0 0px 40px hsla(0, 0%, 0%, 0.1);
-            box-shadow: 0 0px 40px hsla(0, 0%, 0%, 0.1);
+    box-shadow: 0 0px 40px hsla(0, 0%, 0%, 0.1);
 
 }
 
@@ -285,30 +294,30 @@ P {
 
 .turn {
     -webkit-animation: tourning 4s linear infinite;
-            animation: tourning 4s linear infinite;
+    animation: tourning 4s linear infinite;
 }
 
 @-webkit-keyframes tourning {
     0% {
         -webkit-transform: rotate(0);
-                transform: rotate(0);
+        transform: rotate(0);
     }
 
     100% {
         -webkit-transform: rotate(360deg);
-                transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 }
 
 @keyframes tourning {
     0% {
         -webkit-transform: rotate(0);
-                transform: rotate(0);
+        transform: rotate(0);
     }
 
     100% {
         -webkit-transform: rotate(360deg);
-                transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 }
 
@@ -323,6 +332,8 @@ P {
     top: 0;
     /* background-color: white; */
     border: 1.5px dashed white;
+
+    display: none;
 }
 
 .one {
@@ -350,16 +361,16 @@ P {
     height: calc(var(--vh, 1vh) * 100);
     background-color: rgba(0, 0, 0, 0.8);
     -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     z-index: 999;
 
     display: none;
@@ -373,14 +384,14 @@ P {
 @media screen and (max-width: 700px) {
     h1 {
         -webkit-transform: rotate(-180deg);
-            -ms-transform: rotate(-180deg);
-                transform: rotate(-180deg);
+        -ms-transform: rotate(-180deg);
+        transform: rotate(-180deg);
         width: -webkit-fit-content;
         width: -moz-fit-content;
         width: fit-content;
         -webkit-writing-mode: vertical-rl;
-            -ms-writing-mode: tb-rl;
-                writing-mode: vertical-rl;
+        -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
         left: var(--spacing-s);
         top: 0;
         height: calc(var(--vh, 1vh) * 100);
@@ -389,8 +400,8 @@ P {
 
     h2 {
         -webkit-writing-mode: vertical-rl;
-            -ms-writing-mode: tb-rl;
-                writing-mode: vertical-rl;
+        -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
         right: var(--spacing-s);
         top: 0;
         width: inherit;
@@ -439,14 +450,14 @@ P {
         display: -ms-flexbox;
         display: flex;
         -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
         -ms-flex-pack: distribute;
-            justify-content: space-around;
+        justify-content: space-around;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
         height: calc(var(--vh, 1vh) * 100);
         width: 100vw;
     }
@@ -477,4 +488,40 @@ P {
     .need-rotation {
         display: none !important;
     }
+}
+
+
+
+.options {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.584);
+    border: 2px solid grey;
+    z-index: 999;
+    padding: 5px;
+    color: black;
+    font-family: sans-serif;
+    font-size: 70%;
+    opacity: .6;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#close {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+#close:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.options:hover {
+    opacity: 1;
 }

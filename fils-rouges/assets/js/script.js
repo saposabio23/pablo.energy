@@ -9,18 +9,64 @@
 //     object-fit: cover;
 // }
 
-var start = function () {
-    var video = document.getElementById('video'),
-        vendorUrl = window.URL || window.webkitURL;
+// var start = function () {
+//     var video = document.getElementById('video'),
+//         vendorUrl = window.URL || window.webkitURL;
 
-    if (navigator.mediaDevices.getUserMedia) {
-        navigator.mediaDevices.getUserMedia({ video: true })
-            .then(function (stream) {
-                video.srcObject = stream;
-            }).catch(function (error) {
-                console.log("Something went wrong!");
-            });
-    }
+//     if (navigator.mediaDevices.getUserMedia) {
+//         navigator.mediaDevices.getUserMedia({ video: true })
+//             .then(function (stream) {
+//                 video.srcObject = stream;
+//             }).catch(function (error) {
+//                 console.log("Something went wrong!");
+//             });
+//     }
+// }
+
+// start();
+
+
+
+var trous = document.querySelector('#trous')
+var box1 = document.querySelector('.overlayg')
+var box2 = document.querySelector('.overlayd')
+
+function switchHoles(){
+    box1.classList.toggle("hide");
+    box2.classList.toggle("hide");
 }
 
-start();
+trous.addEventListener('click', switchHoles)
+
+
+var filtre = document.querySelector('#filtre')
+
+function switchFiltres() {
+    var imagex = document.querySelectorAll('.imagex')
+  for(let i = 0, max = imagex.length; i < max; i++){
+    imagex[i].classList.toggle("filtre-nb");
+  }
+}
+filtre.addEventListener('click', switchFiltres);
+
+
+
+var close = document.querySelector('#close')
+var options = document.querySelector('.options')
+
+function closeOptions(){
+    options.style.display = 'none';
+}
+
+close.addEventListener('click', closeOptions)
+
+
+var lignes = document.querySelector('#lignes')
+var line = document.querySelectorAll('.line')
+
+function hideLine() {
+  for(let i = 0, max = line.length; i < max; i++){
+    line[i].classList.toggle("show");
+  }
+}
+lignes.addEventListener('click', hideLine)

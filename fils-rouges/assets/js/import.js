@@ -25,6 +25,7 @@ fetch(
 
       let image = document.createElement("img");
       image.src = row.Image;
+      image.className = 'imagex';
       gauche.appendChild(image);
 
       let titre = document.createElement("h3");
