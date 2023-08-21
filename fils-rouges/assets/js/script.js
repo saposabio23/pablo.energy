@@ -1,3 +1,14 @@
+/* <video id="video" width="100%" height="100%" autoplay></video> */
+
+// #video {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     height: calc(var(--vh, 1vh) * 100);
+//     width: 100vw;
+//     object-fit: cover;
+// }
+
 var start = function () {
     var video = document.getElementById('video'),
         vendorUrl = window.URL || window.webkitURL;

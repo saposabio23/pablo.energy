@@ -2,7 +2,7 @@
 
 body {
     font-family: "Inter";
-    font-weight: 200;
+    font-weight: 600;
     background-color: black;
 }
 
@@ -37,49 +37,51 @@ body:hover {
     top: 0;
     left: 0;
     -webkit-animation: sky 5s linear;
-            animation: sky 5s linear;
+    animation: sky 5s linear;
     -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
     -webkit-animation-direction: alternate;
-            animation-direction: alternate;
+    animation-direction: alternate;
 }
 
 @-webkit-keyframes sky {
     0% {
         -webkit-transform: scale(1);
-                transform: scale(1);
+        transform: scale(1);
     }
 
     50% {
         -webkit-transform: scale(1.7);
-                transform: scale(1.7);
+        transform: scale(1.7);
     }
 
     100% {
         -webkit-transform: scale(1);
-                transform: scale(1);
+        transform: scale(1);
     }
 }
 
 @keyframes sky {
     0% {
         -webkit-transform: scale(1);
-                transform: scale(1);
+        transform: scale(1);
     }
 
     50% {
         -webkit-transform: scale(1.5);
-                transform: scale(1.5);
+        transform: scale(1.5);
     }
 
     100% {
         -webkit-transform: scale(1);
-                transform: scale(1);
+        transform: scale(1);
     }
 }
 
 .moon {
     height: 90vmin;
+    max-width: 245px;
+    max-height: 245px;
 }
 
 .info {
@@ -99,9 +101,9 @@ body:hover {
     justify-content: center;
     z-index: 2;
 
-    color: snow;
-    background-image: -o-radial-gradient(circle, rgba(0, 0, 0, 0.5) 0vmin, black 100vmin);
-    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.5) 0vmin, black 100vmin);
+    color: blak;
+    background-image: -o-radial-gradient(circle, rgb(255, 255, 0) 0vmin, black 100vmin);
+    background-image: radial-gradient(circle, rgb(255, 255, 0) 0vmin, black 100vmin);
     opacity: 0;
 
     -webkit-transition: all 3s ease-in-out;

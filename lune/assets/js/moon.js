@@ -4,7 +4,7 @@ function favicon(source) {
     var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
     link.type = 'image/png';
     link.rel = 'shortcut icon';
-    link.href = "assets/img/" + source;
+    link.href = "assets/emojis/" + source;
     document.getElementsByTagName('head')[0].appendChild(link);
 }
 
@@ -14,7 +14,7 @@ var texte = document.querySelector('#texte')
 function setMoon(source, text) {
     var moon = document.createElement("img");
     moon.className = 'moon';
-    moon.src = "assets/img/" + source;
+    moon.src = "assets/emojis/" + source;
     texte.innerHTML = text;
     night.appendChild(moon)
 }
