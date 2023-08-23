@@ -125,6 +125,29 @@ SCREEN HOME
 /* -----------------------------------
 MENU
 -------------------------------------- */
+.time {
+  position: fixed;
+  right: 0;
+  margin: calc(var(--spacing-s) + 6px);
+
+  z-index: 999;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  padding: 8px;
+  font-size: var(--font-small);
+
+  background-color: snow;
+  border-radius: var(--radius-soft);
+
+  -webkit-box-shadow: 0 0 20px var(--highlight);
+  box-shadow: 0 0 20px var(--highlight);
+}
 
 .menu {
   position: fixed;

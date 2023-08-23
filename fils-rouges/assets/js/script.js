@@ -1,72 +1,49 @@
-/* <video id="video" width="100%" height="100%" autoplay></video> */
+// Set the date we're counting down to
+var countDownDate = new Date("Sept 22, 2023 20:00:00").getTime();
 
-// #video {
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     height: calc(var(--vh, 1vh) * 100);
-//     width: 100vw;
-//     object-fit: cover;
-// }
+var count = document.querySelector('#count')
+var demo = document.querySelector('#demo')
+var prog = document.querySelector('#prog')
+var rsvp = document.querySelector('#rsvp')
 
-// var start = function () {
-//     var video = document.getElementById('video'),
-//         vendorUrl = window.URL || window.webkitURL;
+// Update the count down every 1 second
+function countdown(){
 
-//     if (navigator.mediaDevices.getUserMedia) {
-//         navigator.mediaDevices.getUserMedia({ video: true })
-//             .then(function (stream) {
-//                 video.srcObject = stream;
-//             }).catch(function (error) {
-//                 console.log("Something went wrong!");
-//             });
-//     }
-// }
+  // Get today's date and time
+  var now = new Date().getTime();
 
-// start();
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
 
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+  // Display the result in the element with id="count"
+  count.innerHTML = days + "j " + hours + "h "
+  + minutes + "m " + seconds + "s ";
 
-var trous = document.querySelector('#trous')
-var box1 = document.querySelector('.overlayg')
-var box2 = document.querySelector('.overlayd')
-
-function switchHoles(){
-    box1.classList.toggle("show");
-    box2.classList.toggle("show");
-}
-
-trous.addEventListener('click', switchHoles)
-
-
-var filtre = document.querySelector('#filtre')
-
-function switchFiltres() {
-    var imagex = document.querySelectorAll('.imagex')
-  for(let i = 0, max = imagex.length; i < max; i++){
-    imagex[i].classList.toggle("filtre-nb");
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    demo.innerHTML = "ÇA COMMENCE.";
+    setTimeout(function () {
+      demo.innerHTML = "ÇA COMMENCE..";
+      setTimeout(function () {
+        demo.innerHTML = "ÇA COMMENCE...";
+        setTimeout(function () {
+          demo.innerHTML = "en projection";
+          rsvp.style.display = 'none';
+          prog.style.display = 'block';
+        }, 1000)
+      }, 1000)
+    }, 1000)
   }
-}
-filtre.addEventListener('click', switchFiltres);
-
-
-
-var close = document.querySelector('#close')
-var options = document.querySelector('.options')
-
-function closeOptions(){
-    options.style.display = 'none';
+  
+  var repeat = setInterval(countdown, 1000);
 }
 
-close.addEventListener('click', closeOptions)
+countdown()
 
-
-var lignes = document.querySelector('#lignes')
-var line = document.querySelectorAll('.line')
-
-function hideLine() {
-  for(let i = 0, max = line.length; i < max; i++){
-    line[i].classList.toggle("show");
-  }
-}
-lignes.addEventListener('click', hideLine)

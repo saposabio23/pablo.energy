@@ -1,6 +1,17 @@
 function init() {
+  displayClock()
   isItNight()
   whatNew()
+}
+
+/* -----------------------------------
+CLOCKKKK
+-------------------------------------- */
+
+function displayClock(){
+  var display = new Date().toLocaleTimeString();
+  document.querySelector('.time').innerHTML = display;
+  setTimeout(displayClock, 1000); 
 }
 
 
