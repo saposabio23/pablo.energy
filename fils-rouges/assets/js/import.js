@@ -24,7 +24,7 @@ fetch(
 
 
       let image = document.createElement("img");
-      image.src = row.Image;
+      image.src = row.Lien;
       image.className = 'imagex';
       gauche.appendChild(image);
 
