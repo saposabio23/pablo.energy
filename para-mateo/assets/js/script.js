@@ -1,4 +1,5 @@
 var mateo = document.querySelector('#mateo')
+// var sound = document.querySelector("#sound");
 
 function randomImage() {
     var list = [
@@ -33,6 +34,7 @@ function animateMateo() {
     console.log(randomAnswer);
 
     mateo.classList.add(randomAnswer)
+    sound.play();
     randomImage()
 
     setTimeout(function () {

@@ -1,7 +1,6 @@
 @import url("../../../assets/fonts/fonts.css");
 
 :root {
-  --duration: 2s;
 }
 
 body {
@@ -25,7 +24,7 @@ p {
   justify-content: space-between;
   align-items: center;
 
-  background-color: crimson;
+  background-color: orangered;
   border-radius: 20px;
   margin: 5px;
   flex-direction: column;
@@ -55,6 +54,8 @@ p {
 
   opacity: 1;
   transition: all .5s ease-in-out;
+
+  --animate-repeat: 1;
 }
 
 #mateo:hover{
