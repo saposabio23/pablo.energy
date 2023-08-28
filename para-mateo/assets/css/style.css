@@ -25,7 +25,7 @@ p {
   justify-content: space-between;
   align-items: center;
 
-  background-color: orangered;
+  background-color: lightcoral;
   border-radius: 20px;
   margin: 5px;
   flex-direction: column;
@@ -48,6 +48,7 @@ p {
 
 #mateo {
   width: 80vw;
+  max-width: 500px;
   /*! height: auto; */
   object-fit: cover;
   margin: 0;
