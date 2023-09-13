@@ -10,7 +10,7 @@
   <title>pablo.energy</title>
   <meta name="title" content="Pablo Moreno">
   <meta name="description"
-    content="Pablo Moreno is a young multidisciplinary graphic designer working between France and Spain.">
+    content="Pablo Moreno is a energetic web designer, studying in France and working down to Bilbao.">
   <meta name="author" content="Pablo Moreno">
   <link rel="canonical" href="https://pablo.energy">
 
@@ -36,13 +36,13 @@
 <body>
 
   <div class="menu">
-    <a href="" id="circle"><img src="assets/me.jpg" id="meCircle"></img></a>
-    <span id="whatNew">pablo giving ⚡️</span>
+    <form name="form" class="enter">
+      <input id="button" name="submit" style="display:none" />
+      <input class="identity" id="meCircle" type='text' name='texte' value='⊙.☉' onkeypress="clickPress(event)" />
+    </form>
+    <span id="timer">⚡️</span>
   </div>
 
-  <span class="time"></span>
-
-  <!-- <div class="right"> <img src="assets/me.jpg"         alt="Picture of Pablo Moreno smiling, in his room in Bilbao, Spain"></img></div> -->
 
   <div class="screen-home nonight">
 
@@ -64,7 +64,7 @@
       <div class="card">
         <div class="card-text">
           <p>
-            I'm Pablo Moreno, a young multidisciplinary graphic designer, studying in France and working down to Bilbao.
+            I'm Pablo Moreno, a energetic web designer, studying in France and working down to Bilbao.
           </p>
           <img src="assets/me.jpg" style="width: 100px; height: 100px;"
             alt="Picture of Pablo Moreno smiling, in his room in Bilbao, Spain" id="app"></img>
@@ -79,213 +79,23 @@
   </div>
 
 
-  <div class="nonight second" id="second">
 
-    <div class="now">
-      <h2>What I'm doing lately?</h3>
-
-        <p>In september 2022 I started a double Master in UX/UI, train-ing between to the <a
-            href="https://esad-amiens.design/fr/design-numerique/dnsep">ESAD</a> of Amiens and the <a href="https://www.utc.fr/en/courses-and-training/the-french-masters-degree/humanities-and-creative-industries-hic/specialty-design-and-experience-creation-dcx/">UTC</a> of
-          Compiègne.</p>
-
-        <p>This year I'm really motivated about making websites for people, for things, for fun... I have a lot of ideas
-          that I'm working on! <a href="mailto:pablomoreno@proton.me">Tell me</a> if you are interested on making yours!
-        </p>
-
-        <p>I'm reading a <a href="https://www.are.na/pablo-moreno/textes-sf-b1sgau1y">lot of articles</a> for my essay,
-          and for more "fun" litterature i'm reading a book about Khomeini.</p>
-
-        <p>You can see <a href="/my-computer/">what I use on my computer</a> or visit my <a
-            href="https://www.are.na/pablo-moreno/3w-textes">Are.na</a> !</p>
-
-        <p>See ya!</p>
-        <p style="margin:0 0 0 10px">pablo ⚡️</p>
-    </div>
+  <div class="nonight grid" id="second"> </div>
 
 
-    <div class="projects">
-
-      <h3>Websites</h3>
-
-      <a href="/catography/index.html" class="wip">
-        <div>
-          <img src="assets/img/cartography.jpg">
-          <small>Web Cartography</small>
-        </div>
-        <span style="color: greenyellow">[wip]</span>
-      </a>
-
-      <a href="https://concluded-openspaces.netlify.app/" class="wip">
-        <div>
-          <img src="assets/img/concluded.jpg">
-          <small>Concluded Openspaces</small>
-        </div>
-        <span style="color: greenyellow">[wip]</span>
-      </a>
-
-      <a href="https://calendarie2023.netlify.app/" class="wip">
-        <div>
-          <img src="assets/img/calendarie1.jpg">
-          <small>Calendarie 2023</small>
-        </div>
-        <span style="color: greenyellow">[wip]</span>
-      </a>
-
-      <a href="https://3-words-for.eu/" class="wip">
-        <div>
-          <img src="assets/img/3words.jpg">
-          <small>3 words 4 europe </small>
-        </div>
-        <span style="color: greenyellow">[wip]</span>
-      </a>
-
-      <a href="/bg/index.html">
-        <div><img src="assets/img/bg.jpg">
-          <small>Bulgarie</small>
-        </div>
-        <span>2023</span>
-      </a>
-
-      <a href="/lyrics/index.html">
-        <div><img src="assets/img/lyrics.jpg">
-          <small>Lyrics 4 me</small>
-        </div>
-        <span>always more songs</span>
-      </a>
-
-      <a href="https://pablo-archi.online">
-        <div><img src="assets/img/pablo-archipng.jpg">
-          <small>Virtualisations d'archi</small>
-        </div>
-        <span>2023</span>
-      </a>
-
-      <a href="https://vivirsinti-libro.com/">
-        <div><img src="assets/img/vivir-sin-ti.jpg">
-          <small>Vivir sin tí book</small>
-        </div>
-        <span>2022</span>
-      </a>
-
-      <a href="/autre-temps/index.html">
-        <div><img src="assets/img/autre-temps.jpg">
-          <small>Autre Temps</small>
-        </div>
-        <span>2021</span>
-      </a>
-
-      <a href="/sunsets/index.html">
-        <div><img src="assets/img/sunsets.jpg">
-          <small>Sunset(s) 🌅</small>
-        </div>
-        <span>2021</span>
-      </a>
-
-
-
-      <a href="/glace-sans-tain/">
-        <div><img src="assets/img/glace-sans-tain.jpg">
-          <small>"Glace sans tain" essay</small>
-        </div>
-        <span>2021</span>
-      </a>
-
-
-      <a href="https://morenoarquitecto.com/">
-        <div><img src="assets/img/moreno-arquitecto.jpg">
-          <small>Moreno Arquitecto studio's</small>
-        </div>
-        <span>2020</span>
-      </a>
-
-      <a href="/voeux2021/">
-        <div><img src="assets/img/voeux-2021.jpg">
-          <small>2021 new year card</small>
-        </div>
-        <span>2020</span>
-      </a>
-
-      <!-- <a href="https://soyjuanmoreno.com/">
-        <div><img src="assets/img/juan-moreno.jpg">
-        <small>Juan Moreno's</small>
-        </div>
-      </a> -->
-
-      <!-- <a href="https://andreaguilera.com/">
-        <div><img src="assets/img/andrea-aguilera.jpg">
-        <small>Andrea Aguilera's</small>
-        </div>
-      </a> -->
-
-
-
-
-      <h3>3D animation</h3>
-
-      <a href="https://vimeo.com/793921849">
-        <div><img src="assets/img/jpo-julie.jpg">
-          <small>Open Days of ESAD (proposition)</small>
-        </div>
-        <span>2023</span>
-      </a>
-
-      <a href="https://vimeo.com/675012283">
-        <div><img src="assets/img/copa-decantadora.jpg">
-          <small>Wine product show</small>
-        </div>
-        <span>2022</span>
-      </a>
-
-      <a href="https://vimeo.com/678345388">
-        <div><img src="assets/img/tribut-cafe.jpg">
-          <small>Coffe plant animation</small>
-        </div>
-        <span>2021</span>
-      </a>
-
-
-      <a href="https://vimeo.com/678345324">
-        <div><img src="assets/img/more/t_anthropocene.jpg">
-          <small>Anthropocene hole</small>
-        </div>
-        <span>2020</span>
-      </a>
-
-      <h3>✢ things</h3>
-
-      <div class="others">
-        <a href="assets/img/more/t_borges-estienne.jpg"><img src="assets/img/more/t_borges-estienne.jpg"></a>
-        <a href="assets/img/more/t_cimetiere-graville.jpg"><img
-            src="assets/img/more/t_cimetiere-graville.jpg"></a>
-        <a href="assets/img/more/t_dissuation-nucleaire.jpg"><img
-            src="assets/img/more/t_dissuation-nucleaire.jpg"></a>
-        <a href="assets/img/more/t_doom-day.jpg"><img src="assets/img/more/t_doom-day.jpg"></a>
-        <a href="assets/img/more/t_esadhar-books.jpg"><img src="assets/img/more/t_esadhar-books.jpg"></a>
-        <a href="https://vimeo.com/686388410"><img src="assets/img/more/t_glace-sans-tain.webp"></a>
-        <a href="https://vimeo.com/793921665"><img src="assets/img/more/t_ketamina.jpg"></a>
-        <a href="assets/img/more/t_more-things.webp"><img src="assets/img/more/t_more-things.webp"></a>
-        <a href="https://vimeo.com/678350239"><img src="assets/img/more/t_paysages-vagues.JPG"></a>
-        <a href="https://vimeo.com/678345423"><img src="assets/img/more/t_souvenirs-abrupts.jpg"></a>
-        <a href="assets/img/more/t_tramway.jpg"><img src="assets/img/more/t_tramway.jpg"></a>
-      </div>
-
-
-
-
-
-    </div>
-
-  </div>
+  <audio id="sound" src="assets/sound.mp3" preload="auto"></audio>
 
   <div id="screen-night">
     <p>♻️ ⤼ 💤 ⤼ ⏳ ⤼ 🌄</p>
   </div>
 
+  <script id="script" src="assets/js/data.js"></script>
+  <script id="script" src="assets/js/import.js"></script>
   <script id="script" src="assets/js/mobile-height.js"></script>
-  <script id="script" src="assets/js/thisColor.js"></script>
   <script id="script" src="assets/js/script.js"></script>
-
   <script id="script" src="web-archive/assets/web-archive.js"></script>
+
+  <!-- <script id="script" src="assets/js/thisColor.js"></script> -->
 
 </body>
 

@@ -1,7 +1,6 @@
 function init() {
   displayClock()
   isItNight()
-  whatNew()
 }
 
 /* -----------------------------------
@@ -10,7 +9,8 @@ CLOCKKKK
 
 function displayClock(){
   var display = new Date().toLocaleTimeString();
-  document.querySelector('.time').innerHTML = display;
+  const timer = document.getElementById("timer");
+  timer.innerHTML = display;
   setTimeout(displayClock, 1000); 
 }
 
@@ -63,21 +63,21 @@ observer.observe(document.querySelector("#app"))
 // /* -----------------------------------
 // RANDOM PRESENTATION
 // -------------------------------------- */
-function whatNew() {
-  var frases = Array(
-    'wazzzzup?',
-    '⚡️⚡️⚡️',
-    'lot of ⚡️ 4 u',
-    'around the 🌏',
-    "how's the day?",
-    "have a good day!",)
+// function whatNew() {
+//   var frases = Array(
+//     'wazzzzup?',
+//     '⚡️⚡️⚡️',
+//     'lot of ⚡️ 4 u',
+//     'around the 🌏',
+//     "how's the day?",
+//     "have a good day!",)
 
-  const queHay = document.getElementById("whatNew");
+//   const queHay = document.getElementById("whatNew");
 
-  var frase = frases[Math.floor(Math.random() * frases.length)];
-  console.log(frase)
-  queHay.innerHTML = frase;
-}
+//   var frase = frases[Math.floor(Math.random() * frases.length)];
+//   console.log(frase)
+//   queHay.innerHTML = frase;
+// }
 
 
 // /* -----------------------------------
@@ -100,94 +100,6 @@ function isItNight() {
     document.querySelector('.nonight').remove();
    }
 
-
-// // /* -----------------------------------
-// // SHOW SELECTA
-// // -------------------------------------- */
-// document.addEventListener('DOMContentLoaded', function () {
-//   var checkbox = document.querySelector('#selectaMode');    
-//     checkbox.addEventListener('change', function () {
-//       if (checkbox.checked) {
-//         console.log('Selecta styla');
-//         showSelecta();
-//       } else {
-//         // do that
-//         console.log('no selecta babylon');
-//         showAll();
-
-//       }
-//     });
-//   });
-
-// selecta = document.querySelectorAll(".selecta");
-// projectThumb = document.querySelectorAll(".projectThumb");
-// screenProjects = document.querySelector(".screen-projects");
-// projectsControls = document.querySelector(".controls");
-
-// function showSelecta() {
-//   for(let i = 0, max = projectThumb.length; i < max; i++)
-//   if (!projectThumb[i].classList.contains("selecta")){
-//     projectThumb[i].classList.add("projects-hide");
-    
-//   }
-// }
-
-// function showAll() {
-//   for(let i = 0, max = projectThumb.length; i < max; i++)
-//   if (projectThumb[i].classList.contains("projects-hide")){
-//     projectThumb[i].classList.remove("projects-hide");
-//     screenProjects.classList.remove("selecta-bk");
-//   }
-// }
-
-
-
-
-// // /* -----------------------------------
-// // FILTER SELECTOR
-// // -------------------------------------- */
-// buttonWeb = document.getElementById("buttonWeb");
-// buttonThreed = document.getElementById("buttonThreed");
-// buttonPrint = document.getElementById("buttonPrint");
-// buttonStuff = document.getElementById("buttonStuff");
-
-// projectsWeb = document.querySelectorAll(".web");
-// projectsThreed = document.querySelectorAll(".threed");
-// projectsPrint = document.querySelectorAll(".print");
-// projectsStuff = document.querySelectorAll(".stuff");
-
-// function highlightWeb() {
-//   for(let i = 0, max = projectsWeb.length; i < max; i++){
-//     projectsWeb[i].classList.toggle("highlightWeb");
-//     buttonWeb.classList.toggle("highlightWeb");
-//   }
-// }
-// buttonWeb.addEventListener('click', highlightWeb);
-
-// function highlightThreed() {
-//   for(let i = 0, max = projectsThreed.length; i < max; i++){
-//     projectsThreed[i].classList.toggle("highlightThreed");
-//     buttonThreed.classList.toggle("highlightThreed");
-//   }
-// }
-// buttonThreed.addEventListener('click', highlightThreed);
-
-// function highlightStuff() {
-//   for(let i = 0, max = projectsStuff.length; i < max; i++){
-//     projectsStuff[i].classList.toggle("highlightStuff");
-//     buttonStuff.classList.toggle("highlightStuff");
-//   }
-// }
-// buttonStuff.addEventListener('click', highlightStuff);
-
-
-// function highlightPrint() {
-//   for(let i = 0, max = projectsPrint.length; i < max; i++){
-//     projectsPrint[i].classList.toggle("highlightPrint");
-//     buttonPrint.classList.toggle("highlightPrint");
-//   }
-// }
-// buttonPrint.addEventListener('click', highlightPrint);
 
 
 init()
