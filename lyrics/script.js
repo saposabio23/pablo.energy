@@ -19,6 +19,7 @@ SHOW LYRICS
 var blocks = document.querySelector('#blocks');
 var songContent = document.querySelector('.songContent');
 var close = document.querySelector('#close');
+var start = document.querySelector('#start');
 
 
 function hideSong() {
@@ -29,11 +30,13 @@ function hideSong() {
 }
 
 blocks.addEventListener('click', (event) => {
+  start.style.display = "none"
   hideSong()
   songContent.scrollTo({ top: 0, behavior: 'smooth' });
 
   songToLoad = event.target.id
   var thesong = document.getElementById(songToLoad);
+  console.log(songToLoad)
   thesong.classList.add('show')
 })
 
@@ -53,6 +56,8 @@ function checkUrl(e) {
 
 var spreadsheet = document.querySelector('#spreadsheet');
 var open = document.querySelector('#open');
+var video = document.getElementById('video');
+
 
 function whatToDo() {
   if (spreadsheet.classList.contains("showspread")) {
@@ -60,6 +65,8 @@ function whatToDo() {
   }
   else {
     openSpreadsheet()
+    video.remove(); // Removes the div with the 'div-02' id
+
   }
 }
 
@@ -74,7 +81,7 @@ function openSpreadsheet() {
         open.innerHTML = 'wait...'
         setTimeout(function () {
           spreadsheet.style.filter = "blur(0px)";
-          open.innerHTML = 'close'
+          open.innerHTML = 'X'
         }, 1000)
       }, 1000)
     }, 1000)

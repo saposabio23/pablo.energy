@@ -98,6 +98,11 @@ button {
     margin-bottom: 5px;
 }
 
+#start{
+    background-color: transparent;
+    opacity: 0.3;
+}
+
 #blocks {
     overflow-y: scroll;
     display: grid;
@@ -234,13 +239,17 @@ button {
         height: fit-content;
 
 
+        /*! box-shadow: 0px 0px 10px #00000052; */
+        box-shadow: 0px 0px 20px var(--lines);
     }
 
     .miniBlock {
         border-width: 0px 1px 0px 0px;
-        height: 100px;
-        width: 100px;
+        height: 100px !important;
+        width: 100px !important;
         overflow: visible;
+        /*! word-wrap: º; */
+        /*! word-break: break-word; */
     }
 
     #video,

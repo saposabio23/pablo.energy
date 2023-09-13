@@ -1,9 +1,5 @@
 const grid = document.querySelector('.grid')
 
-function init () {
-  createData()
-}
-
 function createData() {
   console.log(allData)
 
@@ -28,8 +24,18 @@ function createData() {
   });
 }
 
-init()
+createData()
 
+
+
+const block = document.querySelectorAll('.block');
+block.forEach(function(block) {
+  block.addEventListener('mouseenter', function() {
+    console.log();
+    sound.play();
+
+  });
+});
 
 
 // THIS IS ABOUT THE PASSWORD
@@ -50,14 +56,12 @@ function clickPress(event) {
     if (document.form.texte.value.match(passw)) {
       showSecrets()
       document.querySelector('#texte').classList.remove('badpass');
-      document.querySelector('.contenu').style.display = 'block';
       document.querySelector('#texte').value = 'YES!';
 
     }
     else {
       document.querySelector('#texte').classList.add('badpass');
       document.querySelector('#texte').value = 'NOPE';
-      document.querySelector('.contenu').style.display = 'none';
     }
   }
 }

@@ -32,8 +32,8 @@ $(document).ready(function () {
 
       let miniBlock = $(
         `<div class="miniBlock" id="` + row.list + `"> 
-        <h3>` + row.artist + `</h3>
-        <h4>` + row.song + `</h4>`)
+        <h3 id="` + row.list + `">` + row.artist + `</h3>
+        <h4 id="` + row.list + `">` + row.song + `</h4>`)
         .appendTo("#blocks"); // # refers to div id
 
       let song = $(
