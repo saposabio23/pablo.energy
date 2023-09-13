@@ -45,7 +45,6 @@ html {
 
 body {
   background-color: dimgray;
-  margin: 2rem;
 }
 
 a {
@@ -66,6 +65,7 @@ h2 {
   display: grid;
   justify-items: center;
   row-gap: 2rem;
+  padding: 2rem;
   grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
 
 }
