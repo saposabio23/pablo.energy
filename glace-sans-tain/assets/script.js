@@ -10,12 +10,6 @@ window.onload = function() {
 var $sommaire= document.querySelector('#sommaire');
 var $mybar= document.querySelector('.progress-bar');
 
-window.onscroll = function() {
-  scrollTitle()
-  scrollMenu()
-  scrollBar()
-  scrollFirm()
-};
 
 function scrollBar() {
   var winScroll = document.body.scrollTop || document.documentElement.scrollTop;

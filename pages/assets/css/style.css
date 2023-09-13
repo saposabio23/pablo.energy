@@ -1,0 +1,161 @@
+@import url(../../../assets/fonts/fonts.css);
+
+:root {
+  --white: snow;
+  --highlight: rgb(203, 203, 203);
+  --dark: dimgray;
+
+  --secret: navajowhite;
+
+  --tran-short: all .3s ease-in-out;
+
+}
+
+html,
+body,
+div,
+p {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  font-family: 'rubikregular';
+  scrollbar-width: none;
+}
+
+
+html {
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  height: 100%;
+  width: 100%;
+  line-height: 1.4;
+  overflow: scroll;
+  overflow-x: hidden;
+  font-size: 1rem;
+
+  /* cursor: url(../pointer/blue.cur), pointer; */
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: dimgray;
+  margin: 2rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h2 {
+  margin: 0;
+  padding: 1px;
+  text-align: center;
+  font-size: .8rem;
+  border-radius: 10px 10px 0 0;
+  text-transform: capitalize;
+}
+
+.grid {
+  display: grid;
+  justify-items: center;
+  row-gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+
+}
+
+.block {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 7px;
+  background-color: thistle;
+  box-shadow: 0px 3px 20px hsla(0, 0%, 0%, 0.25);
+  transform: perspective(25rem) rotateX(-25deg);
+  transition: var(--tran-short);
+}
+
+.block:hover {
+  box-shadow: 0px 0px 10px hsla(0, 0%, 0%, 0.1);
+
+  cursor: pointer;
+  transform: perspective(20em) rotateX(0deg);
+  transition: var(--tran-short);
+}
+
+
+.block img {
+  /*! height: 100%; */
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0 0 7px 7px;
+}
+
+
+
+
+
+
+
+
+
+/* -----------------------------------
+  PASSWORD PROTECTION
+-------------------------------------- */
+
+.enter>input {
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  border: none;
+  height: 50px;
+  text-align: center;
+  font-size: 1rem;
+
+  transition: var(--tran-short);
+
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+
+  outline: none;
+}
+
+
+.badpass {
+  font-size: 1rem !important;
+  height: calc(100vh - 4px) !important;
+  width: calc(100vh - 4px) !important;
+  bottom: 2px !important;
+  right: calc(50vw - 50vh) !important;
+  position: fixed !important;
+  max-width: 100vw !important;
+}
+
+.secret {
+  display: none;
+  box-shadow: 0px 3px 20px greenyellow;
+}
+
+.secret:hover {
+  box-shadow: 0px 0px 10px greenyellow;
+
+}
+
+
+.hide {
+  opacity: 0;
+  transition: var(--tran-short);
+}
+
+.show {
+  display: revert;
+  transition: var(--tran-short);
+}
