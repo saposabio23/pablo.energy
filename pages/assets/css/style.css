@@ -75,7 +75,7 @@ h2 {
   display: flex;
   flex-direction: column;
   border-radius: 7px;
-  background-color: thistle;
+  background-color: orangered;
   box-shadow: 0px 3px 20px hsla(0, 0%, 0%, 0.25);
   transform: perspective(25rem) rotateX(-25deg);
   transition: var(--tran-short);
