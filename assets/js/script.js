@@ -18,7 +18,7 @@ function displayClock(){
 /* -----------------------------------
 SCROLL MORE
 -------------------------------------- */
-var home = document.querySelector('.screen-home')
+var home = document.querySelector('.front')
 
 function showMore(){
   home.classList.add('screen-up')
@@ -100,6 +100,49 @@ function isItNight() {
     document.querySelector('.nonight').remove();
    }
 
+
+
+// /* -----------------------------------
+// SOUNDS UI 
+// -------------------------------------- */
+const block = document.querySelectorAll('.block');
+block.forEach(function(block) {
+  block.addEventListener('mouseenter', function() {
+    console.log();
+    sound.play();
+
+  });
+});
+
+// /* -----------------------------------
+// SECRET SPACE
+// -------------------------------------- */
+const secret = document.querySelectorAll('.secret')
+
+
+// here when the passwords matchs it show the hidden
+function showSecrets() {
+  for (let i = 0, max = secret.length; i < max; i++) {
+    secret[i].classList.add("show");
+  }
+}
+
+// the password script
+function clickPress(event) {
+  if (event.key == "Enter") {
+    const passw = "23";
+    if (document.form.texte.value.match(passw)) {
+      showSecrets()
+      document.querySelector('#meCircle').classList.remove('badpass');
+      document.querySelector('#meCircle').value = 'YES!';
+
+    }
+    else {
+      document.querySelector('#meCircle').classList.add('badpass');
+      document.querySelector('#meCircle').value = 'NOPE';
+    }
+  }
+}
 
 
 init()

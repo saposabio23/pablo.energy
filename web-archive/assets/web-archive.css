@@ -62,11 +62,14 @@ td {
   font-size: .8rem;
   font-family: sans-serif;
   z-index: 3;
-  border: 1px solid #80808040;
   backdrop-filter: blur(10px) saturate(100%);
   -webkit-backdrop-filter: blur(10px) saturate(100%);
   background-color: snow;
   box-shadow: 0 0 10px var(--highlight);
+}
+
+.year-selector:hover {
+  box-shadow: 0 0 10px var(--thisColor);
 }
 
 #back {

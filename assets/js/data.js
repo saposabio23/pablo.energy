@@ -1,4 +1,4 @@
-let allData = [
+let websites = [
   {
     title: 'Autre temps',
     year: '2021',
