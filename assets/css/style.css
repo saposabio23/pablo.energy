@@ -10,7 +10,7 @@
   --spacing-m: 25px;
   --spacing-s: 17px;
 
-  --thisColor: lightskyblue;
+  --thisColor: greenyellow;
   --white: snow;
   --highlight: rgb(203, 203, 203);
   --dark: dimgray;
@@ -257,6 +257,8 @@ MENU
   -webkit-box-shadow: 0 0 20px var(--highlight);
   box-shadow: 0 0 20px var(--highlight);
   z-index: 2;
+  position: absolute;
+  left: 45px;
 }
 
 
@@ -322,7 +324,7 @@ CARD STUFF
 
 .card-contact>a:nth-child(1):hover,
 .card-contact>a:nth-child(1):active {
-  background: dodgerblue;
+  background: tomato;
   text-decoration: none;
   cursor: pointer;
 }
@@ -334,13 +336,42 @@ CARD STUFF
   cursor: pointer;
 }
 
+/* -----------------------------------
+MAIL STUFF
+-------------------------------------- */
+#mailcopied {
+  height: auto;
+  background: hsl(0, 0%, 97%);
+  border-radius: 0 0 var(--radius-hard) var(--radius-hard);
+  padding: 10px;
+  z-index: 1;
+  width: 80%;
+  text-align: center;
+  background-color: dodgerblue;
+  transform: translateY(-100%);
+  position: relative;
+  color: black;
+  font-size: var(--font-normal);
+  z-index: 1;
+}
+
+.mailappear {
+  transform: translateY(0%) !important;
+  box-shadow: 0 0 20px hsla(0, 0%, 0%, 0.5);
+  transition: all .5s ease-in-out;
+}
+
+.mailexit {
+  transform: translate(-50%, 80%);
+  transition: all .5s ease-in-out;
+}
 
 
 /* -----------------------------------
 NOW
 -------------------------------------- */
 .now {
-  padding: var(--spacing-l);
+  margin: var(--spacing-l);
   /*! margin: 0 3vw; */
   color: white;
 }
@@ -420,11 +451,12 @@ h2 {
 /* -----------------------------------
 SCREEN NIGHT
 -------------------------------------- */
-#screen-night{
+#screen-night {
   height: 100%;
   width: 100%;
   background-color: black;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   position: fixed;
   z-index: 999;
   color: snow;
@@ -434,45 +466,15 @@ SCREEN NIGHT
   font-size: 2rem;
 }
 
-#screen-night p{
+#screen-night p {
   border: 1px solid snow;
   border-radius: var(--radius-hard);
   width: fit-content;
   padding: 4px var(--spacing-s) 2px var(--spacing-s);
 }
 
-.itsnight{
+.itsnight {
   display: flex !important;
-}
-
-/* -----------------------------------
-MAIL STUFF
--------------------------------------- */
-#mailcopied{
-  height: auto;
-  background: hsl(0, 0%, 97%);
-  border-radius: 0 0 var(--radius-hard) var(--radius-hard);
-  padding: 13px var(--spacing-s) var(--spacing-s) var(--spacing-s);
-  z-index: 1;
-  width: 80%;
-  text-align: center;
-  background-color: tomato;
-  transform: translateY(-100%);
-  position: relative;
-  color: black;
-  font-size: var(--font-normal);
-  z-index: 1;
-  }
-
-.mailappear{
-  transform:  translateY(0%) !important;
-  box-shadow: 0 0 20px hsla(0, 0%, 0%, 0.5);
-  transition: all .5s ease-in-out;
-}
-
-.mailexit{
-  transform: translate(-50%,80%);
-  transition: all .5s ease-in-out;
 }
 
 /* -----------------------------------
@@ -492,7 +494,7 @@ MAIL STUFF
   left: 0;
 
   background-color: var(--thisColor) !important;
-background-image: none;
+  background-image: none;
 }
 
 .secret {
@@ -513,4 +515,24 @@ background-image: none;
 .show {
   display: inline-grid;
   transition: var(--tran-short);
+}
+
+
+
+
+
+
+
+
+
+details {
+  border: 1px dotted var(--highlight);
+  border-radius: 25px;
+  padding: var(--spacing-s);
+  transition: all .3s ease-in-out;
+  color: var(--white);
+}
+
+summary {
+  padding-bottom: var(--spacing-s);
 }

@@ -25,7 +25,7 @@
   }
 
   .now {
-    padding: var(--spacing-l) var(--spacing-s) var(--spacing-s) var(--spacing-s);
+    margin: var(--spacing-l) var(--spacing-s) var(--spacing-s) var(--spacing-s);
   }
 
   .block {

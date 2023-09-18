@@ -53,8 +53,6 @@ var meCircle = document.getElementById("meCircle");
   else {
     meCircle.classList.remove("circling")
     console.log('inside!')
-
-
   }
 });
 
@@ -135,7 +133,7 @@ function clickPress(event) {
       showSecrets()
       document.querySelector('#meCircle').classList.remove('badpass');
       document.querySelector('#meCircle').value = 'YES!';
-
+      showMore()
     }
     else {
       document.querySelector('#meCircle').classList.add('badpass');

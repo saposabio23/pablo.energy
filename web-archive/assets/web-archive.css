@@ -69,7 +69,7 @@ td {
 }
 
 .year-selector:hover {
-  box-shadow: 0 0 10px var(--thisColor);
+  box-shadow: 0 0 10px greenyellow;
 }
 
 #back {
