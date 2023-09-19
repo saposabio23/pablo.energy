@@ -10,8 +10,8 @@
   --spacing-m: 25px;
   --spacing-s: 17px;
 
-  --thisColor: greenyellow;
   --white: snow;
+  --plus: greenyellow;
   --highlight: rgb(203, 203, 203);
   --dark: dimgray;
 
@@ -377,7 +377,7 @@ NOW
 }
 
 .now a {
-  border: 1px dotted var(--highlight);
+  border: 1px dotted var(--plus);
   border-radius: 500px;
   padding: 3px 5px;
   -webkit-transition: all .3s ease-in-out;
@@ -388,7 +388,7 @@ NOW
 .now a:hover {
   cursor: ne-resize;
   color: black;
-  background-color: var(--highlight);
+  background-color: var(--plus);
 }
 
 /* -----------------------------------
@@ -411,7 +411,7 @@ h2 {
   height: 100dvh;
   align-content: start;
   padding: 60px 20px 20px 20px;
-  background-color: dimgray;
+  background-color: var(--thisColor);
 }
 
 .grid {
@@ -435,8 +435,9 @@ h2 {
 }
 
 .block:hover {
-  box-shadow: 0px 0px 10px hsla(0, 0%, 0%, 0.1);
-  background-color: var(--thisColor);
+  background-color: snow;
+  color: black;
+  box-shadow: 0px 0px 10px var(--plus);;
   cursor: pointer;
   transform: perspective(20em) rotateX(0deg);
   transition: var(--tran-short);
@@ -448,6 +449,27 @@ h2 {
   width: 100%;
   object-fit: cover;
   border-radius: 0 0 7px 7px;
+}
+
+.project {
+  width: 70%;
+  aspect-ratio: 16/9;
+  display: flex;
+  flex-direction: column;
+  background-color: snow;
+  color: black;
+  box-shadow: 0px 3px 20px hsla(0, 0%, 0%, 0.25);
+  transition: var(--tran-short);
+  border-radius: 7px;
+}
+
+.project:hover {
+  box-shadow: 0px 0px 10px var(--plus);;
+  transition: var(--tran-short);
+}
+
+.project img {
+  border-radius: 7px;
 }
 
 /* -----------------------------------
@@ -501,13 +523,9 @@ SCREEN NIGHT
 
 .secret {
   display: none;
-  box-shadow: 0px 3px 20px greenyellow;
+  box-shadow: 0px 3px 20px tomato;
 }
 
-.secret:hover {
-  box-shadow: 0px 0px 10px greenyellow;
-
-}
 
 .hide {
   opacity: 0;
@@ -515,7 +533,7 @@ SCREEN NIGHT
 }
 
 .show {
-  display: inline-grid;
+  display: inline-flex;
   transition: var(--tran-short);
 }
 
@@ -528,12 +546,14 @@ SCREEN NIGHT
 
 
 details {
-  border: 1px dotted var(--highlight);
+  border: 1px dotted var(--plus);
   border-radius: 25px;
   padding: var(--spacing-s);
   transition: all .3s ease-in-out;
-  color: var(--white);
+  color: white;
   margin: var(--spacing-l);
+  background: #fffafa47;
+  box-shadow: 0px 0px 20px hsla(0, 0%, 0%, 0.25);
 }
 
 summary {

@@ -13,7 +13,7 @@ function createData() {
     block.appendChild(title);
 
     let image = document.createElement("img");
-    image.src = 'assets/thumbnails/' + websites.image + '.png';
+    image.src = 'assets/thumbnails/websites/' + websites.image + '.png';
     block.appendChild(image);
 
     let year = document.createElement("span");
