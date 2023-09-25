@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CONCLUDED</title>
+
+    <meta name="title" content="Pelote de Fils Rouges">
+    <meta name="description"
+        content="Projection de courts-metrages des étudiant·e·s de Waide Somme le 22/09/23 à la MCA d'Amiens.">
+    <meta name="author" content="Pablo Moreno">
+    <link rel="canonical" href="https://fils-rouges.online">
+
+
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <div class="background">
+        <p>CONCLUDED OPENSPACE</p>
+        <div id="rotateGadget" onclick="start()" src="assets/logos/✶.svg">
+        </div>
+    </div>
+
+    <div class="header">
+        <!-- <button onclick="restarGrid()" id="randomButton">Random</button> -->
+        <button onclick="cleanBlocks()" class="buttonSquare" id="buttonClean">CLEAN <span id="cleanCounter">(0)</span></button>
+        <button onclick="stateScroll()" class="buttonSquare" id="buttonPlay">PAUSE</button>
+    </div>
+
+    <div class="selector">
+        <div class="" id="bubbleReference">
+            <input type="checkbox" id="checkReference" name="Reference" onclick="toggleCategories(this)" checked />
+            <label onclick="checkCategories(this)" id="Reference">REFERENCES</label>
+        </div>
+
+        <div class="" id="bubbleStoryline">
+            <input type="checkbox" id="checkStoryline" name="Storyline" onclick="toggleCategories(this)" checked />
+            <label onclick="checkCategories(this)" id="Storyline">STORYLINE</label>
+        </div>
+
+        <div class="" id="bubbleMaterial">
+            <input type="checkbox" id="checkMaterial" name="Material" onclick="toggleCategories(this)" checked />
+            <label onclick="checkCategories(this)" id="Material">MATERIALS</label>
+        </div>
+
+        <div class="" id="bubbleProcess">
+            <input type="checkbox" id="checkProcess" name="Process" onclick="toggleCategories(this)" checked />
+            <label onclick="checkCategories(this)" id="Process">PROCESS</label>
+        </div>
+
+        <div class="" id="bubbleFinal">
+            <input type="checkbox" id="checkFinal" name="Final" onclick="toggleCategories(this)" checked />
+            <label onclick="checkCategories(this)" id="Final">FINAL</label>
+        </div>
+
+    </div>
+
+
+    </div>
+
+    <div class="content"></div>
+
+    <audio id="sound" src="assets/sound.mp3" preload="auto"></audio>
+
+    <script id="script" src="assets/js/emptydata.js"></script>
+    <script id="script" src="assets/js/import.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
