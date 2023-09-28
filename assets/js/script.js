@@ -8,10 +8,12 @@ CLOCKKKK
 -------------------------------------- */
 
 function displayClock(){
-  var display = new Date().toLocaleTimeString();
+  var date = new Date().toLocaleTimeString('fr-FR', {timeZone: 'Europe/Paris',hour: '2-digit', minute: '2-digit', hour12: false})
+
   const timer = document.getElementById("timer");
-  timer.innerHTML = display;
+  timer.innerHTML = date + ' in Amiens, FR.';
   setTimeout(displayClock, 1000); 
+
 }
 
 

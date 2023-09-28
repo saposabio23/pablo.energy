@@ -259,6 +259,7 @@ MENU
   z-index: 2;
   position: absolute;
   left: 45px;
+  width: max-content;
 }
 
 

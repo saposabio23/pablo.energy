@@ -1,7 +1,0 @@
-- erase las block with keayboad
-- repari pause by (space)
--repair bakcground logo stop on Puase
-
-
-block stop at top
-(add empty block under the last block and heigClient - block heigh = emptyblock height)
