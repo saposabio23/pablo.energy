@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pablo en Briançon</title>
+
+    <style>
+
+        :root{
+            --mesure: 3vh;
+        }
+
+        body {
+            background-color: CornflowerBlue;
+            margin: var(--mesure);
+            padding: 0;
+            width: calc(100% - calc(var(--mesure) * 2));
+            height: calc(100% - calc(var(--mesure) * 2));
+            overflow: hidden;
+            position: absolute;
+        }
+
+        video {
+            border-radius: 20px;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <video id="cuatro" src="video.mp4" type="video/mp4" autoplay controls></video>
+
+</body>
+
+</html>
