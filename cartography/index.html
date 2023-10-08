@@ -1,27 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <title>CARTO</title>
 
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/normalize.css">
-    <link rel="stylesheet" href="./assets/fonts/inter/inter.css">
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>CARTOGRAPHY</title>
 
-    <div id='viewport' class='dragscroll nochilddrag' >
-      <div id='carto'>
-        <div class="startLoading"><span id="tagToLoad"></span> ✺</div>
-        <div class="tagStart"></div>
-        <div class="tagList"></div>
-        <div class="tagHistory"></div>
-      </div>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/normalize.css">
+  <link rel="stylesheet" href="./assets/fonts/inter/inter.css">
+</head>
+
+<body>
+
+  <div id='viewport' class='dragscroll nochilddrag'>
+    <div id='carto'>
+      <div class="startLoading tagButton noHover"><span id="tagToLoad"></span><img src="./assets/img/spinner.gif"></div>
+      <div class="tagStart"></div>
+      <div class="tagList"></div>
     </div>
+  </div>
 
-    <script src='./assets/js/data.js'></script>
-    <script src='./assets/js/script.js'></script>
-    <script src='./assets/js/dragscroll.js'></script>
-  </body>
+
+
+  <div class="history">
+    <div class="header">
+      <h5>History</h5>
+      <span>▴</span>
+    </div>
+    <div class="historyContent"></div>
+  </div>
+
+  <div class="menu">
+    <div class="infos">
+      <div id="about" class="tagButton">A</div>
+      <div id="index" class="tagButton">index</div>
+    </div>
+    <div>
+      <div id="restart" class="round shadow">♻️</div>
+      <div id="random" class="round shadow">🎲</div>
+      <div id="lesszoom" class="round shadow">−</div>
+      <div id="morezoom" class="round shadow">+</div>
+    </div>
+  </div>
+
+
+  <script src='./assets/js/data.js'></script>
+  <script src='./assets/js/script.js'></script>
+  <!-- <script src='./assets/js/dragscroll.js'></script> -->
+</body>
+
 </html>

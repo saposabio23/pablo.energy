@@ -34,7 +34,7 @@ const offsetsTagList = {
 // des elements généraux
 let viewport = document.querySelector('#viewport');
 let tagDiv = document.querySelector('.tagList');
-let tagHistory = document.querySelector('.tagHistory');
+let historyContent = document.querySelector('.historyContent');
 let tagStart = document.querySelector('.tagStart');
 let tagToLoad = document.querySelector('#tagToLoad');
 
@@ -102,6 +102,7 @@ function get_viewport_dimensions() {
   viewportDimensions.center.x = viewport.clientWidth / 2
   viewportDimensions.center.y = viewport.clientHeight / 2
 }
+window.addEventListener('resize', get_viewport_dimensions);
 
 /**
 * parcourt les données et recences tous les tags
@@ -137,10 +138,10 @@ function list_all_tags() {
     let tagEtiqueta = document.createElement("button");
     tagEtiqueta.innerHTML = tagName;
     tagEtiqueta.id = tagName;
-    tagEtiqueta.className = 'tagNormal';
+    tagEtiqueta.className = 'tagButton';
     tagStart.appendChild(tagEtiqueta);
     tagEtiqueta.addEventListener('click', (event) => {
-      tagStart.classList.add('hideStart')
+      tagStart.classList.add('hide1s')
       tagToLoad.innerHTML = tagName;
       setTimeout(() => {
         document.querySelector('.startLoading').classList.add('showLoad')
@@ -200,10 +201,11 @@ function display_tags(position, data) {
 
   for (let i = 0; i < data.tags.length; i++) {
     let tagName = data.tags[i];
+    let titleName = data.title[i];
     // on regarde dans la liste des projets disponibles si un projet avec le tag tagName est encore disponible
     if (availableProjects.some((project) => project.tags.some((tag) => tag === tagName))) {
       let tagButton = document.createElement("button");
-      tagButton.className = 'tagButton tagNormal';
+      tagButton.className = 'tagButton';
       tagButton.innerHTML = tagName;
       tagButton.id = tagName;
       tagDiv.appendChild(tagButton);
@@ -283,9 +285,9 @@ function click_on_tag(tagName, direction, projectPosition) {
   // on écrit le tag dans l'historique
   let lastTag = document.createElement('button')
   lastTag.innerHTML = tagName;
-  lastTag.className = 'tagNormal';
+  lastTag.className = 'tagButton';
   lastTag.dataset.indexDisplayedProject = indexDisplayedProject
-  tagHistory.prepend(lastTag)
+  historyContent.prepend(lastTag)
   lastTag.addEventListener('click', (event) => {
     let position = displayedProjects[event.target.dataset.indexDisplayedProject].data.projectPosition
     set_scrollbars_position(position.scrollX, position.scrollY)
@@ -356,42 +358,94 @@ function display_project(data, x, y) {
   let filename = data.imgFilename
   let url = data.url
   let title = data.title
+  let designer = data.designer
+  let tags = data.tags
 
   //crée le block
   let newBlock = document.createElement('div')
   newBlock.dataset.projectIndex = curProjectIndex++
   newBlock.className = 'newBlock'
   carto.appendChild(newBlock)
-  
+
   // memorise la position du projet dans la carto
   if (data.projectPosition === undefined) {
     data.projectPosition = { x: x, y: y }
   }
-  
+
+  // crée le window
+  let windowBlock = document.createElement('div')
+  windowBlock.className = 'windowBlock'
+  newBlock.appendChild(windowBlock)
+
   //crée l'image
   let image = document.createElement('img')
-  image.src = './assets/img/' + filename + '.png'
+  image.src = './assets/thumbnails/' + filename + '.png'
   image.className = 'imageBlock'
-  newBlock.appendChild(image)
-  
+  windowBlock.appendChild(image)
+
   //crée les buttons dans les coins
-  create_image_corners_buttons(newBlock, data)
+  create_image_corners_buttons(windowBlock, data)
+
+  //crée le block en hover
+  let hoverBlock = document.createElement('div')
+  hoverBlock.className = 'hoverBlock'
+
+  let hoverTitle = document.createElement('h3')
+  hoverTitle.innerHTML = title
+
+  let hoverOptions = document.createElement('div')
+
+  let hoverButtonUrl = document.createElement('button')
+  let hoverUrl = document.createElement('a')
+  hoverUrl.innerHTML = 'Visit'
+  hoverUrl.href = 'https://' + url
+  hoverUrl.target = '_blank'
+  hoverButtonUrl.appendChild(hoverUrl)
+
+  let hoverButtonInfo = document.createElement('button')
+  hoverButtonInfo.innerHTML = 'Info'
   
+  hoverButtonInfo.addEventListener('click', (event) => {
+    if (infoBlock.classList.contains('appear1s')) {
+      infoBlock.classList.remove('appear1s')
+      hoverButtonInfo.style.backgroundColor = 'initial'
+      hoverButtonInfo.innerHTML = 'Info'
+    }
+    else {
+      infoBlock.classList.add('appear1s')
+      hoverButtonInfo.style.backgroundColor = 'gray'
+      hoverButtonInfo.innerHTML = 'Close ×'
+
+    }
+  })
+
+  let hoverButtonFav = document.createElement('button')
+  hoverButtonFav.innerHTML = 'Fav'
+
+  hoverOptions.appendChild(hoverButtonUrl)
+  hoverOptions.appendChild(hoverButtonInfo)
+  hoverOptions.appendChild(hoverButtonFav)
+  hoverBlock.appendChild(hoverTitle)
+  hoverBlock.appendChild(hoverOptions)
+  windowBlock.appendChild(hoverBlock)
+
   //crée le block d'informations
   let infoBlock = document.createElement('div')
-  newBlock.setAttribute = 'nochilddrag'
   infoBlock.className = 'infoBlock'
 
-  let infoTitle = document.createElement('h3')
-  infoTitle.innerHTML = title
-
-  let infoURL = document.createElement('a')
-  infoURL.innerHTML = 'www.' + url
-  infoURL.href = 'https://' + url
-  infoURL.target = '_blank'
+  let infoTitle = document.createElement('span')
+  infoTitle.innerHTML = 'Titre: ' + title
+  let infoURL = document.createElement('span')
+  infoURL.innerHTML = 'URL: ' + url
+  let infoDesigner = document.createElement('span')
+  infoDesigner.innerHTML = 'Designer: ' + designer
+  let infoTags = document.createElement('span')
+  infoTags.innerHTML = 'Tags: ' + tags
 
   infoBlock.appendChild(infoTitle)
   infoBlock.appendChild(infoURL)
+  infoBlock.appendChild(infoDesigner)
+  infoBlock.appendChild(infoTags)
   newBlock.appendChild(infoBlock)
 
   //positionne le projet
@@ -416,7 +470,7 @@ function create_image_corners_buttons(parent, data) {
   for (let i = 0; i < 4; i++) {
     let linkButton = document.createElement('button')
     linkButton.innerHTML = '+'
-    linkButton.className = 'linkBlock'
+    linkButton.className = 'linkBlock shadow'
     linkButton.addEventListener('click', e => {
       // on calcle la position de la liste de tags
       let positionTagList = {
