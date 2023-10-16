@@ -21,6 +21,9 @@
   --font-normal: 1.1rem;
   --font-small: .8rem;
 
+  --tran-short: all .3s ease-in-out;
+  ;
+
 }
 
 html,
@@ -170,12 +173,12 @@ MENU
 }
 
 .identity {
-  background-color: var(--thisColor);
+  background-color: var(--plus);
   height: 45px;
   width: 45px;
   border-radius: 100%;
-  -webkit-box-shadow: 0 0 10px var(--thisColor);
-  box-shadow: 0 0 10px var(--thisColor);
+  -webkit-box-shadow: 0 0 10px var(--plus);
+  box-shadow: 0 0 10px var(--plus);
   z-index: 3;
 
   -webkit-animation: energy 3s ease-in-out;
@@ -201,25 +204,25 @@ MENU
 
 @-webkit-keyframes energy {
   0% {
-    -webkit-box-shadow: 0 0 0px var(--thisColor);
-    box-shadow: 0 0 0px var(--thisColor);
+    -webkit-box-shadow: 0 0 0px var(--plus);
+    box-shadow: 0 0 0px var(--plus);
   }
 
   100% {
-    -webkit-box-shadow: 0 0 30px var(--thisColor);
-    box-shadow: 0 0 30px var(--thisColor);
+    -webkit-box-shadow: 0 0 30px var(--plus);
+    box-shadow: 0 0 30px var(--plus);
   }
 }
 
 @keyframes energy {
   0% {
-    -webkit-box-shadow: 0 0 0px var(--thisColor);
-    box-shadow: 0 0 0px var(--thisColor);
+    -webkit-box-shadow: 0 0 0px var(--plus);
+    box-shadow: 0 0 0px var(--plus);
   }
 
   100% {
-    -webkit-box-shadow: 0 0 30px var(--thisColor);
-    box-shadow: 0 0 30px var(--thisColor);
+    -webkit-box-shadow: 0 0 30px var(--plus);
+    box-shadow: 0 0 30px var(--plus);
   }
 }
 
@@ -372,15 +375,15 @@ MAIL STUFF
 NOW
 -------------------------------------- */
 .now {
+  padding: 60px 20px 20px 20px;
   margin: var(--spacing-l);
-  /*! margin: 0 3vw; */
-  color: white;
+  color: black;
+  height: fit-content;
+  max-width: 500px;
 }
 
 .now a {
-  border: 1px dotted var(--plus);
-  border-radius: 500px;
-  padding: 3px 5px;
+  text-decoration: underline;
   -webkit-transition: all .3s ease-in-out;
   -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
@@ -388,8 +391,35 @@ NOW
 
 .now a:hover {
   cursor: ne-resize;
-  color: black;
   background-color: var(--plus);
+}
+
+ul {
+  padding-inline-start: 20px;
+  margin-block-start: 5px;
+  margin-block-end: 20px;
+}
+
+h5 {
+  margin: 0;
+  padding: 0;
+}
+
+.blockTitle {
+  width: 100%;
+  grid-column: 1 / 3;
+  border-radius: 67px;
+  background-color: snow;
+  color: black;
+  /* box-shadow: 0px 3px 20px hsla(0, 0%, 0%, 0.25); */
+  padding: var(--spacing-s);
+  text-align: center;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px) saturate(100%);
+  background-color: #fffafa69;
+  position: sticky;
+  top: 0;
+  z-index: 99;
 }
 
 /* -----------------------------------
@@ -404,6 +434,11 @@ h2 {
   text-transform: capitalize;
 }
 
+.block h2 {
+  box-shadow: 0px 0px 10px hsla(0, 0%, 0%, 0.1);
+  z-index: 99;
+}
+
 .back {
   position: fixed;
   top: 0;
@@ -411,16 +446,23 @@ h2 {
   width: 100dvw;
   height: 100dvh;
   align-content: start;
-  padding: 60px 20px 20px 20px;
-  background-color: var(--thisColor);
+  /* padding: 60px 20px 20px 20px; */
+  background-color: var(--white);
+  color: black;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
 }
 
 .grid {
+  padding: 30px 20px 20px 20px;
+
   display: grid;
   justify-items: center;
   row-gap: 2rem;
-  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
-  padding-top: var(--spacing-s);
+  grid-template-columns: 1fr 1fr;
+  /* grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); */
+  overflow: scroll;
 }
 
 .block {
@@ -438,7 +480,8 @@ h2 {
 .block:hover {
   background-color: snow;
   color: black;
-  box-shadow: 0px 0px 10px var(--plus);;
+  box-shadow: 0px 0px 10px var(--plus);
+  ;
   cursor: pointer;
   transform: perspective(20em) rotateX(0deg);
   transition: var(--tran-short);
@@ -446,7 +489,7 @@ h2 {
 
 
 .block img {
-  /*! height: 100%; */
+  height: 100%;
   width: 100%;
   object-fit: cover;
   border-radius: 0 0 7px 7px;
@@ -462,10 +505,12 @@ h2 {
   box-shadow: 0px 3px 20px hsla(0, 0%, 0%, 0.25);
   transition: var(--tran-short);
   border-radius: 7px;
+
 }
 
 .project:hover {
-  box-shadow: 0px 0px 10px var(--plus);;
+  box-shadow: 0px 0px 10px var(--plus);
+  ;
   transition: var(--tran-short);
 }
 
@@ -518,7 +563,7 @@ SCREEN NIGHT
   top: 0;
   left: 0;
 
-  background-color: var(--thisColor) !important;
+  background-color: var(--plus) !important;
   background-image: none;
 }
 
@@ -551,7 +596,7 @@ details {
   border-radius: 25px;
   padding: var(--spacing-s);
   transition: all .3s ease-in-out;
-  color: white;
+  color: black;
   margin: var(--spacing-l);
   background: #fffafa47;
   box-shadow: 0px 0px 20px hsla(0, 0%, 0%, 0.25);

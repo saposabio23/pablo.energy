@@ -17,25 +17,26 @@ let viewportDimensions = {
 }
 
 const offsetsImages = {
-  'top-left': { x: -600, y: -300 },
-  'top-right': { x: 600, y: -300 },
-  'bottom-left': { x: -600, y: 300 },
-  'bottom-right': { x: 600, y: 300 },
+  'top-left': { x: -640, y: -320 },
+  'top-right': { x: 640, y: -320 },
+  'bottom-left': { x: -640, y: 320 },
+  'bottom-right': { x: 640, y: 320 },
   'center': { x: 0, y: 0 },
 }
 
-const offsetsTagList = {
-  'top-left': { x: -144, y: -79 },
-  'top-right': { x: 144, y: -79 },
-  'bottom-left': { x: -144, y: 79 },
-  'bottom-right': { x: 144, y: 79 },
+const offsetstagMore = {
+  'top-left': { x: -145, y: -155 },
+  'top-right': { x: 160, y: -155 },
+  'bottom-left': { x: -145, y: 15 },
+  'bottom-right': { x: 160, y: 15 },
 }
 
 // des elements généraux
 let viewport = document.querySelector('#viewport');
-let tagDiv = document.querySelector('.tagList');
+let carto = document.querySelector('#carto');
+let tagMore = document.querySelector('.tagMore');
 let historyContent = document.querySelector('.historyContent');
-let tagStart = document.querySelector('.tagStart');
+let tagList = document.querySelector('.tagList');
 let tagToLoad = document.querySelector('#tagToLoad');
 
 // le nombre de projets actuellement affichés
@@ -139,14 +140,24 @@ function list_all_tags() {
     tagEtiqueta.innerHTML = tagName;
     tagEtiqueta.id = tagName;
     tagEtiqueta.className = 'tagButton';
-    tagStart.appendChild(tagEtiqueta);
+    tagList.appendChild(tagEtiqueta);
+    tagEtiqueta.addEventListener('mouseenter', function () {
+      soundhover.play();
+    });
     tagEtiqueta.addEventListener('click', (event) => {
-      tagStart.classList.add('hide1s')
+      tagList.classList.add('disappear')
       tagToLoad.innerHTML = tagName;
       setTimeout(() => {
         document.querySelector('.startLoading').classList.add('showLoad')
+        tagList.style.display = 'none';
       }, "800");
       setTimeout(() => {
+        document.querySelector('.startLoading').style.display = 'none';
+        document.querySelector('.history').classList.add('appears');
+        document.querySelector('.menu').classList.add('appears');
+        document.querySelector('.zoom').classList.add('appears');
+        carto.style.transform = 'scale(var(--zoom))'
+
         click_on_tag(tagName, 'center', cartoDimensions.center)
       }, "3000");
     })
@@ -162,64 +173,76 @@ function list_all_tags() {
 
 
 function display_tags(position, data) {
-  // on nettoie la position du block dans son tag html
-  tagDiv.style.left = null
-  tagDiv.style.top = null
-  tagDiv.style.right = null
-  tagDiv.style.bottom = null
-  tagDiv.classList.remove('hidden')
-  let tagListPosition
+  console.log(position.x, position.y)
 
-  // on position le conteneur de la taglist en fonction de son layout (position autour de la fenetre)
+  // on nettoie la position du block dans son tag html
+  tagMore.style.left = null
+  tagMore.style.top = null
+  tagMore.style.right = null
+  tagMore.style.bottom = null
+  // tagMore.classList.remove('hidden')
+  let tagMorePosition
+
+  // on position le conteneur de la tagMore en fonction de son layout (position autour de la fenetre)
   switch (position.layout) {
     case 'top-left':
-      tagDiv.style.left = position.x + 'px'
-      tagDiv.style.top = position.y + 'px'
-      tagListPosition = 'top-left'
+      tagMore.style.left = position.x + 'px'
+      tagMore.style.top = position.y + 'px'
+      tagMorePosition = 'top-left'
       break
     case 'top-right':
-      tagDiv.style.left = (position.x - tagDiv.clientWidth) + 'px'
-      tagDiv.style.top = position.y + 'px'
-      tagListPosition = 'top-right'
+      tagMore.style.left = (position.x - tagMore.clientWidth) + 'px'
+      tagMore.style.top = position.y + 'px'
+      tagMorePosition = 'top-right'
       break
     case 'bottom-left':
-      tagDiv.style.left = position.x + 'px'
-      tagListPosition = 'bottom-left'
-      tagDiv.style.top = (position.y - tagDiv.clientHeight) + 'px'
+      tagMore.style.left = position.x + 'px'
+      tagMore.style.top = (position.y - tagMore.clientHeight) + 'px'
+      tagMorePosition = 'bottom-left'
       break
     case 'bottom-right':
-      tagDiv.style.left = (position.x - tagDiv.clientWidth) + 'px'
-      tagDiv.style.top = (position.y - tagDiv.clientHeight) + 'px'
-      tagListPosition = 'bottom-right'
+      tagMore.style.left = (position.x - tagMore.clientWidth) + 'px'
+      tagMore.style.top = (position.y - tagMore.clientHeight) + 'px'
+      tagMorePosition = 'bottom-right'
       break
   }
 
   // nettoyage du contenu de la palette de tags
-  while (tagDiv.firstChild) {
-    tagDiv.removeChild(tagDiv.firstChild);
+  while (tagMore.firstChild) {
+    tagMore.removeChild(tagMore.firstChild);
   }
+
+  let tagText = document.createElement('p')
+  tagText.innerHTML = "+ de tags:"
+  tagMore.appendChild(tagText);
 
   for (let i = 0; i < data.tags.length; i++) {
     let tagName = data.tags[i];
     let titleName = data.title[i];
+
+    console.log(tagName)
+    console.log(titleName)
     // on regarde dans la liste des projets disponibles si un projet avec le tag tagName est encore disponible
     if (availableProjects.some((project) => project.tags.some((tag) => tag === tagName))) {
       let tagButton = document.createElement("button");
       tagButton.className = 'tagButton';
       tagButton.innerHTML = tagName;
       tagButton.id = tagName;
-      tagDiv.appendChild(tagButton);
+      tagMore.appendChild(tagButton);
+      tagButton.addEventListener('mouseenter', function () {
+        soundhover.play();
+      });
       tagButton.addEventListener('click', (event) => {
-        click_on_tag(tagName, tagListPosition, data.projectPosition)
+        click_on_tag(tagName, tagMorePosition, data.projectPosition, )
       })
     }
   }
 }
 
 /**
-* clic sur un tag de la taglist
+* clic sur un tag de la tagMore
 * @param  tagName   le nom du tag sur lequel on a cliqué
-* @param  direction  la position (la direction) de la fenetre de tagList
+* @param  direction  la position (la direction) de la fenetre de tagMore
 * @param  projectPosition  la position (le centre) de la fenetre de projet
 */
 function click_on_tag(tagName, direction, projectPosition) {
@@ -249,7 +272,8 @@ function click_on_tag(tagName, direction, projectPosition) {
 
   // si il n'y a plus de projet pas encore affiché
   if (projectsWithThisTagNotDisplayed.length === 0) {
-    // on écrit le tag dans l'historique
+
+    // notif no projet
     let noProjectsLeft = document.createElement('span')
     noProjectsLeft.innerHTML = 'All projects with the tag ' + '<span>' + tagName + '</span>' + ' are already here!';
     noProjectsLeft.className = 'noProjectsLeft';
@@ -283,15 +307,17 @@ function click_on_tag(tagName, direction, projectPosition) {
   let indexDisplayedProject = displayedProjects.length - 1
 
   // on écrit le tag dans l'historique
-  let lastTag = document.createElement('button')
+  let lastTag = document.createElement('span')
   lastTag.innerHTML = tagName;
-  lastTag.className = 'tagButton';
   lastTag.dataset.indexDisplayedProject = indexDisplayedProject
   historyContent.prepend(lastTag)
+
   lastTag.addEventListener('click', (event) => {
     let position = displayedProjects[event.target.dataset.indexDisplayedProject].data.projectPosition
     set_scrollbars_position(position.scrollX, position.scrollY)
   })
+
+  document.body.style.setProperty('--zoom', '100%')
 }
 
 /**
@@ -358,7 +384,7 @@ function display_project(data, x, y) {
   let filename = data.imgFilename
   let url = data.url
   let title = data.title
-  let designer = data.designer
+  let description = data.description
   let tags = data.tags
 
   //crée le block
@@ -378,85 +404,105 @@ function display_project(data, x, y) {
   newBlock.appendChild(windowBlock)
 
   //crée l'image
-  let image = document.createElement('img')
-  image.src = './assets/thumbnails/' + filename + '.png'
-  image.className = 'imageBlock'
-  windowBlock.appendChild(image)
+  let windowURL = document.createElement('a')
+  windowURL.href = 'https://' + url
+  windowURL.target = '_blank'
+  windowURL.style.backgroundImage = 'url(assets/thumbnails/' + filename + '.png)'
+  windowBlock.appendChild(windowURL)
+
+  // let image = document.createElement('img')
+  // image.src = './assets/thumbnails/' + filename + '.png'
+  // image.className = 'imageBlock'
+  // windowURL.appendChild(image)
 
   //crée les buttons dans les coins
   create_image_corners_buttons(windowBlock, data)
-
-  //crée le block en hover
-  let hoverBlock = document.createElement('div')
-  hoverBlock.className = 'hoverBlock'
-
-  let hoverTitle = document.createElement('h3')
-  hoverTitle.innerHTML = title
-
-  let hoverOptions = document.createElement('div')
-
-  let hoverButtonUrl = document.createElement('button')
-  let hoverUrl = document.createElement('a')
-  hoverUrl.innerHTML = 'Visit'
-  hoverUrl.href = 'https://' + url
-  hoverUrl.target = '_blank'
-  hoverButtonUrl.appendChild(hoverUrl)
-
-  let hoverButtonInfo = document.createElement('button')
-  hoverButtonInfo.innerHTML = 'Info'
-  
-  hoverButtonInfo.addEventListener('click', (event) => {
-    if (infoBlock.classList.contains('appear1s')) {
-      infoBlock.classList.remove('appear1s')
-      hoverButtonInfo.style.backgroundColor = 'initial'
-      hoverButtonInfo.innerHTML = 'Info'
-    }
-    else {
-      infoBlock.classList.add('appear1s')
-      hoverButtonInfo.style.backgroundColor = 'gray'
-      hoverButtonInfo.innerHTML = 'Close ×'
-
-    }
-  })
-
-  let hoverButtonFav = document.createElement('button')
-  hoverButtonFav.innerHTML = 'Fav'
-
-  hoverOptions.appendChild(hoverButtonUrl)
-  hoverOptions.appendChild(hoverButtonInfo)
-  hoverOptions.appendChild(hoverButtonFav)
-  hoverBlock.appendChild(hoverTitle)
-  hoverBlock.appendChild(hoverOptions)
-  windowBlock.appendChild(hoverBlock)
 
   //crée le block d'informations
   let infoBlock = document.createElement('div')
   infoBlock.className = 'infoBlock'
 
-  let infoTitle = document.createElement('span')
-  infoTitle.innerHTML = 'Titre: ' + title
-  let infoURL = document.createElement('span')
-  infoURL.innerHTML = 'URL: ' + url
-  let infoDesigner = document.createElement('span')
-  infoDesigner.innerHTML = 'Designer: ' + designer
-  let infoTags = document.createElement('span')
-  infoTags.innerHTML = 'Tags: ' + tags
+  let infoRowTitle = document.createElement('tr')
+  infoBlock.appendChild(infoRowTitle)
 
-  infoBlock.appendChild(infoTitle)
-  infoBlock.appendChild(infoURL)
-  infoBlock.appendChild(infoDesigner)
-  infoBlock.appendChild(infoTags)
+  let infoHeaderTitle = document.createElement('td')
+  infoHeaderTitle.innerHTML = 'Titre'
+  infoRowTitle.appendChild(infoHeaderTitle)
+
+  let infoTextTitle = document.createElement('td')
+  infoTextTitle.innerHTML = title
+  infoRowTitle.appendChild(infoTextTitle)
+
+  infoBlock.appendChild(infoRowTitle)
+
+
+  let infoRowDescription = document.createElement('tr')
+  infoBlock.appendChild(infoRowDescription)
+
+  let infoHeaderDescription = document.createElement('td')
+  infoHeaderDescription.innerHTML = 'Description'
+  infoRowDescription.appendChild(infoHeaderDescription)
+
+  let infoTextDescription = document.createElement('td')
+  infoTextDescription.innerHTML = description
+  infoRowDescription.appendChild(infoTextDescription)
+
+  infoBlock.appendChild(infoRowDescription)
+
+  let infoRowURL = document.createElement('tr')
+  infoBlock.appendChild(infoRowURL)
+
+  let infoHeaderURL = document.createElement('td')
+  infoHeaderURL.innerHTML = 'URL'
+  infoRowURL.appendChild(infoHeaderURL)
+
+  let infoTextURL = document.createElement('td')
+
+  let infoTextLink = document.createElement('a')
+  infoTextLink.href = 'https://' + url
+  infoTextLink.target = '_blank'
+  infoTextLink.innerHTML = 'www.' + url
+  infoTextURL.appendChild(infoTextLink)
+
+  infoRowURL.appendChild(infoTextURL)
+
+  let infoRowTags = document.createElement('tr')
+  infoBlock.appendChild(infoRowTags)
+
+  let infoHeaderTags = document.createElement('td')
+  infoHeaderTags.innerHTML = 'Tags'
+  infoRowTags.appendChild(infoHeaderTags)
+
+  let infoTextTags = document.createElement('td')
+  infoTextTags.innerHTML = tags
+  infoRowTags.appendChild(infoTextTags)
+
+  infoBlock.appendChild(infoRowTags)
+
   newBlock.appendChild(infoBlock)
 
+  windowBlock.addEventListener('mouseenter', e => {
+    // infoBlock.style.opacity = '1'
+    infoBlock.classList.add('appearsFast')
+    infoBlock.classList.remove('disappearFast')
+  })
+
+  infoBlock.addEventListener('mouseleave', e => {
+    // infoBlock.style.opacity = '0'
+    infoBlock.classList.add('disappearFast')
+    infoBlock.classList.remove('appearsFast')
+  })
+
   //positionne le projet
-  newBlock.style.left = (x - image.width / 2) + 'px'
-  newBlock.style.top = (y - image.height / 2) + 'px'
+  newBlock.style.left = (x - 320 / 2) + 'px'
+  newBlock.style.top = (y - 320 / 2) + 'px'
 
   // on ajojute ce projet et son conteneur principal  à la liste de tous les projets affichés
   displayedProjects.push({ container: newBlock, data: data })
 
   // on retire ce projet de la liste des projets disponibles
   removeProjectFromAvailableProjects(data)
+
 }
 
 /**
@@ -471,35 +517,37 @@ function create_image_corners_buttons(parent, data) {
     let linkButton = document.createElement('button')
     linkButton.innerHTML = '+'
     linkButton.className = 'linkBlock shadow'
-    linkButton.addEventListener('click', e => {
+    linkButton.addEventListener('mouseenter', e => {
       // on calcle la position de la liste de tags
-      let positionTagList = {
-        x: data.projectPosition.x + offsetsTagList[directions[i]].x,
-        y: data.projectPosition.y + offsetsTagList[directions[i]].y,
+      let positiontagMore = {
+        x: data.projectPosition.x + offsetstagMore[directions[i]].x,
+        y: data.projectPosition.y + offsetstagMore[directions[i]].y,
         layout: directions[i]
       }
       // on affiche la tag list
-      display_tags(positionTagList, data)
+      tagMore.style.display = 'flex'
+
+      display_tags(positiontagMore, data)
     })
     parent.appendChild(linkButton)
   }
 }
 
 /*
-** hide tagList quand on click en dehors
+** hide tagMore quand on click en dehors
 */
-function hideTagList(event) {
-  if (event.key === "Escape") {
-    tagDiv.classList.add('hidden')
-  }
-  // If user clicks inside the element, do nothing
-  if (event.target.closest(".linkBlock")) return
-  // If user clicks outside the element, hide it!
-  tagDiv.classList.add('hidden')
-}
-document.addEventListener("click", hideTagList)
-document.addEventListener("keydown", hideTagList)
 
+tagMore.addEventListener('mouseleave', e => {
+  tagMore.style.display = 'none'
+
+})
 
 init()
 
+
+
+  // // on cache la fenetre d'infos de tous les proejts
+  // var elements = document.querySelectorAll('.infoBlock');
+  // for (let i = 0, max = elements.length; i < max; i++) {
+  //   document.querySelector('.infoBlock').classList.remove('appearsFast')
+  // }

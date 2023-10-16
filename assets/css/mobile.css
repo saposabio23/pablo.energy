@@ -1,4 +1,4 @@
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
 
   html {
     font-size: 1rem;
@@ -28,15 +28,17 @@
     margin: var(--spacing-l) var(--spacing-s) var(--spacing-s) var(--spacing-s);
   }
 
-  .block {
-    width: 90%;
+
+  .back {
+    grid-template-columns: 1fr;
+    overflow: scroll;
   }
+
+
 
   .grid {
     row-gap: 1rem;
+    overflow: visible;
   }
 
-  details {
-    margin: var(--spacing-l) var(--spacing-s) var(--spacing-s) var(--spacing-s);
-  }
-  }
+}

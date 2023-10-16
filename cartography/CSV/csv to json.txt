@@ -2,7 +2,7 @@
 ,']" -> ]
 "title" -> title
 "url" -> url
-"designer" -> designer
+"description" -> description
 "imgFilename" -> imgFilename
 "tags" -> tags
 /", -> ",

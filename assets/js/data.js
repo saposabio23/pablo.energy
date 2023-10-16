@@ -1,5 +1,81 @@
 let websites = [
   {
+    title: 'WI.P projects',
+    status: 'blockTitle'
+  },
+  {
+    title: 'cartography',
+    year: '2023',
+    month: 'wip',
+    url: '/cartography',
+    image: 'cartography',
+    description: '...',
+    status: ''
+  },
+    {
+    title: 'collaborative narratives',
+    year: '2023',
+    month: 'wip',
+    url: '/cartography',
+    image: 'collaborative-narratives',
+    description: '...',
+    status: ''
+  },
+  {
+    title: 'Still projects',
+    status: 'blockTitle'
+  },
+  {
+    title: 'music',
+    year: '2023',
+    month: '06',
+    url: '/music',
+    image: 'music',
+    description: 'my music for doing things',
+    status: 'secret'
+  },
+  {
+    title: 'lune',
+    year: '2023',
+    month: '08',
+    url: '/lune',
+    image: 'lune',
+    description: 'moon viewer for tonight',
+    status: ''
+  },
+
+  {
+    title: 'lyrics',
+    year: '2023',
+    month: '04',
+    url: '/lyrics',
+    image: 'lyrics',
+    description: '...',
+    status: ''
+  },
+  {
+    title: 'my computer',
+    year: '2023',
+    month: '01',
+    url: '/my-computer',
+    image: 'my-computer',
+    description: '...',
+    status: ''
+  },
+  {
+    title: 'sunday sites',
+    year: '2023',
+    month: '03',
+    url: '/sunday-sites',
+    image: 'sunday-sites',
+    description: '...',
+    status: ''
+  },
+  {
+    title: 'Past projects',
+    status: 'blockTitle'
+  },
+  {
     title: 'Autre temps',
     year: '2021',
     month: '05',
@@ -35,15 +111,7 @@ let websites = [
     description: '...',
     status: 'secret'
   },
-  {
-    title: 'cartography',
-    year: '2023',
-    month: 'wip',
-    url: '/cartography',
-    image: 'cartography',
-    description: '...',
-    status: ''
-  },
+
   {
     title: 'glace sans tain',
     year: '2021',
@@ -71,15 +139,7 @@ let websites = [
     description: '...',
     status: 'secret'
   },
-  {
-    title: 'lyrics',
-    year: '2023',
-    month: '04',
-    url: '/lyrics',
-    image: 'lyrics',
-    description: '...',
-    status: ''
-  },
+
   // {
   //   title: 'mega-cakes',
   //   year: 'futur',
@@ -87,15 +147,7 @@ let websites = [
   //   description: '...',
   //   status: 'secret'
   // },
-  {
-    title: 'my computer',
-    year: '2023',
-    month: '01',
-    url: '/my-computer',
-    image: 'my-computer',
-    description: '...',
-    status: ''
-  },
+
   {
     title: 'naia x pablo',
     year: '2022',
@@ -114,15 +166,7 @@ let websites = [
     description: '...',
     status: 'secret'
   },
-  {
-    title: 'sunday sites',
-    year: '2023',
-    month: '03',
-    url: '/sunday-sites',
-    image: 'sunday-sites',
-    description: '...',
-    status: ''
-  },
+
   {
     title: 'sunsets',
     year: '2020',
@@ -157,33 +201,6 @@ let websites = [
     url: '/voeux2021',
     image: 'voeux2021',
     description: '...',
-    status: ''
-  },
-  {
-    title: 'web archive',
-    year: '2019',
-    month: '01',
-    url: '/web-archive',
-    image: 'web-archive',
-    description: '...',
-    status: 'secret'
-  },
-  {
-    title: 'music',
-    year: '2023',
-    month: '06',
-    url: '/music',
-    image: 'music',
-    description: 'my music for doing things',
-    status: 'secret'
-  },
-  {
-    title: 'lune',
-    year: '2023',
-    month: '08',
-    url: '/lune',
-    image: 'lune',
-    description: 'moon viewer for tonight',
     status: ''
   },
   {
