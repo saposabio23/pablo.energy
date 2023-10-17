@@ -73,6 +73,7 @@ a {
 a:hover {
   text-decoration: none;
   color: inherit;
+  cursor: ne-resize;
 }
 
 h3 {
@@ -375,11 +376,9 @@ MAIL STUFF
 NOW
 -------------------------------------- */
 .now {
-  padding: 60px 20px 20px 20px;
-  margin: var(--spacing-l);
+  margin: auto;
   color: black;
-  height: fit-content;
-  max-width: 500px;
+  width: 700px;
 }
 
 .now a {
@@ -407,7 +406,7 @@ h5 {
 
 .blockTitle {
   width: 100%;
-  grid-column: 1 / 3;
+  grid-column: 1 / 5;
   border-radius: 67px;
   background-color: snow;
   color: black;
@@ -415,11 +414,11 @@ h5 {
   padding: var(--spacing-s);
   text-align: center;
   text-transform: uppercase;
-  backdrop-filter: blur(8px) saturate(100%);
-  background-color: #fffafa69;
-  position: sticky;
-  top: 0;
-  z-index: 99;
+  /* backdrop-filter: blur(8px) saturate(100%); */
+  /* background-color: #fffafa69; */
+  /* position: sticky; */
+  /* top: 0; */
+  /* z-index: 99; */
 }
 
 /* -----------------------------------
@@ -440,29 +439,24 @@ h2 {
 }
 
 .back {
-  position: fixed;
-  top: 0;
-  overflow-y: scroll;
-  width: 100dvw;
-  height: 100dvh;
-  align-content: start;
-  /* padding: 60px 20px 20px 20px; */
+  padding: 100px 0 50px 0;
   background-color: var(--white);
   color: black;
-
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  overflow: scroll;
+  height: 100vh;
 }
 
 .grid {
-  padding: 30px 20px 20px 20px;
-
   display: grid;
   justify-items: center;
   row-gap: 2rem;
-  grid-template-columns: 1fr 1fr;
-  /* grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); */
-  overflow: scroll;
+  /*! grid-template-columns: 1fr 1fr 1fr 1fr; */
+  /*! overflow: scroll; */
+
 }
 
 .block {
@@ -481,8 +475,6 @@ h2 {
   background-color: snow;
   color: black;
   box-shadow: 0px 0px 10px var(--plus);
-  ;
-  cursor: pointer;
   transform: perspective(20em) rotateX(0deg);
   transition: var(--tran-short);
 }
