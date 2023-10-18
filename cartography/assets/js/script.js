@@ -34,6 +34,7 @@ const offsetstagMore = {
 // des elements généraux
 let viewport = document.querySelector('#viewport');
 let carto = document.querySelector('#carto');
+let background = document.querySelector('.background')
 let tagMore = document.querySelector('.tagMore');
 let historyContent = document.querySelector('.historyContent');
 let tagList = document.querySelector('.tagList');
@@ -155,12 +156,15 @@ function list_all_tags() {
         tagList.style.display = 'none';
       }, "800");
       setTimeout(() => {
-        document.querySelector('.startLoading').style.display = 'none';
         // document.querySelector('.history').classList.add('appears');
         // document.querySelector('.index').classList.add('appears');
+        document.querySelector('.startLoading').style.display = 'none';
         document.querySelector('.side').classList.add('appears');
         document.querySelector('.menu').classList.add('appears');
         document.querySelector('.zoom').classList.add('appears');
+
+        background.classList.add('back1')
+        
         carto.style.transform = 'scale(var(--zoom))'
 
         click_on_tag(tagName, 'center', cartoDimensions.center)

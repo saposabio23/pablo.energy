@@ -1,11 +1,10 @@
+IMPORTANT
 - history with title instead of tags
 - background changing
 - hide old infoblocks
 
+
+PLUS
 -gif as visit cursor (not working)
-
 -sound ui
--zoom on buttons
-
-
 -draggable options windows (history + index + options + about)
