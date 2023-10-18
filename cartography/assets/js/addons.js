@@ -27,8 +27,8 @@ let history = document.querySelector('.history')
 let historyButton = document.getElementById('buttonHistory')
 
 function showHistory() {
-    history.classList.remove('appears');
-    history.classList.add('show');
+    // history.classList.remove('appears');
+    // history.classList.add('show');
     
     if(history.classList.contains('hidden')) {
         history.classList.remove('hidden');
@@ -43,6 +43,27 @@ function showHistory() {
     
 }
 historyButton.addEventListener('click', showHistory)
+
+// montre l'index ou le chache
+let buttonIndex = document.getElementById('buttonIndex')
+
+function showindex() {
+    // index.classList.remove('appears');
+    // index.classList.add('show');
+    
+    if(index.classList.contains('hidden')) {
+        index.classList.remove('hidden');
+        index.classList.add('show');
+        buttonIndex.classList.add('checked');
+    }
+    else {
+        index.classList.remove('show');
+        index.classList.add('hidden');
+        buttonIndex.classList.remove('checked');
+    }
+    
+}
+buttonIndex.addEventListener('click', showindex)
 
 
 var zoomSlider = document.getElementById("bookzoom");

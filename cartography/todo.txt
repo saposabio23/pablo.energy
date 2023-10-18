@@ -6,3 +6,6 @@
 
 -sound ui
 -zoom on buttons
+
+
+-draggable options windows (history + index + options + about)

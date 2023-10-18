@@ -24,21 +24,9 @@
     margin: var(--spacing-s) 10px var(--spacing-s) var(--spacing-s);
   }
 
-  .now {
-    margin: var(--spacing-l) var(--spacing-s) var(--spacing-s) var(--spacing-s);
-  }
 
-
-  .back {
-    grid-template-columns: 1fr;
-    overflow: scroll;
-  }
-
-
-
-  .grid {
-    row-gap: 1rem;
-    overflow: visible;
+  .block {
+    aspect-ratio: inherit;
   }
 
 }

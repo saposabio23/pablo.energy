@@ -102,8 +102,12 @@ body:hover {
     z-index: 2;
 
     color: blak;
-    background-image: -o-radial-gradient(circle, snow 0vmin, darkslateblue 100vmin);
-    background-image: radial-gradient(circle, snow 0vmin, darkslateblue 100vmin);
+    
+
+    background-image: -o-radial-gradient(circle, #fffafae5 0vmin, darkslateblue 100vmin);
+    
+
+    background-image: radial-gradient(circle, #fffafae5 0vmin, darkslateblue 100vmin);
     opacity: 0;
 
     -webkit-transition: all 3s ease-in-out;

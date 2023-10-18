@@ -1,7 +1,8 @@
 let websites = [
   {
-    title: 'WI.P projects',
-    status: 'blockTitle'
+    title: 'WI.P projects ➔',
+    type: 'title',
+    status: 'wip'
   },
   {
     title: 'cartography',
@@ -10,7 +11,8 @@ let websites = [
     url: '/cartography',
     image: 'cartography',
     description: '...',
-    status: ''
+    type: 'project',
+    status: 'wip'
   },
     {
     title: 'collaborative narratives',
@@ -19,11 +21,14 @@ let websites = [
     url: '/cartography',
     image: 'collaborative-narratives',
     description: '...',
-    status: ''
+    type: 'project',
+    status: 'wip'
   },
   {
-    title: 'Still projects',
-    status: 'blockTitle'
+    title: 'Still projects ➔',
+    type: 'blockTitle',
+    type: 'title',
+    status: 'still'
   },
   {
     title: 'music',
@@ -32,7 +37,9 @@ let websites = [
     url: '/music',
     image: 'music',
     description: 'my music for doing things',
-    status: 'secret'
+    type: 'project',
+    status: 'still',
+    visibility: 'secret'
   },
   {
     title: 'lune',
@@ -41,7 +48,9 @@ let websites = [
     url: '/lune',
     image: 'lune',
     description: 'moon viewer for tonight',
-    status: ''
+    type: 'project',
+    status: 'still',
+    visibility: ''
   },
 
   {
@@ -51,7 +60,9 @@ let websites = [
     url: '/lyrics',
     image: 'lyrics',
     description: '...',
-    status: ''
+    type: 'project',
+    status: 'still',
+    visibility: ''
   },
   {
     title: 'my computer',
@@ -60,7 +71,9 @@ let websites = [
     url: '/my-computer',
     image: 'my-computer',
     description: '...',
-    status: ''
+    type: 'project',
+    status: 'still',
+    visibility: ''
   },
   {
     title: 'sunday sites',
@@ -69,11 +82,15 @@ let websites = [
     url: '/sunday-sites',
     image: 'sunday-sites',
     description: '...',
-    status: ''
+    type: 'project',
+    status: 'still',
+    visibility: ''
   },
   {
-    title: 'Past projects',
-    status: 'blockTitle'
+    title: 'Finished projects ➔',
+    type: 'title',
+    status: 'finish',
+    visibility: ''
   },
   {
     title: 'Autre temps',
@@ -82,7 +99,9 @@ let websites = [
     url: '/autre-temps',
     image: 'autre-temps',
     description: '...',
-    status: ''
+    type: 'project',
+    status: 'finish',
+    visibility: ''
   },
   {
     title: 'BG',
@@ -91,7 +110,9 @@ let websites = [
     url: '/bg',
     image: 'bg',
     description: '...',
-    status: ''
+    type: 'project',
+    status: 'finish',
+    visibility: ''
   },
   {
     title: 'Captcha',
@@ -100,7 +121,9 @@ let websites = [
     url: '/captcha',
     image: 'captcha',
     description: '...',
-    status: 'secret'
+    type: 'project',
+    status: 'finish',
+    visibility: 'secret'
   },
   {
     title: 'carta para dani',
@@ -109,7 +132,9 @@ let websites = [
     url: '/carta-para-dani',
     image: 'carta-para-dani',
     description: '...',
-    status: 'secret'
+    type: 'project',
+    status: 'finish',
+    visibility: 'secret'
   },
 
   {
@@ -119,7 +144,9 @@ let websites = [
     url: '/glace-sans-tain',
     image: 'glace-sans-tain',
     description: '...',
-    status: ''
+    type: 'project',
+    status: 'finish',
+    visibility: ''
   },
   {
     title: 'julietta y tristan',
@@ -128,7 +155,9 @@ let websites = [
     url: '/juliettaytristan',
     image: 'juliettaytristan',
     description: '...',
-    status: 'secret'
+    type: 'project',
+    status: 'finish',
+    visibility: 'secret'
   },
   {
     title: 'k&p',
@@ -137,16 +166,10 @@ let websites = [
     url: '/k&p',
     image: 'k&p',
     description: '...',
-    status: 'secret'
+    type: 'project',
+    status: 'finish',
+    visibility: 'secret'
   },
-
-  // {
-  //   title: 'mega-cakes',
-  //   year: 'futur',
-  //   url: '/mega-cakes',
-  //   description: '...',
-  //   status: 'secret'
-  // },
 
   {
     title: 'naia x pablo',
@@ -155,7 +178,9 @@ let websites = [
     url: '/naia-x-pablo',
     image: 'naia-x-pablo',
     description: '...',
-    status: 'secret'
+    type: 'project',
+    status: 'finish',
+    visibility: 'secret'
   },
   {
     title: 'poeme mer',
@@ -164,7 +189,9 @@ let websites = [
     url: '/poeme-mer',
     image: 'poeme-mer',
     description: '...',
-    status: 'secret'
+    type: 'project',
+    status: 'finish',
+    visibility: 'secret'
   },
 
   {
@@ -174,7 +201,9 @@ let websites = [
     url: '/sunsets',
     image: 'sunsets',
     description: '...',
-    status: 'secret'
+    type: 'project',
+    status: 'finish',
+    visibility: 'secret'
   },
   {
     title: 'tott',
@@ -183,7 +212,9 @@ let websites = [
     url: '/tott',
     image: 'tott',
     description: '...',
-    status: 'secret'
+    type: 'project',
+    status: 'finish',
+    visibility: 'secret'
   },
   {
     title: 'twenty six hour a day',
@@ -192,7 +223,9 @@ let websites = [
     url: '/twenty-six-hour-a-day',
     image: 'twenty-six-hour-a-day',
     description: '...',
-    status: 'secret'
+    type: 'project',
+    status: 'finish',
+    visibility: ''
   },
   {
     title: 'voeux 2021',
@@ -201,7 +234,9 @@ let websites = [
     url: '/voeux2021',
     image: 'voeux2021',
     description: '...',
-    status: ''
+    type: 'project',
+    status: 'finish',
+    visibility: ''
   },
   {
     title: 'virtualisations',
@@ -210,7 +245,9 @@ let websites = [
     url: '/virtualisations',
     image: 'virtualisations',
     description: 'my work on CGI architecture',
-    status: ''
+    type: 'project',
+    status: 'finish',
+    visibility: ''
   },
   {
     title: 'presence',
@@ -219,7 +256,9 @@ let websites = [
     url: '/presence',
     image: 'presence',
     description: 'a way to let people know if you are at XP!',
-    status: 'secret'
+    type: 'project',
+    status: 'finish',
+    visibility: 'secret'
   },
   {
     title: 'para mateo',
@@ -228,7 +267,9 @@ let websites = [
     url: '/para-mateo',
     image: 'para-mateo',
     description: 'Birthday website for my friend Mateo!',
-    status: 'secret'
+    type: 'project',
+    status: 'finish',
+    visibility: 'secret'
   },
   {
     title: 'Pelote de fils rouges',
@@ -237,7 +278,9 @@ let websites = [
     url: 'https://fils-rouges.online',
     image: '/fils-rouges',
     description: '...',
-    status: ''
+    type: 'project',
+    status: 'finish',
+    visibility: ''
   },
   {
     title: 'Vivir sin tí',
@@ -246,7 +289,9 @@ let websites = [
     url: 'https://vivirsinti-libro.com',
     image: '/vivir-sin-ti',
     description: '...',
-    status: ''
+    type: 'project',
+    status: 'finish',
+    visibility: ''
   },
   {
     title: 'Calendarie 2023',
@@ -255,7 +300,9 @@ let websites = [
     url: 'http://calendarie2023.netlify.app/',
     image: '/calendarie-2023',
     description: '...',
-    status: ''
+    type: 'project',
+    status: 'finish',
+    visibility: ''
   },
   {
     title: '3 Words for Europe',
@@ -264,7 +311,9 @@ let websites = [
     url: 'https://3-words-for.eu',
     image: '/3-words-for-eu',
     description: '...',
-    status: ''
+    type: 'project',
+    status: 'finish',
+    visibility: ''
   },
   {
     title: 'Eugenio Moreno',
@@ -273,6 +322,8 @@ let websites = [
     url: 'http://morenoarquitecto.com',
     image: '/moreno-arquitecto',
     description: '...',
-    status: ''
+    type: 'project',
+    status: 'finish',
+    visibility: ''
   },
 ]

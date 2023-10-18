@@ -1,5 +1,5 @@
 function init() {
-  displayClock()
+  whatNew()
   isItNight()
 }
 
@@ -7,14 +7,14 @@ function init() {
 CLOCKKKK
 -------------------------------------- */
 
-function displayClock(){
-  var date = new Date().toLocaleTimeString('fr-FR', {timeZone: 'Europe/Paris',hour: '2-digit', minute: '2-digit', hour12: false})
+// function displayClock(){
+//   var date = new Date().toLocaleTimeString('fr-FR', {timeZone: 'Europe/Paris',hour: '2-digit', minute: '2-digit', hour12: false})
 
-  const timer = document.getElementById("timer");
-  timer.innerHTML = date + ' in Amiens, FR.';
-  setTimeout(displayClock, 1000); 
+//   const timer = document.getElementById("timer");
+//   timer.innerHTML = date + ' in Amiens, FR.';
+//   setTimeout(displayClock, 1000); 
 
-}
+// }
 
 
 /* -----------------------------------
@@ -63,21 +63,20 @@ observer.observe(document.querySelector("#app"))
 // /* -----------------------------------
 // RANDOM PRESENTATION
 // -------------------------------------- */
-// function whatNew() {
-//   var frases = Array(
-//     'wazzzzup?',
-//     '⚡️⚡️⚡️',
-//     'lot of ⚡️ 4 u',
-//     'around the 🌏',
-//     "how's the day?",
-//     "have a good day!",)
+function whatNew() {
+  var frases = Array(
+    'wazzzzup?',
+    '⚡️⚡️⚡️',
+    'lot of ⚡️ 4 u',
+    "how's your day going?",
+    "have a good day!",)
 
-//   const queHay = document.getElementById("whatNew");
+  const queHay = document.getElementById("whatNew");
 
-//   var frase = frases[Math.floor(Math.random() * frases.length)];
-//   console.log(frase)
-//   queHay.innerHTML = frase;
-// }
+  var frase = frases[Math.floor(Math.random() * frases.length)];
+  console.log(frase)
+  queHay.innerHTML = frase;
+}
 
 
 // /* -----------------------------------
@@ -105,14 +104,13 @@ function isItNight() {
 // /* -----------------------------------
 // SOUNDS UI 
 // -------------------------------------- */
-const block = document.querySelectorAll('.block');
-block.forEach(function(block) {
-  block.addEventListener('mouseenter', function() {
-    console.log();
-    sound.play();
-
-  });
-});
+// const block = document.querySelectorAll('.block');
+// block.forEach(function(block) {
+//   block.addEventListener('mouseenter', function() {
+//     console.log();
+//     sound.play();
+//   });
+// });
 
 // /* -----------------------------------
 // SECRET SPACE

@@ -37,6 +37,9 @@ let carto = document.querySelector('#carto');
 let tagMore = document.querySelector('.tagMore');
 let historyContent = document.querySelector('.historyContent');
 let tagList = document.querySelector('.tagList');
+let index = document.querySelector('.index');
+let indexContent = document.querySelector('.indexContent');
+let side = document.querySelector('.side');
 let tagToLoad = document.querySelector('#tagToLoad');
 
 // le nombre de projets actuellement affichés
@@ -153,7 +156,9 @@ function list_all_tags() {
       }, "800");
       setTimeout(() => {
         document.querySelector('.startLoading').style.display = 'none';
-        document.querySelector('.history').classList.add('appears');
+        // document.querySelector('.history').classList.add('appears');
+        // document.querySelector('.index').classList.add('appears');
+        document.querySelector('.side').classList.add('appears');
         document.querySelector('.menu').classList.add('appears');
         document.querySelector('.zoom').classList.add('appears');
         carto.style.transform = 'scale(var(--zoom))'
@@ -163,8 +168,22 @@ function list_all_tags() {
     })
   }
 
-}
+  for (let i = 0; i < results.length; i++) {
+    let tagName = results[i];
+    let tagEtiqueta = document.createElement("button");
+    tagEtiqueta.innerHTML = tagName;
+    tagEtiqueta.id = tagName;
+    tagEtiqueta.className = 'tagButton';
+    indexContent.appendChild(tagEtiqueta);
+    tagEtiqueta.addEventListener('mouseenter', function () {
+      soundhover.play();
+    });
+    tagEtiqueta.addEventListener('click', (event) => {
+          click_on_tag(tagName, 'top-left', cartoDimensions.center)
+      }, "3000");
 
+  }
+}
 /**
 *  crée un button pour chaque tag de la liste
 * @param  position  {x:Number, y:Number, layout:'String'}, la position de la palette dans la carto
