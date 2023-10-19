@@ -29,4 +29,8 @@
     aspect-ratio: inherit;
   }
 
+  .blockTitle>h2>span {
+    transform: rotate(90deg);
+  }
+
 }

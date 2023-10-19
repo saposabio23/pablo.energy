@@ -1,6 +1,6 @@
 let websites = [
   {
-    title: 'WI.P projects ➔',
+    title: 'WI.P projects <span>➔</span>',
     type: 'title',
     status: 'wip'
   },
@@ -25,7 +25,7 @@ let websites = [
     status: 'wip'
   },
   {
-    title: 'Still projects ➔',
+    title: 'Still projects <span>➔</span>',
     type: 'blockTitle',
     type: 'title',
     status: 'still'
@@ -87,7 +87,7 @@ let websites = [
     visibility: ''
   },
   {
-    title: 'Finished projects ➔',
+    title: 'Finished projects <span>➔</span>',
     type: 'title',
     status: 'finish',
     visibility: ''
