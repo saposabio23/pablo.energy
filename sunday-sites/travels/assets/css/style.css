@@ -34,6 +34,11 @@ margin: 30px 0;
 
 
 /* CITIES */
+
+#Amiens {
+    background-color: orangered;
+}
+
 #Amsterdam {
     background-color: #9c692b;
 }
@@ -113,7 +118,7 @@ margin: 30px 0;
 .content {
     display: flex;
     flex-direction: column-reverse;
-    gap: 10px;
+    gap: 0px;
 
 }
 
@@ -123,21 +128,20 @@ margin: 30px 0;
     border-left: 1px solid black;
     display: inline-grid;
     margin: 0px;
+    border-radius: 10px 0 0 10px;
+padding: 10px;
 }
 
-span {
-    font-size: 70%;
-    border-radius: 999px;
-    padding: 2px;
-}
 
 .city span {
     opacity: 0;
+    width: 100%;
+    text-align: center;
 }
 
 .city span:hover {
     opacity: 1;
-    text-transform: full-width;
+    /* text-transform: full-width; */
 }
 
 .cities {
@@ -148,4 +152,9 @@ span {
     height: 20px;
     width: 100%;
     min-width: fit-content;
+    padding: 5px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
