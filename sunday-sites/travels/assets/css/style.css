@@ -1,0 +1,130 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: thistle;
+    font-weight: 100;
+    font-style: italic;
+}
+
+h4 {
+    margin: 0 0 10px 3px;
+}
+
+/* CITIES */
+#Amsterdam {
+    background-color: #9c692b;
+}
+
+#Genève {
+    background-color: #4e954d;
+}
+
+#Socoa {
+    background-color: #ceac30;
+}
+
+#Amiens {
+    background-color: #563645;
+}
+
+#Bulgaria {
+    background-color: #e11c1c;
+}
+
+#Lübeck {
+    background-color: #724af4;
+}
+
+#Marseille {
+    background-color: #1f48cd;
+}
+
+#Cambrai {
+    background-color: #ef39bb;
+}
+
+#Rotterdam {
+    background-color: #f57927;
+}
+
+#Bilbao {
+    background-color: #cbcbcb;
+}
+
+#Barcelone {
+    background-color: #FFFFE3;
+}
+
+#Brussels {
+    background-color: yellow;
+}
+
+#LeHavre {
+    background-color: gray;
+}
+
+#Paris {
+    background-color: skyblue;
+}
+
+#Pirineos {
+    background-color: rgb(88, 204, 88);
+}
+
+#SaintRobert {
+    background-color: rgb(248, 72, 72);
+}
+
+#Vercors {
+    background-color: green;
+}
+
+#Cévennes {
+    background-color: chocolate;
+}
+
+#Briançon {
+    background-color: snow;
+}
+
+.content {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
+
+}
+
+.block {
+    width: fit-content;
+    min-width: 90px;
+    border-left: 1px solid black;
+    display: inline-grid;
+    margin: 0px;
+}
+
+span {
+    font-size: 70%;
+    border-radius: 999px;
+    padding: 2px;
+}
+
+.city span {
+    opacity: 0;
+}
+
+.city span:hover {
+    opacity: 1;
+    text-transform: full-width;
+}
+
+.cities {
+    display: flex;
+}
+
+.city {
+    height: 20px;
+    width: 100%;
+    min-width: fit-content;
+}
