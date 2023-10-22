@@ -12,6 +12,27 @@ h4 {
     margin: 0 0 10px 3px;
 }
 
+#arriba{
+    font-style: normal;
+color: black;
+border: 1px solid black;
+border-radius: 100px;
+width: fit-content;
+height: 25px;
+width: 25px;
+display: flex;
+align-items: center;
+justify-content: center;
+text-decoration: none;
+margin: 30px 0;
+}
+
+#arriba:hover{
+    border: 1px solid white;
+    color: white;
+    }
+
+
 /* CITIES */
 #Amsterdam {
     background-color: #9c692b;
