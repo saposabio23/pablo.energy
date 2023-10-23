@@ -8,29 +8,33 @@ body {
     font-style: italic;
 }
 
+h2 {
+    margin: 20px 0 10px 0;
+}
+
 h4 {
     margin: 0 0 10px 3px;
 }
 
-#arriba{
+#arriba {
     font-style: normal;
-color: black;
-border: 1px solid black;
-border-radius: 100px;
-width: fit-content;
-height: 25px;
-width: 25px;
-display: flex;
-align-items: center;
-justify-content: center;
-text-decoration: none;
-margin: 30px 0;
+    color: black;
+    border: 1px solid black;
+    border-radius: 100px;
+    width: fit-content;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin: 30px 0;
 }
 
-#arriba:hover{
+#arriba:hover {
     border: 1px solid white;
     color: white;
-    }
+}
 
 
 /* CITIES */
@@ -49,10 +53,6 @@ margin: 30px 0;
 
 #Socoa {
     background-color: #ceac30;
-}
-
-#Amiens {
-    background-color: #563645;
 }
 
 #Bulgaria {
@@ -115,46 +115,51 @@ margin: 30px 0;
     background-color: snow;
 }
 
+.index {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 20px 0;
+}
+
 .content {
     display: flex;
-    flex-direction: column-reverse;
-    gap: 0px;
-
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .block {
-    width: fit-content;
     min-width: 90px;
-    border-left: 1px solid black;
-    display: inline-grid;
+    border: 1px solid black;
+    border-width: 0 0px 1px 1px;
     margin: 0px;
-    border-radius: 10px 0 0 10px;
-padding: 10px;
+    border-radius: 10px;
+    padding: 10px;
 }
 
-
-.city span {
+.cities>div>span,
+.firm span {
     opacity: 0;
     width: 100%;
     text-align: center;
 }
 
-.city span:hover {
+.cities>div>span:hover,
+.firm span:hover {
     opacity: 1;
-    /* text-transform: full-width; */
-}
-
-.cities {
-    display: flex;
 }
 
 .city {
     height: 20px;
-    width: 100%;
     min-width: fit-content;
     padding: 5px;
     border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.firm {
+    color: white;
+    margin: 20px 0 10px 0;
 }
