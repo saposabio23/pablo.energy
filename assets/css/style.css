@@ -36,7 +36,7 @@ p {
   outline: 0;
   vertical-align: baseline;
   font-family: 'rubikregular';
-  /* scrollbar-width: none; */
+  scrollbar-width: none;
 }
 
 iframe {
@@ -44,9 +44,9 @@ iframe {
 
 }
 
-/* body::-webkit-scrollbar {
+body::-webkit-scrollbar {
   display: none;
-} */
+}
 
 html {
   text-rendering: optimizeLegibility;
