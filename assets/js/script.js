@@ -1,81 +1,20 @@
 function init() {
-  whatNew()
+  displayClock()
   isItNight()
+}
+
+function alertMail(){
+  alert('Reach me at pablomoreno@proton.me 📮')
 }
 
 /* -----------------------------------
 CLOCKKKK
 -------------------------------------- */
 
-// function displayClock(){
-//   var date = new Date().toLocaleTimeString('fr-FR', {timeZone: 'Europe/Paris',hour: '2-digit', minute: '2-digit', hour12: false})
-
-//   const timer = document.getElementById("timer");
-//   timer.innerHTML = date + ' in Amiens, FR.';
-//   setTimeout(displayClock, 1000); 
-
-// }
-
-
-/* -----------------------------------
-SCROLL MORE
--------------------------------------- */
-var home = document.querySelector('.front')
-
-function showMore(){
-  home.classList.add('screen-up')
-}
-
-
-/* -----------------------------------
-MAIL STUFF
--------------------------------------- */
-var mailcopy = document.getElementById("mailcopied");
-
-function copyMail() {
-  navigator.clipboard
-    .writeText('pablomoreno@proton.me')
-    mailcopy.classList.add("mailappear")
-      setTimeout(function(){
-        mailcopy.classList.replace("mailappear", "mailexit")
-      }, 1500);
-}
-
-
-
-// /* -----------------------------------
-// BOTTOM OF THE PAGE
-// -------------------------------------- */
-var observer = new IntersectionObserver(function (entries) {
-var meCircle = document.getElementById("meCircle");
-  if (!entries[0].isIntersecting) {
-    meCircle.classList.add("circling")
-    console.log('out!')
-  }
-  else {
-    meCircle.classList.remove("circling")
-    console.log('inside!')
-  }
-});
-
-observer.observe(document.querySelector("#app"))
-
-// /* -----------------------------------
-// RANDOM PRESENTATION
-// -------------------------------------- */
-function whatNew() {
-  var frases = Array(
-    'wazzzzup?',
-    '⚡️⚡️⚡️',
-    'lot of ⚡️ 4 u',
-    "how's your day going?",
-    "have a good day!",)
-
-  const queHay = document.getElementById("whatNew");
-
-  var frase = frases[Math.floor(Math.random() * frases.length)];
-  console.log(frase)
-  queHay.innerHTML = frase;
+function displayClock(){
+  var display = new Date().toLocaleTimeString();
+  document.querySelector('.time').innerHTML = display;
+  setTimeout(displayClock, 1000); 
 }
 
 
@@ -100,45 +39,28 @@ function isItNight() {
    }
 
 
+/* -----------------------------------
+WEB ARCHIVE
+-------------------------------------- */
+const select = document.querySelector(".archive-selector");
+const options = document.querySelectorAll(".archive-selector option");
 
-// /* -----------------------------------
-// SOUNDS UI 
-// -------------------------------------- */
-// const block = document.querySelectorAll('.block');
-// block.forEach(function(block) {
-//   block.addEventListener('mouseenter', function() {
-//     console.log();
-//     sound.play();
-//   });
-// });
+// 1
 
-// /* -----------------------------------
-// SECRET SPACE
-// -------------------------------------- */
-const secret = document.querySelectorAll('.secret')
-
-
-// here when the passwords matchs it show the hidden
-function showSecrets() {
-  for (let i = 0, max = secret.length; i < max; i++) {
-    secret[i].classList.add("show");
+select.addEventListener("change", function() {
+  const url = this.options[this.selectedIndex].dataset.url;
+  if(url) {
+    location.href = url;
   }
-}
+});
 
-// the password script
-function clickPress(event) {
-  if (event.key == "Enter") {
-    const passw = "23";
-    if (document.form.texte.value.match(passw)) {
-      showSecrets()
-      document.querySelector('#meCircle').classList.remove('badpass');
-      document.querySelector('#meCircle').value = 'YES!';
-      showMore()
-    }
-    else {
-      document.querySelector('#meCircle').classList.add('badpass');
-      document.querySelector('#meCircle').value = 'NOPE';
-    }
+
+// 2
+for(const option of options) {
+  const url = option.dataset.url;
+  if(location.href.includes(url)) {
+    option.setAttribute("selected", "");
+    break;
   }
 }
 

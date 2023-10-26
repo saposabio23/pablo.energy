@@ -27,119 +27,101 @@
   <link type="text/css" rel="stylesheet" href="assets/fonts/fonts.css" />
   <link type="text/css" rel="stylesheet" href="assets/css/style.css" />
   <link type="text/css" rel="stylesheet" href="assets/css/mobile.css" />
-  <link type="text/css" rel="stylesheet" href="web-archive/assets/web-archive.css" />
 
   <link rel="preload" href="/assets/fonts/Rubik/rubik-regular-webfont.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 
 <body>
+  <p>
+    <a href="" onclick="alertMail()">Pablo Moreno</a><br>
+    I'm a young spanish and french student, who loves create, early mornings and movies. Finishing my graphic
+    design studies. Lately, I'm putting a lot of energy on making websites for people, for things or for fun.<br>
+  </p>
 
-  <div class="menu">
-    <form name="form" class="enter">
-      <input id="button" name="submit" style="display:none" />
-      <input class="identity" id="meCircle" type='text' name='texte' value='' onkeypress="clickPress(event)" />
-    </form>
-    <span id="whatNew">⚡️⚡️⚡️</span>
+
+  <h2 class="">Daily life:</h2>
+  <p>[50%] Studying my final year of the Double Master in UI/UX, between the <a
+      href="https://esad-amiens.design/fr/design-numerique/dnsep" target="_blank">ESAD</a> of Amiens andand the <a
+      href="https://www.utc.fr/en/courses-and-training/the-french-masters-degree/humanities-and-creative-industries-hic/specialty-design-and-experience-creation-dcx/" target="_blank">UTC</a>
+  </p>
+  <p>[20%] Preparing my master project, a website tool to share practical knowledge between students at my school.</p>
+  <p>[6%] Working at the <i>Maison de la Culture</i> of Amiens as a welcoming staff.</p>
+  <p>[1%] Doing this website.</p>
+
+  <h2 class="">Connexions:</h2>
+  <a href="https://read.cv/pablomoreno" target="_blank">CV</a>
+  <a href="https://www.are.na/pablo-moreno" target="_blank">Are.na</a>
+  <a href="mailto:pablomoreno@proton.me">Email</a>
+
+
+  <h2 class="">W.I.P:</h2>
+  <div class="list">
+    <a href="/cartography" target="_blank">https://pablo.energy/cartography</a>
+    <a href="https://collaborative-narratives.online" target="_blank">https://collaborative-narratives.online</a>
   </div>
 
 
-  <div class="front nonight">
-
-    <div class="year-selector">
-      Website version:
-      <select class="archive-selector">
-        <option data-url="index.html">actual (cards)</option>
-        <option data-url="web-archive/under/frame.html">v.7 (under)</option>
-        <option data-url="web-archive/23/frame.html">v.6 (23%)</option>
-        <option data-url="web-archive/threecolors/frame.html">v.5 (threecolors)</option>
-        <option data-url="web-archive/dark/frame.html">v.4 (dark)</option>
-        <option data-url="web-archive/sidelist/frame.html">v.3 (sidelist)</option>
-        <option data-url="web-archive/billboard2/frame.html">v.2 (billboard2)</option>
-        <option data-url="web-archive/billboard/frame.html">v.1 (billboard)</option>
-      </select>
-    </div>
-
-    <div class="middle">
-      <div class="card">
-        <div class="card-text">
-          <p>
-            I'm Pablo Moreno, an energetic web designer, studying in France and working down to Bilbao.
-          </p>
-          <img src="assets/me.jpg" style="width: 100px; height: 100px;"
-            alt="Picture of Pablo Moreno smiling, in his room in Bilbao, Spain" id="app"></img>
-        </div>
-        <div class="card-contact">
-          <a onclick="showMore()" rel="me">more?</a>
-          <a onclick="copyMail()" rel="me">E-mail</a>
-        </div>
-      </div>
-      <div id="mailcopied">email copied!</div>
-    </div>
+  <h2 class="">Still:</h2>
+  <div class="list">
+    <a href="/music" target="_blank">https://pablo.energy/music</a>
+    <a href="/lune" target="_blank">https://pablo.energy/lune</a>
+    <a href="/lyrics" target="_blank">https://pablo.energy/lyrics</a>
+    <a href="/my-computer" target="_blank">https://pablo.energy/my-computer</a>
+    <a href="/sunday-sites" target="_blank">https://pablo.energy/sunday-sites</a>
   </div>
 
-
-
-  <div class="back nonight">
-    <div class="grid">
-
-      <div class="blockTitle">
-      </div>
-
-      <div class="block about text">
-        <p>I'm a young spanish and french student, who loves create, early mornings and movies. Finishing my graphic
-          design studies. Lately, I'm putting a lot of energy on making websites for people, for things or for fun.</p>
-      </div>
-
-      <div class="blockTitle dailyLife">
-        <h2 class="">Daily life <span>➔</span></h2>
-      </div>
-
-      <div class="block dailyLife text">
-        <li>Studying my final year of the Double Master in UI/UX, between the <a
-            href="https://esad-amiens.design/fr/design-numerique/dnsep">ESAD</a> of Amiens andand the <a
-            href="https://www.utc.fr/en/courses-and-training/the-french-masters-degree/humanities-and-creative-industries-hic/specialty-design-and-experience-creation-dcx/">UTC</a></li>
-      </div>
-
-      <div class="block dailyLife text">
-        <li>Preparing my master project, differents tools to share knowledge (calendar, map, documentation, books)
-          inside my school.</li>
-      </div>
-
-      <div class="block dailyLife text">
-        <li>Working at the <i>Maison de la Culture</i> of Amiens. I welcome people at the spectacles and sell the movies
-          tickets.</li>
-      </div>
-
-      <div class="block dailyLife text">
-        <li>Making a website for the jewelry-maker, Angèle Carion.</li>
-      </div>
-      <div class="blockTitle connexions">
-        <h2 class="">Connexions <span>➔</span></h2>
-      </div>
-      <div class="block connexions text">
-        <ul>
-          <li><a href="https://read.cv/pablomoreno">CV</a></li>
-          <li><a href="https://www.are.na/pablo-moreno">Are.na</a></li>
-          <li><a href="mailto:pablomoreno@proton.me">Email</a></li>
-        </ul>
-      </div>
-    </div>
+  <h2 class="">Past:</h2>
+  <div class="list">
+    <a href="/autre-temps" target="_blank">https://pablo.energy/autre-temps</a>
+    <a href="/bg" target="_blank">https://pablo.energy/bg</a>
+    <a href="/captcha" target="_blank">https://pablo.energy/captcha</a>
+    <a class="secret" href="/carta-para-dani" target="_blank">https://pablo.energy/carta-para-dani</a>
+    <a href="/glace-sans-tain" target="_blank">https://pablo.energy/glace-sans-tain</a>
+    <a class="secret" href="/juliettaytristan" target="_blank">https://pablo.energy/juliettaytristan</a>
+    <a class="secret" href="/k&p" target="_blank">https://pablo.energy/k&p</a>
+    <a class="secret" href="/naia-x-pablo" target="_blank">https://pablo.energy/naia-x-pablo</a>
+    <a href="/poeme-mer" target="_blank">https://pablo.energy/poeme-mer</a>
+    <a href="/sunsets" target="_blank">https://pablo.energy/sunsets</a>
+    <a href="/tott" target="_blank">https://pablo.energy/tott</a>
+    <a href="/twenty-six-hour-a-day" target="_blank">https://pablo.energy/twenty-six-hour-a-day</a>
+    <a href="/voeux2021" target="_blank">https://pablo.energy/voeux2021</a>
+    <a href="/virtualisations" target="_blank">https://pablo.energy/virtualisations</a>
+    <a href="/presence" target="_blank">https://pablo.energy/presence</a>
+    <a class="secret" href="/para-mateo" target="_blank">https://pablo.energy/para-mateo</a>
+    <a href="https://fils-rouges.online" target="_blank">https://fils-rouges.online</a>
+    <a href="https://vivirsinti-libro.com" target="_blank">https://vivirsinti-libro.com</a>
+    <a href="http://calendarie2023.netlify.app/" target="_blank">https://calendarie2023.netlify.app/</a>
+    <a href="https://3-words-for.eu" target="_blank">https://3-words-for.eu</a>
+    <a href="http://morenoarquitecto.com" target="_blank">http://morenoarquitecto.com</a>
   </div>
 
+  <div class="archive">
+  <p>Trough the years the design of this website has changed.<br>
+    I've made an archive to see how it was before. You
+    are seeing the
+    <select class="archive-selector">
+      <option data-url="index.html">actual</option>
+      <option data-url="web-archive/v8-under-plus/frame.html">v.8 (under+)</option>
+      <option data-url="web-archive/v7-under/frame.html">v.7 (under)</option>
+      <option data-url="web-archive/v6-23/frame.html">v.6 (23%)</option>
+      <option data-url="web-archive/v5-threecolors/frame.html">v.5 (threecolors)</option>
+      <option data-url="web-archive/v4-dark/frame.html">v.4 (dark)</option>
+      <option data-url="web-archive/v3-sidelist/frame.html">v.3 (sidelist)</option>
+      <option data-url="web-archive/v2-billboard2/frame.html">v.2 (billboard2)</option>
+      <option data-url="web-archive/v1-billboard/frame.html">v.1 (billboard)</option>
+    </select>
+    design.
+  </p>
+</div>
 
-  <audio id="sound" src="assets/sound.mp3" preload="auto"></audio>
 
   <div id="screen-night">
     <p>♻️ ⤼ 💤 ⤼ ⏳ ⤼ 🌄</p>
   </div>
 
-  <script id="script" src="assets/js/data.js"></script>
-  <script id="script" src="assets/js/import.js"></script>
-  <!-- <script id="script" src="assets/js/thisColor.js"></script> -->
   <script id="script" src="assets/js/mobile-height.js"></script>
+  <script id="script" src="assets/js/thisColor.js"></script>
   <script id="script" src="assets/js/script.js"></script>
-  <script id="script" src="web-archive/assets/web-archive.js"></script>
-
 
 </body>
 

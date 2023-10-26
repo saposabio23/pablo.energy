@@ -65,7 +65,7 @@ td {
   backdrop-filter: blur(10px) saturate(100%);
   -webkit-backdrop-filter: blur(10px) saturate(100%);
   background-color: snow;
-  box-shadow: 0 0 10px var(--highlight);
+  box-shadow: 0 0 10px rgb(203, 203, 203);
 }
 
 .year-selector:hover {
