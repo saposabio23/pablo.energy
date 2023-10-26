@@ -4,7 +4,7 @@ function init() {
 }
 
 function alertMail(){
-  alert('Reach me at pablomoreno@proton.me 📮')
+  alert('📮 Reach me at pablomoreno@proton.me')
 }
 
 /* -----------------------------------
