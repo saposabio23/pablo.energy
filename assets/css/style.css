@@ -100,7 +100,7 @@ ul {
 }
 
 .secret{
-  display: none;
+  display: none !important;
 }
 /* -----------------------------------
 Selector
