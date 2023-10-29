@@ -36,7 +36,7 @@ let viewport = document.querySelector('#viewport');
 let carto = document.querySelector('#carto');
 let background = document.querySelector('.background')
 let tagMore = document.querySelector('.tagMore');
-let historyContent = document.querySelector('.historyContent');
+let historyContent = document.querySelector('.message');
 let tagList = document.querySelector('.tagList');
 let index = document.querySelector('.index');
 let indexContent = document.querySelector('.indexContent');
@@ -153,18 +153,17 @@ function list_all_tags() {
       tagToLoad.innerHTML = tagName;
       setTimeout(() => {
         document.querySelector('.startLoading').classList.add('showLoad')
+        background.classList.add('animateWelcoming')
         tagList.style.display = 'none';
       }, "800");
       setTimeout(() => {
-        // document.querySelector('.history').classList.add('appears');
-        // document.querySelector('.index').classList.add('appears');
         document.querySelector('.startLoading').style.display = 'none';
         document.querySelector('.side').classList.add('appears');
         document.querySelector('.menu').classList.add('appears');
         document.querySelector('.zoom').classList.add('appears');
 
         background.classList.add('back1')
-        
+
         carto.style.transform = 'scale(var(--zoom))'
 
         click_on_tag(tagName, 'center', cartoDimensions.center)
@@ -172,6 +171,7 @@ function list_all_tags() {
     })
   }
 
+  // index of all tags on the page
   for (let i = 0; i < results.length; i++) {
     let tagName = results[i];
     let tagEtiqueta = document.createElement("button");
@@ -183,8 +183,8 @@ function list_all_tags() {
       soundhover.play();
     });
     tagEtiqueta.addEventListener('click', (event) => {
-          click_on_tag(tagName, 'top-left', cartoDimensions.center)
-      }, "3000");
+      click_on_tag(tagName, 'top-left', cartoDimensions.center)
+    }, "3000");
 
   }
 }
@@ -196,8 +196,6 @@ function list_all_tags() {
 
 
 function display_tags(position, data) {
-  console.log(position.x, position.y)
-
   // on nettoie la position du block dans son tag html
   tagMore.style.left = null
   tagMore.style.top = null
@@ -241,10 +239,7 @@ function display_tags(position, data) {
 
   for (let i = 0; i < data.tags.length; i++) {
     let tagName = data.tags[i];
-    let titleName = data.title[i];
 
-    console.log(tagName)
-    console.log(titleName)
     // on regarde dans la liste des projets disponibles si un projet avec le tag tagName est encore disponible
     if (availableProjects.some((project) => project.tags.some((tag) => tag === tagName))) {
       let tagButton = document.createElement("button");
@@ -256,7 +251,7 @@ function display_tags(position, data) {
         soundhover.play();
       });
       tagButton.addEventListener('click', (event) => {
-        click_on_tag(tagName, tagMorePosition, data.projectPosition, )
+        click_on_tag(tagName, tagMorePosition, data.projectPosition)
       })
     }
   }
@@ -320,27 +315,17 @@ function click_on_tag(tagName, direction, projectPosition) {
 
   randomProject.projectPosition = newPosition
 
+
+
+
   // on affiche le nouveau projet, au bon endroit
-  display_project(randomProject, newPosition.x, newPosition.y)
+  display_project(randomProject, newPosition.x, newPosition.y, displayedProjects)
 
   // on positionne le nouveau projet au centre de l'écran
   set_scrollbars_position(newPosition.scrollX, newPosition.scrollY)
 
-  // on recupère l'index du projet affiché dans la displayedProject
-  let indexDisplayedProject = displayedProjects.length - 1
 
-  // on écrit le tag dans l'historique
-  let lastTag = document.createElement('span')
-  lastTag.innerHTML = tagName;
-  lastTag.dataset.indexDisplayedProject = indexDisplayedProject
-  historyContent.prepend(lastTag)
-
-  lastTag.addEventListener('click', (event) => {
-    let position = displayedProjects[event.target.dataset.indexDisplayedProject].data.projectPosition
-    set_scrollbars_position(position.scrollX, position.scrollY)
-  })
-
-  document.body.style.setProperty('--zoom', '100%')
+  // document.body.style.setProperty('--zoom', '100%')
 }
 
 /**
@@ -402,13 +387,16 @@ function set_scrollbars_position_center() {
 * @param x  position du centre de l'image en px
 * @param y  position du centre de l'image en px
 */
-function display_project(data, x, y) {
+function display_project(data, x, y, displayedProjects) {
   // recupère le filename
   let filename = data.imgFilename
   let url = data.url
   let title = data.title
   let description = data.description
   let tags = data.tags
+
+  // on recupère l'index du projet affiché dans la displayedProject
+  let indexDisplayedProject = displayedProjects.length
 
   //crée le block
   let newBlock = document.createElement('div')
@@ -526,6 +514,37 @@ function display_project(data, x, y) {
   // on retire ce projet de la liste des projets disponibles
   removeProjectFromAvailableProjects(data)
 
+  // on écrit le tag dans l'historique
+  let lastTagDiv = document.createElement('div')
+
+  let lastTagTitle = document.createElement('span')
+  lastTagTitle.className = 'button'
+  lastTagTitle.innerHTML = title;
+  lastTagTitle.dataset.indexDisplayedProject = indexDisplayedProject;
+
+  let lastTagLabel = document.createElement('label')
+
+  let lastTagCheck = document.createElement('input')
+  lastTagCheck.setAttribute("type", "checkbox");
+  lastTagCheck.setAttribute("name", url);
+  lastTagCheck.setAttribute("value", title + "[" + url + "]");
+
+  let lastTagStar = document.createElement('span')
+  lastTagStar.innerHTML = '⭐';
+
+  lastTagLabel.appendChild(lastTagCheck)
+  lastTagLabel.appendChild(lastTagStar)
+  
+  
+  lastTagDiv.appendChild(lastTagTitle)
+  lastTagDiv.appendChild(lastTagLabel)
+  historyContent.prepend(lastTagDiv)
+
+  lastTagTitle.addEventListener('click', (event) => {
+    let position = displayedProjects[event.target.dataset.indexDisplayedProject].data.projectPosition
+    set_scrollbars_position(position.scrollX, position.scrollY)
+  })
+
 }
 
 /**
@@ -569,8 +588,8 @@ init()
 
 
 
-  // // on cache la fenetre d'infos de tous les proejts
-  // var elements = document.querySelectorAll('.infoBlock');
-  // for (let i = 0, max = elements.length; i < max; i++) {
-  //   document.querySelector('.infoBlock').classList.remove('appearsFast')
-  // }
+// // on cache la fenetre d'infos de tous les proejts
+// var elements = document.querySelectorAll('.infoBlock');
+// for (let i = 0, max = elements.length; i < max; i++) {
+//   document.querySelector('.infoBlock').classList.remove('appearsFast')
+// }

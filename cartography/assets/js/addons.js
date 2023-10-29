@@ -14,7 +14,6 @@ button.forEach(function (button) {
 document.getElementById('welcome').addEventListener('click', (event) => {
     document.querySelector('.welcoming').classList.add('disappear');
     setTimeout(() => {
-        background.classList.add('back0')
         document.querySelector('.tagList').classList.add('appears');
     }, "800");
 })

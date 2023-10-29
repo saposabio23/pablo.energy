@@ -26,15 +26,30 @@
     <div class="history hidden">
       <div class="header">
         <h5>Historique</h5>
-        <div id="buttonEmail" class="hoverShadow "><img src="assets/img/history.png"></div>
+        <!-- <div id="buttonEmail" class="hoverShadow "><img src="assets/img/mail.png"></div> -->
       </div>
-      <div class="historyContent"></div>
+      <div class="historyContent">
+        <form name="contact" method="POST" netlify id="historyForm">
+          <div class="message"></div>
+          <!-- <label for="title">I have a bike</label>
+          <input type="checkbox" name="title" value="title [url]"> -->
+
+          <div class="sender">You can select the sites you like and receive them on your inbox ↓<br>
+            <div>
+              <input type="email" name="email" placeholder="Your e-mail" />
+              <button type="submit">Send the list</button>
+            </div>
+          </div>
+
+
+        </form>
+      </div>
     </div>
 
     <div class="index hidden">
       <div class="header">
         <h5>Index</h5>
-        <div id="buttonEmail" class="hoverShadow "><img src="assets/img/index.png"></div>
+        <!-- <div id="buttonEmail" class="hoverShadow "><img src="assets/img/index.png"></div> -->
       </div>
       <div class="indexContent"></div>
     </div>
@@ -42,7 +57,7 @@
     <div class="about hidden">
       <div class="header">
         <h5>Index</h5>
-        <div id="buttonEmail" class="hoverShadow "><img src="assets/img/about.png"></div>
+        <!-- <div id="buttonEmail" class="hoverShadow "><img src="assets/img/about.png"></div> -->
       </div>
       <p>Comme vous l'avez déjà remarqué, puisque vous lisez ce texte à l'écran, la forme de ma cartographie est
         numérique, et ce site/outil vous permettra de la parcourir. Et de quoi est composé cette collection? De sites
@@ -74,11 +89,11 @@
       <img src="assets/img/about.png">
       <span>À propos</span>
     </div>
-    <div id="buttonIndex" class="hoverShadow">
+    <div id="buttonIndex" class="hoverShadow highlight">
       <img src="assets/img/index.png">
       <span>Index</span>
     </div>
-    <div id="buttonHistory" class="hoverShadow">
+    <div id="buttonHistory" class="hoverShadow highlight">
       <img src="assets/img/history.png">
       <span>Historique</span>
     </div>
@@ -109,7 +124,7 @@
 
 
   <div class="background"></div>
-<div class="blackScreen hidden"></div>
+  <div class="blackScreen hidden"></div>
 
 
   <script src='./assets/js/data.js'></script>
