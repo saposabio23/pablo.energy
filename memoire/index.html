@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memoire</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="options">
+        <button class="fullscreen">⇱</button>
+        <button onclick="increaseFontSize()">+</button>
+        <button onclick="resetFontSize()">·</button>
+        <button onclick="decreaseFontSize()">-</button>
+      </div>
+
+    
+
+    <div class="book">
+        <div class="scrollbar">
+              <div class="progressbar"></div>
+          </div>
+        <main>
+
+            <h2>1.<br>Architecture d’Internet</h2>
+
+            <h3>La naissance des réseaux</h3>
+
+            <p>Début des années 60 aux États-Unis, en pleine guerre froide et en réponse au lancement soviÉtique du
+                Sputnik
+                1, le gouvernement américain fonde la ARPA (Advanced Research Projects Agency Network). En collaboration
+                avec des universités, des industriels et d’autres gouvernements, cette agence est chargée de
+                la recherche et
+                développement de nouvelles technologies destinées à un usage militaire.</p>
+
+            <p>Un des projets était de développer un réseau de communication décentralisé. Le besoin de la communication
+                décentralisé était très importante: si une base était détruite, les données devraient emprunter d'autres
+                chemins pour atteindre les destinataires désignés. Ce projet metra en route le futur Internet : un
+                réseau
+                constitué d’une multitude de réseaux.</p>
+
+            <p>Dirigé par l’ingénieur Paul Baran, le projet s’alimentera des recherches théorique et pratiques en cours
+                dans
+                différentes universités américaines, trois en Californie, une au Utah:</p>
+
+            <ul>
+                <li> la théorie de commutation par paquets, dévéloppée par Leonard Kleinrock à l’Université de
+                    Californie de
+                    Los Angeles (UCLA)</li>
+                <li>le projet sur l’augmentation de l’intelligence humaine (qui comprenait le premier système
+                    hypertexte:
+                    liens, information organisée par relévance, etc.) par Doug Engelbart à l’Institut de Recherche de
+                    Standford (SRI)</li>
+                <li>des projets de visualisation d’applications, qui étudiaient des méthodes pour l’affichage de
+                    fonctions
+                    mathématiques à l’écran, dévéloppés par Glen Culler et Burton Fried à l’Université de California de
+                    Santa Barbara (UCSB)</li>
+                <li>des méthodes de représentations en 3D étudiées par Robert Taylor et Ivan Sutherland à l’Université
+                    de
+                    Computation de Utah</li>
+            </ul>
+
+            <p>Côté infrastructure, la société américaine BBN (Bolt, Beranek and Newman) se chargea de concevoir un
+                petit
+                ordinateur qui, rattaché aux ordinateurs déjà existants, pouvait transmettre des paquest
+                d’information à
+                d’autres ordinateurs de son genre. On parle des IMP (Interface Message Processor) qui sont, de nos
+                jours,
+                les routers que l’on a chez nous. On installa ces IMPs au sein des laboratoires de ces universités,
+                et
+                c’est
+                ainsi que vera le jour le premier réseau à transfert de paquets de données. En 1969 le premier mail
+                est
+                envoyé à travers l’ARPANet, acronyme de ARPA et Network.
+            </p>
+
+
+            <h3>Qui les utilise? </h3>
+
+            <section>
+                <p class="footnote-anchor" data-anchor="1"><span>Tandis que ce réseau grandissant (13 nœuds en 1971, 111 en 1977)
+                    était validé et utilisé
+                    expérimentalement parmi ces chercheurs en sciences informatiques, d’autres réseaux et technologies
+                    de
+                    liaisons étaient recherchées. L’utilité des réseaux informatiques – en particulier le courrier
+                    électronique – n’avait pas échappé aux autres communautés et disciplines, de sorte qu’au milieu des
+                    années 70, des réseaux alternatifs commencèrent à surgir:</span> <sup>1</sup></p>
+                    
+                <div class="footnote" data-footnote="1">
+                    <img src="images/arpanet1974.png">
+                    <span><sup>1</sup> Sites des États-Unis reliés à ARPANET en 1974 (https://fr.wikipedia.org/wiki/ARPANET)</span>
+                </div>
+            </section>
+
+            <ul>
+                <li>Le département américain de l’Énergie (DoE) établit le MFENet pour ses chercheurs en Énergie de
+                    fusion magnétique</li>
+                <li>les physiciens des hautes énergies du DoE se lancèrent dans la construction du HEPNet</li>
+                <li>Les physiciens de la NASA suivirent avec SPAN</li>
+                <li>CSNET pour la communauté (académique et industrielle) des sciences informatiques</li>
+            </ul>
+
+            <section>
+                <p class="citation footnote-anchor" data-anchor="2"><span>« plutôt que d’installer l’intelligence au cœur du
+                    réseau, il faut la situer aux
+                    extrémités : les ordinateurs au sein du réseau n’ont à exécuter que les fonctions très simples qui
+                    sont
+                    nécessaires pour les applications les plus diverses, alors que les fonctions qui sont requises par
+                    certaines applications spécifiques seulement doivent être exécutées en bordure de réseau. Ainsi, la
+                    complexité et l’intelligence du réseau sont repoussées vers ses lisières. Des réseaux simples pour
+                    des
+                    applications intelligentes. »</span> <sup>2</sup></p>
+
+                <div class="footnote" data-footnote="2">
+                    <span><sup>2</sup> Lawrence Lessig, «L'Avenir des idées», Presses
+                        universitaires de Lyon, 2005. Paragraphe 75 sur la version en ligne:
+                        [https://books.openedition.org/pul/31007]</span>
+                </div>
+            </section>
+
+
+            <p>Face à cette croissance de réseaux dédiés à chaque groupe de recherche, mais incommuniqués entre-eux, on
+                se retrouve rapidement confrontés au besoin le besoin de les relier. Le réseau ARPANet laissera place au
+                NSFNet (National Science Foundation Network), qui optera pour une ouverture de son utilisation à
+                d’autres groupes de recherches. Les choix suivants annonceront cette volonté d’unification:</p>
+
+            <ul>
+                <li>ce sera un réseau pour la recherche en général, et non silotée comme on avait pu le voir auparavant
+                    (pas besoin de nouveaux réseaux pour des nouveaux champs de recherche)</li>
+                <li>son architecture se déploira entre les villes grâce à des super-ordinateurs qui à son tour se
+                    racorderont aux différents sites et campus universitaires</li>
+                <li>il n’y aura pas de limite de connections (toute université ou centre de recherche pourra se brancher
+                    au super-ordianteurs de la ville)</li>
+            </ul>
+
+            <p>Ce réseau se développa très rapidement, puisque ouvert à tous type de recherche et plus facile à
+                brancher, et comptera avec près de 4 millions de nœuds interconnectés en 1984. </p>
+
+            <h3>À quoi servent-ils à ce moment là?</h3>
+
+            <p>Le réseau n’était qu’à ses débuts et il ne servait qu’à une très fine partie de la population mondiale.
+                L’ouverture à une utilisation commerciale n’était pas encore arrivée et les usages principaux restaient
+                académiques et militaires. A cette époque Internet n’avait qu’une seule utilitée, l’envoi et la
+                réception d’emails.</p>
+
+            <p>Cette nouvelle façon de se communiquer était installée au sein des universités et des labos de recherche,
+                et va accélerer tous les domaines sur lesquels travaillent ces derniers. On va pouvoir mettre en lien
+                chercheurs et scientifiques de différents laboratoires et institutions d’une façon beaucoup plus rapide.
+                Cela va faciliter le partage d'informations, de résultats de recherche et d'idées. Rapelons-nous que la
+                naissance de l’ARPANET se fera en mettant en commun des projets émanant de 4 universités différentes.
+            </p>
+        </main>
+
+    </div>
+
+    <script id="script" src="assets/js/script.js"></script>
+
+</body>
+
+</html>

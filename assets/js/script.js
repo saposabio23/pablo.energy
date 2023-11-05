@@ -1,5 +1,4 @@
 function init() {
-  displayClock()
   isItNight()
 }
 
@@ -7,15 +6,6 @@ function alertMail(){
   alert('📮 Reach me at pablomoreno@proton.me')
 }
 
-/* -----------------------------------
-CLOCKKKK
--------------------------------------- */
-
-function displayClock(){
-  var display = new Date().toLocaleTimeString();
-  document.querySelector('.time').innerHTML = display;
-  setTimeout(displayClock, 1000); 
-}
 
 
 // /* -----------------------------------
@@ -61,6 +51,34 @@ for(const option of options) {
   if(location.href.includes(url)) {
     option.setAttribute("selected", "");
     break;
+  }
+}
+
+
+// /* -----------------------------------
+// SECRET SPACE
+// -------------------------------------- */
+const secret = document.querySelectorAll('.secret')
+
+
+// here when the passwords matchs it show the hidden
+function showSecrets() {
+  for (let i = 0, max = secret.length; i < max; i++) {
+    secret[i].classList.add("slow");
+  }
+}
+
+// the password script
+function clickPress(event) {
+  if (event.key == "Enter") {
+    const passw = "23";
+    if (document.form.texte.value.match(passw)) {
+      document.querySelector('#password').value = ':)';
+      showSecrets()
+    }
+    else {
+      document.querySelector('#password').value = ':(';
+    }
   }
 }
 

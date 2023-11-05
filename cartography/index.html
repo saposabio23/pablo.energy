@@ -7,6 +7,16 @@
   <title>CARTOGRAPHY</title>
 
   <link rel="stylesheet" href="./assets/css/style.css">
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("8MXs37pGiZSPfUhEi");
+    })();
+  </script>
+
+
 </head>
 
 <body>
@@ -21,6 +31,13 @@
     </div>
   </div>
 
+  
+  <div type="text" id="message">
+    <div style="width: 300px;"></div>
+
+  </div>
+
+
   <div class="side">
 
     <div class="history hidden">
@@ -29,21 +46,17 @@
         <!-- <div id="buttonEmail" class="hoverShadow "><img src="assets/img/mail.png"></div> -->
       </div>
       <div class="historyContent">
-        <form name="contact" method="POST" netlify id="historyForm">
-          <div class="message"></div>
-          <!-- <label for="title">I have a bike</label>
-          <input type="checkbox" name="title" value="title [url]"> -->
+          <div class="historyList"></div>
 
-          <div class="sender">You can select the sites you like and receive them on your inbox ↓<br>
+          <div class="sender">You can select the sites you like and receive them on your
+            inbox 📩<br>
             <div>
-              <input type="email" name="email" placeholder="Your e-mail" />
-              <button type="submit">Send the list</button>
+              <input type="text" id="email" placeholder="write your e-mail" />
+              <button onclick="sendMail()" id="buttonToSend">Send the list</button>
             </div>
           </div>
-
-
-        </form>
       </div>
+
     </div>
 
     <div class="index hidden">

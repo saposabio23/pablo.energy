@@ -117,3 +117,50 @@ function zoomBooks() {
 }
 
 zoomSlider.addEventListener("input", zoomBooks);
+
+
+// email stuff
+
+function sendMail() {
+
+    document.getElementById('buttonToSend').innerHTML = "Sending <img src='./assets/img/spinner.gif'></img>"
+
+    var params = {
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").innerHTML,
+    };
+    console.log(params.email);
+    console.log(params.message);
+
+
+    const serviceID = "cartography";
+    const templateID = "cartography_template";
+
+    emailjs.send(serviceID, templateID, params)
+        .then(res => {
+            document.getElementById("message").value = "";
+            document.getElementById("message").innerHTML = '';
+
+                console.log(res);
+
+            document.getElementById('buttonToSend').remove();
+
+            let sendAlert = document.createElement('span');
+            sendAlert.className = 'sendAlert';
+            sendAlert.innerHTML = "Sent to <u>" + params.email + "</u> successfully!";
+            document.querySelector('.sender > div').appendChild(sendAlert);
+
+            // alert("Your message sent successfully!!")
+        })
+        .catch(err => {
+            console.log(err)
+
+            document.getElementById('buttonToSend').remove();
+
+            let sendAlert = document.createElement('span');
+            sendAlert.className = 'sendAlert';
+            sendAlert.innerHTML = "Couldn't send it. Try again :(";
+            document.querySelector('.sender > div').appendChild(sendAlert);
+        });
+
+}

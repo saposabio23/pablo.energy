@@ -419,7 +419,8 @@ h1 {
 }
 
 /* HISTORIQUE DES TAGS */
-button, .button {
+button,
+.button {
   background-color: var(--color-back);
   color: var(--color-black);
   border-radius: var(--border-round);
@@ -430,7 +431,8 @@ button, .button {
   align-items: center;
 }
 
-button:hover,  .button:hover {
+button:hover,
+.button:hover {
   cursor: pointer;
   box-shadow: var(--anti-shadow);
 }
@@ -523,7 +525,21 @@ button:hover,  .button:hover {
 
 }
 
-#historyForm {
+
+#message {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  width: 300px;
+  height: 150px;
+  background-color: white;
+  opacity: .8;
+
+  display: none;
+}
+
+.historyContent {
   color: var(--color-back);
   margin: var(--spacing-s);
   display: flex;
@@ -531,12 +547,27 @@ button:hover,  .button:hover {
   font-size: 80%;
 }
 
-.history button {
+.historyList {
+  color: var(--color-back);
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--spacing-s);
+  height: 300px;
+  overflow: scroll;
+  margin-bottom: var(--spacing-s);
+}
+
+.historyList div {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
   opacity: .7;
   animation: tagHistorySpan .5s ease-in-out forwards;
   z-index: 1;
   position: relative;
+  align-items: center;
 }
+
 
 @keyframes tagHistorySpan {
   0% {
@@ -551,40 +582,26 @@ button:hover,  .button:hover {
   }
 }
 
-.tagHistory span:hover {
-  cursor: pointer;
+.historyList div span {
+  max-width: 80%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-.tagHistory span:nth-of-type(1) {
+
+.nofav {
+  opacity: 0.3;
+}
+
+.fav {
   opacity: 1;
 }
 
-form div {
-  display: flex;
-  justify-content: space-between;
-align-content: center;
+.star:hover {
+  cursor: pointer;
 }
 
-form label {
-  text-overflow: ellipsis;
-overflow: hidden;
-white-space: nowrap;
-align-content: center;
-display: flex;
-align-items: center;
-width: 20px;
-justify-content: center;
-}
-
-.message {
-  color: var(--color-back);
-  display: flex;
-  flex-direction: column;
-  row-gap: var(--spacing-s);
-  height: 300px;
-  overflow: scroll;
-  margin-bottom: var(--spacing-s);
-}
 
 .sender {
   display: block;
@@ -611,28 +628,13 @@ justify-content: center;
   padding: var(--spacing-s);
 }
 
-.message div span {
-  max-width: 80%;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
+#buttonToSend img {
+  height: 12px;
+  margin-left: 4px;
 }
 
-.message input {
-  /*! visibility: hidden; */
-  display: none;
-}
-
-.message label span {
-  opacity: 0.3;
-}
-
-.message label span:hover {
-  background-color: green;
-}
-
-.message input[type="checkbox"]:checked + span {
-  opacity: 1
+.sendAlert {
+  margin-top: var(--spacing-s);
 }
 
 /* NO PROJECTS LEFT */

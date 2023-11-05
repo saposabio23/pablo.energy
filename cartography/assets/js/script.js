@@ -36,7 +36,8 @@ let viewport = document.querySelector('#viewport');
 let carto = document.querySelector('#carto');
 let background = document.querySelector('.background')
 let tagMore = document.querySelector('.tagMore');
-let historyContent = document.querySelector('.message');
+let historyList = document.querySelector('.historyList');
+let messageContent = document.querySelector('#message > div');
 let tagList = document.querySelector('.tagList');
 let index = document.querySelector('.index');
 let indexContent = document.querySelector('.indexContent');
@@ -522,29 +523,76 @@ function display_project(data, x, y, displayedProjects) {
   lastTagTitle.innerHTML = title;
   lastTagTitle.dataset.indexDisplayedProject = indexDisplayedProject;
 
-  let lastTagLabel = document.createElement('label')
-
-  let lastTagCheck = document.createElement('input')
-  lastTagCheck.setAttribute("type", "checkbox");
-  lastTagCheck.setAttribute("name", url);
-  lastTagCheck.setAttribute("value", title + "[" + url + "]");
-
   let lastTagStar = document.createElement('span')
+  lastTagStar.dataset.index = indexDisplayedProject;
+  lastTagStar.className = 'star nofav'
   lastTagStar.innerHTML = '⭐';
 
-  lastTagLabel.appendChild(lastTagCheck)
-  lastTagLabel.appendChild(lastTagStar)
-  
-  
   lastTagDiv.appendChild(lastTagTitle)
-  lastTagDiv.appendChild(lastTagLabel)
-  historyContent.prepend(lastTagDiv)
+  lastTagDiv.appendChild(lastTagStar)
+  historyList.prepend(lastTagDiv)
 
   lastTagTitle.addEventListener('click', (event) => {
     let position = displayedProjects[event.target.dataset.indexDisplayedProject].data.projectPosition
     set_scrollbars_position(position.scrollX, position.scrollY)
   })
 
+  lastTagStar.addEventListener('click', (event) => {
+
+    if (event.target.classList.contains("nofav")) {
+      let messageDiv = document.createElement('div')
+      messageDiv.dataset.index = indexDisplayedProject;
+      messageDiv.className = "listDiv";
+      messageDiv.setAttribute('style', "margin-bottom:10px")
+
+      let messageTitleRow = document.createElement('div')
+      messageTitleRow.setAttribute('style', "display: flex;border: 1px solid #d3cce3;word-wrap: anywhere;border-width: 1px 1px 0 1px;border-top-left-radius: 5px;border-top-right-radius: 5px;display: flex;")
+
+      messageDiv.appendChild(messageTitleRow)
+
+      let messageTitleHeader = document.createElement('div')
+      messageTitleHeader.setAttribute('style', "padding: 6px;border-right: 1px solid #d3cce3; width:60px")
+      messageTitleHeader.innerHTML = 'Title'
+      messageTitleRow.appendChild(messageTitleHeader)
+
+      let messageTitleText = document.createElement('div')
+      messageTitleText.setAttribute('style', "padding: 6px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;")
+      messageTitleText.innerHTML = title
+      messageTitleRow.appendChild(messageTitleText)
+
+      let messageURLRow = document.createElement('div')
+      messageURLRow.setAttribute('style', "display: fle;border: 1px solid #d3cce3;word-wrap: anywhere;border-width: 1px 1px 0 1px;  border-bottom: 1px solid #d3cce3;border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;display: flex;")
+
+      messageDiv.appendChild(messageURLRow)
+
+      let messageURLHeader = document.createElement('div')
+      messageURLHeader.setAttribute('style', "padding: 6px;border-right: 1px solid #d3cce3; width:60px")
+      messageURLHeader.innerHTML = 'URL'
+      messageURLRow.appendChild(messageURLHeader)
+
+      let messageURLText = document.createElement('div')
+      messageURLText.setAttribute('style', "padding: 6px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;")
+      let messageURLLink = document.createElement('a')
+      messageURLLink.href = "https://" + url
+      messageURLLink.innerHTML = "www." + url
+      messageURLText.appendChild(messageURLLink)
+      messageURLRow.appendChild(messageURLText)
+
+      messageContent.appendChild(messageDiv)
+
+      lastTagStar.classList.replace('nofav', 'fav')
+
+    }
+
+    else if(event.target.classList.contains("fav")) {
+      let x = document.querySelector('.listDiv[data-index="' + event.target.dataset.index + '"]');
+      console.log(x)
+      x.remove()
+      
+      lastTagStar.classList.replace('fav', 'nofav')
+    }
+
+  })
 }
 
 /**

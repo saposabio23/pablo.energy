@@ -95,12 +95,56 @@ ul {
   margin: 0;
 }
 
-.list a {
-  display: block;
+.list {
+  display: grid;
+}
+/* 
+#wip{
+  text-shadow: 0 0 4px #00ff1582;
 }
 
+#still{
+  text-shadow: 0 0 4px #0000ff82;
+}
+
+#past{
+  text-shadow: 0 0 4px #ff6f0082;
+} */
+
 .secret{
-  display: none !important;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.slow {
+  display: block;
+  visibility: visible;
+  animation: slow 3s linear forwards;
+}
+
+@keyframes slow {
+  0%{
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 4px #ff000082;
+  }
+}
+
+img {
+  width: 300px;
+  position: sticky;
+  bottom: 0;
+  z-index: -1;
+}
+
+.enter {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-right: 10px;
 }
 /* -----------------------------------
 Selector
