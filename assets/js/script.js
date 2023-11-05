@@ -25,7 +25,7 @@ function isItNight() {
   }
 
   function offAtNight() {
-    document.querySelector('.nonight').remove();
+    document.querySelector('.night').remove();
    }
 
 

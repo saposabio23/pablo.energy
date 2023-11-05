@@ -202,12 +202,13 @@ SCREEN NIGHT
 }
 
 #screen-night p {
-  border: 1px solid snow;
-  border-radius: var(--radius-hard);
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  padding: 4px var(--spacing-s) 2px var(--spacing-s);
+}
+
+small {
+  font-size: 11px;
 }
 
 .itsnight {
