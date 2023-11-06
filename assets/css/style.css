@@ -10,7 +10,7 @@
   --spacing-m: 25px;
   --spacing-s: 17px;
 
-  --white: snow;
+  --white: white;
   --plus: greenyellow;
   --highlight: rgb(203, 203, 203);
   --dark: dimgray;
@@ -140,12 +140,6 @@ img {
   z-index: -1;
 }
 
-.enter {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  margin-right: 10px;
-}
 /* -----------------------------------
 Selector
 -------------------------------------- */
