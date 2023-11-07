@@ -49,7 +49,7 @@ fetch(
       infos.appendChild(song);
 
       let time = document.createElement("p");
-      time.innerHTML = 'ajouté par <span id="pseudo">' + row.PSEUDO + '</span> le ' + row.Timestamp;
+      time.innerHTML = 'ajouté par <span id="pseudo">' + row.PSEUDO + '</span> le ' + row.TIME;
       infos.appendChild(time);
 
 
