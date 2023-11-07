@@ -48,8 +48,12 @@ fetch(
       song.innerHTML = 'dans la chanson <span>' + row.CHANSON + "</span> de l'album <span>" + row.ALBUM + '</span>';
       infos.appendChild(song);
 
+      TIME = row.Timestamp.substr(0,10);
+
+      console.log(TIME)
+
       let time = document.createElement("p");
-      time.innerHTML = 'ajouté par <span id="pseudo">' + row.PSEUDO + '</span> le ' + row.TIME;
+      time.innerHTML = 'ajouté par <span id="pseudo">' + row.PSEUDO + '</span> le ' + TIME;
       infos.appendChild(time);
 
 
