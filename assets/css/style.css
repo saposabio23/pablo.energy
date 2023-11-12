@@ -63,36 +63,41 @@ html {
 
 body {
   margin: 10px;
+  font-size: 30px;
+  font-size: clamp(30px, 4vw, 4vw)
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-size: 1rem;
   margin: 12px 0 0 0;
+  font-size: clamp(30px, 3vw, 3vw)
 }
 
 a {
-  color: inherit;
+  color: transparent;
   width: fit-content;
+  text-shadow: 0 0 4px #0000ff82;
 }
 
 a:hover {
   color: blue;
-  text-shadow: 0 0 4px #0000ff82;
   text-decoration: underline;
 }
 
 
 p {
-  max-width: 450px;
   margin-bottom: 6px;
 }
 
 ul {
-  max-width: 450px;
   margin: 0;
+}
+
+#bio {
+  /*! pointer-events: none; */ 
+  /*! max-width: 800px; */
 }
 
 .list {
@@ -110,6 +115,11 @@ ul {
 #past{
   text-shadow: 0 0 4px #ff6f0082;
 } */
+
+.content {
+  display: none;
+  font-size: 30px;
+}
 
 .secret{
   opacity: 0;
@@ -134,18 +144,34 @@ ul {
 }
 
 img {
-  width: 300px;
-  position: sticky;
-  bottom: 0;
+  display: block;
+  width: calc(100vw - 20px);
+  position: absolute;
+  bottom: 10px;
   z-index: -1;
+  max-height: calc(100vh - 20px);
+}
+
+#password {
+  font-size: 30px;
+  border-radius: 10px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  text-align: center;
+  width: 40px;
+  height: 40px;
 }
 
 /* -----------------------------------
 Selector
 -------------------------------------- */
 .archive{
-  margin-top: 20px;
-  font-size: 0.7rem;
+  font-size: 1rem;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  text-align: right;
 }
 
 .archive-selector {
@@ -153,11 +179,9 @@ Selector
   border: none;
   width: fit-content;
   font-family: sans-serif;
-  font-size: 0.7rem;
+  font-size: 1rem;
 
   padding: 0;
-
-  width: 33px;
   text-decoration: underline;
 
   -webkit-appearance: none;

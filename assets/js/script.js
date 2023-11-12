@@ -7,6 +7,18 @@ function alertMail(){
 }
 
 
+function showList(){
+  document.querySelector('.content').style.display = 'block';
+  document.querySelector('#bio').style.display = 'none';
+  document.querySelector('img').style.display = 'none';
+
+}
+
+function hideList(){
+  document.querySelector('.content').style.display = 'none';
+  document.querySelector('img').style.display = 'block';
+  document.querySelector('#bio').style.display = 'block';
+}
 
 // /* -----------------------------------
 // SLEEP WEB
@@ -73,14 +85,16 @@ function clickPress(event) {
   if (event.key == "Enter") {
     const passw = "23";
     if (document.form.texte.value.match(passw)) {
-      document.querySelector('#password').value = ':)';
+      document.querySelector('#password').value = '🎩';
       showSecrets()
     }
     else {
-      document.querySelector('#password').value = ':(';
+      document.querySelector('#password').value = '💔';
+      // hideList()
     }
   }
 }
+
 
 
 init()

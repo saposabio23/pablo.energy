@@ -114,6 +114,7 @@ function zoomBooks() {
     var zoom = zoomSlider.value;
     var zoomValue = zoom + "%";
     document.body.style.setProperty('--zoom', zoomValue)
+    // document.body.style.setProperty('transform: translateX()', zoomValue + 'px')
 }
 
 zoomSlider.addEventListener("input", zoomBooks);

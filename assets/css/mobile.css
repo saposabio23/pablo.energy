@@ -1,4 +1,7 @@
 @media screen and (max-width: 800px) {
 
+    .archive {
+        display: none;
+    }
 
 }
