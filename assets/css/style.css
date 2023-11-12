@@ -64,7 +64,6 @@ html {
 body {
   margin: 10px;
   font-size: 30px;
-  font-size: clamp(30px, 4vw, 4vw)
 }
 
 h1,
@@ -72,7 +71,7 @@ h2,
 h3,
 h4 {
   margin: 12px 0 0 0;
-  font-size: clamp(30px, 3vw, 3vw)
+  font-size: 30px;
 }
 
 a {
@@ -153,7 +152,7 @@ img {
 }
 
 #password {
-  font-size: 30px;
+  font-size: 20px;
   border-radius: 10px;
   position: absolute;
   right: 10px;
