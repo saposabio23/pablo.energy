@@ -80,15 +80,16 @@ h4 {
 a {
   color: transparent;
   width: fit-content;
-  text-shadow: 0 0 3px #0000ff82;
   color: white;
+  color: blue
   /*! word-break: break-all; */
   /*! word-wrap: initial; */
   /*! word-spacing: 10px; */
 }
 
 a:hover {
-  color: blue;
+  text-shadow: 0 0 3px #0000ff82;
+  color: blue !important;
   text-decoration: underline;
 }
 
@@ -105,18 +106,20 @@ ul {
 .list {
   display: grid;
 }
-/* 
-#wip{
-  text-shadow: 0 0 4px #00ff1582;
+
+#yellow{
+  color: gold;
 }
 
-#still{
-  text-shadow: 0 0 4px #0000ff82;
+#green{
+  color: green;
+
 }
 
-#past{
-  text-shadow: 0 0 4px #ff6f0082;
-} */
+#blue{
+  color: red;
+
+}
 
 .content {
   display: none;
@@ -151,7 +154,7 @@ ul {
   bottom: 0px;
   z-index: -1;
   max-height: calc(85vh - 20px);
-  z-index: 999;
+  z-index: 2;
 }
 
 .image img {
