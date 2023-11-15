@@ -48,6 +48,27 @@ function scrollBar() {
 document.onscroll = function () { scrollBar() };
 
 /*
+OPTIONS PANEL
+*/
+var optionsPanel = document.querySelector('.optionsPage')
+
+function displayoptions() {
+    if (optionsPanel.classList.contains('showed')) {
+        optionsPanel.style.display = ('none');
+        optionsPanel.classList.remove('showed');
+    }
+
+    else {
+        optionsPanel.style.display = ('block');
+        optionsPanel.classList.add('showed')
+    }
+}
+
+document.getElementById('optionsButton').addEventListener('click', displayoptions)
+
+
+
+/*
 Fullscreen mode
 */
 //////////////// FULLSCREEN BTN ///////////////////////
@@ -67,7 +88,7 @@ function toggleFullscreen(elem) {
         } else if (elem.webkitRequestFullscreen) {
             elem.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
         }
-        document.querySelector('.fullscreen').innerHTML = 'X';
+        document.querySelector('.fullscreen').innerHTML = 'Sortir du plein écran';
     } else {
         if (document.exitFullscreen) {
             document.exitFullscreen();
@@ -78,7 +99,7 @@ function toggleFullscreen(elem) {
         } else if (document.webkitExitFullscreen) {
             document.webkitExitFullscreen();
         }
-        document.querySelector('.fullscreen').innerHTML = '⇱';
+        document.querySelector('.fullscreen').innerHTML = 'Plein écran';
     }
 }
 
@@ -90,25 +111,207 @@ fullscreenbtn.addEventListener('click', function () {
 /*
 INCREASE/DECREASE font-size
 */
-var actual = 100;
+var actualSize = 18;
+var actualLineHeight = 24;
 
 function changeFontSize(delta) {
-    actual += delta
-    document.body.style.fontSize = actual + "%";
-    console.log(actual)
+    actualSize += delta
+    actualLineHeight += delta
+    document.body.style.fontSize = actualSize + "px";
+    document.body.style.lineHeight = actualLineHeight + "px";
 }
 
 function increaseFontSize() {
-    changeFontSize(10);
+    changeFontSize(2);
 }
 
 function decreaseFontSize() {
-    changeFontSize(-10);
+    changeFontSize(-2);
 }
 
 function resetFontSize() {
-    actual = 100;
-    console.log(actual)
+    actualSize = 18;
+    actualLineHeight = 24;
     changeFontSize(0)
-
 }
+
+/*
+Mouse over OPTIONS
+*/
+document.getElementById('optionsButton').addEventListener('mouseenter', function () {
+    document.querySelector('.bookPageRight').classList.add('reduireRight')
+});
+
+document.getElementById('optionsButton').addEventListener('mouseleave', function () {
+    document.querySelector('.bookPageRight').classList.remove('reduireRight')
+});
+
+document.getElementById('notesButton').addEventListener('mouseenter', function () {
+    document.querySelector('.bookPageLeft').classList.add('reduireLeft')
+});
+
+document.getElementById('notesButton').addEventListener('mouseleave', function () {
+    document.querySelector('.bookPageLeft').classList.remove('reduireLeft')
+});
+
+
+/*
+NOTES PANEL
+*/
+var notesPanel = document.querySelector('.notesPage')
+
+function displaynotes() {
+    if (notesPanel.classList.contains('showed')) {
+        notesPanel.style.display = ('none');
+        notesPanel.classList.remove('showed');
+    }
+
+    else {
+        notesPanel.style.display = ('block');
+        notesPanel.classList.add('showed')
+    }
+}
+
+document.getElementById('notesButton').addEventListener('click', displaynotes)
+
+document.querySelector('.notifNotes').addEventListener('click', () => {
+    notesPanel.classList.remove('showed');
+    displaynotes()
+})
+
+
+// Function to get the Selected Text
+function getSelectedText() {
+    var selectedText = '';
+
+    // window.getSelection
+    if (window.getSelection) {
+        selectedText = window.getSelection();
+    }
+    // document.getSelection
+    else if (document.getSelection) {
+        selectedText = document.getSelection();
+    }
+    // document.selection
+    else if (document.selection) {
+        selectedText =
+            document.selection.createRange().text;
+    } else return;
+    // To write the selected text into the textarea
+
+    let notesPrise = document.createElement("div");
+    notesPrise.setAttribute('contenteditable', 'true')
+    notesPrise.className = 'littleNote';
+    notesPrise.innerHTML = selectedText;
+    
+    let deleteNote = document.createElement("div");
+    deleteNote.className = 'pointer';
+    deleteNote.innerHTML = '<img src="assets/img/delete.png">';
+    
+    let reachNote = document.createElement("div");
+    reachNote.className = 'pointer';
+    reachNote.innerHTML = '<img src="assets/img/reach.png">';
+    
+    notesPrise.prepend(deleteNote);
+    notesPrise.prepend(reachNote);
+
+    notesPanel.appendChild(notesPrise);
+
+    deleteNote.addEventListener('click', () => {
+        notesPrise.remove()
+    })
+    
+}
+
+function highlightSelection() {
+    var userSelection = window.getSelection().getRangeAt(0);
+    var safeRanges = getSafeRanges(userSelection);
+    for (var i = 0; i < safeRanges.length; i++) {
+        highlightRange(safeRanges[i]);
+    }
+}
+
+function highlightRange(range) {
+    var newNode = document.createElement("div");
+    newNode.setAttribute(
+        "style",
+        "background-color:  var(--color-borders); display: inline;"
+    );
+    range.surroundContents(newNode);
+}
+
+function getSafeRanges(dangerous) {
+    var a = dangerous.commonAncestorContainer;
+    // Starts -- Work inward from the start, selecting the largest safe range
+    var s = new Array(0), rs = new Array(0);
+    if (dangerous.startContainer != a) {
+        for (var i = dangerous.startContainer; i != a; i = i.parentNode) {
+            s.push(i);
+        }
+    }
+    if (s.length > 0) {
+        for (var i = 0; i < s.length; i++) {
+            var xs = document.createRange();
+            if (i) {
+                xs.setStartAfter(s[i - 1]);
+                xs.setEndAfter(s[i].lastChild);
+            } else {
+                xs.setStart(s[i], dangerous.startOffset);
+                xs.setEndAfter((s[i].nodeType == Node.TEXT_NODE) ? s[i] : s[i].lastChild);
+            }
+            rs.push(xs);
+        }
+    }
+
+    // Ends -- basically the same code reversed
+    var e = new Array(0), re = new Array(0);
+    if (dangerous.endContainer != a) {
+        for (var i = dangerous.endContainer; i != a; i = i.parentNode) {
+            e.push(i);
+        }
+    }
+    if (e.length > 0) {
+        for (var i = 0; i < e.length; i++) {
+            var xe = document.createRange();
+            if (i) {
+                xe.setStartBefore(e[i].firstChild);
+                xe.setEndBefore(e[i - 1]);
+            } else {
+                xe.setStartBefore((e[i].nodeType == Node.TEXT_NODE) ? e[i] : e[i].firstChild);
+                xe.setEnd(e[i], dangerous.endOffset);
+            }
+            re.unshift(xe);
+        }
+    }
+
+    // Middle -- the uncaptured middle
+    if ((s.length > 0) && (e.length > 0)) {
+        var xm = document.createRange();
+        xm.setStartAfter(s[s.length - 1]);
+        xm.setEndBefore(e[e.length - 1]);
+    } else {
+        return [dangerous];
+    }
+
+    // Concat
+    rs.push(xm);
+    response = rs.concat(re);
+
+    // Send to Console
+    return response;
+}
+
+addEventListener("keydown", (event) => {
+    if (event.code == 'KeyN') {
+        document.querySelector('.notifNotes').classList.add('animateNotifNotes')
+        setTimeout(() => {
+            document.querySelector('.notifNotes').classList.remove('animateNotifNotes')
+        }, 2000);
+
+        highlightSelection()
+        getSelectedText()
+        window.getSelection().removeAllRanges()
+        notesPanel.scrollTop = notesPanel.scrollHeight;
+    }
+});
+

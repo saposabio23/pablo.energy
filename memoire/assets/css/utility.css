@@ -1,0 +1,9 @@
+/******************* UTILITY CLASSES *******************/
+.pointer:hover {
+    cursor: pointer;
+}
+
+.pointer img:hover {
+    cursor: pointer;
+}
+

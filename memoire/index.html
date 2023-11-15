@@ -5,26 +5,77 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memoire</title>
+    <title>📟 Memoire</title>
 
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-    <div class="options">
-        <button class="fullscreen">⇱</button>
-        <button onclick="increaseFontSize()">+</button>
-        <button onclick="resetFontSize()">·</button>
-        <button onclick="decreaseFontSize()">-</button>
+
+    <div class="scrollbar">
+        <div class="progressbar"></div>
+    </div>
+
+    <div class="notesPage">
+        <span onclick="displaynotes()" class="closer pointer">×</span>
+        <div class="header">
+            <h2>Notes</h2>
+            <div>
+                <!-- <small>séléctionnez du texte et appuyez sur la touche N du clavier</small> -->
+                <small>téléchargez ces notes <img src="assets/img/download.png"></small>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="optionsPage">
+        <span onclick="displayoptions()" class="closer pointer">×</span>
+
+        <h2>Options</h2>
+        <h4>Tipographie</h4>
+        <button onclick="decreaseFontSize()" class="pointer">Réduire </button>
+        <button onclick="resetFontSize()" class="pointer">Par défaut</button>
+        <button onclick="increaseFontSize()" class="pointer">Agrandir</button>
+
+        <h4>Écran</h4>
+        <button class="fullscreen pointer">Plein écran</button>
+
+        <h4>Thème</h4>
+        <button class="">Clair</button>
+        <button class="">Sombre</button>
+        <button class="">Custom</button>
+    </div>
+
+
+    <div id="optionsButton" class="pointer">
+        <h3>Options</h3>
+    </div>
+
+    <div id="notesButton" class="pointer">
+        <h3>Notes</h3>
+    </div>
+
+    <span class="notifNotes pointer">+1 note</span>
+
+    <!-- 
+    <div class="bookeffect">
+        <div class="foldleft"></div>
+        <div class="foldright"></div>
       </div>
-
-    
-
+       -->
     <div class="book">
-        <div class="scrollbar">
-              <div class="progressbar"></div>
-          </div>
-        <main>
+        <div class="bookPageLeft">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <main class="bookLeft">
+        </main>
+
+        <main class="bookRight">
+
+
 
             <h2>1.<br>Architecture d’Internet</h2>
 
@@ -82,17 +133,21 @@
             <h3>Qui les utilise? </h3>
 
             <section>
-                <p class="footnote-anchor" data-anchor="1"><span>Tandis que ce réseau grandissant (13 nœuds en 1971, 111 en 1977)
-                    était validé et utilisé
-                    expérimentalement parmi ces chercheurs en sciences informatiques, d’autres réseaux et technologies
-                    de
-                    liaisons étaient recherchées. L’utilité des réseaux informatiques – en particulier le courrier
-                    électronique – n’avait pas échappé aux autres communautés et disciplines, de sorte qu’au milieu des
-                    années 70, des réseaux alternatifs commencèrent à surgir:</span> <sup>1</sup></p>
-                    
+                <p class="footnote-anchor" data-anchor="1"><span>Tandis que ce réseau grandissant (13 nœuds en 1971, 111
+                        en 1977)
+                        était validé et utilisé
+                        expérimentalement parmi ces chercheurs en sciences informatiques, d’autres réseaux et
+                        technologies
+                        de
+                        liaisons étaient recherchées. L’utilité des réseaux informatiques – en particulier le courrier
+                        électronique – n’avait pas échappé aux autres communautés et disciplines, de sorte qu’au milieu
+                        des
+                        années 70, des réseaux alternatifs commencèrent à surgir:</span> <sup>1</sup></p>
+
                 <div class="footnote" data-footnote="1">
                     <img src="images/arpanet1974.png">
-                    <span><sup>1</sup> Sites des États-Unis reliés à ARPANET en 1974 (https://fr.wikipedia.org/wiki/ARPANET)</span>
+                    <span><sup>1</sup> Sites des États-Unis reliés à ARPANET en 1974
+                        (https://fr.wikipedia.org/wiki/ARPANET)</span>
                 </div>
             </section>
 
@@ -105,15 +160,20 @@
             </ul>
 
             <section>
-                <p class="citation footnote-anchor" data-anchor="2"><span>« plutôt que d’installer l’intelligence au cœur du
-                    réseau, il faut la situer aux
-                    extrémités : les ordinateurs au sein du réseau n’ont à exécuter que les fonctions très simples qui
-                    sont
-                    nécessaires pour les applications les plus diverses, alors que les fonctions qui sont requises par
-                    certaines applications spécifiques seulement doivent être exécutées en bordure de réseau. Ainsi, la
-                    complexité et l’intelligence du réseau sont repoussées vers ses lisières. Des réseaux simples pour
-                    des
-                    applications intelligentes. »</span> <sup>2</sup></p>
+                <p class="citation footnote-anchor" data-anchor="2"><span>« plutôt que d’installer l’intelligence au
+                        cœur du
+                        réseau, il faut la situer aux
+                        extrémités : les ordinateurs au sein du réseau n’ont à exécuter que les fonctions très simples
+                        qui
+                        sont
+                        nécessaires pour les applications les plus diverses, alors que les fonctions qui sont requises
+                        par
+                        certaines applications spécifiques seulement doivent être exécutées en bordure de réseau. Ainsi,
+                        la
+                        complexité et l’intelligence du réseau sont repoussées vers ses lisières. Des réseaux simples
+                        pour
+                        des
+                        applications intelligentes. »</span> <sup>2</sup></p>
 
                 <div class="footnote" data-footnote="2">
                     <span><sup>2</sup> Lawrence Lessig, «L'Avenir des idées», Presses
@@ -154,6 +214,12 @@
                 naissance de l’ARPANET se fera en mettant en commun des projets émanant de 4 universités différentes.
             </p>
         </main>
+
+        <div class="bookPageRight">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
 
     </div>
 

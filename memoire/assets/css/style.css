@@ -1,12 +1,28 @@
+@import url(utility.css);
+
 :root {
     --color-background: #202020;
 
     --space-s: 8px;
     --space-m: 16px;
     --space-l: 24px;
+    --space-xl: 36px;
+    --space-xxl: 48px;
 
-    --font-std: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    --font-std: Commonsans, sans-serif;
+
     --font-spl: serif;
+
+    --border-s: 4px;
+    --border-m: 12px;
+
+    --trans-quick: all linear 0.2s;
+    --trans-normal: all linear 0.4s;
+
+    --color-white-semi: #ffffff70;
+    --color-white: white;
+    --color-borders: #c4c2bc;
+    --color-borders-light: #e8e6e2;
 }
 
 html {
@@ -26,31 +42,98 @@ html::-webkit-scrollbar {
 
 body {
     font-family: var(--font-std);
-    font-size: 16px;
-    background-color: brown;
+    background-color: white;
     margin: 0;
+
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+button {
+    border-radius: var(--border-s);
+    border: 1px solid var(--color-white-semi);
+    background-color: var(--color-white-semi);
+    padding: var(--space-s);
 }
 
 .book {
-    background-color: #f0f0ea;
-    box-shadow: 0px 0px 17px hsl(0deg 0% 0% / 20%);
-    max-width: 90%;
-    width: 1000px;
-    margin: 5vh auto;
-    border-radius: 20px;
+    display: flex;
+    width: calc(100vw - 20px*2);
+    margin: auto;
+
+    position: relative;
+    z-index: 3;
 }
 
-main {
-    width: 45%;
-    padding: 20px;
+.book>main {
+    padding: var(--space-xl);
+    box-sizing: border-box;
+    height: inherit;
+
+    z-index: 5;
 }
 
-p{
-    text-indent: 15px;
+.bookLeft {
+    width: 50%;
+    height: 100%;
+    box-shadow: 3px 0 26px 0 #000;
 }
+
+.bookRight {
+    width: 50%;
+    height: 100%;
+    box-shadow: 0 0 44px 0 #2d2d2d;
+}
+
+.bookPageLeft {
+    position: relative;
+    width: 5vw;
+    display: flex;
+    transition: var(--trans-quick);
+
+    z-index: 4;
+}
+
+.bookPageRight {
+    position: relative;
+    width: 5vw;
+    display: flex;
+    flex-flow: row-reverse;
+    transition: all ease-in-out 0.5s;
+
+    z-index: 4;
+}
+
+.bookPageLeft div {
+    width: inherit;
+    box-shadow: -4px 0px 10px 0px #2d2d2da8;
+    background-color: white;
+}
+
+.bookPageRight div {
+    width: inherit;
+    box-shadow: 4px 0px 10px 0px #2d2d2da8;
+    background-color: white;
+}
+
 
 h2 {
     margin: 0;
+    font-family: Commonsans, sans-serif;
+    font-size: 52px;
+    line-height: 1;
+    font-weight: 400;
+}
+
+h4 {
+    font-weight: 400;
+    margin: var(--space-l) 0 var(--space-s) 0;
+}
+
+p {
+    text-indent: 15px;
+
 }
 
 sup {
@@ -64,53 +147,40 @@ sup {
     font-size: 9px;
     font-family: var(--font-std);
     text-indent: 0;
+    background-color: transparent;
+    color: black;
 }
 
 section {
     position: relative;
 }
 
-.options{
-    position: fixed;
-    bottom: 0;
-    left: calc(50% + 500px);
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    margin: var(--space-s);
-    z-index: 999;
-}
-.options button{
-    opacity: 0.4;
-}
-
-.options button:hover{
-    opacity: 1;
-}
-
+/******************* CITATIONS *******************/
 .citation {
     font-family: var(--font-spl);
     padding: var(--space-l) calc(var(--space-l)*2);
 }
 
+/******************* FOOTNOTE *******************/
 .footnote-anchor {
     cursor: context-menu;
+    /* cursor: help; */
 }
 
 .footnote {
-    margin-left: 115%;
-    width: 350px;
-    max-width: 90%;
+    transform: translateX(calc(-100% - var(--space-xl)*2));
+    width: 100%;
     position: absolute;
     top: 0;
-    background: #f0f0eada;
-    border: 1px solid #c4c2bc;
-    border-radius: 4px;
+    background: transparent;
+    border-radius: var(--border-s);
+    border: 1px solid transparent;
+
 }
 
 .footnote:hover {
-    background-color: white;
-
+    border: 1px solid var(--color-borders);
+    cursor: context-menu;
 }
 
 .footnote:hover img {
@@ -118,7 +188,7 @@ section {
 }
 
 .footnote span {
-    font-size: 10px;
+    font-size: 12px;
     word-break: normal;
     padding: var(--space-s);
     display: block;
@@ -129,20 +199,21 @@ section {
     filter: grayscale(1);
 }
 
-
+/******************* HIGHLIGHT *******************/
 
 .highlight {
-    background-color: white;
+    border: 1px solid var(--color-borders);
+
 }
 
 .highlight img {
     filter: grayscale(0);
 }
 
-.highlight-text span{
+.highlight-text span {
     background-color: yellow;
-  }
-  
+}
+
 /******************* PAGE SCROLLBAR *******************/
 .scrollbar {
     height: 100%;
@@ -159,4 +230,293 @@ section {
     width: 3px;
     background-color: hsl(0deg 0% 0% / 10%);
     border-radius: 50px;
+}
+
+/******************* OPTIONS PAGE *******************/
+#optionsButton {
+    background-color: white;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 25px;
+    text-align: right;
+    padding: 8px 4px;
+    box-sizing: border-box;
+    display: flex;
+
+    position: fixed;
+    z-index: 0;
+}
+
+.reduireRight {
+    transform: scaleX(0.9);
+    transform-origin: left;
+
+    transition: var(--trans-quick);
+}
+
+#optionsButton h3 {
+    font-weight: 400;
+    opacity: .6;
+    margin: 0;
+    width: 100%;
+    writing-mode: sideways-rl;
+    font-size: 16px;
+}
+
+.options:hover {
+    background-color: white;
+    opacity: .6;
+    width: 50vw;
+    z-index: 1;
+    position: absolute;
+    height: 100%;
+    right: 0;
+}
+
+.closer{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    border-radius: 999px;
+    border: 1px solid var(--color-white-semi);
+    margin: var(--space-m);
+    text-align: center;
+}
+
+.optionsPage>span:nth-child(1) {
+    background-color: var(--color-background);
+    color: var(--color-white-semi);
+}
+
+.notesPage>span:nth-child(1) {
+    background-color: var(--color-borders);
+    color: var(--color-white-semi);
+}
+
+/******************* NOTE PAGE *******************/
+#notesButton {
+    background-color: white;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 25px;
+    text-align: left;
+    padding: 8px 4px;
+    box-sizing: border-box;
+    display: block;
+
+    position: fixed;
+    z-index: 0;
+}
+
+.reduireLeft {
+    transform: scaleX(0.9);
+    transform-origin: right;
+
+    transition: var(--trans-quick);
+}
+
+#notesButton h3 {
+    font-weight: 400;
+    opacity: .6;
+    margin: 0;
+    width: 100%;
+    writing-mode: sideways-rl;
+    font-size: 16px;
+    transform: rotate(180deg);
+}
+
+.notifNotes {
+    position: fixed;
+    left: calc(75vw - 5vw + 20px);
+    bottom: 0px;
+    transform: translate(-50%, 100%);
+    border: 1px solid var(--color-white-semi);
+    width: fit-content;
+    /* writing-mode: sideways-lr; */
+    font-size: 16px;
+    z-index: 999;
+    color: var(--color-background);
+    background-color: var(--color-borders);
+    padding: var(--space-s) var(--space-m);
+    border-radius: var(--border-s);
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.notifNotes:hover {
+    background-color: var(--color-borders-light);
+}
+
+.animateNotifNotes {
+    animation: goup 2s ease-in-out;
+}
+
+@keyframes goup {
+    0% {
+        opacity: 0;
+        visibility: visible;
+        transform: translate(-50%, 100%);
+    }
+
+    20% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    99% {
+        visibility: visible;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(-50%, -100%);
+    }
+}
+
+
+.notesPage {
+    width: calc(50vw - 5vw - 20px);
+    height: 100vh;
+    z-index: 999;
+    padding: var(--space-xl);
+    box-sizing: border-box;
+    z-index: 5;
+    position: fixed;
+    background-color: var(--color-borders);
+    left: 50vw;
+    transform: translateX(-100%);
+    /* box-shadow: inset -10px 0px 25px 0 #000; */
+    display: none;
+    overflow: scroll;
+}
+
+.notesPage .header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    /* align-items: center; */
+    align-items: baseline;
+}
+
+.header div {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.header small {
+    font-size: 10px;
+    opacity: 0.5;
+    line-height: 20px;
+}
+
+.header small:nth-child(1):hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.header img {
+    height: 15px;
+    margin-left: 2px;
+}
+
+
+.littleNote {
+    margin: var(--space-s) 0;
+    padding: var(--space-s) var(--space-m);
+    border: 1px solid var(--color-borders);
+    background-color: var(--color-white-semi);
+    border-radius: var(--border-s);
+    font-size: 16px;
+}
+
+.littleNote:hover {
+    cursor: text;
+}
+
+.littleNote:hover div {
+    opacity: 1;
+    transition: var(--trans-quick);
+}
+
+.littleNote div {
+    margin: var(--space-s) 0;
+    padding: var(--space-s);
+    border: 1px solid var(--color-white-semi);
+    background-color: var(--color-borders);
+    height: 4px;
+    width: 10px;
+    border-radius: 999px;
+    margin-right: var(--space-s);
+    display: flex;
+    position: absolute;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    
+    transition: var(--trans-quick);
+    opacity: 0;
+}
+
+.littleNote div:nth-child(1){
+    right: 14px;
+    margin-top: -4px;
+}
+
+.littleNote div:nth-child(2){
+    right: 14px;
+    margin-top: 22px;
+}
+
+.littleNote div img {
+  height: 13px;
+}
+
+.notesPage::-webkit-scrollbar {
+    width: 3px;
+}
+
+.notesPage::-webkit-scrollbar-track {
+    background: black;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.notesPage::-webkit-scrollbar-thumb {
+    background: red;
+    border: 3px solid blue;
+}
+
+
+
+.optionsPage {
+    width: calc(50vw - 5vw - 20px);
+    height: fit-content;
+    z-index: 999;
+    padding: var(--space-xl);
+    box-sizing: border-box;
+    z-index: 5;
+    position: fixed;
+    background-color: var(--color-background);
+    color: var(--color-white-semi);
+    left: 50vw;
+    bottom: 0;
+    transform: translateX(-100%);
+    box-shadow: 0 0 44px 0 #2d2d2d;
+    display: none;
+    border-radius: var(--border-m) var(--border-m) 0 0;
+
+    transition: var(--trans-normal);
 }
