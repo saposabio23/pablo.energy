@@ -108,13 +108,6 @@ iframe {
   }
 
   .dino div{
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-    -ms-touch-action: none;
-        touch-action: none;
-    pointer-events: none;
     border-radius: 100%;
     border: 20px solid yellowgreen;
     z-index: 999;
