@@ -38,14 +38,14 @@ for (footnote of footnotes) {
 /*
 Scrollbar line
 */
-function scrollBar() {
-    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    var scrolled = (winScroll / height) * 100;
-    document.querySelector('.progressbar').style.height = scrolled + "%";
-}
+// function scrollBar() {
+//     var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+//     var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+//     var scrolled = (winScroll / height) * 100;
+//     document.querySelector('.progressbar').style.height = scrolled + "%";
+// }
 
-document.onscroll = function () { scrollBar() };
+// document.onscroll = function () { scrollBar() };
 
 /*
 OPTIONS PANEL
@@ -146,13 +146,35 @@ document.getElementById('optionsButton').addEventListener('mouseleave', function
     document.querySelector('.bookPageRight').classList.remove('reduireRight')
 });
 
-document.getElementById('notesButton').addEventListener('mouseenter', function () {
+document.getElementById('sommaireButton').addEventListener('mouseenter', function () {
     document.querySelector('.bookPageLeft').classList.add('reduireLeft')
 });
 
-document.getElementById('notesButton').addEventListener('mouseleave', function () {
+document.getElementById('sommaireButton').addEventListener('mouseleave', function () {
     document.querySelector('.bookPageLeft').classList.remove('reduireLeft')
 });
+
+
+/*
+SOMMAIRE PANEL
+*/
+var sommairePanel = document.querySelector('.sommairePage')
+
+function displaySommaire() {
+    if (sommairePanel.classList.contains('showed')) {
+        sommairePanel.style.display = ('none');
+        sommairePanel.classList.remove('showed');
+    }
+
+    else {
+        sommairePanel.style.display = ('block');
+        sommairePanel.classList.add('showed')
+    }
+}
+
+document.getElementById('sommaireButton').addEventListener('click', displaySommaire)
+
+
 
 
 /*
@@ -199,7 +221,7 @@ function getSelectedText() {
     } else return;
     // To write the selected text into the textarea
 
-    let notesPrise = document.createElement("div");
+    let notesPrise = document.createElement("textarea");
     notesPrise.setAttribute('contenteditable', 'true')
     notesPrise.className = 'littleNote';
     notesPrise.innerHTML = selectedText;
@@ -306,7 +328,7 @@ addEventListener("keydown", (event) => {
         document.querySelector('.notifNotes').classList.add('animateNotifNotes')
         setTimeout(() => {
             document.querySelector('.notifNotes').classList.remove('animateNotifNotes')
-        }, 2000);
+        }, 4000);
 
         highlightSelection()
         getSelectedText()

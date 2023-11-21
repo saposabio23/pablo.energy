@@ -12,20 +12,33 @@
 
 <body>
 
-    <div class="scrollbar">
+    <!-- <div class="scrollbar">
         <div class="progressbar"></div>
+    </div> -->
+
+
+
+    <div id="optionsButton" class="pointer">
+        <h3>Options</h3>
     </div>
+
+    <div class="sideLeft">
+        <h3 id="sommaireButton" class="pointer">Index</h3>
+        <h3 id="notesButton" class="pointer">Prise de notes</h3>
+    </div>
+
+
+    <span class="notifNotes pointer">+1 note</span>
 
     <div class="notesPage">
         <span onclick="displaynotes()" class="closer pointer">×</span>
         <div class="header">
-            <h2>Notes</h2>
+            <h2>Prise de notes</h2>
             <div>
                 <!-- <small>séléctionnez du texte et appuyez sur la touche N du clavier</small> -->
                 <small>téléchargez ces notes <img src="assets/img/download.png"></small>
             </div>
         </div>
-
     </div>
 
     <div class="optionsPage">
@@ -46,16 +59,69 @@
         <button class="">Custom</button>
     </div>
 
+    <div class="sommairePage">
+        <h2>Index</h2>
+        <h4><a href="#1">𝐼. Des nouveaux mondes à bâtir</a></h4>
+        <details>
+            <summary><a href="#1a">a. La naissance d’Internet</a></summary>
+            <ul>
+                <li><a href="#1anaissance">Tout commence par les réseaux</a></li>
+                <li><a href="#1autilisateurices">Qui les utilise?</a></li>
+                <li><a href="#1aservice">À quoi servent-ils à ce moment là?</a></li>
+                <li><a href="#1ainterconnexion">Interconnexion des réseaux: Internet</a></li>
+                <li><a href="#1acroissance">Croissance de l’Internet toujours très dirigée</a></li>
+                <li><a href="#1ahippies">La culture hippie s’empare des ordinateurs et réseaux</a></li>
+            </ul>
+        </details>
 
-    <div id="optionsButton" class="pointer">
-        <h3>Options</h3>
+        <details>
+            <summary>b. Imaginer cet espace vierge</summary>
+            <ul>
+                <li>Quels visions pour les réseaux et Internet?</li>
+                <li>Un nouveau langage au sein d’Internet: HTML</li>
+                <li>Innovation ascendante</li>
+                <li>Conception de la part des utilisateurs</li>
+                <li>Territoire foisonnant: désir de créer et de partager</li>
+            </ul>
+        </details>
+
+
+        <h4>𝐼𝐼. Au web de nos jours</h4>
+        <details>
+            <summary>a. Le web devient adulte</summary>
+            <ul>
+                <li>Comment a t-il évolué?</li>
+                <li>Un web marchand</li>
+                <li>De la participation à l’observation</li>
+            </ul>
+        </details>
+        <details>
+            <summary>b. Un web par la machine/l’outilails</summary>
+            <ul>
+                <li>Quand le monde virtuel devient tout notre monde</li>
+                <li>Mais bâtit par les mêmes architectes</li>
+                <li>Le design “par défaut”</li>
+                <li>Où se trouvent les utopies?</li>
+            </ul>
+        </details>
+
+        <h4>𝐼𝐼𝐼. Réoccuper ces espaces</h4>
+        <details>
+            <summary>a. Concevoir un nouveau web</summary>
+            <ul>
+                <li>Handmade web</li>
+                <li>Qui pour l’imaginer?</li>
+            </ul>
+        </details>
+        <details>
+            <summary>b. Entretiens</summary>
+            <ul>
+                <li>Clara Pasteau:</li>
+                <li>???</li>
+            </ul>
+        </details>
     </div>
 
-    <div id="notesButton" class="pointer">
-        <h3>Notes</h3>
-    </div>
-
-    <span class="notifNotes pointer">+1 note</span>
 
     <!-- 
     <div class="bookeffect">
@@ -65,9 +131,6 @@
        -->
     <div class="book">
         <div class="bookPageLeft">
-            <div></div>
-            <div></div>
-            <div></div>
         </div>
 
         <main class="bookLeft">
@@ -75,13 +138,13 @@
 
         <main class="bookRight">
 
+            <h1 id="1">𝐼. Des nouveaux mondes à bâtir</h1>
 
+            <h2 id="1a">1. La naissance d’Internet</h2>
 
-            <h2>1.<br>Architecture d’Internet</h2>
+            <h3 id="1anaissance">Tout commence par les réseaux</h3>
 
-            <h3>La naissance des réseaux</h3>
-
-            <p>Début des années 60 aux États-Unis, en pleine guerre froide et en réponse au lancement soviÉtique du
+            <p>Début des années 60 aux États-Unis, en pleine guerre froide et en réponse au lancement soviétique du
                 Sputnik
                 1, le gouvernement américain fonde la ARPA (Advanced Research Projects Agency Network). En collaboration
                 avec des universités, des industriels et d’autres gouvernements, cette agence est chargée de
@@ -129,8 +192,15 @@
                 envoyé à travers l’ARPANet, acronyme de ARPA et Network.
             </p>
 
+            <p>Côté infrastructure, la société américaine BBN (Bolt, Beranek and Newman) se chargea de concevoir un
+                petit ordinateur qui, rattaché aux ordinateurs déjà existants, pouvait transmettre des paquest
+                d’information à d’autres ordinateurs de son genre. On parle des IMP (Interface Message Processor) qui
+                sont, de nos jours, les routers que l’on a chez nous. On installa ces IMPs au sein des laboratoires de
+                ces universités, et c’est ainsi que vera le jour le premier réseau à transfert de paquets de données. En
+                1969 le premier mail est envoyé à travers l’ARPANet, acronyme de ARPA et Network.</p>
 
-            <h3>Qui les utilise? </h3>
+
+            <h3 id="1autilisateurices">Qui les utilise? </h3>
 
             <section>
                 <p class="footnote-anchor" data-anchor="1"><span>Tandis que ce réseau grandissant (13 nœuds en 1971, 111
@@ -159,6 +229,65 @@
                 <li>CSNET pour la communauté (académique et industrielle) des sciences informatiques</li>
             </ul>
 
+            <p>Face à cette croissance de réseaux dédiés à chaque groupe de recherche, mais incommuniqués entre-eux, on
+                se retrouve rapidement confrontés au besoin le besoin de les relier. Le réseau ARPANet laissera place au
+                NSFNet (National Science Foundation Network), qui optera pour une ouverture de son utilisation à
+                d’autres groupes de recherches. Les choix suivants annonceront cette volonté d’unification:</p>
+
+            <ul>
+                <li>ce sera un réseau pour la recherche en général, et non silotée comme on avait pu le voir auparavant
+                    (pas besoin de nouveaux réseaux pour des nouveaux champs de recherche)</li>
+                <li>son architecture se déploira entre les villes grâce à des super-ordinateurs qui à son tour se
+                    racorderont aux différents sites et campus universitaires</li>
+                <li>il n’y aura pas de limite de connections (toute université ou centre de recherche pourra se brancher
+                    au super-ordianteurs de la ville)</li>
+            </ul>
+
+            <p>Ce réseau se développa très rapidement, puisque ouvert à tous type de recherche et plus facile à
+                brancher, et comptera avec près de 4 millions de nœuds interconnectés en 1984. </p>
+
+            <h3 id="1aservice">À quoi servent-ils à ce moment là?</h3>
+
+            <p>Le réseau n’était qu’à ses débuts et il ne servait qu’à une très fine partie de la population mondiale.
+                L’ouverture à une utilisation commerciale n’était pas encore arrivée et les usages principaux restaient
+                académiques et militaires. A cette époque Internet n’avait qu’une seule utilitée, l’envoi et la
+                réception d’emails.</p>
+
+            <p>Cette nouvelle façon de se communiquer était installée au sein des universités et des labos de recherche,
+                et va accélerer tous les domaines sur lesquels travaillent ces derniers. On va pouvoir mettre en lien
+                chercheurs et scientifiques de différents laboratoires et institutions d’une façon beaucoup plus rapide.
+                Cela va faciliter le partage d'informations, de résultats de recherche et d'idées. Rapelons-nous que la
+                naissance de l’ARPANET se fera en mettant en commun des projets émanant de 4 universités différentes.
+            </p>
+            <p>
+                Qui dit e-mail dit aussi transfert de fichiers. On va donc transferer très rapidement des données entre
+                différents sites de recherche et ainsi remplacer les transferts physiques. Un laboratoire devait
+                peut-être attendre trois jours des resultats qu’il allait recevoir sur bandes magnétiques par la poste,
+                tandis que maintenant il pouvait avoir ces informations presque instantanément et ne pas devoir mettre
+                en pause ses recherches. Tous les secteurs académiques allaient gagner en fluidité de travail. Mais
+                celui qui sera en tête, vous l’aurez deviné, sera celui des technologies de réseau. En effet les
+                avancées sur son propre domaine, notament en sécurité et en vitesse de transmission de données, va
+                rendre son développement presque exponenciel puisqu’il se perfectionne lui même.
+            </p>
+
+            <h3 id="1ainterconnexion">Interconnexion des réseaux: Internet</h3>
+            <p>Mais que se passe-t-il de l’autre côté de l’Atlantique? En 1970, après la visite d'une délégation
+                française chez BBN aux États-Unis, le projet ARPANET se fait connaître en France. Deux années plus tard
+                l’INRIA (Institut national de recherche en informatique et en automatique) charge Louis Pouzin de mettre
+                en place un réseau similaire en France. Le réseau CYCLADES branchera les villes de Rocquencourt, Paris,
+                Grenoble, Toulouse et Rennes, avec leur connexions régionales respectives. Mais Pouzin développera
+                certains points faibles qu’il avait pu trouver au réseau américain. Il sera le pionnier à la mise en
+                place de la stratégie bout en bout (end-to-end en anglais), qui est le basculement de la
+                “responsabilité”, qui passe d’être “assurée” par le réseau à l’être par utilisateur. Jusqu’alors, les
+                ordinateurs émetteurs envoyaient des informations au réseau, qui les déchiffraient et les amenaient
+                jusqu’aux ordinateurs destinataires. Le réseau assurait, au prix d’énergie et complexité, la bonne
+                livraison de l’information, tandis que l’utilisateur avait juste besoin à attendre la réception.</p>
+
+            <p>Ce que le réseau CYCLADES va mettre en place est la stratégie inverse. Le chiffrement prendra place au
+                sein des ordinateurs émetteur et le réseau servira juste comme un relayeur. L’ordinateur destinaire
+                devra donc déchiffrer cette information pour que l’utilisateur puise la lire. Cela réduit la charge du
+                réseau, evitant des erreurs et la complexité de devoir chiffrer toutes les informations reçues.</p>
+
             <section>
                 <p class="citation footnote-anchor" data-anchor="2"><span>« plutôt que d’installer l’intelligence au
                         cœur du
@@ -182,37 +311,100 @@
                 </div>
             </section>
 
+            <p>Cette proposition du groupe de recherche français va amèner les ingénieurs de tout le globe a concevoir
+                le réseau d’une autre façon. Il ne manquera plus qu’une dernière pierre pour que le réseau devienne ce
+                qu’il est aujourd’hui: la mise en service d’une norme internationale qui indiquera comment les
+                ordinateurs doivent envoyer les données, puisque c’est à eux maintenant de prendre en charge la
+                préparation de l’information à envoyer. Auparavant chaque réseau suivait un protocole de transmission
+                propre (comme si chaqu’un parlait une langue différente), ce qui les rendait totalement hermétiques aux
+                autres réseaux, d’où l’émergence des différents réseaux pour chaque champ de recherche. En unissant
+                toutes les transmissions mondiales sous un même protocole d’envoit (comme une seule langue), tous les
+                réseaux pourront se comprendre entre eux, peu importe leur architecture ou usage. Ce protocole ouvrira
+                la porte aux interconnexions de réseaux ou en anglais interconnections of networks, qui donnera le mot
+                que toute le monde connait de nos jours: Internet.</p>
 
-            <p>Face à cette croissance de réseaux dédiés à chaque groupe de recherche, mais incommuniqués entre-eux, on
-                se retrouve rapidement confrontés au besoin le besoin de les relier. Le réseau ARPANet laissera place au
-                NSFNet (National Science Foundation Network), qui optera pour une ouverture de son utilisation à
-                d’autres groupes de recherches. Les choix suivants annonceront cette volonté d’unification:</p>
+            <h3 id="1acroissance">Croissance de l’Internet toujours très dirigée</h3>
+            <p>Une des clés de la croissance rapide de l’Internet a été l’accès libre et instantané à sa propre
+                documentation. Lors des débuts des réseaux, la communauté de recherche dédié à Internet maintenait la
+                traditionnelle publication des nouvelles idées et resultats des recherches. Publier sur papier en
+                suivant les rigoureuses règles utilisées jusque-là prennait du temps et n’était pas adapté aux moyens de
+                distribution numérique. En 1969, une étape importante fut mise en place, les RFC ou Request for
+                Comments. Ce sont des notes ‒ la longueur minimale était d’une seule phrase ‒ qui ont pour objectif de
+                partager rapidement des idées ou des propositions avec d’autres chercheurs. En créant une boucle
+                d’évaluation positive, un RFC déclanchait un autre RFC avec des idées supplémentaires et ainsi de suite,
+                ce qui permettait de déboucher sur un consensus, que l’on utilisait comme base pour la mise en œuvre par
+                les différentes équipes de recherche.</p>
 
-            <ul>
-                <li>ce sera un réseau pour la recherche en général, et non silotée comme on avait pu le voir auparavant
-                    (pas besoin de nouveaux réseaux pour des nouveaux champs de recherche)</li>
-                <li>son architecture se déploira entre les villes grâce à des super-ordinateurs qui à son tour se
-                    racorderont aux différents sites et campus universitaires</li>
-                <li>il n’y aura pas de limite de connections (toute université ou centre de recherche pourra se brancher
-                    au super-ordianteurs de la ville)</li>
-            </ul>
+            <p>Le rôle principal d’Internet était donc celui de partager les ressources sur sa propre conception et
+                fonctionnement, à travers ces documents RFC. Cette méthode pour le développement de nouvelles capacités
+                d’Internet continuera d’être essentielle à l’évolution du médium. L’utilisation des RFC a encouragé la
+                participation de groupes très hétérogènes de personnes, allant des étudiants gradués aux proffesseurs ou
+                chercheurs. Elle a permit de refléter ouvertement tous les buts et idées que les utilisateurs avaient et
+                voulaient atteindre. Avec le temps un organisme s’est porté responsable des standards d’Internet et des
+                RFC, c’est l’Internet Engineering Task Force (IETF). De nos jours il compte plus de 75 groupes de
+                travail, travaillant sur différents aspects du développement d’Internet.</p>
 
-            <p>Ce réseau se développa très rapidement, puisque ouvert à tous type de recherche et plus facile à
-                brancher, et comptera avec près de 4 millions de nœuds interconnectés en 1984. </p>
+            <h3 id="1ahippies">La culture hippie s’empare des ordinateurs et réseaux</h3>
 
-            <h3>À quoi servent-ils à ce moment là?</h3>
+            <section>
+                <p>L’endroit et l’époque où se développent les réseaux
+                    entre universités et centres de recherche, coincide avec la mouvance hippie de la fin des années
+                    60. Cette communauté qui, d’après leurs slogans, “veut changer la société sans prendre le
+                    pouvoir”, cherche à transformer les individus et les modes d’existence. Un des principaux
+                    organisateurs de ces communautés utopiques est Stewart Brand. Personnage multifacette, ancien
+                    parachutiste, journaliste ou écrivain, fréquentant les laboratoires de recherche, il filmera un
+                    des premiers envois d’email sur le réseau. C’est lui qui va concevoir un objet très singulier
+                    mais séminal: le “Whole Earth Catalog”, que l’on pourra qualifier de “bible des hippies”. Ce
+                    livre qui va apparaître tous les ans entre 1968 et 1972 est rempli d’idées, de tutoriels ou
+                    d’astuces. On peut retrouver tout un tas de choses, depuis des recettes de cuisinne
+                    végétariennes, des résumés de livres scientifiques ou des techniques de bricolage, jusqu’à des
+                    conseils environnementalistes ou des calendriers bouddhistes. Les notices qui remplisent cette
+                    “guide de savoirs” émanent directement des lecteurs, qui par voie postale, partagent aux
+                    éditeurs leur dernières découvertes ou leurs parlent de sujets qui pourraient intéresser le
+                    reste de la communauté. Souvent les notices sont commentées par d’autres lecteurs dans la
+                    parution suivante. Ce n’est pas un timide fanzine puisqu’en 1971 le catalogue est tiré à près
+                    d’un million d’exemplaires et remporte le National Book Award américain. Ce projet inclut
+                    beaucoup des notions qui constituront le web — qui n’existe pas encore — comme le mélange de
+                    savoirs hétéroclites, la contribution par les utilisateurs ou les commentaires entre ces
+                    derniers.<span class="footnote-anchor" data-anchor="3">Ce projet sera vu comme une préfiguration sur
+                        papier du futur Internet</span>
+                    <sup>3</sup>
+                </p>
 
-            <p>Le réseau n’était qu’à ses débuts et il ne servait qu’à une très fine partie de la population mondiale.
-                L’ouverture à une utilisation commerciale n’était pas encore arrivée et les usages principaux restaient
-                académiques et militaires. A cette époque Internet n’avait qu’une seule utilitée, l’envoi et la
-                réception d’emails.</p>
+                <div class="footnote" data-footnote="3">
+                    <span><sup>3</sup> Dominique Cardon, «Culture Numérique» Paris: Presses de Sciences Po, 2019.
+                        p50</span>
+                </div>
+            </section>
 
-            <p>Cette nouvelle façon de se communiquer était installée au sein des universités et des labos de recherche,
-                et va accélerer tous les domaines sur lesquels travaillent ces derniers. On va pouvoir mettre en lien
-                chercheurs et scientifiques de différents laboratoires et institutions d’une façon beaucoup plus rapide.
-                Cela va faciliter le partage d'informations, de résultats de recherche et d'idées. Rapelons-nous que la
-                naissance de l’ARPANET se fera en mettant en commun des projets émanant de 4 universités différentes.
-            </p>
+            <p>À ce même moment la communauté hippie apportera encore une autre pierre au dévéloppement des ordinateurs.
+                À l’époque, les grands ordinateurs étaient réservés aux entreprises et universités, et les sociétés
+                informatiques “ne voyaient aucune raison d’installer des ordinateurs dans les foyers américains”. Cette
+                vision ne plaira pas à ces communautés, qui demanderont aux industriels que l’ordinateur, un outil qui
+                “augmente l’individu”, puisse être personnel, et que chacun puise le fabriquer, le bricoler, le
+                programmer. À partir de là, commence à se developper des clubs de fabrication informatique, qui par le
+                do-it-yourself, vont fabriquer les premiers ordinateurs personnels. C’est dans ce milieu des années 70,
+                autour de la ville de San Francisco, que vont naître les premières entreprises d’informatique modernes
+                (Apple, Microsoft, etc.) qui contribueront à fonder la bien connue de nos jours, Silicon Valley
+                (”silicon” vient du mot “silice” en anglais, principal matériél utilisé pour les puces informatiques
+                dont sont remplis les ordinateurs).</p>
+
+            <p>Enfin on doit une dernière contribution à la communauté hippie. Dans ces années 1980 on retrouve trois
+                communautés qui utilisent les ordinateurs connectés: les militaires (qui en font une utilisation
+                discrète), les laboratioires de recherches qui fabriquent internet (ils sont très actifs puisque boostés
+                par leur propre outils: emails et fichiers) et les passionés dont on vient de parler plus haut (qui
+                rêvent d’emancipation par le biais de cette technologie).
+                Comme on à vu dans le chapitre sur Tim-Berns-Lee et la naissance de l’hypertexte, les développements
+                sont dictés par les usages (l’outil de l’hypertexte était un besoin propre aux chercheurs et chercheuses
+                du CERN), tandis que la communauté scientifique se précipitait pour améliorer la vitesse de connexion et
+                l’infrastructure du réseau, les hippies vont l’utiliser pour créer une des premières communautés en
+                ligne, comme un prolongement de leurs propres communautés. Successeur du “The Whole Earth Catalog”,
+                Stewart Brand va présenter en 1985 une version en ligne de ce dernier, qui prendra le nom de The Well,
+                pour “The Whole Earth ‘Lectronic Link”. Dans cet espace numérique se retrouvent journalistes,
+                développeurs, militants ou artistes pour discuter autour du contenu du catalogue. On est face à une
+                utilisation précoce de ce que l’on appellera par la suite “les forums”, et qui sera un des premiers
+                outils à élargir le public des réseaux au-délà des cercles militaires ou scientifiques.</p>
+
         </main>
 
         <div class="bookPageRight">
