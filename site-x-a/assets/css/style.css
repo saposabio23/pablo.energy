@@ -33,6 +33,8 @@ span {
         -ms-flex-pack: center;
             justify-content: center;
     font-size: 2rem;
+    z-index: 1;
+    position: relative;
 }
 
 #lettre {
@@ -41,11 +43,12 @@ span {
     max-width: 750px;
     font-size: 2rem;
     color: white;
-    z-index: 0;
+    z-index: 1;
     position: relative;
 }
 
 .triple{
+    z-index: 1;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -101,7 +104,7 @@ iframe {
     position: absolute;
     top: -5%;
     left: -5%;
-    z-index: -1;
+    z-index: 0;
     border-radius: 100%;
     width: 110%;
     height: 110%;
@@ -118,6 +121,7 @@ iframe {
     left: 0;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
+            pointer-events: none;
   }
 
 
@@ -125,7 +129,7 @@ iframe {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: -1;
+    z-index: 0;
     width: calc(100vw - 40px);
     height: calc(100vh - 40px);
     background-color: yellowgreen;
