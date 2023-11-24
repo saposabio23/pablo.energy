@@ -47,31 +47,10 @@ Scrollbar line
 
 // document.onscroll = function () { scrollBar() };
 
-/*
-OPTIONS PANEL
-*/
-var optionsPanel = document.querySelector('.optionsPage')
-
-function displayoptions() {
-    if (optionsPanel.classList.contains('showed')) {
-        optionsPanel.style.display = ('none');
-        optionsPanel.classList.remove('showed');
-    }
-
-    else {
-        optionsPanel.style.display = ('block');
-        optionsPanel.classList.add('showed')
-    }
-}
-
-document.getElementById('optionsButton').addEventListener('click', displayoptions)
-
-
 
 /*
 Fullscreen mode
 */
-//////////////// FULLSCREEN BTN ///////////////////////
 var fullscreenbtn = document.querySelector('.fullscreen');
 
 function toggleFullscreen(elem) {
@@ -138,44 +117,61 @@ function resetFontSize() {
 /*
 Mouse over OPTIONS
 */
-document.getElementById('optionsButton').addEventListener('mouseenter', function () {
-    document.querySelector('.bookPageRight').classList.add('reduireRight')
-});
+// document.getElementById('optionsButton').addEventListener('mouseenter', function () {
+//     document.querySelector('.bookPageRight').classList.add('reduireRight')
+// });
 
-document.getElementById('optionsButton').addEventListener('mouseleave', function () {
-    document.querySelector('.bookPageRight').classList.remove('reduireRight')
-});
+// document.getElementById('optionsButton').addEventListener('mouseleave', function () {
+//     document.querySelector('.bookPageRight').classList.remove('reduireRight')
+// });
 
-document.getElementById('sommaireButton').addEventListener('mouseenter', function () {
-    document.querySelector('.bookPageLeft').classList.add('reduireLeft')
-});
+// document.getElementById('sommaireButton').addEventListener('mouseenter', function () {
+//     document.querySelector('.bookPageLeft').classList.add('reduireLeft')
+// });
 
-document.getElementById('sommaireButton').addEventListener('mouseleave', function () {
-    document.querySelector('.bookPageLeft').classList.remove('reduireLeft')
-});
+// document.getElementById('sommaireButton').addEventListener('mouseleave', function () {
+//     document.querySelector('.bookPageLeft').classList.remove('reduireLeft')
+// });
 
 
 /*
 SOMMAIRE PANEL
 */
+
+function hideAllSide() {
+    sommairePanel.style.display = ('none');
+    sommairePanel.classList.remove('showed');
+    notesPanel.style.display = ('none');
+    notesPanel.classList.remove('showed');
+    optionsPanel.style.display = ('none');
+    optionsPanel.classList.remove('showed');
+    hideButtonsSide()
+}
+
+function hideButtonsSide(){
+    document.getElementById('sommaireButton').classList.remove('sommaireButtonOn')
+    document.getElementById('notesButton').classList.remove('notesButtonOn')
+    document.getElementById('optionsButton').classList.remove('optionsButtonOn')
+}
+
 var sommairePanel = document.querySelector('.sommairePage')
 
 function displaySommaire() {
     if (sommairePanel.classList.contains('showed')) {
         sommairePanel.style.display = ('none');
         sommairePanel.classList.remove('showed');
+        hideButtonsSide()
     }
 
     else {
+        hideAllSide()
+        document.getElementById('sommaireButton').classList.add('sommaireButtonOn')
         sommairePanel.style.display = ('block');
         sommairePanel.classList.add('showed')
     }
 }
 
 document.getElementById('sommaireButton').addEventListener('click', displaySommaire)
-
-
-
 
 /*
 NOTES PANEL
@@ -186,9 +182,12 @@ function displaynotes() {
     if (notesPanel.classList.contains('showed')) {
         notesPanel.style.display = ('none');
         notesPanel.classList.remove('showed');
+        hideButtonsSide()
     }
 
     else {
+        hideAllSide()
+        document.getElementById('notesButton').classList.add('notesButtonOn')
         notesPanel.style.display = ('block');
         notesPanel.classList.add('showed')
     }
@@ -201,8 +200,35 @@ document.querySelector('.notifNotes').addEventListener('click', () => {
     displaynotes()
 })
 
+/*
+OPTIONS PANEL
+*/
+var optionsPanel = document.querySelector('.optionsPage')
 
-// Function to get the Selected Text
+function displayoptions() {
+    if (optionsPanel.classList.contains('showed')) {
+        optionsPanel.style.display = ('none');
+        optionsPanel.classList.remove('showed');
+        hideButtonsSide()
+    }
+
+    else {
+        hideAllSide()
+        document.getElementById('optionsButton').classList.add('optionsButtonOn')
+        optionsPanel.style.display = ('block');
+        optionsPanel.classList.add('showed')
+    }
+}
+
+document.getElementById('optionsButton').addEventListener('click', displayoptions)
+
+
+
+
+
+/*
+SAVE NOTESSS
+*/
 function getSelectedText() {
     var selectedText = '';
 

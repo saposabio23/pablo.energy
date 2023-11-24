@@ -51,7 +51,10 @@ body {
     font-weight: 400;
 }
 
-a, a:active, a:visited, a:hover {
+a,
+a:active,
+a:visited,
+a:hover {
     color: inherit;
     text-decoration: none;
 }
@@ -67,21 +70,44 @@ button {
     padding: var(--space-s);
 }
 
+/******************* BOOK EFFECT *******************/
+.bookeffect {
+    pointer-events: none;
+    position: fixed;
+
+    position: fixed;
+    z-index: 10;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.foldleft {
+    width: 50%;
+    height: 100%;
+    box-shadow: 3px 0 26px 0 #000;
+}
+
+.foldright {
+    width: 50%;
+    height: 100%;
+    box-shadow: 0 0 44px 0 #2d2d2d;
+}
+
+/******************* PAGES *******************/
 .book {
     display: flex;
-    width: calc(100vw - 20px*2);
-    margin: auto;
-
+    margin-left: 30px;
+    width: calc(100vw - 30px - 20px * 6);
+    background-color: white;
+    z-index: 10;
     position: relative;
-    z-index: 3;
 }
 
 .book>main {
     padding: var(--space-xl);
     box-sizing: border-box;
     height: inherit;
-
-    z-index: 5;
 }
 
 .bookLeft {
@@ -94,63 +120,36 @@ button {
     width: 50%;
     height: 100%;
     box-shadow: 0 0 44px 0 #2d2d2d;
+    z-index: 10;
 }
 
-/* .bookPageLeft {
-    position: relative;
-    width: 5vw;
-    display: flex;
-    transition: var(--trans-quick);
 
-    z-index: 4;
-} */
-
-.bookPageRight {
-    position: relative;
-    width: 5vw;
-    display: flex;
-    flex-flow: row-reverse;
-    transition: all ease-in-out 0.5s;
-
-    z-index: 4;
-}
-
-.bookPageLeft div {
-    width: inherit;
-    box-shadow: -4px 0px 10px 0px #2d2d2da8;
-    background-color: white;
-}
-
-.bookPageRight div {
-    width: inherit;
-    box-shadow: 4px 0px 10px 0px #2d2d2da8;
-    background-color: white;
-}
 
 h1 {
     margin: 0;
     padding-top: var(--space-l);
     margin-top: calc(-1 * var(--space-l));
+    margin-bottom: var(--space-l);
     font-family: Commonsans, sans-serif;
     font-size: 52px;
     line-height: 1;
     font-weight: 400;
-    /* background-color: black;
-    color: white; */
+
     border-radius: 11px;
     font-style: italic;
     /* text-shadow: 0 0 10px var(--color-background);
     color: white; */
+
+    transform: translateX(calc(-100% - var(--space-xl)*2));
+    position: sticky;
+    top: 0;
+
 }
 
-.sommairePage h2{
-    padding-top: var(--space-l);
-    margin-top: calc(-1 * var(--space-l));
-}
+/******************* PAGE *******************/
 
 h2 {
     margin: 0;
-    padding-top: var(--space-l);
     font-family: Commonsans, sans-serif;
     font-size: 36px;
     line-height: 1;
@@ -159,12 +158,23 @@ h2 {
 
 h3 {
     margin: 0;
-    padding-top: var(--space-l);
+    padding-top: var(--space-s);
+    padding-bottom: var(--space-m);
     font-family: Commonsans, sans-serif;
     font-size: 18px;
     line-height: 24px;
+    z-index: 99;
 
     font-weight: 600;
+}
+
+.bookRight h3{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgb(255, 255, 255) 75%, rgba(255, 255, 255, 0) 100%);
+    text-align: center;
 }
 
 h4 {
@@ -196,6 +206,8 @@ section {
     position: relative;
 }
 
+
+/******************* SOMMAIRE PARTIES *******************/
 
 
 /******************* CITATIONS *******************/

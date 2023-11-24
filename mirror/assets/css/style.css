@@ -1,3 +1,4 @@
+
 html {
     text-rendering: optimizeLegibility;
     height: 100%;
@@ -18,7 +19,7 @@ body {
     margin: 0;
     overflow: hidden;
 
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     width: 100vw;
     display: -webkit-box;
     display: -ms-flexbox;
