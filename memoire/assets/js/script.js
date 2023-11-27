@@ -1,7 +1,8 @@
 console.log("%cGlace sans tain, par Pablo Moreno. 2021. pablomoreno@pm.me", "color: blue; font-size: 10px; background-color:white;");
 
-// Footnote anchor highlighting
-
+/*
+FOOT NOTES
+¡*/
 let anchors = document.querySelectorAll('.footnote-anchor');
 
 for (anchor of anchors) {
@@ -117,9 +118,75 @@ function resetFontSize() {
 /*
 Mouse over OPTIONS
 */
-// document.getElementById('optionsButton').addEventListener('mouseenter', function () {
-//     document.querySelector('.bookPageRight').classList.add('reduireRight')
-// });
+var book = document.querySelector('.book')
+
+
+var partieIntro = document.querySelector('.partieIntro')
+var partieI = document.querySelector('.partieI')
+var partieII = document.querySelector('.partieII')
+var partieIII = document.querySelector('.partieIII')
+var partieFin = document.querySelector('.partieFin')
+
+
+var commencerLaLecture = document.getElementById('commencerLaLecture')
+var bookmarkPartieI = document.getElementById('bookmarkPartieI')
+var bookmarkPartieII = document.getElementById('bookmarkPartieII')
+var bookmarkPartieIII = document.getElementById('bookmarkPartieIII')
+var bookmarkPartieFin = document.getElementById('bookmarkPartieFin')
+
+
+function lecturePartieI(){
+    partieIntro.style.display = ('none');
+    partieI.style.display = ('block');
+    bookmarkPartieI.style.display = ('none');
+
+    book.classList.add('book-3-4')
+}
+
+function lecturePartieII(){
+    partieIntro.style.display = ('none');
+    partieI.style.display = ('none');
+    partieII.style.display = ('block');
+    bookmarkPartieI.style.display = ('none');
+    bookmarkPartieII.style.display = ('none');
+
+    book.classList.add('book-2-4')
+}
+
+function lecturePartieIII(){
+    partieIntro.style.display = ('none');
+    partieI.style.display = ('none');
+    partieII.style.display = ('none');
+    partieIII.style.display = ('block');
+
+    bookmarkPartieI.style.display = ('none');
+    bookmarkPartieII.style.display = ('none');
+    bookmarkPartieIII.style.display = ('none');
+
+    book.classList.add('book-1-4')
+}
+
+function lecturePartieFin(){
+    partieIntro.style.display = ('none');
+    partieI.style.display = ('none');
+    partieII.style.display = ('none');
+    partieIII.style.display = ('none');
+    partieFin.style.display = ('block');
+
+    bookmarkPartieI.style.display = ('none');
+    bookmarkPartieII.style.display = ('none');
+    bookmarkPartieIII.style.display = ('none');
+    bookmarkPartieFin.style.display = ('none');
+
+    book.classList.add('book-Full')
+}
+
+commencerLaLecture.addEventListener('click', lecturePartieI);
+
+bookmarkPartieI.addEventListener('click', lecturePartieI);
+bookmarkPartieII.addEventListener('click', lecturePartieII);
+bookmarkPartieIII.addEventListener('click', lecturePartieIII);
+bookmarkPartieFin.addEventListener('click', lecturePartieFin);
 
 // document.getElementById('optionsButton').addEventListener('mouseleave', function () {
 //     document.querySelector('.bookPageRight').classList.remove('reduireRight')

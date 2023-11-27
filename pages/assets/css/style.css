@@ -1,4 +1,3 @@
-@import url(../../../assets/fonts/fonts.css);
 
 :root {
   --white: snow;
@@ -20,7 +19,6 @@ p {
   border: 0;
   outline: 0;
   vertical-align: baseline;
-  font-family: 'rubikregular';
   scrollbar-width: none;
 }
 
@@ -43,70 +41,18 @@ html {
   box-sizing: border-box;
 }
 
-body {
-  background-color: dimgray;
-}
-
-a {
+a, a:visited {
   color: inherit;
-  text-decoration: none;
-}
-
-h2 {
-  margin: 0;
-  padding: 1px;
-  text-align: center;
-  font-size: .8rem;
-  border-radius: 10px 10px 0 0;
   text-transform: capitalize;
 }
 
-.grid {
-  display: grid;
-  justify-items: center;
-  row-gap: 2rem;
-  padding: 2rem;
-  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
-
+a:hover {
+  color: blue;
 }
 
-.block {
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-  border-radius: 7px;
-  background-color: snow;
-  box-shadow: 0px 3px 20px hsla(0, 0%, 0%, 0.25);
-  transform: perspective(25rem) rotateX(-25deg);
-  transition: var(--tran-short);
+h2 {
+  margin: 20px;
 }
-
-.block:hover {
-  box-shadow: 0px 0px 10px hsla(0, 0%, 0%, 0.1);
-  background-color: lime;
-
-
-  cursor: pointer;
-  transform: perspective(20em) rotateX(0deg);
-  transition: var(--tran-short);
-}
-
-
-.block img {
-  /*! height: 100%; */
-  width: 100%;
-  object-fit: cover;
-  border-radius: 0 0 7px 7px;
-}
-
-
-
-
-
-
-
-
-
 /* -----------------------------------
   PASSWORD PROTECTION
 -------------------------------------- */

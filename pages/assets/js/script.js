@@ -4,23 +4,25 @@ function createData() {
   console.log(allData)
 
   allData.forEach(function (allData) {
+    let title = document.createElement("li");
+    
     let block = document.createElement("a");
     block.className = 'block ' + allData.status + '';
+    block.innerHTML = allData.title;
     block.setAttribute("href", allData.url);
+    title.appendChild(block);
 
-    let title = document.createElement("h2");
-    title.innerHTML = allData.title;
-    block.appendChild(title);
 
-    let image = document.createElement("img");
-    image.src = 'img' + allData.url + '.png';
-    block.appendChild(image);
 
-    let year = document.createElement("span");
-    year.innerHTML = allData.year;
+    // let image = document.createElement("img");
+    // image.src = 'img' + allData.url + '.png';
+    // block.appendChild(image);
+
+    // let year = document.createElement("span");
+    // year.innerHTML = allData.year;
     // block.appendChild(year);
 
-    grid.appendChild(block);
+    grid.appendChild(title);
   });
 }
 
@@ -28,14 +30,14 @@ createData()
 
 
 
-const block = document.querySelectorAll('.block');
-block.forEach(function(block) {
-  block.addEventListener('mouseenter', function() {
-    console.log();
-    sound.play();
+// const block = document.querySelectorAll('.block');
+// block.forEach(function(block) {
+//   block.addEventListener('mouseenter', function() {
+//     console.log();
+//     sound.play();
 
-  });
-});
+//   });
+// });
 
 
 // THIS IS ABOUT THE PASSWORD

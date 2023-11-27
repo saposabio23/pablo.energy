@@ -14,7 +14,7 @@
     z-index: 0;
     display: flex;
     flex-direction: row-reverse;
-    margin-right: 20px;
+    margin-right: 18px;
 }
 
 .sideRight div {
@@ -35,6 +35,10 @@
     padding-top: var(--space-m);
     padding-left: 3px;
     text-transform: uppercase;
+}
+
+.sideRight div:hover{
+    color: rgb(137, 137, 137);
 }
 
 

@@ -1,5 +1,6 @@
 @import url(utility.css);
 @import url(options.css);
+@import url(parties.css);
 
 :root {
     --color-background: #202020;
@@ -98,10 +99,11 @@ button {
 .book {
     display: flex;
     margin-left: 30px;
-    width: calc(100vw - 30px - 20px * 6);
+    width: calc(100vw - 40px - 20px * 4);
     background-color: white;
     z-index: 10;
     position: relative;
+    min-height: 100vh;
 }
 
 .book>main {
@@ -175,6 +177,7 @@ h3 {
     background: rgb(255, 255, 255);
     background: linear-gradient(180deg, rgb(255, 255, 255) 75%, rgba(255, 255, 255, 0) 100%);
     text-align: center;
+    margin-top: var(--space-xl);
 }
 
 h4 {

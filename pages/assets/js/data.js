@@ -24,6 +24,30 @@ let allData = [
     status: ''
   },
   {
+    title: 'Site x A',
+    year: '2023',
+    month: '11',
+    url: '/site-x-a',
+    description: '...',
+    status: 'secret'
+  },
+  {
+    title: 'Mémoire',
+    year: '2023',
+    month: '11',
+    url: '/memoire',
+    description: '...',
+    status: ''
+  },
+  {
+    title: 'Mirroir',
+    year: '2023',
+    month: '11',
+    url: '/mirror',
+    description: '...',
+    status: ''
+  },
+  {
     title: 'carta para dani',
     year: '2023',
     month: '02',

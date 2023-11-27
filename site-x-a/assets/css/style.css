@@ -20,7 +20,7 @@ body {
 }
 
 span {
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     margin: auto;
     width: 100vw;
     display: -webkit-box;
@@ -61,7 +61,7 @@ span {
             justify-content: space-between;
     margin: 300px auto 0 auto;
     width: 90%;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     /* overflow: hidden; */
 }
 
@@ -131,7 +131,7 @@ iframe {
     left: 0;
     z-index: 0;
     width: calc(100vw - 40px);
-    height: calc(100vh - 40px);
+    height: calc(var(--vh, 1vh) * 100 - 40px);
     background-color: yellowgreen;
     border-radius: 100%;
     margin: 20px;
