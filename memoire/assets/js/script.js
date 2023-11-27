@@ -136,21 +136,42 @@ var bookmarkPartieFin = document.getElementById('bookmarkPartieFin')
 
 
 function lecturePartieI(){
-    partieIntro.style.display = ('none');
-    partieI.style.display = ('block');
-    bookmarkPartieI.style.display = ('none');
+    if (book.classList.contains('book-3-4')) {
+        partieIntro.style.display = ('block');
+        partieI.style.display = ('none');
+        bookmarkPartieI.classList.remove('bookmarkPartieIOff')
+        book.classList.remove('book-3-4')
+    }
 
-    book.classList.add('book-3-4')
+    else {
+        partieIntro.style.display = ('none');
+        partieI.style.display = ('block');
+        bookmarkPartieI.classList.add('bookmarkPartieIOff')    
+        book.classList.add('book-3-4')
+    }
 }
 
 function lecturePartieII(){
-    partieIntro.style.display = ('none');
-    partieI.style.display = ('none');
-    partieII.style.display = ('block');
-    bookmarkPartieI.style.display = ('none');
-    bookmarkPartieII.style.display = ('none');
+    if (book.classList.contains('book-2-4')) {
+        partieIntro.style.display = ('none');
+        partieI.style.display = ('block');
+        partieII.style.display = ('none');
+    
+        bookmarkPartieII.classList.remove('bookmarkPartieIIOff')    
+    
+        book.classList.replace('book-2-4', 'book-3-4')
+    }
 
-    book.classList.add('book-2-4')
+    else {
+        partieIntro.style.display = ('none');
+        partieI.style.display = ('none');
+        partieII.style.display = ('block');
+    
+        bookmarkPartieI.classList.add('bookmarkPartieIOff')    
+        bookmarkPartieII.classList.add('bookmarkPartieIIOff')    
+    
+        book.classList.replace('book-3-4', 'book-2-4')
+    }
 }
 
 function lecturePartieIII(){
@@ -159,9 +180,9 @@ function lecturePartieIII(){
     partieII.style.display = ('none');
     partieIII.style.display = ('block');
 
-    bookmarkPartieI.style.display = ('none');
-    bookmarkPartieII.style.display = ('none');
-    bookmarkPartieIII.style.display = ('none');
+    bookmarkPartieI.style.left = ('30px');
+    bookmarkPartieII.style.left = ('40px');
+    bookmarkPartieIII.style.left = ('50px');
 
     book.classList.add('book-1-4')
 }
@@ -173,10 +194,10 @@ function lecturePartieFin(){
     partieIII.style.display = ('none');
     partieFin.style.display = ('block');
 
-    bookmarkPartieI.style.display = ('none');
-    bookmarkPartieII.style.display = ('none');
-    bookmarkPartieIII.style.display = ('none');
-    bookmarkPartieFin.style.display = ('none');
+    bookmarkPartieI.style.left = ('30px');
+    bookmarkPartieII.style.left = ('40px');
+    bookmarkPartieIII.style.left = ('50px');
+    bookmarkPartieFin.style.left = ('60px');
 
     book.classList.add('book-Full')
 }

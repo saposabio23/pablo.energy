@@ -14,20 +14,22 @@
     display: none;
 }
 
-
-
 .book-3-4 {
     width: calc(100vw - 40px - 20px * 3) !important;
+    margin-left: 40px !important;
 }
 
 .book-2-4 {
-    width: calc(100vw - 40px - 20px * 2) !important;
+    width: calc(100vw - 50px - 20px * 2) !important;
+    margin-left: 50px !important;
 }
 
 .book-1-4 {
-    width: calc(100vw - 40px - 20px * 1) !important;
+    width: calc(100vw - 60px - 20px * 1) !important;
+    margin-left: 60px !important;
 }
 
 .book-Full {
-    width: calc(100vw - 30px) !important;
+    width: calc(100vw - 70px) !important;
+    margin-left: 70px !important;
 }

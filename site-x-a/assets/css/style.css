@@ -70,7 +70,7 @@ span {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    gap: 80px;
+    gap: 4vw;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
