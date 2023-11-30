@@ -1,1 +1,0 @@
-- reah button working (add paragraph number and remove backgorunf color)

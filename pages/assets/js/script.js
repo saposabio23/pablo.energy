@@ -1,32 +1,32 @@
-const grid = document.querySelector('.grid')
+// const grid = document.querySelector('.grid')
 
-function createData() {
-  console.log(allData)
+// function createData() {
+//   console.log(allData)
 
-  allData.forEach(function (allData) {
-    let title = document.createElement("li");
+//   allData.forEach(function (allData) {
+//     let title = document.createElement("li");
     
-    let block = document.createElement("a");
-    block.className = 'block ' + allData.status + '';
-    block.innerHTML = allData.title;
-    block.setAttribute("href", allData.url);
-    title.appendChild(block);
+//     let block = document.createElement("a");
+//     block.className = 'block ' + allData.status + '';
+//     block.innerHTML = allData.title;
+//     block.setAttribute("href", allData.url);
+//     title.appendChild(block);
 
 
 
-    // let image = document.createElement("img");
-    // image.src = 'img' + allData.url + '.png';
-    // block.appendChild(image);
+//     // let image = document.createElement("img");
+//     // image.src = 'img' + allData.url + '.png';
+//     // block.appendChild(image);
 
-    // let year = document.createElement("span");
-    // year.innerHTML = allData.year;
-    // block.appendChild(year);
+//     // let year = document.createElement("span");
+//     // year.innerHTML = allData.year;
+//     // block.appendChild(year);
 
-    grid.appendChild(title);
-  });
-}
+//     grid.appendChild(title);
+//   });
+// }
 
-createData()
+// createData()
 
 
 

@@ -16,71 +16,67 @@
         <div class="progressbar"></div>
     </div> -->
 
-    <div class="things">
-        <span class="notifNotes pointer">+1 note</span>
 
-        <h3 id="sommaireButton" class="sideLeft pointer">Index</h3>
-        <h3 id="notesButton" class="sideLeft pointer">Prise de notes</h3>
-        <h3 id="optionsButton" class="sideLeft pointer">Options</h3>
-
-        <div id="bookmarkPartieI" class="sideRight pointer">𝐼. Des nouveaux mondes à bâtir</div>
-        <div id="bookmarkPartieII" class="sideRight pointer">𝐼𝐼. Au web de nos jours</div>
-        <div id="bookmarkPartieIII" class="sideRight pointer">𝐼𝐼𝐼. Réoccuper ces espaces</div>
-        <div id="bookmarkPartieFin" class="sideRight pointer">Conclusion + Bibliographie</div>
-
-    </div>
-
-    <div class="book">
-
-        <main class="bookLeft">
-
+    <div class="panel">
+        <div class="content">
             <div class="sommairePage">
                 <h2>Index</h2>
-                <h4><a href="#1">𝐼. Des nouveaux mondes à bâtir</a></h4>
-                <details>
-                    <summary><a href="#1a">a. La naissance d’Internet</a></summary>
-                    <ul>
-                        <li><a href="#1anaissance">Tout commence par les réseaux</a></li>
-                        <li><a href="#1autilisateurices">Qui les utilise?</a></li>
-                        <li><a href="#1aservice">À quoi servent-ils à ce moment là?</a></li>
-                        <li><a href="#1ainterconnexion">Interconnexion des réseaux: Internet</a></li>
-                        <li><a href="#1acroissance">Croissance de l’Internet toujours très dirigée</a></li>
-                        <li><a href="#1ahippies">La culture hippie s’empare des ordinateurs et réseaux</a></li>
-                    </ul>
-                </details>
+                <h4 id="indexPartieIntro"><a href="#0" onclick="lecturePartieIntro()">Avant-propos</a></h4>
 
-                <details>
-                    <summary>b. Imaginer cet espace vierge</summary>
-                    <ul>
-                        <li>Quels visions pour les réseaux et Internet?</li>
-                        <li>Un nouveau langage au sein d’Internet: HTML</li>
-                        <li>Innovation ascendante</li>
-                        <li>Conception de la part des utilisateurs</li>
-                        <li>Territoire foisonnant: désir de créer et de partager</li>
-                    </ul>
-                </details>
+                <div class="partieI">
+                    <h4 id="indexPartieI"><a href="#1" onclick="lecturePartieI()">𝐼. Des nouveaux mondes à bâtir</a>
+                    </h4>
+                    <details>
+                        <summary><a href="#1naissance" onclick="lecturePartieI()">a. La naissance d’Internet</a>
+                        </summary>
+                        <ul>
+                            <li><a href="#1reseaux" onclick="lecturePartieI()">Tout commence par les réseaux</a></li>
+                            <li><a href="#1utilisateurices" onclick="lecturePartieI()">Qui les utilise?</a></li>
+                            <li><a href="#1service" onclick="lecturePartieI()">À quoi servent-ils à ce moment là?</a>
+                            </li>
+                            <li><a href="#1interconnexion" onclick="lecturePartieI()">Interconnexion des réseaux:
+                                    Internet</a></li>
+                            <li><a href="#1croissance" onclick="lecturePartieI()">Croissance de l’Internet toujours très
+                                    dirigée</a></li>
+                            <li><a href="#1hippies" onclick="lecturePartieI()">La culture hippie s’empare des
+                                    ordinateurs et réseaux</a></li>
+                        </ul>
+                    </details>
 
+                    <details>
+                        <summary>b. Imaginer cet espace vierge</summary>
+                        <ul>
+                            <li>Quels visions pour les réseaux et Internet?</li>
+                            <li>Un nouveau langage au sein d’Internet: HTML</li>
+                            <li>Innovation ascendante</li>
+                            <li>Conception de la part des utilisateurs</li>
+                            <li>Territoire foisonnant: désir de créer et de partager</li>
+                        </ul>
+                    </details>
+                </div>
 
-                <h4>𝐼𝐼. Au web de nos jours</h4>
-                <details>
-                    <summary>a. Le web devient adulte</summary>
-                    <ul>
-                        <li>Comment a t-il évolué?</li>
-                        <li>Un web marchand</li>
-                        <li>De la participation à l’observation</li>
-                    </ul>
-                </details>
-                <details>
-                    <summary>b. Un web par la machine/l’outilails</summary>
-                    <ul>
-                        <li>Quand le monde virtuel devient tout notre monde</li>
-                        <li>Mais bâtit par les mêmes architectes</li>
-                        <li>Le design “par défaut”</li>
-                        <li>Où se trouvent les utopies?</li>
-                    </ul>
-                </details>
+                <div class="partieII">
+                    <h4 id="indexPartieII"><a href="#2" onclick="lecturePartieII()">𝐼𝐼. Au web de nos jours</a></h4>
+                    <details>
+                        <summary>a. Le web devient adulte</summary>
+                        <ul>
+                            <li>Comment a t-il évolué?</li>
+                            <li>Un web marchand</li>
+                            <li>De la participation à l’observation</li>
+                        </ul>
+                    </details>
+                    <details>
+                        <summary>b. Un web par la machine/l’outilails</summary>
+                        <ul>
+                            <li>Quand le monde virtuel devient tout notre monde</li>
+                            <li>Mais bâtit par les mêmes architectes</li>
+                            <li>Le design “par défaut”</li>
+                            <li>Où se trouvent les utopies?</li>
+                        </ul>
+                    </details>
+                </div>
 
-                <h4>𝐼𝐼𝐼. Réoccuper ces espaces</h4>
+                <h4 id="indexPartieIII"><a href="#3" onclick="lecturePartieIII()">𝐼𝐼𝐼. Réoccuper ces espaces</a></h4>
                 <details>
                     <summary>a. Concevoir un nouveau web</summary>
                     <ul>
@@ -95,6 +91,9 @@
                         <li>???</li>
                     </ul>
                 </details>
+
+                <h4 id="indexPartieFin"><a href="#4" onclick="lecturePartieFin()">Conclusion + Bibliographie</a></h4>
+
             </div>
 
             <div class="notesPage">
@@ -121,6 +120,31 @@
                 <button class="">Sombre</button>
                 <button class="">Custom</button>
             </div>
+        </div>
+
+        <div class="header">
+            <h3 id="sommaireButton" class="sideLeft pointer">Index</h3>
+            <h3 id="notesButton" class="sideLeft pointer">Prise de notes</h3>
+            <h3 id="optionsButton" class="sideLeft pointer">Options</h3>
+        </div>
+    </div>
+
+    <div class="bookmarks">
+        <div id="bookmarkPartieI" class="bookmark pointer">𝐼. Des nouveaux mondes à bâtir</div>
+        <div id="bookmarkPartieII" class="bookmark pointer">𝐼𝐼. Au web de nos jours</div>
+        <div id="bookmarkPartieIII" class="bookmark pointer">𝐼𝐼𝐼. Réoccuper ces espaces</div>
+        <div id="bookmarkPartieFin" class="bookmark pointer">Conclusion + Bibliographie</div>
+
+        <div id="bookmarkPartieIOff" class="bookmark pointer"></div>
+        <div id="bookmarkPartieIIOff" class="bookmark pointer"></div>
+        <div id="bookmarkPartieIIIOff" class="bookmark pointer"></div>
+        <div id="bookmarkPartieFinOff" class="bookmark pointer"></div>
+
+    </div>
+
+    <div class="book" data-reading="partieIntro">
+
+        <main class="bookLeft">
 
         </main>
 
@@ -170,9 +194,9 @@
 
                 <h1 id="1">𝐼. Des nouveaux mondes à bâtir</h1>
 
-                <h2 id="1a">1a. La naissance d’Internet</h2>
+                <h2 id="1naissance">1a. La naissance d’Internet</h2>
 
-                <h3 id="1anaissance">Tout commence par les réseaux</h3>
+                <h3 id="1reseaux">Tout commence par les réseaux</h3>
 
                 <p>Début des années 60 aux États-Unis, en pleine guerre froide et en réponse au lancement soviétique du
                     Sputnik
@@ -240,7 +264,7 @@
                     1969 le premier mail est envoyé à travers l’ARPANet, acronyme de ARPA et Network.</p>
 
 
-                <h3 id="1autilisateurices">Qui les utilise? </h3>
+                <h3 id="1utilisateurices">Qui les utilise? </h3>
 
                 <section>
                     <p class="footnote-anchor" data-anchor="1"><span>Tandis que ce réseau grandissant (13 nœuds en 1971,
@@ -327,7 +351,7 @@
                     rendre son développement presque exponenciel puisqu’il se perfectionne lui même.
                 </p>
 
-                <h3 id="1ainterconnexion">Interconnexion des réseaux: Internet</h3>
+                <h3 id="1interconnexion">Interconnexion des réseaux: Internet</h3>
 
                 <p>Mais que se passe-t-il de l’autre côté de l’Atlantique? En 1970, après la visite d'une délégation
                     française chez BBN aux États-Unis, le projet ARPANET se fait connaître en France. Deux années plus
@@ -398,7 +422,7 @@
                     mot
                     que toute le monde connait de nos jours: Internet.</p>
 
-                <h3 id="1acroissance">Croissance de l’Internet toujours très dirigée</h3>
+                <h3 id="1croissance">Croissance de l’Internet toujours très dirigée</h3>
 
                 <p>Une des clés de la croissance rapide de l’Internet a été l’accès libre et instantané à sa propre
                     documentation. Lors des débuts des réseaux, la communauté de recherche dédié à Internet maintenait
@@ -430,7 +454,7 @@
                     RFC, c’est l’Internet Engineering Task Force (IETF). De nos jours il compte plus de 75 groupes de
                     travail, travaillant sur différents aspects du développement d’Internet.</p>
 
-                <h3 id="1ahippies">La culture hippie s’empare des ordinateurs et réseaux</h3>
+                <h3 id="1hippies">La culture hippie s’empare des ordinateurs et réseaux</h3>
 
                 <section>
                     <p>L’endroit et l’époque où se développent les réseaux
@@ -509,7 +533,7 @@
 
                 <h1 id="2">𝐼𝐼. Au web de nos jours</h1>
 
-                <h2 id="2a">2a. Le web devient adulte</h2>
+                <h2 id="2adulte">2a. Le web devient adulte</h2>
 
                 <h3 id="2evolution">Comment a t-il évolué?</h3>
 
@@ -565,7 +589,11 @@
 
     </div>
 
+    <span class="notifNotes pointer">+1 note</span>
+
+
     <script id="script" src="assets/js/script.js"></script>
+    <script id="script" src="assets/js/bookmarks.js"></script>
 
 </body>
 

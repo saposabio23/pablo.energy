@@ -37,6 +37,23 @@ for (footnote of footnotes) {
 
 
 /*
+HOVER to open summary
+*/
+document.addEventListener('DOMContentLoaded', function() {
+    const detailsElements = document.querySelectorAll('details');
+  
+    detailsElements.forEach(function(details) {
+      details.addEventListener('mouseover', function() {
+        this.setAttribute('open', 'true');
+      });
+  
+      details.addEventListener('mouseout', function() {
+        this.removeAttribute('open');
+      });
+    });
+  });
+
+/*
 Scrollbar line
 */
 // function scrollBar() {
@@ -116,115 +133,19 @@ function resetFontSize() {
 }
 
 /*
-Mouse over OPTIONS
-*/
-var book = document.querySelector('.book')
-
-
-var partieIntro = document.querySelector('.partieIntro')
-var partieI = document.querySelector('.partieI')
-var partieII = document.querySelector('.partieII')
-var partieIII = document.querySelector('.partieIII')
-var partieFin = document.querySelector('.partieFin')
-
-
-var commencerLaLecture = document.getElementById('commencerLaLecture')
-var bookmarkPartieI = document.getElementById('bookmarkPartieI')
-var bookmarkPartieII = document.getElementById('bookmarkPartieII')
-var bookmarkPartieIII = document.getElementById('bookmarkPartieIII')
-var bookmarkPartieFin = document.getElementById('bookmarkPartieFin')
-
-
-function lecturePartieI(){
-    if (book.classList.contains('book-3-4')) {
-        partieIntro.style.display = ('block');
-        partieI.style.display = ('none');
-        bookmarkPartieI.classList.remove('bookmarkPartieIOff')
-        book.classList.remove('book-3-4')
-    }
-
-    else {
-        partieIntro.style.display = ('none');
-        partieI.style.display = ('block');
-        bookmarkPartieI.classList.add('bookmarkPartieIOff')    
-        book.classList.add('book-3-4')
-    }
-}
-
-function lecturePartieII(){
-    if (book.classList.contains('book-2-4')) {
-        partieIntro.style.display = ('none');
-        partieI.style.display = ('block');
-        partieII.style.display = ('none');
-    
-        bookmarkPartieII.classList.remove('bookmarkPartieIIOff')    
-    
-        book.classList.replace('book-2-4', 'book-3-4')
-    }
-
-    else {
-        partieIntro.style.display = ('none');
-        partieI.style.display = ('none');
-        partieII.style.display = ('block');
-    
-        bookmarkPartieI.classList.add('bookmarkPartieIOff')    
-        bookmarkPartieII.classList.add('bookmarkPartieIIOff')    
-    
-        book.classList.replace('book-3-4', 'book-2-4')
-    }
-}
-
-function lecturePartieIII(){
-    partieIntro.style.display = ('none');
-    partieI.style.display = ('none');
-    partieII.style.display = ('none');
-    partieIII.style.display = ('block');
-
-    bookmarkPartieI.style.left = ('30px');
-    bookmarkPartieII.style.left = ('40px');
-    bookmarkPartieIII.style.left = ('50px');
-
-    book.classList.add('book-1-4')
-}
-
-function lecturePartieFin(){
-    partieIntro.style.display = ('none');
-    partieI.style.display = ('none');
-    partieII.style.display = ('none');
-    partieIII.style.display = ('none');
-    partieFin.style.display = ('block');
-
-    bookmarkPartieI.style.left = ('30px');
-    bookmarkPartieII.style.left = ('40px');
-    bookmarkPartieIII.style.left = ('50px');
-    bookmarkPartieFin.style.left = ('60px');
-
-    book.classList.add('book-Full')
-}
-
-commencerLaLecture.addEventListener('click', lecturePartieI);
-
-bookmarkPartieI.addEventListener('click', lecturePartieI);
-bookmarkPartieII.addEventListener('click', lecturePartieII);
-bookmarkPartieIII.addEventListener('click', lecturePartieIII);
-bookmarkPartieFin.addEventListener('click', lecturePartieFin);
-
-// document.getElementById('optionsButton').addEventListener('mouseleave', function () {
-//     document.querySelector('.bookPageRight').classList.remove('reduireRight')
-// });
-
-// document.getElementById('sommaireButton').addEventListener('mouseenter', function () {
-//     document.querySelector('.bookPageLeft').classList.add('reduireLeft')
-// });
-
-// document.getElementById('sommaireButton').addEventListener('mouseleave', function () {
-//     document.querySelector('.bookPageLeft').classList.remove('reduireLeft')
-// });
-
-
-/*
 SOMMAIRE PANEL
 */
+var panel = document.querySelector('.panel')
+
+
+function displayPanel() {
+    panel.classList.add('displayed');
+}
+
+function hidePanel() {
+    panel.classList.remove('displayed');
+}
+
 
 function hideAllSide() {
     sommairePanel.style.display = ('none');
@@ -236,7 +157,7 @@ function hideAllSide() {
     hideButtonsSide()
 }
 
-function hideButtonsSide(){
+function hideButtonsSide() {
     document.getElementById('sommaireButton').classList.remove('sommaireButtonOn')
     document.getElementById('notesButton').classList.remove('notesButtonOn')
     document.getElementById('optionsButton').classList.remove('optionsButtonOn')
@@ -249,10 +170,12 @@ function displaySommaire() {
         sommairePanel.style.display = ('none');
         sommairePanel.classList.remove('showed');
         hideButtonsSide()
+        hidePanel()
     }
 
     else {
         hideAllSide()
+        displayPanel()
         document.getElementById('sommaireButton').classList.add('sommaireButtonOn')
         sommairePanel.style.display = ('block');
         sommairePanel.classList.add('showed')
@@ -271,10 +194,12 @@ function displaynotes() {
         notesPanel.style.display = ('none');
         notesPanel.classList.remove('showed');
         hideButtonsSide()
+        hidePanel()
     }
 
     else {
         hideAllSide()
+        displayPanel()
         document.getElementById('notesButton').classList.add('notesButtonOn')
         notesPanel.style.display = ('block');
         notesPanel.classList.add('showed')
@@ -298,10 +223,12 @@ function displayoptions() {
         optionsPanel.style.display = ('none');
         optionsPanel.classList.remove('showed');
         hideButtonsSide()
+        hidePanel()
     }
 
     else {
         hideAllSide()
+        displayPanel()
         document.getElementById('optionsButton').classList.add('optionsButtonOn')
         optionsPanel.style.display = ('block');
         optionsPanel.classList.add('showed')
@@ -309,9 +236,6 @@ function displayoptions() {
 }
 
 document.getElementById('optionsButton').addEventListener('click', displayoptions)
-
-
-
 
 
 /*
@@ -339,15 +263,15 @@ function getSelectedText() {
     notesPrise.setAttribute('contenteditable', 'true')
     notesPrise.className = 'littleNote';
     notesPrise.innerHTML = selectedText;
-    
+
     let deleteNote = document.createElement("div");
     deleteNote.className = 'pointer';
     deleteNote.innerHTML = '<img src="assets/img/delete.png">';
-    
+
     let reachNote = document.createElement("div");
     reachNote.className = 'pointer';
     reachNote.innerHTML = '<img src="assets/img/reach.png">';
-    
+
     notesPrise.prepend(deleteNote);
     notesPrise.prepend(reachNote);
 
@@ -356,7 +280,7 @@ function getSelectedText() {
     deleteNote.addEventListener('click', () => {
         notesPrise.remove()
     })
-    
+
 }
 
 function highlightSelection() {
