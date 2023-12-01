@@ -112,6 +112,10 @@
     flex-direction: column;
 }
 
+.panel h2{
+    padding-top: 0 !important;
+}
+
 .panel>.header h3 {
     width: 30px;
     height: calc(100% / 3);
@@ -196,10 +200,6 @@
     background-color: var(--background-sommaire);
 }
 
-.sommairePage h2 {
-    padding-top: var(--space-l);
-    margin-top: calc(-1 * var(--space-l));
-}
 
 .sommairePage h3 {
     margin: var(--space-l) 0 0 0;

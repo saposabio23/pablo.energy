@@ -7,3 +7,10 @@
     cursor: pointer;
 }
 
+.underline{
+    text-decoration: underline !important;
+}
+
+.no-indent{
+    text-indent: 0 !important;
+}
