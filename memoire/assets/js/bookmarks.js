@@ -24,11 +24,11 @@ function lecturePartieIntro() {
     console.log('SHOW INTRO')
     book.setAttribute('data-reading', 'partieIntro')
 
-    document.getElementById('indexPartieIntro').classList.add('indexSelected')
-    document.getElementById('indexPartieI').classList.remove('indexSelected')
-    document.getElementById('indexPartieII').classList.remove('indexSelected')
-    document.getElementById('indexPartieIII').classList.remove('indexSelected')
-    document.getElementById('indexPartieFin').classList.remove('indexSelected')
+    document.querySelector('.sommairePartieIntro').classList.add('indexSelected')
+    document.querySelector('.sommairePartieI').classList.remove('indexSelected')
+    document.querySelector('.sommairePartieII').classList.remove('indexSelected')
+    document.querySelector('.sommairePartieIII').classList.remove('indexSelected')
+    document.querySelector('.sommairePartieFin').classList.remove('indexSelected')
     partieIntro.style.display = ('block');
     partieI.style.display = ('none');
     partieII.style.display = ('none');
@@ -49,17 +49,20 @@ function lecturePartieIntro() {
     book.classList.remove('book-2-4')
     book.classList.remove('book-1-4')
     book.classList.remove('book-Full')
+
+    document.querySelector('.avant-propos').style.display = ('none')
+
 }
 
 function lecturePartieI() {
     console.log('SHOW PARTIE1')
     book.setAttribute('data-reading', 'partieI')
 
-    document.getElementById('indexPartieIntro').classList.remove('indexSelected')
-    document.getElementById('indexPartieI').classList.add('indexSelected')
-    document.getElementById('indexPartieII').classList.remove('indexSelected')
-    document.getElementById('indexPartieIII').classList.remove('indexSelected')
-    document.getElementById('indexPartieFin').classList.remove('indexSelected')
+    document.querySelector('.sommairePartieIntro').classList.remove('indexSelected')
+    document.querySelector('.sommairePartieI').classList.add('indexSelected')
+    document.querySelector('.sommairePartieII').classList.remove('indexSelected')
+    document.querySelector('.sommairePartieIII').classList.remove('indexSelected')
+    document.querySelector('.sommairePartieFin').classList.remove('indexSelected')
 
     partieIntro.style.display = ('none');
     partieI.style.display = ('block');
@@ -87,11 +90,11 @@ function lecturePartieII() {
     console.log('SHOW PARTIE2')
     book.setAttribute('data-reading', 'partieII')
 
-    document.getElementById('indexPartieIntro').classList.remove('indexSelected')
-    document.getElementById('indexPartieI').classList.remove('indexSelected')
-    document.getElementById('indexPartieII').classList.add('indexSelected')
-    document.getElementById('indexPartieIII').classList.remove('indexSelected')
-    document.getElementById('indexPartieFin').classList.remove('indexSelected')
+    document.querySelector('.sommairePartieIntro').classList.remove('indexSelected')
+    document.querySelector('.sommairePartieI').classList.remove('indexSelected')
+    document.querySelector('.sommairePartieII').classList.add('indexSelected')
+    document.querySelector('.sommairePartieIII').classList.remove('indexSelected')
+    document.querySelector('.sommairePartieFin').classList.remove('indexSelected')
 
     partieIntro.style.display = ('none');
     partieI.style.display = ('none');
@@ -119,11 +122,11 @@ function lecturePartieIII() {
     console.log('SHOW PARTIE3')
     book.setAttribute('data-reading', 'partieIII')
 
-    document.getElementById('indexPartieIntro').classList.remove('indexSelected')
-    document.getElementById('indexPartieI').classList.remove('indexSelected')
-    document.getElementById('indexPartieII').classList.remove('indexSelected')
-    document.getElementById('indexPartieIII').classList.add('indexSelected')
-    document.getElementById('indexPartieFin').classList.remove('indexSelected')
+    document.querySelector('.sommairePartieIntro').classList.remove('indexSelected')
+    document.querySelector('.sommairePartieI').classList.remove('indexSelected')
+    document.querySelector('.sommairePartieII').classList.remove('indexSelected')
+    document.querySelector('.sommairePartieIII').classList.add('indexSelected')
+    document.querySelector('.sommairePartieFin').classList.remove('indexSelected')
 
     partieIntro.style.display = ('none');
     partieI.style.display = ('none');
@@ -151,11 +154,11 @@ function lecturePartieFin() {
     console.log('SHOW FIN')
     book.setAttribute('data-reading', 'partieFin')
 
-    document.getElementById('indexPartieIntro').classList.remove('indexSelected')
-    document.getElementById('indexPartieI').classList.remove('indexSelected')
-    document.getElementById('indexPartieII').classList.remove('indexSelected')
-    document.getElementById('indexPartieIII').classList.remove('indexSelected')
-    document.getElementById('indexPartieFin').classList.add('indexSelected')
+    document.querySelector('.sommairePartieIntro').classList.remove('indexSelected')
+    document.querySelector('.sommairePartieI').classList.remove('indexSelected')
+    document.querySelector('.sommairePartieII').classList.remove('indexSelected')
+    document.querySelector('.sommairePartieIII').classList.remove('indexSelected')
+    document.querySelector('.sommairePartieFin').classList.add('indexSelected')
 
     partieIntro.style.display = ('none');
     partieI.style.display = ('none');
@@ -182,7 +185,7 @@ function lecturePartieFin() {
 
 commencerLaLecture.addEventListener('click', function () {
     window.scrollTo({ top: 0, behavior: 'smooth' })
-    lecturePartieI()
+    lecturePartieIntro()
 });
 
 

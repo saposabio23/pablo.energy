@@ -39,19 +39,19 @@ for (footnote of footnotes) {
 /*
 HOVER to open summary
 */
-document.addEventListener('DOMContentLoaded', function() {
-    const detailsElements = document.querySelectorAll('details');
-  
-    detailsElements.forEach(function(details) {
-      details.addEventListener('mouseover', function() {
-        this.setAttribute('open', 'true');
-      });
-  
-      details.addEventListener('mouseout', function() {
-        this.removeAttribute('open');
-      });
-    });
-  });
+// document.addEventListener('DOMContentLoaded', function() {
+//     const detailsElements = document.querySelectorAll('details');
+
+//     detailsElements.forEach(function(details) {
+//       details.addEventListener('mouseover', function() {
+//         this.setAttribute('open', 'true');
+//       });
+
+//       details.addEventListener('mouseout', function() {
+//         this.removeAttribute('open');
+//       });
+//     });
+//   });
 
 /*
 Scrollbar line
@@ -133,10 +133,24 @@ function resetFontSize() {
 }
 
 /*
+RELOAD site
+*/
+
+function reloadSite(){
+    window.location.reload();
+}
+document.getElementById('reload').addEventListener('click', reloadSite)
+
+
+/*
 SOMMAIRE PANEL
 */
 var panel = document.querySelector('.panel')
 
+
+var sommaireButton = document.getElementById('sommaireButton')
+var notesButton = document.getElementById('notesButton')
+var optionsButton = document.getElementById('optionsButton')
 
 function displayPanel() {
     panel.classList.add('displayed');
@@ -155,12 +169,17 @@ function hideAllSide() {
     optionsPanel.style.display = ('none');
     optionsPanel.classList.remove('showed');
     hideButtonsSide()
+
+    sommaireButton.innerHTML = ('<span>🗂 Index</span>');
+    notesButton.innerHTML = ('<span>📝 Prises de notes</span>');
+    optionsButton.innerHTML = ('<span>⚙️ Options</span>');
+
 }
 
 function hideButtonsSide() {
-    document.getElementById('sommaireButton').classList.remove('sommaireButtonOn')
-    document.getElementById('notesButton').classList.remove('notesButtonOn')
-    document.getElementById('optionsButton').classList.remove('optionsButtonOn')
+    sommaireButton.classList.remove('sommaireButtonOn')
+    notesButton.classList.remove('sommaireButtonOn')
+    optionsButton.classList.remove('sommaireButtonOn')
 }
 
 var sommairePanel = document.querySelector('.sommairePage')
@@ -171,18 +190,21 @@ function displaySommaire() {
         sommairePanel.classList.remove('showed');
         hideButtonsSide()
         hidePanel()
+        sommaireButton.innerHTML = ('<span>🗂 Index</span>');
+
     }
 
     else {
         hideAllSide()
         displayPanel()
-        document.getElementById('sommaireButton').classList.add('sommaireButtonOn')
+        sommaireButton.classList.add('sommaireButtonOn')
         sommairePanel.style.display = ('block');
         sommairePanel.classList.add('showed')
+        sommaireButton.innerHTML = ('<span>X</span>');
     }
 }
 
-document.getElementById('sommaireButton').addEventListener('click', displaySommaire)
+sommaireButton.addEventListener('click', displaySommaire)
 
 /*
 NOTES PANEL
@@ -195,18 +217,20 @@ function displaynotes() {
         notesPanel.classList.remove('showed');
         hideButtonsSide()
         hidePanel()
+        notesButton.innerHTML = ('<span>📝 Prises de notes</span>');
     }
 
     else {
         hideAllSide()
         displayPanel()
-        document.getElementById('notesButton').classList.add('notesButtonOn')
+        notesButton.classList.add('sommaireButtonOn')
         notesPanel.style.display = ('block');
         notesPanel.classList.add('showed')
+        notesButton.innerHTML = ('<span>X</span>');
     }
 }
 
-document.getElementById('notesButton').addEventListener('click', displaynotes)
+notesButton.addEventListener('click', displaynotes)
 
 document.querySelector('.notifNotes').addEventListener('click', () => {
     notesPanel.classList.remove('showed');
@@ -224,18 +248,20 @@ function displayoptions() {
         optionsPanel.classList.remove('showed');
         hideButtonsSide()
         hidePanel()
+        optionsButton.innerHTML = ('<span>⚙️ Options</span>');
     }
 
     else {
         hideAllSide()
         displayPanel()
-        document.getElementById('optionsButton').classList.add('optionsButtonOn')
+        optionsButton.classList.add('sommaireButtonOn')
         optionsPanel.style.display = ('block');
         optionsPanel.classList.add('showed')
+        optionsButton.innerHTML = ('<span>X</span>');
     }
 }
 
-document.getElementById('optionsButton').addEventListener('click', displayoptions)
+optionsButton.addEventListener('click', displayoptions)
 
 
 /*

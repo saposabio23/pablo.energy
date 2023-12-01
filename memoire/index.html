@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📟 Memoire</title>
+    <title>Le Web que l’on fait</title>
 
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -16,15 +16,38 @@
         <div class="progressbar"></div>
     </div> -->
 
+    <div class="avant-propos">
+        <div class="titleAV">
+            <span class="supertitle">Le Web que l’on fait</span>
+            <p>L’importance d’imaginer et concevoir des espaces web faits-mains pour re-exploiter les mondes digitales
+            </p>
+
+        </div>
+        <div>
+            <h2 id="0">Avant-propos</h2>
+
+            <p>Bienvenue à la lecture de ce mémoire, qui se présente sous forme de site web. J'ai décidé de le publier
+                sous cette forme puisque le thème traîté et le contenu du mémoire sont naturellements liés à la forme
+                numérique.</p>
+
+            <p>Cet écrit se présentera de la façons suivante:</p>
+            <img src="assets/img/schema.svg">
+
+            <a id="commencerLaLecture">Commencer la lecture →</a>
+        </div>
+    </div>
 
     <div class="panel">
         <div class="content">
             <div class="sommairePage">
-                <h2>Index</h2>
-                <h4 id="indexPartieIntro"><a href="#0" onclick="lecturePartieIntro()">Avant-propos</a></h4>
+                <h2>🗂 Index</h2>
 
-                <div class="partieI">
-                    <h4 id="indexPartieI"><a href="#1" onclick="lecturePartieI()">𝐼. Des nouveaux mondes à bâtir</a>
+                <div class="sommairePartieIntro">
+                    <h4><a href="#0" onclick="lecturePartieIntro()">Introduction</a></h4>
+                </div>
+
+                <div class="sommairePartieI">
+                    <h4><a href="#1" onclick="lecturePartieI()">𝐼. Des nouveaux mondes à bâtir</a>
                     </h4>
                     <details>
                         <summary><a href="#1naissance" onclick="lecturePartieI()">a. La naissance d’Internet</a>
@@ -55,8 +78,8 @@
                     </details>
                 </div>
 
-                <div class="partieII">
-                    <h4 id="indexPartieII"><a href="#2" onclick="lecturePartieII()">𝐼𝐼. Au web de nos jours</a></h4>
+                <div class="sommairePartieII">
+                    <h4><a href="#2" onclick="lecturePartieII()">𝐼𝐼. Au web de nos jours</a></h4>
                     <details>
                         <summary>a. Le web devient adulte</summary>
                         <ul>
@@ -76,37 +99,46 @@
                     </details>
                 </div>
 
-                <h4 id="indexPartieIII"><a href="#3" onclick="lecturePartieIII()">𝐼𝐼𝐼. Réoccuper ces espaces</a></h4>
-                <details>
-                    <summary>a. Concevoir un nouveau web</summary>
-                    <ul>
-                        <li>Handmade web</li>
-                        <li>Qui pour l’imaginer?</li>
-                    </ul>
-                </details>
-                <details>
-                    <summary>b. Entretiens</summary>
-                    <ul>
-                        <li>Clara Pasteau:</li>
-                        <li>???</li>
-                    </ul>
-                </details>
+                <div class="sommairePartieIII">
+                    <h4><a href="#3" onclick="lecturePartieIII()">𝐼𝐼𝐼. Réoccuper ces espaces</a>
+                    </h4>
+                    <details>
+                        <summary>a. Concevoir un nouveau web</summary>
+                        <ul>
+                            <li>Handmade web</li>
+                            <li>Qui pour l’imaginer?</li>
+                        </ul>
+                    </details>
+                    <details>
+                        <summary>b. Entretiens</summary>
+                        <ul>
+                            <li>Clara Pasteau:</li>
+                            <li>???</li>
+                        </ul>
+                    </details>
+                </div>
 
-                <h4 id="indexPartieFin"><a href="#4" onclick="lecturePartieFin()">Conclusion + Bibliographie</a></h4>
+                <div class="sommairePartieFin">
+                    <h4><a href="#4" onclick="lecturePartieFin()">Conclusion + Bibliographie</a></h4>
+                </div>
+
+                <div class="footer">
+                    <a id="reload">Recharger</a>
+                </div>
 
             </div>
 
             <div class="notesPage">
                 <!-- <span onclick="displaynotes()" class="closer pointer">×</span> -->
                 <div class="header">
-                    <h2>Prise de notes</h2>
+                    <h2>📝 Prises de notes</h2>
                     <!-- <small>séléctionnez du texte et appuyez sur la touche N du clavier</small> -->
                     <img src="assets/img/download.png">
                 </div>
             </div>
 
             <div class="optionsPage">
-                <h2>Options</h2>
+                <h2>⚙️ Options</h2>
                 <h4>Tipographie</h4>
                 <button onclick="decreaseFontSize()" class="pointer">Réduire </button>
                 <button onclick="resetFontSize()" class="pointer">Par défaut</button>
@@ -123,10 +155,11 @@
         </div>
 
         <div class="header">
-            <h3 id="sommaireButton" class="sideLeft pointer">Index</h3>
-            <h3 id="notesButton" class="sideLeft pointer">Prise de notes</h3>
-            <h3 id="optionsButton" class="sideLeft pointer">Options</h3>
+            <h3 id="sommaireButton" class="sideLeft pointer"><span>🗂 Index</span></h3>
+            <h3 id="notesButton" class="sideLeft pointer"><span>📝 Prises de notes</span></h3>
+            <h3 id="optionsButton" class="sideLeft pointer"><span>⚙️ Options</span></h3>
         </div>
+
     </div>
 
     <div class="bookmarks">
@@ -152,7 +185,7 @@
 
             <div class="partieIntro">
 
-                <h1 id="0">Avant-propos</h1>
+                <h1 id="0">Introduction</h1>
 
                 <p>Les sites web ont émergé voilà 30 ans de la main de Tim-Berns Lee, qui cherchait un système pour
                     organiser, parcourir et enrichir les données numériques de son laboratoire. Une succésion d’étapes
@@ -186,17 +219,15 @@
                     créent des expériences très mémorables que je trouve, rendent au Web l’esprit surprenant dont il est
                     capable.</p>
 
-                <a id="commencerLaLecture">Commencer la lecture →</a>
-
             </div>
 
             <div class="partieI">
 
-                <h1 id="1">𝐼. Des nouveaux mondes à bâtir</h1>
+                <h1 id="1-">𝐼. Des nouveaux mondes à bâtir</h1>
 
-                <h2 id="1naissance">1a. La naissance d’Internet</h2>
+                <h2 id="1-naissance">1a. La naissance d’Internet</h2>
 
-                <h3 id="1reseaux">Tout commence par les réseaux</h3>
+                <h3 id="1-reseaux">Tout commence par les réseaux</h3>
 
                 <p>Début des années 60 aux États-Unis, en pleine guerre froide et en réponse au lancement soviétique du
                     Sputnik
@@ -264,22 +295,14 @@
                     1969 le premier mail est envoyé à travers l’ARPANet, acronyme de ARPA et Network.</p>
 
 
-                <h3 id="1utilisateurices">Qui les utilise? </h3>
+                <h3 id="1-utilisateurices">Qui les utilise? </h3>
 
+
+                <p class="prgf">Tandis que ce réseau grandissant</p>
                 <section>
-                    <p class="footnote-anchor" data-anchor="1"><span>Tandis que ce réseau grandissant (13 nœuds en 1971,
+                    <span class="footnote-anchor" data-anchor="1"><span> (13 nœuds en 1971,
                             111
-                            en 1977)
-                            était validé et utilisé
-                            expérimentalement parmi ces chercheurs en sciences informatiques, d’autres réseaux et
-                            technologies
-                            de
-                            liaisons étaient recherchées. L’utilité des réseaux informatiques – en particulier le
-                            courrier
-                            électronique – n’avait pas échappé aux autres communautés et disciplines, de sorte qu’au
-                            milieu
-                            des
-                            années 70, des réseaux alternatifs commencèrent à surgir:</span> <sup>1</sup></p>
+                            en 1977)</span> <sup>1</sup></span>
 
                     <div class="footnote" data-footnote="1">
                         <img src="images/arpanet1974.png">
@@ -287,6 +310,20 @@
                             (https://fr.wikipedia.org/wiki/ARPANET)</span>
                     </div>
                 </section>
+
+
+                était validé et utilisé
+                expérimentalement parmi ces chercheurs en sciences informatiques, d’autres réseaux et
+                technologies
+                de
+                liaisons étaient recherchées. L’utilité des réseaux informatiques – en particulier le
+                courrier
+                électronique – n’avait pas échappé aux autres communautés et disciplines, de sorte qu’au
+                milieu
+                des
+                années 70, des réseaux alternatifs commencèrent à surgir:
+
+
 
                 <ul>
                     <li>Le département américain de l’Énergie (DoE) établit le MFENet pour ses chercheurs en Énergie de
@@ -317,7 +354,7 @@
                 <p>Ce réseau se développa très rapidement, puisque ouvert à tous type de recherche et plus facile à
                     brancher, et comptera avec près de 4 millions de nœuds interconnectés en 1984. </p>
 
-                <h3 id="1aservice">À quoi servent-ils à ce moment là?</h3>
+                <h3 id="1-aservice">À quoi servent-ils à ce moment là?</h3>
 
                 <p>Le réseau n’était qu’à ses débuts et il ne servait qu’à une très fine partie de la population
                     mondiale.
@@ -351,7 +388,7 @@
                     rendre son développement presque exponenciel puisqu’il se perfectionne lui même.
                 </p>
 
-                <h3 id="1interconnexion">Interconnexion des réseaux: Internet</h3>
+                <h3 id="1-interconnexion">Interconnexion des réseaux: Internet</h3>
 
                 <p>Mais que se passe-t-il de l’autre côté de l’Atlantique? En 1970, après la visite d'une délégation
                     française chez BBN aux États-Unis, le projet ARPANET se fait connaître en France. Deux années plus
@@ -422,7 +459,7 @@
                     mot
                     que toute le monde connait de nos jours: Internet.</p>
 
-                <h3 id="1croissance">Croissance de l’Internet toujours très dirigée</h3>
+                <h3 id="1-croissance">Croissance de l’Internet toujours très dirigée</h3>
 
                 <p>Une des clés de la croissance rapide de l’Internet a été l’accès libre et instantané à sa propre
                     documentation. Lors des débuts des réseaux, la communauté de recherche dédié à Internet maintenait
@@ -454,38 +491,39 @@
                     RFC, c’est l’Internet Engineering Task Force (IETF). De nos jours il compte plus de 75 groupes de
                     travail, travaillant sur différents aspects du développement d’Internet.</p>
 
-                <h3 id="1hippies">La culture hippie s’empare des ordinateurs et réseaux</h3>
+                <h3 id="1-hippies">La culture hippie s’empare des ordinateurs et réseaux</h3>
+
+                <p class="prgf">
+                    L’endroit et l’époque où se développent les réseaux
+                    entre universités et centres de recherche, coincide avec la mouvance hippie de la fin des années
+                    60. Cette communauté qui, d’après leurs slogans, “veut changer la société sans prendre le
+                    pouvoir”, cherche à transformer les individus et les modes d’existence. Un des principaux
+                    organisateurs de ces communautés utopiques est Stewart Brand. Personnage multifacette, ancien
+                    parachutiste, journaliste ou écrivain, fréquentant les laboratoires de recherche, il filmera un
+                    des premiers envois d’email sur le réseau. C’est lui qui va concevoir un objet très singulier
+                    mais séminal: le “Whole Earth Catalog”, que l’on pourra qualifier de “bible des hippies”. Ce
+                    livre qui va apparaître tous les ans entre 1968 et 1972 est rempli d’idées, de tutoriels ou
+                    d’astuces. On peut retrouver tout un tas de choses, depuis des recettes de cuisinne
+                    végétariennes, des résumés de livres scientifiques ou des techniques de bricolage, jusqu’à des
+                    conseils environnementalistes ou des calendriers bouddhistes. Les notices qui remplisent cette
+                    “guide de savoirs” émanent directement des lecteurs, qui par voie postale, partagent aux
+                    éditeurs leur dernières découvertes ou leurs parlent de sujets qui pourraient intéresser le
+                    reste de la communauté. Souvent les notices sont commentées par d’autres lecteurs dans la
+                    parution suivante. Ce n’est pas un timide fanzine puisqu’en 1971 le catalogue est tiré à près
+                    d’un million d’exemplaires et remporte le National Book Award américain. Ce projet inclut
+                    beaucoup des notions qui constituront le web — qui n’existe pas encore — comme le mélange de
+                    savoirs hétéroclites, la contribution par les utilisateurs ou les commentaires entre ces
+                    derniers.
+                </p>
 
                 <section>
-                    <p>L’endroit et l’époque où se développent les réseaux
-                        entre universités et centres de recherche, coincide avec la mouvance hippie de la fin des années
-                        60. Cette communauté qui, d’après leurs slogans, “veut changer la société sans prendre le
-                        pouvoir”, cherche à transformer les individus et les modes d’existence. Un des principaux
-                        organisateurs de ces communautés utopiques est Stewart Brand. Personnage multifacette, ancien
-                        parachutiste, journaliste ou écrivain, fréquentant les laboratoires de recherche, il filmera un
-                        des premiers envois d’email sur le réseau. C’est lui qui va concevoir un objet très singulier
-                        mais séminal: le “Whole Earth Catalog”, que l’on pourra qualifier de “bible des hippies”. Ce
-                        livre qui va apparaître tous les ans entre 1968 et 1972 est rempli d’idées, de tutoriels ou
-                        d’astuces. On peut retrouver tout un tas de choses, depuis des recettes de cuisinne
-                        végétariennes, des résumés de livres scientifiques ou des techniques de bricolage, jusqu’à des
-                        conseils environnementalistes ou des calendriers bouddhistes. Les notices qui remplisent cette
-                        “guide de savoirs” émanent directement des lecteurs, qui par voie postale, partagent aux
-                        éditeurs leur dernières découvertes ou leurs parlent de sujets qui pourraient intéresser le
-                        reste de la communauté. Souvent les notices sont commentées par d’autres lecteurs dans la
-                        parution suivante. Ce n’est pas un timide fanzine puisqu’en 1971 le catalogue est tiré à près
-                        d’un million d’exemplaires et remporte le National Book Award américain. Ce projet inclut
-                        beaucoup des notions qui constituront le web — qui n’existe pas encore — comme le mélange de
-                        savoirs hétéroclites, la contribution par les utilisateurs ou les commentaires entre ces
-                        derniers.<span class="footnote-anchor" data-anchor="3">Ce projet sera vu comme une préfiguration
-                            sur
-                            papier du futur Internet</span>
-                        <sup>3</sup>
-                    </p>
+                    <span class="footnote-anchor" data-anchor="3"><span> Ce projet sera vu comme une préfiguration sur papier du futur Internet.</span><sup>3</sup></span>
 
-                    <div class="footnote" data-footnote="3">
-                        <span><sup>3</sup> Dominique Cardon, «Culture Numérique» Paris: Presses de Sciences Po, 2019.
-                            p50</span>
-                    </div>
+                        <div class="footnote" data-footnote="3">
+                            <span><sup>3</sup> Dominique Cardon, «Culture Numérique» Paris: Presses de Sciences Po,
+                                2019.
+                                p50</span>
+                        </div>
                 </section>
 
                 <p>À ce même moment la communauté hippie apportera encore une autre pierre au dévéloppement des
@@ -526,6 +564,188 @@
                     développeurs, militants ou artistes pour discuter autour du contenu du catalogue. On est face à une
                     utilisation précoce de ce que l’on appellera par la suite “les forums”, et qui sera un des premiers
                     outils à élargir le public des réseaux au-délà des cercles militaires ou scientifiques.</p>
+
+
+                <h2 id="1-vierge">1b. Imaginer cet espace vierge</h2>
+
+                <h3 id="1-visions">Quels visions pour les réseaux et Internet?</h3>
+
+                <p>Lors de ces débuts d’internet on a pu constater deux types d’utopies. Certaines étaient de l’ordre
+                    social, pousées par la cause hippie, et d’autres plutôt techniques, appuyés par les groupes
+                    scientifiques qui imaginaient les réseaux.</p>
+
+                <p>Commençons par les deuxièmes. Pour le chercheur Doug Engelbart le but des ordinateurs n’était pas
+                    d’être
+                    des machines intelligentes – il serait bien contrarié de voir l’explosion de l’IA – mais de rendre
+                    l’humain plus intelligent grâce à ces machines. Il considérait l’informatique comme un prothèse de
+                    l’être humain dont la fonction est de permettre le développement de ce dernier. La principale
+                    qualité
+                    des machines, comme ce fut le cas pour l’écriture, était de stocker de l’information, et c’est en
+                    celà
+                    qu’elles pouvaient aider l’humain. Une autre utopie qui était reliée explicitement aux réseaux,
+                    était le
+                    fait d’abolir les distances. Elles l’avaient déjà été auparavant avec le télégraphe, le téléphone,
+                    mais
+                    c’est avec ces nouvelles technologies qu’on pourra aller plus loin dans ces formes de
+                    “téléprésence”.
+                </p>
+
+                <p>D’un autre côté, les premiers utilisateurs des réseau vont voir très rapidement les bienfaits que
+                    l’ordinateur mais c’est surtout dans le réseau qu’ils voyaient un outil pour changer la vie social.
+                    À
+                    l’époque il existait une vraie frontière entre la vie physique et la vie virtuelle, et on pensait
+                    pouvoir, grâce à lui, aborder autrement les problèmes d’inégalités sociales. Le réseau pourrait
+                    libérer
+                    la société américaine du poids que le travail à la chaine avait instauré au début du XXème siècle.
+                    Non
+                    seulement il allait pouvoir épanouir la société avec des nouveaux outils de partage et de
+                    divertisement,
+                    mais aussi tenter, comme l’on pensé les hippies, de permettre aux communautés réelles d’acquerir
+                    d’avantage de maturité. Le virtuel serait un espace pour réinventer en mieux, les relations
+                    sociales,
+                    (<span class="note">NOTE</span> Cardon, «Culture Numérique» Paris: Presses de Sciences Po, 2019.
+                    p.61)
+                    avec des nouvelles conditions, puisque les règles du réseau n’étaient pas (encore) les même que
+                    celles
+                    de la vraie vie. La vie publique prête particulièrement attention à la condition sociale, sexuelle
+                    ou
+                    raciale (<span class="note">NOTE</span> Dominique Cardon, «La Démocratie Internet. Promesses et
+                    Limites»
+                    Paris: Seuil, 2010. p.40) et le réseaux viendrait réduire ces discriminations grâce à son caractère
+                    anonyme, puisque sur beaucoup d’endroits du web la seule identité était le pseudo choisit. Grâce à
+                    celà
+                    aussi, les réseaux pourraient valoriser la communauté, pouvant échanger de façon plus libre et
+                    donnant
+                    aux utilisateur le pouvoir de choisir sa communauté. À partir de l’individualisme des ordianteurs
+                    personnels, le réseaux allait placer les utilisateur dans un environnement plus apte à son
+                    développement
+                    personnel et en fin de comptes, à son bonheur.</p>
+
+                <h3 id="1-html">Un nouveau langage au sein d’Internet: HTML</h3>
+
+                <section>
+                    <p class="footnote-anchor" data-anchor="5"><span>Le réseau Internet continua de se développer, et
+                            les
+                            labos
+                            de recherche à travailler sur des nouvelles façons d’envoyer et de partager les données. On
+                            revient
+                            au continent européen, au sein du Conseil Européen pour la Recherche Nucléaire (CERN), situé
+                            à
+                            Genève encore de nos jours. Le chercheur Tim Berners-Lee se demande comment organiser
+                            l’avancé
+                            de
+                            leur projets de façon à pouvoir explorer plus facilement cette information, surtout par des
+                            personnes pouvant rejoindre des projets déjà en cours. Il imagine les questions que pourrait
+                            se
+                            poser un ou une nouvelle arrivant·e: “Où se trouve le module utilisé?”, “Quels documents
+                            existent à
+                            propos de ce concept?”, “Quel laboratoires travaillent dans ce projet?”, “Quels documents se
+                            réfèrent à celui-ci?”. Souvent, pour décrire un système complèxe, on déssine des schémas
+                            avec
+                            des
+                            flèches et des cercles pour informer des relations entre les éléments (ces relations ne
+                            pourraient
+                            pas être montrées dans un tableau par exemple). Le système auquel le chercheur réfléchit
+                            essaye
+                            de
+                            matérialiser ces flèches et cercles. (Tim Berners-Lee, «Information Management: A Proposal»
+                            CERN,
+                            1990. https://www.w3.org/History/1989/proposal.html). Tim Berners-Lee pressent d’avance que
+                            ce
+                            système profitera à beaucoup plus de monde que le CERN, puisque à ce moment là Internet
+                            commence
+                            à
+                            s’ouvrir à l’utilisation commerciale et donc à mettre en lien beaucoup de plus personnes,
+                            centres,
+                            structures ou pays.</span> <sup>5</sup></p>
+
+                    <div class="footnote" data-footnote="5">
+                        <img src="images/proposition-cern.png">
+                        <span><sup>5</sup> La proposition de Tim Berners-Lee pour le CERN
+                            (https://en.wikipedia.org/wiki/History_of_the_World_Wide_Web)</span>
+                    </div>
+                </section>
+
+                <section>
+                    <p class="citation footnote-anchor" data-anchor="6"><span>« > The problems of information loss may
+                            be
+                            particularly acute at CERN, but in this case (as in certain others), CERN is a model in
+                            miniature of the rest of world in a few years time. CERN meets now some problems which the
+                            rest
+                            of the world will have to face soon. In 10 years, there may be many commercial solutions to
+                            the
+                            problems above, while today we need something to allow us to continue.
+                            >»</span> <sup>6</sup></p>
+
+                    <div class="footnote" data-footnote="6">
+                        <span><sup>6</sup> Tim Berners-Lee, «Information Management: A Proposal» CERN, 1990.
+                            [https://www.w3.org/History/1989/proposal.html]</span>
+                    </div>
+                </section>
+
+                <p>Ce système de liens d’intérrelations va l’amèner à imaginer les “hyperliens” qui constitueront le
+                    language HTML (HyperText Markup Language). Une liste des possibilités de ce nouveau language est
+                    proposé
+                    par le chercheur, confirmant par l’usage que l’on fait de nos jours, de la grande puissance de son
+                    invention. On la connaitra par le WorldWideWeb ou le Web.</p>
+
+                <ul>
+                    <li>Données générales de référence - encyclopédie, etc.</li>
+                    <li>Publication entièrement centralisée - aide en ligne, documentation, tutoriel, etc.</li>
+                    <li>Diffusion plus ou moins centralisée d'informations ayant une durée de vie limitée</li>
+                    <li>Rédaction collaborative</li>
+                    <li>Conception collaborative d'autre chose que l'hypertexte lui-même</li>
+                    <li>Journal intime</li>
+                </ul>
+
+                <section>
+                    <p class="footnote-anchor" data-anchor="7"><span>Le territoire d’internet devient très vaste et aux
+                            premiers abords désorganisé, mais grâce à l’hyperlien,
+                            on peut naviguer entre toutes ses sites sans avoir besoin à les chercher à l’endroit où ils
+                            sont
+                            stockés. Au temps des premiers réseaux on devait naviguer entre dossiers pour tomber sur
+                            l’information
+                            que l’on cherchait, comme dans une bibliothèque (type de livre > genre > auteur). Les
+                            hyperliens, et
+                            c’est pour ça qu’ils sont “hypers”, c’est comme demander au bibliothéquaire un livre et
+                            qu’il nous le
+                            présente devant nous sans avoir fini de dire le nom de l’autrice. Cette technique de
+                            navigation permet
+                            de parcourir l’information à la vitesse de la lumière (ou de la connexion internet), d’un
+                            endroit à un
+                            autre, d’un sujet à l’autre, d’un service à l’autre. L’hyperlien a aussi amené les noms de
+                            domaine.Le
+                            simple fait d’avoir des URL (Uniform Resource Locator) va fomenter l’échange et la
+                            découverte de
+                            nouveaux endroits du web, au même temps qu’il poussera les utilisateurs à regrouper des
+                            liens traitant
+                            de mêmes sujets. Cet organisation établie par les utilisateurs donnera lieux aux
+                            communautés, qui
+                            partageront sans crainte tout type d’informations ou liens qui puissent intéresser les
+                            autres, créant
+                            des connaissances communes, exploitables par toute la communauté. Une qualité très
+                            importante de ces
+                            dernières est qu’elles sont ce qu’on appelle des “bien non rivaux”, en opposition aux biens
+                            rivaux.
+                            Comme l’explique Dominique Cardon, “l’information numérique est un bien non rival puisque sa
+                            consommation par un utilisateur n’empêche pas un autre de consommer la même information”.
+                            Ceci sera un
+                            des caractèristiques le plus important de la dématérialisation qui s’est opéré avec les
+                            ordianteurs,
+                            révolutionnant pas seulement le marché (imaginez pouvoir vendre un seul produit à l’infini)
+                            mais le
+                            partage d’information, qui pourra se faire instantanement et indéfiniment. Tout ce qui (se)
+                            passe dans
+                            le web contribue à le rendre plus grand, sans presque jamais reduire son contenu (cela
+                            arrive quand des
+                            contenus sont éffacés).</span> <sup>7</sup></p>
+
+                    <div class="footnote" data-footnote="1">
+                        <img src="images/html-chimero.png">
+                        <span><sup>7</sup> Code basique qui suffit à montrer un site web.
+                            (https://frankchimero.com/blog/2018/everything-easy/)</span>
+                    </div>
+                </section>
 
             </div>
 

@@ -1,1 +1,14 @@
--ajout de signes pour distinguers les notes
+
+### SOMMAIRE:
+-
+
+### NOTES:
+- ajout de signes pour distinguers les notes
+- explciation pour la prise de notes dans la partie dédiée
+- ne pas utiliser le N mais quand on selectionne du texte une îcone apparait
+
+
+
+### BOOK:
+- folded effet independent on the middle
+-
