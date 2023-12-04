@@ -1,11 +1,17 @@
 var book = document.querySelector('.book')
 
 
-var partieIntro = document.querySelector('.partieIntro')
-var partieI = document.querySelector('.partieI')
-var partieII = document.querySelector('.partieII')
-var partieIII = document.querySelector('.partieIII')
-var partieFin = document.querySelector('.partieFin')
+var partieIntro = document.getElementById('partieIntro')
+var partieI = document.getElementById('partieI')
+var partieII = document.getElementById('partieII')
+var partieIII = document.getElementById('partieIII')
+var partieFin = document.getElementById('partieFin')
+
+var notesPartieIntro = document.getElementById('notesPartieIntro')
+var notesPartieI = document.getElementById('notesPartieI')
+var notesPartieII = document.getElementById('notesPartieII')
+var notesPartieIII = document.getElementById('notesPartieIII')
+var notesPartieFin = document.getElementById('notesPartieFin')
 
 var commencerLaLecture = document.getElementById('commencerLaLecture')
 var bookmarkPartieI = document.getElementById('bookmarkPartieI')
@@ -18,11 +24,41 @@ var bookmarkPartieIIOff = document.getElementById('bookmarkPartieIIOff')
 var bookmarkPartieIIIOff = document.getElementById('bookmarkPartieIIIOff')
 var bookmarkPartieFinOff = document.getElementById('bookmarkPartieFinOff')
 
+function positionFootnote() {
+
+    let footnotes = document.querySelectorAll('.footnote');
+
+    for (footnote of footnotes) {
+        number = footnote.getAttribute('data-footnote');
+        // console.log(number)
+
+        let anchor = document.querySelector(`[data-anchor='${number}']`);
+        // console.log(anchor)
+
+        var elDistanceToTop = anchor.getBoundingClientRect().top + window.scrollY;
+        // console.log(elDistanceToTop)
+
+        footnote.style.top = (elDistanceToTop + "px")
+    }
+
+}
+
+function hideCibles() {
+    document.getElementById("ciblePartieIntro").style.display = ('none')
+    document.getElementById("ciblePartieI").style.display = ('none')
+    document.getElementById("ciblePartieII").style.display = ('none')
+    document.getElementById("ciblePartieIII").style.display = ('none')
+    document.getElementById("ciblePartieFin").style.display = ('none')
+
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+
+}
 
 // CHANGING PAGES
 function lecturePartieIntro() {
     console.log('SHOW INTRO')
     book.setAttribute('data-reading', 'partieIntro')
+
 
     document.querySelector('.sommairePartieIntro').classList.add('indexSelected')
     document.querySelector('.sommairePartieI').classList.remove('indexSelected')
@@ -34,6 +70,12 @@ function lecturePartieIntro() {
     partieII.style.display = ('none');
     partieIII.style.display = ('none');
     partieFin.style.display = ('none');
+
+    notesPartieIntro.style.display = ('block');
+    notesPartieI.style.display = ('none');
+    notesPartieII.style.display = ('none');
+    notesPartieIII.style.display = ('none');
+    notesPartieFin.style.display = ('none');
 
     bookmarkPartieI.style.display = ('flex');
     bookmarkPartieII.style.display = ('flex');
@@ -52,11 +94,16 @@ function lecturePartieIntro() {
 
     document.querySelector('.avant-propos').style.display = ('none')
 
+    hideCibles()
+
+
 }
 
 function lecturePartieI() {
     console.log('SHOW PARTIE1')
     book.setAttribute('data-reading', 'partieI')
+
+
 
     document.querySelector('.sommairePartieIntro').classList.remove('indexSelected')
     document.querySelector('.sommairePartieI').classList.add('indexSelected')
@@ -69,6 +116,12 @@ function lecturePartieI() {
     partieII.style.display = ('none');
     partieIII.style.display = ('none');
     partieFin.style.display = ('none');
+
+    notesPartieIntro.style.display = ('none');
+    notesPartieI.style.display = ('block');
+    notesPartieII.style.display = ('none');
+    notesPartieIII.style.display = ('none');
+    notesPartieFin.style.display = ('none');
 
     bookmarkPartieI.style.display = ('none');
     bookmarkPartieII.style.display = ('flex');
@@ -84,11 +137,18 @@ function lecturePartieI() {
     book.classList.remove('book-2-4')
     book.classList.remove('book-1-4')
     book.classList.remove('book-Full')
+
+    positionFootnote()
+
+    hideCibles()
+
 }
+
 
 function lecturePartieII() {
     console.log('SHOW PARTIE2')
     book.setAttribute('data-reading', 'partieII')
+
 
     document.querySelector('.sommairePartieIntro').classList.remove('indexSelected')
     document.querySelector('.sommairePartieI').classList.remove('indexSelected')
@@ -101,6 +161,12 @@ function lecturePartieII() {
     partieII.style.display = ('block');
     partieIII.style.display = ('none');
     partieFin.style.display = ('none');
+
+    notesPartieIntro.style.display = ('none');
+    notesPartieI.style.display = ('none');
+    notesPartieII.style.display = ('block');
+    notesPartieIII.style.display = ('none');
+    notesPartieFin.style.display = ('none');
 
     bookmarkPartieI.style.display = ('none');
     bookmarkPartieII.style.display = ('none');
@@ -116,6 +182,11 @@ function lecturePartieII() {
     book.classList.add('book-2-4')
     book.classList.remove('book-1-4')
     book.classList.remove('book-Full')
+    positionFootnote()
+
+    hideCibles()
+
+
 }
 
 function lecturePartieIII() {
@@ -134,6 +205,12 @@ function lecturePartieIII() {
     partieIII.style.display = ('block');
     partieFin.style.display = ('none');
 
+    notesPartieIntro.style.display = ('none');
+    notesPartieI.style.display = ('none');
+    notesPartieII.style.display = ('none');
+    notesPartieIII.style.display = ('block');
+    notesPartieFin.style.display = ('none');
+
     bookmarkPartieI.style.display = ('none');
     bookmarkPartieII.style.display = ('none');
     bookmarkPartieIII.style.display = ('none');
@@ -148,6 +225,10 @@ function lecturePartieIII() {
     book.classList.add('book-2-4')
     book.classList.add('book-1-4')
     book.classList.remove('book-Full')
+    positionFootnote()
+
+    hideCibles()
+
 }
 
 function lecturePartieFin() {
@@ -166,6 +247,12 @@ function lecturePartieFin() {
     partieIII.style.display = ('none');
     partieFin.style.display = ('block');
 
+    notesPartieIntro.style.display = ('none');
+    notesPartieI.style.display = ('none');
+    notesPartieII.style.display = ('none');
+    notesPartieIII.style.display = ('none');
+    notesPartieFin.style.display = ('block');
+
     bookmarkPartieI.style.display = ('none');
     bookmarkPartieII.style.display = ('none');
     bookmarkPartieIII.style.display = ('none');
@@ -180,11 +267,14 @@ function lecturePartieFin() {
     book.classList.add('book-2-4')
     book.classList.add('book-1-4')
     book.classList.add('book-Full')
+    positionFootnote()
+
+    hideCibles()
+
 }
 
 
 commencerLaLecture.addEventListener('click', function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
     lecturePartieIntro()
 });
 

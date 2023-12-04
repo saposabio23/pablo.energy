@@ -3,7 +3,26 @@ console.log("%cGlace sans tain, par Pablo Moreno. 2021. pablomoreno@pm.me", "col
 /*
 FOOT NOTES
 ¡*/
+
+
 let anchors = document.querySelectorAll('.footnote-anchor');
+let footnotes = document.querySelectorAll('.footnote');
+
+
+
+for (footnote of footnotes) {
+
+    footnote.addEventListener('mouseover', e => {
+        let anchor = document.querySelector(`[data-anchor='${e.currentTarget.dataset.footnote}']`);
+        anchor.classList.add('highlight-text');
+    });
+    footnote.addEventListener('mouseout', e => {
+        e.stopPropagation();
+        let anchor = document.querySelector(`[data-anchor='${e.currentTarget.dataset.footnote}']`);
+        anchor.classList.remove('highlight-text');
+    });
+}
+
 
 for (anchor of anchors) {
     anchor.addEventListener('mouseover', e => {
@@ -21,19 +40,33 @@ for (anchor of anchors) {
     });
 }
 
-let footnotes = document.querySelectorAll('.footnote');
 
-for (footnote of footnotes) {
-    footnote.addEventListener('mouseover', e => {
-        let anchor = document.querySelector(`[data-anchor='${e.currentTarget.dataset.footnote}']`);
-        anchor.classList.add('highlight-text');
-    });
-    footnote.addEventListener('mouseout', e => {
-        e.stopPropagation();
-        let anchor = document.querySelector(`[data-anchor='${e.currentTarget.dataset.footnote}']`);
-        anchor.classList.remove('highlight-text');
-    });
-}
+
+// for (footnote of footnotes) {
+//     let anchors = document.querySelectorAll('.footnote-anchor');
+
+
+
+
+
+
+// for (anchor of anchors) {
+//     anchor.addEventListener('mouseover', e => {
+//         let footnote = document.querySelector(`[data-footnote='${e.currentTarget.dataset.anchor}']`);
+//         footnote.classList.add('highlight');
+
+//         e.currentTarget.classList.add('highlight-text');
+//     });
+//     anchor.addEventListener('mouseout', e => {
+//         e.stopPropagation();
+//         let footnote = document.querySelector(`[data-footnote='${e.currentTarget.dataset.anchor}']`);
+//         footnote.classList.remove('highlight');
+//         e.currentTarget.classList.remove('highlight-text');
+
+//     });
+// }
+
+
 
 
 /*
@@ -136,7 +169,7 @@ function resetFontSize() {
 RELOAD site
 */
 
-function reloadSite(){
+function reloadSite() {
     window.location.reload();
 }
 document.getElementById('reload').addEventListener('click', reloadSite)
@@ -171,8 +204,10 @@ function hideAllSide() {
     hideButtonsSide()
 
     sommaireButton.innerHTML = ('<span>🗂 Index</span>');
-    notesButton.innerHTML = ('<span>📝 Prises de notes</span>');
+    notesButton.innerHTML = ('<span>📝 Prises de notes</span>&nbsp;<span class="numbernotes">(0)</span></span>');
     optionsButton.innerHTML = ('<span>⚙️ Options</span>');
+
+    updateNotes()
 
 }
 
@@ -191,7 +226,6 @@ function displaySommaire() {
         hideButtonsSide()
         hidePanel()
         sommaireButton.innerHTML = ('<span>🗂 Index</span>');
-
     }
 
     else {
@@ -200,16 +234,29 @@ function displaySommaire() {
         sommaireButton.classList.add('sommaireButtonOn')
         sommairePanel.style.display = ('block');
         sommairePanel.classList.add('showed')
-        sommaireButton.innerHTML = ('<span>X</span>');
+        sommaireButton.innerHTML = ('<span>×</span>');
     }
 }
 
 sommaireButton.addEventListener('click', displaySommaire)
 
+
 /*
 NOTES PANEL
 */
 var notesPanel = document.querySelector('.notesPage')
+var prisedenotes = document.querySelector('.prisedenotes')
+
+
+function forceDisplayNotes() {
+    hideAllSide()
+    displayPanel()
+    notesButton.classList.add('sommaireButtonOn')
+    notesPanel.style.display = ('block');
+    notesPanel.classList.add('showed')
+    notesButton.innerHTML = ('<span>×</span>');
+}
+
 
 function displaynotes() {
     if (notesPanel.classList.contains('showed')) {
@@ -217,7 +264,9 @@ function displaynotes() {
         notesPanel.classList.remove('showed');
         hideButtonsSide()
         hidePanel()
-        notesButton.innerHTML = ('<span>📝 Prises de notes</span>');
+        notesButton.innerHTML = ('<span>📝 Prises de notes</span>&nbsp;<span class="numbernotes">(0)</span></span>');
+        updateNotes()
+
     }
 
     else {
@@ -226,16 +275,12 @@ function displaynotes() {
         notesButton.classList.add('sommaireButtonOn')
         notesPanel.style.display = ('block');
         notesPanel.classList.add('showed')
-        notesButton.innerHTML = ('<span>X</span>');
+        notesButton.innerHTML = ('<span>×</span>');
     }
 }
 
 notesButton.addEventListener('click', displaynotes)
 
-document.querySelector('.notifNotes').addEventListener('click', () => {
-    notesPanel.classList.remove('showed');
-    displaynotes()
-})
 
 /*
 OPTIONS PANEL
@@ -257,7 +302,7 @@ function displayoptions() {
         optionsButton.classList.add('sommaireButtonOn')
         optionsPanel.style.display = ('block');
         optionsPanel.classList.add('showed')
-        optionsButton.innerHTML = ('<span>X</span>');
+        optionsButton.innerHTML = ('<span>×</span>');
     }
 }
 
@@ -267,6 +312,96 @@ optionsButton.addEventListener('click', displayoptions)
 /*
 SAVE NOTESSS
 */
+function rsizeTxt() {
+
+    // Targets all textareas with class "txta"
+    let textareas = document.querySelectorAll('.txta'),
+        hiddenDiv = document.createElement('div'),
+        content = null;
+
+    // Adds a class to all textareas
+    for (let j of textareas) {
+        j.classList.add('txtstuff');
+    }
+
+    // Build the hidden div's attributes
+
+    // The line below is needed if you move the style lines to CSS
+    // hiddenDiv.classList.add('hiddendiv');
+
+    // Add the "txta" styles, which are common to both textarea and hiddendiv
+    // If you want, you can remove those from CSS and add them via JS
+    hiddenDiv.classList.add('txta');
+
+    // Add the styles for the hidden div
+    // These can be in the CSS, just remove these three lines and uncomment the CSS
+    hiddenDiv.style.display = 'none';
+    hiddenDiv.style.whiteSpace = 'pre-wrap';
+    hiddenDiv.style.wordWrap = 'break-word';
+
+    // Loop through all the textareas and add the event listener
+    for (let i of textareas) {
+        (function (i) {
+            // Note: Use 'keyup' instead of 'input'
+            // if you want older IE support
+            i.addEventListener('input', function () {
+
+                // SCROLL TO  BOTTOM (but need to be on last child!)
+                // document.querySelector('.prisedenotes').scrollIntoView({ behavior: "smooth", block: "end" });
+
+
+                // Append hiddendiv to parent of textarea, so the size is correct
+                i.parentNode.appendChild(hiddenDiv);
+
+                // Remove this if you want the user to be able to resize it in modern browsers
+                i.style.resize = 'none';
+
+                // This removes scrollbars
+                i.style.overflow = 'hidden';
+
+                // Every input/change, grab the content
+                content = i.value;
+
+                // Add the same content to the hidden div
+
+                // This is for old IE
+                content = content.replace(/\n/g, '<br>');
+
+                // The <br ..> part is for old IE
+                // This also fixes the jumpy way the textarea grows if line-height isn't included
+                hiddenDiv.innerHTML = content + '<br style="line-height: 3px;">';
+
+                // Briefly make the hidden div block but invisible
+                // This is in order to read the height
+                hiddenDiv.style.visibility = 'hidden';
+                hiddenDiv.style.display = 'block';
+                i.style.height = hiddenDiv.offsetHeight + 'px';
+
+                // Make the hidden div display:none again
+                hiddenDiv.style.visibility = 'visible';
+                hiddenDiv.style.display = 'none';
+
+
+            });
+        })(i);
+    }
+}
+
+var noteNumber = 1;
+
+function updateNotes() {
+    // UPDATE NUMBER OF NOTES
+    let noteNumberInner = document.querySelectorAll('.numbernotes');
+
+    listNote = noteNumber - 1;
+
+    for (let numbers of noteNumberInner) {
+        numbers.innerHTML = ("(" + listNote + ")")
+    }
+
+}
+
+
 function getSelectedText() {
     var selectedText = '';
 
@@ -285,27 +420,115 @@ function getSelectedText() {
     } else return;
     // To write the selected text into the textarea
 
-    let notesPrise = document.createElement("textarea");
-    notesPrise.setAttribute('contenteditable', 'true')
-    notesPrise.className = 'littleNote';
-    notesPrise.innerHTML = selectedText;
 
-    let deleteNote = document.createElement("div");
-    deleteNote.className = 'pointer';
-    deleteNote.innerHTML = '<img src="assets/img/delete.png">';
+    // CREATE INDICATION NEAR TEXT
+    let notesNumber = document.createElement("span");
+    notesNumber.innerHTML = 'Note n°' + noteNumber + ' →';
+    notesNumber.className = ('littleNote');
 
-    let reachNote = document.createElement("div");
-    reachNote.className = 'pointer';
-    reachNote.innerHTML = '<img src="assets/img/reach.png">';
 
-    notesPrise.prepend(deleteNote);
-    notesPrise.prepend(reachNote);
+    if (book.getAttribute("data-reading") === "partieI") {
+        document.getElementById('notesPartieI').appendChild(notesNumber);
+    }
+    else if (book.getAttribute("data-reading") === "partieII") {
+        document.getElementById('notesPartieII').appendChild(notesNumber);
 
-    notesPanel.appendChild(notesPrise);
+    }
+    else if (book.getAttribute("data-reading") === "partieIII") {
+        document.getElementById('notesPartieIII').appendChild(notesNumber);
 
-    deleteNote.addEventListener('click', () => {
-        notesPrise.remove()
-    })
+    }
+    else if (book.getAttribute("data-reading") === "partieFin") {
+        document.getElementById('notesPartieFin').appendChild(notesNumber);
+    }
+
+    else if (book.getAttribute("data-reading") === "partieIntro") {
+        document.getElementById('notesPartieIntro').appendChild(notesNumber);
+
+    }
+
+    var elDistanceToTop = window.getSelection().getRangeAt(0).getBoundingClientRect().top + window.scrollY;
+
+    notesNumber.style.top = (elDistanceToTop + "px")
+
+
+
+    // WRITE NOTE ON THE SIDE
+    let notesCopy = document.createElement("div");
+    notesCopy.className = 'notesCopy';
+
+    let notesNumberSaved = document.createElement("span");
+    notesNumberSaved.innerHTML = 'Note n°' + noteNumber;
+    notesCopy.appendChild(notesNumberSaved);
+
+    let notesRemarqueeSaved = document.createElement("p");
+    notesRemarqueeSaved.className = "notesCopySelection"
+    notesRemarqueeSaved.innerHTML = '"' + selectedText + '"';
+    notesCopy.appendChild(notesRemarqueeSaved);
+
+    let notesEcrite = document.createElement("textarea");
+    notesEcrite.className = "txta"
+    notesEcrite.setAttribute('contenteditable', 'true')
+    notesEcrite.setAttribute('placeholder', 'Écrivez...')
+    notesCopy.appendChild(notesEcrite);
+
+    prisedenotes.appendChild(notesCopy);
+
+    noteNumber++;
+    updateNotes()
+
+    forceDisplayNotes()
+    rsizeTxt()
+
+    notesEcrite.focus();
+    setTimeout(function () {
+        notesEcrite.value = '';
+    }, 1)
+
+
+
+    // notesSave.addEventListener('click', () => {
+    //     var textarea = notesEcrite.value;
+
+    //     // console.log(textarea)
+
+    //     let notesCopy = document.createElement("div");
+    //     notesCopy.className = 'notesCopy';
+
+    //     let notesNumberSaved = document.createElement("span");
+    //     notesNumberSaved.innerHTML = 'Note n°' + noteNumber;
+    //     notesCopy.appendChild(notesNumberSaved);
+
+    //     let notesRemarqueeSaved = document.createElement("p");
+    //     notesRemarqueeSaved.className = "notesCopySelection"
+    //     notesRemarqueeSaved.innerHTML = notesRemarquee.innerHTML;
+    //     notesCopy.appendChild(notesRemarqueeSaved);
+
+    //     let notesPriseSaved = document.createElement("p");
+    //     notesPriseSaved.innerHTML = textarea;
+    //     notesCopy.appendChild(notesPriseSaved);
+
+    //     notesPanel.appendChild(notesCopy);
+
+    //     // let notesPlusOne = document.createElement("span");
+    //     // notesPlusOne.innerHTML = '+ 1';
+    //     // notesBlock.appendChild(notesPlusOne);
+
+    //     // notesBlock.classList.add('op50')
+
+    //     notesButton.classList.add('bounce2')
+
+    //     setTimeout(function () {
+    //         notesButton.classList.remove('bounce2')
+    //     }, 2000)
+
+    // })
+
+
+    // notesDelete.addEventListener('click', () => {
+    //     noteNumber--;;
+    //     notesBlock.remove()
+    // })
 
 }
 
@@ -321,7 +544,7 @@ function highlightRange(range) {
     var newNode = document.createElement("div");
     newNode.setAttribute(
         "style",
-        "background-color:  var(--color-borders); display: inline;"
+        "background-color:  var(--color-notes); display: inline; color: white;"
     );
     range.surroundContents(newNode);
 }
@@ -388,16 +611,250 @@ function getSafeRanges(dangerous) {
 }
 
 addEventListener("keydown", (event) => {
-    if (event.code == 'KeyN') {
-        document.querySelector('.notifNotes').classList.add('animateNotifNotes')
-        setTimeout(() => {
-            document.querySelector('.notifNotes').classList.remove('animateNotifNotes')
-        }, 4000);
-
+    if (event.altKey && event.code == 'KeyN') {
         highlightSelection()
         getSelectedText()
         window.getSelection().removeAllRanges()
+        // var objDiv = document.getElementById("your_div");
         notesPanel.scrollTop = notesPanel.scrollHeight;
+        console.log(notesPanel.scrollHeight)
     }
 });
 
+
+
+// DONLWOAD TXT
+
+// when document is ready
+
+function save() {
+    var root = document.createElement('root');
+    var body = document.createElement('body');
+
+
+    root.appendChild(body);
+
+
+    let notesCopy = document.querySelectorAll('.notesCopy');
+    notesCopy.forEach(function (notesCopy) {
+        var contentNoteID = notesCopy.querySelector('span').innerHTML;
+        console.log(contentNoteID)
+
+        var contentNote = notesCopy.querySelector('.notesCopySelection').innerHTML;
+        console.log(contentNote)
+
+        var contentCommentaire = notesCopy.querySelector('textarea').value;
+        console.log(contentCommentaire)
+
+        var quellePartie = document.querySelector('.book').getAttribute('data-reading');
+        console.log(quellePartie)
+
+
+        var textNoteID = document.createElement("h4");
+        textNoteID.innerText = contentNoteID;
+
+        body.appendChild(textNoteID);
+
+
+    });
+
+    console.log(root)
+
+
+    // for (let note of notesCopy) {
+
+    // }
+
+
+    var c = document.createElement("a");
+    c.download = "PMORENO-MEMOIRE-NOTES.html";
+
+    var t = new Blob([root], {
+        type: "text/plain"
+    });
+    c.href = window.URL.createObjectURL(t);
+    c.click();
+}
+
+downloadTxt.addEventListener('click', save);
+
+
+// Titles OBSERVER
+
+let fromTop = 300;
+
+function checkCibles() {
+
+    if (document.body.scrollTop > fromTop || document.documentElement.scrollTop > fromTop && book.getAttribute("data-reading") === "partieIntro") {
+        document.getElementById("ciblePartieIntro").style.display = ('block')
+    }
+
+    else if (document.body.scrollTop > fromTop || document.documentElement.scrollTop > fromTop && book.getAttribute("data-reading") === "partieI") {
+        document.getElementById("ciblePartieI").style.display = ('block')
+    }
+
+    else if (document.body.scrollTop > fromTop || document.documentElement.scrollTop > fromTop && book.getAttribute("data-reading") === "partieII") {
+        document.getElementById("ciblePartieII").style.display = ('block')
+    }
+
+    else if (document.body.scrollTop > fromTop || document.documentElement.scrollTop > fromTop && book.getAttribute("data-reading") === "partieIII") {
+        document.getElementById("ciblePartieIII").style.display = ('block')
+    }
+
+    else if (document.body.scrollTop > fromTop || document.documentElement.scrollTop > fromTop && book.getAttribute("data-reading") === "partieFin") {
+        document.getElementById("ciblePartieFin").style.display = ('block')
+    }
+
+    else if (document.body.scrollTop < fromTop || document.documentElement.scrollTop < fromTop) {
+        document.getElementById("ciblePartieIntro").style.display = ('none')
+        document.getElementById("ciblePartieI").style.display = ('none')
+        document.getElementById("ciblePartieII").style.display = ('none')
+        document.getElementById("ciblePartieIII").style.display = ('none')
+        document.getElementById("ciblePartieFin").style.display = ('none')
+    }
+}
+
+window.addEventListener('scroll', checkCibles);
+
+
+
+var observerIa = new IntersectionObserver(function (entries) {
+    if (!entries[0].isIntersecting && book.getAttribute("data-reading") === "partieI") {
+        document.getElementById("I-naissance-cible").style.display = ('block')
+        document.getElementById("I-vierge-cible").style.display = ('none')
+    }
+    else {
+        document.getElementById("I-naissance-cible").style.display = ('none')
+    }
+});
+observerIa.observe(document.getElementById("I-naissance"))
+
+
+var observerIb = new IntersectionObserver(function (entries) {
+    if (!entries[0].isIntersecting && book.getAttribute("data-reading") === "partieI") {
+        document.getElementById("I-vierge-cible").style.display = ('block')
+        document.getElementById("I-naissance-cible").style.display = ('none')
+    }
+    else {
+        document.getElementById("I-vierge-cible").style.display = ('none')
+    }
+});
+observerIb.observe(document.getElementById("I-vierge"))
+
+
+// var observerI = new IntersectionObserver(function (entries) {
+//     if (!entries[0].isIntersecting && book.getAttribute("data-reading") === "partieI") {
+//         document.getElementById("ciblePartieIntro").style.display = ('none')
+//         document.getElementById("ciblePartieI").style.display = ('block')
+//         document.getElementById("ciblePartieII").style.display = ('none')
+//         document.getElementById("ciblePartieIII").style.display = ('none')
+//         document.getElementById("ciblePartieFin").style.display = ('none')
+//     }
+//     else {
+//         document.getElementById("ciblePartieIntro").style.display = ('none')
+//         document.getElementById("ciblePartieI").style.display = ('none')
+//         document.getElementById("ciblePartieII").style.display = ('none')
+//         document.getElementById("ciblePartieIII").style.display = ('none')
+//         document.getElementById("ciblePartieFin").style.display = ('none')
+//     }
+// });
+
+// observerI.observe(document.getElementById("partie-I"))
+
+
+// var observerII = new IntersectionObserver(function (entries) {
+//     if (!entries[0].isIntersecting && book.getAttribute("data-reading") === "partieII") {
+//         document.getElementById("ciblePartieIntro").style.display = ('none')
+//         document.getElementById("ciblePartieI").style.display = ('none')
+//         document.getElementById("ciblePartieII").style.display = ('block')
+//         document.getElementById("ciblePartieIII").style.display = ('none')
+//         document.getElementById("ciblePartieFin").style.display = ('none')
+//     }
+//     else {
+//         document.getElementById("ciblePartieIntro").style.display = ('none')
+//         document.getElementById("ciblePartieI").style.display = ('none')
+//         document.getElementById("ciblePartieII").style.display = ('none')
+//         document.getElementById("ciblePartieIII").style.display = ('none')
+//         document.getElementById("ciblePartieFin").style.display = ('none')
+//     }
+// });
+
+// observerII.observe(document.getElementById("partie-II"))
+
+
+// var observerIII = new IntersectionObserver(function (entries) {
+//     if (!entries[0].isIntersecting && book.getAttribute("data-reading") === "partieIII") {
+//         document.getElementById("ciblePartieIntro").style.display = ('none')
+//         document.getElementById("ciblePartieI").style.display = ('none')
+//         document.getElementById("ciblePartieII").style.display = ('none')
+//         document.getElementById("ciblePartieIII").style.display = ('block')
+//         document.getElementById("ciblePartieFin").style.display = ('none')
+//     }
+//     else {
+//         document.getElementById("ciblePartieIntro").style.display = ('none')
+//         document.getElementById("ciblePartieI").style.display = ('none')
+//         document.getElementById("ciblePartieII").style.display = ('none')
+//         document.getElementById("ciblePartieIII").style.display = ('none')
+//         document.getElementById("ciblePartieFin").style.display = ('none')
+//     }
+// });
+
+// observerIII.observe(document.getElementById("partie-III"))
+
+// var observerFin = new IntersectionObserver(function (entries) {
+//     if (!entries[0].isIntersecting && book.getAttribute("data-reading") === "partieFin") {
+//         document.getElementById("ciblePartieIntro").style.display = ('none')
+//         document.getElementById("ciblePartieI").style.display = ('none')
+//         document.getElementById("ciblePartieII").style.display = ('none')
+//         document.getElementById("ciblePartieIII").style.display = ('none')
+//         document.getElementById("ciblePartieFin").style.display = ('block')
+//     }
+//     else {
+//         document.getElementById("ciblePartieIntro").style.display = ('none')
+//         document.getElementById("ciblePartieI").style.display = ('none')
+//         document.getElementById("ciblePartieII").style.display = ('none')
+//         document.getElementById("ciblePartieIII").style.display = ('none')
+//         document.getElementById("ciblePartieFin").style.display = ('none')
+//     }
+// });
+
+// observerFin.observe(document.getElementById("partie-Fin"))
+
+
+
+
+
+
+// TOOLTIP
+
+var tooltip = document.getElementById('tooltip');
+var sel = window.getSelection();
+var rel1 = document.createRange();
+rel1.selectNode(document.getElementById('cal1'));
+var rel2 = document.createRange();
+rel2.selectNode(document.getElementById('cal2'));
+window.addEventListener('mouseup', function () {
+    if (!sel.isCollapsed) {
+        // debugger;
+        var r = sel.getRangeAt(0).getBoundingClientRect();
+        var rb1 = rel1.getBoundingClientRect();
+        var rb2 = rel2.getBoundingClientRect();
+        tooltip.style.top = (r.bottom - rb2.top) * 100 / (rb1.top - rb2.top) + 'px'; //this will place ele below the selection
+        tooltip.style.left = (r.left - rb2.left) * 100 / (rb1.left - rb2.left) + 'px'; //this will align the right edges together
+
+        //code to set content
+
+        tooltip.style.display = 'block';
+    }
+});
+window.addEventListener('mousedown', function () {
+    tooltip.style.display = 'none';
+});
+
+
+// tooltip.addEventListener("click", () => {
+//     highlightSelection()
+//     getSelectedText()
+//     window.getSelection().removeAllRanges()
+//     notesPanel.scrollTop = notesPanel.scrollHeight;
+// });

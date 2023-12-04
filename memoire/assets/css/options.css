@@ -1,10 +1,4 @@
-:root {
-    --background-sommaire: #c4c2bc;
-    --background-notes: #c4c2bc;
-    --background-options: #c4c2bc;
-}
-
-/******************* Right SIDE *******************/
+/******************* BOOKMARKS *******************/
 
 #bookmarkPartieI {
     right: 60px;
@@ -55,9 +49,7 @@
     font-weight: 400;
     width: 100px;
     writing-mode: sideways-rl;
-    font-size: 16px;
-    /*! transform: rotate(180deg); */
-    /* align-items: center; */
+    font-size: var(--fs-middle);
     height: 100%;
     display: flex;
     box-sizing: border-box;
@@ -76,6 +68,8 @@
     z-index: 0;
 
     transition: var(--trans-quick);
+
+    font-family: var(--ff-titles);
 }
 
 .bookmark:hover {
@@ -83,15 +77,37 @@
     background-color: red; */
 }
 
+.bookmarks span {
+    writing-mode: tb;
+    font-size: var(--fs-big);
+    margin-bottom: 5px;
+    height: var(--fs-big) !important;
+    display: flex;
+    justify-content: center;
+}
+
 
 /******************* LEFT SIDE *******************/
+
+.panel h2 {
+    padding: 0 !important;
+    margin: 0;
+    font-family: Commonsans, sans-serif;
+    font-weight: 400;
+    padding-top: var(--space-l);
+
+    font-family: var(--ff-text);
+
+
+}
+
 .panel {
     position: fixed;
     top: 0;
     left: 0;
     z-index: 0;
     height: 100vh;
-    width: 400px;
+    width: 450px;
     display: flex;
 
     transform: translateX(calc(-100% + 30px));
@@ -112,11 +128,7 @@
     flex-direction: column;
 }
 
-.panel h2{
-    padding-top: 0 !important;
-}
-
-.panel>.header h3 {
+.panel>.header div {
     width: 30px;
     height: calc(100% / 3);
     font-weight: 400;
@@ -129,9 +141,10 @@
     writing-mode: sideways-lr;
     border-radius: 0 10px 10px 0;
     box-shadow: -5px 0 20px 0 #000;
+    font-family: var(--ff-text);
 }
 
-.panel>.header h3:hover {
+.panel>.header div:hover {
     background-color: var(--color-borders-light);
 }
 
@@ -139,52 +152,38 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
     overflow-y: scroll !important;
-
 }
 
 .panel .content div::-webkit-scrollbar {
     display: none;
 }
 
-
-/* 
-.panel > .header h3:nth-child(1) {
-    border-radius: 0 10px 0 0;
-} */
-
 .panel>.content {
     width: 100%;
     z-index: 999;
-    background-color: var(--background-sommaire);
+    background-color: var(--color-borders-light);
     box-shadow: -5px 0 20px 0 #000;
 }
-
 
 .sommaireButtonOn {
     z-index: 999 !important;
     box-shadow: none !important;
-    background-color: var(--background-sommaire) !important;
+    background-color: var(--color-borders-light) !important;
     justify-content: center !important;
     writing-mode: inherit !important;
     padding: 0 !important;
 }
 
 
-.sommaireButtonOn span {
-    margin: 5px 5px 5px 0 !important;
-}
-
-
 .sommaireButtonOn:hover span {
     width: 100% !important;
-    height: calc(100% - 10px) !important;
+    height: calc(100%) !important;
     display: flex !important;
     align-items: center !important;
     box-sizing: border-box !important;
-    border-radius: 6px !important;
+    border-radius: 0 6px 6px 0 !important;
     background-color: var(--color-white-semi) !important;
     justify-content: center !important;
-    margin: 5px 5px 5px 0 !important;
 }
 
 /******************* SOMMAIRE *******************/
@@ -193,13 +192,12 @@
     width: inherit;
     height: 100%;
     z-index: 5;
-    padding: var(--space-l);
+    padding: var(--space-m);
     box-sizing: border-box;
     display: none;
     overflow: hidden;
-    background-color: var(--background-sommaire);
+    background-color: var(--color-borders-light);
 }
-
 
 .sommairePage h3 {
     margin: var(--space-l) 0 0 0;
@@ -208,205 +206,227 @@
 
 .sommairePage h4 {
     margin: 0 0 2px 0;
+    font-family: var(--ff-titles);
+    font-size: var(--fs-middle);
+    line-height: var(--lh-middle);
+}
+
+.sommairePage h4 span {
+    font-size: var(--fs-normal);
 }
 
 .sommairePage div {
     border-radius: 10px;
     margin: var(--space-m) 0;
     padding: var(--space-s);
-    background-color: var(--color-white-semi);
+    border:  1px solid var(--color-borders);
+
 }
 
-.sommairePage div:nth-last-child(-n+1) {}
+/* .sommairePage div:hover {
+    border: 1px solid black;
+    cursor: pointer;
+} */
+
+.sommairePage a {
+    text-decoration: none !important;
+}
+
+.sommairePage a:hover {
+    text-decoration: underline !important;
+}
 
 .indexSelected {
     background-color: var(--color-white) !important;
 }
 
 .sommairePage ul {
-    margin: 0 0 var(--space-s) var(--space-l);
+    margin: 0 0 var(--space-s) 7px;
 }
+
+.sommairePage ul {
+    list-style: none;
+}
+
+.sommairePage ul li::before {
+    content: "・ ";
+}
+
+.sommairePage details>summary {
+    list-style-type: '→ ';
+}
+
+.sommairePage details[open]>summary {
+    list-style-type: '⤵ ';
+}
+
+::marker:hover {
+    opacity: .5 !important;
+}
+
+
+
 
 .sommairePage summary {
     margin-left: var(--space-l)
 }
 
-
+.sommairePage details {
+    font-size: var(--fs-middle);
+    line-height: var(--lh-normal);
+}
 
 .footer {
-    padding: var(--space-s) !important;
+    padding: 5px 0 var(--space-s) 0;
     position: absolute;
     bottom: 0;
-    font-size: var(--font-small);
+    font-size: 12px;
     margin: 0 !important;
-    background-color: var(--color-borders) !important;
+    background-color: var(--color-borders-light);
     border-radius: 0 !important;
     border-width: 1px 0 0 0 !important;
-    border: 1px solid var(--color-white-semi);
+    border: 1px dashed var(--color-borders);
+    line-height: 1.5;
+    width: calc(100% - var(--space-l)*2 - 30px);
+    box-sizing: border-box;
+}
+
+.footer img {
+    height: 15px;
+    margin-left: 2px;
+}
+
+.footer p {
+    margin: 0;
+    text-indent: 0;
 }
 
 
 
 /******************* NOTE PAGE *******************/
-.notifNotes {
-    position: fixed;
-    left: calc(75vw - 5vw + 20px);
-    bottom: 0px;
-    transform: translate(-50%, 100%);
-    border: 1px solid var(--color-white-semi);
-    width: fit-content;
-    font-size: 16px;
-    z-index: 999;
-    color: var(--color-background);
-    background-color: var(--color-borders);
-    padding: var(--space-s) var(--space-m);
-    border-radius: var(--border-s);
 
-    opacity: 0;
-    visibility: hidden;
-}
-
-.notifNotes:hover {
-    background-color: var(--color-borders-light);
-}
-
-.animateNotifNotes {
-    animation: goup 4s ease-in-out;
-}
-
-@keyframes goup {
-    0% {
-        opacity: 0;
-        visibility: visible;
-        transform: translate(-50%, 100%);
-    }
-
-    20% {
-        opacity: 1;
-        transform: translate(-50%, -50%);
-    }
-
-    70% {
-        opacity: 1;
-        transform: translate(-50%, -50%);
-    }
-
-    99% {
-        visibility: visible;
-    }
-
-    100% {
-        opacity: 0;
-        visibility: hidden;
-        transform: translate(-50%, -100%);
-    }
-}
 
 
 .notesPage {
     width: inherit;
-    height: 100%;
+    height: calc(100% - var(--space-m)*2);
     z-index: 5;
-    padding: var(--space-l);
+    padding: var(--space-m) var(--space-m) 0 var(--space-m);
     box-sizing: border-box;
     z-index: 5;
-    background-color: var(--background-notes);
+    background-color: var(--color-borders-light);
     display: none;
-}
-
-.notesPage .header {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    /* align-items: center; */
-    align-items: baseline;
-}
-
-.header img {
-    height: 15px;
-    margin-left: 2px;
-}
-
-
-.littleNote {
-    margin: var(--space-s) 0;
-    padding: var(--space-s) var(--space-m);
-    border: 1px solid var(--color-borders);
-    background-color: var(--color-white-semi);
-    border-radius: var(--border-s);
-    font-size: 16px;
-    width: 100%;
+    margin-bottom: calc(var(--space-m)*3) !important;
     box-sizing: border-box;
-    min-height: 130px;
+
 }
 
-.littleNote:hover {
-    cursor: text;
-}
-
-.littleNote:hover div {
-    opacity: 1;
-    transition: var(--trans-quick);
-}
-
-.littleNote div {
-    margin: var(--space-s) 0;
-    padding: var(--space-s);
-    border: 1px solid var(--color-white-semi);
-    background-color: var(--color-borders);
-    height: 4px;
-    width: 10px;
-    border-radius: 999px;
-    margin-right: var(--space-s);
-    display: flex;
-    position: absolute;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
-
-    transition: var(--trans-quick);
-    opacity: 0;
-}
-
-.littleNote div:nth-child(1) {
-    right: 14px;
-    margin-top: -4px;
-}
-
-.littleNote div:nth-child(2) {
-    right: 14px;
-    margin-top: 22px;
-}
-
-.littleNote div img {
-    height: 13px;
-}
 
 .notesPage::-webkit-scrollbar {
-    width: 3px;
+    width: 10px;
 }
 
 .notesPage::-webkit-scrollbar-track {
-    background: black;
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    background-color: #e7e7e7;
+    border: 1px solid #cacaca;
 }
 
 .notesPage::-webkit-scrollbar-thumb {
-    background: red;
-    border: 3px solid blue;
+    border-radius: 8px;
+    background-color: #d55959;
 }
+
+.notesPage>p {
+    font-size: 12px;
+    margin: var(--space-s) 0 0 0 !important;
+    line-height: 1.5;
+    text-indent: 0;
+}
+
+
+
+.littleNote {
+    position: absolute;
+    width: calc(50% - var(--space-xl)*2);
+    font-size: 12px;
+    color: var(--color-notes);
+    text-align: right;
+}
+
+
+.notesCopy {
+    border-radius: 10px;
+    margin: var(--space-m) 0;
+    background-color: var(--color-white-semi);
+    padding: 5px var(--space-s);
+}
+
+.notesCopy span {
+    font-size: 12px;
+    color: var(--color-notes);
+    display: block;
+}
+
+.notesCopy p {
+    padding: var(--space-s);
+    text-indent: 0 !important;
+    margin: 0 !important;
+    border-radius: 10px;
+}
+
+.notesCopy:last-child {
+    margin-bottom: 0 !important;
+}
+
+
+.notesCopy textarea {
+    border: none;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    resize: none;
+    /* min-width: 150px; */
+    min-height: 20px !important;
+
+    background-color: transparent;
+    padding: var(--space-s) var(--space-s) 0 var(--space-s);
+}
+
+.notesCopySelection {
+    background-color: aliceblue !important;
+}
+
+
+/* TEXTAREA AUTO RESIZE STYLES BEGIN */
+
+/* The .hiddendiv styles are added with JS.
+   You can remove the JS lines and use CSS instead
+.hiddendiv {
+  display: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}*/
+
+/* the styles for 'txta' are applied to both the textarea and the hidden clone */
+/* these must be the same for both */
+.txta {
+    width: 100%;
+    max-width: 500px;
+    font-family: var(--ff-text);
+    font-size: var(--fs-middle);
+    line-height: var(--lh-middle);
+    overflow: hidden;
+    padding: var(--space-s);
+
+}
+
+/* TEXTAREA AUTO RESIZE STYLES END */
+
+
 
 
 /******************* OPTIONS PAGE *******************/
-
-.reduireRight {
-    transform: scaleX(0.9);
-    transform-origin: left;
-
-    transition: var(--trans-quick);
-}
 
 .options:hover {
     background-color: white;
@@ -444,9 +464,9 @@
     width: inherit;
     height: 100%;
     z-index: 5;
-    padding: var(--space-l);
+    padding: var(--space-m);
     box-sizing: border-box;
     z-index: 5;
-    background-color: var(--background-options);
+    background-color: var(--color-borders-light);
     display: none;
 }
