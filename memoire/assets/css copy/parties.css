@@ -27,72 +27,50 @@
 
 .reduireBook-3-4 {
     width: calc(100vw - 30px - 25px * 4) !important;
-    -webkit-transition: var(--trans-quick);
-    -o-transition: var(--trans-quick);
     transition: var(--trans-quick);
 }
 
 .reduireBook-2-4 {
     width: calc(100vw - 40px - 25px * 3) !important;
-    -webkit-transition: var(--trans-quick);
-    -o-transition: var(--trans-quick);
     transition: var(--trans-quick);
 }
 
 .reduireBook-1-4 {
     width: calc(100vw - 50px - 25px * 2) !important;
-    -webkit-transition: var(--trans-quick);
-    -o-transition: var(--trans-quick);
     transition: var(--trans-quick);
 }
 
 .reduireBook-Full {
     width: calc(100vw - 60px - 25px * 1) !important;
-    -webkit-transition: var(--trans-quick);
-    -o-transition: var(--trans-quick);
     transition: var(--trans-quick);
 }
 
 
 .transformLeft {
-    -webkit-transform: translateX(-15px) !important;
-        -ms-transform: translateX(-15px) !important;
-            transform: translateX(-15px) !important;
-    -webkit-transition: var(--trans-quick);
-    -o-transition: var(--trans-quick);
+    transform: translateX(-15px) !important;
     transition: var(--trans-quick);
 }
 
 .transformRight {
-    -webkit-transform: translateX(5px) !important;
-        -ms-transform: translateX(5px) !important;
-            transform: translateX(5px) !important;
-    -webkit-transition: var(--trans-quick);
-    -o-transition: var(--trans-quick);
+    transform: translateX(5px) !important;
     transition: var(--trans-quick);
 }
 
 .ampliarBook-1-4 {
     width: calc(100vw - 65px - 20px *1) !important;
     margin-left: 65px !important;
-    -webkit-transition: var(--trans-quick);
-    -o-transition: var(--trans-quick);
     transition: var(--trans-quick);
 }
 
 .ampliarBook-2-4 {
     width: calc(100vw - 55px - 20px * 2) !important;
     margin-left: 55px !important;
-    -webkit-transition: var(--trans-quick);
-    -o-transition: var(--trans-quick);
     transition: var(--trans-quick);
 }
 
 .ampliarBook-3-4 {
     width: calc(100vw - 45px - 20px * 3) !important;
     margin-left: 45px !important;
-    -webkit-transition: var(--trans-quick);
-    -o-transition: var(--trans-quick);
     transition: var(--trans-quick);
 }
 
@@ -100,7 +78,5 @@
 .ampliarBook-Full {
     width: calc(100vw - 75px) !important;
     margin-left: 75px !important;
-    -webkit-transition: var(--trans-quick);
-    -o-transition: var(--trans-quick);
     transition: var(--trans-quick);
 }

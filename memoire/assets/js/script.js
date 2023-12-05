@@ -617,7 +617,7 @@ addEventListener("keydown", (event) => {
         window.getSelection().removeAllRanges()
         // var objDiv = document.getElementById("your_div");
         notesPanel.scrollTop = notesPanel.scrollHeight;
-        console.log(notesPanel.scrollHeight)
+        tooltip.style.display = 'none';
     }
 });
 
@@ -627,6 +627,8 @@ addEventListener("keydown", (event) => {
 let fromTop = 300;
 
 function checkCibles() {
+
+    var book = document.querySelector('.book')
 
     if (document.body.scrollTop > fromTop || document.documentElement.scrollTop > fromTop && book.getAttribute("data-reading") === "partieIntro") {
         document.getElementById("ciblePartieIntro").style.display = ('block')
@@ -731,6 +733,27 @@ var observerIIIb = new IntersectionObserver(function (entries) {
 });
 observerIIIb.observe(document.getElementById("III-concevoir"))
 
+var observerFinRef = new IntersectionObserver(function (entries) {
+    if (!entries[0].isIntersecting && book.getAttribute("data-reading") === "partieFin") {
+        document.getElementById("cibleFinChange").innerHTML = 'Références'
+    }
+    else {
+        document.getElementById("cibleFinChange").innerHTML = 'Conclusion'
+    }
+});
+observerFinRef.observe(document.getElementById("fin-references"))
+
+
+var observerFinCol = new IntersectionObserver(function (entries) {
+    if (!entries[0].isIntersecting && book.getAttribute("data-reading") === "partieFin") {
+        document.getElementById("cibleFinChange").innerHTML = 'Colophon'
+    }
+    else {
+        document.getElementById("cibleFinChange").innerHTML = 'Références'
+    }
+});
+observerFinCol.observe(document.getElementById("fin-colophon"))
+
 
 // TOOLTIP
 
@@ -811,13 +834,13 @@ function save() {
 
         body.appendChild(textBlock);
     });
-        
-    data = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>LeWebQueLonFait - NOTES</title><style>body{font-family: sans-serif;}h4{color: darkorchid;margin: 0;}.block{border-radius: 10px;margin: 10px 0;background-color: rgba(210, 210, 210, 0.44);padding: 15px;font-size: 16px;line-height: 24px;max-width: 450px;margin: 20px auto;}.block div {display: flex;justify-content: space-between;padding: 0 5px;}.block span {opacity: 0.4;}.block p:nth-child(2) {color: gray;background-color: aliceblue;padding: 10px;border-radius: 10px;margin: 10px 0;}</style></head>' + 'HEADER et BOUTON X PRINT' + body.innerHTML + '</html>';
-    
+
+    data = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Le Web que l’on fait ✍︎ - NOTES</title><style>body{font-family: sans-serif; margin: 30px 50px;}header {text-align: center;max-width: 450px;margin: 30px;background-color: white;}header p {margin: 10px auto;max-width: 450px;line-height: 24px;}header h1 {margin: 10px 0;}h4{color: darkorchid;margin: 0;}.block{border-radius: 10px;max-width: 450px;margin: 10px 0;background-color: rgba(210, 210, 210, 0.44);padding: 15px;font-size: 16px;line-height: 24px; border: 1px solid gray;}.block div {display: flex;justify-content: space-between;padding: 0 5px;}.block span {opacity: 0.4;}.block p:nth-child(2) {background-color: white;padding: 10px;border-radius: 10px;margin: 10px 0;}h2 {font-weight: 400;font-size: 20px;text-align: center;}</style></head>' + '<header><h1>Le Web que l’on fait ✍︎</h1><p>L’importance d’imaginer et concevoir des espaces web faits-mains pour re-exploiter les mondes digitales</p></header><h2>Prise de notes</h2>' + body.innerHTML + '</html>';
+
     console.log(data)
 
     var c = document.createElement("a");
-    c.download = "PMORENO-MEMOIRE-NOTES.html";
+    c.download = "Le Web que l’on fait ✍︎ - NOTES.html";
 
     var t = new Blob([data], {
         type: "text/plain"

@@ -48,18 +48,12 @@
 .bookmark {
     font-weight: 400;
     width: 100px;
-    -webkit-writing-mode: sideways-rl;
-        -ms-writing-mode: sideways-rl;
-            writing-mode: sideways-rl;
+    writing-mode: sideways-rl;
     font-size: var(--fs-middle);
     height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    -webkit-box-shadow: 0 0 10px 0 #000;
-            box-shadow: 0 0 10px 0 #000;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px 0 #000;
 
     height: 100%;
     position: fixed;
@@ -73,10 +67,6 @@
     text-transform: uppercase;
     z-index: 0;
 
-    -webkit-transition: var(--trans-quick);
-
-    -o-transition: var(--trans-quick);
-
     transition: var(--trans-quick);
 
     font-family: var(--ff-titles);
@@ -88,18 +78,12 @@
 }
 
 .bookmarks span {
-    -webkit-writing-mode: tb;
-        -ms-writing-mode: tb;
-            writing-mode: tb;
+    writing-mode: tb;
     font-size: var(--fs-big);
     margin-bottom: 5px;
     height: var(--fs-big) !important;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
 }
 
 
@@ -124,45 +108,24 @@
     z-index: 0;
     height: 100vh;
     width: 450px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
 
-    -webkit-transform: translateX(calc(-100% + 30px));
-
-        -ms-transform: translateX(calc(-100% + 30px));
-
-            transform: translateX(calc(-100% + 30px));
-    -webkit-transition: var(--trans-quick);
-    -o-transition: var(--trans-quick);
+    transform: translateX(calc(-100% + 30px));
     transition: var(--trans-quick);
 }
 
 .displayed {
-    -webkit-transform: translateX(calc(0px));
-        -ms-transform: translateX(calc(0px));
-            transform: translateX(calc(0px));
-    -webkit-transition: var(--trans-quick);
-    -o-transition: var(--trans-quick);
+    transform: translateX(calc(0px));
     transition: var(--trans-quick);
     z-index: 999;
 }
 
 .panel>.header {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
+    justify-content: space-between;
     width: fit-content;
     height: 100%;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
 }
 
 .panel>.header div {
@@ -170,22 +133,14 @@
     height: calc(100% / 3);
     font-weight: 400;
     font-size: 16px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    align-items: center;
+    box-sizing: border-box;
     padding: var(--space-s) 0;
     background-color: white;
-    -webkit-writing-mode: sideways-lr;
-        -ms-writing-mode: sideways-lr;
-            writing-mode: sideways-lr;
+    writing-mode: sideways-lr;
     border-radius: 0 10px 10px 0;
-    -webkit-box-shadow: -5px 0 20px 0 #000;
-            box-shadow: -5px 0 20px 0 #000;
+    box-shadow: -5px 0 20px 0 #000;
     font-family: var(--ff-text);
 }
 
@@ -207,21 +162,15 @@
     width: 100%;
     z-index: 999;
     background-color: var(--color-borders-light);
-    -webkit-box-shadow: -5px 0 20px 0 #000;
-            box-shadow: -5px 0 20px 0 #000;
+    box-shadow: -5px 0 20px 0 #000;
 }
 
 .sommaireButtonOn {
     z-index: 999 !important;
-    -webkit-box-shadow: none !important;
-            box-shadow: none !important;
+    box-shadow: none !important;
     background-color: var(--color-borders-light) !important;
-    -webkit-box-pack: center !important;
-        -ms-flex-pack: center !important;
-            justify-content: center !important;
-    -webkit-writing-mode: inherit !important;
-        -ms-writing-mode: inherit !important;
-            writing-mode: inherit !important;
+    justify-content: center !important;
+    writing-mode: inherit !important;
     padding: 0 !important;
 }
 
@@ -229,19 +178,12 @@
 .sommaireButtonOn:hover span {
     width: 100% !important;
     height: calc(100%) !important;
-    display: -webkit-box !important;
-    display: -ms-flexbox !important;
     display: flex !important;
-    -webkit-box-align: center !important;
-        -ms-flex-align: center !important;
-            align-items: center !important;
-    -webkit-box-sizing: border-box !important;
-            box-sizing: border-box !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
     border-radius: 0 6px 6px 0 !important;
     background-color: var(--color-white-semi) !important;
-    -webkit-box-pack: center !important;
-        -ms-flex-pack: center !important;
-            justify-content: center !important;
+    justify-content: center !important;
 }
 
 /******************* SOMMAIRE *******************/
@@ -251,8 +193,7 @@
     height: 100%;
     z-index: 5;
     padding: var(--space-m);
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     display: none;
     overflow: hidden;
     background-color: var(--color-borders-light);
@@ -348,8 +289,7 @@
     border: 1px dashed var(--color-borders); */
     line-height: 1.5;
     width: calc(100% - var(--space-m)*2 - 30px);
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .footer img {
@@ -389,8 +329,7 @@
     width: inherit;
     height: calc(100% - 60px);
     padding: var(--space-m) var(--space-m) 0 var(--space-m);
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     z-index: 5;
     background-color: var(--color-borders-light);
     display: none;
@@ -467,8 +406,7 @@ line-height: var(--lh-middle);
     border: none;
     font-size: 16px;
     width: 100%;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     resize: none;
     /* min-width: 150px; */
     min-height: 20px !important;
@@ -549,8 +487,7 @@ line-height: var(--lh-middle);
     height: 100%;
     z-index: 5;
     padding: var(--space-m);
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     z-index: 5;
     background-color: var(--color-borders-light);
     display: none;

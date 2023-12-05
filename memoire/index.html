@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>☗ Le Web que l’on fait ☗</title>
+    <title>Le Web que l’on fait ✍︎</title>
 
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -126,7 +126,13 @@
                 </div>
 
                 <div class="sommairePartieFin" onclick="lecturePartieFin()">
-                    <h4><span>⦿</span> <a href="#partie-Fin">Conclusion + Références</a>
+                    <h4><span>⦿</span> <a href="#partie-Fin">Conclusion</a></h4>
+                        <details>
+                            <summary><a href="#fin-references">Références</a></summary>
+                        </details>
+                        <details>
+                            <summary><a href="#fin-colophon">Colophon</a></summary>
+                        </details>
                 </div>
 
             </div>
@@ -134,7 +140,8 @@
             <div class="notesPage">
                 <h2>📝 Prises de notes <span class="numbernotes">(0)</span></h2>
 
-                <p>Séléctionnez du texte et appuyez sur les touches de Alt + N pour prendre des notes! Vous pouvez télécharger une copie de ces notes pour les imprimer ou les sauvegarder au format PDF.</p>
+                <p>Séléctionnez du texte et appuyez sur les touches de Alt + N pour prendre des notes! Vous pouvez
+                    télécharger une copie de ces notes pour les imprimer ou les sauvegarder au format PDF.</p>
 
                 <div class="prisedenotes"></div>
 
@@ -179,7 +186,7 @@
         <div id="bookmarkPartieI" class="bookmark pointer"><span>❶</span>Des nouveaux mondes à bâtir</div>
         <div id="bookmarkPartieII" class="bookmark pointer"><span>❷</span>Au web de nos jours</div>
         <div id="bookmarkPartieIII" class="bookmark pointer"><span>❸</span>Réoccuper ces espaces</div>
-        <div id="bookmarkPartieFin" class="bookmark pointer"><span>◉</span>Conclusion + Références</div>
+        <div id="bookmarkPartieFin" class="bookmark pointer"><span>◉</span>Conclusion</div>
 
         <div id="bookmarkPartieIOff" class="bookmark pointer"></div>
         <div id="bookmarkPartieIIOff" class="bookmark pointer"></div>
@@ -189,6 +196,8 @@
     </div>
 
     <div class="book" data-reading="partieIntro">
+        <div class="bookFolded foldleft"></div>
+        <div class="bookFolded foldright"></div>
 
         <main class="bookLeft">
 
@@ -215,9 +224,8 @@
             </div>
 
             <div class="titlesSticky" id="ciblePartieFin">
-                <h1>Conclusion</h1>
+                <h1 id="cibleFinChange">Conclusion</h1>
             </div>
-
 
             <div id="notesPartieIntro">
 
@@ -1790,13 +1798,14 @@
 
                     <h1>Conclusion</h1>
 
-                    <p>zzzz</p>
                 </div>
 
+                <p>zzzz</p>
 
-                <h1 id="5">Références</h1>
 
-                <h3 id="5-virtuel">BIBLIOGRAPHIE</h3>
+                <h1 id="fin-references">Références</h1>
+
+                <h3 id="fin-biblio">BIBLIOGRAPHIE</h3>
 
                 <ul>
                     <li>Bernard Stiegler (dir.), <b>«La toile que nous voulons»</b> FYP Éditions, 2017</li>
@@ -1814,7 +1823,7 @@
                     <li>Tim Berners-Lee, «Information Management: A Proposal» CERN, 1990</li>
                 </ul>
 
-                <h3 id="5-virtuel">ARTICLES</h3>
+                <h3 id="fin-articles">ARTICLES</h3>
                 <ul>
                     <li>Stewart Brand, «We owe it all to the hippies», nº spécial « Welcome To Cyberspace Enter Here »,
                         Time Magazine, Volume 145, nº 12, Été 1995. Consultable:
@@ -1856,12 +1865,15 @@
                     </li>
                 </ul>
 
-                <h3 id="5-virtuel">SITIOGRAPHIE</h3>
+                <h3 id="fin-sitiographie">SITIOGRAPHIE</h3>
 
                 <ul>
                     <li>XXX</li>
                 </ul>
 
+                <h1 id="fin-colophon">Colophon</h1>
+
+                <p>〠</p>
 
             </div>
 

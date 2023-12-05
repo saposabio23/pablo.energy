@@ -1,3 +1,11 @@
+### TEXTE:
+- changer Figures
+- images en fullscrenn
+- little chapters icons on the sticky h1
+
+### PAGES:
+- sticky h3 not working
+
 
 ### SOMMAIRE:
 -
