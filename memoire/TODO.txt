@@ -4,7 +4,8 @@
 
 ### NOTES:
 - jump ton note when click on note prises panel
-- scroll to bottom of notes panel when last child
+
+-INCLURE PARTIE où à été prise la note
 
 
 ### BOOK:

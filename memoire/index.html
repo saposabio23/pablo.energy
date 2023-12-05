@@ -42,43 +42,43 @@
             <div class="sommairePage">
                 <h2>🗂 Sommaire</h2>
 
-                <div class="sommairePartieIntro">
-                    <h4><span>◎</span> <a href="#partie-Intro" onclick="lecturePartieIntro()">Introduction</a></h4>
+                <div class="sommairePartieIntro" onclick="lecturePartieIntro()">
+                    <h4><span>◎</span> <a href="#partie-Intro">Introduction</a></h4>
                 </div>
 
-                <div class="sommairePartieI">
-                    <h4><span>❶</span> <a onclick="lecturePartieI()" href="#partie-I">Des nouveaux mondes à bâtir</a>
+                <div class="sommairePartieI" onclick="lecturePartieI()">
+                    <h4><span>❶</span> <a href="#partie-I">Des nouveaux mondes à bâtir</a>
                     </h4>
                     <details>
-                        <summary><a onclick="lecturePartieI()" href="#I-naissance">a. La naissance d’Internet</a>
+                        <summary><a href="#I-naissance">a. La naissance d’Internet</a>
                         </summary>
                         <ul>
-                            <li><a onclick="lecturePartieI()" href="#I-reseaux">Tout commence par les réseaux</a></li>
-                            <li><a onclick="lecturePartieI()" href="#I-utilisateurices">Qui les utilise?</a></li>
-                            <li><a onclick="lecturePartieI()" href="#I-service">À quoi servent-ils à ce moment là?</a>
+                            <li><a href="#I-reseaux">Tout commence par les réseaux</a></li>
+                            <li><a href="#I-utilisateurices">Qui les utilise?</a></li>
+                            <li><a href="#I-service">À quoi servent-ils à ce moment là?</a>
                             </li>
-                            <li><a onclick="lecturePartieI()" href="#I-interconnexion">Interconnexion des réseaux:
+                            <li><a href="#I-interconnexion">Interconnexion des réseaux:
                                     Internet</a></li>
-                            <li><a onclick="lecturePartieI()" href="#I-croissance">Croissance de l’Internet toujours
+                            <li><a href="#I-croissance">Croissance de l’Internet toujours
                                     très
                                     dirigée</a></li>
-                            <li><a onclick="lecturePartieI()" href="#I-hippies">La culture hippie s’empare des
+                            <li><a href="#I-hippies">La culture hippie s’empare des
                                     ordinateurs et réseaux</a></li>
                         </ul>
                     </details>
 
                     <details>
-                        <summary><a onclick="lecturePartieI()" href="#I-vierge">b. Imaginer cet espace vierge</a>
+                        <summary><a href="#I-vierge">b. Imaginer cet espace vierge</a>
                         </summary>
                         <ul>
-                            <li><a onclick="lecturePartieI()" href="#I-visions">Quels visions pour les réseaux et
+                            <li><a href="#I-visions">Quels visions pour les réseaux et
                                     Internet?</a></li>
-                            <li><a onclick="lecturePartieI()" href="#I-html">Un nouveau langage au sein d’Internet:
+                            <li><a href="#I-html">Un nouveau langage au sein d’Internet:
                                     HTML</a></li>
-                            <li><a onclick="lecturePartieI()" href="#I-ascendante">Innovation ascendante</a></li>
-                            <li><a onclick="lecturePartieI()" href="#I-conception">Conception de la part des
+                            <li><a href="#I-ascendante">Innovation ascendante</a></li>
+                            <li><a href="#I-conception">Conception de la part des
                                     utilisateurs</a></li>
-                            <li><a onclick="lecturePartieI()" href="#I-territoire">Territoire foisonnant: désir de créer
+                            <li><a href="#I-territoire">Territoire foisonnant: désir de créer
                                     et de partager</a></li>
                         </ul>
                     </details>
@@ -134,13 +134,12 @@
             <div class="notesPage">
                 <h2>📝 Prises de notes <span class="numbernotes">(0)</span></h2>
 
-                <p>Séléctionnez du texte et appuyez sur les touches de Alt + N pour prendre des notes!</p>
+                <p>Séléctionnez du texte et appuyez sur les touches de Alt + N pour prendre des notes! Vous pouvez télécharger une copie de ces notes pour les imprimer ou les sauvegarder au format PDF.</p>
 
                 <div class="prisedenotes"></div>
 
                 <div class="footer">
-                    <p>Vous pouvez <a id="downloadTxt">télécharger</a> une copie de ces notes pour les imprimer ou les
-                        sauvegarder au format PDF.</p>
+                    <p><a id="downloadTxt">Télécharger les notes</a></p>
                 </div>
             </div>
 
@@ -199,14 +198,25 @@
 
             <div class="titlesSticky" id="ciblePartieI">
                 <h1>Des nouveaux mondes à bâtir</h1>
-                <h2 id="I-naissance-cible">Première partie: Naissance d’Internet</h2>
-                <h2 id="I-vierge-cible">Deuxième partie: Imaginer cet espace vierge</h2>
+                <h2 id="I-naissance-cible">→ Première partie: Naissance d’Internet</h2>
+                <h2 id="I-vierge-cible">→ Deuxième partie: Imaginer cet espace vierge</h2>
             </div>
 
-            <h1 id="ciblePartieII" class="titlesSticky">Au web de nos jours</h1>
-            <h1 id="ciblePartieIII" class="titlesSticky">Réoccuper ces espaces autrement</h1>
-            <h1 id="ciblePartieFin" class="titlesSticky">Conclusion</h1>
+            <div class="titlesSticky" id="ciblePartieII">
+                <h1>Au web de nos jours</h1>
+                <h2 id="II-adulte-cible">→ Première partie: Le web devient adulte</h2>
+                <h2 id="II-machine-cible">→ Deuxième partie: Un web par et pour la machine</h2>
+            </div>
 
+            <div class="titlesSticky" id="ciblePartieIII">
+                <h1>Réoccuper ces espaces autrement</h1>
+                <h2 id="III-autre-cible">→ Première partie: Imaginer un autre web</h2>
+                <h2 id="III-concevoir-cible">→ Deuxième partie: Concevoir cet autre web</h2>
+            </div>
+
+            <div class="titlesSticky" id="ciblePartieFin">
+                <h1>Conclusion</h1>
+            </div>
 
 
             <div id="notesPartieIntro">

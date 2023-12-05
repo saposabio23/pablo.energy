@@ -622,63 +622,6 @@ addEventListener("keydown", (event) => {
 });
 
 
-
-// DONLWOAD TXT
-
-// when document is ready
-
-function save() {
-    var root = document.createElement('root');
-    var body = document.createElement('body');
-
-
-    root.appendChild(body);
-
-
-    let notesCopy = document.querySelectorAll('.notesCopy');
-    notesCopy.forEach(function (notesCopy) {
-        var contentNoteID = notesCopy.querySelector('span').innerHTML;
-        console.log(contentNoteID)
-
-        var contentNote = notesCopy.querySelector('.notesCopySelection').innerHTML;
-        console.log(contentNote)
-
-        var contentCommentaire = notesCopy.querySelector('textarea').value;
-        console.log(contentCommentaire)
-
-        var quellePartie = document.querySelector('.book').getAttribute('data-reading');
-        console.log(quellePartie)
-
-
-        var textNoteID = document.createElement("h4");
-        textNoteID.innerText = contentNoteID;
-
-        body.appendChild(textNoteID);
-
-
-    });
-
-    console.log(root)
-
-
-    // for (let note of notesCopy) {
-
-    // }
-
-
-    var c = document.createElement("a");
-    c.download = "PMORENO-MEMOIRE-NOTES.html";
-
-    var t = new Blob([root], {
-        type: "text/plain"
-    });
-    c.href = window.URL.createObjectURL(t);
-    c.click();
-}
-
-downloadTxt.addEventListener('click', save);
-
-
 // Titles OBSERVER
 
 let fromTop = 300;
@@ -741,88 +684,52 @@ var observerIb = new IntersectionObserver(function (entries) {
 });
 observerIb.observe(document.getElementById("I-vierge"))
 
-
-// var observerI = new IntersectionObserver(function (entries) {
-//     if (!entries[0].isIntersecting && book.getAttribute("data-reading") === "partieI") {
-//         document.getElementById("ciblePartieIntro").style.display = ('none')
-//         document.getElementById("ciblePartieI").style.display = ('block')
-//         document.getElementById("ciblePartieII").style.display = ('none')
-//         document.getElementById("ciblePartieIII").style.display = ('none')
-//         document.getElementById("ciblePartieFin").style.display = ('none')
-//     }
-//     else {
-//         document.getElementById("ciblePartieIntro").style.display = ('none')
-//         document.getElementById("ciblePartieI").style.display = ('none')
-//         document.getElementById("ciblePartieII").style.display = ('none')
-//         document.getElementById("ciblePartieIII").style.display = ('none')
-//         document.getElementById("ciblePartieFin").style.display = ('none')
-//     }
-// });
-
-// observerI.observe(document.getElementById("partie-I"))
+var observerIIa = new IntersectionObserver(function (entries) {
+    if (!entries[0].isIntersecting && book.getAttribute("data-reading") === "partieII") {
+        document.getElementById("II-adulte-cible").style.display = ('block')
+        document.getElementById("II-machine-cible").style.display = ('none')
+    }
+    else {
+        document.getElementById("II-adulte-cible").style.display = ('none')
+    }
+});
+observerIIa.observe(document.getElementById("II-adulte"))
 
 
-// var observerII = new IntersectionObserver(function (entries) {
-//     if (!entries[0].isIntersecting && book.getAttribute("data-reading") === "partieII") {
-//         document.getElementById("ciblePartieIntro").style.display = ('none')
-//         document.getElementById("ciblePartieI").style.display = ('none')
-//         document.getElementById("ciblePartieII").style.display = ('block')
-//         document.getElementById("ciblePartieIII").style.display = ('none')
-//         document.getElementById("ciblePartieFin").style.display = ('none')
-//     }
-//     else {
-//         document.getElementById("ciblePartieIntro").style.display = ('none')
-//         document.getElementById("ciblePartieI").style.display = ('none')
-//         document.getElementById("ciblePartieII").style.display = ('none')
-//         document.getElementById("ciblePartieIII").style.display = ('none')
-//         document.getElementById("ciblePartieFin").style.display = ('none')
-//     }
-// });
-
-// observerII.observe(document.getElementById("partie-II"))
+var observerIIb = new IntersectionObserver(function (entries) {
+    if (!entries[0].isIntersecting && book.getAttribute("data-reading") === "partieII") {
+        document.getElementById("II-machine-cible").style.display = ('block')
+        document.getElementById("II-adulte-cible").style.display = ('none')
+    }
+    else {
+        document.getElementById("II-machine-cible").style.display = ('none')
+    }
+});
+observerIIb.observe(document.getElementById("II-machine"))
 
 
-// var observerIII = new IntersectionObserver(function (entries) {
-//     if (!entries[0].isIntersecting && book.getAttribute("data-reading") === "partieIII") {
-//         document.getElementById("ciblePartieIntro").style.display = ('none')
-//         document.getElementById("ciblePartieI").style.display = ('none')
-//         document.getElementById("ciblePartieII").style.display = ('none')
-//         document.getElementById("ciblePartieIII").style.display = ('block')
-//         document.getElementById("ciblePartieFin").style.display = ('none')
-//     }
-//     else {
-//         document.getElementById("ciblePartieIntro").style.display = ('none')
-//         document.getElementById("ciblePartieI").style.display = ('none')
-//         document.getElementById("ciblePartieII").style.display = ('none')
-//         document.getElementById("ciblePartieIII").style.display = ('none')
-//         document.getElementById("ciblePartieFin").style.display = ('none')
-//     }
-// });
-
-// observerIII.observe(document.getElementById("partie-III"))
-
-// var observerFin = new IntersectionObserver(function (entries) {
-//     if (!entries[0].isIntersecting && book.getAttribute("data-reading") === "partieFin") {
-//         document.getElementById("ciblePartieIntro").style.display = ('none')
-//         document.getElementById("ciblePartieI").style.display = ('none')
-//         document.getElementById("ciblePartieII").style.display = ('none')
-//         document.getElementById("ciblePartieIII").style.display = ('none')
-//         document.getElementById("ciblePartieFin").style.display = ('block')
-//     }
-//     else {
-//         document.getElementById("ciblePartieIntro").style.display = ('none')
-//         document.getElementById("ciblePartieI").style.display = ('none')
-//         document.getElementById("ciblePartieII").style.display = ('none')
-//         document.getElementById("ciblePartieIII").style.display = ('none')
-//         document.getElementById("ciblePartieFin").style.display = ('none')
-//     }
-// });
-
-// observerFin.observe(document.getElementById("partie-Fin"))
+var observerIIIa = new IntersectionObserver(function (entries) {
+    if (!entries[0].isIntersecting && book.getAttribute("data-reading") === "partieIII") {
+        document.getElementById("III-autre-cible").style.display = ('block')
+        document.getElementById("III-concevoir-cible").style.display = ('none')
+    }
+    else {
+        document.getElementById("III-autre-cible").style.display = ('none')
+    }
+});
+observerIIIa.observe(document.getElementById("III-autre"))
 
 
-
-
+var observerIIIb = new IntersectionObserver(function (entries) {
+    if (!entries[0].isIntersecting && book.getAttribute("data-reading") === "partieIII") {
+        document.getElementById("III-concevoir-cible").style.display = ('block')
+        document.getElementById("III-autre-cible").style.display = ('none')
+    }
+    else {
+        document.getElementById("III-concevoir-cible").style.display = ('none')
+    }
+});
+observerIIIb.observe(document.getElementById("III-concevoir"))
 
 
 // TOOLTIP
@@ -858,3 +765,65 @@ window.addEventListener('mousedown', function () {
 //     window.getSelection().removeAllRanges()
 //     notesPanel.scrollTop = notesPanel.scrollHeight;
 // });
+
+
+// DONLWOAD TXT
+
+// when document is ready
+
+function save() {
+    var body = document.createElement('body');
+
+    let notesCopy = document.querySelectorAll('.notesCopy');
+    notesCopy.forEach(function (notesCopy) {
+        var contentNoteID = notesCopy.querySelector('span').innerHTML;
+        console.log(contentNoteID)
+
+        var contentNote = notesCopy.querySelector('.notesCopySelection').innerHTML;
+        console.log(contentNote)
+
+        var contentCommentaire = notesCopy.querySelector('textarea').value;
+        console.log(contentCommentaire)
+
+        var quellePartie = document.querySelector('.book').getAttribute('data-reading');
+        console.log(quellePartie)
+
+
+        var textBlock = document.createElement('div');
+        textBlock.className = ('block');
+        var textHeader = document.createElement("div");
+
+        var textNoteID = document.createElement("h4");
+        textNoteID.innerText = contentNoteID;
+        var textPartie = document.createElement("span");
+        textPartie.innerText = quellePartie;
+        var textNote = document.createElement("p");
+        textNote.innerText = contentNote;
+        var textCommentaire = document.createElement("p");
+        textCommentaire.innerText = contentCommentaire;
+
+        textHeader.appendChild(textNoteID);
+        textHeader.appendChild(textPartie);
+        textBlock.appendChild(textHeader);
+        textBlock.appendChild(textNote);
+        textBlock.appendChild(textCommentaire);
+
+
+        body.appendChild(textBlock);
+    });
+        
+    data = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>LeWebQueLonFait - NOTES</title><style>body{font-family: sans-serif;}h4{color: darkorchid;margin: 0;}.block{border-radius: 10px;margin: 10px 0;background-color: rgba(210, 210, 210, 0.44);padding: 15px;font-size: 16px;line-height: 24px;max-width: 450px;margin: 20px auto;}.block div {display: flex;justify-content: space-between;padding: 0 5px;}.block span {opacity: 0.4;}.block p:nth-child(2) {color: gray;background-color: aliceblue;padding: 10px;border-radius: 10px;margin: 10px 0;}</style></head>' + 'HEADER et BOUTON X PRINT' + body.innerHTML + '</html>';
+    
+    console.log(data)
+
+    var c = document.createElement("a");
+    c.download = "PMORENO-MEMOIRE-NOTES.html";
+
+    var t = new Blob([data], {
+        type: "text/plain"
+    });
+    c.href = window.URL.createObjectURL(t);
+    c.click();
+}
+
+downloadTxt.addEventListener('click', save);
