@@ -1,21 +1,24 @@
-### TEXTE:
-- changer Figures
-- images en fullscrenn
-- little chapters icons on the sticky h1
 
-### PAGES:
+TEXTE:
+- check anglicismes si en italique ou pas
+- guillemets françaises
+- inclusif, mais quand?	º
+- corriger scribens
+- ajout d'un icone à gauche de consultable
+
+https://developer.mozilla.org/fr/docs/Web/HTML/Element/cite
+
+
+IMAGES:
+- changer Figures
+
+
+## NOT IMPORTANT:
 - sticky h3 not working
 
 
-### SOMMAIRE:
--
-
-### NOTES:
+##ADDONS:
 - jump ton note when click on note prises panel
 
--INCLURE PARTIE où à été prise la note
 
 
-### BOOK:
-- folded effet independent on the middle
--

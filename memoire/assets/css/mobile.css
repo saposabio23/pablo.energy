@@ -1,0 +1,47 @@
+@media screen and (max-width : 800px) {
+
+    .bookRight {
+        width: 100%;
+    }
+
+    .foldleft,
+    .bookLeft {
+        display: none !important;
+    }
+
+    .foldright {
+        width: 100%;
+    }
+
+    h1{
+        word-break: break-all;
+    }
+    .header {
+
+        display: none;
+        flex-direction: row;
+        z-index: 1000;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    .header div {
+        height: 30px;
+        width: calc(100% / 3);
+        writing-mode: horizontal-tb;
+        border-radius: 10px 10px 0 0;
+        padding: 0 var(--space-s);
+        justify-content: center;
+
+    }
+
+
+    .book {
+        display: flex;
+        margin-left: 00px;
+        width: calc(100vw - 0px - 20px * 4);
+
+    }
+
+}

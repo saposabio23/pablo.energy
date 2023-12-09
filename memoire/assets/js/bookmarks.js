@@ -60,6 +60,7 @@ function lecturePartieIntro() {
     book.setAttribute('data-reading', 'partieIntro')
 
 
+    document.querySelector('.start').style.display = ('none')
     document.querySelector('.sommairePartieIntro').classList.add('indexSelected')
     document.querySelector('.sommairePartieI').classList.remove('indexSelected')
     document.querySelector('.sommairePartieII').classList.remove('indexSelected')
@@ -272,12 +273,6 @@ function lecturePartieFin() {
     hideCibles()
 
 }
-
-
-commencerLaLecture.addEventListener('click', function () {
-    lecturePartieIntro()
-});
-
 
 bookmarkPartieI.addEventListener('click', lecturePartieI);
 bookmarkPartieII.addEventListener('click', lecturePartieII);
