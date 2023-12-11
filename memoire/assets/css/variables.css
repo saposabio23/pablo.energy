@@ -32,6 +32,7 @@
 
     --border-s: 4px;
     --border-m: 12px;
+    --border-l: 20px;
 
     --trans-quick: all linear 0.2s;
     --trans-normal: all linear 0.4s;
@@ -43,8 +44,11 @@
     --color-secondary: #c4c2bc;
     --color-secondary-light: #e8e6e2;
 
-    --color-notes: #22e32e;
     --color-highlight: yellow;
+
+    --color-special-1: lightsteelblue;
+    --color-special-2: yellowgreen;
+    --color-special-3: violet;
 
 
     --color-shadow: black;

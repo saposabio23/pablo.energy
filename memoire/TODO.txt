@@ -1,23 +1,24 @@
-
 TEXTE:
 - check anglicismes si en italique ou pas
 - guillemets françaises
-- inclusif, mais quand?	º
+- inclusif, mais quand?
 - corriger scribens
-- ajout d'un icone à gauche de consultable
+- changer nom Figures et numero bas de page
 
 https://developer.mozilla.org/fr/docs/Web/HTML/Element/cite
 
+-paragraphe femmes et ordinateurs
 
-IMAGES:
-- changer Figures
+
+- vertical text
+-style notes donwload HTML same
+-icones options
+-pdf donwload
 
 
 ## NOT IMPORTANT:
+- arreglar remove tooltip
 - sticky h3 not working
-
-
-##ADDONS:
 - jump ton note when click on note prises panel
 
 

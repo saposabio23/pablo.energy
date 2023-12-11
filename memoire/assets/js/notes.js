@@ -153,7 +153,7 @@ function getSelectedText() {
 
     // CREATE INDICATION NEAR TEXT
     let notesNumber = document.createElement("span");
-    notesNumber.innerHTML = '← Note nº' + noteNumber;
+    notesNumber.innerHTML = '← Nº' + noteNumber;
     notesNumber.className = ('littleNote');
 
 
@@ -206,17 +206,17 @@ function getSelectedText() {
 
     }
     else if (book.getAttribute("data-reading") === "partieFin") {
-        quellePartie = 'Partie Fin';
+        quellePartie = 'Conclusion';
     }
     else if (book.getAttribute("data-reading") === "partieIntro") {
-        quellePartie = 'Partie Intro';
+        quellePartie = 'Avant-propos';
     }
 
     let notesPartie = document.createElement("span");
     notesPartie.innerHTML = quellePartie;
 
     notesCopyHeader.appendChild(notesPartie);
-    
+
     notesCopy.appendChild(notesCopyHeader);
 
     let notesRemarqueeSaved = document.createElement("p");
@@ -257,7 +257,7 @@ function highlightRange(range) {
     var newNode = document.createElement("div");
     newNode.setAttribute(
         "style",
-        "background-color:  var(--color-notes); display: inline; color: var(--color-black);"
+        "background-color:  var(--color-special-2); display: inline; color: var(--color-black);"
     );
     range.surroundContents(newNode);
 }
@@ -357,17 +357,23 @@ window.addEventListener('mouseup', function () {
         tooltip.style.display = 'block';
     }
 });
-window.addEventListener('mousedown', function () {
-    tooltip.style.display = 'none';
+window.addEventListener('mousedown', function (e) {
+    // if (!e.currentTarget.id == 'tooltip') {
+    //     console.log(e.currentTarget.id)
+    // }
+    // else {
+        
+        tooltip.style.display = 'none';
+        setTimeout(function () {
+        }, 100)
+
 });
 
 
-// tooltip.addEventListener("click", () => {
-//     highlightSelection()
-//     getSelectedText()
-//     window.getSelection().removeAllRanges()
-//     notesPanel.scrollTop = notesPanel.scrollHeight;
-// });
+document.getElementById('closetooltip').addEventListener("click", (e) => {
+    // console.log(e.currentTarget.id)
+    tooltip.classList.add('hiddenHard')
+});
 
 
 
@@ -399,15 +405,35 @@ function save() {
 
         var textNoteID = document.createElement("h4");
         textNoteID.innerText = contentNoteID;
-        var textPartie = document.createElement("span");
-        textPartie.innerText = quellePartie;
+
+
+        if (book.getAttribute("data-reading") === "partieI") {
+            quellePartie = 'Partie I'
+        }
+        else if (book.getAttribute("data-reading") === "partieII") {
+            quellePartie = 'Partie II'
+        }
+        else if (book.getAttribute("data-reading") === "partieIII") {
+            quellePartie = 'Partie III'
+
+        }
+        else if (book.getAttribute("data-reading") === "partieFin") {
+            quellePartie = 'Conclusion';
+        }
+        else if (book.getAttribute("data-reading") === "partieIntro") {
+            quellePartie = 'Avant-propos';
+        }
+
+        let notesPartie = document.createElement("span");
+        notesPartie.innerHTML = quellePartie;
+
         var textNote = document.createElement("p");
         textNote.innerText = contentNote;
         var textCommentaire = document.createElement("p");
         textCommentaire.innerText = contentCommentaire;
 
         textHeader.appendChild(textNoteID);
-        textHeader.appendChild(textPartie);
+        textHeader.appendChild(notesPartie);
         textBlock.appendChild(textHeader);
         textBlock.appendChild(textNote);
         textBlock.appendChild(textCommentaire);
@@ -418,8 +444,6 @@ function save() {
 
     data = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Le Web que l’on fait ✍︎ - NOTES</title><style>body{font-family: sans-serif; margin: 30px 50px;}header {max-width: 450px;background-color: white;}header p {margin: 10px auto;max-width: 450px;line-height: 24px;}header h1 {margin: 10px 0;}h4{color: darkorchid;margin: 0;}.block{border-radius: 10px;max-width: 450px;margin: 10px 0;background-color: rgba(210, 210, 210, 0.44);padding: 15px;font-size: 16px;line-height: 24px; border: 1px solid gray;}.block div {display: flex;justify-content: space-between;padding: 0 5px;}.block span {opacity: 0.4;}.block p:nth-child(2) {background-color: white;padding: 10px;border-radius: 10px;margin: 10px 0;}</style></head>' + '<header><p>Titre:Le Web que l’on fait ✍︎<br>L’importance d’imaginer et concevoir des espaces web faits-mains pour re-exploiter les mondes digitales</p><p>Auteur: Pablo Moreno (pablomoreno@proton.me)</p></header>' + body.innerHTML + '</html>';
 
-    console.log(data)
-
     var c = document.createElement("a");
     c.download = "Le Web que l’on fait ✍︎ - NOTES.html";
 
@@ -428,6 +452,8 @@ function save() {
     });
     c.href = window.URL.createObjectURL(t);
     c.click();
+
+    alert("Notes téléchargées.")
 }
 
 downloadTxt.addEventListener('click', save);

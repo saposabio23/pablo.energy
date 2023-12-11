@@ -7,24 +7,32 @@ START PAGE
 
 var supertitlefront = document.querySelector('.supertitlefront')
 
-document.addEventListener("DOMContentLoaded", function() {
-    setTimeout(function(){
-        document.querySelector('#infoStart').classList.add('display-infoStart'); 
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function () {
+        document.querySelector('#infoStart').classList.add('display-infoStart');
     }, 10000)
-  });
+});
 
 supertitlefront.addEventListener('click', function () {
     document.querySelector('.blinking-cursor').style.display = ('none');
+    document.querySelector('#infoStart').style.visibility = ('hidden');
+
 })
 
 supertitlefront.addEventListener('input', function () {
-    const passw = "<h1>le web que l'on fait</h1>";
-    
-    var value = supertitlefront.value.toLowerCase() 
+    const passw = "<h1>le web qu'on fait</h1>";
+
+    var value = supertitlefront.value.toLowerCase()
 
     if (value.match(passw)) {
-        document.querySelector('.avant-propos').style.display = 'flex';
-        document.querySelector('.buttonsStart').style.visibility = 'visible';
+        positionFootnote()
+        document.querySelector('.tout').classList.add('appear')
+
+
+        setTimeout(function () {
+            document.querySelector('.start').style.display = ('none');
+        }, 5000)
+
     }
     else {
         // document.querySelector('#infoStart').style.display = ('none') 
@@ -61,6 +69,11 @@ function hideAllSide() {
     optionsPanel.classList.remove('showed');
     hideButtonsSide()
 
+    document.getElementById('bookmarkPartieIOff').style.backgroundColor = ('inherit');
+    document.getElementById('bookmarkPartieIIOff').style.backgroundColor = ('inherit');
+    document.getElementById('bookmarkPartieIIIOff').style.backgroundColor = ('inherit');
+    document.getElementById('bookmarkPartieFinOff').style.backgroundColor = ('inherit');
+
     sommaireButton.innerHTML = ('<span>🗂 Index</span>');
     notesButton.innerHTML = ('<span>📝 Prises de notes</span>&nbsp;<span class="numbernotes">(0)</span></span>');
     optionsButton.innerHTML = ('<span>⚙️ Options</span>');
@@ -84,6 +97,10 @@ function displaySommaire() {
         hideButtonsSide()
         hidePanel()
         sommaireButton.innerHTML = ('<span>🗂 Index</span>');
+        document.getElementById('bookmarkPartieIOff').style.backgroundColor = ('inherit');
+        document.getElementById('bookmarkPartieIIOff').style.backgroundColor = ('inherit');
+        document.getElementById('bookmarkPartieIIIOff').style.backgroundColor = ('inherit');
+        document.getElementById('bookmarkPartieFinOff').style.backgroundColor = ('inherit');
     }
 
     else {
@@ -92,7 +109,11 @@ function displaySommaire() {
         sommaireButton.classList.add('sommaireButtonOn')
         sommairePanel.style.display = ('block');
         sommairePanel.classList.add('showed')
-        sommaireButton.innerHTML = ('<span>Fermer <small>[ESC]</small></span>');
+        sommaireButton.innerHTML = ('<span>✕ <small>[ESC]</small></span>');
+        document.getElementById('bookmarkPartieIOff').style.backgroundColor = ('var(--color-special-1)');
+        document.getElementById('bookmarkPartieIIOff').style.backgroundColor = ('var(--color-special-1)');
+        document.getElementById('bookmarkPartieIIIOff').style.backgroundColor = ('var(--color-special-1)');
+        document.getElementById('bookmarkPartieFinOff').style.backgroundColor = ('var(--color-special-1)');
     }
 }
 
@@ -112,7 +133,11 @@ function forceDisplayNotes() {
     notesButton.classList.add('sommaireButtonOn')
     notesPanel.style.display = ('block');
     notesPanel.classList.add('showed')
-    notesButton.innerHTML = ('<span>Fermer <small>[ESC]</small></span>');
+    notesButton.innerHTML = ('<span>✕ <small>[ESC]</small></span>');
+    document.getElementById('bookmarkPartieIOff').style.backgroundColor = ('var(--color-special-2)');
+    document.getElementById('bookmarkPartieIIOff').style.backgroundColor = ('var(--color-special-2)');
+    document.getElementById('bookmarkPartieIIIOff').style.backgroundColor = ('var(--color-special-2)');
+    document.getElementById('bookmarkPartieFinOff').style.backgroundColor = ('var(--color-special-2)');
 }
 
 
@@ -124,7 +149,10 @@ function displaynotes() {
         hidePanel()
         notesButton.innerHTML = ('<span>📝 Prises de notes</span>&nbsp;<span class="numbernotes">(0)</span></span>');
         updateNotes()
-
+        document.getElementById('bookmarkPartieIOff').style.backgroundColor = ('inherit');
+        document.getElementById('bookmarkPartieIIOff').style.backgroundColor = ('inherit');
+        document.getElementById('bookmarkPartieIIIOff').style.backgroundColor = ('inherit');
+        document.getElementById('bookmarkPartieFinOff').style.backgroundColor = ('inherit');
     }
 
     else {
@@ -133,7 +161,11 @@ function displaynotes() {
         notesButton.classList.add('sommaireButtonOn')
         notesPanel.style.display = ('block');
         notesPanel.classList.add('showed')
-        notesButton.innerHTML = ('<span>Fermer <small>[ESC]</small></span>');
+        notesButton.innerHTML = ('<span>✕ <small>[ESC]</small></span>');
+        document.getElementById('bookmarkPartieIOff').style.backgroundColor = ('var(--color-special-2)');
+        document.getElementById('bookmarkPartieIIOff').style.backgroundColor = ('var(--color-special-2)');
+        document.getElementById('bookmarkPartieIIIOff').style.backgroundColor = ('var(--color-special-2)');
+        document.getElementById('bookmarkPartieFinOff').style.backgroundColor = ('var(--color-special-2)');
     }
 }
 
@@ -152,6 +184,10 @@ function displayoptions() {
         hideButtonsSide()
         hidePanel()
         optionsButton.innerHTML = ('<span>⚙️ Options</span>');
+        document.getElementById('bookmarkPartieIOff').style.backgroundColor = ('inherit');
+        document.getElementById('bookmarkPartieIIOff').style.backgroundColor = ('inherit');
+        document.getElementById('bookmarkPartieIIIOff').style.backgroundColor = ('inherit');
+        document.getElementById('bookmarkPartieFinOff').style.backgroundColor = ('inherit');
     }
 
     else {
@@ -160,7 +196,11 @@ function displayoptions() {
         optionsButton.classList.add('sommaireButtonOn')
         optionsPanel.style.display = ('block');
         optionsPanel.classList.add('showed')
-        optionsButton.innerHTML = ('<span>Fermer <small>[ESC]</small></span>');
+        optionsButton.innerHTML = ('<span>✕ <small>[ESC]</small></span>');
+        document.getElementById('bookmarkPartieIOff').style.backgroundColor = ('var(--color-special-3)');
+        document.getElementById('bookmarkPartieIIOff').style.backgroundColor = ('var(--color-special-3)');
+        document.getElementById('bookmarkPartieIIIOff').style.backgroundColor = ('var(--color-special-3)');
+        document.getElementById('bookmarkPartieFinOff').style.backgroundColor = ('var(--color-special-3)');
     }
 }
 
@@ -168,7 +208,7 @@ optionsButton.addEventListener('click', displayoptions)
 
 
 addEventListener("keydown", (event) => {
-    if (event.code == 'KeyESC') {
+    if (event.code == 'Escape') {
         hideAllSide()
     }
 });

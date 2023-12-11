@@ -60,7 +60,7 @@ function switchTheme() {
 
     if (isDarkMode == false) {
         var styleSheet = document.createElement("style")
-        styleSheet.innerText = ":root{ --color-white: #313131;  --color-black: white; --color-secondary: #646464; --color-shadow: red;"
+        styleSheet.innerText = ":root{ --color-white: #313131;  --color-black: white; --color-secondary: #646464;--color-special-1: #59697d;--color-special-2: #59771b;--color-special-3: #572557;"
         document.head.appendChild(styleSheet)
 
         isDarkMode = true;
@@ -71,7 +71,7 @@ function switchTheme() {
 
     else if (isDarkMode == true) {
         var styleSheet = document.createElement("style")
-        styleSheet.innerText = ":root{ --color-white: white;  --color-black: black; --color-secondary: #c4c2bc; --color-highlight: darkorchid;"
+        styleSheet.innerText = ":root{ --color-white: white;  --color-black: black; --color-secondary: #c4c2bc; --color-highlight: darkorchid;--color-special-1: lightsteelblue;--color-special-2: yellowgreen;--color-special-3: violet;"
         document.head.appendChild(styleSheet)
 
         isDarkMode = false;

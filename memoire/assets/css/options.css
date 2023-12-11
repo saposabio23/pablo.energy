@@ -61,7 +61,7 @@
 
 .bookmarks div {
   font-weight: 400;
-  width: 50px;
+  width: 100px;
   writing-mode: sideways-rl;
   font-size: var(--fs-middle);
   height: 100vh;
@@ -75,10 +75,11 @@
   position: absolute;
   background-color: var(--color-white);
   height: 100%;
+  display: flex;
 }
 
-.bookmarks div:nth-last-child(1){
-  border-radius: 0 15px 15px 0;
+.bookmarks div:nth-last-child(1) {
+  border-radius: 0 var(--border-m) var(--border-m) 0;
 }
 
 .bookmarks div:hover {
@@ -98,7 +99,7 @@
 .bookmarksOff div {
   position: absolute;
   height: 100%;
-  width: 30px;
+  width: 100px;
   background-color: var(--color-white);
   box-shadow: 0 0 10px 0 var(--color-shadow);
 }
@@ -118,7 +119,7 @@
   height: var(--fs-big) !important;
   display: flex;
   justify-content: center;
-  font-family: var(--ff-text);
+  font-family: var(--ff-text) !important;
 }
 
 /******************* LEFT SIDE *******************/
@@ -130,20 +131,25 @@
   font-weight: 400;
   padding-top: var(--space-l);
   text-transform: uppercase;
-  font-family: var(--ff-text);
+  font-family: var(--ff-titles);
+}
+
+.panel h4 {
+  margin: var(--space-m) 0 var(--space-s) 0;
 }
 
 .panel {
   position: sticky;
   top: var(--space-xl);
   left: 0;
+  top: 0;
+  margin: calc(var(--space-xl) * -1);
   z-index: 0;
   height: 100vh;
   width: calc(100% + var(--space-xl) * 2);
   display: none;
   transition: var(--trans-quick);
   z-index: 990;
-  transform: translate(calc(var(--space-xl) * -1), calc(var(--space-xl) * -1));
 }
 
 .displayed {
@@ -159,8 +165,8 @@
   height: 100%;
   flex-direction: column;
   position: fixed;
-  border-radius: 15px 0 0 15px;
-  
+  border-radius: var(--border-m) 0 0 var(--border-m);
+
 }
 
 .header div {
@@ -172,24 +178,21 @@
   align-items: center;
   box-sizing: border-box;
   padding: var(--space-s) 0;
-  background-color: var(--color-white);
   writing-mode: sideways-lr;
   box-shadow: -5px 0 20px 0 var(--color-shadow);
   font-family: var(--ff-text);
 }
 
-.header div:nth-child(1){
-  border-radius: 15px 0 0 0px;
+.header div:nth-child(1) {
+  border-radius: var(--border-m) 0 0 0px;
 }
 
 
-.header div:nth-child(3){
-  border-radius: 0px 0 0 15px;
+.header div:nth-child(3) {
+  border-radius: 0px 0 0 var(--border-m);
 }
 
-.header div:hover {
-  background-color: var(--color-highlight);
-}
+.header div:hover {}
 
 .panel>div {
   -ms-overflow-style: none;
@@ -200,7 +203,6 @@
   padding: var(--space-m);
   box-sizing: border-box;
   z-index: 5;
-  background-color: var(--color-secondary);
   display: none;
 }
 
@@ -208,26 +210,35 @@
   display: none;
 }
 
-.sommaireButtonOn {
-  z-index: 999 !important;
-  box-shadow: none !important;
-  background-color: var(--color-secondary-light) !important;
-  color: var(--color-white) !important;
-  justify-content: center !important;
-  /* writing-mode: inherit !important; */
-  padding: 0 !important;
+.sommaireButtonOn {}
+
+.sommaireButtonOn:hover span {}
+
+#sommaireButton {
+  background-color: var(--color-special-1);
 }
 
-.sommaireButtonOn:hover span {
-  width: 100% !important;
-  height: calc(100%) !important;
-  display: flex !important;
-  align-items: center !important;
-  box-sizing: border-box !important;
-  background-color: var(--color-secondary) !important;
-  color: var(--color-black) !important;
-  justify-content: center !important;
+#notesButton {
+  background-color: var(--color-special-2);
 }
+
+#optionsButton {
+  background-color: var(--color-special-3);
+}
+
+.sommairePage {
+  background-color: var(--color-special-1);
+}
+
+.notesPage {
+  background-color: var(--color-special-2);
+}
+
+.optionsPage {
+  background-color: var(--color-special-3);
+}
+
+
 
 /******************* SOMMAIRE *******************/
 
@@ -245,19 +256,26 @@
 
 .sommairePage h4 span {
   font-size: var(--fs-normal);
+  font-family: var(--ff-text);
 }
 
+
 .sommairePage div {
-  border-radius: 10px;
-  margin: var(--space-m) 0;
+  border-radius: var(--border-m);
+  border: 1px dashed var(--color-secondary-light);
+  background-color: transparent;
   padding: var(--space-s);
-  border: 1px solid var(--color-secondary-light);
+  margin: var(--space-m) 0;
+  transition: var(--trans-quick);
+  box-shadow: inset 0px 0 20px -10px var(--color-white);
+  color: var(--color-black);
+  text-transform: unset;
 }
 
 .sommairePage div:hover {
   cursor: pointer;
-  background-color: var(--color-white);
-  border: 1px solid var(--color-secondary);
+  background-color: #e8e6e291;
+  transition: var(--trans-quick);
 }
 
 .sommairePage a {
@@ -270,6 +288,7 @@
 
 .indexSelected {
   background-color: var(--color-white) !important;
+  color: var(--color-black) !important;
 }
 
 .sommairePage ul {
@@ -310,20 +329,20 @@
 }
 
 .notesPage::-webkit-scrollbar-track {
-  border-radius: 8px;
+  border-radius: var(--border-s);
   background-color: #e7e7e7;
   border: 1px solid #cacaca;
 }
 
 .notesPage::-webkit-scrollbar-thumb {
-  border-radius: 8px;
+  border-radius: var(--border-s);
   background-color: #d55959;
 }
 
-.notesPage>p {
-  font-size: var(--fs-small);
+.panel>div>p {
+  font-size: var(--fs-middle);
+  line-height: var(--lh-middle);
   margin: var(--space-s) var(--space-s) 0 var(--space-s) !important;
-  line-height: var(--lh-small);
   text-indent: 0;
 
   border-radius: 10px;
@@ -331,37 +350,46 @@
 
 .littleNote {
   position: absolute;
-  width: calc(50% - var(--space-xl) * 1);
   font-size: 12px;
-  color: var(--color-notes);
+  color: var(--color-special-2);
   text-align: right;
-  padding: 0 15px;
+  padding: 0 7px;
   box-sizing: border-box;
   z-index: 999;
+  height: 25px;
+  width: fit-content;
+  border: 1px solid var(--color-special-2);
+  right: var(--space-s);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+
 }
 
 .notesCopy {
   border-radius: 10px;
   margin: var(--space-m) 0;
-  border: 1px solid var(--color-secondary-light);
-  padding: 5px var(--space-s);
   font-size: var(--fs-middle);
   line-height: var(--lh-middle);
+  background-color: var(--color-secondary-light);
 }
 
 .notesCopyHeader {
   font-size: var(--fs-middle);
-  color: var(--color-notes);
+  color: black;
   display: flex;
   justify-content: space-between;
-  padding: var(--space-s);
+  padding: calc(var(--space-s)/2) var(--space-s);
+}
+
+.notesCopyHeader span:nth-child(2) {
+  opacity: .6;
 }
 
 .notesCopy p {
   padding: var(--space-s);
   text-indent: 0 !important;
   margin: 0 !important;
-  border-radius: 10px;
 }
 
 .notesCopy:last-child {
@@ -378,12 +406,14 @@
   min-height: 20px !important;
 
   background-color: transparent;
-  color: var(--color-black);
+  color: black;
+
   padding: var(--space-s) var(--space-s) 0 var(--space-s);
+
 }
 
 .notesCopySelection {
-  background-color: var(--color-white);
+  background-color: var(--color-secondary);
   color: var(--color-black);
 }
 
@@ -442,4 +472,22 @@
 .notesPage>span:nth-child(1) {
   background-color: var(--color-secondary);
   color: var(--color-secondary);
+}
+
+.optionsPage div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-s);
+  margin-top: var(--space-m);
+}
+
+.optionsPage>div>button {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  aspect-ratio: 3/2;
+  color: white;
 }

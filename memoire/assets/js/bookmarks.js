@@ -61,6 +61,9 @@ function lecturePartieIntro() {
 
 
     document.querySelector('.start').style.display = ('none')
+    document.querySelector('.tout').classList.add('appear')
+
+
     document.querySelector('.sommairePartieIntro').classList.add('indexSelected')
     document.querySelector('.sommairePartieI').classList.remove('indexSelected')
     document.querySelector('.sommairePartieII').classList.remove('indexSelected')
@@ -93,7 +96,9 @@ function lecturePartieIntro() {
     book.classList.remove('book-1-4')
     book.classList.remove('book-Full')
 
-    document.querySelector('.avant-propos').style.display = ('none')
+    document.querySelector('.conseils').style.display = ('none')
+
+    positionFootnote()
 
     hideCibles()
 

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le Web que l’on fait ✍︎</title>
+    <title>&lt;h1&gt;LE WEB QU'ON FAIT&lt;/h1&gt;</title>
 
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/mobile.css">
@@ -19,24 +19,22 @@
 
     <div class="start">
         <div class="titleStart">
-            <span id="infoStart">(veuillez écrire le titre pour commencer)</span>
             <div>
                 <span class="blinking-cursor">|</span>
-                <span class="supertitleback">&lt;h1&gt;Le web que l’on fait&lt;/h1&gt;</span>
-                <textarea class="supertitlefront"></textarea>
+                <span class="supertitleback">&lt;h1&gt;Le web qu’on fait&lt;/h1&gt;</span>
+                <textarea class="supertitlefront pointer"></textarea>
             </div>
             <p>L’importance d’imaginer et concevoir des espaces web faits-mains pour re-exploiter les mondes digitales
             </p>
+            <span id="infoStart">(veuillez écrire le titre pour commencer)</span>
 
-            <div class="buttonsStart">
-                <button><a href="#avant-propos">Lire l'avant-propos</a></button>
-                <button><a onclick="lecturePartieIntro()">Commencer la lecture</a></button>
+            <p>Pablo MORENO &nbsp;&nbsp;→&nbsp;&nbsp; Mémoire DNSEP &nbsp;&nbsp;→&nbsp;&nbsp; ESAD Amiens
+                &nbsp;&nbsp;→&nbsp;&nbsp; Décembre 2023</p>
 
-            </div>
 
         </div>
-        <div class="avant-propos" id="avant-propos">
-            <h2>Avant-propos</h2>
+        <!-- <div class="conseils" id="conseils">
+            <h2>Conseils de lecture</h2>
 
             <p>Bienvenue à la lecture de ce mémoire, qui se présente sous forme de site web. J'ai décidé de le publier
                 sous cette forme puisque le thème traîté et le contenu du mémoire sont naturellements liés à la forme
@@ -46,8 +44,8 @@
 
             <img src="assets/img/schema.svg">
 
-            <button><a onclick="lecturePartieIntro()">Commencer la lecture</a></button>
-        </div>
+            <a onclick="lecturePartieIntro()"><button>Commencer la lecture</button></a>
+        </div> -->
     </div>
 
     <div class="tout">
@@ -78,8 +76,11 @@
                     <div class="sommairePage">
                         <h2>🗂 Sommaire</h2>
 
+                        <p>Tout le contenu du mémoire sous forme d'index. Clickez sur "→" pour déployer les
+                            sous-parties.</p>
+
                         <div class="sommairePartieIntro" onclick="lecturePartieIntro()">
-                            <h4><span>◎</span> <a href="#partie-Intro">Introduction</a></h4>
+                            <h4><span>◎</span> <a href="#partie-Intro">Avant-propos</a></h4>
                         </div>
 
                         <div class="sommairePartieI" onclick="lecturePartieI()">
@@ -176,11 +177,13 @@
                     <div class="notesPage">
                         <h2>📝 Prises de notes <span class="numbernotes">(0)</span></h2>
 
-                        <p>Cet outil permet de copier ici du texte pour le commenter. Sélectionnez du texte et appuyez
+                        <p>Sélectionnez du texte et appuyez
                             sur
                             les touches [Alt + N] pour le prendre en note! Vous pouvez
-                            télécharger une copie de ces notes pour les imprimer ou les sauvegarder au format PDF. <a
-                               id="downloadTxt">Télécharger les notes</a></p>
+                            <a
+                               id="downloadTxt">télécharger une copie</a> de ces notes pour les imprimer ou les
+                            sauvegarder au format PDF.
+                        </p>
 
                         <div class="prisedenotes"></div>
 
@@ -188,54 +191,54 @@
 
                     <div class="optionsPage">
                         <h2>⚙️ Options</h2>
-                        <h4>Tipographie</h4>
-                        <button onclick="decreaseFontSize()" class="pointer">Réduire </button>
-                        <button onclick="resetFontSize()" class="pointer">Par défaut</button>
-                        <button onclick="increaseFontSize()" class="pointer">Agrandir</button>
 
-                        <h4>Écran</h4>
-                        <button class="fullscreen pointer">Plein écran</button>
+                        <p>L'interface de ce site peut-être modifié subtilement pour répondre aux besoin des
+                            différent·es lecteu·rices</p>
 
-                        <h4>Thème</h4>
-                        <button class="switcher pointer" onclick="switchTheme()">Changer au thème sombre</button>
-
-                        <h4>Page</h4>
-                        <button id="reload">Recharger la page</button>
+                        <div>
+                            <button onclick="decreaseFontSize()" class="pointer"><span>★</span>Réduire</button>
+                            <button onclick="resetFontSize()" class="pointer"><span>★</span>Par défaut</button>
+                            <button onclick="increaseFontSize()" class="pointer"><span>★</span>Agrandir</button>
+                            <button class="fullscreen pointer"><span>★</span>Plein écran</button>
+                            <button class="switcher pointer" onclick="switchTheme()"><span>★</span>Thème sombre</button>
+                            <button id="reload"><span>★</span>Recharger la page</button>
+                            <button id="down-pdf"><span>★</span>Voir en PDF</button>
+                        </div>
 
                     </div>
                 </div>
 
                 <div class="titlesSticky" id="ciblePartieIntro">
-                    <h1>○ Introduction</h1>
+                    <h1><span>○</span> Avant-propos</h1>
                 </div>
 
                 <div class="titlesSticky" id="ciblePartieI">
-                    <h1>❶ Des nouveaux mondes à bâtir</h1>
+                    <h1><span>❶</span> Des nouveaux mondes à bâtir</h1>
                     <h2 id="I-naissance-cible">→ Première partie: Naissance d’Internet</h2>
                     <h2 id="I-vierge-cible">→ Deuxième partie: Imaginer cet espace vierge</h2>
                 </div>
 
                 <div class="titlesSticky" id="ciblePartieII">
-                    <h1>❷ Au web de nos jours</h1>
+                    <h1><span>❷</span> Au web de nos jours</h1>
                     <h2 id="II-adulte-cible">→ Première partie: Le web devient adulte</h2>
                     <h2 id="II-machine-cible">→ Deuxième partie: Un web dicté par l'outil</h2>
                 </div>
 
                 <div class="titlesSticky" id="ciblePartieIII">
-                    <h1>❸ Réoccuper ces espaces autrement</h1>
+                    <h1><span>❸</span> Réoccuper ces espaces autrement</h1>
                     <h2 id="III-autre-cible">→ Première partie: Imaginer un autre web</h2>
                     <h2 id="III-concevoir-cible">→ Deuxième partie: Concevoir cet autre web</h2>
                 </div>
 
                 <div class="titlesSticky" id="ciblePartieFin">
-                    <h1 id="cibleFinChange">● Conclusion</h1>
+                    <h1 id="cibleFinChange"><span>●</span> Conclusion</h1>
                 </div>
 
                 <div id="notesPartieIntro">
-                        <div class="footnote" data-footnote="0">
-                            <img src="images/server-cern.jpeg">
-                            <span><sup>Fig 1</sup> Photographie prise au CERN, Genève en été 2023.</span>
-                        </div>
+                    <div class="footnote" data-footnote="99">
+                        <img src="images/server-cern.jpeg">
+                        <span><sup>Fig 1</sup> Photographie prise au CERN de Genève, été 2023.</span>
+                    </div>
                 </div>
 
                 <div id="notesPartieI" class="hidden">
@@ -514,16 +517,19 @@
 
                         <div class="numPartie">○</div>
 
-                        <h1>Introduction</h1>
+                        <h1>Avant-propos</h1>
 
                     </div>
 
 
-                    <p>Les sites web ont émergé voilà 30 ans de la main de <span class="footnote-anchor" data-anchor="0">
-                        <span> Tim-Berns Lee, qui cherchait un système pour
-                            organiser, parcourir et enrichir les données numériques de son laboratoire, le Centre Européen de Recherche sur le Nucléaire.</span> <sup>0</sup></span> Une succésion
-                        d’étapes
-                        clés ont àmené ce système naissant à ce qu'est le web de nos jours: un outil global, créatif et diversifié.</p>
+                    <p>Les sites web ont émergé voilà 30 ans de la main de <span> Tim-Berns Lee, qui cherchait un
+                            système pour
+                            organiser, parcourir et enrichir les données numériques de son laboratoire, le Centre
+                            Européen de Recherche sur le Nucléaire. Une succésion
+                            d’étapes
+                            clés ont àmené ce système naissant à ce qu'est le web de nos jours: un outil global, créatif
+                            et
+                            diversifié.</p>
 
                     <p>Ce qui est intéressant avec la naissance des réseaux informatiques, c'est que leur qualité
                         principale
@@ -538,9 +544,10 @@
                         trois décennies, ce « petit outil de partage de résultats de recherche » est devenu "l'objet" du
                         XXIè siècle.</p>
 
-                    <p>Pour étudier le web de nos jours, je me suis donc penché sur les choix pris lors de son
-                        développement
-                        (années 80), choix qui ont permis l'ouverture et la richesse des technologies qui arriveraient
+                    <p>Pour étudier le web de nos jours, je me suis donc <span class="footnote-anchor"
+                              data-anchor="99"><span>penché sur les choix pris lors de son
+                                développement</span><sup>Fig 1</sup></span> (années 80), choix qui ont permis
+                        l'ouverture et la richesse des technologies qui arriveraient
                         par
                         la suite. La plus remarquable de ces technologies est l'hypertexte, qui deviendra un terrain de
                         jeu
@@ -2145,7 +2152,7 @@
 
     <div id="cal1">&nbsp;</div>
     <div id="cal2">&nbsp;</div>
-    <div id="tooltip">📝 → Alt + N</div>
+    <div id="tooltip">📝 [Alt + N] <span id="closetooltip">X</span></div>
 
     <script id="script" src="assets/js/script.js"></script>
     <script id="script" src="assets/js/options.js"></script>
