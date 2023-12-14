@@ -45,6 +45,7 @@ a:hover {
     color: inherit;
     text-decoration: underline;
     text-decoration-style: dotted;
+    word-break: break-all;
 }
 
 a:hover {
@@ -58,12 +59,12 @@ button a {
 
 button {
     border-radius: var(--border-m);
-    border: 1px dashed transparent;
+    border: 1px dashed var(--color-black);
     background-color: transparent;
     padding: var(--space-s);
     transition: var(--trans-quick);
-    box-shadow: inset 0px 0 20px -10px var(--color-white);
-    color: var(--color-white);
+    /* box-shadow: inset 0px 0 20px -10px var(--color-white); */
+    color: var(--color-black);
     text-transform: unset;
     font-weight: 600;
 }
@@ -73,7 +74,7 @@ button:hover {
     background-color: #e8e6e291;
     transition: var(--trans-quick);
     color: var(--color-black);
-    border: 1px dashed var(--color-secondary-light);
+    /* border: 1px dashed var(--color-secondary-light); */
 
 
 }
@@ -87,7 +88,13 @@ button:hover {
     position: relative;
     /* display: none; */
     z-index: 10;
-    visibility: hidden;
+    
+    
+    /* visibility: hidden; */
+
+
+    /* transform: rotateY(90deg) translateZ(100px); */
+
 
 }
 
@@ -169,7 +176,7 @@ h1 {
     padding: var(--space-s);
 
     box-shadow: inset 0px 0 20px -10px black;
-    word-break: normal;
+    /* word-break: normal; */
 }
 
 h2 {
@@ -286,16 +293,42 @@ section {
 .start {
     position: fixed;
     z-index: 5;
-    background-color: dodgerblue;
+    background-color: var(--thisColor);
     box-sizing: border-box;
     padding: 0 var(--space-xxl);
     overflow-y: scroll;
-    box-shadow: inset 0px 0 70px 0px var(--color-white);
-    height: calc(100vh - var(--space-m) * 2);
-    width: calc(100vw - var(--space-m) * 2);
-    border-radius: 50px;
-    margin: var(--space-m);
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    animation: 5s living ease-in-out infinite;
+
+    display: none;
 }
+
+@keyframes living {
+
+    0% {
+        box-shadow: inset 0px 0 0px 0px var(--color-white);
+        border-radius: 0px;
+
+
+    }
+
+    50% {
+        box-shadow: inset 0px 0 80px 0px var(--color-white);
+        border-radius: 280px;
+
+    }
+
+    100% {
+        box-shadow: inset 0px 0 0px 0px var(--color-white);
+        border-radius: 0px;
+
+
+    }
+
+}
+
 
 .conseils {
     display: none;
@@ -333,16 +366,17 @@ section {
     color: white;
 }
 
+
 .titleStart p:nth-last-child(1) {
     position: absolute;
     bottom: var(--space-m);
     font-size: var(--fs-small);
     color: var(--color-white);
     border-radius: var(--border-m);
-    /* border: 1px dashed var(--color-secondary-light); */
+    border: 1px dashed var(--color-white);
     background-color: transparent;
-    padding: calc(var(--space-s)/1.5);
-    box-shadow: inset 0px 0 20px -10px var(--color-white);
+    padding: calc(var(--space-s)/1.5) calc(var(--space-m));
+    /* box-shadow: inset 0px 0 20px -10px var(--color-white); */
 }
 
 .display-infoStart {
@@ -381,6 +415,7 @@ section {
     font-size: var(--fs-titles);
     line-height: var(--lh-titles);
     font-family: monospace;
+    /* word-break: break-all; */
 }
 
 .supertitlefront {
@@ -495,13 +530,10 @@ sup {
 }
 
 .footnote-anchor span {
-    border: 1px solid transparent;
+    border: 1px dashed transparent;
 }
 
-.footnote-anchor {
-    cursor: help;
-    /* box-sizing: border-box; */
-}
+
 
 .footnote {
     width: calc(50% - var(--space-xl)*2);
@@ -509,13 +541,13 @@ sup {
     top: 0;
     background: transparent;
     border-radius: var(--border-s);
-    border: 1px solid transparent;
+    border: 1px dashed transparent;
     padding: var(--space-s);
     box-sizing: border-box;
 }
 
 .footnote:hover {
-    border: 1px solid var(--color-secondary);
+    border: 1px dashed var(--color-secondary);
     cursor: pointer;
 }
 
@@ -557,11 +589,12 @@ sup {
     flex-direction: column;
     justify-content: space-around;
     padding: var(--space-xxl);
-    box-shadow: inset 0 0 30px var(--color-black);
+    box-shadow: inset 0 0 30px white;
     text-align: center;
     backdrop-filter: blur(10px);
     box-sizing: border-box;
     border: none;
+    border-radius: 10px;
 }
 
 .footnote.fullFigure img {
@@ -584,7 +617,7 @@ sup {
 /******************* HIGHLIGHT *******************/
 
 .highlight {
-    border: 1px solid var(--color-secondary);
+    border: 1px dashed var(--color-secondary);
 }
 
 .highlight img {
@@ -594,8 +627,6 @@ sup {
 .highlight-text span {
     background-color: var(--color-highlight);
     border-radius: 5px;
-    /* color: var(--color-secondary); */
-    /* border: 1px solid var(--color-secondary); */
 }
 
 /******************* PAGE SCROLLBAR *******************/

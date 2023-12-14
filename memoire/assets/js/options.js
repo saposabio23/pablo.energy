@@ -56,6 +56,8 @@ function isItNight() {
 
 // isItNight()
 
+
+
 function switchTheme() {
 
     if (isDarkMode == false) {
@@ -85,8 +87,8 @@ function switchTheme() {
 // /* -----------------------------------
 // FONT SIZE ADJSUT
 // -------------------------------------- */
-var actualSize = 18;
-var actualLineHeight = 24;
+var actualSize = 20;
+var actualLineHeight = 26;
 
 function changeFontSize(delta) {
     actualSize += delta
@@ -104,8 +106,8 @@ function decreaseFontSize() {
 }
 
 function resetFontSize() {
-    actualSize = 18;
-    actualLineHeight = 24;
+    actualSize = 20;
+    actualLineHeight = 26;
     changeFontSize(0)
 }
 

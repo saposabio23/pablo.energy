@@ -37,6 +37,10 @@ small {
     opacity: 0.5 !important;
 }
 
+.space-top{
+    margin-top: var(--space-xl);
+}
+
 textarea {
     border: none;
     overflow: auto;

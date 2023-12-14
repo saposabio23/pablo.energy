@@ -358,22 +358,14 @@ window.addEventListener('mouseup', function () {
     }
 });
 window.addEventListener('mousedown', function (e) {
-    // if (!e.currentTarget.id == 'tooltip') {
-    //     console.log(e.currentTarget.id)
-    // }
-    // else {
-        
-        tooltip.style.display = 'none';
-        setTimeout(function () {
-        }, 100)
 
+    tooltip.style.display = 'none';
 });
 
 
-document.getElementById('closetooltip').addEventListener("click", (e) => {
-    // console.log(e.currentTarget.id)
+function hideTooltip() {
     tooltip.classList.add('hiddenHard')
-});
+}
 
 
 

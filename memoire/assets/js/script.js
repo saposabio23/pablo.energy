@@ -13,21 +13,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 10000)
 });
 
-supertitlefront.addEventListener('click', function () {
-    document.querySelector('.blinking-cursor').style.display = ('none');
-    document.querySelector('#infoStart').style.visibility = ('hidden');
-
-})
+supertitlefront.focus()
 
 supertitlefront.addEventListener('input', function () {
-    const passw = "<h1>le web qu'on fait</h1>";
+    const passw = "<h1>the web we want</h1>";
 
     var value = supertitlefront.value.toLowerCase()
 
     if (value.match(passw)) {
         positionFootnote()
         document.querySelector('.tout').classList.add('appear')
-
 
         setTimeout(function () {
             document.querySelector('.start').style.display = ('none');
@@ -209,7 +204,9 @@ optionsButton.addEventListener('click', displayoptions)
 
 addEventListener("keydown", (event) => {
     if (event.code == 'Escape') {
+        event.preventDefault(); // Prevent the default action
         hideAllSide()
+        hidePanel()
     }
 });
 
@@ -305,25 +302,12 @@ observerIIb.observe(document.getElementById("II-machine"))
 var observerIIIa = new IntersectionObserver(function (entries) {
     if (!entries[0].isIntersecting && book.getAttribute("data-reading") === "partieIII") {
         document.getElementById("III-autre-cible").style.display = ('block')
-        document.getElementById("III-concevoir-cible").style.display = ('none')
     }
     else {
-        document.getElementById("III-autre-cible").style.display = ('none')
     }
 });
 observerIIIa.observe(document.getElementById("III-autre"))
 
-
-var observerIIIb = new IntersectionObserver(function (entries) {
-    if (!entries[0].isIntersecting && book.getAttribute("data-reading") === "partieIII") {
-        document.getElementById("III-concevoir-cible").style.display = ('block')
-        document.getElementById("III-autre-cible").style.display = ('none')
-    }
-    else {
-        document.getElementById("III-concevoir-cible").style.display = ('none')
-    }
-});
-observerIIIb.observe(document.getElementById("III-concevoir"))
 
 var observerFinRef = new IntersectionObserver(function (entries) {
     if (!entries[0].isIntersecting && book.getAttribute("data-reading") === "partieFin") {

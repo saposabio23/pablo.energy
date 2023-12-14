@@ -4,6 +4,8 @@
     font-style: normal;
     font-weight: 400;
     src: url('UncutSans-Regular.woff') format('woff');
+    font-feature-settings: "ss06" on;
+    font-feature-settings: "ss02" on;
   }
 
 
@@ -13,6 +15,8 @@
     font-style: normal;
     font-weight: 400;
     src: url('UncutSans-Regular.woff2') format('woff2');
+    font-feature-settings: "ss06" on;
+    font-feature-settings: "ss02" on;
   }
 
 
@@ -31,19 +35,3 @@
     font-weight: 700;
     src: url('biz-udpmincho-v9-latin-700.woff2') format('woff2'); 
   }
-
-@font-face {
-    font-family: 'newedge_666light_rounded';
-    src: url('newedge666-lightrounded-webfont.woff2') format('woff2'),
-        url('newedge666-lightrounded-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'newedge_666regular_rounded';
-    src: url('newedge666-regularrounded-webfont.woff2') format('woff2'),
-        url('newedge666-regularrounded-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}

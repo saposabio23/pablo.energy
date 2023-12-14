@@ -96,8 +96,6 @@ function lecturePartieIntro() {
     book.classList.remove('book-1-4')
     book.classList.remove('book-Full')
 
-    document.querySelector('.conseils').style.display = ('none')
-
     positionFootnote()
 
     hideCibles()
