@@ -1,0 +1,75 @@
+body {
+    background-color: #7a7b9f;
+    margin: 0;
+    height: fit-content;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+video {
+    height: 100%;
+height: 90%;
+    border-radius: 20px;
+}
+
+.pass {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: scroll;
+    display: flex;
+    width: fit-content;
+    padding-left: 100vw;
+    gap: 50vw;
+    align-items: center;
+    animation: loop 20s linear infinite;
+}
+
+@keyframes loop {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+
+    }
+
+}
+
+.pass img {
+    height: 250px;
+}
+
+#cadavre {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#cadavre img {
+    height: 90%;
+    max-width: 90%;
+    margin: auto;
+    object-fit: contain;
+}
+
+.photobooth {
+    height: 20vw !important;
+    border-radius: 16px;
+    position: absolute;
+    right: 10vw;
+}
