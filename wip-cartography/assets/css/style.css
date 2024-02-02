@@ -125,9 +125,10 @@ a {
   box-shadow: var(--anti-shadow);
 }
 
-.checked {
+.checked>img {
   /* box-shadow: var(--anti-shadow); */
   background-color: var(--color-back) !important;
+  border-radius: 100%;
 }
 
 .noHover:hover {
@@ -144,7 +145,7 @@ a {
   left: 0;
   z-index: -100;
 
-  opacity: 0.3;
+  opacity: 1;
 
   background-image: url(../img/about.png);
   background-size: cover;
@@ -225,23 +226,27 @@ a {
 }
 
 .welcoming {
-  height: 100vh;
+  height: fit-content;
   width: 100vw;
   position: fixed;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  top: 0;
+  bottom: 0;
   left: 0;
-  justify-content: center;
+  justify-content: end;
   z-index: 5;
   flex-direction: column;
-
   color: var(--color-black);
+  padding: 20px;
+
 }
 
-.welcoming div {
-  margin: 0 auto 0 auto;
+.welcoming>div {
+  padding: 20px;
+  background-color: var(--color-blur-light);
+  border-radius: var(--border-big);
+  backdrop-filter: blur(10px);
+  transition: var(--transition-5);
+
+
 }
 
 h1 {
@@ -251,29 +256,15 @@ h1 {
 
 .welcoming p,
 .tagList p {
-  margin: var(--spacing-m) auto var(--spacing-m) auto;
   line-height: 1.5;
-  max-width: 750px;
+  margin-bottom: var(--spacing-m);
 }
 
 /* LISTE DES TAGS STARTS */
 .tagList {
-  position: fixed;
-  top: 50dvh;
-  left: 50dvw;
-  transform: translate(-50%, -50%);
-
-  text-align: left;
-  width: 70%;
-  max-width: 750px;
-
-
   opacity: 0;
   visibility: hidden;
-
-  /* background-color: var(--color-transparent-light);
-  padding: var(--spacing-s);
-  border-radius: var(--border-big); */
+  display: none;
 }
 
 .startLoading {
@@ -359,53 +350,76 @@ h1 {
 .menu {
   position: fixed;
   top: 0;
-  left: 50vw;
+  left: 0;
   z-index: 999;
   visibility: hidden;
   opacity: 0;
-  display: flex;
-  justify-content: space-between;
-  width: fit-content;
-  gap: var(--spacing-m);
-  transform: translateX(-50%);
-  background-color: var(--color-blur-dark);
-  padding: var(--spacing-s);
   border-radius: 0 0 var(--border-big) var(--border-big);
-  backdrop-filter: blur(5px);
+  width: 200px;
+  display: flex;
+  height: 100vh;
+  width: fit-content;
+  transition: var(--transition-bk);
 }
 
 .menu>div {
+  width: 200px;
+  background-color: var(--color-blur-dark);
+  backdrop-filter: blur(5px);
+  border-radius: 0 20px 20px 0;
+  transition: var(--transition-bk);
+}
 
+header {
+  border-radius: 0 0 var(--border-big) var(--border-big);
   display: flex;
-  /*! flex-direction: column; */
-  font-size: 60%;
-  border-radius: var(--border-big);
-  background-color: var(--color-blur-light);
-  padding: var(--spacing-s);
+  flex-direction: column;
+  width: fit-content;
+  gap: var(--spacing-l);
+  margin: auto;
+  margin-left: auto;
+  margin-left: var(--spacing-m);
+  transition: var(--transition-bk);
+  transition: var(--transition-bk);
+
+}
+
+header>div {
+  display: flex;
+  font-size: 80%;
+  align-content: center;
   align-items: center;
-  justify-content: space-between;
-  gap: 3px;
-  width: 40px;
+  gap: var(--spacing-s);
+  transition: var(--transition-bk);
+}
+
+header>div:hover>span {
+  display: block;
+  transition: var(--transition-bk);
+}
+
+header>div>span {
+  display: none;
+  transition: var(--transition-bk);
+}
+
+header img {
   height: 40px;
-  border-radius: var(--border-full);
+  aspect-ratio: 1;
+  object-fit: contain;
+  align-items: center;
+  gap: var(--spacing-s);
+  padding: 8px;
   justify-content: center;
+  border-radius: 100%;
+
+  background-color: var(--color-blur-dark);
+  transition: var(--transition-bk);
 }
 
 .highlight {
   box-shadow: 0 0 10px var(--color-lines);
 }
-
-.menu div img {
-  height: 20px;
-  aspect-ratio: 1;
-  object-fit: contain;
-}
-
-.menu>div>span {
-  display: none;
-}
-
-
 
 
 .shadow {
@@ -436,94 +450,6 @@ button:hover,
   box-shadow: var(--anti-shadow);
 }
 
-.side {
-  position: fixed;
-  margin: var(--spacing-m);
-  top: 0;
-  left: 0;
-  z-index: 999;
-  width: 250px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-m);
-  opacity: 0;
-  visibility: hidden;
-}
-
-.side>div {
-  border-radius: var(--border-big);
-  background-color: var(--color-blur-dark);
-  width: 100%;
-  backdrop-filter: blur(5px);
-  padding: var(--spacing-s);
-  max-height: 80%;
-  overflow: scroll;
-  color: var(--color-back);
-}
-
-.index {
-  max-height: 50%;
-}
-
-.indexContent,
-.about p {
-  padding: var(--spacing-s);
-}
-
-.history {
-  max-height: 40%;
-}
-
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 2;
-  position: relative;
-  gap: var(--spacing-s);
-  color: black;
-  padding: var(--spacing-s);
-  border-radius: var(--border-round);
-  background-color: var(--color-blur-dark);
-  position: sticky;
-  top: 0;
-  backdrop-filter: blur(10px);
-}
-
-/* .header:hover {
-  cursor: move;
-} */
-
-.header h5 {
-  border-radius: var(--border-round);
-  padding: var(--spacing-s);
-  margin: 0;
-  /* height: 40px; */
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-s);
-  color: white;
-  text-transform: uppercase;
-}
-
-.header img {
-  height: 20px;
-  width: 20px;
-}
-
-.header div {
-  background-color: var(--color-blur-light);
-  border-radius: var(--border-round);
-  height: 40px;
-  aspect-ratio: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-}
-
 
 #message {
   position: fixed;
@@ -548,12 +474,12 @@ button:hover,
 
 .historyList {
   color: var(--color-back);
+  margin: var(--spacing-m);
   display: flex;
   flex-direction: column;
-  row-gap: var(--spacing-s);
-  height: 300px;
-  overflow: scroll;
-  margin-bottom: var(--spacing-s);
+  font-size: 80%;
+  height: 100%;
+  justify-content: space-between;
 }
 
 .historyList div {
@@ -853,7 +779,7 @@ tr:last-child {
 }
 
 .disappear {
-  animation: disappear .8s ease-in-out forwards;
+  animation: disappear .8s ease-in-out both;
 }
 
 .appears {
@@ -875,10 +801,13 @@ tr:last-child {
 @keyframes disappear {
   0% {
     opacity: 1;
+    visibility: visible;
+    display: block;
   }
 
   99% {
     display: block;
+    visibility: visible;
   }
 
   100% {
@@ -892,16 +821,19 @@ tr:last-child {
 @keyframes appears {
   0% {
     opacity: 0;
+    visibility: hidden;
+    display: none;
   }
 
   1% {
     display: block;
+    visibility: visible;
   }
 
   100% {
-    opacity: 1;
     display: block;
     visibility: visible;
+    opacity: 1;
   }
 }
 
@@ -913,7 +845,7 @@ tr:last-child {
   margin: var(--spacing-m);
   bottom: 0;
   z-index: 999;
-  opacity: 0;
+  opacity: 1;
 
   height: 25px;
   width: 150px;

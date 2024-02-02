@@ -1,166 +1,153 @@
 // /* -----------------------------------
-// SOUNDS UI 
+// SOUNDS UI
 // -------------------------------------- */
-const button = document.querySelectorAll('.hoverShadow');
-button.forEach(function (button) {
-    button.addEventListener('mouseenter', function () {
-        soundhover.play();
-    });
-});
-
+// const button = document.querySelectorAll('.hoverShadow');
+// button.forEach(function (button) {
+//     button.addEventListener('mouseenter', function () {
+//         soundhover.play();
+//     });
+// });
 
 // réglages welcoming
 
-document.getElementById('welcome').addEventListener('click', (event) => {
-    document.querySelector('.welcoming').classList.add('disappear');
-    setTimeout(() => {
-        document.querySelector('.tagList').classList.add('appears');
-    }, "800");
-})
-
-document.getElementById('welcome').addEventListener('mouseenter', function () {
-    soundhover.play();
+document.getElementById("commencez").addEventListener("click", (event) => {
+  document.querySelector(".intro").classList.add("disappear");
+  setTimeout(() => {
+    document.querySelector(".intro").style.display = "none";
+  }, "800");
+  setTimeout(() => {
+    document.querySelector(".tagList").classList.add("appears");
+    document.querySelector(".tagList").style.display = "block";
+  }, "800");
 });
 
 // montre l'historique ou le chache
-let history = document.querySelector('.history')
-let historyButton = document.getElementById('buttonHistory')
+let history = document.querySelector(".history");
+let historyButton = document.getElementById("buttonHistory");
 
 function showHistory() {
-    // history.classList.remove('appears');
-    // history.classList.add('show');
+  // history.classList.remove('appears');
+  // history.classList.add('show');
 
-    if (history.classList.contains('hidden')) {
-        history.classList.remove('hidden');
-        history.classList.add('show');
-        historyButton.classList.add('checked');
-    }
-    else {
-        history.classList.remove('show');
-        history.classList.add('hidden');
-        historyButton.classList.remove('checked');
-    }
-
+  if (history.classList.contains("hidden")) {
+    history.classList.remove("hidden");
+    history.classList.add("show");
+    historyButton.classList.add("checked");
+  } else {
+    history.classList.remove("show");
+    history.classList.add("hidden");
+    historyButton.classList.remove("checked");
+  }
 }
-historyButton.addEventListener('click', showHistory)
+historyButton.addEventListener("click", showHistory);
 
 // montre l'index ou le chache
-let buttonIndex = document.getElementById('buttonIndex')
+let buttonIndex = document.getElementById("buttonIndex");
 
 function showindex() {
-    // index.classList.remove('appears');
-    // index.classList.add('show');
+  // index.classList.remove('appears');
+  // index.classList.add('show');
 
-    if (index.classList.contains('hidden')) {
-        index.classList.remove('hidden');
-        index.classList.add('show');
-        buttonIndex.classList.add('checked');
-    }
-    else {
-        index.classList.remove('show');
-        index.classList.add('hidden');
-        buttonIndex.classList.remove('checked');
-    }
-
+  if (index.classList.contains("hidden")) {
+    index.classList.remove("hidden");
+    index.classList.add("show");
+    buttonIndex.classList.add("checked");
+  } else {
+    index.classList.remove("show");
+    index.classList.add("hidden");
+    buttonIndex.classList.remove("checked");
+  }
 }
-buttonIndex.addEventListener('click', showindex)
+buttonIndex.addEventListener("click", showindex);
 
 // montre about ou le chache
-let about = document.querySelector('.about')
+let about = document.querySelector(".about");
 
-let buttonAbout = document.getElementById('buttonAbout')
+let buttonAbout = document.getElementById("buttonAbout");
 
 function showabout() {
-    // about.classList.remove('appears');
-    // about.classList.add('show');
+  // about.classList.remove('appears');
+  // about.classList.add('show');
 
-    if (about.classList.contains('hidden')) {
-        about.classList.remove('hidden');
-        about.classList.add('show');
-        buttonAbout.classList.add('checked');
-    }
-    else {
-        about.classList.remove('show');
-        about.classList.add('hidden');
-        buttonAbout.classList.remove('checked');
-    }
-
+  if (about.classList.contains("hidden")) {
+    about.classList.remove("hidden");
+    about.classList.add("show");
+    buttonAbout.classList.add("checked");
+  } else {
+    about.classList.remove("show");
+    about.classList.add("hidden");
+    buttonAbout.classList.remove("checked");
+  }
 }
-buttonAbout.addEventListener('click', showabout)
-
+buttonAbout.addEventListener("click", showabout);
 
 // restart tool
-let buttonRestart = document.getElementById('buttonRestart')
-let blackScreen = document.querySelector('.blackScreen')
+let buttonRestart = document.getElementById("buttonRestart");
+let blackScreen = document.querySelector(".blackScreen");
 
 function reload() {
-    // blackScreen.classList.add('fadeOut')
-    blackScreen.classList.remove('hidden');
-    blackScreen.classList.add('appearsLong');
+  // blackScreen.classList.add('fadeOut')
+  blackScreen.classList.remove("hidden");
+  blackScreen.classList.add("appearsLong");
 
-    setTimeout(() => {
-        location.reload();
-    }, "2100");
+  setTimeout(() => {
+    location.reload();
+  }, "2100");
 }
 buttonRestart.addEventListener("click", reload);
-
-
-
 
 // zoom slider
 var zoomSlider = document.getElementById("bookzoom");
 
 function zoomBooks() {
-    var zoom = zoomSlider.value;
-    var zoomValue = zoom + "%";
-    document.body.style.setProperty('--zoom', zoomValue)
+  var zoom = zoomSlider.value;
+  var zoomValue = zoom + "%";
+  document.body.style.setProperty("--zoom", zoomValue);
 }
 
 zoomSlider.addEventListener("input", zoomBooks);
 
-
 // email stuff
 
 function sendMail() {
+  document.getElementById("buttonToSend").innerHTML =
+    "Sending <img src='./assets/img/spinner.gif'></img>";
 
-    document.getElementById('buttonToSend').innerHTML = "Sending <img src='./assets/img/spinner.gif'></img>"
+  var params = {
+    email: document.getElementById("email").value,
+    message: document.getElementById("message").innerHTML,
+  };
+  console.log(params.email);
+  console.log(params.message);
 
-    var params = {
-        email: document.getElementById("email").value,
-        message: document.getElementById("message").innerHTML,
-    };
-    console.log(params.email);
-    console.log(params.message);
+  const serviceID = "cartography";
+  const templateID = "cartography_template";
 
+  emailjs
+    .send(serviceID, templateID, params)
+    .then((res) => {
+      document.getElementById("message").value = "";
+      document.getElementById("message").innerHTML = "";
 
-    const serviceID = "cartography";
-    const templateID = "cartography_template";
+      console.log(res);
 
-    emailjs.send(serviceID, templateID, params)
-        .then(res => {
-            document.getElementById("message").value = "";
-            document.getElementById("message").innerHTML = '';
+      document.getElementById("buttonToSend").remove();
 
-                console.log(res);
+      let sendAlert = document.createElement("span");
+      sendAlert.className = "sendAlert";
+      sendAlert.innerHTML = "Sent to <u>" + params.email + "</u> successfully!";
+      document.querySelector(".sender > div").appendChild(sendAlert);
 
-            document.getElementById('buttonToSend').remove();
+      // alert("Your message sent successfully!!")
+    })
+    .catch((err) => {
+      console.log(err);
 
-            let sendAlert = document.createElement('span');
-            sendAlert.className = 'sendAlert';
-            sendAlert.innerHTML = "Sent to <u>" + params.email + "</u> successfully!";
-            document.querySelector('.sender > div').appendChild(sendAlert);
+      document.getElementById("buttonToSend").remove();
 
-            // alert("Your message sent successfully!!")
-        })
-        .catch(err => {
-            console.log(err)
-
-            document.getElementById('buttonToSend').remove();
-
-            let sendAlert = document.createElement('span');
-            sendAlert.className = 'sendAlert';
-            sendAlert.innerHTML = "Couldn't send it. Try again :(";
-            document.querySelector('.sender > div').appendChild(sendAlert);
-        });
-
+      let sendAlert = document.createElement("span");
+      sendAlert.className = "sendAlert";
+      sendAlert.innerHTML = "Couldn't send it. Try again :(";
+      document.querySelector(".sender > div").appendChild(sendAlert);
+    });
 }

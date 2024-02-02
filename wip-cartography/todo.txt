@@ -2,6 +2,8 @@ IMPORTANT
 - history with title instead of tags
 - background changing
 - hide old infoblocks
+- when sended remove text and box
+
 
 
 PLUS
