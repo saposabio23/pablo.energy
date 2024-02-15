@@ -54,48 +54,56 @@
 
 
   <div class="menu">
+    <div class="side">
+      <div class="about hidden">
+        <h4>🌐 About this</h4>
+        <div>
+          <p>Comme vous l'avez déjà remarqué, puisque vous lisez ce texte à l'écran, la forme de ma cartographie est
+            numérique, et ce site/outil vous permettra de la parcourir. Et de quoi est composé cette collection? De
+            sites
+            webs
+            qui me plaisaient (tant sa forme que son fond) et d'autres que j'ai pu découvrir à travers des hyperliens et
+            de
+            l'outil communautaire <a href="are.na">are.na</a>.</p>
+          <p>Pour finir je tiendrais à remercier Patrick Doan de nous avoir proposé cet exercice que je trouve très
+            intéressant et à Olivier Cornet d'avoir codé avec moi les engrenages du site que vous allez bientôt
+            utiliser.</p>
+        </div>
+      </div>
 
-    <div class="about hidden">
-      <p>Comme vous l'avez déjà remarqué, puisque vous lisez ce texte à l'écran, la forme de ma cartographie est
-        numérique, et ce site/outil vous permettra de la parcourir. Et de quoi est composé cette collection? De sites
-        webs
-        qui me plaisaient (tant sa forme que son fond) et d'autres que j'ai pu découvrir à travers des hyperliens et
-        de
-        l'outil communautaire <a href="are.na">are.na</a>.</p>
-      <p>Pour finir je tiendrais à remercier Patrick Doan de nous avoir proposé cet exercice que je trouve très
-        intéressant et à Olivier Cornet d'avoir codé avec moi les engrenages du site que vous allez bientôt utiliser.
-    </div>
+      <div class="index hidden">
+        <h4>📂 Index of websites</h4>
 
-    <div class="index hidden">
-      <div class="indexContent"></div>
-    </div>
+        <div class="indexContent"></div>
+      </div>
 
-    <div class="history hidden">
-      <div class="historyContent">
-        <div class="historyList"></div>
+      <div class="history hidden">
+        <h4>🌟 Favorites</h4>
 
-        <div class="sender">You can select the sites you like and receive them on your
-          inbox 📩<br>
-          <div>
+        <div class="historyContent">
+          <div class="historyList"></div>
+
+          <div class="sender">You can select the sites you like and receive them on your
+            inbox 📩<br>
             <input type="text" id="email" placeholder="write your e-mail" />
             <button onclick="sendMail()" id="buttonToSend">Send the list</button>
           </div>
         </div>
-      </div>
 
 
-      <div class="options hidden">
+        <div class="options hidden">
+        </div>
       </div>
+
     </div>
 
     <header>
-
       <div id="buttonAbout">
-        <img src="assets/img/about.png" class="hoverShadow">
+        <img id="imgAbout" src="assets/img/about.png" class="hoverShadow">
         <span>À propos</span>
       </div>
       <div id="buttonIndex">
-        <img src="assets/img/index.png" class="hoverShadow">
+        <img id="imgIndex" src="assets/img/index.png" class="hoverShadow">
         <span>Index</span>
       </div>
       <div id="buttonHistory">
@@ -106,16 +114,11 @@
         <img src="assets/img/restart.png" class="hoverShadow">
         <span>Relancer</span>
       </div>
-      <div id="buttonRandom" class="dim">
-        <img src="assets/img/random.png" class="hoverShadow">
-        <span>Aléatoire</span>
-      </div>
-      <div id="buttonOptions" class="dim">
-        <img src="assets/img/options.png" class="hoverShadow">
-        <span>Options</span>
-      </div>
     </header>
+
   </div>
+
+
 
   <audio id="soundhover" src="assets/sound/soundhover.mp3" preload="auto"></audio>
 

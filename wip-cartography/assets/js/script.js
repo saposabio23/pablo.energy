@@ -157,13 +157,15 @@ function list_all_tags() {
     });
     tagEtiqueta.addEventListener("click", (event) => {
       document.querySelector(".welcoming").classList.add("disappear");
+      document.querySelector(".tagList").classList.remove("appears");
+      document.querySelector(".tagList").classList.add("disappear");
       tagToLoad.innerHTML = tagName;
       setTimeout(() => {
         document.querySelector(".startLoading").classList.add("showLoad");
       }, "800");
       setTimeout(() => {
         document.querySelector(".startLoading").style.display = "none";
-        document.querySelector(".menu").classList.add("appears");
+        document.querySelector("header").classList.add("appears");
         document.querySelector(".zoom").classList.add("appears");
 
         carto.style.transform = "scale(var(--zoom))";
@@ -173,7 +175,7 @@ function list_all_tags() {
     });
   }
 
-  // index of all tags on the page
+  // index of all data on the page
   for (let i = 0; i < results.length; i++) {
     let tagName = results[i];
     let tagEtiqueta = document.createElement("button");
@@ -237,9 +239,9 @@ function display_tags(position, data) {
     tagMore.removeChild(tagMore.firstChild);
   }
 
-  let tagText = document.createElement("p");
-  tagText.innerHTML = "+ de tags:";
-  tagMore.appendChild(tagText);
+  // let tagText = document.createElement("p");
+  // tagText.innerHTML = "+ de tags:";
+  // tagMore.appendChild(tagText);
 
   for (let i = 0; i < data.tags.length; i++) {
     let tagName = data.tags[i];
@@ -457,8 +459,10 @@ function display_project(data, x, y, displayedProjects) {
   let infoBlock = document.createElement("div");
   infoBlock.className = "infoBlock";
 
+  let infoTable = document.createElement("table");
+
   let infoRowTitle = document.createElement("tr");
-  infoBlock.appendChild(infoRowTitle);
+  infoTable.appendChild(infoRowTitle);
 
   let infoHeaderTitle = document.createElement("td");
   infoHeaderTitle.innerHTML = "Titre";
@@ -468,10 +472,10 @@ function display_project(data, x, y, displayedProjects) {
   infoTextTitle.innerHTML = title;
   infoRowTitle.appendChild(infoTextTitle);
 
-  infoBlock.appendChild(infoRowTitle);
+  infoTable.appendChild(infoRowTitle);
 
   let infoRowDescription = document.createElement("tr");
-  infoBlock.appendChild(infoRowDescription);
+  infoTable.appendChild(infoRowDescription);
 
   let infoHeaderDescription = document.createElement("td");
   infoHeaderDescription.innerHTML = "Description";
@@ -481,10 +485,10 @@ function display_project(data, x, y, displayedProjects) {
   infoTextDescription.innerHTML = description;
   infoRowDescription.appendChild(infoTextDescription);
 
-  infoBlock.appendChild(infoRowDescription);
+  infoTable.appendChild(infoRowDescription);
 
   let infoRowURL = document.createElement("tr");
-  infoBlock.appendChild(infoRowURL);
+  infoTable.appendChild(infoRowURL);
 
   let infoHeaderURL = document.createElement("td");
   infoHeaderURL.innerHTML = "URL";
@@ -501,7 +505,7 @@ function display_project(data, x, y, displayedProjects) {
   infoRowURL.appendChild(infoTextURL);
 
   let infoRowTags = document.createElement("tr");
-  infoBlock.appendChild(infoRowTags);
+  infoTable.appendChild(infoRowTags);
 
   let infoHeaderTags = document.createElement("td");
   infoHeaderTags.innerHTML = "Tags";
@@ -511,21 +515,29 @@ function display_project(data, x, y, displayedProjects) {
   infoTextTags.innerHTML = tags;
   infoRowTags.appendChild(infoTextTags);
 
-  infoBlock.appendChild(infoRowTags);
+  infoTable.appendChild(infoRowTags);
+
+  let infoFavorite = document.createElement("button");
+  infoFavorite.className = "button favoriteButton";
+  infoFavorite.innerHTML = "Favorite";
+
+  infoBlock.appendChild(infoTable);
+  infoBlock.appendChild(infoFavorite);
 
   newBlock.appendChild(infoBlock);
 
-  windowBlock.addEventListener("mouseenter", (e) => {
-    // infoBlock.style.opacity = '1'
-    infoBlock.classList.add("appearsFast");
-    infoBlock.classList.remove("disappearFast");
-  });
+  // Hide info weh nhover
+  // windowBlock.addEventListener("mouseenter", (e) => {
+  //   // infoBlock.style.opacity = '1'
+  //   infoBlock.classList.add("appearsFast");
+  //   infoBlock.classList.remove("disappearFast");
+  // });
 
-  infoBlock.addEventListener("mouseleave", (e) => {
-    // infoBlock.style.opacity = '0'
-    infoBlock.classList.add("disappearFast");
-    infoBlock.classList.remove("appearsFast");
-  });
+  // infoBlock.addEventListener("mouseleave", (e) => {
+  //   // infoBlock.style.opacity = '0'
+  //   infoBlock.classList.add("disappearFast");
+  //   infoBlock.classList.remove("appearsFast");
+  // });
 
   //positionne le projet
   newBlock.style.left = x - 320 / 2 + "px";
@@ -537,100 +549,114 @@ function display_project(data, x, y, displayedProjects) {
   // on retire ce projet de la liste des projets disponibles
   removeProjectFromAvailableProjects(data);
 
-  // on écrit le tag dans l'historique
-  let lastTagDiv = document.createElement("div");
+  // lastTagStar.addEventListener("click", (event) => {
+  //   if (event.target.classList.contains("nofav")) {
+  //     let messageDiv = document.createElement("div");
+  //     messageDiv.dataset.index = indexDisplayedProject;
+  //     messageDiv.className = "listDiv";
+  //     messageDiv.setAttribute("style", "margin-bottom:10px");
 
-  let lastTagTitle = document.createElement("span");
-  lastTagTitle.className = "button";
-  lastTagTitle.innerHTML = title;
-  lastTagTitle.dataset.indexDisplayedProject = indexDisplayedProject;
+  //     let messageTitleRow = document.createElement("div");
+  //     messageTitleRow.setAttribute(
+  //       "style",
+  //       "display: flex;border: 1px solid #d3cce3;word-wrap: anywhere;border-width: 1px 1px 0 1px;border-top-left-radius: 5px;border-top-right-radius: 5px;display: flex;"
+  //     );
 
-  let lastTagStar = document.createElement("span");
-  lastTagStar.dataset.index = indexDisplayedProject;
-  lastTagStar.className = "star nofav";
-  lastTagStar.innerHTML = "⭐";
+  //     messageDiv.appendChild(messageTitleRow);
 
-  lastTagDiv.appendChild(lastTagTitle);
-  lastTagDiv.appendChild(lastTagStar);
-  historyList.prepend(lastTagDiv);
+  //     let messageTitleHeader = document.createElement("div");
+  //     messageTitleHeader.setAttribute(
+  //       "style",
+  //       "padding: 6px;border-right: 1px solid #d3cce3; width:60px"
+  //     );
+  //     messageTitleHeader.innerHTML = "Title";
+  //     messageTitleRow.appendChild(messageTitleHeader);
 
-  lastTagTitle.addEventListener("click", (event) => {
-    let position =
-      displayedProjects[event.target.dataset.indexDisplayedProject].data
-        .projectPosition;
-    set_scrollbars_position(position.scrollX, position.scrollY);
-  });
+  //     let messageTitleText = document.createElement("div");
+  //     messageTitleText.setAttribute(
+  //       "style",
+  //       "padding: 6px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"
+  //     );
+  //     messageTitleText.innerHTML = title;
+  //     messageTitleRow.appendChild(messageTitleText);
 
-  lastTagStar.addEventListener("click", (event) => {
-    if (event.target.classList.contains("nofav")) {
-      let messageDiv = document.createElement("div");
-      messageDiv.dataset.index = indexDisplayedProject;
-      messageDiv.className = "listDiv";
-      messageDiv.setAttribute("style", "margin-bottom:10px");
+  //     let messageURLRow = document.createElement("div");
+  //     messageURLRow.setAttribute(
+  //       "style",
+  //       "display: fle;border: 1px solid #d3cce3;word-wrap: anywhere;border-width: 1px 1px 0 1px;  border-bottom: 1px solid #d3cce3;border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;display: flex;"
+  //     );
 
-      let messageTitleRow = document.createElement("div");
-      messageTitleRow.setAttribute(
-        "style",
-        "display: flex;border: 1px solid #d3cce3;word-wrap: anywhere;border-width: 1px 1px 0 1px;border-top-left-radius: 5px;border-top-right-radius: 5px;display: flex;"
-      );
+  //     messageDiv.appendChild(messageURLRow);
 
-      messageDiv.appendChild(messageTitleRow);
+  //     let messageURLHeader = document.createElement("div");
+  //     messageURLHeader.setAttribute(
+  //       "style",
+  //       "padding: 6px;border-right: 1px solid #d3cce3; width:60px"
+  //     );
+  //     messageURLHeader.innerHTML = "URL";
+  //     messageURLRow.appendChild(messageURLHeader);
 
-      let messageTitleHeader = document.createElement("div");
-      messageTitleHeader.setAttribute(
-        "style",
-        "padding: 6px;border-right: 1px solid #d3cce3; width:60px"
-      );
-      messageTitleHeader.innerHTML = "Title";
-      messageTitleRow.appendChild(messageTitleHeader);
+  //     let messageURLText = document.createElement("div");
+  //     messageURLText.setAttribute(
+  //       "style",
+  //       "padding: 6px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"
+  //     );
+  //     let messageURLLink = document.createElement("a");
+  //     messageURLLink.href = "https://" + url;
+  //     messageURLLink.innerHTML = "www." + url;
+  //     messageURLText.appendChild(messageURLLink);
+  //     messageURLRow.appendChild(messageURLText);
 
-      let messageTitleText = document.createElement("div");
-      messageTitleText.setAttribute(
-        "style",
-        "padding: 6px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"
-      );
-      messageTitleText.innerHTML = title;
-      messageTitleRow.appendChild(messageTitleText);
+  //     messageContent.appendChild(messageDiv);
 
-      let messageURLRow = document.createElement("div");
-      messageURLRow.setAttribute(
-        "style",
-        "display: fle;border: 1px solid #d3cce3;word-wrap: anywhere;border-width: 1px 1px 0 1px;  border-bottom: 1px solid #d3cce3;border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;display: flex;"
-      );
+  //     lastTagStar.classList.replace("nofav", "fav");
+  //   } else if (event.target.classList.contains("fav")) {
+  //     let x = document.querySelector(
+  //       '.listDiv[data-index="' + event.target.dataset.index + '"]'
+  //     );
+  //     console.log(x);
+  //     x.remove();
 
-      messageDiv.appendChild(messageURLRow);
+  //     lastTagStar.classList.replace("fav", "nofav");
+  //   }
+  // });
+  // add proyect to favorite
 
-      let messageURLHeader = document.createElement("div");
-      messageURLHeader.setAttribute(
-        "style",
-        "padding: 6px;border-right: 1px solid #d3cce3; width:60px"
-      );
-      messageURLHeader.innerHTML = "URL";
-      messageURLRow.appendChild(messageURLHeader);
+  infoFavorite.addEventListener("click", (event) => {
+    console.log(event);
+    // on écrit le tag dans l'historique
+    let favoriteBlock = document.createElement("div");
+    favoriteBlock.dataset.indexDisplayedProject = indexDisplayedProject;
+    favoriteBlock.className = "favoriteBlock";
 
-      let messageURLText = document.createElement("div");
-      messageURLText.setAttribute(
-        "style",
-        "padding: 6px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"
-      );
-      let messageURLLink = document.createElement("a");
-      messageURLLink.href = "https://" + url;
-      messageURLLink.innerHTML = "www." + url;
-      messageURLText.appendChild(messageURLLink);
-      messageURLRow.appendChild(messageURLText);
+    let favoriteURL = document.createElement("img");
+    favoriteURL.dataset.indexDisplayedProject = indexDisplayedProject;
+    favoriteURL.src = "assets/thumbnails/" + filename + ".png";
 
-      messageContent.appendChild(messageDiv);
+    let favoriteInfo = document.createElement("div");
 
-      lastTagStar.classList.replace("nofav", "fav");
-    } else if (event.target.classList.contains("fav")) {
-      let x = document.querySelector(
-        '.listDiv[data-index="' + event.target.dataset.index + '"]'
-      );
-      console.log(x);
-      x.remove();
+    let favoriteTitle = document.createElement("span");
+    favoriteTitle.dataset.indexDisplayedProject = indexDisplayedProject;
+    favoriteTitle.innerHTML = title;
 
-      lastTagStar.classList.replace("fav", "nofav");
-    }
+    let favoriteStar = document.createElement("span");
+    favoriteStar.dataset.index = indexDisplayedProject;
+    favoriteStar.className = "star nofav";
+    favoriteStar.innerHTML = "🌟";
+
+    favoriteInfo.appendChild(favoriteTitle);
+    favoriteInfo.appendChild(favoriteStar);
+
+    favoriteBlock.appendChild(favoriteURL);
+    favoriteBlock.appendChild(favoriteInfo);
+    historyList.prepend(favoriteBlock);
+
+    favoriteBlock.addEventListener("click", (event) => {
+      let position =
+        displayedProjects[event.target.dataset.indexDisplayedProject].data
+          .projectPosition;
+      set_scrollbars_position(position.scrollX, position.scrollY);
+    });
   });
 }
 

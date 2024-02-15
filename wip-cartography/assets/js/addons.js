@@ -21,65 +21,107 @@ document.getElementById("commencez").addEventListener("click", (event) => {
   }, "800");
 });
 
-// montre l'historique ou le chache
-let history = document.querySelector(".history");
-let historyButton = document.getElementById("buttonHistory");
+// montre about ou le chache
+let header = document.querySelector("header");
+let menu = document.querySelector(".menu");
 
-function showHistory() {
-  // history.classList.remove('appears');
-  // history.classList.add('show');
+let about = document.querySelector(".about");
+let buttonAbout = document.getElementById("buttonAbout");
+let imgAbout = document.getElementById("imgAbout");
 
-  if (history.classList.contains("hidden")) {
-    history.classList.remove("hidden");
-    history.classList.add("show");
-    historyButton.classList.add("checked");
-  } else {
+function showabout() {
+  if (about.classList.contains("hidden")) {
+    menu.classList.add("menuOut");
+
+    header.classList.add("headerAfter");
+
+    // imgAbout.src = "assets/img/close.png";
+
+    about.classList.remove("hidden");
+    about.classList.add("show");
+    buttonAbout.classList.add("checked");
+
+    index.classList.remove("show");
+    index.classList.add("hidden");
+    buttonIndex.classList.remove("checked");
+
     history.classList.remove("show");
     history.classList.add("hidden");
     historyButton.classList.remove("checked");
+  } else {
+    menu.classList.remove("menuOut");
+
+    // imgAbout.src = "assets/img/about.png";
+
+    about.classList.remove("show");
+    about.classList.add("hidden");
+    buttonAbout.classList.remove("checked");
+    header.classList.remove("headerAfter");
   }
 }
-historyButton.addEventListener("click", showHistory);
+buttonAbout.addEventListener("click", showabout);
 
 // montre l'index ou le chache
 let buttonIndex = document.getElementById("buttonIndex");
 
 function showindex() {
-  // index.classList.remove('appears');
-  // index.classList.add('show');
-
   if (index.classList.contains("hidden")) {
+    menu.classList.add("menuOut");
+
+    header.classList.add("headerAfter");
+
     index.classList.remove("hidden");
     index.classList.add("show");
     buttonIndex.classList.add("checked");
+
+    history.classList.remove("show");
+    history.classList.add("hidden");
+    historyButton.classList.remove("checked");
+
+    about.classList.remove("show");
+    about.classList.add("hidden");
+    buttonAbout.classList.remove("checked");
   } else {
+    menu.classList.remove("menuOut");
+
     index.classList.remove("show");
     index.classList.add("hidden");
     buttonIndex.classList.remove("checked");
+    header.classList.remove("headerAfter");
   }
 }
 buttonIndex.addEventListener("click", showindex);
 
-// montre about ou le chache
-let about = document.querySelector(".about");
+// montre l'historique ou le chache
+let history = document.querySelector(".history");
+let historyButton = document.getElementById("buttonHistory");
 
-let buttonAbout = document.getElementById("buttonAbout");
+function showHistory() {
+  if (history.classList.contains("hidden")) {
+    header.classList.add("headerAfter");
+    menu.classList.add("menuOut");
 
-function showabout() {
-  // about.classList.remove('appears');
-  // about.classList.add('show');
+    history.classList.remove("hidden");
+    history.classList.add("show");
+    historyButton.classList.add("checked");
 
-  if (about.classList.contains("hidden")) {
-    about.classList.remove("hidden");
-    about.classList.add("show");
-    buttonAbout.classList.add("checked");
-  } else {
     about.classList.remove("show");
     about.classList.add("hidden");
     buttonAbout.classList.remove("checked");
+
+    index.classList.remove("show");
+    index.classList.add("hidden");
+    buttonIndex.classList.remove("checked");
+  } else {
+    menu.classList.remove("menuOut");
+
+    history.classList.remove("show");
+    history.classList.add("hidden");
+    historyButton.classList.remove("checked");
+    header.classList.remove("headerAfter");
   }
 }
-buttonAbout.addEventListener("click", showabout);
+historyButton.addEventListener("click", showHistory);
 
 // restart tool
 let buttonRestart = document.getElementById("buttonRestart");
