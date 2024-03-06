@@ -5,13 +5,34 @@ fetch(
 )
   .then((res) => res.json())
   .then((data) => {
+    function shuffle(newData) {
+      let currentIndex = newData.length,
+        randomIndex;
+
+      // While there remain elements to shuffle.
+      while (currentIndex > 0) {
+        // Pick a remaining element.
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [newData[currentIndex], newData[randomIndex]] = [
+          newData[randomIndex],
+          newData[currentIndex],
+        ];
+      }
+
+      return newData;
+    }
+
+    shuffle(data);
+
     data.forEach((row) => {
       let productBlock = document.createElement("div");
       productBlock.className = "productBlock " + row.Category;
 
       let productCover = document.createElement("img");
       productCover.src = row.Images;
-      productCover.setAttribute("crossorigin", "anonymous");
       productBlock.appendChild(productCover);
 
       let productInfos = document.createElement("div");
@@ -22,12 +43,12 @@ fetch(
       productInfos.appendChild(productTitle);
 
       let productPrice = document.createElement("span");
-      productPrice.innerHTML = row.Price + "€";
+      productPrice.innerHTML = "Prix:" + row.Price + "€";
       productInfos.appendChild(productPrice);
 
       let productLink = document.createElement("a");
       productLink.href = row.Link;
-      productLink.innerHTML = "<button>BUY 💸!</button>";
+      productLink.innerHTML = "<button>Acheter!</button>";
       productInfos.appendChild(productLink);
 
       shopTable.appendChild(productBlock);
@@ -64,25 +85,3 @@ function showBubbles() {
 }
 
 // POUR MÉLANGER LA data ALÉATOIREMENET À CAHQUE RECHARGEMENT
-
-// newData = data.concat(emptydata);
-
-// function shuffle(newData) {
-//   let currentIndex = newData.length, randomIndex;
-
-//   // While there remain elements to shuffle.
-//   while (currentIndex > 0) {
-
-//     // Pick a remaining element.
-//     randomIndex = Math.floor(Math.random() * currentIndex);
-//     currentIndex--;
-
-//     // And swap it with the current element.
-//     [newData[currentIndex], newData[randomIndex]] = [
-//       newData[randomIndex], newData[currentIndex]];
-//   }
-
-//   return newData;
-// }
-
-// shuffle(newData);
