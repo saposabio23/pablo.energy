@@ -1,0 +1,33 @@
+/* SHOP */
+
+#shopTable {
+    margin-top: 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+.productBlock {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    border: 1px solid black;
+    width: 100%;
+}
+
+.productBlock img {
+    width: auto;
+    max-height: 150px;
+    object-fit: contain;
+    width: 100%;
+    background-color: blue;
+}
+
+.productBlock div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
