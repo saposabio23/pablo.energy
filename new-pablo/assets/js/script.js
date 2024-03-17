@@ -7,6 +7,7 @@ videoWaiting.removeAttribute("controls");
 
 function launchPresenation() {
   playButton.classList.add("hidden");
+  videoBlock.classList.add("cursor-help");
   videoWaiting.classList.add("opacity-0");
   videoPresenting.play();
   setTimeout(function () {
