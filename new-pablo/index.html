@@ -22,31 +22,99 @@
     <link href="assets/css/output.css" rel="stylesheet" />
 </head>
 
-<body>
+<body class="bg-special-white">
 
-    <div class="h-[calc(100vh-2rem*2)] md:h-[calc(50vh-2rem)] w-[calc(100vw - 5*2)] m-8 mb-0 bg-slate-200 flex">
+    <div
+         class="h-[calc(100vh-2rem*2)] md:h-[calc(50vh-2rem)] w-[calc(100vw - 5*2)] m-8 mb-8 md:mb-4 bg-special-white flex flex-col md:flex-row">
 
-        <div class="h-full w-full border border-r-0 border-black">
-            <div class="h-full w-full flex items-center justify-center hover:opacity-30 cursor-pointer">
+        <div class="pr-6 overflow-scroll scrollbar-hide">
+            <!-- <div class="h-full w-full flex items-center justify-center hover:opacity-30 cursor-pointer">
                 <h2 class="text-2xl"><span class="text-slate-300">Pablo</span>.daily</h2>
+            </div> -->
+
+            <h1 class="text-2xl inline">Pablo Moreno</h1><span class="ml-1 text-xs align-super">(b. 1998)</span>
+            <p class="my-2">Pablo is a happy young designer finishing his studies in graphic design. Grown in Bilbao he
+                lives in
+                France where he loves create, early mornings and many more things. He's putting a lot of energy on
+                making websites for people, for things or for fun.</p>
+            <p>What is he doing in his daily life?</p>
+            <div class="bg-stone-200 p-2 my-2 rounded-lg">
+                <h4 class="inline">Student in a UX/UI
+                    Double Master</h4>
+                <p class="opacity-60">
+                    Moving between the <a href="https://esad-amiens.design/fr/design-numerique/dnsep"
+                       class="underline cursor-pointer hover:no-underline">ésad</a> of Amiens and the <a
+                       href="https://www.utc.fr/en/courses-and-training/the-french-masters-degree/humanities-and-creative-industries-hic/specialty-design-and-experience-creation-dcx/"
+                       class="underline cursor-pointer hover:no-underline">UTC</a> of Compiègne </p>
+            </div>
+
+            <div class="bg-stone-200 p-2 my-2 rounded-lg">
+                <h4 class="inline">Student job at MCA</h4>
+                <p class="opacity-60">The <a href="https://maps.app.goo.gl/6nhrgyCSwHABf6jk9"
+                       class="underline cursor-pointer hover:no-underline">Maison de la Culture
+                        d'Amiens</a> is a big cultural place of the city. In this amusing job I greet spectators and
+                    assist them during the shows. I also
+                    sell tickets for the MCA theater which, through its name, pays homage to Orson Welles.</p>
+            </div>
+
+            <div class="bg-stone-200 p-2 my-2 rounded-lg">
+                <h4 class="inline">Volunteer at AFEV</h4>
+                <p class="opacity-60">This <a href="https://afev.org/hauts-france/amiens"
+                       class="underline cursor-pointer hover:no-underline">association</a> fights
+                    against educational inequalities. I give some time of my week to stay with two kids and doing cool
+                    things :)
+                </p>
+            </div>
+
+
+
+            <p class="my-2 text-xs">Trough the years the design of this website has changed. You are seeing the
+                <select class="archive-selector py-1 px-2 rounded-md">
+                    <option data-url="index.html" selected="">last</option>
+                    <option data-url="web-archive/v8-under-plus/frame.html">v.8 (under+)</option>
+                    <option data-url="web-archive/v7-under/frame.html">v.7 (under)</option>
+                    <option data-url="web-archive/v6-23/frame.html">v.6 (23%)</option>
+                    <option data-url="web-archive/v5-threecolors/frame.html">v.5 (threecolors)</option>
+                    <option data-url="web-archive/v4-dark/frame.html">v.4 (dark)</option>
+                    <option data-url="web-archive/v3-sidelist/frame.html">v.3 (sidelist)</option>
+                    <option data-url="web-archive/v2-billboard2/frame.html">v.2 (billboard2)</option>
+                    <option data-url="web-archive/v1-billboard/frame.html">v.1 (billboard)</option>
+                </select>
+                version.
+            </p>
+
+
+            <div class="w-full h-[100px] bg-gradient-to-t from-special-white to-transparent sticky bottom-0">
             </div>
         </div>
 
-        <div class="h-full w-full border border-black">
-            <div class="h-full w-full flex items-center justify-center">
+        <div id="videoBlock" class="h-full aspect-video relative cursor-help transition">
+            <button id="playButton"
+                    class="text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hover:opacity-70 z-30">(knocking)</button>
 
-            </div>
+            <video id="videoWaiting" playsinline autoplay muted controls
+                   class="h-full w-full object-cover absolute z-20 transition duration-[1s] rounded-3xl">
+                <source src="media/waiting.mp4" type="video/mp4" />
+            </video>
+            <video id="videoPresenting" playsinline
+                   class="h-full w-full object-cover absolute z-10 rounded-3xl ">
+                <source src="media/presenting.mp4" type="video/mp4" />
+            </video>
         </div>
 
     </div>
 
-    <div class="h-[calc(50vh-2rem)] w-[calc(100vw - 5*2)] m-8 mt-0 bg-slate-200 border border-t-0 border-black">
+    <div
+         class="h-[calc(100vh-2rem*2)] md:h-[calc(50vh-3rem)] w-[calc(100vw - 5*2)] m-8 mt-0 bg-special-white border rounded-3xl">
 
-        <div class="h-full w-full flex items-center justify-center hover:opacity-30 cursor-pointer">
+        <div class="h-full w-full flex items-center justify-center">
             <h2 class="text-2xl"><span class="text-slate-300">Pablo</span>.works</h2>
         </div>
 
     </div>
+
+
+    <script src="assets/js/script.js"></script>
 
 </body>
 
