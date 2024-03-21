@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
 
     <!-- Primary Meta Tags -->
-    <title>New Pablo</title>
+    <title>🌀 New pablo</title>
     <meta name="title" content="Copa Alzár">
     <meta name="description"
           content="Pablo Moreno">
@@ -25,14 +25,24 @@
 <body class="bg-special-white">
 
     <div
-         class="h-[calc(100vh-2rem*2)] md:h-[calc(50vh-2rem)] w-[calc(100vw - 5*2)] m-8 mb-8 md:mb-4 bg-special-white flex flex-col md:flex-row">
+         class="h-[calc(100vh-2rem*2)] md:h-[calc(50vh-2rem)] w-[calc(100vw - 5*2)] m-8 mb-8 md:mb-4 bg-special-white flex justify-between">
 
-        <div class="pr-6 overflow-scroll scrollbar-hide">
+        <!------------ 🌏 INFO ------------>
+
+        <div class="pr-4 overflow-scroll scrollbar-hide w-1/2">
             <!-- <div class="h-full w-full flex items-center justify-center hover:opacity-30 cursor-pointer">
                 <h2 class="text-2xl"><span class="text-slate-300">Pablo</span>.daily</h2>
             </div> -->
 
-            <h1 class="text-2xl inline">Pablo Moreno</h1><span class="ml-1 text-xs align-super">(b. 1998)</span>
+            <div class="sticky top-0 bg-special-white z-50 flex justify-between items-center">
+                <h1 class="text-2xl inline">🌀 Welcome friend!</h1>
+                <div>
+                    <span class="ml-1 text-xs opacity-30 underline cursor-pointer hover:no-underline">cv</span>
+                    <span class="ml-1 text-xs opacity-30 underline cursor-pointer hover:no-underline">are.na</span>
+                    <span class="ml-1 text-xs opacity-30 underline cursor-pointer hover:no-underline">contact</span>
+                </div>
+            </div>
+
             <p class="my-2">Pablo is a happy young designer finishing his studies in graphic design. Grown in Bilbao he
                 lives in
                 France where he loves create, early mornings and many more things. He's putting a lot of energy on
@@ -88,27 +98,38 @@
             </div>
         </div>
 
-        <div id="videoBlock" class="h-full aspect-video relative transition">
-            <button id="playButton"
-                    class="text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hover:opacity-70 z-30">(knocking)</button>
+        <!------------ 🎥 VIDEOS ------------>
 
-            <video id="videoWaiting" playsinline autoplay muted controls
+        <div id="videoBlock" class="h-full aspect-video relative transition w-1/2">
+            <button id="playButton"
+                    class="text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hover:opacity-50 z-30">(knocking)</button>
+
+            <video id="videoWaiting" playsinline autoplay muted controls loop poster="media/poster-video.png"
                    class="h-full w-full object-cover absolute z-20 transition duration-[1s] rounded-3xl">
-                <source src="media/waiting.mp4" type="video/mp4" />
+                <source type="video/webm" src="media/waiting.webm" />
+                <source type="video/mp4" src="media/waiting.mp4" />
             </video>
-            <video id="videoPresenting" playsinline
-                   class="h-full w-full object-cover absolute z-10 rounded-3xl ">
-                <source src="media/presenting.mp4" type="video/mp4" />
+
+            <video id="videoPresenting" playsinline class="h-full w-full object-cover absolute z-10 rounded-3xl">
+                <source type="video/webm" src="media/presenting.webm" />
+                <source type="video/mp4" src="media/presenting.mp4" />
             </video>
+
         </div>
 
     </div>
 
-    <div
-         class="h-[calc(100vh-2rem*2)] md:h-[calc(50vh-3rem)] w-[calc(100vw - 5*2)] m-8 mt-0 bg-special-white border rounded-3xl">
 
-        <div class="h-full w-full flex items-center justify-center">
-            <h2 class="text-2xl"><span class="text-slate-300">Pablo</span>.works</h2>
+    <!------------ WORKS ------------>
+    <div
+         class="w-[calc(100vw - 5*2)] m-8 mt-0 p-4 bg-special-white border rounded-3xl grid grid-cols-3 gap-2 md:gap-4 md:gap-y-6">
+
+        <!-- <h2 class="text-2xl"><span class="text-slate-300">Pablo</span>.works</h2> -->
+
+        <div class="cursor-pointer hover:opacity-50 hover:transition-all">
+            <img src="media/thumbnails/3-words-for-eu.png" alt="" class="w-full rounded-lg">
+            <h3>3 Words for Europe</h3>
+            <p class="opacity-30">Same three words in every european language</p>
         </div>
 
     </div>
