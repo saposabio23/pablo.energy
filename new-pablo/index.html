@@ -12,7 +12,7 @@
     <meta name="description"
           content="Pablo Moreno">
     <meta name="author" content="Pablo Moreno">
-    <meta name="keywords" content="webdesign, code, pablo, energy, fullspeed">
+    <meta name="keywords" content="Pablo Moreno, webdesign, code, energy, fullspeed">
     <link rel="canonical" href="https://pablo.energy">
 
     <!-- Favicon -->
@@ -23,19 +23,23 @@
 </head>
 
 <body class="bg-special-white">
+    <!------------ ALL ------------>
 
-    <div
-         class="h-[calc(100vh-2rem*2)] md:h-[calc(50vh-2rem)] w-[calc(100vw - 5*2)] m-8 mb-8 md:mb-4 bg-special-white flex justify-between">
+    <div id="topPanel"
+         class="m-6 md:m-6 bg-special-white flex 
+        flex-col-reverse md:flex-row justify-between">
 
         <!------------ 🌏 INFO ------------>
 
-        <div class="pr-4 overflow-scroll scrollbar-hide w-1/2">
+        <div id="infoPanel"
+             class="h-[calc(50vh-2rem)] overflow-hidden md:overflow-scroll scrollbar-hide md:w-1/2 mt-4 md:mt-0 md:pr-6 relative transition-all"
+             data-state="close">
             <!-- <div class="h-full w-full flex items-center justify-center hover:opacity-30 cursor-pointer">
                 <h2 class="text-2xl"><span class="text-slate-300">Pablo</span>.daily</h2>
             </div> -->
 
-            <div class="sticky top-0 bg-special-white z-50 flex justify-between items-center">
-                <h1 class="text-2xl inline">🌀 Welcome friend!</h1>
+            <div class="bg-special-white z-50 flex justify-between items-center">
+                <h1 class="text-2xl inline">🌀 Pablo Moreno is a ...</h1>
                 <div>
                     <span class="ml-1 text-xs opacity-30 underline cursor-pointer hover:no-underline">cv</span>
                     <span class="ml-1 text-xs opacity-30 underline cursor-pointer hover:no-underline">are.na</span>
@@ -43,15 +47,18 @@
                 </div>
             </div>
 
-            <p class="my-2">Pablo is a happy young designer finishing his studies in graphic design. Grown in Bilbao he
+            <p class="my-2 text-lg"><span class="font-bold"></span>... happy young designer finishing
+                his
+                studies in graphic design. Grown in
+                Bilbao he
                 lives in
                 France where he loves create, early mornings and many more things. He's putting a lot of energy on
                 making websites for people, for things or for fun.</p>
-            <p>What is he doing in his daily life?</p>
+            <p class="text-lg">What is he doing in his daily life?</p>
             <div class="bg-stone-200 p-2 my-2 rounded-lg">
                 <h4 class="inline">Student in a UX/UI
                     Double Master</h4>
-                <p class="opacity-60">
+                <p class="opacity-50">
                     Moving between the <a href="https://esad-amiens.design/fr/design-numerique/dnsep"
                        class="underline cursor-pointer hover:no-underline">ésad</a> of Amiens and the <a
                        href="https://www.utc.fr/en/courses-and-training/the-french-masters-degree/humanities-and-creative-industries-hic/specialty-design-and-experience-creation-dcx/"
@@ -60,7 +67,7 @@
 
             <div class="bg-stone-200 p-2 my-2 rounded-lg">
                 <h4 class="inline">Student job at MCA</h4>
-                <p class="opacity-60">The <a href="https://maps.app.goo.gl/6nhrgyCSwHABf6jk9"
+                <p class="opacity-50">The <a href="https://maps.app.goo.gl/6nhrgyCSwHABf6jk9"
                        class="underline cursor-pointer hover:no-underline">Maison de la Culture
                         d'Amiens</a> is a big cultural place of the city. In this amusing job I greet spectators and
                     assist them during the shows. I also
@@ -69,7 +76,7 @@
 
             <div class="bg-stone-200 p-2 my-2 rounded-lg">
                 <h4 class="inline">Volunteer at AFEV</h4>
-                <p class="opacity-60">This <a href="https://afev.org/hauts-france/amiens"
+                <p class="opacity-50">This <a href="https://afev.org/hauts-france/amiens"
                        class="underline cursor-pointer hover:no-underline">association</a> fights
                     against educational inequalities. I give some time of my week to stay with two kids and doing cool
                     things :)
@@ -78,7 +85,7 @@
 
 
 
-            <p class="my-2 text-xs">Trough the years the design of this website has changed. You are seeing the
+            <p class="my-2 text-base">Trough the years the design of this website has changed. You are seeing the
                 <select class="archive-selector py-1 px-2 rounded-md">
                     <option data-url="index.html" selected="">last</option>
                     <option data-url="web-archive/v8-under-plus/frame.html">v.8 (under+)</option>
@@ -93,14 +100,19 @@
                 version.
             </p>
 
+            <button id="seeMore"
+                    class="absolute bottom-2 text-black left-1/2 -translate-x-1/2 z-20 underline cursor-pointer hover:no-underline opacity-60 mt-4 md:hidden">see
+                more</button>
 
-            <div class="w-full h-[100px] bg-gradient-to-t from-special-white to-transparent sticky bottom-0">
+            <div id="fog"
+                 class="w-full h-[80px] bg-gradient-to-t from-special-white to-transparent sticky bottom-0 z-10">
             </div>
         </div>
 
         <!------------ 🎥 VIDEOS ------------>
 
-        <div id="videoBlock" class="h-full aspect-video relative transition w-1/2">
+        <div id="videoPanel"
+             class="h-[calc(50vh-2rem)] object-contain md:w-1/2 md:max-w-xl aspect-video relative transition-all">
             <button id="playButton"
                     class="text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hover:opacity-50 z-30">(knocking)</button>
 
@@ -110,7 +122,8 @@
                 <source type="video/mp4" src="media/waiting.mp4" />
             </video>
 
-            <video id="videoPresenting" playsinline class="h-full w-full object-cover absolute z-10 rounded-3xl">
+            <video id="videoPresenting" playsinline
+                   class="h-full w-full object-cover absolute z-10 rounded-3xl">
                 <source type="video/webm" src="media/presenting.webm" />
                 <source type="video/mp4" src="media/presenting.mp4" />
             </video>
@@ -121,18 +134,58 @@
 
 
     <!------------ WORKS ------------>
-    <div
-         class="w-[calc(100vw - 5*2)] m-8 mt-0 p-4 bg-special-white border rounded-3xl grid grid-cols-3 gap-2 md:gap-4 md:gap-y-6">
+    <div id="worksPanel" class="h-fit m-6 mt-0 p-4 md:gap-4 md:gap-y-6 bg-special-white border rounded-3xl">
 
-        <!-- <h2 class="text-2xl"><span class="text-slate-300">Pablo</span>.works</h2> -->
+        <!------------ PROJECTS ------------>
+        <div class="projects">
+            <div id="project-3w4eu" class="hidden gap-4 pb-4 mb-4 border-b ">
+                <div class="w-3/5">
+                    <h2 class="text-2xl">3 Words for Europe</h2>
+                    <p>Same three words in every european language</p>
+                    <span class="cursor-pointer opacity-50 underline hover:no-underline"
+                          onclick="hideProjects()">close</span>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <img src="media/thumbnails/3-words-for-eu.png" alt="" class="w-full rounded-lg">
+                    <img src="media/thumbnails/3-words-for-eu.png" alt="" class="w-full rounded-lg">
+                </div>
+            </div>
+        </div>
 
-        <div class="cursor-pointer hover:opacity-50 hover:transition-all">
-            <img src="media/thumbnails/3-words-for-eu.png" alt="" class="w-full rounded-lg">
-            <h3>3 Words for Europe</h3>
-            <p class="opacity-30">Same three words in every european language</p>
+        <!------------ THUMBNAILS ------------>
+        <div class="grid gap-4 gap-y-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <div class="cursor-pointer hover:opacity-50 transition" onclick="showProject(this)"
+                 data-project="3w4eu">
+                <img src="media/thumbnails/3-words-for-eu.png" alt="" class="w-full rounded-lg">
+                <h3 class="mt-1">3 Words for Europe</h3>
+                <p class="opacity-50">Same three words in every european language</p>
+            </div>
+            <div class="cursor-pointer hover:opacity-50" onclick="showProject(this)" data-project="3w4eu">
+                <img src="media/thumbnails/3-words-for-eu.png" alt="" class="w-full rounded-lg">
+                <h3 class="mt-1">3 Words for Europe</h3>
+                <p class="opacity-50">Same three words in every european language</p>
+            </div>
+            <div class="cursor-pointer hover:opacity-50" onclick="showProject(this)" data-project="3w4eu">
+                <img src="media/thumbnails/3-words-for-eu.png" alt="" class="w-full rounded-lg">
+                <h3 class="mt-1">3 Words for Europe</h3>
+                <p class="opacity-50">Same three words in every european language</p>
+            </div>
+            <div class="cursor-pointer hover:opacity-50" onclick="showProject(this)" data-project="3w4eu">
+                <img src="media/thumbnails/3-words-for-eu.png" alt="" class="w-full rounded-lg">
+                <h3 class="mt-1">3 Words for Europe</h3>
+                <p class="opacity-50">Same three words in every european language</p>
+            </div>
+            <div class="cursor-pointer hover:opacity-50" onclick="showProject(this)" data-project="3w4eu">
+                <img src="media/thumbnails/3-words-for-eu.png" alt="" class="w-full rounded-lg">
+                <h3 class="mt-1">3 Words for Europe</h3>
+                <p class="opacity-50">Same three words in every european language</p>
+            </div>
+
+
         </div>
 
     </div>
+
 
 
     <script src="assets/js/script.js"></script>
