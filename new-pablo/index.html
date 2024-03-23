@@ -26,7 +26,7 @@
     <!------------ ALL ------------>
 
     <div id="topPanel"
-         class="m-6 md:m-6 bg-special-white flex 
+         class="m-6 md:mb-3 bg-special-white flex 
         flex-col-reverse md:flex-row justify-between">
 
         <!------------ 🌏 INFO ------------>
@@ -34,12 +34,9 @@
         <div id="infoPanel"
              class="h-[calc(50vh-2rem)] overflow-hidden md:overflow-scroll scrollbar-hide md:w-1/2 mt-4 md:mt-0 md:pr-6 relative transition-all"
              data-state="close">
-            <!-- <div class="h-full w-full flex items-center justify-center hover:opacity-30 cursor-pointer">
-                <h2 class="text-2xl"><span class="text-slate-300">Pablo</span>.daily</h2>
-            </div> -->
 
             <div class="bg-special-white z-50 flex justify-between items-center">
-                <h1 class="text-2xl inline">🌀 Pablo Moreno is a ...</h1>
+                <h1 class="text-2xl inline">🌀 Pablo Moreno is a <span id="isWhat">...</span></h1>
                 <div>
                     <span class="ml-1 text-xs opacity-30 underline cursor-pointer hover:no-underline">cv</span>
                     <span class="ml-1 text-xs opacity-30 underline cursor-pointer hover:no-underline">are.na</span>
@@ -47,17 +44,15 @@
                 </div>
             </div>
 
-            <p class="my-2 text-lg"><span class="font-bold"></span>... happy young designer finishing
-                his
-                studies in graphic design. Grown in
+            <p class="my-2 text-lg"><span class="font-bold"></span>... happy young designer finishing his studies in
+                graphic design. Grown in
                 Bilbao he
                 lives in
                 France where he loves create, early mornings and many more things. He's putting a lot of energy on
                 making websites for people, for things or for fun.</p>
             <p class="text-lg">What is he doing in his daily life?</p>
             <div class="bg-stone-200 p-2 my-2 rounded-lg">
-                <h4 class="inline">Student in a UX/UI
-                    Double Master</h4>
+                <h4 class="inline">Student in a UX/UI Double Master</h4>
                 <p class="opacity-50">
                     Moving between the <a href="https://esad-amiens.design/fr/design-numerique/dnsep"
                        class="underline cursor-pointer hover:no-underline">ésad</a> of Amiens and the <a
@@ -82,8 +77,6 @@
                     things :)
                 </p>
             </div>
-
-
 
             <p class="my-2 text-base">Trough the years the design of this website has changed. You are seeing the
                 <select class="archive-selector py-1 px-2 rounded-md">
@@ -114,7 +107,8 @@
         <div id="videoPanel"
              class="h-[calc(50vh-2rem)] object-contain md:w-1/2 md:max-w-xl aspect-video relative transition-all">
             <button id="playButton"
-                    class="text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hover:opacity-50 z-30">(knocking)</button>
+                    class="text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hover:opacity-50 z-30">(if
+                you are a design studio,<br> please click here!)</button>
 
             <video id="videoWaiting" playsinline autoplay muted controls loop poster="media/poster-video.png"
                    class="h-full w-full object-cover absolute z-20 transition duration-[1s] rounded-3xl">
@@ -138,46 +132,80 @@
 
         <!------------ PROJECTS ------------>
         <div class="projects">
+
             <div id="project-3w4eu" class="hidden gap-4 pb-4 mb-4 border-b ">
                 <div class="w-3/5">
                     <h2 class="text-2xl">3 Words for Europe</h2>
                     <p>Same three words in every european language</p>
                     <span class="cursor-pointer opacity-50 underline hover:no-underline"
-                          onclick="hideProjects()">close</span>
+                          onclick="hideProjects(this)" data-project="3w4eu">close</span>
                 </div>
                 <div class="flex flex-col gap-2">
                     <img src="media/thumbnails/3-words-for-eu.png" alt="" class="w-full rounded-lg">
-                    <img src="media/thumbnails/3-words-for-eu.png" alt="" class="w-full rounded-lg">
+                </div>
+            </div>
+
+            <div id="project-aa22" class="hidden gap-4 pb-4 mb-4 border-b ">
+                <div class="w-3/5">
+                    <h2 class="text-2xl">Andrea Aguiler</h2>
+                    <p>Same three words in every european language</p>
+                    <span class="cursor-pointer opacity-50 underline hover:no-underline"
+                          onclick="hideProjects(this)" data-project="aa22">close</span>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <img src="media/thumbnails/andrea-aguilera.jpg" alt="" class="w-full rounded-lg">
+                </div>
+            </div>
+
+            <div id="project-cn24" class="hidden gap-4 pb-4 mb-4 border-b ">
+                <div class="w-3/5">
+                    <h2 class="text-2xl">Collaborative Narratives</h2>
+                    <p>Same three words in every european language</p>
+                    <span class="cursor-pointer opacity-50 underline hover:no-underline"
+                          onclick="hideProjects(this)" data-project="cn24">close</span>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <img src="media/thumbnails/collaborative-narratives.png" alt="" class="w-full rounded-lg">
+                </div>
+            </div>
+
+            <div id="project-cd23" class="hidden gap-4 pb-4 mb-4 border-b ">
+                <div class="w-3/5">
+                    <h2 class="text-2xl">Copa Decantadora 3d spot</h2>
+                    <p>Same three words in every european language</p>
+                    <span class="cursor-pointer opacity-50 underline hover:no-underline"
+                          onclick="hideProjects(this)" data-project="cd23">close</span>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <img src="media/thumbnails/copa-decantadora.png" alt="" class="w-full rounded-lg">
                 </div>
             </div>
         </div>
 
+
         <!------------ THUMBNAILS ------------>
-        <div class="grid gap-4 gap-y-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            <div class="cursor-pointer hover:opacity-50 transition" onclick="showProject(this)"
+        <div class="minis grid gap-4 gap-y-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+
+            <div id="mini-3w4eu" class="cursor-pointer hover:opacity-50 transition" onclick="showProject(this)"
                  data-project="3w4eu">
                 <img src="media/thumbnails/3-words-for-eu.png" alt="" class="w-full rounded-lg">
                 <h3 class="mt-1">3 Words for Europe</h3>
                 <p class="opacity-50">Same three words in every european language</p>
             </div>
-            <div class="cursor-pointer hover:opacity-50" onclick="showProject(this)" data-project="3w4eu">
-                <img src="media/thumbnails/3-words-for-eu.png" alt="" class="w-full rounded-lg">
-                <h3 class="mt-1">3 Words for Europe</h3>
+
+            <div id="mini-aa22" class="cursor-pointer hover:opacity-50" onclick="showProject(this)" data-project="aa22">
+                <img src="media/thumbnails/andrea-aguilera.jpg" alt="" class="w-full rounded-lg">
+                <h3 class="mt-1">Andrea Aguilera website</h3>
                 <p class="opacity-50">Same three words in every european language</p>
             </div>
-            <div class="cursor-pointer hover:opacity-50" onclick="showProject(this)" data-project="3w4eu">
-                <img src="media/thumbnails/3-words-for-eu.png" alt="" class="w-full rounded-lg">
-                <h3 class="mt-1">3 Words for Europe</h3>
+            <div id="mini-cn24" class="cursor-pointer hover:opacity-50" onclick="showProject(this)" data-project="cn24">
+                <img src="media/thumbnails/collaborative-narratives.png" alt="" class="w-full rounded-lg">
+                <h3 class="mt-1">Collaborative Narratives</h3>
                 <p class="opacity-50">Same three words in every european language</p>
             </div>
-            <div class="cursor-pointer hover:opacity-50" onclick="showProject(this)" data-project="3w4eu">
-                <img src="media/thumbnails/3-words-for-eu.png" alt="" class="w-full rounded-lg">
-                <h3 class="mt-1">3 Words for Europe</h3>
-                <p class="opacity-50">Same three words in every european language</p>
-            </div>
-            <div class="cursor-pointer hover:opacity-50" onclick="showProject(this)" data-project="3w4eu">
-                <img src="media/thumbnails/3-words-for-eu.png" alt="" class="w-full rounded-lg">
-                <h3 class="mt-1">3 Words for Europe</h3>
+            <div id="mini-cd23" class="cursor-pointer hover:opacity-50" onclick="showProject(this)" data-project="cd23">
+                <img src="media/thumbnails/copa-decantadora.png" alt="" class="w-full rounded-lg">
+                <h3 class="mt-1">Copa Decantadora 3d spot</h3>
                 <p class="opacity-50">Same three words in every european language</p>
             </div>
 

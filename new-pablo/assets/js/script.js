@@ -51,9 +51,9 @@ document.addEventListener("keydown", function (event) {
 });
 
 // SEE MORE
-
 const seeMore = document.getElementById("seeMore");
 const infoPanel = document.getElementById("infoPanel");
+const isWhat = document.getElementById("isWhat");
 const fog = document.getElementById("fog");
 
 const topPanel = document.getElementById("topPanel");
@@ -79,43 +79,83 @@ function displayMore() {
 seeMore.addEventListener("click", displayMore);
 
 // PTOJECTS STUFF
-
 function showProject(e) {
-  pauseVideo();
+  //CHACHE LES AUTRES PROJETS SI OUVERTS
+  var projets = document.querySelectorAll(".projects > div");
+  for (let i = 0, max = projets.length; i < max; i++) {
+    projets[i].classList.replace("flex", "hidden");
+  }
 
+  var minis = document.querySelectorAll(".minis > div");
+  for (let i = 0, max = minis.length; i < max; i++) {
+    minis[i].classList.replace("hidden", "block");
+  }
+
+  // MONTRER EN HAUT
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
+  // TEXT SUR LA VIDEO S'IL Y EN A
+  playButton.innerHTML = "💬";
+
+  // CACCHE LE "SEE MORE" QUAND PROJET OUVERT
+  seeMore.classList.add("hidden");
+
+  // TEXT SUR LES TROIS POINTS
+  var randomColor = [
+    "globettroter",
+    "newspaper reader",
+    "<i>chic</i> guy",
+    "battery",
+  ][Math.floor(Math.random() * 4)];
+  isWhat.innerHTML = " also a " + randomColor;
+
+  // CACHE LE PROJET SÉLECTIONNÉ DES AUTRES
+  e.classList.add("hidden");
+
+  // MONTRE LE PROJET SEELCTIONNÉ
   var projectSelected = e.getAttribute("data-project");
   console.log(projectSelected);
   document
     .getElementById("project-" + projectSelected)
     .classList.replace("hidden", "flex");
 
-  infoPanel.classList.replace("h-[calc(50vh-2rem)]", "h-[60px]");
-  videoPanel.classList.replace("h-[calc(50vh-2rem)]", "h-[60px]");
-
+  // CHOSES DU PANEL
+  infoPanel.classList.replace("md:w-1/2", "md:w-full");
+  infoPanel.classList.replace("h-[calc(50vh-2rem)]", "h-[40px]");
+  videoPanel.classList.replace("h-[calc(50vh-2rem)]", "h-[40px]");
   videoPanel.classList.remove("md:w-1/2");
-
-  topPanel.classList.add("md:mb-3");
-
   videoWaiting.classList.replace("rounded-3xl", "rounded-xl");
   videoPresenting.classList.replace("rounded-3xl", "rounded-xl");
+  fog.classList.add("hidden");
 }
 
-// on cache la fenetre d'infos de tous les proejts
-function hideProjects() {
+// REMONTRE TOUS LES PROJETS
+function hideProjects(e) {
   var elements = document.querySelectorAll(".projects > div");
   for (let i = 0, max = elements.length; i < max; i++) {
-    document
-      .querySelector(".projects > div")
-      .classList.replace("flex", "hidden");
+    elements[i].classList.replace("flex", "hidden");
   }
 
-  infoPanel.classList.replace("h-[60px]", "h-[calc(50vh-2rem)]");
-  videoPanel.classList.replace("h-[60px]", "h-[calc(50vh-2rem)]");
+  // REMONTRE LE PROJET QUI ÉTAIT MONTRÉ
+  var projectHided = e.getAttribute("data-project");
+  document
+    .getElementById("mini-" + projectHided)
+    .classList.replace("hidden", "block");
 
+  // TEXT SUR LA VIDEO S'IL Y EN A
+  playButton.innerHTML = "(if you are a design studio,<br> please click here!)";
+  isWhat.innerHTML = "...";
+
+  // MONTRE LE "SEE MORE" QUAND PROJET OUVERT
+  seeMore.classList.remove("hidden");
+
+  // CHOSES DU PANEL
+
+  infoPanel.classList.replace("md:w-full", "md:w-1/2");
+  infoPanel.classList.replace("h-[40px]", "h-[calc(50vh-2rem)]");
+  videoPanel.classList.replace("h-[40px]", "h-[calc(50vh-2rem)]");
   videoPanel.classList.add("md:w-1/2");
-
-  topPanel.classList.remove("md:mb-3");
-
   videoWaiting.classList.replace("rounded-xl", "rounded-3xl");
   videoPresenting.classList.replace("rounded-xl", "rounded-3xl");
+  fog.classList.remove("hidden");
 }
