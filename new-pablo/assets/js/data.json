@@ -1,0 +1,37 @@
+{
+  "projects": [
+    {
+      "id": "we23",
+      "nature": "Exposition",
+      "date": "february 2023",
+      "name": "Bulgarie 2023",
+      "small": "Quick stuff",
+      "description": "Día Mundial del Dominio Público",
+      "thumbnail": "bg-thumb.png",
+      "alt": "Screencapture of",
+      "images": ["bg-1.png", "bg-2.png", "bg-3.png", "bg-4.png"]
+    },
+    {
+      "id": "cn23",
+      "nature": "Personal",
+      "date": "june 2023",
+      "name": "Collaborative Narratives",
+      "small": "Quick stuff",
+      "description": "Día Mundial del Dominio Público",
+      "thumbnail": "collaborative-narratives-thumb.png",
+      "alt": "Screencapture of",
+      "images": ["XXX.png"]
+    },
+    {
+      "id": "ma22",
+      "nature": "Commissioned",
+      "date": "september 2021",
+      "name": "Eugenio Moreno website",
+      "small": "Quick stuff",
+      "description": "Día Mundial del Dominio Público",
+      "thumbnail": "moreno-arquitecto-thumb.png",
+      "alt": "Screencapture of",
+      "images": ["XXX.png"]
+    }
+  ]
+}

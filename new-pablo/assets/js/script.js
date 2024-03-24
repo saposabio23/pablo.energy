@@ -51,12 +51,12 @@ document.addEventListener("keydown", function (event) {
 });
 
 // SEE MORE
-const seeMore = document.getElementById("seeMore");
-const infoPanel = document.getElementById("infoPanel");
 const isWhat = document.getElementById("isWhat");
-const fog = document.getElementById("fog");
-
 const topPanel = document.getElementById("topPanel");
+const infoPanel = document.getElementById("infoPanel");
+const infoText = document.getElementById("infoText");
+const seeMore = document.getElementById("seeMore");
+const fog = document.getElementById("fog");
 
 function displayMore() {
   if (infoPanel.getAttribute("data-state") === "close") {
@@ -81,14 +81,14 @@ seeMore.addEventListener("click", displayMore);
 // PTOJECTS STUFF
 function showProject(e) {
   //CHACHE LES AUTRES PROJETS SI OUVERTS
-  var projets = document.querySelectorAll(".projects > div");
+  var projets = document.querySelectorAll("#projects > div");
   for (let i = 0, max = projets.length; i < max; i++) {
     projets[i].classList.replace("flex", "hidden");
   }
 
-  var minis = document.querySelectorAll(".minis > div");
-  for (let i = 0, max = minis.length; i < max; i++) {
-    minis[i].classList.replace("hidden", "block");
+  var thumbnails = document.querySelectorAll("#thumbnails > div");
+  for (let i = 0, max = thumbnails.length; i < max; i++) {
+    thumbnails[i].classList.replace("hidden", "block");
   }
 
   // MONTRER EN HAUT
@@ -120,7 +120,7 @@ function showProject(e) {
     .classList.replace("hidden", "flex");
 
   // CHOSES DU PANEL
-  infoPanel.classList.replace("md:w-1/2", "md:w-full");
+  infoText.classList.add("hidden");
   infoPanel.classList.replace("h-[calc(50vh-2rem)]", "h-[40px]");
   videoPanel.classList.replace("h-[calc(50vh-2rem)]", "h-[40px]");
   videoPanel.classList.remove("md:w-1/2");
@@ -131,7 +131,7 @@ function showProject(e) {
 
 // REMONTRE TOUS LES PROJETS
 function hideProjects(e) {
-  var elements = document.querySelectorAll(".projects > div");
+  var elements = document.querySelectorAll("#projects > div");
   for (let i = 0, max = elements.length; i < max; i++) {
     elements[i].classList.replace("flex", "hidden");
   }
@@ -150,8 +150,7 @@ function hideProjects(e) {
   seeMore.classList.remove("hidden");
 
   // CHOSES DU PANEL
-
-  infoPanel.classList.replace("md:w-full", "md:w-1/2");
+  infoText.classList.remove("hidden");
   infoPanel.classList.replace("h-[40px]", "h-[calc(50vh-2rem)]");
   videoPanel.classList.replace("h-[40px]", "h-[calc(50vh-2rem)]");
   videoPanel.classList.add("md:w-1/2");
