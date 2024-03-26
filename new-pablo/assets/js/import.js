@@ -14,12 +14,15 @@ fetch("assets/js/data.json")
 const thumbnails = document.getElementById("thumbnails");
 const projects = document.getElementById("projects");
 
+var delayNum = 0;
 function createThumbnails(data) {
   data.projects.forEach(function (item) {
+    delayNum++;
     //create block
     let thumbBlock = document.createElement("div");
     thumbBlock.className =
-      "relative cursor-pointer hover:opacity-50 transition";
+      "relative opacity-100 transition cursor-pointer group animateEntrance delay-" +
+      delayNum;
     thumbBlock.id = "mini-" + item.id;
     thumbBlock.setAttribute("data-project", item.id);
     thumbBlock.setAttribute("onclick", "showProject(this)");
@@ -27,23 +30,28 @@ function createThumbnails(data) {
     //create image
     let thumbImg = document.createElement("img");
     thumbImg.src = "media/" + item.thumbnail;
-    thumbImg.className = "w-full rounded-lg";
+    thumbImg.className = "w-full rounded-lg border group-hover:opacity-50";
     thumbImg.setAttribute("alt", item.alt);
     thumbBlock.appendChild(thumbImg);
 
     //create title
     let thumbTitle = document.createElement("h3");
-    thumbTitle.className = "mt-1";
+    thumbTitle.className = "mt-1 group-hover:underline";
     thumbTitle.innerHTML = item.name;
     thumbBlock.appendChild(thumbTitle);
 
+    let thumbTag = document.createElement("span");
+    thumbTag.className =
+      "absolute text-[60%] text-white top-2 -right-2 px-[2px] py-[1px] rounded-sm rotate-[20deg] transition group-hover:rotate-[0] group-hover:opacity-100";
+    thumbTag.innerHTML = item.nature;
     if (item.nature === "Commissioned") {
-      let thumbTag = document.createElement("span");
-      thumbTag.className =
-        "absolute bg-red-600 text-[60%] text-white bottom-2 right-1 px-[2px] py-[1px] rounded-sm -rotate-12";
-      thumbTag.innerHTML = item.nature;
-      thumbBlock.appendChild(thumbTag);
+      thumbTag.classList.add("bg-red-600");
+    } else if (item.nature === "WIP") {
+      thumbTag.classList.add("bg-black");
+    } else if (item.nature === "Personal") {
+      thumbTag.classList.add("bg-blue-600");
     }
+    thumbBlock.appendChild(thumbTag);
 
     //create caption
     let thumbDescription = document.createElement("h3");
@@ -60,13 +68,55 @@ function createProjects(data) {
   data.projects.forEach(function (item) {
     //create block
     let projectBlock = document.createElement("div");
-    projectBlock.className = "hidden gap-4 pb-4 mb-4 border-b";
+    projectBlock.className =
+      "hidden relative flex-col gap-6 justify-between pb-10 mb-6 border-b md:flex-row";
     projectBlock.id = "project-" + item.id;
 
     //create info side
+    let projectData = document.createElement("div");
+    projectData.className = "sticky top-4 w-full max-w-md h-fit";
+    projectBlock.appendChild(projectData);
+
+    let projectDataTop = document.createElement("div");
+    projectDataTop.className = "flex flex-row justify-between mb-2 w-full";
+    projectData.appendChild(projectDataTop);
+
+    let projectDataLeft = document.createElement("div");
+    projectDataTop.appendChild(projectDataLeft);
+
+    let thumbTag = document.createElement("span");
+    thumbTag.innerHTML = item.nature;
+    thumbTag.className =
+      "mr-2 text-xs text-white px-[4px] py-[2px] rounded-md inline";
+    if (item.nature === "Commissioned") {
+      thumbTag.classList.add("bg-red-600");
+    } else if (item.nature === "WIP") {
+      thumbTag.classList.add("bg-black");
+    } else if (item.nature === "Personal") {
+      thumbTag.classList.add("bg-blue-600");
+    }
+    projectDataLeft.appendChild(thumbTag);
+
+    let projectDate = document.createElement("small");
+    projectDate.className = "text-xs";
+    projectDate.innerHTML = item.date;
+    projectDataLeft.appendChild(projectDate);
+
+    let projectDataRight = document.createElement("div");
+    projectDataTop.appendChild(projectDataRight);
+
+    let projectClose = document.createElement("span");
+    projectClose.className =
+      "opacity-50 flex items-center justify-center border rounded-full w-[40px] cursor-pointer bg-neutral-300 hover:opacity-30 transition";
+    projectClose.innerHTML = "X";
+    projectClose.setAttribute("onclick", "hideProjects(this)");
+    projectClose.setAttribute("data-project", item.id);
+    projectDataRight.appendChild(projectClose);
+
+    //create info side
     let projectInfo = document.createElement("div");
-    projectInfo.className = "w-full";
-    projectBlock.appendChild(projectInfo);
+    projectInfo.className = "flex flex-col w-full";
+    projectData.appendChild(projectInfo);
 
     let projectTitle = document.createElement("h2");
     projectTitle.className = "text-2xl";
@@ -77,29 +127,12 @@ function createProjects(data) {
     projectDescription.innerHTML = item.description;
     projectInfo.appendChild(projectDescription);
 
-    let thumbTag = document.createElement("span");
-    thumbTag.innerHTML = item.nature;
-    thumbTag.className = "text-sm text-white px-[4px] py-[2px] rounded-sm mr-2";
-    if (item.nature === "Commissioned") {
-      thumbTag.classList.add("bg-red-600");
-    } else if (item.nature === "Exposition") {
-      thumbTag.classList.add("bg-green-600");
-    } else if (item.nature === "Personal") {
-      thumbTag.classList.add("bg-blue-600");
-    }
-    projectInfo.appendChild(thumbTag);
-
-    let projectDate = document.createElement("small");
-    projectDate.innerHTML = item.date;
-    projectInfo.appendChild(projectDate);
-
-    let projectClose = document.createElement("h2");
-    projectClose.className =
-      "cursor-pointer opacity-50 underline hover:no-underline";
-    projectClose.innerHTML = "close";
-    projectClose.setAttribute("onclick", "hideProjects(this)");
-    projectClose.setAttribute("data-project", item.id);
-    projectInfo.appendChild(projectClose);
+    let projectUrl = document.createElement("a");
+    projectUrl.className =
+      "text-sm underline opacity-50 cursor-pointer hover:no-underline";
+    projectUrl.href = item.url;
+    projectUrl.innerHTML = item.url;
+    projectInfo.appendChild(projectUrl);
 
     //create image side
     let projectImages = document.createElement("div");
@@ -108,7 +141,8 @@ function createProjects(data) {
 
     for (var image in item.images) {
       let projectImg = document.createElement("img");
-      projectImg.className = "w-full rounded-2xl border";
+      projectImg.className =
+        "rounded-2xl border max-h-[70vh] object-contain w-full m-auto";
       projectImg.src = "media/" + item.images[image];
       projectImages.appendChild(projectImg);
     }

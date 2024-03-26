@@ -80,6 +80,9 @@ seeMore.addEventListener("click", displayMore);
 
 // PTOJECTS STUFF
 function showProject(e) {
+  // MONTRER EN HAUT
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
   //CHACHE LES AUTRES PROJETS SI OUVERTS
   var projets = document.querySelectorAll("#projects > div");
   for (let i = 0, max = projets.length; i < max; i++) {
@@ -88,11 +91,8 @@ function showProject(e) {
 
   var thumbnails = document.querySelectorAll("#thumbnails > div");
   for (let i = 0, max = thumbnails.length; i < max; i++) {
-    thumbnails[i].classList.replace("hidden", "block");
+    thumbnails[i].classList.remove("opacity-10");
   }
-
-  // MONTRER EN HAUT
-  window.scrollTo({ top: 0, behavior: "smooth" });
 
   // TEXT SUR LA VIDEO S'IL Y EN A
   playButton.innerHTML = "💬";
@@ -101,16 +101,9 @@ function showProject(e) {
   seeMore.classList.add("hidden");
 
   // TEXT SUR LES TROIS POINTS
-  var randomColor = [
-    "globettroter",
-    "newspaper reader",
-    "<i>chic</i> guy",
-    "battery",
-  ][Math.floor(Math.random() * 4)];
-  isWhat.innerHTML = " also a " + randomColor;
-
+  whoIsPablo();
   // CACHE LE PROJET SÉLECTIONNÉ DES AUTRES
-  e.classList.add("hidden");
+  e.classList.add("opacity-10");
 
   // MONTRE LE PROJET SEELCTIONNÉ
   var projectSelected = e.getAttribute("data-project");
@@ -140,7 +133,7 @@ function hideProjects(e) {
   var projectHided = e.getAttribute("data-project");
   document
     .getElementById("mini-" + projectHided)
-    .classList.replace("hidden", "block");
+    .classList.remove("opacity-10");
 
   // TEXT SUR LA VIDEO S'IL Y EN A
   playButton.innerHTML = "(if you are a design studio,<br> please click here!)";
@@ -157,4 +150,70 @@ function hideProjects(e) {
   videoWaiting.classList.replace("rounded-xl", "rounded-3xl");
   videoPresenting.classList.replace("rounded-xl", "rounded-3xl");
   fog.classList.remove("hidden");
+}
+
+/* -----------------------------------
+WHO IS PABLO
+-------------------------------------- */
+function whoIsPablo() {
+  var pabloIs = [
+    "globettroter",
+    "newspaper reader",
+    "<i>chic</i> guy",
+    "battery",
+  ][Math.floor(Math.random() * 4)];
+  isWhat.innerHTML =
+    " also a <span id='isThis' class='cursor-pointer' onclick='whoIsPablo()'>" +
+    pabloIs +
+    "</span>";
+}
+
+/* -----------------------------------
+IMAGE INACTIVE
+-------------------------------------- */
+var screensaver = document.getElementById("screensaver");
+
+window.onload = function () {
+  let time;
+  window.onload = resetTimer;
+  document.onmousemove = resetTimer;
+  document.touchstart = resetTimer;
+
+  function logout() {
+    // screensaver.classList.replace("hidden", "block");
+
+    placeImages();
+  }
+  function resetTimer() {
+    clearTimeout(time);
+    screensaver.innerHTML =
+      "<span class='text-3xl'>Here are some other stuffs I do or like to do:</span>";
+    // screensaver.classList.replace("block", "hidden");
+    time = setTimeout(logout, 1000);
+  }
+};
+
+var delayStuff = 0;
+
+function placeImages() {
+  const moreThings = ["anthropocene.gif", "ketamina.png", "more-things.webp"];
+  console.log(moreThings);
+  moreThings.forEach((item) => {
+    delayStuff++;
+    console.log(delayStuff);
+
+    var image = document.createElement("img");
+    image.className = "w-[200px] absolute animateEntrance delay-" + delayStuff;
+    image.src = "media/more-things/" + item;
+
+    var x = Math.random() * window.screen.width - image.style.width;
+    var y = Math.random() * window.screen.height - image.style.height;
+    console.log("x:", x);
+    console.log("y:", y);
+
+    image.style.left = x + "px";
+    image.style.top = y + "px";
+    screensaver.appendChild(image);
+  });
+  delayStuff = 0;
 }

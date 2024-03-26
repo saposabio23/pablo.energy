@@ -1,3 +1,28 @@
-email:
-- hover display "click to copy"
--
+- hover email display "click to copy"
+- table with list of all project
+- cv PDF
+
+STAGES
+
+- kiosk, vide books (huidenclub), printroom, varia
+- Nieuwe Instituut: Digital Lab
+- V2, Worm, 
+- mama, Tent, Melly 
+- Rib, Shimmer, tale of a tub. 
+- CBK organisation 
+
+**projets selected**
+- [wip] Web Angie
+- [wip] Web copa
+- Collaborative narratives
+- Fils Rouges
+- Copa Decantadora 3D
+- Vivir Sin Tí
+- Andrea Aguilera
+
+- Web Mémoire
+- A MAP OF INTERNET
+- 3 words 4 europe
+- Affiches ESAD 3D
+- BG 
+
