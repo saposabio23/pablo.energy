@@ -1,128 +1,250 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!doctype html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
 
-  <!-- Primary Meta Tags -->
-  <title>pablo moreno</title>
-  <meta name="title" content="Pablo Moreno">
-  <meta name="description"
-    content="Pablo Moreno is a energetic web designer, studying in France and working down to Bilbao.">
-  <meta name="author" content="Pablo Moreno">
-  <link rel="canonical" href="https://pablo.energy">
+    <!-- Primary Meta Tags -->
+    <title>🌀 New pablo</title>
+    <meta name="title" content="Copa Alzár">
+    <meta name="description"
+          content="Pablo Moreno">
+    <meta name="author" content="Pablo Moreno">
+    <meta name="keywords" content="Pablo Moreno, webdesign, code, energy, fullspeed">
+    <link rel="canonical" href="https://pablo.energy">
 
-  <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/assets/favicon/site.webmanifest">
-  <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
+    <!-- Favicon -->
 
-  <!-- Links -->
-  <link type="text/css" rel="stylesheet" href="assets/css/style.css" />
-  <link type="text/css" rel="stylesheet" href="assets/css/mobile.css" />
 
+    <!-- Links -->
+    <link href="assets/css/output.css" rel="stylesheet" />
 </head>
 
-<body>
-  <div class="night">
-    <div id="bio">
-      Pablo is a happy young designer finishing his studies in graphic design. Grown in Bilbao he lives in France where
-      he loves create, early mornings and many more things. He's putting a lot of energy on making <a href="#"
-        id="websites" onclick="showList()">websites</a> for people,
-      for things or for fun
+<body class="bg-special-white">
+    <!------------ TOP PANEL ------------>
+    <div id="topPanel"
+         class="flex flex-col-reverse justify-between m-6 md:mb-3 bg-special-white md:flex-row">
 
-      <form name="form" class="enter">
-        <input name="submit" style="display:none" />
-        <input id="password" type='text' name='texte' value='' placeholder="🐸" onkeypress="clickPress(event)" />
-      </form><br>
+        <!------------ 🌏 INFO ------------>
 
-      <div class="archive">
-        <p>Trough the years the design of this website has changed. You are seeing the
-          <select class="archive-selector">
-            <option data-url="index.html">last version</option>
-            <option data-url="web-archive/v8-under-plus/frame.html">v.8 (under+)</option>
-            <option data-url="web-archive/v7-under/frame.html">v.7 (under)</option>
-            <option data-url="web-archive/v6-23/frame.html">v.6 (23%)</option>
-            <option data-url="web-archive/v5-threecolors/frame.html">v.5 (threecolors)</option>
-            <option data-url="web-archive/v4-dark/frame.html">v.4 (dark)</option>
-            <option data-url="web-archive/v3-sidelist/frame.html">v.3 (sidelist)</option>
-            <option data-url="web-archive/v2-billboard2/frame.html">v.2 (billboard2)</option>
-            <option data-url="web-archive/v1-billboard/frame.html">v.1 (billboard)</option>
-          </select>
-        </p>
-      </div>
+        <div id="infoPanel"
+             class="h-fit md:h-[calc(50vh-2rem)] scrollbar-hide md:w-1/2 mt-4 md:mt-0 md:pr-8 relative transition-all flex flex-col justify-between">
+
+            <div
+                 class="box-content flex relative z-50 flex-col justify-between md:items-center md:flex-row bg-special-white">
+                <h1 class="inline text-2xl"><a href="" class="transition-all hover:opacity-50 hover:rotate-45">🌀</a>
+                    Pablo Moreno is a <span
+                          id="isWhat">...</span></h1>
+
+                <div class="mt-2 text-sm md:mt-0">
+                    <a href="downloads/CV-PABLO-MORENO.pdf"
+                       class="ml-1 underline opacity-30 cursor-pointer hover:no-underline hover:cursor-ne-resize"
+                       target="_blank">CV</a>
+
+                    <script
+                            type="text/javascript">var email = "pablomoreno", domain = "proton.me", text = "E-mail"; document.write("<a href=javascript:location='" + "mail" + "to:" + email + "@" + domain + "' class='ml-1 underline opacity-30 cursor-pointer hover:no-underline hover:cursor-ne-resize'>" + text + "</a>");</script>
+
+                    <a href="https://www.are.na/pablo-moreno/"
+                       class="ml-1 underline opacity-30 cursor-pointer hover:no-underline hover:cursor-ne-resize"
+                       target="_blank">Are.na</a>
+                </div>
+            </div>
+
+            <div id="infoText" class="box-content flex relative flex-col justify-between h-full text-lg">
+                <div>
+                    <p class="my-2">Happy young designer finishing his studies
+                        in
+                        graphic design. Grown in
+                        Bilbao he
+                        lives in
+                        France where he loves create, early mornings and many more things. He's putting a lot of energy
+                        on
+                        making websites for people, for things or for fun.</p>
+
+                    <p class="my-2">Down here ↓ you can see some websites I made on the last year.<br> You can
+                        <button id="seeMore"
+                                class="text-black no-underline opacity-30 animate-pulse cursor-pointer hover:underline">read
+                            more</button> if <span id="noCurious">you are curious :)</span>
+                    </p>
+                    <p>⚡️ 🌐 💖</p>
+
+
+                </div>
+
+
+                <!-- <p>I'm starting looking for studios or designers in Rotterdam to do a long internship (6 months) !!!
+                    Very web focus ⚡️🌐💖</p> -->
+
+
+
+                <!-- <div id="fog"
+                     class="w-full h-[80px] bg-gradient-to-t from-special-white to-transparent sticky bottom-0 z-10">
+                </div> -->
+            </div>
+
+        </div>
+
+        <!------------ 🎥 VIDEOS ------------>
+
+        <div id="videoPanel"
+             class="h-[30vh] md:h-[calc(50vh-2rem)] object-contain md:w-1/2 aspect-video relative transition-all">
+            <button id="playButton"
+                    class="absolute top-1/2 left-1/2 z-30 text-white -translate-x-1/2 -translate-y-1/2 hover:opacity-50">(if
+                you are a design studio,<br> please click here!)</button>
+
+            <video id="videoWaiting" playsinline autoplay muted controls loop
+                   class="h-full w-full object-cover absolute z-20 transition duration-[1s] rounded-3xl">
+                <source type="video/webm" src="media/videos/waiting.webm" />
+                <source type="video/mp4" src="media/videos/waiting.mp4" />
+            </video>
+
+            <video id="videoPresenting" playsinline
+                   class="object-cover absolute z-10 w-full h-full rounded-3xl">
+                <source type="video/webm" src="media/videos/presenting.webm" />
+                <source type="video/mp4" src="media/videos/presenting.mp4" />
+            </video>
+
+        </div>
 
     </div>
 
-    <div class="content">
-      <h2 class="">W.I.P:</h2>
-      <div class="list" id="wip">
-        <a href="/cartography" target="_blank">www.pablo.energy/cartography</a>
-      </div>
+    <!------------ MORE INFO ------------>
+    <div id="moreInfo"
+         class="hidden grid-cols-1 gap-3 mx-6 my-6 text-base opacity-0 transition-all md:gap-8 md:grid-cols-2 bg-special-white"
+         data-state="close">
+        <div>
+            <p class="text-xl">Daily life?</p>
+            <div class="p-2 my-2 rounded-lg bg-stone-200">
+                <h4 class="inline">Studing UX+UI Double Master</h4>
+                <p class="opacity-50">
+                    Moving between the <a href="https://esad-amiens.design/fr/design-numerique/dnsep"
+                       class="underline cursor-pointer hover:no-underline">ésad</a> of Amiens and the <a
+                       href="https://www.utc.fr/en/courses-and-training/the-french-masters-degree/humanities-and-creative-industries-hic/specialty-design-and-experience-creation-dcx/"
+                       class="underline cursor-pointer hover:no-underline">UTC</a> of Compiègne, I'll soon finish my
+                    studies of graphic and digital design. </p>
+            </div>
+
+            <div class="p-2 my-2 rounded-lg bg-stone-200">
+                <h4 class="inline">Student job at MCA</h4>
+                <p class="opacity-50">The <a href="https://maps.app.goo.gl/6nhrgyCSwHABf6jk9"
+                       class="underline cursor-pointer hover:no-underline">Maison de la Culture
+                        d'Amiens</a> is a big cultural place of the city. In this cool job I greet spectators and
+                    assist them during the shows. I also
+                    sell tickets for the MCA theater which, through its name, pays homage to Orson Welles.</p>
+            </div>
+
+            <div class="p-2 my-2 rounded-lg bg-stone-200">
+                <h4 class="inline">Volunteer at AFEV</h4>
+                <p class="opacity-50">This <a href="https://afev.org/hauts-france/amiens"
+                       class="underline cursor-pointer hover:no-underline">association</a> fights
+                    against educational inequalities. I give some time of my week to stay with two kids and doing
+                    cool
+                    things :)
+                </p>
+            </div>
+        </div>
+        <div>
+            <p class="text-xl">And more things...</p>
+            <p class="mt-2 text-lg">
+                Trought the years and projects I managed differents tools. To code: HTML, CSS, Javascript, these two
+                CMS: Indexhibit and Kirby, services like: Github or Stripe, and apps: MacOS, Visual Studio Codium,
+                Figma, Blender, InDesign, Photoshop, Premiere... you can see all the things I use at: <a
+                   class="underline cursor-pointer hover:no-underline" target="_blank"
+                   href='https://pablo.energy/digital-stuff'>my
+                    digital stuff</a>. I recently made a video tutorial
+                showing <a class="underline cursor-pointer hover:no-underline"
+                   target="_blank" href='https://youtu.be/qUKxkIZCRuI'>my way to put websites online</a> and I try to
+                make
+                a Chrome extension to put everything in <a class="underline cursor-pointer hover:no-underline"
+                   target="_blank" href='downloads/nb-browser.crx'>black &amp;
+                    white</a>.</p>
+            <p class="mt-4 text-lg">I like to work with friends, and having ideas to develop together. These people
+                can be from my school,
+                like <a class="underline cursor-pointer hover:no-underline" target="_blank"
+                   href='https://www.samdroual.fr/'>Sam</a> or
+                <a class="underline cursor-pointer hover:no-underline" target="_blank"
+                   href='https://www.samdroual.fr/'>Léo</a>, or far
+                from me, like <a class="underline cursor-pointer hover:no-underline"
+                   target="_blank" href='https://www.instagram.com/timkeuschnig/'>Tim</a> or <a
+                   class="underline cursor-pointer hover:no-underline"
+                   target="_blank" href='https://www.instagram.com/angieblingmaker'>Angèle</a>. I also made friends in
+                Rotterdam at
+                <a
+                   class="underline cursor-pointer hover:no-underline" target="_blank"
+                   href='https://extrapractice.space/'>Extra Practice</a>, where I meet designers who inspire me like <a
+                   class="underline cursor-pointer hover:no-underline" target="_blank"
+                   href='https://elliott.computer/'>Elliott</a> or
+                <a class="underline cursor-pointer hover:no-underline" target="_blank"
+                   href='https://tiana.computer/'>Tiana</a>.
+            </p>
+        </div>
+    </div>
 
 
-      <h2 class="">Commissioned</h2>
-      <div class="list" id="past">
-        <a href="https://collaborative-narratives.online" target="_blank">www.collaborative-narratives.online</a>
-        <a href="https://fils-rouges.online" target="_blank">www.fils-rouges.online</a>
-        <a href="https://vivirsinti-libro.com" target="_blank">www.vivirsinti-libro.com</a>
-        <a href="http://morenoarquitecto.com" target="_blank">www.morenoarquitecto.com</a>
-        <a href="http://calendarie2023.netlify.app/" target="_blank">www.calendarie2023.netlify.app</a>
-      </div>
+    <!------------ WORKS ------------>
+    <div id="worksPanel"
+         class="relative p-4 m-6 mb-4 rounded-3xl border md:p-6 h-fit md:gap-4 md:gap-y-6 bg-special-white">
+
+        <!------------ PROJECTS ------------>
+        <div id="projects" class="relative">
+        </div>
 
 
-      <h2 class="">Personal</h2>
-      <div class="list" id="still">
-        <a class="secret" href="/music" target="_blank">www.pablo.energy/music</a>
-        <a href="/lune" target="_blank">www.pablo.energy/lune</a>
-        <a href="/lyrics" target="_blank">www.pablo.energy/lyrics</a>
-        <a href="/my-computer" target="_blank">www.pablo.energy/my-computer</a>
-        <a href="/sunday-sites" target="_blank">www.pablo.energy/sunday-sites</a>
-        <a class="secret" href="/para-mateo" target="_blank">www.pablo.energy/para-mateo</a>
-        <a href="/presence" target="_blank">www.pablo.energy/presence</a>
-        <a href="/bg" target="_blank">www.pablo.energy/bg</a>
-        <a class="secret" href="/carta-para-dani" target="_blank">www.pablo.energy/carta-para-dani</a>
-        <a href="/virtualisations" target="_blank">www.pablo.energy/virtualisations</a>
-        <a class="secret" href="/k&p" target="_blank">www.pablo.energy/k&p</a>
-        <a class="secret" href="/naia-x-pablo" target="_blank">www.pablo.energy/naia-x-pablo</a>
-        <a class="secret" href="/sunsets" target="_blank">www.pablo.energy/sunsets</a>
-        <a href="/twenty-six-hour-a-day" target="_blank">www.pablo.energy/twenty-six-hour-a-day</a>
-        <a href="/glace-sans-tain" target="_blank">www.pablo.energy/glace-sans-tain</a>
-        <a class="secret" href="/juliettaytristan" target="_blank">www.pablo.energy/juliettaytristan</a>
-        <a href="/voeux2021" target="_blank">www.pablo.energy/voeux2021</a>
-        <a class="secret" href="/captcha" target="_blank">www.pablo.energy/captcha</a>
-        <a class="secret" href="/autre-temps" target="_blank">www.pablo.energy/autre-temps</a>
-        <a class="secret" href="/tott" target="_blank">www.pablo.energy/tott</a>
-        <a href="/poeme-mer" target="_blank">www.pablo.energy/poeme-mer</a>
-        <a href="https://3-words-for.eu" target="_blank">www.3-words-for.eu</a>
+        <!------------ THUMBNAILS ------------>
+        <div id="thumbnails" class="flex flex-col gap-8">
+            <div class="flex flex-col gap-3">
+                <h3 class="inline text-xl">W.I.P projects</h3>
+                <div id="thumbWip" class="grid grid-cols-2 gap-4 md:gap-10 md:grid-cols-4"></div>
+            </div>
+            <div class="flex flex-col gap-3">
+                <h3 class="inline text-xl">Commissionned websites</h3>
+                <div id="thumbCom" class="grid grid-cols-2 gap-4 md:gap-10 md:grid-cols-4"></div>
 
-      </div>
+            </div>
+            <div class="flex flex-col gap-3">
+                <h3 class="inline text-xl">Personal websites</h3>
+                <div id="thumbPer" class="grid grid-cols-2 gap-4 md:gap-10 md:grid-cols-4"></div>
 
+            </div>
+        </div>
+
+    </div>
+
+    <div class="box-border flex flex-col-reverse gap-4 justify-between items-center mx-8 my-4 text-xs md:flex-row">
+
+        <div>
+            Last update: 10/04/2024
+        </div>
+
+        <div>Trough the years the design of this website has changed. You are seeing the
+            <select class="px-2 py-1 rounded-md archive-selector">
+                <option data-url="index.html" selected="">last</option>
+                <option data-url="web-archive/v8-under-plus/frame.html">v.8 (under+)</option>
+                <option data-url="web-archive/v7-under/frame.html">v.7 (under)</option>
+                <option data-url="web-archive/v6-23/frame.html">v.6 (23%)</option>
+                <option data-url="web-archive/v5-threecolors/frame.html">v.5 (threecolors)</option>
+                <option data-url="web-archive/v4-dark/frame.html">v.4 (dark)</option>
+                <option data-url="web-archive/v3-sidelist/frame.html">v.3 (sidelist)</option>
+                <option data-url="web-archive/v2-billboard2/frame.html">v.2 (billboard2)</option>
+                <option data-url="web-archive/v1-billboard/frame.html">v.1 (billboard)</option>
+            </select>
+            version.
+        </div>
 
     </div>
 
 
-
-    <div class="image">
-      <a href="https://read.cv/pablomoreno" target="_blank" id="yellow">CV</a>
-      <a href="https://www.are.na/pablo-moreno" target="_blank" id="green">Are.na</a>
-      <a href="#" onclick="alertMail()" id="blue">Email</a>
-      <img src="assets/ascii-art.jpg" alt="pablo is a happy young boy. LH 4 EVER">
+    <div id="screensaver"
+         class="hidden fixed top-0 left-0 z-50 p-8 w-screen h-screen bg-opacity-70 opacity-100 backdrop-blur-md transition-all duration-1000 bg-neutral-100">
+        <span class="text-3xl">Here are some other stuffs I do or like to do:</span>
     </div>
 
-  </div>
 
-  <div id="screen-night">
-    <p>♻️ ⤼ 💤 ⤼ ⏳ ⤼ 🌄<br><small>good night :)</small></p>
-  </div>
+    <script src="assets/js/import.js"></script>
+    <script src="assets/js/script.js"></script>
 
-  <script id="script" src="assets/js/script.js"></script>
 
 </body>
 

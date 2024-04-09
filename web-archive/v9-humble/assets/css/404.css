@@ -1,0 +1,43 @@
+:root {
+
+}
+
+html,
+body,
+div,
+p {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  font-family: 'rubikregular';
+  scrollbar-width: none;
+}
+
+
+html {
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  height: 100%;
+  width: 100%;
+  line-height: 1.4;
+  overflow: scroll;
+  overflow-x: hidden;
+  /* cursor: url(../pointer/blue.cur), pointer; */
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+
+  background-color: var(--thisColor);
+}
