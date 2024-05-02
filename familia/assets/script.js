@@ -20,24 +20,44 @@ function deshoverOnTitle() {
 }
 title.addEventListener("mouseleave", deshoverOnTitle);
 
+const postal = document.querySelector(".postal");
 const info = document.querySelector(".info");
 const fecha = document.getElementById("fecha");
 const descripción = document.getElementById("descripción");
 
-var duracionDescripción = 100;
-
-function hoverOnInfo() {
-  fecha.classList.add("fadeIn");
+window.onload = function () {
+  postal.classList.add("postalVisible");
   setTimeout(function () {
-    descripción.classList.add("fadeOut");
-  }, duracionDescripción);
-}
-info.addEventListener("mouseenter", hoverOnInfo);
+    postal.classList.add("flipa");
+  }, 50);
+};
+
+var duracionDescripción = 300;
+
+// var isFlipping = false;
+// console.log(isFlipping);
+
+// function flipPostal() {
+//   if (isFlipping == true) {
+//     // nothing
+//   }
+//   if (isFlipping == false) {
+//     isFlipping = true;
+//     console.log(isFlipping);
+//     postal.classList.add("flipa");
+//     setTimeout(function () {
+//       postal.classList.remove("flipa");
+//       isFlipping = false;
+//       console.log(isFlipping);
+//     }, 1000);
+//   }
+// }
+// postal.addEventListener("mouseenter", flipPostal);
 
 function deshoverOnInfo() {
-  descripción.classList.remove("fadeOut");
+  descripción.classList.toggle("fadeOut");
   setTimeout(function () {
-    fecha.classList.remove("fadeIn");
+    fecha.classList.toggle("fadeIn");
   }, duracionDescripción);
 }
-info.addEventListener("mouseleave", deshoverOnInfo);
+postal.addEventListener("click", deshoverOnInfo);

@@ -100,6 +100,8 @@ h1 {
     color: black;
 
 
+
+
     transform: rotate(-2deg);
 
     display: flex;
@@ -109,7 +111,57 @@ h1 {
     gap: 15px;
 
     margin-bottom: 9vh;
+
+    transition: all .3s ease-in-out, opacity .5s ease-in-out;
+    opacity: 0;
 }
+
+.postalVisible {
+    opacity: 1;
+    transition: opacity .5s ease-in-out;
+}
+
+.postal:hover {
+    cursor: pointer;
+    transform: rotate(-1deg);
+    transition: all .3s ease-in-out;
+}
+
+.flipa {
+    transform: rotate(-2deg);
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    backface-visibility: visible !important;
+    animation: flip 1s ease 1;
+}
+
+@keyframes flip {
+    0% {
+        transform: perspective(600px) rotateY(0) rotate(-2deg);
+        animation-timing-function: ease-out;
+    }
+
+    40% {
+        transform: perspective(600px) translateZ(150px) rotateY(170deg) rotate(-2deg);
+        animation-timing-function: ease-out;
+    }
+
+    50% {
+        transform: perspective(600px) translateZ(150px) rotateY(190deg) scale(1) rotate(-2deg);
+        animation-timing-function: ease-in;
+    }
+
+    80% {
+        transform: perspective(600px) rotateY(360deg) scale(.95) rotate(-2deg);
+        animation-timing-function: ease-in;
+    }
+
+    100% {
+        transform: perspective(600px) scale(1) rotate(-2deg);
+        animation-timing-function: ease-in;
+    }
+}
+
 
 .postal img {
     width: 100%;
@@ -185,5 +237,11 @@ button {
         /*! position: fixed; */
         bottom: 0;
         /*! padding: 20px; */
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none;
     }
 }
