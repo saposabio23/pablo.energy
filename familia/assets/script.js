@@ -1,30 +1,12 @@
-const title = document.querySelector("h1");
-const frase1 = document.getElementById("frase1");
-const frase2 = document.getElementById("frase2");
-
-var duracionTítulo = 400;
-
-function hoverOnTitle() {
-  frase1.classList.add("fadeIn");
-  setTimeout(function () {
-    frase2.classList.add("fadeOut");
-  }, duracionTítulo);
-}
-title.addEventListener("mouseenter", hoverOnTitle);
-
-function deshoverOnTitle() {
-  frase2.classList.remove("fadeOut");
-  setTimeout(function () {
-    frase1.classList.remove("fadeIn");
-  }, duracionTítulo);
-}
-title.addEventListener("mouseleave", deshoverOnTitle);
-
 const postal = document.querySelector(".postal");
-const info = document.querySelector(".info");
 const fecha = document.getElementById("fecha");
+const imagen = document.getElementById("imagen");
 const descripción = document.getElementById("descripción");
 
+const info = document.querySelector(".info");
+const texto = document.querySelector(".texto");
+
+// ANIMACIÓN INTRO
 window.onload = function () {
   postal.classList.add("postalVisible");
   setTimeout(function () {
@@ -32,32 +14,59 @@ window.onload = function () {
   }, 50);
 };
 
-var duracionDescripción = 300;
-
-// var isFlipping = false;
-// console.log(isFlipping);
-
-// function flipPostal() {
-//   if (isFlipping == true) {
-//     // nothing
-//   }
-//   if (isFlipping == false) {
-//     isFlipping = true;
-//     console.log(isFlipping);
-//     postal.classList.add("flipa");
-//     setTimeout(function () {
-//       postal.classList.remove("flipa");
-//       isFlipping = false;
-//       console.log(isFlipping);
-//     }, 1000);
-//   }
-// }
-// postal.addEventListener("mouseenter", flipPostal);
-
-function deshoverOnInfo() {
+// MUESTRA LA POSTAL
+function clickOnPostal() {
   descripción.classList.toggle("fadeOut");
-  setTimeout(function () {
-    fecha.classList.toggle("fadeIn");
-  }, duracionDescripción);
+  imagen.classList.toggle("fadeIn");
 }
-postal.addEventListener("click", deshoverOnInfo);
+postal.addEventListener("click", clickOnPostal);
+
+// MUESTRA LA INFORMACIÓN
+function showTexto() {
+  info.classList.add("fadeIn");
+  texto.classList.add("fadeOut");
+}
+info.addEventListener("click", showTexto);
+
+function showInfo() {
+  info.classList.remove("fadeIn");
+  texto.classList.remove("fadeOut");
+}
+texto.addEventListener("click", showInfo);
+
+// NUMEROS
+var mesHoy = new Date().toLocaleDateString("es-ES", {
+  month: "numeric",
+  month: "2-digit",
+});
+var numeroHoy = new Date().toLocaleDateString("es-ES", {
+  day: "numeric",
+  day: "2-digit",
+});
+
+var todayNumber = mesHoy + numeroHoy;
+console.log("Today: " + todayNumber);
+
+fetch("https://opensheet.elk.sh/1Bxgad2KTmIGuQ9Hnh9ma9NZ3QUEJw7DIcwwuvNxGe5g/1")
+  .then((res) => res.json())
+  .then((data) => {
+    for (var i = 0; i < data.length; i++) {
+      var hoy = data[i];
+      if (todayNumber === hoy.NUMEROS) {
+        console.log("Things for today: " + hoy.DIA);
+        if (hoy.AÑO == "") {
+          fecha.innerHTML = hoy.DIA;
+
+          descripción.innerHTML =
+            "El día de hoy no tiene imagen. Puedes añadir un nuevo recuerdo gracias a este <a href='https://docs.google.com/spreadsheets/d/1Bxgad2KTmIGuQ9Hnh9ma9NZ3QUEJw7DIcwwuvNxGe5g/edit?usp=sharing' target='_blank'>tablero</a>. Buen día family!";
+
+          imagen.alt = "No se vé ninguna foto.";
+        } else {
+          fecha.innerHTML = hoy.FECHA;
+          descripción.innerHTML = hoy.DESCRIPCION;
+          imagen.src = hoy.IMAGEN;
+          imagen.alt = hoy.DESCRIPCION;
+        }
+      }
+    }
+  });

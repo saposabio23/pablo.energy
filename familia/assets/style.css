@@ -1,7 +1,4 @@
-:root {
-
-    --var-duracion-title: all .7s ease-in-out;
-}
+:root {}
 
 @font-face {
     font-display: swap;
@@ -21,12 +18,31 @@ body {
     margin: 0;
 }
 
+a:visited,
+a {
+    color: inherit;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: underline dotted;
+    transition: all .2s ease-in-out;
+}
+
+a:hover {
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+}
+
 .content {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    max-width: 500px;
+    max-width: 600px;
     margin-top: 5vh;
 
     margin: auto;
@@ -45,12 +61,11 @@ h1 {
     font-weight: 400;
     font-size: 16px;
 
-    /* text-transform: uppercase; */
-
     padding: 6px 16px 10px 16px;
-    background-color: rgba(255, 255, 255, .2);
+    background-color: rgba(51, 51, 51, 0.75);
+    backdrop-filter: blur(10px);
 
-    border-radius: 6px;
+    border-radius: 4px;
     width: fit-content;
 
     margin-bottom: 5vh;
@@ -62,53 +77,23 @@ h1 {
     justify-content: center;
 
     box-sizing: border-box;
-
-}
-
-#frase1 {
-    position: absolute;
-    text-align: center;
-
-    opacity: 1;
-
-    transition: var(--var-duracion-title);
-}
-
-#frase2 {
-    position: relative;
-    text-align: center;
-
-    opacity: 0;
-
-    transition: var(--var-duracion-title);
-}
-
-.fadeIn {
-    opacity: 0 !important;
-    transition: var(--var-duracion-title);
-}
-
-.fadeOut {
-    opacity: 1 !important;
-    transition: all .7s ease-in-out;
 }
 
 .postal {
     width: 70%;
-    padding: 30px 20px 25px 20px;
+    padding: 30px 20px 30px 20px;
     background-color: white;
     color: black;
 
-
-
-
     transform: rotate(-2deg);
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    /* display: flex; */
 
-    gap: 15px;
+
+    display: grid;
+    align-items: start;
+
+    gap: 20px;
 
     margin-bottom: 9vh;
 
@@ -116,20 +101,68 @@ h1 {
     opacity: 0;
 }
 
+#imagen {
+    background-color: black;
+
+    grid-area: 1 / 1 / 2 / 2;
+
+    width: 100%;
+    height: auto;
+    max-height: 50vh;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+
+    transition: all .5s ease-in-out;
+}
+
+#descripción {
+    grid-area: 1 / 1 / 2 / 2;
+
+    opacity: 0;
+
+    transition: all .5s ease-in-out;
+}
+
+#fecha {
+    text-align: center;
+}
+
+
+.postal:hover {
+    transform: rotate(-1deg);
+    transition: all .3s ease-in-out;
+}
+
+.postal:hover #descripción {
+    opacity: 1;
+    z-index: 999;
+    transition: all .5s ease-in-out;
+}
+
+.postal:hover #imagen {
+    opacity: 0;
+    z-index: 0;
+    transition: all .5s ease-in-out;
+}
+
+/* ANIMACIÓN INTRO */
+.fadeIn {
+    opacity: 0 !important;
+    transition: all .5s ease-in-out;
+}
+
+.fadeOut {
+    opacity: 1 !important;
+    transition: all .5s ease-in-out;
+}
+
 .postalVisible {
     opacity: 1;
     transition: opacity .5s ease-in-out;
 }
 
-.postal:hover {
-    cursor: pointer;
-    transform: rotate(-1deg);
-    transition: all .3s ease-in-out;
-}
-
 .flipa {
     transform: rotate(-2deg);
-    cursor: pointer;
     transition: all .3s ease-in-out;
     backface-visibility: visible !important;
     animation: flip 1s ease 1;
@@ -163,68 +196,69 @@ h1 {
 }
 
 
-.postal img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-}
-
-.info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    position: relative;
-}
-
-#fecha {
-    height: 100%;
-    height: fit-content;
-
-    position: absolute;
-    z-index: 999;
-
-    opacity: 1;
-
-    transition: var(--var-duracion-title);
-}
-
-#descripción {
-    margin: 0;
-    padding: 0;
-    position: relative;
-
-    opacity: 0;
-
-    transition: var(--var-duracion-title);
-}
-
 .botones {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     box-sizing: border-box;
-
+    align-items: end;
 }
 
-button {
+.info {
     font-weight: 400;
     font-size: 14px;
     color: white;
 
     font-family: "CompagnonRoman";
 
-
     padding: 6px 14px 10px 14px;
-    background-color: rgba(255, 255, 255, .2);
+    background-color: rgba(51, 51, 51, 1);
+    backdrop-filter: blur(10px);
 
     border-radius: 4px;
     width: fit-content;
 
     border: 0;
-    filter: blur(2px);
+
+    height: fit-content;
+    transition: all .5s ease-in-out;
+
+}
+
+
+
+.texto {
+    max-width: 375px;
+    position: absolute;
+    padding: 8px 14px 10px 14px;
+    background-color: rgba(51, 51, 51, 1);
+    backdrop-filter: blur(10px);
+    border-radius: 6px;
+    box-sizing: border-box;
+
+    z-index: -10;
+    opacity: 0;
+
+    transition: all .5s ease-in-out;
+}
+
+.info:hover,
+.texto:hover {
+    cursor: pointer;
+    background-color: rgba(37, 37, 37, 1);
+    transition: all .2s ease-in-out;
+}
+
+.fadeIn {
+    opacity: 0;
+    z-index: -10;
+    transition: all .5s ease-in-out;
+}
+
+.fadeOut {
+    opacity: 1;
+    z-index: 999;
+    transition: all .5s ease-in-out;
 }
 
 @media (max-width: 600px) {
@@ -234,9 +268,11 @@ button {
     }
 
     .botones {
-        /*! position: fixed; */
         bottom: 0;
-        /*! padding: 20px; */
+    }
+
+    .texto {
+        max-width: 80%;
     }
 }
 
