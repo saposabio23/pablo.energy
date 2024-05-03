@@ -53,7 +53,10 @@ fetch("https://opensheet.elk.sh/1Bxgad2KTmIGuQ9Hnh9ma9NZ3QUEJw7DIcwwuvNxGe5g/1")
     for (var i = 0; i < data.length; i++) {
       var hoy = data[i];
       if (todayNumber === hoy.NUMEROS) {
-        console.log("Things for today: " + hoy.DIA);
+        console.log("Fecha: " + hoy.DIA);
+        console.log("Descripción: " + hoy.DESCRIPCION);
+        console.log("Imagen: " + hoy.IMAGEN);
+
         if (hoy.AÑO == "") {
           fecha.innerHTML = hoy.DIA;
 
