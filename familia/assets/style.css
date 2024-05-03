@@ -244,14 +244,12 @@ h1:hover {
 /* ANIMACIÓN INTRO */
 .fadeIn {
     opacity: 0 !important;
-    position: relative !important;
     z-index: -10 !important;
     transition: all .5s ease-in-out;
 }
 
 .fadeOut {
     opacity: 1 !important;
-    position: relative !important;
     z-index: 999 !important;
     transition: all .5s ease-in-out;
 }
