@@ -30,12 +30,16 @@ fetch("https://opensheet.elk.sh/1Bxgad2KTmIGuQ9Hnh9ma9NZ3QUEJw7DIcwwuvNxGe5g/1")
         console.log("Imagen: " + hoy.IMAGEN);
 
         if (hoy.AÑO == "") {
+          imagen.remove();
+
+          let empty = document.createElement("div");
+          empty.id = "imagen";
+          postal.prepend(empty);
+
           fecha.innerHTML = hoy.DIA;
 
           descripción.innerHTML =
-            "El día de hoy no tiene imagen. Puedes añadir un nuevo recuerdo gracias a este <a href='https://docs.google.com/spreadsheets/d/1Bxgad2KTmIGuQ9Hnh9ma9NZ3QUEJw7DIcwwuvNxGe5g/edit?usp=sharing' target='_blank'>tablero</a>. Buen día family!";
-
-          imagen.alt = "No se vé ninguna foto.";
+            "El día de hoy no tiene imagen ni recuerdo. Puedes añadir un nuevo recuerdo siguiendo estas <a href='instrucciones.html'>instrucciones</a>. Buen día family!";
         } else {
           fecha.innerHTML = hoy.FECHA;
           descripción.innerHTML = hoy.DESCRIPCION;
