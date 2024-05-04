@@ -24,6 +24,29 @@
         </div>
 
         <div class="botones">
+
+            <div class="form">
+
+                <form name="contact" method="POST" data-netlify="true">
+                    <div>
+                        <label for="fecha">Fecha
+                            <input type="date" name="fecha" value="2024-05-05" min="1960-12-09"
+                                   max="2100-12-09" /></label>
+                        <label for="enlace">Enlace de la foto
+                            <input type="email" name="enlace" placeholder="Si está en Dropbox" /></label>
+                    </div>
+                    <label for="descripcion">Descripción<textarea name="descripcion"
+                                  placeholder="De la foto, del día, del recuerdo..."></textarea></label>
+                    <button type="submit">Enviar</button>
+                </form>
+
+                <span class="cerrar">Cerrar</span>
+
+            </div>
+
+            <div class="añadir boton">
+                Añadir
+            </div>
             <div class="texto">
                 <p>Sé que en nuestra familia es important saber el día en el que sucedió algo especial, es
                     por
@@ -36,10 +59,13 @@
                 <br>
                 <small>Pablo, por el cumpleaños de Juan en 2024 &#60;3</small>
             </div>
-            <div class="info">
+            <div class="info boton">
                 Info
             </div>
         </div>
+
+
+    </div>
 
     </div>
 

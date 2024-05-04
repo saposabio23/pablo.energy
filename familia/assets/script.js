@@ -6,6 +6,10 @@ const descripción = document.getElementById("descripción");
 const info = document.querySelector(".info");
 const texto = document.querySelector(".texto");
 
+const añadir = document.querySelector(".añadir");
+const form = document.querySelector(".form");
+const cerrar = document.querySelector(".cerrar");
+
 // NUMEROS
 var mesHoy = new Date().toLocaleDateString("es-ES", {
   month: "numeric",
@@ -39,7 +43,7 @@ fetch("https://opensheet.elk.sh/1Bxgad2KTmIGuQ9Hnh9ma9NZ3QUEJw7DIcwwuvNxGe5g/1")
           fecha.innerHTML = hoy.DIA;
 
           descripción.innerHTML =
-            "El día de hoy no tiene imagen ni recuerdo. Puedes añadir un nuevo recuerdo siguiendo estas <a href='instrucciones.html'>instrucciones</a>. Buen día family!";
+            "El día de hoy no tiene imagen ni recuerdo. Puedes añadir un nuevo recuerdo desde el botón de abajo a la izquierda. Buen día family!";
         } else {
           fecha.innerHTML = hoy.FECHA;
           descripción.innerHTML = hoy.DESCRIPCION;
@@ -63,17 +67,32 @@ function clickOnPostal() {
   descripción.classList.toggle("fadeOut");
   imagen.classList.toggle("fadeIn");
 }
-postal.addEventListener("click", clickOnPostal);
+postal.addEventListener("touchend", clickOnPostal);
+
+// MUESTRA LA FORME
+function showForm() {
+  hideInfo();
+  añadir.classList.add("fadeIn");
+  form.classList.add("fadeOut");
+}
+añadir.addEventListener("click", showForm);
+
+function hideForm() {
+  añadir.classList.remove("fadeIn");
+  form.classList.remove("fadeOut");
+}
+cerrar.addEventListener("click", hideForm);
 
 // MUESTRA LA INFORMACIÓN
-function showTexto() {
+function showInfo() {
+  hideForm();
   info.classList.add("fadeIn");
   texto.classList.add("fadeOut");
 }
-info.addEventListener("click", showTexto);
+info.addEventListener("click", showInfo);
 
-function showInfo() {
+function hideInfo() {
   info.classList.remove("fadeIn");
   texto.classList.remove("fadeOut");
 }
-texto.addEventListener("click", showInfo);
+texto.addEventListener("click", hideInfo);
