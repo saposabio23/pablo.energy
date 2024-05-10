@@ -31,17 +31,23 @@ const videoWaiting = document.getElementById("videoWaiting");
 const videoPresenting = document.getElementById("videoPresenting");
 const videoPanel = document.getElementById("videoPanel");
 const studioAd = document.getElementById("studioAd");
+const playButton = document.getElementById("playButton");
 const subtitles = document.getElementById("subtitles");
 
 videoWaiting.removeAttribute("controls");
 
 function launchPresenation() {
   studioAd.classList.add("hidden");
+  playButton.classList.add("bottom-4");
   subtitles.classList.remove("hidden");
-  videoPresenting.classList.add("cursor-pointer");
+
   videoWaiting.classList.add("brightness-[500]");
   videoWaiting.classList.add("opacity-0");
+
+  videoPanel.classList.add("cursor-pointer");
+  videoPanel.classList.add("shadowPlay");
   videoPresenting.play();
+
   setTimeout(function () {
     videoPresenting.classList.remove("brightness-[500]");
     videoWaiting.classList.add("hidden");
@@ -53,8 +59,10 @@ studioAd.addEventListener("click", launchPresenation);
 function playPauseVideo() {
   if (videoPresenting.paused) {
     videoPresenting.play();
+    videoPanel.classList.add("shadowPlay");
   } else {
     videoPresenting.pause();
+    videoPanel.classList.remove("shadowPlay");
   }
 }
 
@@ -91,7 +99,6 @@ const noCurious = document.getElementById("noCurious");
 const infoPanel = document.getElementById("infoPanel");
 const moreInfo = document.getElementById("moreInfo");
 const seeMore = document.getElementById("seeMore");
-const contactUp = document.getElementById("contactUp");
 
 function displayMore() {
   if (moreInfo.getAttribute("data-state") === "close") {

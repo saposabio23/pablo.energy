@@ -12,11 +12,23 @@
     scrollbar-width: none;
 }
 
-
 .textStroke {
     text-shadow:
         -1px -1px 0 #000,
         1px -1px 0 #000,
         -1px 1px 0 #000,
         1px 1px 0 #000;
+}
+
+.shadowPlay {
+    box-shadow: 0 0 50px black !important;
+}
+
+a {
+    color: blue;
+}
+
+a:hover {
+    text-decoration: underline;
+    cursor: pointer
 }
