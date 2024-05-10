@@ -12,26 +12,30 @@
   font-family: 'rubikregular';
 }
 
-table, th, td {
+table,
+th,
+td {
   border: 1px solid;
   /*! border-collapse: collapse; */
 }
 
-tr > th:nth-last-child(even) {
+tr>th:nth-last-child(even) {
   border-radius: 18px 0 0 0 !important;
 }
-tr > th:nth-last-child(odd) {
+
+tr>th:nth-last-child(odd) {
   border-radius: 0 18px 0 0 !important;
 }
 
-tr:nth-last-child(-n+1) > td:nth-last-child(even) {
+tr:nth-last-child(-n+1)>td:nth-last-child(even) {
   border-radius: 0 0 0 18px !important;
 }
-tr:nth-last-child(-n+1) > td:nth-last-child(odd) {
+
+tr:nth-last-child(-n+1)>td:nth-last-child(odd) {
   border-radius: 0 0 18px 0 !important;
 }
 
-table{
+table {
   border-radius: 20px;
   background-color: snow;
   font-size: 1rem;
@@ -53,7 +57,7 @@ td {
 /* -----------------------------------
   WEB ARCHIVE
 -------------------------------------- */
-.year-selector{
+.year-selector {
   position: absolute;
   bottom: 17px;
   left: 17px;
@@ -87,7 +91,6 @@ td {
 .archive-selector {
   border: none;
   transition: all .2s ease-in-out;
-  background-color: transparent;
   font-size: .8rem;
 }
 
@@ -109,22 +112,22 @@ td {
   IFRAME PAGE
 -------------------------------------- */
 #servedFrame {
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    overflow: scroll;
-    top: 0;
-    left: 0;
-  }
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+  top: 0;
+  left: 0;
+}
 
-  #servedFrame {
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-  }
+#servedFrame {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}

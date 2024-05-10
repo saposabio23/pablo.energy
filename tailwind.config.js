@@ -5,6 +5,10 @@ module.exports = {
     extend: {
       colors: {
         "special-white": "#fffafa",
+        grey: "#E9E4E4",
+      },
+      boxShadow: {
+        video: "0 0 400px white",
       },
     },
   },
