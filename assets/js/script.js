@@ -6,11 +6,10 @@ function whoIsPablo() {
     "globettroter",
     "newspaper reader",
     "<i>chic</i> guy",
-    "battery working with the sun",
+    "kind of sun battery",
     "spanish native",
     "big biker",
     "cave lover",
-    "spanish native",
   ][Math.floor(Math.random() * 4)];
   isWhat.innerHTML =
     " also a <span id='isThis' class='cursor-pointer hover:text-[blue]' onclick='whoIsPablo()'>" +
@@ -39,8 +38,8 @@ videoWaiting.removeAttribute("controls");
 function launchPresenation() {
   studioAd.classList.add("hidden");
   playButton.classList.add("bottom-4");
-  subtitles.classList.remove("hidden");
 
+  // subtitles.classList.remove("hidden");
   videoWaiting.classList.add("brightness-[500]");
   videoWaiting.classList.add("opacity-0");
 
@@ -108,7 +107,7 @@ function displayMore() {
       moreInfo.classList.replace("opacity-0", "opacity-100");
     }, 200);
     seeMore.innerHTML = "read less";
-    seeMore.classList.replace("text-[blue]", "text-[red]");
+    seeMore.classList.replace("text-[green]", "text-[red]");
     noCurious.innerHTML = "it's enought :S";
     moreInfo.setAttribute("data-state", "open");
   } else if (moreInfo.getAttribute("data-state") === "open") {
@@ -118,7 +117,7 @@ function displayMore() {
       moreInfo.classList.replace("grid", "hidden");
     }, 200);
     seeMore.innerHTML = "read more";
-    seeMore.classList.replace("text-[red]", "text-[blue]");
+    seeMore.classList.replace("text-[red]", "text-[green]");
     noCurious.innerHTML = "you are curious :)";
     moreInfo.setAttribute("data-state", "close");
   }
