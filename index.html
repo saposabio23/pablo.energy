@@ -35,7 +35,7 @@
 <body class="bg-special-white">
     <!------------ TOP PANEL ------------>
     <div id="topPanel"
-         class="flex flex-col-reverse justify-between h-screen bg-special-white md:flex-row md:h-auto">
+         class="flex flex-col-reverse justify-between bg-special-white md:flex-row md:h-auto">
 
         <!------------ 🌏 INFO ------------>
         <div id="infoPanel"
@@ -61,10 +61,10 @@
                 <div id="infoText" class="max-w-xl text-lg">
                     <div class="relative">
 
-                        <p class="mb-2">...who is creative in all
-                            ways, I was raised in Spain, moved to France for studying arts and I'm wainting to
-                            relocate in Rotterdam next september! I'm putting a lot of
-                            energy on making websites for people, for things or for fun.
+                        <p class="mb-2">...who's creative in all
+                            ways. I really enjoy making and designing websites for people, for things or for fun. I was
+                            raised in Spain, moved to France for studying arts and I'm wainting to
+                            relocate in Rotterdam next september!
                         </p>
 
                         <p class="my-2">You can
@@ -75,7 +75,7 @@
                     </div>
 
                     <div id="moreInfo"
-                         class="hidden pb-8 opacity-0 transition-all"
+                         class="hidden pb-20 opacity-0 transition-all md:pb-8"
                          data-state="close">
                         <span class="mt-2 font-bold">Daily life</span>
                         <p class="mb-2">I live in <a
@@ -157,7 +157,8 @@
             </div>
 
             <!------------ FOOTER ------------>
-            <div class="flex sticky bottom-0 justify-between py-4 mt-4 text-base bg-special-white md:flex-row">
+            <div
+                 class="flex fixed bottom-0 justify-between py-4 mt-4 w-[calc(100%-2rem)] md:w-full text-base md:sticky bg-special-white md:flex-row">
 
                 <div class="flex gap-2">
                     <a href="downloads/PMORENO-CV.pdf"
@@ -173,7 +174,7 @@
                 </div>
 
                 <select
-                        class="px-2 py-1 rounded-md cursor-pointer w-[50px] bg-black bg-opacity-10 hover:bg-opacity-100 hover:no-underline transition-all duration-300 hover:text-white">
+                        class="px-2 py-1 rounded-md cursor-pointer w-[50px] bg-black bg-opacity-10 hover:bg-opacity-100 hover:no-underline transition-all duration-300 hover:text-white hidden md:block archive-selector">
                     <option data-url="index.html" selected="">v.9</option>
                     <option data-url="web-archive/v8-under-plus/frame.html">v.8 (under+)</option>
                     <option data-url="web-archive/v7-under/frame.html">v.7 (under)</option>
@@ -227,6 +228,7 @@
 
     <!-- <script src="assets/js/import.js"></script> -->
     <script src="assets/js/script.js"></script>
+    <script src="/web-archive/assets/web-archive.js"></script>
 
 
 </body>

@@ -57,46 +57,41 @@ td {
 /* -----------------------------------
   WEB ARCHIVE
 -------------------------------------- */
+
 .year-selector {
-  position: absolute;
-  bottom: 17px;
-  left: 17px;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: .8rem;
-  font-family: sans-serif;
-  z-index: 3;
-  backdrop-filter: blur(10px) saturate(100%);
-  -webkit-backdrop-filter: blur(10px) saturate(100%);
-  background-color: snow;
-  box-shadow: 0 0 10px rgb(203, 203, 203);
-}
-
-.year-selector:hover {
-  box-shadow: 0 0 10px greenyellow;
-}
-
-#back {
   position: fixed;
-  bottom: 20px;
+  bottom: 1rem;
   left: 50vw;
   transform: translateX(-50%);
-  background-color: snow;
-  padding: 6px 12px;
-  border-radius: 50px;
-  font-size: 1rem;
+  padding: 10px 12px;
+  border-radius: 999px;
+  box-sizing: border-box;
+  font-size: 12px;
   font-family: sans-serif;
+  z-index: 3;
+  width: fit-content;
+  text-align: center;
+  color: white;
+
+  backdrop-filter: blur(10px) saturate(100%);
+  -webkit-backdrop-filter: blur(10px) saturate(100%);
+  background-color: #6a6a6ab8;
+  box-shadow: 0 0 10px rgb(203, 203, 203);
+
+  font-size: 14px;
 }
+
+
 
 .archive-selector {
   border: none;
-  transition: all .2s ease-in-out;
-  font-size: .8rem;
+  background-color: transparent;
+  color: white;
+  font-size: 14px;
 }
 
 .archive-selector:hover {
   cursor: pointer;
-
 }
 
 /*IE*/

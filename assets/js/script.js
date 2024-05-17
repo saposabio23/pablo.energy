@@ -15,6 +15,9 @@ function whoIsPablo() {
     " also a <span id='isThis' class='cursor-pointer hover:text-[blue]' onclick='whoIsPablo()'>" +
     pabloIs +
     "</span>";
+  setTimeout(function () {
+    whoIsPablo();
+  }, 10000);
 }
 
 window.onload = function () {
