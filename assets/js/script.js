@@ -38,19 +38,20 @@ const subtitles = document.getElementById("subtitles");
 videoWaiting.removeAttribute("controls");
 
 function launchPresenation() {
-  studioAd.classList.add("hidden");
   playButton.classList.add("bottom-4");
+  studioAd.classList.add("hidden");
+  subtitles.classList.remove("hidden");
 
-  // subtitles.classList.remove("hidden");
-  videoWaiting.classList.add("brightness-[500]");
   videoWaiting.classList.add("opacity-0");
 
   videoPanel.classList.add("cursor-pointer");
-  videoPanel.classList.add("shadowPlay");
+  videoPanel.classList.add("playing");
+
+  infoPanel.classList.add("infoReduced");
+
   videoPresenting.play();
 
   setTimeout(function () {
-    videoPresenting.classList.remove("brightness-[500]");
     videoWaiting.classList.add("hidden");
   }, 1000);
 }
@@ -60,16 +61,16 @@ studioAd.addEventListener("click", launchPresenation);
 function playPauseVideo() {
   if (videoPresenting.paused) {
     videoPresenting.play();
-    videoPanel.classList.add("shadowPlay");
+    videoPanel.classList.add("playing");
+
+    infoPanel.classList.add("infoReduced");
   } else {
     videoPresenting.pause();
-    videoPanel.classList.remove("shadowPlay");
+    videoPanel.classList.remove("playing");
+
+    infoPanel.classList.remove("infoReduced");
   }
 }
-
-// setTimeout(function () {
-//   videoPresenting.classList.remove("scale-105");
-// }, 100);
 
 videoPresenting.addEventListener("click", playPauseVideo);
 
@@ -85,10 +86,6 @@ document.addEventListener("keydown", function (event) {
   if (event.code === "Space") {
     event.preventDefault();
     playPauseVideo();
-  }
-  if (event.code === "Escape") {
-    event.preventDefault();
-    hideProjects();
   }
 });
 

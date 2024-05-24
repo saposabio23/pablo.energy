@@ -20,8 +20,13 @@
         1px 1px 0 #000;
 }
 
-.shadowPlay {
-    box-shadow: 0 0 30px black !important;
+.playing {
+    box-shadow: 0 0 30px hsla(0, 0%, 0%, 0.4) !important;
+    width: 50vw;
+}
+
+.infoReduced {
+    max-width: 40vw !important;
 }
 
 a {
