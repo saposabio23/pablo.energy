@@ -33,21 +33,19 @@
 </head>
 
 <body class="bg-special-white">
-    <!------------ TOP PANEL ------------>
+
+
+
+    <marquee behavior="" direction="" id="studioAd"
+             class="fixed left-0 top-1/2 w-screen text-base text-yellow-300 cursor-pointer textStroke hover:underline">
+        (if
+        you are a web design studio in Rotterdam, please click here!)
+    </marquee>
 
     <!------------ 🎥 VIDEOS ------------>
 
     <div id="videoPanel"
-         class="flex overflow-hidden h-auto w-[30vw] fixed top-4 right-4 justify-center items-center aspect-[16/9] rounded-xl transition-all duration-500 z-10">
-
-        <div id="playButton"
-             class="absolute z-30 w-full text-base text-center text-yellow-300">
-            <span id="studioAd"
-                  class="p-2 cursor-pointer textStroke hover:underline">(if
-                you are a web design studio in Rotterdam,<br>please click here!)</span>
-            <span id="subtitles"
-                  class="hidden p-2 textStroke unselectable">playing...</span>
-        </div>
+         class="flex overflow-hidden w-[calc(100vw-2rem)] md:h-auto md:w-[30vw] relative md:fixed top-8 left-4 md:right-4 md:left-auto justify-center items-center aspect-[16/9] rounded-xl transition-all z-10 shadow-video ">
 
         <video id="videoWaiting" playsinline autoplay muted controls loop
                class="object-cover absolute z-20 w-full h-full rounded-xl transition-all duration-500 md:rounded-none"
@@ -62,18 +60,22 @@
             <source type="video/mp4" src="media/videos/presenting.mp4" />
         </video>
 
+
     </div>
+
 
     <!------------ 🌏 INFO ------------>
     <div id="infoPanel"
-         class="flex relative flex-col justify-between p-4 pb-0 max-w-2xl min-h-screen transition-all duration-500 w-fit">
+         class="flex relative flex-col justify-between p-4 pb-0 mt-4 max-w-[620px] min-h-[calc(75vh+3rem)] md:min-h-screen transition-all duration-500 md:mt-0 w-fit">
 
         <div>
             <!------------ HEADER ------------>
             <div class="box-content flex relative z-50 gap-2 mb-2 md:items-center">
                 <a href=""
-                   class="transition-all  text-xl hover:rotate-[360deg]  hover:no-underline duration-1000">🌀</a>
+                   class="transition-all  text-xl hover:rotate-[360deg] hover:no-underline duration-1000 hidden md:block">🌀</a>
                 <h1 class="inline text-xl">
+                    <a href=""
+                       class="transition-all  text-xl hover:rotate-[360deg] hover:no-underline duration-1000 inline md:hidden">🌀</a>
                     Pablo
                     Moreno is
                     a
@@ -86,8 +88,8 @@
 
             <div id="infoText" class="text-lg">
                 <div class="relative">
-                    <p class="mb-2">... creative in all
-                        ways. I really enjoy making and designing websites for people, for events or for fun. I
+                    <p class="mb-2">Creative in all
+                        ways, I really enjoy making and designing websites for people, for events or for fun. I
                         always try to learn new things and tools making them. Finishing my styudies in France, I'm
                         wainting to
                         relocate in Rotterdam next september!
@@ -182,11 +184,12 @@
                            href="web-archive/index.html" class="">web archive</a> to see the evolution.
                     </p>
                 </div>
+
             </div>
         </div>
 
         <div
-             class="flex sticky z-10 justify-between py-4 text-base md:bottom-0 md:left-0 bg-special-white">
+             class="flex sticky z-10 justify-between py-4 text-base bg-gradient-to-t from-special-white from-80% to-transparent md:bottom-0 md:left-0">
 
             <div class="flex gap-2">
                 <a href="downloads/PMORENO-CV.pdf"
@@ -214,6 +217,11 @@
          class="hidden fixed top-0 left-0 z-50 p-8 w-screen h-screen bg-opacity-70 opacity-100 backdrop-blur-md transition-all duration-1000 bg-neutral-100">
         <span class="text-3xl">Here are some other stuffs I do or like to do:</span>
     </div>
+
+    <div id="nightScreen" class="hidden fixed top-0 left-0 z-50 w-screen h-screen bg-black">
+        <p>♻️ ⤼ 💤 ⤼ ⏳ ⤼ 🌄</p>
+    </div>
+
 
 
     <!-- <script src="assets/js/import.js"></script> -->

@@ -38,19 +38,10 @@ const subtitles = document.getElementById("subtitles");
 videoWaiting.removeAttribute("controls");
 
 function launchPresenation() {
-  playButton.classList.add("bottom-4");
   studioAd.classList.add("hidden");
-  subtitles.classList.remove("hidden");
-
   videoWaiting.classList.add("opacity-0");
-
   videoPanel.classList.add("cursor-pointer");
-  videoPanel.classList.add("playing");
-
-  infoPanel.classList.add("infoReduced");
-
   videoPresenting.play();
-
   setTimeout(function () {
     videoWaiting.classList.add("hidden");
   }, 1000);
@@ -61,18 +52,21 @@ studioAd.addEventListener("click", launchPresenation);
 function playPauseVideo() {
   if (videoPresenting.paused) {
     videoPresenting.play();
-    videoPanel.classList.add("playing");
-
-    infoPanel.classList.add("infoReduced");
+    boing();
   } else {
     videoPresenting.pause();
-    videoPanel.classList.remove("playing");
-
-    infoPanel.classList.remove("infoReduced");
+    boing();
   }
 }
 
 videoPresenting.addEventListener("click", playPauseVideo);
+
+function boing() {
+  videoPanel.classList.add("scale-110");
+  setTimeout(function () {
+    videoPanel.classList.remove("scale-110");
+  }, 200);
+}
 
 function pauseVideo() {
   videoPresenting.pause();
@@ -125,6 +119,51 @@ function displayMore() {
 }
 
 seeMore.addEventListener("click", displayMore);
+
+/* -----------------------------------
+NIGHT FUNCTION
+-------------------------------------- */
+var nighScreen = document.getElementById("nightScreen");
+
+function isItNight() {
+  var day = new Date();
+  var hr = day.getHours();
+  if (
+    hr == 0 ||
+    hr == 1 ||
+    hr == 2 ||
+    hr == 3 ||
+    hr == 4 ||
+    hr == 5 ||
+    hr == 6
+  ) {
+    document.title = "Sleeping... 💤";
+    nighScreen.classList.remove("hidden");
+
+    document.getElementById("infoPanel").remove();
+    document.getElementById("videoPanel").remove();
+  }
+  if (
+    hr == 7 ||
+    hr == 8 ||
+    hr == 9 ||
+    hr == 10 ||
+    hr == 11 ||
+    hr == 12 ||
+    hr == 13 ||
+    hr == 14 ||
+    hr == 15 ||
+    hr == 16 ||
+    hr == 17 ||
+    hr == 18 ||
+    hr == 19 ||
+    hr == 20 ||
+    hr == 21 ||
+    hr == 22 ||
+    hr == 23
+  ) {
+  }
+}
 
 /* -----------------------------------
 SCREEN SAVER

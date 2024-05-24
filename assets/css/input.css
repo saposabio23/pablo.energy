@@ -20,14 +20,34 @@
         1px 1px 0 #000;
 }
 
+#videoPanel {
+    transition: all ease-in-out .5s !important;
+}
+
 .playing {
-    box-shadow: 0 0 30px hsla(0, 0%, 0%, 0.4) !important;
-    width: 50vw;
+    /* width: 55vw !important; */
+    height: auto;
+    transition: all ease-in-out .5s;
 }
 
 .infoReduced {
-    max-width: 40vw !important;
+    /* max-width: 40vw !important; */
+    transition: all ease-in-out .5s;
 }
+
+@media (max-width: 768px) {
+    .playing {
+        width: calc(100vw - 2rem);
+        height: auto;
+        transition: all ease-in-out .5s;
+    }
+
+    .infoReduced {
+        max-width: inherit !important;
+        transition: all ease-in-out .5s;
+    }
+}
+
 
 a {
     color: blue;
