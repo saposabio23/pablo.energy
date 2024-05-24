@@ -36,10 +36,10 @@
 
 
 
-    <marquee behavior="" direction="" id="studioAd"
+    <marquee behavior="" direction=""
              class="fixed left-0 top-1/2 z-10 w-screen opacity-0 transition-all duration-[3s] ease-in-out">
-        <span class="text-base text-yellow-300 cursor-pointer textStroke hover:underline"> (if
-            you are a web design studio in Rotterdam, please click here!)</span>
+        <span class="text-base text-yellow-300 cursor-pointer textStroke hover:underline" id="studioAd"> (if
+            you are a web design studio based in Rotterdam, please click here!)</span>
 
     </marquee>
 
@@ -49,25 +49,29 @@
          class="hidden md:flex overflow-hidden w-[calc(100vw-2rem)] md:h-auto md:w-[30vw] relative md:fixed top-4 left-4 md:right-4 md:left-auto justify-center items-center aspect-[16/9] rounded-xl transition-all z-10 mb-4">
 
         <video id="videoWaiting" playsinline autoplay muted controls loop
-               class="object-cover absolute z-20 w-full h-full rounded-xl transition-all duration-500 md:rounded-none"
+               class="object-cover absolute z-20 w-full h-full rounded-xl transition-all duration-500"
                poster="media/videos/poster.jpg">
             <source type="video/webm" src="media/videos/waiting.webm" />
             <source type="video/mp4" src="media/videos/waiting.mp4" />
         </video>
 
         <video id="videoPresenting" playsinline
-               class="object-cover absolute z-10 w-full h-full transition-opacity duration-[.8s] rounded-xl md:rounded-none">
+               class="object-cover absolute z-10 w-full h-full transition-opacity duration-[.8s] rounded-xl">
             <source type="video/webm" src="media/videos/presenting.webm" />
             <source type="video/mp4" src="media/videos/presenting.mp4" />
         </video>
 
+    </div>
 
+    <div id="photoFinish" class="hidden relative top-4 left-4 z-30 md:w-[30vw] md:fixed md:right-4 md:left-auto">
+        <img src="media/ummm.JPG" alt="" class="h-full rounded-xl">
+        <span class="text-sm">Waiting 4 your e-mail...</span>
     </div>
 
 
     <!------------ 🌏 INFO ------------>
     <div id="infoPanel"
-         class="flex relative flex-col justify-between p-4 pb-0 max-w-[620px] min-h-screen transition-all duration-500 w-fit">
+         class="flex relative flex-col justify-between  p-4 pb-0 max-w-[620px] min-h-screen transition-all duration-500 w-fit">
 
         <div>
             <!------------ HEADER ------------>
@@ -130,9 +134,9 @@
                            class="" target="_blank"
                            href='https://pablo.energy/digital-stuff'>my
                             digital stuff</a>. I recently made a video-tutorial
-                        showing the simplest way I found <a class=""
-                           target="_blank" href='https://youtu.be/qUKxkIZCRuI'>to put websites
-                            online</a> and update them quickly, like I'm doing now.</p>
+                        showing the way I like to <a class=""
+                           target="_blank" href='https://youtu.be/qUKxkIZCRuI'>put websites
+                            online</a> and update them quickly, like I'm doing right now.</p>
                     <span class="mt-2 font-bold">People</span>
                     <p class="mb-2">I like to work with friends, and develop ideas together. These
                         people

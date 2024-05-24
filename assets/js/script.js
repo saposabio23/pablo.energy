@@ -23,7 +23,9 @@ window.onload = function () {
   setTimeout(function () {
     whoIsPablo();
   }, 10000);
-  document.querySelector("marquee").classList.replace("opacity-0", "opacity-100");
+  document
+    .querySelector("marquee")
+    .classList.replace("opacity-0", "opacity-100");
 };
 
 /* -----------------------------------
@@ -41,7 +43,14 @@ videoWaiting.removeAttribute("controls");
 function launchPresenation() {
   videoPanel.classList.remove("hidden");
   videoPanel.classList.add("cursor-pointer");
+  videoPanel.classList.add("hover:shadow-video");
+
   studioAd.classList.add("hidden");
+  // studioAd.classList.replace("text-yellow-300", "text-[red]");
+  // studioAd.classList.remove("cursor-pointer");
+  // studioAd.classList.remove("hover:underline");
+  studioAd.innerHTML = "Thanks! Have a good day :)";
+
   videoWaiting.classList.add("opacity-0");
   videoPresenting.play();
   infoPanel.classList.add("minHeightMobile");
@@ -82,13 +91,27 @@ function pauseVideo() {
 }
 
 videoPresenting.addEventListener("ended", function () {
-  // put another thing (youtube video?)
+  videoPanel.classList.add("hidden");
+  document
+    .getElementById("photoFinish")
+    .classList.replace("hidden", "md:block");
 });
+
+function muteMedia() {
+  if (media.muted) {
+    media.muted = false;
+  } else {
+    media.muted = true;
+  }
+}
 
 document.addEventListener("keydown", function (event) {
   if (event.code === "Space") {
     event.preventDefault();
     playPauseVideo();
+  }
+  if (event.code === "M") {
+    muteMedia();
   }
 });
 
