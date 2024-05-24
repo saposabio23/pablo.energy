@@ -1,15 +1,16 @@
-
 #image {
-    position:inherit;
+    position: inherit;
     top: 0px;
+
 }
+
 #texto {
     position: absolute;
     top: 525px;
     left: 327px;
     font-size: 12px;
     font-family: monospace;
-    font-weight: 600; 
+    font-weight: 600;
 }
 
 
@@ -19,9 +20,9 @@
     left: 322px;
     font-size: 16px;
     font-family: monospace;
-    font-weight: 900; 
+    font-weight: 900;
     color: red;
-    text-decoration: underline;  
+    text-decoration: underline;
 }
 
 
@@ -29,12 +30,16 @@
     position: relative;
     text-decoration: none;
 }
+
 #koston:hover:after {
-    content: url(sources/koston.png); /* no need for qoutes */
+    content: url(sources/koston.png);
+    /* no need for qoutes */
     display: block;
     position: fixed;
-    left: 657px; /* change this value to one that suits you */
-    top: 184px; /* change this value to one that suits you */
+    left: 657px;
+    /* change this value to one that suits you */
+    top: 184px;
+    /* change this value to one that suits you */
 }
 
 
@@ -42,48 +47,64 @@
     position: relative;
     text-decoration: none;
 }
+
 #oliveor:hover:after {
-    content: url(sources/oliveor.png); /* no need for qoutes */
+    content: url(sources/oliveor.png);
+    /* no need for qoutes */
     display: block;
     position: fixed;
-    left: 657px; /* change this value to one that suits you */
-    top: 184px; /* change this value to one that suits you */
+    left: 657px;
+    /* change this value to one that suits you */
+    top: 184px;
+    /* change this value to one that suits you */
 }
 
 #circa:hover {
     position: relative;
     text-decoration: none;
 }
+
 #circa:hover:after {
-    content: url(sources/circa.png); /* no need for qoutes */
+    content: url(sources/circa.png);
+    /* no need for qoutes */
     display: block;
     position: fixed;
-    left: 657px; /* change this value to one that suits you */
-    top: 184px; /* change this value to one that suits you */
+    left: 657px;
+    /* change this value to one that suits you */
+    top: 184px;
+    /* change this value to one that suits you */
 }
 
 #tyler:hover {
     position: relative;
     text-decoration: none;
 }
+
 #tyler:hover:after {
-    content: url(sources/tyler.png); /* no need for qoutes */
+    content: url(sources/tyler.png);
+    /* no need for qoutes */
     display: block;
     position: fixed;
-    left: 398px; /* change this value to one that suits you */
-    top: 267px; /* change this value to one that suits you */
+    left: 398px;
+    /* change this value to one that suits you */
+    top: 267px;
+    /* change this value to one that suits you */
 }
 
 #pepe:hover {
     position: relative;
     text-decoration: none;
 }
+
 #pepe:hover:after {
-    content: url(sources/pepe.png); /* no need for qoutes */
+    content: url(sources/pepe.png);
+    /* no need for qoutes */
     display: block;
     position: fixed;
-    left: 330px; /* change this value to one that suits you */
-    top: 380px; /* change this value to one that suits you */
+    left: 330px;
+    /* change this value to one that suits you */
+    top: 380px;
+    /* change this value to one that suits you */
 }
 
 a:link {
@@ -98,9 +119,8 @@ a:hover {
     text-decoration-line: none;
 }
 
-a:visited  {
+a:visited {
     text-decoration: none;
     color: black;
     text-decoration-line: none;
 }
-

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>web archive</title>
+
+    <style>
+        .year-selector {
+            position: fixed;
+            bottom: 1rem;
+            left: 50vw;
+            transform: translateX(-50%);
+            font-size: 12px;
+            font-family: sans-serif;
+            z-index: 3;
+            color: black;
+            font-size: 14px;
+        }
+
+        .container {
+            position: absolute;
+            width: 90%;
+            left: 5%;
+            top: 5%;
+            max-height: 80%;
+            aspect-ratio: 16/9;
+        }
+
+        .iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body style="background-color: thistle;">
+
+    <div class="container">
+        <iframe class="iframe" src="v1-billboard/index.html"></iframe>
+    </div>
+
+    <div class="year-selector">
+        Website version:
+        <select class="archive-selector">
+            <option data-url="actual">actual</option>
+            <option data-url="v9-humble/index.html">v.9 (humble)</option>
+            <option data-url="v8-under-plus/index.html">v.8 (under+)</option>
+            <option data-url="v7-under/index.html">v.7 (under)</option>
+            <option data-url="v6-23/index.html">v.6 (23%)</option>
+            <option data-url="v5-threecolors/index.html">v.5 (threecolors)</option>
+            <option data-url="v4-dark/index.html">v.4 (dark)</option>
+            <option data-url="v3-sidelist/index.html">v.3 (sidelist)</option>
+            <option data-url="v2-billboard2/index.html">v.2 (billboard2)</option>
+            <option data-url="v1-billboard/index.html">v.1 (billboard)</option>
+        </select>
+    </div>
+
+    <script>
+        const select = document.querySelector(".archive-selector");
+        const options = document.querySelectorAll(".archive-selector option");
+        const iframe = document.querySelector(".iframe");
+
+        window.addEventListener('load',
+            function () {
+                const lastValue = select.selectedIndex = select.options.length - 1;
+            });
+
+        select.addEventListener("change", function () {
+            if (this.options[this.selectedIndex].dataset.url == "actual") {
+                window.location = "https://pablo.energy";
+            }
+            else {
+                iframe.src = this.options[this.selectedIndex].dataset.url;
+            }
+        });
+    </script>
+
+</body>
+
+</html>

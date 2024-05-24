@@ -3,13 +3,17 @@ html {
 }
 
 body {
-    background-color: thistle;
+    background-color: snow;
     font-weight: 100;
-    font-style: italic;
 }
 
 h2 {
     margin: 20px 0 10px 0;
+}
+
+.content {
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 h4 {
@@ -19,9 +23,13 @@ h4 {
     align-content: center;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
-    border-radius: 6px;
+    margin-right: 6px;
     font-weight: 400;
+
+    text-decoration: underline;
+
+    /* font-style: italic; */
+
 }
 
 #arriba {
@@ -36,12 +44,11 @@ h4 {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    margin: 30px 0;
 }
 
 #arriba:hover {
-    border: 1px solid white;
-    color: white;
+    border: 1px solid gray;
+    color: gray;
 }
 
 
@@ -92,7 +99,7 @@ h4 {
 }
 
 #Brussels {
-    background-color: yellow;
+    background-color: burlywood;
 }
 
 #LeHavre {
@@ -120,20 +127,41 @@ h4 {
 }
 
 #Briançon {
-    background-color: snow;
+    background-color: aqua;
 }
 
 #Gaillon {
     background-color: darkolivegreen;
 }
 
+#Nantes {
+    background-color: yellow;
+}
+
+#Strasbourg {
+    background-color: lime;
+}
+
+#Val-de-Saâne {
+    background-color: slateblue;
+}
+
+#Rouen {
+    background-color: lightseagreen;
+}
+
+#Bedousse {
+    background-color: rgb(111, 49, 210);
+}
+
 .index {
     display: flex;
     flex-wrap: wrap;
-    margin: 20px 0 10px 0;
-    border-top: 1px solid black;
-    padding-top: 20px;
+    margin-top: 10px;
     text-align: center;
+
+    border-top: 1px solid black;
+    padding-top: 10px;
 }
 
 .content {}
@@ -150,7 +178,6 @@ h4 {
     height: 20px;
     min-width: fit-content;
     padding: 5px;
-    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -158,8 +185,11 @@ h4 {
 
 .firm {
     color: white;
-    margin: 20px 0 10px 0;
+    margin: 10px 0 10px 0;
     border-top: 1px solid black;
-    padding-top: 20px;
+    padding-top: 10px;
     text-align: center;
+    background-color: darkgoldenrod;
+    padding: 10px;
+    border-radius: 0 0 20px 20px;
 }

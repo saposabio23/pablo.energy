@@ -5,19 +5,18 @@ function whoIsPablo() {
   var pabloIs = [
     "globettroter",
     "newspaper reader",
-    "<i>chic</i> guy",
     "kind of sun battery",
-    "spanish native",
     "big biker",
     "cave lover",
+    "nunchaku practicer",
   ][Math.floor(Math.random() * 4)];
   isWhat.innerHTML =
     " also a <span id='isThis' class='cursor-pointer hover:text-[blue]' onclick='whoIsPablo()'>" +
     pabloIs +
     "</span>";
-  setTimeout(function () {
-    whoIsPablo();
-  }, 10000);
+  // setTimeout(function () {
+  //   whoIsPablo();
+  // }, 10000);
 }
 
 window.onload = function () {
@@ -104,7 +103,10 @@ const seeMore = document.getElementById("seeMore");
 
 function displayMore() {
   if (moreInfo.getAttribute("data-state") === "close") {
-    window.scrollTo(0, 0);
+    document.getElementById("life").scroll({
+      behavior: "smooth",
+    });
+
     moreInfo.classList.replace("hidden", "grid");
     setTimeout(function () {
       moreInfo.classList.replace("opacity-0", "opacity-100");
@@ -114,7 +116,6 @@ function displayMore() {
     noCurious.innerHTML = "it's enought :S";
     moreInfo.setAttribute("data-state", "open");
   } else if (moreInfo.getAttribute("data-state") === "open") {
-    window.scrollTo(0, 0);
     moreInfo.classList.replace("opacity-100", "opacity-0");
     setTimeout(function () {
       moreInfo.classList.replace("grid", "hidden");
