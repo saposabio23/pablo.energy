@@ -37,15 +37,16 @@
 
 
     <marquee behavior="" direction="" id="studioAd"
-             class="fixed left-0 top-1/2 w-screen text-base text-yellow-300 cursor-pointer textStroke hover:underline">
-        (if
-        you are a web design studio in Rotterdam, please click here!)
+             class="fixed left-0 top-1/2 z-10 w-screen opacity-0 transition-all duration-[3s] ease-in-out">
+        <span class="text-base text-yellow-300 cursor-pointer textStroke hover:underline"> (if
+            you are a web design studio in Rotterdam, please click here!)</span>
+
     </marquee>
 
     <!------------ 🎥 VIDEOS ------------>
 
     <div id="videoPanel"
-         class="flex overflow-hidden w-[calc(100vw-2rem)] md:h-auto md:w-[30vw] relative md:fixed top-8 left-4 md:right-4 md:left-auto justify-center items-center aspect-[16/9] rounded-xl transition-all z-10 shadow-video ">
+         class="hidden md:flex overflow-hidden w-[calc(100vw-2rem)] md:h-auto md:w-[30vw] relative md:fixed top-4 left-4 md:right-4 md:left-auto justify-center items-center aspect-[16/9] rounded-xl transition-all z-10 mb-4">
 
         <video id="videoWaiting" playsinline autoplay muted controls loop
                class="object-cover absolute z-20 w-full h-full rounded-xl transition-all duration-500 md:rounded-none"
@@ -66,7 +67,7 @@
 
     <!------------ 🌏 INFO ------------>
     <div id="infoPanel"
-         class="flex relative flex-col justify-between p-4 pb-0 mt-4 max-w-[620px] min-h-[calc(75vh+3rem)] md:min-h-screen transition-all duration-500 md:mt-0 w-fit">
+         class="flex relative flex-col justify-between p-4 pb-0 max-w-[620px] min-h-screen transition-all duration-500 w-fit">
 
         <div>
             <!------------ HEADER ------------>
@@ -179,9 +180,8 @@
                         </li>
                     </ul>
 
-                    <p class="mt-8 text-base">Over the years this website was updated reflecting my mood.<br>There
-                        is this <a
-                           href="web-archive/index.html" class="">web archive</a> to see the evolution.
+                    <p class="mt-8 text-base">Over the years this website was <a
+                           href="web-archive/index.html" class="">updated</a> reflecting me.<br>
                     </p>
                 </div>
 
@@ -189,7 +189,7 @@
         </div>
 
         <div
-             class="flex sticky z-10 justify-between py-4 text-base bg-gradient-to-t from-special-white from-80% to-transparent md:bottom-0 md:left-0">
+             class="flex sticky z-10 justify-between py-4 pt-6 text-base bg-gradient-to-t from-special-white from-80% to-transparent bottom-0 ">
 
             <div class="flex gap-2">
                 <a href="downloads/PMORENO-CV.pdf"

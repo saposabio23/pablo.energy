@@ -23,6 +23,7 @@ window.onload = function () {
   setTimeout(function () {
     whoIsPablo();
   }, 10000);
+  document.querySelector("marquee").classList.replace("opacity-0", "opacity-100");
 };
 
 /* -----------------------------------
@@ -38,10 +39,18 @@ const subtitles = document.getElementById("subtitles");
 videoWaiting.removeAttribute("controls");
 
 function launchPresenation() {
+  videoPanel.classList.remove("hidden");
+  videoPanel.classList.add("cursor-pointer");
   studioAd.classList.add("hidden");
   videoWaiting.classList.add("opacity-0");
-  videoPanel.classList.add("cursor-pointer");
   videoPresenting.play();
+  infoPanel.classList.add("minHeightMobile");
+
+  window.scroll({
+    top: 0,
+    behavior: "smooth",
+  });
+
   setTimeout(function () {
     videoWaiting.classList.add("hidden");
   }, 1000);

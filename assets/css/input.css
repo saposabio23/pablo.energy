@@ -24,28 +24,12 @@
     transition: all ease-in-out .5s !important;
 }
 
-.playing {
-    /* width: 55vw !important; */
-    height: auto;
-    transition: all ease-in-out .5s;
-}
-
-.infoReduced {
-    /* max-width: 40vw !important; */
-    transition: all ease-in-out .5s;
-}
 
 @media (max-width: 768px) {
-    .playing {
-        width: calc(100vw - 2rem);
-        height: auto;
-        transition: all ease-in-out .5s;
+    .minHeightMobile {
+        min-height: calc(75vh - 3rem) !important;
     }
 
-    .infoReduced {
-        max-width: inherit !important;
-        transition: all ease-in-out .5s;
-    }
 }
 
 
