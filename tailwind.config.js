@@ -8,7 +8,7 @@ module.exports = {
         grey: "#E9E4E4",
       },
       boxShadow: {
-        video: "0 0 30px hsla(0, 0%, 0%, 0.7)",
+        video: "0 0 30px hsla(0, 0%, 0%, 0.5)",
       },
     },
   },

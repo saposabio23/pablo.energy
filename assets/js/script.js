@@ -55,6 +55,8 @@ function launchPresenation() {
   videoPresenting.play();
   infoPanel.classList.add("minHeightMobile");
 
+  videoPresenting.removeAttribute("controls");
+
   window.scroll({
     top: 0,
     behavior: "smooth",
@@ -98,10 +100,10 @@ videoPresenting.addEventListener("ended", function () {
 });
 
 function muteMedia() {
-  if (media.muted) {
-    media.muted = false;
+  if (videoPresenting.muted) {
+    videoPresenting.muted = false;
   } else {
-    media.muted = true;
+    videoPresenting.muted = true;
   }
 }
 
@@ -109,8 +111,8 @@ document.addEventListener("keydown", function (event) {
   if (event.code === "Space") {
     event.preventDefault();
     playPauseVideo();
-  }
-  if (event.code === "M") {
+  } else if (event.code === "KeyM") {
+    event.preventDefault();
     muteMedia();
   }
 });

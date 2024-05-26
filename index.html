@@ -55,7 +55,7 @@
             <source type="video/mp4" src="media/videos/waiting.mp4" />
         </video>
 
-        <video id="videoPresenting" playsinline
+        <video id="videoPresenting" playsinline controls
                class="object-cover absolute z-10 w-full h-full transition-opacity duration-[.8s] rounded-xl">
             <source type="video/webm" src="media/videos/presenting.webm" />
             <source type="video/mp4" src="media/videos/presenting.mp4" />
@@ -63,9 +63,10 @@
 
     </div>
 
-    <div id="photoFinish" class="hidden relative top-4 left-4 z-30 md:w-[30vw] md:fixed md:right-4 md:left-auto">
+    <div id="photoFinish"
+         class="hidden relative top-4 left-4 z-30 h-[30vh] md:w-[30vw] md:h-fit md:fixed md:right-4 md:left-auto mb-4">
         <img src="media/ummm.JPG" alt="" class="h-full rounded-xl">
-        <span class="text-sm">Waiting 4 your e-mail...</span>
+        <span class="absolute bottom-0 p-2 text-xs text-white">Waiting 4 your e-mail...</span>
     </div>
 
 
