@@ -13,7 +13,7 @@
 
           .title {
                position: fixed;
-               z-index: 1;
+               z-index: 10;
                height: 100vh;
                width: 100vw;
                display: flex;
@@ -28,36 +28,62 @@
                max-height: 14vw;
           }
 
-          .etagere {
-               display: grid;
-               grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-          }
 
-          .objects {
-               width: 100%;
-               height: 100%;
-               object-fit: contain;
-               z-index: 9;
-               /* border: 1px solid red; */
+          #object {
+               width: 100vw;
+               height: 100vh;
+               z-index: 10;
+               position: relative;
+
                box-sizing: border-box;
 
-               transition: all .8s ease-in-out;
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+               justify-content: center;
           }
 
-          .objects:hover {
-               background-color: #ffffff8b;
-               transition: all .8s ease-in-out;
-               cursor: pointer;
+          #object img {
+               height: 90%;
+               object-fit: contain;
+               /* background-color: forestgreen; */
           }
 
           video {
+               position: fixed;
+               z-index: 1;
+               height: 100vh;
+               width: 100vw;
+               top: 0;
+               background-color: red;
+               object-fit: cover;
+          }
+
+          .bg {
                position: fixed;
                z-index: 0;
                height: 100vh;
                width: 100vw;
                top: 0;
-               background-color: black;
+               background-color: blue;
                object-fit: cover;
+
+               background-image: url(media/banco.png);
+               background-size: cover;
+          }
+
+          #bgButton {
+               height: 30px;
+               width: 30px;
+               position: fixed;
+               bottom: 0;
+               left: 0;
+               background-color: white;
+               z-index: 200;
+          }
+
+          #bgButton:hover {
+               cursor: pointer;
           }
      </style>
 </head>
@@ -65,84 +91,114 @@
 <body>
 
      <div class="title">
-          <img src="full-vente.svg" alt="" style="margin-bottom: 1rem;">
-          <img src="full-objets.svg" alt="">
+          <img src="line-vente.svg" alt="" style="margin-bottom: 1rem;">
+          <img src="line-objets.svg" alt="">
      </div>
 
-     <div class="etagere">
-          <img src="media/banco.png" alt="" class="objects" id="banco">
-          <img src="media/silla.png" alt="" class="objects" id="silla">
-          <img src="media/rangements.png" alt="" class="objects" id="rangements">
-          <img src="media/yogurtera.png" alt="" class="objects" id="yogurtera">
-          <img src="media/tripode.png" alt="" class="objects" id="tripode">
+     <div id="object">
+          <img src="media/tripode.png" alt="" class="">
      </div>
+
 
      <video autoplay id="video"></video>
 
+     <div id="bgButton" onclick="changeBackground()"></div>
+     <div class="bg"></div>
+
+
      </div>
      <script>
-          if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
-               // ok, browser supports it
-          }
-          const constraints = {
-               video: {
-                    facingMode: "environment"
-               },
-          }
+          // REAR CAMERA PHONE
 
-          var video = document.getElementById("video"),
-               vendorURL = window.URL || window.webkitURL;
+          if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+               const constraints = {
+                    video: {
+                         facingMode: "environment"
+                    },
+               }
 
-          if (navigator.mediaDevices.getUserMedia) {
-               navigator.mediaDevices.getUserMedia(constraints)
-                    .then(function (stream) {
-                         video.srcObject = stream;
-                    }).catch(function (error) {
-                         console.log("Something went wrong");
-                    });
-          }
+               var video = document.getElementById("video"),
+                    vendorURL = window.URL || window.webkitURL;
 
-
-
-
-          var MAX_IMAGE_WIDTH = 200; // repalce magic number with const
-          var MAX_IMAGE_HEIGHT = 150;   // repalce magic number with const
-          var docWidth = document.body.clientWidth;  //replace $(document).width()
-          var docHeight = document.body.clientHeight || 500;  //Note: document.body.clientHeight returns 0 in this envorment, in browser will be actaul height, setting defalult value of 500  
-          // prevent negitve values that could place your image off screen
-          var maxWidth = Math.max(0, docWidth - MAX_IMAGE_WIDTH);
-          var maxHeight = Math.max(0, docHeight - MAX_IMAGE_HEIGHT);
-
-          var image = [ //set innital values and prevent variable hoisiting 
-               "media/banco.png",
-               "media/silla.png",
-               "media/rangements.png",
-               "media/yogurtera.png",
-               "media/tripode.png",
-          ];
-
-          function getImage(src, top, left) {
-               var imgElement = document.createElement("img");
-               imgElement.classList.add("objects");
-               imgElement.src = src;
-               imgElement.style.top = top + 'px';
-               imgElement.style.left = left + 'px';
-               imgElement.style.position = 'absolute';
-
-               return imgElement;
-          }
-
-          console.log(image)
-
-          function start() {
-               for (let i = 0, max = image.length; i < max; i++) {
-                    var left_position = (Math.random() * maxWidth).toFixed();
-                    //Assume you wanted height and not width
-                    var top_position = (Math.random() * maxHeight).toFixed();
-                    var imgEl = getImage(image[i], top_position, left_position);
-                    document.body.appendChild(imgEl);
+               if (navigator.mediaDevices.getUserMedia) {
+                    navigator.mediaDevices.getUserMedia(constraints)
+                         .then(function (stream) {
+                              video.srcObject = stream;
+                         }).catch(function (error) {
+                              console.log("Something went wrong");
+                         });
                }
           }
+          else {
+               var video = document.getElementById("video");
+               video.remove();
+          }
+
+          // CHANGE BACKGROUNDS
+          const myArray = ["bg-air.JPG", "bg-table.JPG", "bg-sol.JPG"];
+
+          var currentIndex = 0;
+
+          function changeBackground() {
+               // Ensure we don't go out of bounds
+               if (currentIndex < myArray.length) {
+                    // Get the current item
+                    const currentItem = myArray[currentIndex];
+                    // Display the current item (you can replace this with your own logic)
+                    document.querySelector(".bg").style.backgroundImage = "url(media/" + currentItem + ")"
+
+                    // Increment the index for the next click
+                    currentIndex++;
+
+               } else {
+                    currentIndex = 0;
+                    changeBackground()
+               }
+          }
+
+          window.addEventListener("load", (event) => {
+               changeBackground()
+          });
+
+
+          // var MAX_IMAGE_WIDTH = 200; // repalce magic number with const
+          // var MAX_IMAGE_HEIGHT = 150;   // repalce magic number with const
+          // var docWidth = document.body.clientWidth;  //replace $(document).width()
+          // var docHeight = document.body.clientHeight || 500;  //Note: document.body.clientHeight returns 0 in this envorment, in browser will be actaul height, setting defalult value of 500
+          // // prevent negitve values that could place your image off screen
+          // var maxWidth = Math.max(0, docWidth - MAX_IMAGE_WIDTH);
+          // var maxHeight = Math.max(0, docHeight - MAX_IMAGE_HEIGHT);
+
+          // var image = [ //set innital values and prevent variable hoisiting
+          //      "media/banco.png",
+          //      "media/silla.png",
+          //      "media/rangements.png",
+          //      "media/yogurtera.png",
+          //      "media/tripode.png",
+          // ];
+
+          // function getImage(src, top, left) {
+          //      var imgElement = document.createElement("img");
+          //      imgElement.classList.add("objects");
+          //      imgElement.src = src;
+          //      imgElement.style.top = top + 'px';
+          //      imgElement.style.left = left + 'px';
+          //      imgElement.style.position = 'absolute';
+
+          //      return imgElement;
+          // }
+
+          // console.log(image)
+
+          // function start() {
+          //      for (let i = 0, max = image.length; i < max; i++) {
+          //           var left_position = (Math.random() * maxWidth).toFixed();
+          //           //Assume you wanted height and not width
+          //           var top_position = (Math.random() * maxHeight).toFixed();
+          //           var imgEl = getImage(image[i], top_position, left_position);
+          //           document.body.appendChild(imgEl);
+          //      }
+          // }
 
           // start()
 

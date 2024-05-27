@@ -29,6 +29,19 @@ window.onload = function () {
 };
 
 /* -----------------------------------
+RANDOM PROJECTS
+-------------------------------------- */
+// function getMultipleRandom(arr, num) {
+//   const shuffled = [...arr].sort(() => 0.5 - Math.random());
+
+//   return shuffled.slice(0, num);
+// }
+
+// const arr = ['b', 'c', 'a', 'd'];
+// console.log(getMultipleRandom(arr, 2)); // 👉️ ['a', 'c'];
+// console.log(getMultipleRandom(arr, 3)); // 👉️ ['c', 'b', 'c']
+
+/* -----------------------------------
 VIDEO STUFF
 -------------------------------------- */
 const videoWaiting = document.getElementById("videoWaiting");
