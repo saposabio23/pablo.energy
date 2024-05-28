@@ -4,105 +4,31 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>VENTE D'OBJETS</title>
-     <style>
-          body {
-               margin: 0;
-               background-color: gainsboro;
-          }
-
-          .title {
-               position: fixed;
-               z-index: 10;
-               height: 100vh;
-               width: 100vw;
-               display: flex;
-               flex-direction: column;
-               justify-content: center;
-               align-items: center;
-          }
-
-          .title img {
-               height: 10vw;
-               width: auto;
-               max-height: 14vw;
-          }
-
-
-          #object {
-               width: 100vw;
-               height: 100vh;
-               z-index: 10;
-               position: relative;
-
-               box-sizing: border-box;
-
-               display: flex;
-               flex-direction: column;
-               align-items: center;
-               justify-content: center;
-          }
-
-          #object img {
-               height: 90%;
-               object-fit: contain;
-               /* background-color: forestgreen; */
-          }
-
-          video {
-               position: fixed;
-               z-index: 1;
-               height: 100vh;
-               width: 100vw;
-               top: 0;
-               background-color: red;
-               object-fit: cover;
-          }
-
-          .bg {
-               position: fixed;
-               z-index: 0;
-               height: 100vh;
-               width: 100vw;
-               top: 0;
-               background-color: blue;
-               object-fit: cover;
-
-               background-image: url(media/banco.png);
-               background-size: cover;
-          }
-
-          #bgButton {
-               height: 30px;
-               width: 30px;
-               position: fixed;
-               bottom: 0;
-               left: 0;
-               background-color: white;
-               z-index: 200;
-          }
-
-          #bgButton:hover {
-               cursor: pointer;
-          }
-     </style>
+     <title>Vente d'objets</title>
+     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-     <div class="title">
-          <img src="line-vente.svg" alt="" style="margin-bottom: 1rem;">
-          <img src="line-objets.svg" alt="">
+     <div class="info">
+          <div id="infoTitle">Vente d'objets</div>
+          <div id="infoPrice">par Pablo</div>
      </div>
 
-     <div id="object">
-          <img src="media/tripode.png" alt="" class="">
+     <div class="objet">
+          <button class="pointer" onclick="launchCamera()">voir en AR</button>
+          <img src="media/tripode.png" alt="">
      </div>
 
+     <div class="nav">
+          <button class="pointer">≺</button>
+          <span id="infoNumerotation">0/99</span>
+          <button class="pointer">≻</button>
+     </div>
 
      <video autoplay id="video"></video>
 
-     <div id="bgButton" onclick="changeBackground()"></div>
+     <div id="bgButton" onclick="changeBackground()" class="pointer"></div>
      <div class="bg"></div>
 
 
@@ -110,7 +36,9 @@
      <script>
           // REAR CAMERA PHONE
 
-          if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+          // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+
+          function launchCamera() {
                const constraints = {
                     video: {
                          facingMode: "environment"
@@ -123,19 +51,17 @@
                if (navigator.mediaDevices.getUserMedia) {
                     navigator.mediaDevices.getUserMedia(constraints)
                          .then(function (stream) {
+                              video.style.zIndex = "2"
                               video.srcObject = stream;
                          }).catch(function (error) {
                               console.log("Something went wrong");
                          });
                }
-          }
-          else {
-               var video = document.getElementById("video");
-               video.remove();
+
           }
 
           // CHANGE BACKGROUNDS
-          const myArray = ["bg-air.JPG", "bg-table.JPG", "bg-sol.JPG"];
+          const myArray = ["bg-sol.JPG", "bg-table.JPG", "bg-air.JPG"];
 
           var currentIndex = 0;
 
