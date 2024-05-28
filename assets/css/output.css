@@ -1227,6 +1227,10 @@ a:hover {
     height: fit-content;
   }
 
+  .md\:w-\[20vw\] {
+    width: 20vw;
+  }
+
   .md\:w-\[30vw\] {
     width: 30vw;
   }

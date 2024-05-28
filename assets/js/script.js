@@ -106,7 +106,7 @@ function pauseVideo() {
 }
 
 videoPresenting.addEventListener("ended", function () {
-  videoPanel.classList.add("hidden");
+  videoPanel.style.display = "none";
   document
     .getElementById("photoFinish")
     .classList.replace("hidden", "md:block");
