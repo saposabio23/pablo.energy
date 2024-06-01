@@ -10,125 +10,28 @@
 
 <body>
 
-     <div class="info">
-          <div id="infoTitle">Vente d'objets</div>
-          <div id="infoPrice">par Pablo</div>
-     </div>
 
-     <div class="objet">
-          <button class="pointer" onclick="launchCamera()">voir en AR</button>
-          <img src="media/tripode.png" alt="">
+     <div class="object">
+          <div>
+               <span id="objectTitle">Title</span>
+               <span id="objectPrice">Price</span>
+          </div>
+          <img id="objectImage" src="media/tripode.png" alt="">
      </div>
 
      <div class="nav">
-          <button class="pointer">≺</button>
-          <span id="infoNumerotation">0/99</span>
-          <button class="pointer">≻</button>
+          <button class="pointer" onclick="previousObject()">≺</button>
+          <span><span id="index"></span>/<span id="indexLenght"></span></span>
+          <button class="pointer" onclick="nextObject()">≻</button>
      </div>
 
+     <!-- <button class="pointer" onclick="launchCamera()">voir en AR</button> -->
      <video autoplay id="video"></video>
 
-     <div id="bgButton" onclick="changeBackground()" class="pointer"></div>
+
      <div class="bg"></div>
 
-
-     </div>
-     <script>
-          // REAR CAMERA PHONE
-
-          // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-
-          function launchCamera() {
-               const constraints = {
-                    video: {
-                         facingMode: "environment"
-                    },
-               }
-
-               var video = document.getElementById("video"),
-                    vendorURL = window.URL || window.webkitURL;
-
-               if (navigator.mediaDevices.getUserMedia) {
-                    navigator.mediaDevices.getUserMedia(constraints)
-                         .then(function (stream) {
-                              video.style.zIndex = "2"
-                              video.srcObject = stream;
-                         }).catch(function (error) {
-                              console.log("Something went wrong");
-                         });
-               }
-
-          }
-
-          // CHANGE BACKGROUNDS
-          const myArray = ["bg-sol.JPG", "bg-table.JPG", "bg-air.JPG"];
-
-          var currentIndex = 0;
-
-          function changeBackground() {
-               // Ensure we don't go out of bounds
-               if (currentIndex < myArray.length) {
-                    // Get the current item
-                    const currentItem = myArray[currentIndex];
-                    // Display the current item (you can replace this with your own logic)
-                    document.querySelector(".bg").style.backgroundImage = "url(media/" + currentItem + ")"
-
-                    // Increment the index for the next click
-                    currentIndex++;
-
-               } else {
-                    currentIndex = 0;
-                    changeBackground()
-               }
-          }
-
-          window.addEventListener("load", (event) => {
-               changeBackground()
-          });
-
-
-          // var MAX_IMAGE_WIDTH = 200; // repalce magic number with const
-          // var MAX_IMAGE_HEIGHT = 150;   // repalce magic number with const
-          // var docWidth = document.body.clientWidth;  //replace $(document).width()
-          // var docHeight = document.body.clientHeight || 500;  //Note: document.body.clientHeight returns 0 in this envorment, in browser will be actaul height, setting defalult value of 500
-          // // prevent negitve values that could place your image off screen
-          // var maxWidth = Math.max(0, docWidth - MAX_IMAGE_WIDTH);
-          // var maxHeight = Math.max(0, docHeight - MAX_IMAGE_HEIGHT);
-
-          // var image = [ //set innital values and prevent variable hoisiting
-          //      "media/banco.png",
-          //      "media/silla.png",
-          //      "media/rangements.png",
-          //      "media/yogurtera.png",
-          //      "media/tripode.png",
-          // ];
-
-          // function getImage(src, top, left) {
-          //      var imgElement = document.createElement("img");
-          //      imgElement.classList.add("objects");
-          //      imgElement.src = src;
-          //      imgElement.style.top = top + 'px';
-          //      imgElement.style.left = left + 'px';
-          //      imgElement.style.position = 'absolute';
-
-          //      return imgElement;
-          // }
-
-          // console.log(image)
-
-          // function start() {
-          //      for (let i = 0, max = image.length; i < max; i++) {
-          //           var left_position = (Math.random() * maxWidth).toFixed();
-          //           //Assume you wanted height and not width
-          //           var top_position = (Math.random() * maxHeight).toFixed();
-          //           var imgEl = getImage(image[i], top_position, left_position);
-          //           document.body.appendChild(imgEl);
-          //      }
-          // }
-
-          // start()
-
-     </script>
+     <script src="script.js"></script>
 
 </body>
 
