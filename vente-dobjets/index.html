@@ -4,13 +4,11 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Vente d'objets</title>
+     <title>VENTE D'OBJETS</title>
      <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-
      <div class="object">
           <div>
                <span id="objectTitle">Title</span>
@@ -20,14 +18,26 @@
      </div>
 
      <div class="nav">
-          <button class="pointer" onclick="previousObject()">≺</button>
-          <span><span id="index"></span>/<span id="indexLenght"></span></span>
-          <button class="pointer" onclick="nextObject()">≻</button>
+          <div class="arrow">
+               <button class="pointer" onclick="previousObject()">≺</button>
+               <span><span id="index"></span>/<span id="indexLenght"></span></span>
+               <button class="pointer" onclick="nextObject()">≻</button>
+          </div>
+          <div class="button">
+               <a id="ARbutton" class="pointer" onclick="launchAR()">Voir en R.A</a>
+               <a id="emailButton" class="pointer" href="mailto:ehtomer@gmail.com">Intéresé·e?</a>
+               <a class="pointer" onclick="changeBackground()">Changer le fond</a>
+          </div>
      </div>
 
-     <button class="pointer" onclick="launchCamera()">voir en AR</button>
-     <video autoplay id="video"></video>
 
+
+     <!-- 
+     <div class="backgrounds">
+          <div data-bg="bg-sol" class="pointer bgSelected" onclick="changeBackground(this)"></div>
+          <div data-bg="bg-air" class="pointer" onclick="changeBackground(this)"></div>
+          <div data-bg="bg-table" class="pointer" onclick="changeBackground(this)"></div>
+     </div> -->
 
      <div class="bg"></div>
 

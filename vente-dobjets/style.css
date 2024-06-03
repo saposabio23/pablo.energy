@@ -7,7 +7,9 @@ body {
 
 .pointer:hover {
     cursor: pointer;
-    opacity: .5;
+    transition: all ease-in-out .2s;
+    transform: scale(1.1) !important;
+
 }
 
 .object {
@@ -25,7 +27,7 @@ body {
 
 .object div {
     padding: 0.5rem;
-    gap: 1rem;
+    gap: 10px;
     justify-content: space-between;
     display: flex;
 
@@ -49,7 +51,7 @@ body {
     height: 90%;
     max-width: 100%;
     object-fit: contain;
-    z-index: 100;
+    z-index: 80;
 
     transform: translateX(100%);
     opacity: 1 !important;
@@ -72,17 +74,6 @@ body {
     display: none;
 }
 
-.objet button {
-    position: absolute;
-    bottom: 15vh;
-    background-color: turquoise;
-    padding: 2rem 3rem;
-    font-size: 2rem;
-    border-radius: 100%;
-    transform: rotate(-15deg);
-    border: 1px solid black;
-}
-
 
 .nav {
     position: fixed;
@@ -90,16 +81,21 @@ body {
     left: 0;
     z-index: 3;
     display: flex;
+    flex-direction: column;
     width: 100vw;
-    justify-content: space-between;
     padding: 0.5rem;
     box-sizing: border-box;
-    gap: 1rem;
-    align-items: center;
-    height: 100px;
+    gap: 10px;
 }
 
-.nav span {
+.arrow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.arrow span {
     font-size: 3rem;
     width: fit-content;
     font-weight: 900;
@@ -110,10 +106,9 @@ body {
     padding: 0;
 }
 
-.nav button {
+.arrow button {
     font-size: 4rem;
-    width: 100%;
-    font-weight: 900;
+    width: fit-content;
     color: white;
     -webkit-text-stroke: 2px black;
     background-color: transparent;
@@ -122,12 +117,43 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: snow;
+    padding: 30px;
+    border-radius: 4px;
+    text-decoration: none;
+    border: 2px solid grey;
+}
+
+.button {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.button a {
+    background-color: snow;
+    padding: 12px 10px 10px 10px;
+    border-radius: 4px;
+    color: inherit;
+    text-decoration: none;
+    border: 2px solid grey;
+    font-size: 1rem;
+    transition: all ease-in-out .2s;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button a:nth-child(2) {
+    background-color: yellow;
 }
 
 
 video {
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     height: 100vh;
     width: 100vw;
     top: 0;
@@ -141,20 +167,36 @@ video {
     height: 100vh;
     width: 100vw;
     top: 0;
-    background-color: blue;
+    /* background-color: blue; */
     object-fit: cover;
 
-    background-image: url(media/bg-sol.JPG);
+    /* background-image: url(media/bg-sol.JPG); */
     background-size: cover;
     background-position: center;
 }
 
-#bgButton {
-    height: 40px;
-    width: 40px;
-    position: fixed;
-    bottom: 30vh;
-    right: 0;
-    background-color: white;
+.backgrounds {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     z-index: 200;
+    position: fixed;
+    padding: 12px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.backgrounds div {
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 999px;
+}
+
+.bgSelected {
+    background-color: black !important;
+    border-color: white !important;
 }
