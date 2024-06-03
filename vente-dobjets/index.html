@@ -19,14 +19,14 @@
 
      <div class="nav">
           <div class="arrow">
-               <button class="pointer" onclick="previousObject()">≺</button>
+               <button id="leftArrow" onclick="previousObject()">≺</button>
                <span><span id="index"></span>/<span id="indexLenght"></span></span>
-               <button class="pointer" onclick="nextObject()">≻</button>
+               <button id="rightArrow" onclick="nextObject()">≻</button>
           </div>
           <div class="button">
-               <a id="ARbutton" class="pointer" onclick="launchAR()">Voir en R.A</a>
-               <a id="emailButton" class="pointer" href="mailto:ehtomer@gmail.com">Intéresé·e?</a>
-               <a class="pointer" onclick="changeBackground()">Changer le fond</a>
+               <button id="ARbutton" onclick="launchAR()">Voir en R.A</button>
+               <a id="emailButton" href="mailto:ehtomer@gmail.com">Intéresé·e?</a>
+               <button id="changeBg" onclick="changeBackground()">Changer le fond</button>
           </div>
      </div>
 

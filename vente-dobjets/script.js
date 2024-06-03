@@ -177,12 +177,24 @@ document.addEventListener("keydown", function (event) {
   if (event.code === "Space") {
     event.preventDefault();
     changeBackground();
+    document.getElementById("changeBg").classList.add("active");
+    setTimeout(function () {
+      document.getElementById("changeBg").classList.remove("active");
+    }, 200);
   } else if (event.code === "ArrowRight") {
     event.preventDefault();
     nextObject();
+    document.getElementById("rightArrow").classList.add("active");
+    setTimeout(function () {
+      document.getElementById("rightArrow").classList.remove("active");
+    }, 200);
   } else if (event.code === "ArrowLeft") {
     event.preventDefault();
     previousObject();
+    document.getElementById("leftArrow").classList.add("active");
+    setTimeout(function () {
+      document.getElementById("leftArrow").classList.remove("active");
+    }, 200);
   }
 });
 
