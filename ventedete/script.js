@@ -44,24 +44,203 @@ function launchAR() {
 // CHANGE BACKGROUNDS
 let objects = [
   {
-    title: "Trépied 180cm",
+    title: "Trépied photo 180cm",
     image: "tripode.png",
-    price: "10",
-    text: "mailto:ehtomer@gmail.com?subject=VENTE D'OBJETS&body=Bonjour Pablo! Le trépied que tu as mis en vente m'intéresse. AIl est toujours dispo?%0D%0A%0D%0AJe crois voir que tu peux mettre une appareil photo directement sur lui, sans avoir besoin de fixation, c'est cool!%0D%0A %0D%0ABonne journée!",
+    price: "10€",
+    text: "sms://+33646316609;?&Cher Pablo, ",
   },
   {
     title: "Machine à yahourt",
-    image: "yogurtera.png",
-    price: "10",
-    text: "mailto:ehtomer@gmail.com?subject=VENTE D'OBJETS&body=Salut Pablo,%0D%0A%0D%0AJ'ai vu ta machine à yahourts, et je voudrais bien l'acheter pour en faire chez moi.%0D%0AEn plus je sais qu'on peut ajouter des saveurs avant de les faire pour qu'ils soient déjà sucrés ou vanillés.%0D%0A %0D%0AJ'attends ta réponse!",
+    image: "yahourtiere.png",
+    price: "10€",
+    text: "sms://+33646316609;?&Cher Pablo, ",
   },
   {
-    title: "Chaise bureau",
+    title: "Chaise de bureau",
     image: "silla.png",
-    price: "35",
-    text: "mailto:ehtomer@gmail.com?subject=VENTE D'OBJETS&body=Salut Pablo,%0D%0A%0D%0AJ'ai vu que tu vendais de choses et j'aimerais acheter ta chaise de bureau, histoire d'être mieux pour bosser chez moi.%0D%0A %0D%0ATu me diras. Salut!",
+    price: "35€",
+    text: "sms://+33646316609;?&Cher Pablo, ",
+  },
+  {
+    title: "Super bouilloire",
+    image: "bouilloire.png",
+    price: "5€",
+    text: "sms://+33646316609;?&Cher Pablo, ",
+  },
+  {
+    title: "Cafétières",
+    image: "cafe.png",
+    price: "5€",
+    text: "sms://+33646316609;?&Cher Pablo, ",
+  },
+  {
+    title: "Appareil photo Pentax-Q",
+    image: "camera.png",
+    price: "50€",
+    text: "sms://+33646316609;?&Cher Pablo, ",
+  },
+  {
+    title: "Tapis poule 150x150cm",
+    image: "carpet1.png",
+    price: "10€",
+    text: "sms://+33646316609;?&Cher Pablo, ",
+  },
+  {
+    title: "Tapis jaune 120x180cm",
+    image: "carpet2.png",
+    price: "10€",
+    text: "sms://+33646316609;?&Cher Pablo, ",
+  },
+  {
+    title: "Clavier QWERTY :(",
+    image: "clavier.png",
+    price: "5€",
+    text: "sms://+33646316609;?&Cher Pablo, ",
+  },
+  {
+    title: "Cocotte minute",
+    image: "cocotte.png",
+    price: "15€",
+    text: "sms://+33646316609;?&Cher Pablo, ",
+  },
+  {
+    title: "Cassier coloré 60x60x40cm",
+    image: "couleurs.png",
+    price: "10€",
+    text: "sms://+33646316609;?&Cher Pablo, ",
+  },
+  {
+    title: "Écran Dell 19' avec super barre son",
+    image: "ecran.png",
+    price: "35€",
+    text: "sms://+33646316609;?&Cher Pablo, ",
+  },
+  {
+    title: "Four à Marine",
+    image: "four.png",
+    price: "20€ (je lui donnerais!)",
+    text: "sms://+33646316609;?&Cher Pablo, ",
+  },
+  {
+    title: "Étagère de l'enfer 90x105x30cm",
+    image: "libreria.png",
+    price: "5€",
+    text: "sms://+33646316609;?&Cher Pablo, ",
+  },
+  {
+    title: "Plaide bleu",
+    image: "plaide.png",
+    price: "free",
+    text: "sms://+33646316609;?&Cher Pablo, ",
+  },
+  {
+    title: "Planche en bois 110x60cm",
+    image: "planche.png",
+    price: "10€",
+    text: "sms://+33646316609;?&Cher Pablo, ",
+  },
+  {
+    title: "Plante avec des longs bras",
+    image: "plante.png",
+    price: "free!",
+    text: "sms://+33646316609;?&Cher Pablo, ",
+  },
+  {
+    title: "Poiles diverses et variées",
+    image: "poiles.png",
+    price: "5€",
+    text: "sms://+33646316609;?&Cher Pablo, ",
+  },
+  {
+    title: "Petit rangement",
+    image: "rangement.png",
+    price: "free!",
+    text: "sms://+33646316609;?&Cher Pablo, ",
+  },
+  {
+    title: "Banc/table, 25x90x1,5cm",
+    image: "rangement.png",
+    price: "free!",
+    text: "sms://+33646316609;?&Cher Pablo, ",
+  },
+  {
+    title: "Ce truc, je ne sais pas comment ça s'appelle, un bateur?",
+    image: "rapido.png",
+    price: "7€",
+    text: "sms://+33646316609;?&Cher Pablo, ",
+  },
+  {
+    title: "Rice-cooker!",
+    image: "ricecoocker.png",
+    price: "5€",
+    text: "sms://+33646316609;?&Cher Pablo, ",
+  },
+  {
+    title: "Tabouret-arbre",
+    image: "tabouret.png",
+    price: "5€",
+    text: "sms://+33646316609;?&Cher Pablo, ",
+  },
+  {
+    title: "Tabouret Bahaus (par moi!)",
+    image: "tabouretbahaus.png",
+    price: "5€",
+    text: "sms://+33646316609;?&Cher Pablo, ",
+  },
+  {
+    title: "Téière familiale",
+    image: "teiere.png",
+    price: "10€",
+    text: "sms://+33646316609;?&Cher Pablo, ",
+  },
+  {
+    title: "Tourne disque DENON DP-297 (besoin du diamant, il coûte 20€!)",
+    image: "tournedisque.png",
+    price: "5€",
+    text: "sms://+33646316609;?&Cher Pablo, ",
+  },
+  {
+    title: "Traiteau avec extension",
+    image: "traiteau.png",
+    price: "7€",
+    text: "sms://+33646316609;?&Cher Pablo, ",
+  },
+  {
+    title: "Truc des tuillots",
+    image: "tructuillots.png",
+    price: "free!",
+    text: "sms://+33646316609;?&Cher Pablo, ",
+  },
+  {
+    title: "Xylophone de quand enfant",
+    image: "xylophone.png",
+    price: "7€",
+    text: "sms://+33646316609;?&Cher Pablo, ",
   },
 ];
+
+function shuffle(objects) {
+  let currentObjects = objects.length,
+    randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentObjects > 0) {
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentObjects);
+    currentObjects--;
+
+    // And swap it with the current element.
+    [objects[currentObjects], objects[randomIndex]] = [
+      objects[randomIndex],
+      objects[currentObjects],
+    ];
+  }
+
+  return objects;
+}
+
+shuffle(objects);
+console.log(objects);
 
 var currentObject = 0;
 
@@ -126,7 +305,10 @@ function loadPrevious() {
 function updateObject() {
   const currentItem = objects[currentObject];
   document.getElementById("objectTitle").innerHTML = currentItem.title;
-  document.getElementById("objectPrice").innerHTML = currentItem.price + "€";
+  document.getElementById("objectPrice").innerHTML =
+    '<a href="https://buy.stripe.com/aEU6sf9gd0F0bVC5km" target="_blank">' +
+    currentItem.price +
+    "</a>";
   document.getElementById("objectImage").src = "media/" + currentItem.image;
   document.getElementById("index").innerHTML = currentObject + 1;
   document.getElementById("emailButton").setAttribute("href", currentItem.text);
@@ -137,18 +319,15 @@ window.addEventListener("load", (event) => {
   document.getElementById("objectImage").classList.add("imageMove");
 });
 
-// CHANGE  BACKGROUND
+// IMAGE RESIZE BY RANGE
+const slider = document.getElementById("slider");
+const image = document.getElementById("objectImage");
 
-// function changeBackground() {
-//   for (let i = 0, max = bgButtons.length; i < max; i++) {
-//     bgButtons[i].classList.remove("bgSelected");
-//   }
-
-//   number = e.getAttribute("data-bg");
-//   document.querySelector(".bg").style.backgroundImage =
-//     "url(media/" + number + ".JPG)";
-//   e.classList.add("bgSelected");
-// }
+function resizeImage() {
+  const newSize = slider.value + "%";
+  image.style.height = newSize;
+}
+slider.addEventListener("input", resizeImage);
 
 const bgList = ["bg-sol.JPG", "bg-table.JPG", "bg-air.JPG"];
 
@@ -165,7 +344,7 @@ function changeBackground() {
   if (currentIndex < bgList.length) {
     const currentItem = bgList[currentIndex];
     document.querySelector(".bg").style.backgroundImage =
-      "url(media/" + currentItem + ")";
+      "url(" + currentItem + ")";
     currentIndex++;
   } else {
     currentIndex = 0;

@@ -10,17 +10,34 @@ button:hover {
     transition: all ease-in-out .2s;
 }
 
+#slider {
+    writing-mode: vertical-lr;
+    direction: rtl;
+    appearance: slider-vertical;
+
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+}
+
+#slider:hover {
+    cursor: pointer;
+}
+
 .object {
     position: fixed;
     top: 0;
     left: 0;
     z-index: 3;
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 0px);
     box-sizing: border-box;
     flex-direction: column;
 
     display: flex;
+    justify-content: center;
 }
 
 .object div {
@@ -32,12 +49,13 @@ button:hover {
     position: absolute;
     width: 100vw;
     box-sizing: border-box;
+    top: 0;
 }
 
 .object>div>span {
     font-size: 4rem;
     width: fit-content;
-    max-width: 1100px;
+    max-width: 700px;
     font-weight: 900;
     color: white;
     -webkit-text-stroke: 2px black;
@@ -45,15 +63,32 @@ button:hover {
     /* text-transform: capitalize; */
 }
 
+.object>div>span:nth-child(2) {
+    text-align: end;
+}
+
+.object a {
+    color: white;
+    text-decoration: none;
+    z-index: 999;
+    position: relative;
+}
+
 .object img {
-    height: 90%;
+    height: 100%;
     max-width: 100%;
     object-fit: contain;
     z-index: 80;
-
     transform: translateX(100%);
     opacity: 1 !important;
     transition: all ease-in-out .2s;
+
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 .imageMove {
@@ -138,7 +173,7 @@ button:hover {
     gap: 10px;
 }
 
-a,
+.nav a,
 button {
     padding: 12px 10px 10px 10px;
     border-radius: 4px;
@@ -216,7 +251,17 @@ video {
 
 @media (max-width: 768px) {
     .object>div>span {
-        font-size: 3rem;
+        font-size: 2.5rem;
+        -webkit-text-stroke: 1.5px black;
+    }
+
+    .arrow span {
+        font-size: 2.5rem !important;
+        -webkit-text-stroke: 1.5px black;
+    }
+
+    .arrow button {
+        -webkit-text-stroke: 1.5px black;
     }
 
     a,
