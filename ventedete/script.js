@@ -74,7 +74,7 @@ let objects = [
     text: "sms://+33646316609;?&Cher Pablo, ",
   },
   {
-    title: "Appareil photo Pentax-Q",
+    title: "Appareil photo digital Pentax-Q",
     image: "camera.png",
     price: "50€",
     text: "sms://+33646316609;?&Cher Pablo, ",
@@ -122,21 +122,9 @@ let objects = [
     text: "sms://+33646316609;?&Cher Pablo, ",
   },
   {
-    title: "Plaide bleu",
-    image: "plaide.png",
-    price: "free",
-    text: "sms://+33646316609;?&Cher Pablo, ",
-  },
-  {
     title: "Planche en bois 110x60cm",
     image: "planche.png",
     price: "10€",
-    text: "sms://+33646316609;?&Cher Pablo, ",
-  },
-  {
-    title: "Plante avec des longs bras",
-    image: "plante.png",
-    price: "free!",
     text: "sms://+33646316609;?&Cher Pablo, ",
   },
   {
@@ -146,15 +134,9 @@ let objects = [
     text: "sms://+33646316609;?&Cher Pablo, ",
   },
   {
-    title: "Petit rangement",
-    image: "rangement.png",
-    price: "free!",
-    text: "sms://+33646316609;?&Cher Pablo, ",
-  },
-  {
-    title: "Banc/table, 25x90x1,5cm",
-    image: "rangement.png",
-    price: "free!",
+    title: "Banc/table, 25x90x1,5cm  (par moi!)",
+    image: "banc.png",
+    price: "15€",
     text: "sms://+33646316609;?&Cher Pablo, ",
   },
   {
@@ -196,13 +178,7 @@ let objects = [
   {
     title: "Traiteau avec extension",
     image: "traiteau.png",
-    price: "7€",
-    text: "sms://+33646316609;?&Cher Pablo, ",
-  },
-  {
-    title: "Truc des tuillots",
-    image: "tructuillots.png",
-    price: "free!",
+    price: "10€",
     text: "sms://+33646316609;?&Cher Pablo, ",
   },
   {
