@@ -135,7 +135,7 @@ let objects = [
   },
   {
     title: "Banc/table, 25x90x1,5cm  (par moi!)",
-    image: "banc.png",
+    image: "banco.png",
     price: "15€",
     text: "sms://+33646316609;?&Cher Pablo, ",
   },
@@ -185,6 +185,18 @@ let objects = [
     title: "Xylophone de quand enfant",
     image: "xylophone.png",
     price: "7€",
+    text: "sms://+33646316609;?&Cher Pablo, ",
+  },
+  {
+    title: "Matela fin funky",
+    image: "matelasfin.png",
+    price: "5€",
+    text: "sms://+33646316609;?&Cher Pablo, ",
+  },
+  {
+    title: "Vrai matelas cool",
+    image: "matelascool.png",
+    price: "10€",
     text: "sms://+33646316609;?&Cher Pablo, ",
   },
 ];
