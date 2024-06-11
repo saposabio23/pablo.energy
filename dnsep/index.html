@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNSEP</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="reset.css">
+
+    <!-- Leaflet's-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin="" />
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+</head>
+
+<body>
+
+    <div class="content">
+        <div id="map"></div>
+        <div id="panel">
+            <div class="indexPanel">
+                <div class="headerList">
+                    <div class="contentHeader">
+                        <h4>Index</h4>
+                    </div>
+                    <div class="addHeader">+</div>
+                </div>
+
+                <template id="templateLine">
+                    <div class="line">
+                        <div class="lineIndicator"></div>
+                        <div class="lineContent">
+                            <div class="lineActivity">😇</div>
+                            <div class="lineInfo">
+                                <div class="lineAditional">
+                                    <div class="lineDescription">Description</div>
+                                    <div class="lineBestIn">Best in</div>
+                                </div>
+                                <div class="lineTitle">Title</div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="map.js"></script>
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

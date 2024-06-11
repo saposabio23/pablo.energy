@@ -116,12 +116,6 @@ let objects = [
     text: "sms://+33646316609;?&Cher Pablo, ",
   },
   {
-    title: "Four à Marine",
-    image: "four.png",
-    price: "20€ (je lui donnerais!)",
-    text: "sms://+33646316609;?&Cher Pablo, ",
-  },
-  {
     title: "Étagère de l'enfer 90x105x30cm",
     image: "libreria.png",
     price: "5€",
