@@ -140,6 +140,12 @@ let objects = [
     text: "sms://+33646316609;?&Cher Pablo, ",
   },
   {
+    title: "Lampe métal flexible Ikea",
+    image: "ikea.png",
+    price: "4€",
+    text: "sms://+33646316609;?&Cher Pablo, ",
+  },
+  {
     title: "Ce truc, je ne sais pas comment ça s'appelle, un bateur?",
     image: "rapido.png",
     price: "7€",
