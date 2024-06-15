@@ -46,19 +46,19 @@ let objects = [
   {
     title: "Trépied photo 180cm",
     image: "tripode.png",
-    price: "10€",
+    price: "7€",
     text: "sms://+33646316609;?&Cher Pablo, ",
   },
   {
     title: "Machine à yahourt",
     image: "yahourtiere.png",
-    price: "10€",
+    price: "7€",
     text: "sms://+33646316609;?&Cher Pablo, ",
   },
   {
     title: "Chaise de bureau",
     image: "silla.png",
-    price: "35€",
+    price: "30€",
     text: "sms://+33646316609;?&Cher Pablo, ",
   },
   {
@@ -80,12 +80,6 @@ let objects = [
     text: "sms://+33646316609;?&Cher Pablo, ",
   },
   {
-    title: "Tapis poule 150x150cm",
-    image: "carpet1.png",
-    price: "10€",
-    text: "sms://+33646316609;?&Cher Pablo, ",
-  },
-  {
     title: "Tapis jaune 120x180cm",
     image: "carpet2.png",
     price: "10€",
@@ -100,7 +94,7 @@ let objects = [
   {
     title: "Cocotte minute",
     image: "cocotte.png",
-    price: "15€",
+    price: "10€",
     text: "sms://+33646316609;?&Cher Pablo, ",
   },
   {
@@ -112,7 +106,7 @@ let objects = [
   {
     title: "Écran Dell 19' avec super barre son",
     image: "ecran.png",
-    price: "35€",
+    price: "30€",
     text: "sms://+33646316609;?&Cher Pablo, ",
   },
   {
@@ -136,7 +130,7 @@ let objects = [
   {
     title: "Banc/table, 25x90x1,5cm  (par moi!)",
     image: "banco.png",
-    price: "15€",
+    price: "10€",
     text: "sms://+33646316609;?&Cher Pablo, ",
   },
   {
@@ -148,7 +142,7 @@ let objects = [
   {
     title: "Ce truc, je ne sais pas comment ça s'appelle, un bateur?",
     image: "rapido.png",
-    price: "7€",
+    price: "5€",
     text: "sms://+33646316609;?&Cher Pablo, ",
   },
   {
@@ -172,7 +166,7 @@ let objects = [
   {
     title: "Téière familiale",
     image: "teiere.png",
-    price: "10€",
+    price: "7€",
     text: "sms://+33646316609;?&Cher Pablo, ",
   },
   {
@@ -184,13 +178,13 @@ let objects = [
   {
     title: "Traiteau avec extension",
     image: "traiteau.png",
-    price: "10€",
+    price: "7€",
     text: "sms://+33646316609;?&Cher Pablo, ",
   },
   {
     title: "Xylophone de quand enfant",
     image: "xylophone.png",
-    price: "7€",
+    price: "5€",
     text: "sms://+33646316609;?&Cher Pablo, ",
   },
   {
