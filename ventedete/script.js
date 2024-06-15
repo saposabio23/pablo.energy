@@ -76,7 +76,7 @@ let objects = [
   {
     title: "Appareil photo digital Pentax-Q",
     image: "camera.png",
-    price: "50€",
+    price: "45€",
     text: "sms://+33646316609;?&Cher Pablo, ",
   },
   {
