@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>P M E</title>
+     <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+     <div id="diapoBtn"></div>
+     <header>
+          <div id="block0" data-number="0">
+               <span>Pablo Moreno</span>
+          </div>
+          <div id="block1" data-number="1">
+               <span>Mémoire</span>
+          </div>
+          <div id="block2" data-number="2">
+               <span>Angie Blindmaker</span>
+          </div>
+     </header>
+
+
+
+     <div class="content">
+          <div class="thumbnail">
+               <img id="objectImage" src="media/tripode.png" alt="">
+          </div>
+          <div class="object">
+               <div class="objectHeader">
+                    <span id="objectTitle">Title</span>
+                    <span id="objectDescription">Description</span>
+               </div>
+               <div class="objectInfo">
+                    <span id="objectTags">Tags</span>
+                    <a id="objectURL" href="/" target="_blank">Url</a>
+               </div>
+          </div>
+     </div>
+
+
+     <button id="leftArrow" onclick="previousObject(), stopDiapo()">≺</button>
+
+
+     <button id="rightArrow" onclick="nextObject(), stopDiapo()">≻</button>
+
+
+
+     <script src="script.js"></script>
+     <script src="data.js"></script>
+
+</body>
+
+</html>

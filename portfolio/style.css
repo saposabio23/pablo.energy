@@ -1,0 +1,188 @@
+body {
+    font-size: 16px;
+    line-height: 21px;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    /*! height: 40px; */
+    margin: auto;
+    display: flex;
+    /*! flex-direction: column; */
+    left: 50vw;
+    transform: translateX(-50%);
+    font-size: 12px;
+    z-index: 999;
+}
+
+header div {
+    /*! height: 100%; */
+    /*! aspect-ratio: 1; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: fit-content;
+    padding: 20px 20px;
+}
+
+header div:hover {
+    opacity: 30%;
+    cursor: pointer;
+}
+
+.selected {
+    opacity: 30%;
+}
+
+#diapoBtn {
+    margin: 10px;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: url(play.svg);
+    background-size: cover;
+    z-index: 9999;
+    opacity: 20%;
+    transition: all ease-in-out .5s;
+}
+
+#diapoBtn:hover {
+    opacity: 10%;
+    transition: all ease-in-out .5s;
+    cursor: pointer;
+}
+
+
+
+.content {
+    /*! border: 1px solid black; */
+    /*! max-width: 920px; */
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.thumbnail {
+    height: 50vh;
+    max-height: 600px;
+    margin: 20vh auto 0 auto;
+
+    max-width: 100%;
+}
+
+.thumbnail img {
+    height: 100%;
+    aspect-ratio: 16/9;
+    object-fit: contain;
+
+    transform: translateX(100%);
+    opacity: 1 !important;
+    transition: all ease-in-out .2s;
+    width: 100%;
+}
+
+.object {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    margin: 10vh auto 0 auto;
+    /*! background-color: gainsboro; */
+    width: 100%;
+    max-width: 920px;
+}
+
+
+#objectTitle {
+    font-size: 24px;
+}
+
+#objectURL {
+    text-decoration: underline;
+}
+
+#objectURL:hover {
+    opacity: 100%;
+    cursor: pointer;
+}
+
+button {
+
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+}
+
+button:hover {
+    cursor: pointer;
+    opacity: 30%;
+}
+
+button:active {
+    background-color: gray;
+}
+
+.active {
+    background-color: gray;
+}
+
+#leftArrow {
+    position: fixed;
+    top: 50vh;
+    left: 2vh;
+    transform: translateY(-50%);
+}
+
+#rightArrow {
+    position: fixed;
+    top: 50vh;
+    right: 2vh;
+    transform: translateY(-50%);
+}
+
+.objectHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 80%;
+}
+
+.objectInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.objectInfo span {
+    opacity: 30%;
+}
+
+.imageMove {
+    -webkit-transform: translateX(0) !important;
+    -ms-transform: translateX(0) !important;
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+    -webkit-transition: all ease-in-out .3s;
+    -o-transition: all ease-in-out .3s;
+    transition: all ease-in-out .3s;
+}
+
+.imageGo {
+    -webkit-transform: translateX(-100%) !important;
+    -ms-transform: translateX(-100%) !important;
+    transform: translateX(-100%) !important;
+    opacity: 0;
+    -webkit-transition: all ease-in-out .3s;
+    -o-transition: all ease-in-out .3s;
+    transition: all ease-in-out .3s;
+}
+
+.hidden {
+    display: none;
+}
