@@ -113,8 +113,6 @@ let objects = [
       "moreno-photos.png",
       "a-map-of-internet-2.png",
       "a-map-of-internet-3.png",
-      "fils-rouges-2.png",
-      "fils-rouges-1.png",
       "bg-0.png",
       "bg-1.png",
       "andrea-aguilera-rotate.png",
