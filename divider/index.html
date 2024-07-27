@@ -69,6 +69,18 @@
             bottom: 10px;
             transform: translateX(-50%);
         }
+
+        @media (orientation: landscape) {
+            body {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (orientation: portrait) {
+            body {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
