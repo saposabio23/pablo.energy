@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>divider</title>
+    <style>
+        :root {
+            --value: 20px;
+        }
+
+        body {
+            margin: 0;
+            padding: var(--value);
+            gap: var(--value);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 100vh;
+            width: 100vw;
+            box-sizing: border-box;
+        }
+
+        div {
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            color: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem;
+
+            /* background-image: url("../00nosync/_MATERIAL/IMG_1536.JPG"); */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            min-width: 10px;
+            overflow: hidden;
+
+        }
+
+        div:hover {
+            cursor: pointer;
+        }
+
+        div:active {
+            filter: brightness(0.8);
+        }
+
+        div:nth-child(1) {
+            background-color: green;
+        }
+
+        div:nth-child(2) {
+            background-color: red;
+        }
+
+        input {
+            visibility: hidden;
+            display: none;
+        }
+
+        button {
+            position: absolute;
+            left: 50%;
+            padding: 10px;
+            bottom: 10px;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div id="image1">
+        <input type='file' id='file1' />
+        ⬆︎
+    </div>
+    <div id="image2">
+        <input type='file' id='file2' />
+        ⬆︎
+    </div>
+
+    <button id="export">export!</button>
+
+    <script>
+
+
+
+        document.getElementById('image1').addEventListener('click', function () {
+            document.getElementById('file1').click();
+        });
+
+
+        document.getElementById('image2').addEventListener('click', function () {
+            document.getElementById('file2').click();
+        });
+
+        document.getElementById('export').addEventListener('click', function () {
+            document.getElementById('export').style.display = "none";
+            const screenshotTarget = document.body;
+
+            html2canvas(screenshotTarget).then((canvas) => {
+                var a = document.createElement('a');
+                a.href = canvas.toDataURL("image/png");
+                a.download = 'somefilename.jpg';
+                a.click();
+            });
+        });
+
+
+
+        document.getElementById('file1').addEventListener('change', readURL1, true);
+        document.getElementById('file2').addEventListener('change', readURL2, true);
+
+        function readURL1() {
+            var file = document.getElementById("file1").files[0];
+            var reader = new FileReader();
+            reader.onloadend = function () {
+                document.getElementById('image1').style.color = "transparent";
+                document.getElementById('image1').style.backgroundImage = "url(" + reader.result + ")";
+            }
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+            }
+        }
+
+        function readURL2() {
+            var file = document.getElementById("file2").files[0];
+            var reader = new FileReader();
+            reader.onloadend = function () {
+                document.getElementById('image2').style.color = "transparent";
+                document.getElementById('image2').style.backgroundImage = "url(" + reader.result + ")";
+            }
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+            }
+        }
+    </script>
+
+    <script src="html2canvas.min.js"></script>
+
+</body>
+
+</html>
