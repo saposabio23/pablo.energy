@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>divider</title>
+    <title>Divider ⇋</title>
+    <link rel="icon" href="data:;base64,=">
+
     <style>
         :root {
             --value: 20px;
@@ -16,7 +18,7 @@
             gap: var(--value);
             display: grid;
             grid-template-columns: 1fr 1fr;
-            height: 100vh;
+            height: calc(var(--vh, 1vh) * 100);
             width: 100vw;
             box-sizing: border-box;
         }
@@ -97,35 +99,40 @@
         ⬆︎
     </div>
 
-    <button id="export">export!</button>
+    <button id="export" data-html2canvas-ignore="true">export!</button>
 
     <script>
 
+        /* -----------------------------------
+        IPHONE HEIGHT
+        // -------------------------------------- */
+        window.onload = mobileWindow();
+
+        function mobileWindow() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+
+        window.addEventListener("resize", mobileWindow, false);
+        window.addEventListener("orientationchange", mobileWindow, false);
 
 
+
+        /* -----------------------------------
+        DIV FIRES INPUT
+        // -------------------------------------- */
         document.getElementById('image1').addEventListener('click', function () {
             document.getElementById('file1').click();
         });
-
 
         document.getElementById('image2').addEventListener('click', function () {
             document.getElementById('file2').click();
         });
 
-        document.getElementById('export').addEventListener('click', function () {
-            document.getElementById('export').style.display = "none";
-            const screenshotTarget = document.body;
 
-            html2canvas(screenshotTarget).then((canvas) => {
-                var a = document.createElement('a');
-                a.href = canvas.toDataURL("image/png");
-                a.download = 'somefilename.jpg';
-                a.click();
-            });
-        });
-
-
-
+        /* -----------------------------------
+        INPUT UPLOAD
+        // -------------------------------------- */
         document.getElementById('file1').addEventListener('change', readURL1, true);
         document.getElementById('file2').addEventListener('change', readURL2, true);
 
@@ -154,6 +161,22 @@
             } else {
             }
         }
+
+
+        /* -----------------------------------
+        HTML2CANVAS EXPORT
+        // -------------------------------------- */
+        document.getElementById('export').addEventListener('click', function () {
+            const screenshotTarget = document.body;
+
+            html2canvas(screenshotTarget).then((canvas) => {
+                var a = document.createElement('a');
+                a.href = canvas.toDataURL("image/png");
+                a.download = 'somefilename.jpg';
+                a.click();
+            });
+        });
+
     </script>
 
     <script src="html2canvas.min.js"></script>
