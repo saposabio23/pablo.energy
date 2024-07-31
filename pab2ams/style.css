@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: lavender;
+
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+    gap: 23px;
+
+    font-size: 18px;
+    line-height: 1.4;
+
+    overflow-x: hidden;
+}
+
+h2 {
+    padding: 0;
+    margin: 0;
+    padding-bottom: 1rem;
+
+}
+
+p {
+    margin: 0;
+}
+
+img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: block;
+
+    width: 150px;
+    transform: translate(20%, 20%) rotate(8deg);
+
+    height: fit-content;
+    transition: all .5s ease-in-out;
+}
+
+img:hover {
+    width: 400px;
+    transform: translate(20%, 20%) rotate(0deg);
+    transition: all .5s ease-in-out;
+}
+
+
+button {
+    border-radius: 999px;
+    padding: 12px 16px;
+    border: 1px solid rgb(185, 185, 185);
+    font-size: 18px;
+    display: block;
+    width: fit-content;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.carnet {
+    position: relative;
+    background-color: white;
+    padding: 2rem 3rem 3rem 3rem;
+    border-radius: 23px;
+    box-sizing: border-box;
+    max-width: 600px;
+    gap: 23px;
+    border: 1px solid rgb(185, 185, 185);
+
+    /* background-size: cover;
+    background-image: url(grid.JPG);
+    background-position: center; */
+}
+
+.wish {
+    background-color: #e0e0e3;
+    width: 400px;
+    padding: 14px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+textarea {
+    font-size: 18px;
+    line-height: 1.4;
+
+    resize: none;
+    height: 100px;
+
+    padding: 10px;
+    border: none;
+    border-radius: 12px;
+}
+
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
