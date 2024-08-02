@@ -53,34 +53,6 @@ const subtitles = document.getElementById("subtitles");
 
 videoWaiting.removeAttribute("controls");
 
-function launchPresenation() {
-  videoPanel.classList.remove("hidden");
-  videoPanel.classList.add("cursor-pointer");
-  videoPanel.classList.add("hover:shadow-video");
-
-  studioAd.classList.add("hidden");
-  // studioAd.classList.replace("text-yellow-300", "text-[red]");
-  // studioAd.classList.remove("cursor-pointer");
-  // studioAd.classList.remove("hover:underline");
-  studioAd.innerHTML = "Thanks! Have a good day :)";
-
-  videoWaiting.classList.add("opacity-0");
-  videoPresenting.play();
-  infoPanel.classList.add("minHeightMobile");
-
-  videoPresenting.removeAttribute("controls");
-
-  window.scroll({
-    top: 0,
-    behavior: "smooth",
-  });
-
-  setTimeout(function () {
-    videoWaiting.classList.add("hidden");
-  }, 1000);
-}
-
-studioAd.addEventListener("click", launchPresenation);
 
 function playPauseVideo() {
   if (videoPresenting.paused) {
