@@ -3,15 +3,12 @@ body {
     margin: 0;
     padding: 0;
     background-color: lavender;
-
     display: flex;
     flex-direction: column;
     margin: 2rem;
     gap: 23px;
-
     font-size: 18px;
     line-height: 1.4;
-
     overflow-x: hidden;
 }
 
@@ -19,35 +16,45 @@ h2 {
     padding: 0;
     margin: 0;
     padding-bottom: 1rem;
-
+    padding: 0;
+    font-size: 2rem;
 }
 
 p {
     margin: 0;
+    text-indent: 20px;
 }
-
 
 /************** CARNET ***************/
 .carnet {
     position: relative;
     background-color: white;
-    padding: 2rem 3rem 3rem 3rem;
+    padding: 2rem;
     border-radius: 23px;
     box-sizing: border-box;
-    max-width: 600px;
+    max-width: 450px;
     gap: 23px;
     border: 1px solid rgb(185, 185, 185);
 
-    /* background-size: cover;
-    background-image: url(grid.JPG);
-    background-position: center; */
+    background-size: cover;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.carnet div {
+    display: flex;
+    gap: 23px;
+    align-items: end;
 }
 
 /************** CONTACT ***************/
 .contacts {
     display: flex;
-    flex-direction: column;
     gap: 10px;
+    margin: auto;
 }
 
 /************** BUTTONS ***************/
@@ -55,9 +62,10 @@ button {
     border-radius: 999px;
     padding: 12px 16px;
     border: 1px solid rgb(185, 185, 185);
-    font-size: 18px;
     display: block;
     width: fit-content;
+
+    font-size: 18px;
 }
 
 button:hover {
@@ -74,34 +82,25 @@ a:focus {
 
 /************** IMAGE ***************/
 .pablo {
-    position: absolute;
-    bottom: 0;
-    right: 0;
     display: flex;
-    width: 150px;
-    transform: translate(20%, 20%) rotate(8deg);
+    width: fit-content;
     height: fit-content;
     transition: all .5s ease-in-out;
     justify-content: center;
     align-items: center;
-
-}
-
-.pablo:hover {
-    width: 400px;
-    transform: translate(20%, 20%) rotate(0deg);
-    transition: all .5s ease-in-out;
 }
 
 img {
-    width: 100%;
+    width: 100px;
+    border-radius: 20px;
+    border: 1px solid rgb(185, 185, 185);
+    transition: all .5s ease-in-out;
 }
 
 #luck {
     position: absolute;
     font-size: 2rem;
     font-weight: 600;
-    transform: translateY(20px);
     opacity: 0;
 
     color: #6ed322;
@@ -111,7 +110,7 @@ img {
 @keyframes goodluck {
     0% {
         opacity: 0;
-        transform: scale(1) translateY(20px);
+        transform: scale(1) translateY(10px);
     }
 
     60% {
@@ -120,6 +119,6 @@ img {
 
     100% {
         opacity: 0;
-        transform: scale(1.1) translateY(-10px);
+        transform: scale(1.1) translateY(-30px);
     }
 }

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charsetUTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PABL🔍 TO AMSTERD🏠M</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+    <div class="carnet">
+        <div>
+            <div class="pablo">
+                <img src="pablo.JPG"
+                     alt="This guy called Pablo is in a train, smiling at the camera (becasue Maddalena took the picture) and he have a cap he found in some village, and his always present napkin.">
+            </div>
+            <h2>PABL🔍 TO AMSTERD🏠M</h2>
+
+        </div>
+
+
+
+        <p>
+
+            Pablo is a just graduated spanish + french guy who starts on <u>September 16<sup>th</sup></u> an
+            internship in Amsterdam, and
+            he's looking for a <u>room to rent</u>. He
+            will do
+            design and websites and want to find <u>cool people</u> to live with. He's very polite and curious,
+            engaged and open-minded. Ready for adventures, he eats everything and really like cinema and peanut
+            butter.
+            Independent
+            from a long date (boarding school at 13 - outch), he shares <u>his good energy</u> in french,
+            spanish
+            or english! He needs something for 6 months (but it can be less too) from September 24 to March 25. He's
+            twenty-six years old, but loves even more the <u>23</u>.<br><br>Thanks,<br> and maybe see you!
+
+        </p>
+
+
+    </div>
+
+    <div class="contacts">
+        <a href="https://www.instagram.com/sagesseastrale23/"><button>You can help him! 💡💌</button></a>
+        <button onclick="goodLuck()">Wish him luck! 🌠💪</button>
+    </div>
+
+    <audio id="sound" src="alien.mp3" preload="auto"></audio>
+
+
+    <script>
+
+        // Array of all CSS color names
+        const cssColors = [
+            "AliceBlue", "AntiqueWhite", "Aqua", "Aquamarine", "Azure", "Beige", "Bisque", "Black", "BlanchedAlmond",
+            "Blue", "BlueViolet", "Brown", "BurlyWood", "CadetBlue", "Chartreuse", "Chocolate", "Coral", "CornflowerBlue",
+            "Cornsilk", "Crimson", "Cyan", "DarkBlue", "DarkCyan", "DarkGoldenRod", "DarkGray", "DarkGrey", "DarkGreen",
+            "DarkKhaki", "DarkMagenta", "DarkOliveGreen", "DarkOrange", "DarkOrchid", "DarkRed", "DarkSalmon", "DarkSeaGreen",
+            "DarkSlateBlue", "DarkSlateGray", "DarkSlateGrey", "DarkTurquoise", "DarkViolet", "DeepPink", "DeepSkyBlue",
+            "DimGray", "DimGrey", "DodgerBlue", "FireBrick", "FloralWhite", "ForestGreen", "Fuchsia", "Gainsboro", "GhostWhite",
+            "Gold", "GoldenRod", "Gray", "Grey", "Green", "GreenYellow", "HoneyDew", "HotPink", "IndianRed", "Indigo", "Ivory",
+            "Khaki", "Lavender", "LavenderBlush", "LawnGreen", "LemonChiffon", "LightBlue", "LightCoral", "LightCyan",
+            "LightGoldenRodYellow", "LightGray", "LightGrey", "LightGreen", "LightPink", "LightSalmon", "LightSeaGreen",
+            "LightSkyBlue", "LightSlateGray", "LightSlateGrey", "LightSteelBlue", "LightYellow", "Lime", "LimeGreen",
+            "Linen", "Magenta", "Maroon", "MediumAquaMarine", "MediumBlue", "MediumOrchid", "MediumPurple", "MediumSeaGreen",
+            "MediumSlateBlue", "MediumSpringGreen", "MediumTurquoise", "MediumVioletRed", "MidnightBlue", "MintCream",
+            "MistyRose", "Moccasin", "NavajoWhite", "Navy", "OldLace", "Olive", "OliveDrab", "Orange", "OrangeRed", "Orchid",
+            "PaleGoldenRod", "PaleGreen", "PaleTurquoise", "PaleVioletRed", "PapayaWhip", "PeachPuff", "Peru", "Pink", "Plum",
+            "PowderBlue", "Purple", "RebeccaPurple", "Red", "RosyBrown", "RoyalBlue", "SaddleBrown", "Salmon", "SandyBrown",
+            "SeaGreen", "SeaShell", "Sienna", "Silver", "SkyBlue", "SlateBlue", "SlateGray", "SlateGrey", "Snow", "SpringGreen",
+            "SteelBlue", "Tan", "Teal", "Thistle", "Tomato", "Turquoise", "Violet", "Wheat", "White", "WhiteSmoke", "Yellow",
+            "YellowGreen"
+        ];
+
+        // Function to get a random color from the array
+        function getRandomColor() {
+            const randomIndex = Math.floor(Math.random() * cssColors.length);
+            return cssColors[randomIndex];
+        }
+
+
+        // Set the random color as the body's background color
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const randomColor = getRandomColor();
+            document.body.style.backgroundColor = randomColor;
+        });
+
+        var wishNumbers = 0;
+
+        function goodLuck() {
+
+            sound.play();
+
+            wishNumbers++;
+
+            document.title = "thank you 4 caring " + wishNumbers + " times <3"
+
+            console.log(wishNumbers)
+
+            let luck = document.createElement("span");
+            luck.id = "luck";
+            luck.innerHTML = "+" + wishNumbers + "🍀";
+
+
+            document.querySelector(".pablo").appendChild(luck)
+
+        }
+
+    </script>
+</body>
+
+</html>
