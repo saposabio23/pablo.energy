@@ -22,10 +22,7 @@
 
         </div>
 
-
-
         <p>
-
             Pablo is a just graduated spanish + french guy who starts on <u>September 16<sup>th</sup></u> an
             internship in Amsterdam, and
             he's looking for a <u>room to rent</u>. He
@@ -45,10 +42,13 @@
 
     <div class="contacts">
         <a href="https://www.instagram.com/sagesseastrale23/"><button>You can help him! 💡</button></a>
-        <button onclick="goodLuck()">Wish him luck! 🌠</button>
+        <button onclick="goodLuck()">Wish him luck! 🍀</button>
     </div>
 
-    <audio id="sound" src="twinklesparkle.mp3" preload="auto"></audio>
+    <audio id="sound" preload="auto">
+        <source src="marino-wahoo.mp3" type="audio/mpeg" />
+    </audio>
+
 
 
     <script>
@@ -90,13 +90,16 @@
 
         var wishNumbers = 0;
 
-        function goodLuck() {
+        const audio = document.getElementById("sound");
 
-            sound.play();
+        function goodLuck() {
+            audio.pause();
+            audio.currentTime = 0;
+            audio.play();
 
             wishNumbers++;
 
-            document.title = "thank you 4 caring " + wishNumbers + " times <3"
+            document.title = "thank you " + wishNumbers + " times <3"
 
             console.log(wishNumbers)
 
