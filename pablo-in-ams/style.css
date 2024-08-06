@@ -5,19 +5,19 @@ body {
     background-color: orangered;
     display: flex;
     flex-direction: column;
-    margin: 2rem;
-    gap: 23px;
+    margin: 1rem;
+    gap: 1rem;
     font-size: 18px;
     line-height: 1.4;
     overflow-x: hidden;
 }
 
-h2 {
+h1 {
     padding: 0;
     margin: 0;
     padding-bottom: 1rem;
     padding: 0;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
 }
 
 p {
@@ -29,11 +29,11 @@ p {
 .carnet {
     position: relative;
     background-color: white;
-    padding: 2rem;
+    padding: 1.5rem 2rem;
     border-radius: 23px;
     box-sizing: border-box;
     max-width: 100%;
-    gap: 23px;
+    gap: 1rem;
     border: 1px solid rgb(185, 185, 185);
 
     background-size: cover;
@@ -43,11 +43,13 @@ p {
     flex-direction: column;
     justify-content: space-between;
     width: 500px;
+
+    transition: all .5s ease-in-out;
 }
 
 .carnet div {
     display: flex;
-    gap: 23px;
+    gap: 1rem;
     align-items: end;
 }
 
