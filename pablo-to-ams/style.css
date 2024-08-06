@@ -2,7 +2,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: lavender;
+    background-color: orangered;
     display: flex;
     flex-direction: column;
     margin: 2rem;
@@ -17,7 +17,7 @@ h2 {
     margin: 0;
     padding-bottom: 1rem;
     padding: 0;
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 p {
@@ -42,7 +42,7 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 450px;
+    width: 500px;
 }
 
 .carnet div {
