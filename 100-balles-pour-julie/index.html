@@ -32,6 +32,8 @@
         }
 
         button {
+            width: -webkit-max-content;
+            width: -moz-max-content;
             width: max-content;
             padding: 4px 8px;
         }
@@ -44,7 +46,22 @@
 
         .wahooo {
             transform: scale(2);
+            -webkit-animation: grandirstp .5s infinite;
             animation: grandirstp .5s infinite;
+        }
+
+        @-webkit-keyframes grandirstp {
+            0% {
+                color: black;
+            }
+
+            50% {
+                color: white;
+            }
+
+            100% {
+                color: black;
+            }
         }
 
         @keyframes grandirstp {
@@ -154,13 +171,14 @@
         }
 
         function quelleSource(balle) {
-            if (imageNum <= 9) {
-                balle.src = "media/balle-" + imageNum + ".png";
+            if (imageNum <= 18) {
+                balle.src = "media/balle" + imageNum + ".png";
                 imageNum++;
             }
             else {
                 imageNum = 1;
-                balle.src = "media/balle-" + imageNum + ".png";
+                balle.src = "media/balle" + imageNum + ".png";
+                imageNum++;
             }
         }
 
@@ -187,15 +205,14 @@
                 document.getElementById('tunes').classList.add("wahooo");
                 document.getElementById('tunes').innerHTML = "100 balles pour Julie!!!";
 
+                document.title = "dépensez-les bien!!"
+
                 const balles = document.querySelectorAll('.balle')
                 for (let i = 0, max = balles.length; i < max; i++) {
                     balles[i].addEventListener("click", function () {
                         balles[i].classList.add("fullball");
-                    }
-                    )
+                    })
                 }
-
-
                 setTimeout(function () {
                     document.querySelector('.ps').classList.add("signature");
                 }, 500);
@@ -203,18 +220,6 @@
         }
 
         ajouterLesSous()
-
-
-
-
-
-        function restartAll() {
-            for (let i = 0, max = balles.length; i < max; i++) {
-                balles[i].remove();
-            }
-            ajouterLesSous();
-        }
-
     </script>
 
 </body>
