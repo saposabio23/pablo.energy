@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 balles pour Julie</title>
+    <style>
+        body {
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(min(12.5vw, 100%), 1fr));
+            background-color: white;
+            color: black;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 22px;
+        }
+
+        .infos {
+            position: fixed;
+            top: calc(var(--vh, 1vh) * 50);
+            left: 50vw;
+            transform: translate(-50%, -50%);
+            z-index: 99;
+
+            gap: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button {
+            width: max-content;
+            padding: 4px 8px;
+        }
+
+        #tunes {
+            display: none;
+            text-shadow: 0 0 5px white;
+
+        }
+
+        .wahooo {
+            transform: scale(2);
+            animation: grandirstp .5s infinite;
+        }
+
+        @keyframes grandirstp {
+            0% {
+                color: black;
+            }
+
+            50% {
+                color: white;
+            }
+
+            100% {
+                color: black;
+            }
+        }
+
+
+        .ps {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            margin: 5px;
+            text-align: end;
+            transform: translateX(-120%);
+            /* background-color: white; */
+            text-shadow: 0 0 5px white;
+        }
+
+        .signature {
+            transform: translateX(0);
+            transition: all 2s ease-in-out;
+        }
+
+        .balle {
+            width: 100%;
+            aspect-ratio: 1;
+            /* background-color: violet; */
+            display: inline;
+            opacity: 0;
+            transition: all 2s cubic-bezier(.79, .14, .15, .86)
+        }
+
+        .fullball {
+            opacity: 0 !important;
+        }
+
+        .lessoussss {
+            opacity: 1;
+            transition: all .5s ease-in-out;
+        }
+
+        .balle:nth-last-child(odd) {
+            /* background-color: aqua; */
+        }
+
+        @media (max-width: 768px) {
+            body {
+                grid-template-columns: repeat(auto-fill, minmax(min(20vw, 100%), 1fr));
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="infos">
+        <div id="tunes"><span id="chiffres">0</span> balles</div>
+
+        <button onclick="recolterlessous()">Récupérer les 100 balles</button>
+    </div>
+
+    <div class="ps"> pour Julo de <i><span style="color:gold;">p</span><span
+                  style="color: red;">a</span><span style="color: blue;">b</span><span
+                  style="color: green;">l</span><span
+                  style="color:fuchsia;">o</span></i> 🫶</div>
+
+    <script>
+
+        function mobileWindow() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+            console.log("VH on mobiles", vh);
+        }
+
+        window.addEventListener("resize", mobileWindow, false);
+        window.addEventListener("orientationchange", mobileWindow, false);
+        window.onload = mobileWindow();
+
+
+        // create elements
+
+        var ballenumero = 0;
+        var imageNum = 1;
+
+        function ajouterLesSous() {
+            for (var i = 0; i < 100; i++) {
+                let balle = document.createElement("img");
+                balle.className = "balle";
+
+                quelleSource(balle)
+
+                balle.id = "numero" + ballenumero;
+                document.body.appendChild(balle)
+                ballenumero++;
+            }
+        }
+
+        function quelleSource(balle) {
+            if (imageNum <= 9) {
+                balle.src = "media/balle-" + imageNum + ".png";
+                imageNum++;
+            }
+            else {
+                imageNum = 1;
+                balle.src = "media/balle-" + imageNum + ".png";
+            }
+        }
+
+        var combiendesous = 0;
+        var full = false;
+
+        function recolterlessous() {
+            document.querySelector("button").style.display = " none";
+            document.getElementById("tunes").style.display = " block";
+            document.getElementById('tunes').classList.add("grandissant")
+
+            if (combiendesous < 100) {
+                setTimeout(function () {
+                    document.getElementById('numero' + combiendesous).classList.add('lessoussss');
+                    combiendesous++;
+                    document.getElementById('chiffres').innerHTML = combiendesous;
+                    recolterlessous()
+                }, 50);
+            }
+
+            if (combiendesous == 100) {
+                console.log("ok")
+                full = true;
+                document.getElementById('tunes').classList.add("wahooo");
+                document.getElementById('tunes').innerHTML = "100 balles pour Julie!!!";
+
+                const balles = document.querySelectorAll('.balle')
+                for (let i = 0, max = balles.length; i < max; i++) {
+                    balles[i].addEventListener("click", function () {
+                        balles[i].classList.add("fullball");
+                    }
+                    )
+                }
+
+
+                setTimeout(function () {
+                    document.querySelector('.ps').classList.add("signature");
+                }, 500);
+            }
+        }
+
+        ajouterLesSous()
+
+
+
+
+
+        function restartAll() {
+            for (let i = 0, max = balles.length; i < max; i++) {
+                balles[i].remove();
+            }
+            ajouterLesSous();
+        }
+
+    </script>
+
+</body>
+
+</html>
