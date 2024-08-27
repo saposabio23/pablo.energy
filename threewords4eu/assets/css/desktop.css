@@ -1,0 +1,31 @@
+@media screen and (min-width: 650px) {
+
+    body {
+        max-width: 550px;
+        margin: auto;
+        padding: 30px 0 0 0;
+    }
+
+    .intro {
+        height: fit-content;
+        min-height: fit-content;
+    }
+
+    .intro .buttons {
+        display: none;
+    }
+
+    .indexHeader, .indexContent {
+        max-width: 550px;
+        margin: auto;
+        margin-bottom: var(--spacing-s);
+    }
+
+    .index #updated {
+        margin: auto;
+        position: relative;
+        display: flex;
+    }
+
+
+}

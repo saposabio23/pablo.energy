@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>+ + +</title>
+
+    <style>
+        body {
+            width: 100vw;
+            height: calc(var(--vh, 1vh) * 100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 0;
+            transition: all .5s ease-in-out;
+        }
+
+        p {
+            margin: auto;
+            font-size: 2rem;
+            opacity: 1;
+            transition: all 1s ease-in-out;
+            text-align: center;
+            line-height: 200%;
+        }
+
+        span {
+            border: 1px solid black;
+            padding: 0px 6px 4px 6px;
+            border-radius: 6px;
+            box-shadow: 6px 6px black;
+            transition: all .5s ease-in-out;
+        }
+
+        span:hover {
+            cursor: pointer;
+        }
+
+        .on {
+            border: 1px solid black;
+            background-color: greenyellow;
+            color: black;
+            box-shadow: 1px 1px black;
+            transition: all .5s ease-in-out;
+        }
+
+        .gone {
+            opacity: 0;
+            transition: all 1s ease-in-out;
+        }
+    </style>
+
+    <script data-goatcounter="https://wazzzup.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+
+</head>
+
+<body>
+
+    <p>my website on <span id="pablo" onclick="pabloOk()">pablo</span> .<span id="energy"
+            onclick="energyOk()">energy</span> !</p>
+
+    <audio id="button" src="button.mp3" preload="auto"></audio>
+    <audio id="out" src="out.mp3" preload="auto"></audio>
+    <audio id="magic" src="magic.mp3" preload="auto"></audio>
+
+
+    <script>
+
+        function mobileWindow() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+            console.log("VH on mobiles", vh);
+        }
+
+        window.addEventListener("resize", mobileWindow, false);
+        window.addEventListener("orientationchange", mobileWindow, false);
+
+
+
+        $pablo = document.querySelector("#pablo");
+        $energy = document.querySelector("#energy");
+        $p = document.querySelector("p");
+
+        function goToEnergy() {
+            if ($pablo.classList.contains("on") && $energy.classList.contains("on")) {
+                $p.classList.add("gone");
+                document.body.style.backgroundColor = ("greenyellow");
+                playMagic();
+                setTimeout(() => {
+                    window.location.href = "https://pablo.energy";
+                }, "1000")
+            }
+
+            else { }
+        }
+
+        function energyOk() {
+            if (!$energy.classList.contains("on")) {
+                $energy.classList.add("on");
+                playButton();
+                goToEnergy();
+            }
+
+            else if ($energy.classList.contains("on")) {
+                $energy.classList.remove("on");
+                playOut();
+            }
+
+            else {
+
+            }
+        }
+
+        function pabloOk() {
+            if (!$pablo.classList.contains("on")) {
+                $pablo.classList.add("on");
+                playButton();
+                goToEnergy();
+            }
+
+            else if ($pablo.classList.contains("on")) {
+                $pablo.classList.remove("on");
+                playOut();
+            }
+
+            else { }
+        }
+
+
+        function playButton() {
+            button.play();
+        };
+
+        function playOut() {
+            out.play();
+        };
+
+        function playMagic() {
+            magic.play();
+        };
+
+    // $pablo.addEventListener('click', playButton, false);
+    // $energy.addEventListener('click', playButton, false);
+
+    </script>
+</body>
+
+</html>
