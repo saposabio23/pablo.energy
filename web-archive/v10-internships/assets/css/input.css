@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.textStroke {
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+#videoPanel {
+    transition: all ease-in-out .5s !important;
+}
+
+
+@media (max-width: 768px) {
+    .minHeightMobile {
+        min-height: calc(75vh - 3rem) !important;
+    }
+
+}
+
+
+a {
+    color: blue;
+}
+
+a:hover {
+    text-decoration: underline;
+    cursor: pointer
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
 
     <!-- Primary Meta Tags -->
-    <title>SUPER PABLO ENERGY</title>
+    <title>Super PABLO ⚡️ Inc.</title>
     <meta name="title" content="Copa Alzár">
     <meta name="description"
           content="Pablo Moreno">
@@ -16,212 +16,133 @@
     <link rel="canonical" href="https://pablo.energy">
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="assets/favicon/site.webmanifest">
-    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="PABLO ⚡️" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
 
     <!-- Links -->
-    <link href="assets/css/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/index.css">
 
-    <link rel="preload" as="image" href="media/videos/poster.jpg" fetchpriority="high">
+    <link rel="preload" as="image" href="media/soleil-poster.jpg" fetchpriority="high">
 </head>
 
-<body class="bg-special-white">
+<body>
 
-    <!------------ 🎥 VIDEOS ------------>
-
-    <div id="videoPanel"
-         class="md:flex overflow-hidden w-[calc(100vw-2rem)] md:h-auto md:w-[30vw] relative md:fixed top-4 left-4 md:right-4 md:left-auto justify-center items-center aspect-[16/9] rounded-xl transition-all z-10 mb-4">
-
-        <video id="videoWaiting" playsinline autoplay muted controls loop
-               class="object-cover absolute z-20 w-full h-full rounded-xl transition-all duration-500"
-               poster="media/videos/nunchak-poster.jpg">
-            <source type="video/webm" src="media/videos/nunchak-waiting.webm" />
-            <source type="video/mp4" src="media/videos/nunchak-wainting.mp4" />
-        </video>
-
-        <video id="videoPresenting" playsinline controls
-               class="object-cover absolute z-10 w-full h-full transition-opacity duration-[.8s] rounded-xl">
-            <source type="video/webm" src="media/videos/nunchak-presenting.webm" />
-            <source type="video/mp4" src="media/videos/nunchak-presenting.mp4" />
-        </video>
-
+    <div class="sites">
+        <iframe src="" frameborder="0"></iframe>
     </div>
 
-    <div id="photoFinish"
-         class="hidden relative top-4 left-4 z-30 h-[30vh] md:w-[20vw] md:h-fit md:fixed md:right-4 md:left-auto mb-4">
-        <img src="media/ummm.JPG" alt="" class="h-full rounded-xl">
-        <span class="absolute bottom-0 p-2 text-xs text-white">Waiting for that e-mail... I'm joking hehe</span>
-    </div>
-
-
-    <!------------ 🌏 INFO ------------>
-    <div id="infoPanel"
-         class="flex relative flex-col justify-between  p-4 pb-0 max-w-[620px] min-h-screen transition-all duration-500 w-fit">
+    <div class="contents">
+        <video playsinline autoplay muted loop poster="media/soleil-poster.jpg">
+            <source type="video/webm" src="media/soleil.webm" />
+            <source type="video/mp4" src="media/soleil.mp4" />
+        </video>
 
         <div>
-            <!------------ HEADER ------------>
-            <div class="box-content flex relative z-50 gap-2 mb-2 md:items-center">
-                <a href=""
-                   class="transition-all  text-xl hover:rotate-[360deg] hover:no-underline duration-1000 hidden md:block">🌀</a>
-                <h1 class="inline text-xl">
-                    <a href=""
-                       class="transition-all  text-xl hover:rotate-[360deg] hover:no-underline duration-1000 inline md:hidden">🌀</a>
-                    Pablo
-                    Moreno is
-                    a
-                    <span
-                          id="isWhat"> web designer and coder...</span>
-                </h1>
-            </div>
-
-            <!------------ MORE INFO ------------>
-
-            <div id="infoText" class="text-lg">
-                <div class="relative">
-                    <p class="mb-2">Creative in all
-                        ways, I really enjoy making and designing websites for people, for events or for fun. I
-                        always try to learn new things and tools making them. Finishing my styudies in France, I'm
-                        wainting to
-                        relocate in Rotterdam next september!
-                    </p>
-                    <p>You can
-                        <a id="seeMore"
-                           class="text-[green]">read
-                            more</a> if <span id="noCurious">you are curious :)</span>
-                    </p>
-
-                </div>
-
-                <div id="moreInfo"
-                     class="hidden opacity-0 transition-all"
-                     data-state="close">
-                    <span class="mt-2 font-bold" id="life">Life</span>
-                    <p class="mb-2">Actually I'm living in <a
-                           href="https://maps.app.goo.gl/6ntymCLiUkz1Bkdo6"
-                           class="" target="_blank">Amiens</a>, where I'm
-                        finishing my double
-                        master in UX+UI between the <a
-                           href="https://esad-amiens.design/fr/design-numerique/dnsep"
-                           class="" target="_blank">ÉSAD</a> and the <a
-                           href="https://www.utc.fr/en/courses-and-training/the-french-masters-degree/humanities-and-creative-industries-hic/specialty-design-and-experience-creation-dcx/"
-                           class="" target="_blank">UTC</a>. I do a
-                        student job welcoming people at the <a href="https://maps.app.goo.gl/6nhrgyCSwHABf6jk9"
-                           class="" target="_blank">Maison de la Culture
-                            d'Amiens</a> who's a big cultural place in the city. On the weekends I spend some
-                        time with two kids thanks to the <a href="https://afev.org/hauts-france/amiens"
-                           class="" target="_blank">AFEV</a> association.
-                    </p>
-                    <span class="mt-2 font-bold">Tools</span>
-                    <p class="mb-2">
-                        My projects have taken me to learn HTML, CSS,
-                        Javascript, Kirby and Indexhibit CMS, Stripe, VSCodium,
-                        Figma, Blender... you can see all these things at <a
-                           class="" target="_blank"
-                           href='https://pablo.energy/digital-stuff'>my
-                            digital stuff</a>. I recently made a video-tutorial
-                        showing the way I like to <a class=""
-                           target="_blank" href='https://youtu.be/qUKxkIZCRuI'>put websites
-                            online</a> and update them quickly, like I'm doing right now.</p>
-                    <span class="mt-2 font-bold">People</span>
-                    <p class="mb-2">I like to work with friends, and develop ideas together. These
-                        people
-                        can be from my school,
-                        like <a class="" target="_blank"
-                           href='https://www.samdroual.fr/'>Sam</a> or
-                        <a class="" target="_blank"
-                           href='https://www.leo.doctor/'>Léo</a>, or far
-                        from me like <a
-                           class=""
-                           target="_blank" href='https://www.instagram.com/angieblingmaker'>Angèle</a>, for whom I'm
-                        making a portfolio/shop website. I also
-                        made
-                        friends in
-                        Rotterdam at
-                        <a
-                           class="" target="_blank"
-                           href='https://extrapractice.space/'>Extra Practice</a>, where I meet designers who
-                        inspire me like <a
-                           class="" target="_blank"
-                           href='https://elliott.computer/'>Elliott</a> or
-                        <a class="" target="_blank"
-                           href='https://tiana.computer/'>Tiana</a>.
-                    </p>
-                    <span class="mt-2 font-bold">Some projects</span>
-                    <ul>
-                        <li><img src="assets/icons/memoire.png" alt="" class="w-[15px] inline mr-1"><a
-                               class="cursor-pointer hover:underline"
-                               href="https://thewebwewant.online" target="_blank">The Web We Want</a> ·
-                            <span
-                                  class="opacity-30">My
-                                master
-                                writing about handmade web</span>
-                        </li>
-                        <li><img src="assets/icons/map.png" alt="" class="w-[15px] inline mr-1"><a
-                               class="cursor-pointer hover:underline"
-                               href="https://a-map-of-inter.net" target="_blank">A map of Internet</a> · <span
-                                  class="opacity-30">A way to discover my favorties websites</span>
-                        </li>
-                        <li><img src="assets/icons/collaborative.png" alt="" class="w-[15px] inline mr-1"><a
-                               class="cursor-pointer hover:underline"
-                               href="https://collaborative-narratives.online/" target="_blank">Collaborative
-                                Narratives</a> · <span
-                                  class="opacity-30">Image waterfall of Tim's graduation project</span>
-                        </li>
-                    </ul>
-
-                    <p class="mt-8 text-base">Over the years this website was <a
-                           href="web-archive/index.html" class="">updated</a> reflecting me.<br>
-                    </p>
-                </div>
-
-            </div>
+            <h2>Super PABLO <span id="energy">⚡️</span> Inc.</h2>
+            <p>working hard everyday<span id="wip"></span></p>
         </div>
+    </div>
 
-        <div
-             class="flex sticky z-10 justify-between py-4 pt-6 text-base bg-gradient-to-t from-special-white from-80% to-transparent bottom-0 ">
+    <div class="list">
+        <select class="websites hover">
+            <option value="" disabled selected hidden>list of my sites... (not ready)</option>
+            <optgroup label="2024">
+                <option data-url="cent-balles-pour-julie/">Cent balles pour Julie</option>
+                <option data-url="pablo-in-ams/">Pablo in AMS</option>
+                <option data-url="divider/">Divider</option>
+                <option data-url="https://face-tool.netlify.app/">Face Tool</option>
+                <option data-url="https://esadikoi.netlify.app/">Esadikoi</option>
+                <option data-url="portfolio/">Portfolio</option>
+                <option data-url="ventedete/">Vente d'été</option>
+                <option class="nodispo">Moreno Photos Family</option>
+                <option data-url="soutenance/">Soutenance</option>
+                <option data-url="https://blingmaker.netlify.app/">Angèle Blingmaker</option>
+                <option data-url="dansmapeau/">Dans ma peau</option>
+                <option data-url="https://club-mix-esad.netlify.app/">Club Mix ESAD</option>
+                <option data-url="https://a-map-of-inter.net/">A Map of Internet</option>
+                <option class="nodispo">Para Mateo</option>
+                <option data-url="https://copa-alzar.com/">Copa Alzar</option>
+                <option data-url="https://thewebwewant.online/">The Web We Want</option>
+                <option data-url="mirror/">Mirror</option>
+                <option data-url="executeur/">L'Executeur</option>
+                <option data-url="mixito/">Mixito</option>
+                <option data-url="https://web-pad.netlify.app/">Web Pad</option>
+            </optgroup>
 
-            <div class="flex gap-2">
-                <a href="downloads/PMORENO-CV.pdf"
-                   class="flex items-center px-2 py-1 text-black bg-black bg-opacity-10 rounded-md cursor-pointer hover:bg-[green] hover:no-underline transition-all duration-300 hover:text-white"
-                   target="_blank">CV</a>
+            <optgroup label="2023">
+                <option data-url="https://concluded-openspaces.netlify.app/">Concluded Openspaces</option>
+                <option data-url="https://collaborative-narratives.online/">Collaborative Narratives</option>
+                <option data-url="pages/briançon/">Briançon</option>
+                <option data-url="pages/map-extrapractice/">Map XP</option>
+                <option data-url="pages/library-extrapractice/">Library XP</option>
+                <option data-url="https://fils-rouges.online/">Fils Rouges</option>
+                <option data-url="pages/presence/">Presence</option>
+                <option data-url="pages/bg/">BG</option>
+                <option data-url="pages/threewords4eu/">Three Words 4 Europe</option>
+                <option data-url="pages/twenty-six-hour-a-day/">Twenty six hour a day</option>
+                <option data-url="pages/virtualisations/">Virtualisations</option>
+                <option data-url="https://calendarie2023.netlify.app/">Calendarie 2023</option>
+                <option data-url="pages/playlist/">Playlist</option>
+                <option data-url="pages/digital-stuff/">Digital Stuff</option>
+                <option data-url="pages/lyrics/">Lyrics</option>
+                <option data-url="pages/lune/">Lune</option>
+                <option data-url="pages/pad/">Pad</option>
+            </optgroup>
 
-                <script
-                        type="text/javascript">var email = "pablomoreno", domain = "proton.me", text = "E-mail"; document.write("<a href=javascript:location='" + "mail" + "to:" + email + "@" + domain + "' class='flex items-center px-2 py-1 text-black bg-black bg-opacity-10 rounded-md transition-all duration-300 cursor-pointer hover:bg-yellow-400 hover:no-underline hover:text-black'>" + text + "</a>");</script>
+            <optgroup label="2022">
+                <option data-url="pages/wazzzup-world/">Wazzzup World</option>
+                <option data-url="pages/sunday-sites/">Sunday Sites</option>
+                <option data-url="pages/web-archive/">Web Archive</option>
+            </optgroup>
 
-                <a href="https://www.are.na/pablo-moreno/"
-                   class="flex items-center px-2 py-1 text-black bg-black bg-opacity-10 rounded-md cursor-pointer hover:bg-[black] hover:no-underline transition-all duration-300 hover:text-white"
-                   target="_blank">Are.na</a>
-            </div>
+            <optgroup label="2021">
+                <option data-url="pages/voeux2021/">Voeux 2021</option>
+                <option data-url="pages/sunsets/">Sunsets</option>
+                <option data-url="pages/captcha/">Captcha</option>
+                <option data-url="pages/tott/">Tott</option>
+            </optgroup>
 
-        </div>
+            <optgroup label="2020">
+                <option data-url="pages/poeme-mer/">Poème Mer</option>
+            </optgroup>
 
+
+        </select>
+
+        <button class="hover">close</button>
 
     </div>
 
-    <!------------ FOOTER ------------>
+    <script>
+        window.onload = function () {
+            wip()
+        };
+
+        const texts = [".", "..", "..."];
+        let index = 0;
+
+        function wip() {
+            setInterval(() => {
+                const textContainer = document.getElementById("wip");
+                textContainer.innerText = texts[index];
+                index = (index + 1) % texts.length;
+            }, 800);
+        }
+
+        document.querySelector('h2').addEventListener("mouseover", () => {
+            document.getElementById("energy").classList.add('yup');
+            setTimeout(() => {
+                document.getElementById("energy").classList.remove('yup');
+            }, 700);
+        });
 
 
-
-    <div id="screensaver"
-         class="hidden fixed top-0 left-0 z-50 p-8 w-screen h-screen bg-opacity-70 opacity-100 backdrop-blur-md transition-all duration-1000 bg-neutral-100">
-        <span class="text-3xl">Here are some other stuffs I do or like to do:</span>
-    </div>
-
-    <div id="nightScreen" class="hidden fixed top-0 left-0 z-50 w-screen h-screen bg-black">
-        <p>♻️ ⤼ 💤 ⤼ ⏳ ⤼ 🌄</p>
-    </div>
-
-
-
-    <!-- <script src="assets/js/import.js"></script> -->
-    <script src="assets/js/script.js"></script>
+    </script>
 
 
 </body>
