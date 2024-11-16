@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eises</title>
+
+    <style>
+        body {
+            font-size: 3rem;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            height: 100vh;
+            width: 100vw;
+
+            margin: 0;
+            padding: 0;
+
+            background-color: violet;
+            box-sizing: content-box;
+        }
+
+        .cositas {
+            display: flex;
+            gap: 0px;
+        }
+
+        select {
+            font-size: 3rem;
+            font-family: serif;
+            background-color: transparent;
+            border: none;
+            text-align: right;
+            padding: 0;
+            margin: 0;
+            outline: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            text-overflow: '';
+        }
+
+        select::-ms-expand {
+            display: none !important;
+        }
+
+        .kreatores {
+            width: 100px;
+            display: flex;
+            gap: 3px;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            /* border-radius: 100%; */
+        }
+
+        .kreatores:hover {
+            width: calc(100vw - 40px);
+        }
+
+        .kreatores:hover span {
+            display: block;
+        }
+
+        .kreatores span {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="cositas">
+        <select>
+            <option>Jerseys</option>
+            <option>Cactus</option>
+            <option>Bicis</option>
+            <option>Miercol</option>
+            <option>CDs</option>
+            <option>Pies</option>
+        </select>
+        <span>es</span>
+    </div>
+
+    <div class="kreatores">
+        <div>
+            <span style="text-align: right; width: 100%;">norika</span>
+            <img src="loca.webp" alt="" style=" border-radius: 100% 0 0 100%;">
+        </div>
+        <div>
+            <span style="text-align: left; width: 100%;">bliko</span>
+            <img src="loco.webp" alt="" style=" border-radius: 0 100% 100% 0;">
+        </div>
+    </div>
+
+</body>
+
+</html>
