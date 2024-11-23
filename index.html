@@ -37,14 +37,23 @@
     </div>
 
     <div class="contents">
-        <video playsinline autoplay muted loop poster="media/soleil-poster.jpg">
-            <source type="video/webm" src="media/soleil.webm" />
-            <source type="video/mp4" src="media/soleil.mp4" />
-        </video>
+        <div class="video">
+            <video playsinline autoplay muted loop poster="media/soleil-poster.jpg">
+                <source type="video/webm" src="media/soleil.webm" />
+                <source type="video/mp4" src="media/soleil.mp4" />
+            </video>
+        </div>
 
         <div>
-            <h2>Super PABLO <span id="energy">⚡️</span> Inc.</h2>
-            <p>working hard everyday<span id="wip"></span></p>
+            <span>Working hard everyday<span id="wip"></span></span>
+            <p class="contact">
+
+                <script
+                        type="text/javascript">var email = "pablomoreno", domain = "proton.me", text = "email"; document.write("<a href=javascript:location='" + "mail" + "to:" + email + "@" + domain + "' class=''>" + text + "</a>");</script>
+
+                <a href="https://www.instagram.com/sagesseastrale23/">insta</a>
+
+            </p>
         </div>
     </div>
 
@@ -133,14 +142,6 @@
                 index = (index + 1) % texts.length;
             }, 800);
         }
-
-        document.querySelector('h2').addEventListener("mouseover", () => {
-            document.getElementById("energy").classList.add('yup');
-            setTimeout(() => {
-                document.getElementById("energy").classList.remove('yup');
-            }, 700);
-        });
-
 
     </script>
 

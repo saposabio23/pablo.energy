@@ -27,6 +27,7 @@
         .cositas {
             display: flex;
             gap: 0px;
+            z-index: 2;
         }
 
         select {
@@ -47,33 +48,21 @@
             display: none !important;
         }
 
-        .kreatores {
-            width: 100px;
-            display: flex;
-            gap: 3px;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            /* border-radius: 100%; */
-        }
-
-        .kreatores:hover {
-            width: calc(100vw - 40px);
-        }
-
-        .kreatores:hover span {
-            display: block;
-        }
-
-        .kreatores span {
-            display: none;
-        }
 
         img {
-            width: 100%;
+            height: 100px;
+        }
+
+        img:hover {
+            height: 100vh;
+        }
+
+        #norika {
+            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='120' viewport='0 0 100 100' style='fill:black;font-size:84px;'><text y='50%'>🏴‍☠️</text></svg>") 16 0, pointer;
+        }
+
+        #pabliko {
+            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='120' viewport='0 0 100 100' style='fill:black;font-size:84px;'><text y='50%'>🏁</text></svg>") 16 0, pointer;
         }
     </style>
 </head>
@@ -89,19 +78,19 @@
             <option>Miercol</option>
             <option>CDs</option>
             <option>Pies</option>
+            <option>Masajes</option>
         </select>
         <span>es</span>
     </div>
 
     <div class="kreatores">
-        <div>
-            <span style="text-align: right; width: 100%;">norika</span>
-            <img src="loca.webp" alt="" style=" border-radius: 100% 0 0 100%;">
-        </div>
-        <div>
-            <span style="text-align: left; width: 100%;">bliko</span>
-            <img src="loco.webp" alt="" style=" border-radius: 0 100% 100% 0;">
-        </div>
+
+        <img id="norika" src="loca.webp" alt="" style=" border-radius: 0 100% 100% 0; position: fixed; top: 50vh;
+        left: 0;transform: translateY(-50%);">
+
+        <img id="pabliko" src="loco.webp" alt="" style=" border-radius: 100% 0 0 100%; position: fixed; top: 50vh;
+        right: 0;transform: translateY(-50%)">
+
     </div>
 
 </body>
