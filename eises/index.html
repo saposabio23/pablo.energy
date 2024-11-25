@@ -4,95 +4,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>eises</title>
+    <title>Eises</title>
 
-    <style>
-        body {
-            font-size: 3rem;
+    <link rel="stylesheet" href="index.css">
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            height: 100vh;
-            width: 100vw;
-
-            margin: 0;
-            padding: 0;
-
-            background-color: violet;
-            box-sizing: content-box;
-        }
-
-        .cositas {
-            display: flex;
-            gap: 0px;
-            z-index: 2;
-        }
-
-        select {
-            font-size: 3rem;
-            font-family: serif;
-            background-color: transparent;
-            border: none;
-            text-align: right;
-            padding: 0;
-            margin: 0;
-            outline: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            text-overflow: '';
-        }
-
-        select::-ms-expand {
-            display: none !important;
-        }
-
-
-        img {
-            height: 100px;
-        }
-
-        img:hover {
-            height: 100vh;
-        }
-
-        #norika {
-            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='120' viewport='0 0 100 100' style='fill:black;font-size:84px;'><text y='50%'>🏴‍☠️</text></svg>") 16 0, pointer;
-        }
-
-        #pabliko {
-            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='120' viewport='0 0 100 100' style='fill:black;font-size:84px;'><text y='50%'>🏁</text></svg>") 16 0, pointer;
-        }
-    </style>
 </head>
 
 <body>
 
-
-    <div class="cositas">
-        <select>
-            <option>Jerseys</option>
-            <option>Cactus</option>
-            <option>Bicis</option>
-            <option>Miercol</option>
-            <option>CDs</option>
-            <option>Pies</option>
-            <option>Masajes</option>
-        </select>
-        <span>es</span>
+    <div id="intro">
+        <span>Ei</span><span id="inside"></span><span>ses</span>
     </div>
 
-    <div class="kreatores">
-
-        <img id="norika" src="loca.webp" alt="" style=" border-radius: 0 100% 100% 0; position: fixed; top: 50vh;
-        left: 0;transform: translateY(-50%);">
-
-        <img id="pabliko" src="loco.webp" alt="" style=" border-radius: 100% 0 0 100%; position: fixed; top: 50vh;
-        right: 0;transform: translateY(-50%)">
-
+    <div class="lista">
+        <div id="lista-container"></div>
+        <span id="counter">0</span>
     </div>
 
+    <div class="content">
+        <div class="palabra">
+            <div id="input" class="span-like-textarea" contenteditable="true"
+                 placeholder="Type something and press Enter"></div>
+            <span>es</span>
+        </div>
+        <button id="enter" onclick="copyInput()">→</button>
+    </div>
+
+    <script src="versioning.js"></script>
+    <script>
+        const messageInput = document.getElementById('input');
+        const messageEnter = document.getElementById('enter');
+        const listaContainer = document.getElementById('lista-container');
+
+
+        setTimeout(() => {
+            messageInput.focus();
+        }, 0);
+
+        const counter = document.getElementById('counter');
+
+        messageInput.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                copyInput();
+            }
+        });
+
+        messageEnter.addEventListener('click', (event) => {
+            copyInput();
+            messageInput.focus();
+        });
+
+        function copyInput() {
+            const text = messageInput.textContent.trim();
+            if (text) {
+                const newDiv = document.createElement('div');
+                newDiv.className = 'output';
+                newDiv.textContent = '- ' + text + 'es';
+                listaContainer.appendChild(newDiv);
+                messageInput.textContent = '';
+            }
+            updateCount(text);
+        }
+
+
+        function updateCount(text) {
+            const count = listaContainer.children.length;
+            counter.textContent = count;
+            // document.title = text + ' (' + count + ')';
+        }
+
+        // EIIIIII LETTER
+
+        const span = document.getElementById('intro');
+        let addInterval, removeInterval; // Intervals for adding and removing 'i'
+
+        const speed = 50;
+
+        span.addEventListener('mouseenter', () => {
+            clearInterval(removeInterval); // Stop removing if it's happening
+            let addedCount = 0;
+
+            addInterval = setInterval(() => {
+                if (addedCount < 23) {
+                    const extraI = document.createElement('span');
+                    extraI.textContent = 'i';
+                    extraI.className = 'extra-i';
+                    document.getElementById('inside').appendChild(extraI);
+                    addedCount++;
+                } else {
+                    clearInterval(addInterval);
+                }
+            }, speed);
+        });
+
+        function addCharacter(element) {
+            const extraII = document.createElement('span');
+            extraII.textContent = element;
+            extraII.className = 'extra-i';
+            span.appendChild(extraII);
+        }
+
+        span.addEventListener('mouseleave', () => {
+            clearInterval(addInterval);
+            removeInterval = setInterval(() => {
+                const extraIs = document.querySelectorAll('.extra-i');
+                if (extraIs.length > 0) {
+                    const lastI = extraIs[extraIs.length - 1];
+                    lastI.remove();
+                } else {
+                    clearInterval(removeInterval);
+                }
+            }, speed);
+        });
+
+    </script>
 </body>
 
 </html>
