@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
 
     <!-- Primary Meta Tags -->
-    <title>PABLO ⚡️ Inc.</title>
+    <title>Pablo ⚡️ Inc.</title>
     <meta name="title" content="Copa Alzár">
     <meta name="description"
           content="Pablo Moreno">
@@ -24,56 +24,110 @@
     <link rel="manifest" href="/assets/favicon/site.webmanifest" />
 
     <!-- Links -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/index.css">
 
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 1rem;
-            margin: 0.5rem 0.5rem;
-            background-color: LightBlue;
-            color: SlateGray;
-        }
-
-        p {
-            margin: .7rem 0;
-        }
-
-        small {
-            min-width: 80px;
-            display: inline-block;
-            margin-top: 2px;
-        }
-
-        #pm {
-            height: 100px;
-            margin-bottom: 50px;
-            aspect-ratio: 8/10;
-            border: 1px solid;
-            border-color: SlateGray;
-
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-
-            /* cursor: alias; */
-        }
-    </style>
+    <link rel="preload" as="image" href="media/soleil-poster.jpg" fetchpriority="high">
 </head>
 
 <body>
 
-    <div id="pm">
+    <!-- <div class="stats">
+        <div class="stats-url">www.pablo.energy/stats</div>
+        <div class="stats-date">october 2029</div>
+    </div> -->
+
+    <div class="screen">
+        <iframe src="" frameborder="0"></iframe>
+
+        <video playsinline autoplay muted loop poster="media/soleil-poster.jpg">
+            <source type="video/webm" src="media/soleil.webm" />
+            <source type="video/mp4" src="media/soleil.mp4" />
+        </video>
     </div>
-    <div style="display: flex; flex-direction: column;gap: 10px;">
-        <div style="display: flex; align-items: center;">
+
+    <div class="list">
+
+        <select class="websites hover">
+            <option value="" disabled selected id="wip" style="font-style: italic;">Choose one</option>
+            <optgroup label="2024">
+                <option data-url="cent-balles-pour-julie/">Cent balles pour Julie</option>
+                <option data-url="pablo-in-ams/">Pablo in AMS</option>
+                <option data-url="divider/">Divider</option>
+                <option data-url="https://face-tool.netlify.app/">Face Tool</option>
+                <option data-url="https://esadikoi.netlify.app/">Esadikoi</option>
+                <option data-url="portfolio/">Portfolio</option>
+                <option data-url="ventedete/">Vente d'été</option>
+                <option class="nodispo">Moreno Photos Family</option>
+                <option data-url="soutenance/">Soutenance</option>
+                <option data-url="https://blingmaker.netlify.app/">Angèle Blingmaker</option>
+                <option data-url="dansmapeau/">Dans ma peau</option>
+                <option data-url="https://club-mix-esad.netlify.app/">Club Mix ESAD</option>
+                <option data-url="https://a-map-of-inter.net/">A Map of Internet</option>
+                <option class="nodispo">Para Mateo</option>
+                <option data-url="https://copa-alzar.com/">Copa Alzar</option>
+                <option data-url="https://thewebwewant.online/">The Web We Want</option>
+                <option data-url="mirror/">Mirror</option>
+                <option data-url="executeur/">L'Executeur</option>
+                <option data-url="mixito/">Mixito</option>
+                <option data-url="https://web-pad.netlify.app/">Web Pad</option>
+            </optgroup>
+
+            <optgroup label="2023">
+                <option data-url="https://concluded-openspaces.netlify.app/">Concluded Openspaces</option>
+                <option data-url="https://collaborative-narratives.online/">Collaborative Narratives</option>
+                <option data-url="briançon/">Briançon</option>
+                <option data-url="map-extrapractice/">Map XP</option>
+                <option data-url="library-extrapractice/">Library XP</option>
+                <option data-url="fils-rouges">Fils Rouges</option>
+                <option data-url="presence/">Presence</option>
+                <option data-url="bg/">BG</option>
+                <option data-url="threewords4eu/">Three Words 4 Europe</option>
+                <option data-url="twenty-six-hour-a-day/">Twenty six hour a day</option>
+                <option data-url="virtualisations/">Virtualisations</option>
+                <option data-url="https://calendarie2023.netlify.app/">Calendarie 2023</option>
+                <option data-url="playlist/">Playlist</option>
+                <option data-url="digital-stuff/">Digital Stuff</option>
+                <option data-url="lyrics/">Lyrics</option>
+                <option data-url="lune/">Lune</option>
+                <option data-url="pad/">Pad</option>
+            </optgroup>
+
+            <optgroup label="2022">
+                <option data-url="wazzzup-world/">Wazzzup World</option>
+                <option data-url="sunday-sites/">Sunday Sites</option>
+                <option data-url="web-archive/">Web Archive</option>
+            </optgroup>
+
+            <optgroup label="2021">
+                <option data-url="voeux2021/">Voeux 2021</option>
+                <option data-url="sunsets/">Sunsets</option>
+                <option data-url="captcha/">Captcha</option>
+                <option data-url="tott/">Tott</option>
+            </optgroup>
+
+            <optgroup label="2020">
+                <option data-url="poeme-mer/">Poème Mer</option>
+            </optgroup>
+        </select>
+        <button class="hover" id="random">🔀</button>
+        <button class="hover" id="close">❎</button>
+    </div>
+
+
+    <div class="infosTop">
+
+        <div>
             <small>Name</small>
             <span>Pablo M</span>
         </div>
-        <div style="display: flex; align-items: center;">
+
+        <div>
             <small>Living in</small>
             <span>Amsterdam</span>
         </div>
-        <div style="display: flex; align-items: center;">
+
+        <div>
             <small>Time</small>
             <span>
                 <span id="hours">00</span><span class="flashing">:</span><span id="minutes">00</span><span
@@ -81,135 +135,32 @@
             </span>
         </div>
 
-        <div style="display: flex; align-items: start; ">
-            <small>Age</small>
-            <span><span id="yearsAge"></span> years,
-                <span id="monthsAge"></span> months,
-                <span id="daysAge"></span> days,
-                <span id="hoursAge"></span> hours and
-                <span id="minutesAge"></span> minutes</span>
-        </div>
-        <div style="display: flex; align-items: start;">
-            <small>Contact</small>
-            <span><a href="https://www.instagram.com/sagesseastrale23/"
-                   style="color: inherit; text-decoration: none;"><span
-                          style="font-size: 80%;">@</span>sagesseastrale23</a><br>
-                pablo {at} pm {.} me</span>
-        </div>
     </div>
 
-    <script>
-        console.log("Website by Pablo Moreno (www.pablo.energy)");
+    <div class="infosBottom">
 
-        function init() {
-            loadRandomImage()
-            isItNight()
-            getLocalTime();
-            setInterval(getLocalTime, 1000);
-            ageOfPablo()
-            setInterval(ageOfPablo, 1000);
-
-        }
-        // LOCALTIME INS AMS
-        function getLocalTime() {
-            const timeOptions = {
-                timeZone: "Europe/Amsterdam",
-                hour: "2-digit",
-                minute: "2-digit",
-                second: "2-digit",
-                hour12: false
-            };
-
-            const now = new Date();
-            const clockformatter = new Intl.DateTimeFormat('en-GB', timeOptions);
-            const [hour, minute, second] = clockformatter.formatToParts(now)
-                .filter(part => part.type !== 'literal')
-                .map(part => part.value);
-
-            document.getElementById('hours').textContent = hour;
-            document.getElementById('minutes').textContent = minute;
-            document.getElementById('seconds').textContent = second;
-        }
-
-        // NIGHT MODE
-        function isItNight() {
-            var day = new Date();
-            var hr = day.getHours();
-            if (
-                hr == 23 ||
-                hr == 0 ||
-                hr == 1 ||
-                hr == 2 ||
-                hr == 3 ||
-                hr == 4 ||
-                hr == 5 ||
-                hr == 6
-            ) {
-                document.querySelector('body').style.backgroundColor = 'SlateGray'
-                document.querySelector('body').style.color = 'LightBlue'
-                document.getElementById('pm').style.backgroundImage = 'None';
-                document.getElementById('pm').style.borderColor = 'LightBlue'
-
-            }
-            else {
-            }
-        }
+        <div>
+            <small>Age</small>
+            <span><span id="yearsAge"></span> years,
+                <span id="monthsAge"></span> months and
+                <span id="daysAge"></span> days</span>
+        </div>
 
 
-        function ageOfPablo() {
-            const startDate = new Date(1998, 4, 30);
-            const now = new Date();
 
-            const elapsedMilliseconds = now - startDate;
-
-            const seconds = Math.floor(elapsedMilliseconds / 1000);
-            const minutes = Math.floor(seconds / 60);
-            const hours = Math.floor(minutes / 60);
-            const days = Math.floor(hours / 24);
-
-            let years = Math.floor(days / 365.25);
-            let remainingDays = days % 365.25;
-            let months = Math.floor(remainingDays / 30.44);
-            remainingDays = Math.floor(remainingDays % 30.44);
-
-            const elapsed = {
-                years: years,
-                months: months,
-                days: remainingDays,
-                hours: hours % 24,
-                minutes: minutes % 60,
-                seconds: seconds % 60
-            };
-
-            document.getElementById('yearsAge').textContent = elapsed.years;
-            document.getElementById('monthsAge').textContent = elapsed.months;
-            document.getElementById('daysAge').textContent = elapsed.days;
-            document.getElementById('hoursAge').textContent = elapsed.hours;
-            document.getElementById('minutesAge').textContent = elapsed.minutes;
-
-            // console.log(elapsed.seconds)
-        }
+        <div>
+            <small>Contact</small>
+            <span>
+                <!-- <a href="https://www.instagram.com/sagesseastrale23/"
+                   style="color: inherit; text-decoration: none;"><span
+                          style="font-size: 80%;">@</span>sagesseastrale23</a> -->
+                pablo {at} pm {.} me</span>
+        </div>
 
 
-        // Define the image folder path and the list of image names
-        const imageFolder = 'media/';
-        const images = [
-            'pablo-1.jpg',
-            'pablo-2.jpg',
-            'pablo-3.jpg'];
+    </div>
 
-        function loadRandomImage() {
-            const randomIndex = Math.floor(Math.random() * images.length);
-            const randomImagePath = imageFolder + images[randomIndex];
-
-            document.getElementById('pm').style.backgroundImage = 'url(' + randomImagePath + ')';
-        }
-
-
-        init()
-
-    </script>
-
+    <script src="assets/js/index.js"></script>
 
 </body>
 
