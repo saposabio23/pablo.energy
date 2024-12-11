@@ -1,5 +1,6 @@
-- cv PDF
-- archive linksss (to the old one, add a colored banner on the top)
+
+-OPTIONS created via JSON
+- CV pdf
 
 STAGES
 
