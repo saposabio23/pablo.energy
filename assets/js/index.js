@@ -2,6 +2,7 @@ window.onload = function () {
     wip()
     ageOfPablo()
     setInterval(ageOfPablo, 1000);
+    initialize()
 };
 
 let index = 0;
@@ -69,4 +70,3 @@ function initialize() {
 }
 
 
-initialize()
