@@ -1,13 +1,11 @@
 window.onload = function () {
     wip()
-    getLocalTime();
-    setInterval(getLocalTime, 1000);
     ageOfPablo()
     setInterval(ageOfPablo, 1000);
 };
 
 let index = 0;
-const texts = ["W", "We", "Web", "Webs", "Websi", "Websit", "Website", "Websites", "Websites b", "Websites by", "Websites by P", "Websites by Pa", "Websites by Pab", "Websites by Pabl", "Websites by Pablo", "Websites by Pablo!"];
+const texts = ["Ha", "Hav", "Have", "Have a", "Have a n", "Have a ni", "Have a nic", "Have a nice", "Have a nice d", "Have a nice da", "Have a nice day", "Have a nice day!"];
 
 // THREE DOTS
 function wip() {
@@ -16,28 +14,6 @@ function wip() {
         index = (index + 1) % texts.length;
     }, 300);
 }
-
-// LOCALTIME INS AMS
-function getLocalTime() {
-    const timeOptions = {
-        timeZone: "Europe/Amsterdam",
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        hour12: false
-    };
-
-    const now = new Date();
-    const clockformatter = new Intl.DateTimeFormat('en-GB', timeOptions);
-    const [hour, minute, second] = clockformatter.formatToParts(now)
-        .filter(part => part.type !== 'literal')
-        .map(part => part.value);
-
-    document.getElementById('hours').textContent = hour;
-    document.getElementById('minutes').textContent = minute;
-    document.getElementById('seconds').textContent = second;
-}
-
 
 function ageOfPablo() {
     const startDate = new Date(1998, 4, 30);
@@ -71,64 +47,26 @@ function ageOfPablo() {
     // console.log(elapsed.seconds)
 }
 
-// IFRAME STUFF
-const screen = document.querySelector(".screen");
-const body = document.querySelector("body");
-const select = document.querySelector(".websites");
-const close = document.querySelector("#close");
-const random = document.querySelector("#random");
-const stats = document.querySelector(".stats");
-const options = document.querySelectorAll(".websites option");
-const iframe = document.querySelector("iframe");
 
 
+let panorama;
 
-function openScreen() {
-    screen.classList.add('bigScreen')
-    iframe.classList.add('bigIframe')
-    body.classList.add('bigBody')
-    close.style.display = "inline";
+function initialize() {
+    panorama = new google.maps.StreetViewPanorama(
+        document.getElementById("street-view"),
+        {
+            position: { lat: 52.35379279046571, lng: 4.897520202148485 },
+            pov: { heading: 165, pitch: 5 },
+            zoom: 1,
+            panControl: true,
+            zoomControl: true,
+            linksControl: false,
+            enableCloseButton: false,
+            fullscreenControl: false,
+            addressControl: false,
+        },
+    );
 }
 
-function closeScreen() {
-    select.selectedIndex = 0;
-    screen.classList.remove('bigScreen')
-    iframe.classList.remove('bigIframe')
-    body.classList.remove('bigBody')
 
-    close.style.display = "none";
-
-    iframe.src = '';
-}
-
-function randomWeb() {
-    const options = Array.from(document.querySelectorAll("select.websites > optgroup > option"));
-
-    const randomOption = options[Math.floor(Math.random() * options.length)];
-    iframe.src = randomOption.dataset.url;
-
-    openScreen()
-
-    select.value = randomOption.value;
-}
-
-select.addEventListener("change", function () {
-    openScreen()
-    if (this.options[this.selectedIndex].dataset.url == "actual") {
-        window.location = "https://pablo.energy";
-    }
-    else {
-        iframe.src = this.options[this.selectedIndex].dataset.url;
-    }
-});
-
-close.addEventListener("click", closeScreen);
-random.addEventListener("click", randomWeb);
-
-
-document.addEventListener("keydown", function (event) {
-    if (event.code === "Escape") {
-        closeScreen()
-    }
-    else { }
-});
+initialize()
