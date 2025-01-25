@@ -13,7 +13,7 @@ function wip() {
     setInterval(() => {
         document.title = texts[index];
         index = (index + 1) % texts.length;
-    }, 300);
+    }, 500);
 }
 
 function ageOfPablo() {
@@ -58,7 +58,7 @@ function initialize() {
         {
             position: { lat: 52.35379279046571, lng: 4.897520202148485 },
             pov: { heading: 165, pitch: 5 },
-            zoom: 1,
+            zoom: 0,
             panControl: true,
             zoomControl: true,
             linksControl: false,
