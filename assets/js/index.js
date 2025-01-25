@@ -1,9 +1,24 @@
 window.onload = function () {
-    wip()
     ageOfPablo()
     setInterval(ageOfPablo, 1000);
     initialize()
+    mobileWindow();
+    wip()
 };
+
+/* -----------------------------------
+IPHONE HEIGHT
+// -------------------------------------- */
+
+function mobileWindow() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+window.addEventListener("resize", mobileWindow, false);
+window.addEventListener("orientationchange", mobileWindow, false);
+
+
 
 let index = 0;
 const texts = ["Ha", "Hav", "Have", "Have a", "Have a n", "Have a ni", "Have a nic", "Have a nice", "Have a nice d", "Have a nice da", "Have a nice day", "Have a nice day!"];
