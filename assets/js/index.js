@@ -63,7 +63,7 @@ function initialize() {
             zoomControl: true,
             linksControl: false,
             enableCloseButton: false,
-            fullscreenControl: false,
+            fullscreenControl: true,
             addressControl: false,
         },
     );
