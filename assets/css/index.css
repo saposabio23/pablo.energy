@@ -16,7 +16,7 @@ body {
 }
 
 a {
-  color: blue;
+  color: var(--thisColor);
   text-decoration: none;
 }
 
@@ -34,8 +34,14 @@ a:hover {
 
 #street-view {
   border-radius: 25px;
-  height: 250px;
+  height: 50%;
   width: 100%;
   position: relative;
   overflow: hidden;
+  transition: all .6s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+#street-view:hover {
+  height: 100%;
+  transition: all .6s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
