@@ -32,11 +32,9 @@
 <body>
 
     <div class="text">
-        <span>Pablo Mo</span>
-        <span><span id="yearsAge"></span> years,
-            <span id="monthsAge"></span> months and
-            <span id="daysAge"></span> days</span>
-        <a href="https://www.instagram.com/sagesseastrale23/"><span
+        <span class="el">Pablo M.</span>
+        <span class="el"><span id="yearsAge"></span> years and <span id="daysAge"></span> days on 🌍</span>
+        <a href="https://www.instagram.com/sagesseastrale23/" class="el"><span
                   style="font-size: 80%;">@</span>sagesseastrale23</a>
     </div>
 
@@ -51,6 +49,23 @@
     <script
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnCsqqTyBfKn8bmxsC-Q7sJ47VzMfuH7I&callback=initialize&v=weekly"
             defer></script>
+
+    <script>
+        function ageOfPablo() {
+            const startDate = new Date(1998, 4, 30); // May 30, 1998
+            const now = new Date();
+
+            const elapsedMilliseconds = now - startDate;
+            const totalDays = Math.floor(elapsedMilliseconds / (1000 * 60 * 60 * 24)); // Convert ms to days
+
+            const years = Math.floor(totalDays / 365.25); // Calculate total years
+            const daysInCurrentYear = totalDays % 365; // Remaining days in the current year
+
+            document.getElementById('yearsAge').textContent = years;
+            document.getElementById('daysAge').textContent = daysInCurrentYear;
+        }
+        ageOfPablo()
+    </script>
 
     <script src="assets/js/index.js"></script>
 </body>

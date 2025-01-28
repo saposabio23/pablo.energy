@@ -1,9 +1,8 @@
 window.onload = function () {
-    ageOfPablo()
-    setInterval(ageOfPablo, 1000);
-    initialize()
     mobileWindow();
+    initialize()
     wip()
+    // witchColor()
 };
 
 /* -----------------------------------
@@ -30,40 +29,6 @@ function wip() {
         index = (index + 1) % texts.length;
     }, 500);
 }
-
-function ageOfPablo() {
-    const startDate = new Date(1998, 4, 30);
-    const now = new Date();
-
-    const elapsedMilliseconds = now - startDate;
-
-    const seconds = Math.floor(elapsedMilliseconds / 1000);
-    const minutes = Math.floor(seconds / 60);
-    const hours = Math.floor(minutes / 60);
-    const days = Math.floor(hours / 24);
-
-    let years = Math.floor(days / 365.25);
-    let remainingDays = days % 365.25;
-    let months = Math.floor(remainingDays / 30.44);
-    remainingDays = Math.floor(remainingDays % 30.44);
-
-    const elapsed = {
-        years: years,
-        months: months,
-        days: remainingDays,
-        hours: hours % 24,
-        minutes: minutes % 60,
-        seconds: seconds % 60
-    };
-
-    document.getElementById('yearsAge').textContent = elapsed.years;
-    document.getElementById('monthsAge').textContent = elapsed.months;
-    document.getElementById('daysAge').textContent = elapsed.days;
-
-    // console.log(elapsed.seconds)
-}
-
-
 
 let panorama;
 
@@ -102,7 +67,5 @@ function witchColor() {
     styleSheet.innerText = whichColor
     document.head.appendChild(styleSheet)
 }
-
-witchColor()
 
 

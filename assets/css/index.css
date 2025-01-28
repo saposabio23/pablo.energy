@@ -10,8 +10,8 @@ body {
   font-family: sans-serif;
   text-align: center;
 
-  background-color: whitesmoke;
-  color: #232323;
+  background-color: seagreen;
+  color: blanchedalmond;
   padding: 20px;
 }
 
@@ -39,9 +39,40 @@ a:hover {
   position: relative;
   overflow: hidden;
   transition: all .6s cubic-bezier(0.39, 0.575, 0.565, 1);
+  border: 2px solid blanchedalmond;
 }
+
 
 #street-view:hover {
   height: 100%;
   transition: all .6s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+/* Keyframes for the fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+.el {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+.el:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.el:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.el:nth-child(3) {
+  animation-delay: 1s;
 }
