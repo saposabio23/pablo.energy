@@ -38,7 +38,7 @@ function initialize() {
         {
             position: { lat: 52.35379279046571, lng: 4.897520202148485 },
             pov: { heading: 165, pitch: 5 },
-            zoom: .8,
+            zoom: 1,
             panControl: true,
             zoomControl: true,
             linksControl: false,
