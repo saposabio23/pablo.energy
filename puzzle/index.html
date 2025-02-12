@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pablo.puzzle.house</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+
+</head>
+
+<body>
+
+    <div class="card info">
+        <div class="card-face front">
+            i
+        </div>
+        <div class="card-face back">
+            x
+        </div>
+    </div>
+
+
+
+    <div class="forzudo">
+        <div class="card pointer">
+            <div class="card-face front">
+                <img src="media/1.png" alt="">
+            </div>
+            <div class="card-face back">
+                super
+            </div>
+        </div>
+        <div class="card pointer">
+            <div class="card-face front">
+                <img src="media/2.png" alt="">
+            </div>
+            <div class="card-face back">
+            </div>
+        </div>
+        <div class="card pointer">
+            <div class="card-face front">
+                <img src="media/3.png" alt="">
+            </div>
+            <div class="card-face back">
+            </div>
+        </div>
+        <div class="card pointer">
+            <div class="card-face front">
+                <img src="media/4.png" alt="">
+            </div>
+            <div class="card-face back">
+            </div>
+        </div>
+        <div class="card pointer">
+            <div class="card-face front">
+                <img src="media/5.png" alt="">
+            </div>
+            <div class="card-face back">
+            </div>
+        </div>
+        <div class="card pointer">
+            <div class="card-face front">
+                <img src="media/6.png" alt="">
+            </div>
+            <div class="card-face back">
+            </div>
+        </div>
+        <div class="card pointer">
+            <div class="card-face front">
+                <img src="media/7.png" alt="">
+            </div>
+            <div class="card-face back">
+            </div>
+        </div>
+        <div class="card pointer">
+            <div class="card-face front">
+                <img src="media/8.png" alt="">
+            </div>
+            <div class="card-face back">
+            </div>
+        </div>
+        <div class="card pointer">
+            <div class="card-face front">
+                <img src="media/9.png" alt="">
+            </div>
+            <div class="card-face back">
+            </div>
+        </div>
+        <div class="card pointer">
+            <div class="card-face front">
+                <img src="media/10.png" alt="">
+            </div>
+            <div class="card-face back">
+            </div>
+        </div>
+        <div class="card pointer">
+            <div class="card-face front">
+
+                <img src="media/11.png" alt="">
+            </div>
+            <div class="card-face back">
+            </div>
+        </div>
+        <div class="card pointer">
+            <div class="card-face front">
+
+                <img src="media/12.png" alt="">
+            </div>
+            <div class="card-face back">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="box">
+        <p> OKokodkowdfoweof</p>
+
+    </div>
+
+
+    <script>
+
+        const cards = document.querySelectorAll('.card')
+        for (let i = 0, max = cards.length; i < max; i++) {
+            cards[i].addEventListener("click", function () {
+                // balles[i].classList.add("fullball");
+                this.classList.toggle('flipCard');
+            })
+        }
+
+        document.querySelector(".info").addEventListener("click", function () {
+            document.querySelector(".box").classList.toggle('boxOpen');
+        });
+
+    </script>
+
+</body>
+
+</html>
