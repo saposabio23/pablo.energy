@@ -2,7 +2,7 @@ body {
     background-color: aliceblue;
     margin: 0;
     padding: 0;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     overflow: hidden;
     /* Prevents scroll issues */
     display: flex;
@@ -41,7 +41,7 @@ body {
 .info .back {
     border-radius: 100% !important;
     transform: rotateY(180deg);
-    background-color: red;
+    background-color: red !important;
 }
 
 
@@ -61,7 +61,7 @@ body {
 }
 
 .boxOpen {
-    height: 100%;
+    height: 200%;
     transition: all 1s ease-in-out;
 }
 
