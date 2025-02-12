@@ -61,7 +61,7 @@ body {
 }
 
 .boxOpen {
-    height: 200%;
+    height: 300%;
     transition: all 1s ease-in-out;
 }
 
