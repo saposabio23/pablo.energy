@@ -93,7 +93,7 @@ a:hover {
 .forzudoOpen {
     filter: blur(5px);
     transition: all 1s ease-in-out;
-    height: 30vh;
+    height: 15vh;
 }
 
 .card {
