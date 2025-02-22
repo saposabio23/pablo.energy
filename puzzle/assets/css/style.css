@@ -107,11 +107,6 @@ header {
     margin: 10px; */
 }
 
-.box p {
-    margin: 10px;
-    font-size: 2rem;
-}
-
 .emoji {
     line-height: 1.3;
 }
@@ -135,7 +130,7 @@ header {
     gap: 0px;
     box-sizing: border-box;
     transition: all 1s ease-in-out;
-
+    font-size: 1rem;
 }
 
 .forzudoOpen {
