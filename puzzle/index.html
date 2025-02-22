@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pablo ❤︎s</title>
+    <title>pablo likes...</title>
 
     <link rel="stylesheet" href="assets/css/style.css">
 
@@ -88,7 +88,7 @@
             </div>
             <div class="card-face back" data-value="friends">
                 <div class="card-content">
-                    <span class="emoji">making new friends (and websites)</span>
+                    <div class="emoji"></div>
                     <div class="desc hidden">
                         <img src="media/mur01.png" alt="">
                     </div>
@@ -101,7 +101,7 @@
             </div>
             <div class="card-face back" data-value="radio">
                 <div class="card-content">
-                    <span class="emoji">radio.garden</span>
+                    <div class="emoji"></div>
                     <div class="desc hidden">
                         <img src="media/mur02.png" alt="">
                     </div>
@@ -114,7 +114,7 @@
             </div>
             <div class="card-face back" data-value="energy">
                 <div class="card-content">
-                    <span class="emoji">every new day</span>
+                    <div class="emoji"></div>
                     <div class="desc hidden">
                         <img src="media/mur03.png" alt="">
                     </div>
@@ -127,7 +127,7 @@
             </div>
             <div class="card-face back" data-value="breakfast">
                 <div class="card-content">
-                    <span class="emoji">PB&J</span>
+                    <div class="emoji"></div>
                     <div class="desc hidden">
                         <img src="media/mur04.png" alt="">
                     </div>
@@ -140,7 +140,7 @@
             </div>
             <div class="card-face back" data-value="energy">
                 <div class="card-content">
-                    <span class="emoji">every new day</span>
+                    <div class="emoji"></div>
                     <div class="desc hidden">
                         <img src="media/mur05.png" alt="">
                     </div>
@@ -153,7 +153,7 @@
             </div>
             <div class="card-face back" data-value="friends">
                 <div class="card-content">
-                    <span class="emoji">making new friends (and websites)</span>
+                    <div class="emoji"></div>
                     <div class="desc hidden">
                         <img src="media/mur06.png" alt="">
                     </div>
@@ -166,7 +166,7 @@
             </div>
             <div class="card-face back" data-value="radio">
                 <div class="card-content">
-                    <span class="emoji">radio.garden</span>
+                    <div class="emoji"></div>
                     <div class="desc hidden">
                         <img src="media/mur07.png" alt="">
                     </div>
@@ -192,7 +192,7 @@
             </div>
             <div class="card-face back" data-value="breakfast">
                 <div class="card-content">
-                    <span class="emoji">PB&J</span>
+                    <div class="emoji"></div>
                     <div class="desc hidden">
                         <img src="media/mur09.png" alt="">
                     </div>
@@ -205,15 +205,15 @@
     <div class="box">
         <div class="paper">
             <header>
-                <span>🏠👯💌</span>
+                <div style=" letter-spacing: 4px;">🏠👯💌</div>
                 <div>
                     <a href="https://www.instagram.com/sagesseastrale23/">instagram</a> |
-                    <a href="https://wa.me/34679797573?text=I'm%20interested%20in%20meeting%20u%20Pablo!">whatsapp</a>
+                    <a href="https://wa.me/34679797573?text=paaaaablo!">whatsapp</a>
                 </div>
             </header>
-            <p>Here we are again. I'm looking for my next room in Amsterdam. It can be in Noord, Oost, Zuid or West,
+            <p>Here we go again. I'm looking for my next room in Amsterdam. It can be in Noord, Oost, Zuid or West,
                 just
-                need to move in +/- April 25. Play around to discover more about me, but also reach me if you or some
+                need to move in +/- April 25. Play around to see what I like, but also reach me if you or some
                 friend can help me for this!!
             <p>Yours 🫂🎐,</p>
             <p>pablo</p>
@@ -367,6 +367,61 @@
             document.querySelector(".forzudo").classList.toggle('forzudoOpen');
         });
 
+
+
+        const matchOptions = [
+            { emoji: "making new friends (and websites)" },
+            { emoji: "listening to <a href='www.radio.garden'>radio.garden</a>" },
+            { emoji: "wake up early" },
+            { emoji: "pb&j" },
+            { emoji: "waterlooplein 4EVER" },
+            { emoji: "friday's at MKZ!" },
+            { emoji: "movies, movies and movies" },
+            { emoji: "harengs at the market" },
+            { emoji: "playing SALEM under the rain" },
+            { emoji: "riding, riding and griding" },
+            { emoji: "speaking spanish, french and english at same time" },
+            { emoji: "play darts at the bar" },
+        ];
+
+        // Function to shuffle an array
+        function shuffleArray(array) {
+            return array.sort(() => Math.random() - 0.5);
+        }
+
+        function setCards() {
+            const cards = Array.from(document.querySelectorAll('.forzudo .card .back'))
+                .filter(card => card.querySelector('.emoji'));  // Only select cards with an emoji
+
+            // Shuffle and pick 4 unique pairs
+            const selectedPairs = shuffleArray([...matchOptions]).slice(0, 4);
+
+            // Assign automatic values (1,2,3,4) dynamically
+            const numberedPairs = selectedPairs.map((option, index) => ({
+                ...option, value: (index + 1).toString()
+            }));
+
+            // Duplicate to make pairs and shuffle again
+            const gameCards = shuffleArray([...numberedPairs, ...numberedPairs]);
+
+            // Assign values to the valid cards
+            cards.forEach((card, index) => {
+                const option = gameCards[index];
+
+                // Set data-value attribute
+                card.setAttribute('data-value', option.value);
+
+                // Set emoji
+                card.querySelector('.emoji').innerHTML = option.emoji;
+            });
+        }
+
+        // Helper function to shuffle an array
+        function shuffleArray(array) {
+            return array.sort(() => Math.random() - 0.5);
+        }
+
+        setCards()
     </script>
 
 

@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: var(--fondo);
+    background-color: black;
     margin: 0;
     padding: 0;
     height: calc(var(--vh, 1vh) * 100);
@@ -20,6 +20,7 @@ body {
 a {
     color: var(--texto);
     /*! color: var(--fondo); */
+    text-decoration: underline;
 }
 
 a:hover {
@@ -43,9 +44,7 @@ header {
     background-color: var(--fondo);
 }
 
-header span {
-    letter-spacing: 4px;
-}
+
 
 .nav {
     position: fixed;
@@ -60,8 +59,8 @@ header span {
 }
 
 .navOpen {
-    height: 15vh;
-    bottom: calc(100vh - 15vh);
+    height: calc(var(--vh, 1vh) * 15);
+    bottom: calc(100vh - calc(var(--vh, 1vh) * 15));
     transition: all 1s ease-in-out;
 
 }
@@ -98,7 +97,7 @@ header span {
 
 
 .box {
-    /*! background-color: var(--fondo); */
+    background-color: var(--fondo);
     height: 0;
     color: var(--texto);
     transition: all 1s ease-in-out;
@@ -118,7 +117,8 @@ header span {
 }
 
 .boxOpen {
-    height: 85vh;
+    height: calc(var(--vh, 1vh) * 85);
+    ;
     /*! transition: all 1s ease-in-out; */
     overflow: scroll;
     padding: 0 0 50px 0;
@@ -142,7 +142,7 @@ header span {
     -webkit-filter: blur(5px);
     filter: blur(5px);
     transition: all 1s ease-in-out;
-    height: 15vh;
+    height: calc(var(--vh, 1vh) * 15);
 }
 
 .card {
@@ -165,9 +165,9 @@ header span {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     display: flex;
-    background-color: var(--fondo);
     align-items: center;
     justify-content: center;
+    background-color: var(--fondo);
 }
 
 .card img {
@@ -196,7 +196,7 @@ header span {
     background-color: var(--nook);
 }
 
-.back span {
+.card-content {
     padding: 20px;
     width: 100%;
     height: 100%;
@@ -204,7 +204,6 @@ header span {
     align-items: center;
     justify-content: center;
     transition: all 1s ease-in-out !important;
-    color: var(--texto);
 }
 
 .card-face p {
