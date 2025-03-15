@@ -4,60 +4,29 @@ body {
   width: 100vw;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: column;
 
   font-family: sans-serif;
   text-align: center;
 
-  background-color: forestgreen;
-  color: blanchedalmond;
-  padding: 20px;
+  background-color: saddlebrown;
+  color: rgba(255, 255, 255, 1.00);
+  overflow: hidden;
 }
 
 
 a {
   text-decoration: none;
-  color: #69aa5d;
-  transition: all .3s ease-in-out;
-}
-
-a:hover {
-  color: blanchedalmond;
   transition: all .3s ease-in-out;
 }
 
 .text {
-  height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  gap: 10px;
 }
 
-#street-view {
-  border-radius: 25px;
-  height: 50%;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-  transition: all .6s cubic-bezier(0.39, 0.575, 0.565, 1);
-  border: 2px solid blanchedalmond;
-}
-
-iframe,
-gm-style {
-  overflow: hidden;
-  border-radius: 25px;
-}
-
-
-#street-view:hover {
-  height: 100%;
-  transition: all .6s cubic-bezier(0.39, 0.575, 0.565, 1);
-}
-
-/* Keyframes for the fade-in animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -84,4 +53,54 @@ gm-style {
 
 .el:nth-child(3) {
   animation-delay: 1s;
+}
+
+.el:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+
+img {
+  position: absolute;
+  height: 120px;
+  width: 150px;
+  border-radius: 30px;
+  object-fit: cover;
+  bottom: 20px;
+  transition: all .5s cubic-bezier(.45, .05, .55, .95);
+}
+
+img:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+
+
+
+.fullImg {
+  border-radius: 0;
+  height: calc(var(--vh, 1vh) * 100 - 40px);
+  width: calc(100vw - 40px);
+  transition: all .5s cubic-bezier(.45, .05, .55, .95);
+}
+
+
+
+@media screen and (max-width: 700px) {
+
+  .fullImg {
+    height: calc(var(--vh, 1vh) * 100 - 20px);
+    width: calc(100vw - 20px);
+  }
+
+  .text {
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+  }
+
+  img {
+    bottom: 10px;
+  }
 }

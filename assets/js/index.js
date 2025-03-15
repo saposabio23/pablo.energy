@@ -1,6 +1,6 @@
 window.onload = function () {
     mobileWindow();
-    initialize()
+    // initialize()
     wip()
     // witchColor()
 };
@@ -20,34 +20,47 @@ window.addEventListener("orientationchange", mobileWindow, false);
 
 
 let index = 0;
-const texts = ["Ha", "Hav", "Have", "Have a", "Have a n", "Have a ni", "Have a nic", "Have a nice", "Have a nice d", "Have a nice da", "Have a nice day", "Have a nice day!"];
+const texts = ["Ha", "Hav", "Have", "Have a", "Have a n", "Have a ni", "Have a nic", "Have a nice", "Have a nice d", "Have a nice da", "Have a nice day", "Have a nice day!", "Have a nice day!", "Have a nice day!", "Have a nice day!", "Have a nice day!", "Have a nice day!", "Have a nice day!", "Have a nice day! p", "Have a nice day! p.", "Have a nice day! p.m"];
 
 // THREE DOTS
 function wip() {
-    setInterval(() => {
+    const interval = setInterval(() => {
         document.title = texts[index];
-        index = (index + 1) % texts.length;
-    }, 500);
+        index++;
+
+        if (index >= texts.length) {
+            clearInterval(interval); // Stop after the last element
+        }
+    }, 200);
 }
 
-let panorama;
 
-function initialize() {
-    panorama = new google.maps.StreetViewPanorama(
-        document.getElementById("street-view"),
-        {
-            position: { lat: 52.35379279046571, lng: 4.897520202148485 },
-            pov: { heading: 165, pitch: 5 },
-            zoom: 1,
-            panControl: true,
-            zoomControl: true,
-            linksControl: false,
-            enableCloseButton: false,
-            fullscreenControl: true,
-            addressControl: false,
-        },
-    );
-}
+// Example usage:
+document.querySelector("img").addEventListener("click", function () {
+    document.querySelector("img").classList.toggle('fullImg')
+});
+
+
+
+
+// let panorama;
+
+// function initialize() {
+//     panorama = new google.maps.StreetViewPanorama(
+//         document.getElementById("street-view"),
+//         {
+//             position: { lat: 52.35379279046571, lng: 4.897520202148485 },
+//             pov: { heading: 165, pitch: 5 },
+//             zoom: 1,
+//             panControl: true,
+//             zoomControl: true,
+//             linksControl: false,
+//             enableCloseButton: false,
+//             fullscreenControl: true,
+//             addressControl: false,
+//         },
+//     );
+// }
 
 
 
