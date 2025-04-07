@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pour Alberte 🎀</title>
+
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="content">
+
+        <img src="images/effortcommun.png" alt="" class="effortCommun
+        ">
+        <h1>pour Alberte 🎀</h1>
+
+        <div class="moon">
+            <p>You will be reading this on a <span id="moon"></span> moon...</p>
+        </div>
+
+        <div class="letter">
+            <h3>Letter</h3>
+            <div>
+                <i>My dear A.</i>
+                <p>I finish dinning here in Hamburg at Leon's, a very simple but grateful italian restaurant where
+                    people
+                    talk business in german. Is at this moment that...</p>
+            </div>
+        </div>
+
+        <div class="activities">
+            <h3>Activities</h3>
+
+            <div>
+                <span class="pointer" style="background-color: white;
+    color: black;" onclick="hideIt(this)">RIDING</span>
+                <span class="pointer" style="background-color: black;
+    color: white;" onclick="hideIt(this)">TALKIN</span>
+                <span class="pointer" style="background-color: black;
+    color: white;" onclick="hideIt(this)">SEEING</span>
+                <span class="pointer" style="background-color: white;
+    color: black;" onclick="hideIt(this)">THINKING</span>
+                <div>LOVING 🤍🤍</div>
+            </div>
+
+        </div>
+
+        <div class="musics">
+            <h3>Some songs for this letter</h3>
+
+            <iframe width="100%" height="auto"
+                    src="https://www.youtube-nocookie.com/embed/d1fkfEMoEq4?si=TYrLa5diR5AMK8um&amp;controls=0"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            <iframe width="100%" height="auto"
+                    src="https://www.youtube-nocookie.com/embed/E90eZc1ndCw?si=sAVlkUeIZn-bjzCD&amp;controls=0"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            <iframe width="100%" height="auto"
+                    src="https://www.youtube-nocookie.com/embed/Px9a2LjW7-M?si=TmC5sGaVXr5iiOrp&amp;controls=0"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        </div>
+
+        <div class="journal">
+            <h3>Journal</h3>
+            <div>
+                <div>
+                    <div>
+                        <span>V</span>
+                        <span>04</span>
+                    </div>
+                    <p>Arrive à 7 heures pétantes dans la cidy. Accueil chaleureux par A., bisous, amour, petit déj.,
+                        vélos,
+                        asiettes de poisson au marché. Belle journée au soleil près de l'eau et près d'elle, Soupe et
+                        glaces
+                        avant le sunset.</p>
+
+                </div>
+
+
+                <div>
+                    <div>
+                        <span>S</span>
+                        <span>05</span>
+                    </div>
+                    <p>Lit, soleil, douches et c'est repartit. Expo cool, petit marché des voisins, on retrouve Anna
+                        avec son cheval. Picnic-durüm (Cevano), boissons et pompes. Vélos, bières, et câlins avant de
+                        tomber dans un lourd soleil,</p>
+
+                </div>
+
+
+                <div>
+                    <div>
+                        <span>D</span>
+                        <span>06</span>
+                    </div>
+                    <p>On se réveille tard, mais content·es, se promène dans la ville expo à l'église, photo et films.
+                        Hot-no-dog et no-cinema mais si Eiffel et italy-sandwichs. Trying to finish GTA...</p>
+                </div>
+
+                <div>
+                    <div>
+                        <span>L</span>
+                        <span>07</span>
+                    </div>
+                    <p>Drops and shower before the last breakfast. Aux revoirs souriants. Je réfléchis au parc, me
+                        balade où on s'est baladées, et va à la gare. Les transports de retour s'ensuivent, comme le
+                        manque grandissant. Bisous alberte!</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="embruajada">
+            <h3>Embruajada</h3>
+        </div>
+
+        <div class="photos">
+            <h3>Photos</h3>
+        </div>
+
+
+
+    </div>
+
+    <script>
+
+        function hideIt(element) {
+            element.style.opacity = '0';
+        }
+
+        function setMoon(source) {
+            document.getElementById('moon').innerHTML = source;
+        }
+        function getMoonPhase(year, month, day) {
+            var c = e = jd = b = 0;
+
+            if (month < 3) {
+                year--;
+                month += 12;
+            }
+            ++month;
+            c = 365.25 * year;
+            e = 30.6 * month;
+            jd = c + e + day - 694039.09; //jd is total days elapsed
+            jd /= 29.5305882; //divide by the moon cycle
+            b = parseInt(jd); //int(jd) -> b, take integer part of jd
+            jd -= b; //subtract integer part to leave fractional part of original jd
+            b = Math.round(jd * 8); //scale fraction from 0-8 and round
+            if (b >= 8) {
+                b = 0; //0 and 8 are the same so turn 8 into 0
+            }
+
+
+            // 0 => New Moon 37.5 [show circle, hide rect]
+            // 1 => Waxing Crescent Moon 50.5 [show circle, hide rect]
+            // 2 => Quarter Moon //translateX(50%), [display rect, hide circle]
+            // 3 => Waxing Gibbous Moon 70.5 [show circle, hide rect]
+            // 4 => Full Moon [hide circle and rect]
+            // 5 => Waning Gibbous Moon, -15.5 [show circle, hide rect]
+            // 6 => Last Quarter Moon //transform: translateX(-50%) [display rect, hide circle]
+            // 7 => Waning Crescent Moon 30.5 [show circle, hide rect]
+
+            return b;
+        }
+
+        let launchMoon = function () {
+
+            let d = new Date();
+            let i = 0;
+
+            let phase = getMoonPhase(d.getFullYear(), d.getMonth() + 1, d.getDate() + i)
+            i += 4
+
+            console.log(phase)
+
+            if (phase == 0) {
+                var source = "🌑"
+                setMoon(source)
+            }
+
+            if (phase == 1) {
+                var source = "🌒";
+                setMoon(source)
+            }
+            if (phase == 2) {
+                var source = "🌓";
+                setMoon(source)
+            }
+            if (phase == 3) {
+                var source = "🌔";
+                setMoon(source)
+            }
+            if (phase == 4) {
+                var source = "🌕";
+                setMoon(source)
+            }
+            if (phase == 5) {
+                var source = "🌖";
+                setMoon(source)
+            }
+            if (phase == 6) {
+                var source = "🌗";
+                setMoon(source)
+            }
+            if (phase == 7) {
+                var source = "🌘";
+                setMoon(source)
+            }
+        };
+
+        launchMoon();
+
+
+    </script>
+
+
+</body>
+
+</html>
