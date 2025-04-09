@@ -1,0 +1,295 @@
+[
+    {
+        "month": "Mai 22",
+        "cities": [
+            "Bilbao",
+            "Paris",
+            "Le Havre",
+            "Barcelone"
+        ]
+    },
+    {
+        "month": "June 22",
+        "cities": [
+            "Barcelone"
+        ]
+    },
+    {
+        "month": "July 22",
+        "cities": [
+            "Cévennes",
+            "Bilbao"
+        ]
+    },
+    {
+        "month": "August 22",
+        "cities": [
+            "Bilbao",
+            "Pirineos",
+            "Bedousse",
+            "Saint-Robert"
+        ]
+    },
+    {
+        "month": "Septembre 22",
+        "cities": [
+            "Amiens"
+        ]
+    },
+    {
+        "month": "October 22",
+        "cities": [
+            "Amiens",
+            "Paris"
+        ]
+    },
+    {
+        "month": "November 22",
+        "cities": [
+            "Amiens",
+            "Brussels"
+        ]
+    },
+    {
+        "month": "December 22",
+        "cities": [
+            "Amiens",
+            "Paris",
+            "Brussels",
+            "Rotterdam",
+            "Bilbao"
+        ]
+    },
+    {
+        "month": "January 23",
+        "cities": [
+            "Amiens",
+            "Marseille",
+            "Cambrai"
+        ]
+    },
+    {
+        "month": "February 23",
+        "cities": [
+            "Amiens",
+            "Rotterdam"
+        ]
+    },
+    {
+        "month": "March 23",
+        "cities": [
+            "Amiens",
+            "Bulgaria",
+            "Paris",
+            "Le Havre",
+            "Cambrai"
+        ]
+    },
+    {
+        "month": "April 23",
+        "cities": [
+            "Amiens",
+            "Rotterdam",
+            "Paris",
+            "Bilbao"
+        ]
+    },
+    {
+        "month": "May 23",
+        "cities": [
+            "Amiens",
+            "Rotterdam",
+            "Lübeck",
+            "Cambrai"
+        ]
+    },
+    {
+        "month": "June 23",
+        "cities": [
+            "Amiens",
+            "Paris",
+            "Rotterdam"
+        ]
+    },
+    {
+        "month": "July 23",
+        "cities": [
+            "Rotterdam",
+            "Amsterdam",
+            "Brussels",
+            "Marseille",
+            "Cévennes",
+            "Socoa",
+            "Bilbao"
+        ]
+    },
+    {
+        "month": "August 23",
+        "cities": [
+            "Socoa",
+            "Bilbao",
+            "Genève"
+        ]
+    },
+    {
+        "month": "Septembre 23",
+        "cities": [
+            "Amiens",
+            "Paris",
+            "Rotterdam"
+        ]
+    },
+    {
+        "month": "October 23",
+        "cities": [
+            "Amiens",
+            "Briançon"
+        ]
+    },
+    {
+        "month": "November 23",
+        "cities": [
+            "Amiens",
+            "Paris",
+            "Gaillon"
+        ]
+    },
+    {
+        "month": "December 23",
+        "cities": [
+            "Bilbao",
+            "Amiens",
+            "Paris",
+            "Bilbao"
+        ]
+    },
+    {
+        "month": "January 24",
+        "cities": [
+            "Amiens"
+        ]
+    },
+    {
+        "month": "February 24",
+        "cities": [
+            "Amiens",
+            "Strasbourg",
+            "Paris",
+            "Bilbao"
+        ]
+    },
+    {
+        "month": "March 24",
+        "cities": [
+            "Amiens",
+            "Cambrai"
+        ]
+    },
+    {
+        "month": "April 24",
+        "cities": [
+            "Amiens",
+            "Nantes",
+            "Rouen",
+            "Val-de-Saâne",
+            "Paris"
+        ]
+    },
+    {
+        "month": "Mai 24",
+        "cities": [
+            "Amiens",
+            "Compiègne"
+        ]
+    },
+    {
+        "month": "Juin 24",
+        "cities": [
+            "Rotterdam",
+            "Amiens",
+            "Gaillon",
+            "Paris"
+        ]
+    },
+    {
+        "month": "July 24",
+        "cities": [
+            "Amiens",
+            "Le Havre",
+            "Geneve",
+            "Bolonia"
+        ]
+    },
+    {
+        "month": "August 24",
+        "cities": [
+            "Marseille",
+            "Barcelona",
+            "Bilbao"
+        ]
+    },
+    {
+        "month": "September 24",
+        "cities": [
+            "Bilbao",
+            "Barcelona",
+            "Paris",
+            "Rotterdam",
+            "Amsterdam"
+        ]
+    },
+    {
+        "month": "October 24",
+        "cities": [
+            "Amsterdam",
+            "Rotterdam"
+        ]
+    },
+    {
+        "month": "November 24",
+        "cities": [
+            "Amsterdam",
+            "Rotterdam"
+        ]
+    },
+    {
+        "month": "December 24",
+        "cities": [
+            "Amsterdam",
+            "Rotterdam",
+            "Bruxelles",
+            "Barcelona",
+            "Bilbao"
+        ]
+    },
+    {
+        "month": "January 25",
+        "cities": [
+            "Rotterdam",
+            "Amsterdam"
+        ]
+    },
+    {
+        "month": "February 25",
+        "cities": [
+            "Amsterdam",
+            "Rotterdam"
+        ]
+    },
+    {
+        "month": "March 25",
+        "cities": [
+            "Amsterdam",
+            "Rotterdam"
+        ]
+    },
+    {
+        "month": "April 25",
+        "cities": [
+            "Amsterdam",
+            "Copenhagen",
+            "Nancy",
+            "Amiens"
+        ]
+    }
+]

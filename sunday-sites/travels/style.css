@@ -11,7 +11,7 @@ h2 {
     margin: 20px 0 10px 0;
 }
 
-.content {
+#content {
     display: flex;
     flex-direction: column-reverse;
 }
@@ -51,108 +51,6 @@ h4 {
     color: gray;
 }
 
-
-/* CITIES */
-
-#Amiens {
-    background-color: orangered;
-}
-
-#Amsterdam {
-    background-color: #9c692b;
-}
-
-#Genève {
-    background-color: #4e954d;
-}
-
-#Socoa {
-    background-color: #ceac30;
-}
-
-#Bulgaria {
-    background-color: #e11c1c;
-}
-
-#Lübeck {
-    background-color: #724af4;
-}
-
-#Marseille {
-    background-color: #1f48cd;
-}
-
-#Cambrai {
-    background-color: #ef39bb;
-}
-
-#Rotterdam {
-    background-color: #f57927;
-}
-
-#Bilbao {
-    background-color: #cbcbcb;
-}
-
-#Barcelone {
-    background-color: #FFFFE3;
-}
-
-#Brussels {
-    background-color: burlywood;
-}
-
-#LeHavre {
-    background-color: gray;
-}
-
-#Paris {
-    background-color: skyblue;
-}
-
-#Pirineos {
-    background-color: rgb(88, 204, 88);
-}
-
-#SaintRobert {
-    background-color: rgb(248, 72, 72);
-}
-
-#Vercors {
-    background-color: green;
-}
-
-#Cévennes {
-    background-color: chocolate;
-}
-
-#Briançon {
-    background-color: aqua;
-}
-
-#Gaillon {
-    background-color: darkolivegreen;
-}
-
-#Nantes {
-    background-color: yellow;
-}
-
-#Strasbourg {
-    background-color: lime;
-}
-
-#Val-de-Saâne {
-    background-color: slateblue;
-}
-
-#Rouen {
-    background-color: lightseagreen;
-}
-
-#Bedousse {
-    background-color: rgb(111, 49, 210);
-}
 
 .index {
     display: flex;
