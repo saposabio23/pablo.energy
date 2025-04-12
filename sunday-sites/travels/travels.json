@@ -5,13 +5,13 @@
             "Bilbao",
             "Paris",
             "Le Havre",
-            "Barcelone"
+            "Barcelona"
         ]
     },
     {
         "month": "June 22",
         "cities": [
-            "Barcelone"
+            "Barcelona"
         ]
     },
     {
@@ -287,9 +287,7 @@
         "month": "April 25",
         "cities": [
             "Amsterdam",
-            "Copenhagen",
-            "Nancy",
-            "Amiens"
+            "Copenhagen"
         ]
     }
 ]

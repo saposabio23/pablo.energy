@@ -5,24 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRAVELS</title>
+    <title>My travels per month</title>
 
-    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+    <link rel="stylesheet" href="style.css">
 
     <style>
-        .index {
-            display: flex;
-            flex-wrap: wrap;
-
-            border: 1px solid black;
-            padding: 10px;
-        }
-
-        .content {
-            display: flex;
-            flex-direction: column-reverse;
-        }
-
         #Amiens {
             background-color: orangered;
         }
@@ -63,7 +50,7 @@
             background-color: #cbcbcb;
         }
 
-        #Barcelone {
+        #Barcelona {
             background-color: #FFFFE3;
         }
 
@@ -155,24 +142,35 @@
 
 <body>
 
-    <h2>My travels from last months</h2>
+    <div>
+        <div>
+            <div>
+                <h2>My travels per month</h2>
 
-    <div class="index">
-    </div>
+                <div class="index">
+                </div>
+            </div>
+            <div class="firm">
+                <a href="https://sundaysites.cafe/">SundaySites</a> made on a <a href="image.png">22nd of October
+                    2023</a> with my
+                friend
+                <a
+                   href="https://samdroual.fr">Sam</a> in <div class="city" id="Amiens"
+                     style="width: fit-content; display: inline;"><span>Amiens</span></div>
+
+            </div>
 
 
-    <div class="content">
-    </div>
-
-    <div class="firm">
-
-        <img src="image.png" alt="" style="width: 200px;border-radius: 8px;">
-        <div><a href="https://sundaysites.cafe/">SundaySite</a> made on a 22nd of October 2023 with my friend <a
-               href="https://samdroual.fr">Sam</a> in <div class="city" id="Amiens"
-                 style="width: fit-content; display: inline;"><span>Amiens</span></div>
         </div>
 
+
+        <div class="content">
+        </div>
     </div>
+
+
+
+
 
     <script>
 
@@ -197,7 +195,7 @@
                 sortedCities.forEach(city => {
                     const cityEl = document.createElement('div');
                     cityEl.className = 'city';
-                    cityEl.id = city;
+                    cityEl.id = city.replace(/\s+/g, ''); // Remove spaces for ID
                     const span = document.createElement('span');
                     span.textContent = city;
 
@@ -234,6 +232,8 @@
                     contentDiv.appendChild(block);
                 });
 
+                setupCityHighlighting()
+
             } catch (error) {
                 console.error('Error loading JSON:', error);
             }
@@ -241,6 +241,47 @@
 
         // Call the function on page load
         document.addEventListener('DOMContentLoaded', loadDataFromJSON);
+
+        function setupCityHighlighting() {
+            const indexCities = document.querySelectorAll('.index .city');
+
+            indexCities.forEach(city => {
+                city.addEventListener('click', () => {
+                    const isSelected = city.classList.contains('selected');
+                    const selectedCity = city.id;
+
+                    if (isSelected) {
+                        // Deselect: remove highlighting
+                        city.classList.remove('selected');
+
+                        const contentCities = document.querySelectorAll('.content .city');
+                        contentCities.forEach(c => {
+                            c.style.opacity = '1'; // Reset all to full opacity
+                        });
+
+                    } else {
+                        // Select this city
+                        indexCities.forEach(c => c.classList.remove('selected'));
+                        city.classList.add('selected');
+
+                        // Dim all cities
+                        const contentCities = document.querySelectorAll('.content .city');
+                        contentCities.forEach(c => {
+                            c.style.opacity = '0.2';
+                        });
+
+                        // Highlight matching cities
+                        const matchingCities = document.querySelectorAll(`.content .city[id="${selectedCity}"], .content .city[id="${selectedCity.replace(/\s+/g, '')}"]`);
+                        matchingCities.forEach(matching => {
+                            matching.style.opacity = '1';
+                        });
+                    }
+                });
+            });
+        }
+
+
+
 
     </script>
 </body>
