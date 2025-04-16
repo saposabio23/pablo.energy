@@ -1,0 +1,387 @@
+@import url(reset.css);
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* background-image: url(images/sky-6.jpg); */
+    background-color: dodgerblue;
+    background-image: url('../media/best-place-in-town.webp');
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(30px);
+    /* overflow: hidden; */
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 1.4rem;
+    text-align: center;
+    font-weight: 400;
+    padding: 70px 0;
+}
+
+h3 {
+    margin: 0 0 10px 0;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    /* font-size: 1.5rem; */
+}
+
+h3 i {
+    color: gray;
+    font-weight: 400;
+
+}
+
+p {
+    line-height: 1.1;
+}
+
+
+small {
+    background-color: black;
+    color: white;
+    width: fit-content;
+    margin: auto;
+    padding: 5px 10px;
+    line-height: 1.2;
+    font-size: 70%;
+    text-align: center;
+}
+
+
+
+.content {
+    max-width: 450px;
+    margin: 0 auto 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.content>div {
+    margin: 0 20px 40px 20px;
+    background-color: whitesmoke;
+    padding: 20px 20px 30px 20px;
+    border-radius: 4px;
+
+    scroll-margin-top: 20px;
+
+}
+
+.effortCommun {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+}
+
+
+/*********** QUESTION ************/
+.question {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: 999;
+    background-color: #161616;
+    color: white;
+}
+
+.question>div {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    font-family: sans-serif;
+    background-color: black;
+    color: white;
+}
+
+.question>div>div {
+    display: flex;
+    gap: 20px;
+}
+
+.question button {
+    width: 100px;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 5px;
+    color: midnightblue;
+}
+
+.first {
+    z-index: 3;
+}
+
+.second {
+    z-index: 2;
+}
+
+.third {
+    z-index: 1;
+}
+
+/*********** MOON ************/
+
+.moon {
+    text-align: center;
+    font-size: 80%;
+    margin: 0 !important;
+    border-radius: 0 0 20px 20px !important;
+    padding: 10px !important;
+    background-color: MidnightBlue !important;
+    color: white !important;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+/*********** LETTRE ************/
+
+#letter>div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#letter span {
+    padding: 2px 2px 0 2px;
+    color: white;
+}
+
+
+/*********** MUSICS ************/
+.musics {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+
+iframe {
+    aspect-ratio: 1;
+    border-radius: 9999px;
+    width: 80%;
+    margin: auto;
+
+}
+
+
+/*********** ACTIVITIES ************/
+
+.activities>div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+
+    font-family: sans-serif;
+}
+
+.activities>div span {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    aspect-ratio: 3/4;
+    z-index: 1;
+}
+
+.activities span:nth-child(odd):hover {
+    transform: rotate(5deg);
+    transition: all ease-in-out 0.3s;
+}
+
+.activities span:nth-child(even):hover {
+    transform: rotate(-5deg);
+    transition: all ease-in-out 0.3s;
+}
+
+.activities>div>div {
+    background-color: red;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.op0 {
+    opacity: 0 !important;
+}
+
+
+/*********** SONGS ************/
+#songs div {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+}
+
+
+/*********** JOURNAL ************/
+.journal>div>div {
+    background-color: white;
+    display: flex;
+    gap: 0px;
+
+}
+
+.journal>div>div>div {
+
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    font-weight: 800;
+    padding: 0 20px;
+    background-color: black;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+.journal>div>div>p {
+    padding: 10px;
+}
+
+/*********** EMBRUJADA ************/
+.embrujada p {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 6px;
+}
+
+.embrujada>p span:nth-child(1) {}
+
+
+.embrujada>p span:nth-child(2) {
+    font-family: sans-serif;
+    color: gray;
+    font-size: 90%;
+}
+
+
+
+/*********** IMAGES ************/
+#photos {
+    padding: 20px 0 0 0 !important;
+}
+
+#photos h3 {
+    margin: 0 20px 0 20px;
+}
+
+#photos>div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.frame {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    width: 100%;
+    cursor: pointer;
+}
+
+.frame>div {
+    border: 9px solid white;
+    overflow: hidden;
+    border: 9px solid white;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.frame img {
+    width: 120px;
+    height: auto;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    object-position: center;
+    filter: blur(5px);
+}
+
+.frame p {
+    width: 80%;
+    text-align: center;
+}
+
+.frame.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+    background-color: black;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+.frame.fullscreen>div {
+    height: calc(100% - 40px);
+    border: none;
+    box-shadow: none;
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - 40px);
+}
+
+.frame.fullscreen img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
+    object-position: center;
+    filter: none;
+}
+
+.frame.fullscreen img {
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.frame.fullscreen p {
+    color: white;
+    bottom: 30px;
+    font-size: 1.2rem;
+    /*! position: absolute; */
+}

@@ -4,37 +4,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pour 𝒜lberte 🎀</title>
+    <title>pour 𝒜lberte</title>
+    <link rel="stylesheet" href="assets/style.css">
 
-
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="flickity.min.css">
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="pour 𝒜" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
 </head>
 
 <body>
 
+    <div class="question">
+        <div class="first">
+            <h3>Are you A.E.C 🎀 ?</h3>
+            <div>
+                <button onclick="firstQuestion()">Yes</button>
+                <button onclick="badAwnser()">No</button>
+            </div>
+        </div>
+        <div class="second">
+            <h3>Is today your birthday?</h3>
+            <div>
+                <button onclick="secondQuestion()">Oui</button>
+                <button onclick="badAwnser()">Non</button>
+            </div>
+        </div>
+        <div class="third">
+            <h3>What is more popular in 🇩🇰 ?</h3>
+            <div>
+                <button onclick="badAwnser()">Bik</button>
+                <button onclick="thirdQuestion()">Kys</button>
+            </div>
+        </div>
+    </div>
+
     <div class="content">
 
         <div class="moon">
-            <p>⎰ you are reading this under a <span id="moon"></span> moon ⎱</p>
+            <p>∼ you are reading this under a <span id="moon"></span> moon ∼</p>
         </div>
 
-        <h1>pour 𝒜lberte 🎀</h1>
+        <h1>pour 𝒜lberte 🎀<br><small>(happy 25 bth)</small></h1>
 
+        <div class="intro">
+            <p>Hello Alberte, for this day I left you I started to collect some <a href="#letter"><b>Letters</b></a>, <a
+                   href="#activities"><b>Activities</b></a>, <a
+                   href="#songs"><b>Songs</b></a>, <a
+                   href="#journal"><b>Journal</b></a>,
+                <a href="#lyrics"><b>Lyrics</b></a>,
+                <a href="#photos"><b>Photos</b></a>,
+                <a href="#proverbs"><b>Proverbs</b></a>, and some .
+            </p>
+        </div>
 
-        <div class="letter">
+        <div id="letter">
             <h3>Letter</h3>
             <div>
                 <i>My dear A.</i>
-                <p>I finish dinning here in Hamburg at Leon's, a very simple but grateful italian restaurant where
-                    people
-                    talk business in german. Is at this moment that...</p>
+                <p> I'm finishing dinner here in Hamburg at Leon's restaurant, a very simple Italian place where some
+                    tables are speaking business in German.</p>
+                <p>Is it this moment that all the emotions and memories of the weekend flows through my head. Looking
+                    at the candle on my table I think about the one we had close to us at your work, and how beautiful
+                    was to talk, see and being close to you at that moment. I really feel so wired 🔌 with you on our
+                    conversations, preocupations, gestures, emotions, wants. This union was so beautiful that now, alone
+                    and silent in this table It feels so dreamy. That first ice cream waiting for the sunset looked like
+                    the 30th. Our bikes rides coming back to your home remembered me these longs rides home on the
+                    summer. Our shiny mornings of eyes, hugs and kisses were so natural that they would be the norm
+                    before starting any day. As you said, these days and what we had talked make me think about places,
+                    friends, and love. I keep all of this in me, as you will do, and see how it shapes me over the time.
+                    On these days, I saw a lot of you: your generosity and motivation, your care, your patience (ahah)
+                    and even if it has been just three more days, I feel a true confidence growing. I will be where you
+                    know I am, and hope to continue growing this confidence, memories and relationship together. I will
+                    miss you a A.E.C, from <span
+                          style="background-color: brown;">C</span><span
+                          style="background-color: white;color: black;">P</span><span
+                          style="background-color: brown;">H</span> and <span
+                          style="background-color: red;">A</span><span
+                          style="background-color: white;color: black;">M</span><span
+                          style="background-color: blue;">S</span> to the infinite.
+                </p>
             </div>
         </div>
 
-        <div class="activities">
-            <h3><span>Activities</span> <i>to do</i></h3>
-
+        <div class="activities" id="activities">
+            <h3><span>Activities</span> <i>to keep doing</i></h3>
             <div>
                 <span class="pointer" style="background-color: white;
     color: black;" onclick="hideIt(this)">RIDING</span>
@@ -49,41 +105,41 @@
 
         </div>
 
-        <div class="musics">
-            <h3>Songs</h3>
+        <div id="songs">
+            <h3></h3>
+            <h3><span>Songs</span> <i>4 the day, 4 the life</i></h3>
+            <div>
+                <iframe width="100%" height="auto"
+                        src="https://www.youtube-nocookie.com/embed/d1fkfEMoEq4?si=TYrLa5diR5AMK8um&amp;controls=0"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-            <iframe width="100%" height="auto"
-                    src="https://www.youtube-nocookie.com/embed/d1fkfEMoEq4?si=TYrLa5diR5AMK8um&amp;controls=0"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="100%" height="auto"
+                        src="https://www.youtube-nocookie.com/embed/E90eZc1ndCw?si=sAVlkUeIZn-bjzCD&amp;controls=0"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-            <iframe width="100%" height="auto"
-                    src="https://www.youtube-nocookie.com/embed/E90eZc1ndCw?si=sAVlkUeIZn-bjzCD&amp;controls=0"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="100%" height="auto"
+                        src="https://www.youtube-nocookie.com/embed/Px9a2LjW7-M?si=TmC5sGaVXr5iiOrp&amp;controls=0"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-            <iframe width="100%" height="auto"
-                    src="https://www.youtube-nocookie.com/embed/Px9a2LjW7-M?si=TmC5sGaVXr5iiOrp&amp;controls=0"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-            - rosalia- so good
-            <iframe width="100%" height="100%"
-                    src="https://www.youtube-nocookie.com/embed/Px9a2LjW7-M?si=TmC5sGaVXr5iiOrp&amp;controls=0"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+                <iframe width="100%" height="100%"
+                        src="https://www.youtube-nocookie.com/embed/u7K72X4eo_s?si=XSUZeVriC9vBauaa"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
         </div>
 
-        <div class="journal">
-            <h3>Journal</h3>
+        <div class="journal" id="journal">
+            <h3><span>Journal</span> <i>de Pablo</i></h3>
             <div>
                 <div>
-                    <div>
+                    <div style="background-color: DodgerBlue;">
                         <span>V</span>
                         <span>04</span>
                     </div>
@@ -97,19 +153,20 @@
 
 
                 <div>
-                    <div>
+                    <div style="background-color: GoldenRod;">
                         <span>S</span>
                         <span>05</span>
                     </div>
                     <p>Lit, soleil, douches et c'est repartit. Expo cool, petit marché des voisins, on retrouve Anna
-                        avec son cheval. Picnic-durüm (Cevano), boissons et pompes. Vélos, bières, et câlins avant de
+                        avec son cheval. Picnic-durüm (Cevano), boissons et pompes. Vélos, bières et câlins avant de
                         tomber dans un lourd soleil,</p>
 
                 </div>
 
 
                 <div>
-                    <div>
+                    <div style="background-color: MediumSeaGreen;     border-top: 1px solid MediumSeaGreen;
+">
                         <span>D</span>
                         <span>06</span>
                     </div>
@@ -118,7 +175,7 @@
                 </div>
 
                 <div>
-                    <div>
+                    <div style="background-color: Violet;">
                         <span>L</span>
                         <span>07</span>
                     </div>
@@ -130,8 +187,8 @@
 
         </div>
 
-        <div class="embrujada">
-            <h3><span>Lyrics</span> <i class="pointer">play</i></h3>
+        <div class="embrujada" id="lyrics">
+            <h3><span>Lyrics</span> <i class="pointer" id="audioButton">play</i></h3>
             <p>
                 <span>El embrujo de tus ojos me adormece,
                 </span>
@@ -141,136 +198,254 @@
             <p>
                 <span>El hechizo de tus labios me enloquece,
                 </span>
-                <span>The charm of your eyes lulls me to sleep,</span>
+                <span>The spell of your lips drives me crazy,</span>
             </p>
 
             <p>
                 <span>Mi corazón late atormentado,
                 </span>
-                <span>The charm of your eyes lulls me to sleep,</span>
+                <span>My heart beats tormented,</span>
             </p>
 
             <p>
                 <span>Porque el calor de tu aliento le ha faltado.
                 </span>
-                <span>The charm of your eyes lulls me to sleep,</span>
+                <span>Because the warmth of your breath has been lacking.</span>
             </p>
 
             <p>
-                <span>Para que seguir viviendo,
+                <span>No me dejas alma mía,
                 </span>
-                <span>The charm of your eyes lulls me to sleep,</span>
+                <span>Don't leave me <i>chérie</i>,</span>
             </p>
 
             <p>
-                <span>Si en el mundo voy sufriendo, [x2]
+                <span>No te vayas te lo ruego,
                 </span>
-                <span>The charm of your eyes lulls me to sleep,</span>
+                <span>Don't go, I beg you,</span>
+            </p>
+
+            <p>
+                <span>Ven a darle un consuelo,
+                </span>
+                <span>Come give some comfort,</span>
+            </p>
+
+            <p>
+                <span>A mi pobre corazón.
+                </span>
+                <span>To my poor heart.</span>
+            </p>
+
+            <p>
+                <span>Aunque sé que con tu embrujo,
+                </span>
+                <span>Although I know that with your spell,</span>
+            </p>
+
+            <p>
+                <span>Me haces tanto, tanto mal,
+                </span>
+                <span>You do so much, so much harm to me,</span>
+            </p>
+
+            <p>
+                <span>Para que seguir viviendo,<br>Si en el mundo voy sufriendo, [x2]
+                </span>
+                <span>Why continue living,<br>If I am suffering in the world, [x2]</span>
+            </p>
+            <p>
+                <span>Si en el mundo voy sufriendo,
+                </span>
+                <span>If I am suffering in the world,</span>
             </p>
 
             <p>
                 <span>Este terrible dolor.
                 </span>
-                <span>The charm of your eyes lulls me to sleep,</span>
+                <span>This terrible pain.</span>
             </p>
 
 
             <p>
                 <span>No me dejas alma mía,
                 </span>
-                <span>The charm of your eyes lulls me to sleep,</span>
+                <span>Don't leave me <i>chérie</i>,</span>
             </p>
 
             <p>
                 <span>No te vayas te lo ruego,
                 </span>
-                <span>The charm of your eyes lulls me to sleep,</span>
+                <span>Don't go, I beg you,</span>
             </p>
 
             <p>
                 <span>Ven a darle un consuelo,
                 </span>
-                <span>The charm of your eyes lulls me to sleep,</span>
+                <span>Come give some comfort,</span>
             </p>
 
             <p>
-                <span>Ven a darle un consuelo,
+                <span>A mi pobre corazón.
                 </span>
-                <span>The charm of your eyes lulls me to sleep,</span>
-            </p>
-
-            <p>
-                <span> A mi pobre corazón.
-                </span>
-                <span>The charm of your eyes lulls me to sleep,</span>
+                <span>To my poor heart.</span>
             </p>
 
             <p>
                 <span>Aunque sé que con tu embrujo,
-
                 </span>
-                <span>The charm of your eyes lulls me to sleep,</span>
+                <span>Although I know that with your spell,</span>
             </p>
 
             <p>
                 <span>Me haces tanto, tanto mal,
                 </span>
-                <span>The charm of your eyes lulls me to sleep,</span>
+                <span>You do so much, so much harm to me,</span>
+            </p>
+
+
+            <p>
+                <span>No me dejas alma mía,
+                </span>
+                <span>Don't leave me <i>chérie</i>,</span>
             </p>
 
             <p>
-                <span>Ven a estar siempre a mi lado, [x2]
+                <span>No te vayas te lo ruego,
                 </span>
-                <span>The charm of your eyes lulls me to sleep,</span>
+                <span>Don't go, I beg you,</span>
             </p>
 
             <p>
-                <span>Que embrujado quiero estar.
+                <span>Ven a darle un consuelo,
                 </span>
-                <span>The charm of your eyes lulls me to sleep,</span>
+                <span>Come give some comfort,</span>
             </p>
+
+            <p>
+                <span>Que embrujado quiero estar. [x3]
+                </span>
+                <span>That bewitched I want to be.</span>
+            </p>
+
+            <p>
+                <span>Ven a estar siempre a mi lado. [x3]
+                </span>
+                <span>Come always by my side.</span>
+            </p>
+
         </div>
 
-        <div class="photos">
-            <h3>Photos<i>12</i></h3>
-            <div
-                 class="main-carousel"
-                 data-flickity='{ "cellAlign": "center", "contain": true, "wrapAround": false, "imagesLoaded": true, "prevNextButtons": false, "pageDots": false}'>
+        <div id="photos">
+            <h3>Photos<i>17</i></h3>
 
-                <div
-                     class="carousel-cell">
-                    <img
-                         loading="lazy" src="images/IMG_2761.JPG"
-                         alt="Copa entre cubiertos y elementos de servicio, con flores en el fondo." />
+            <div>
+                <div class="frame">
+                    <div><img src="media/1-vs.webp" alt=""></div>
+                    <p>1-vs.jpg</p>
                 </div>
-                <div
-                     class="carousel-cell">
-                    <img
-                         loading="lazy" src="images/IMG_2765.JPG"
-                         alt="Copa entre cubiertos y elementos de servicio, con flores en el fondo." />
+                <div class="frame">
+                    <div><img src="media/vs-1.webp" alt=""></div>
+                    <p>vs-1.jpg</p>
                 </div>
-                <div
-                     class="carousel-cell">
-                    <img
-                         loading="lazy" src="images/IMG_2775.JPG"
-                         alt="Copa entre cubiertos y elementos de servicio, con flores en el fondo." />
+                <div class="frame">
+                    <div><img src="media/best-place-in-town.webp" alt=""></div>
+                    <p>best-place-in-town.jpg</p>
+                </div>
+                <div class="frame">
+                    <div><img src="media/always-styrke.webp" alt=""></div>
+                    <p>always-styrke.jpg</p>
+                </div>
+                <div class="frame">
+                    <div><img src="media/au-paradis.webp" alt=""></div>
+                    <p>au-paradis.jpg</p>
+                </div>
+                <div class="frame">
+                    <div><img src="media/best-g-in-town.webp" alt=""></div>
+                    <p>best-g's-in-town.jpg</p>
+                </div>
+                <div class="frame">
+                    <div><img src="media/best-things-to-do-in-town.webp" alt=""></div>
+                    <p>best-things-to-do-in-town.jpg</p>
+                </div>
+                <div class="frame">
+                    <div><img src="media/from-the-distance.webp" alt=""></div>
+                    <p>from-the-distance.jpg</p>
+                </div>
+                <div class="frame">
+                    <div><img src="media/growing-together-every-night.webp" alt=""></div>
+                    <p>growing-together-every-night.jpg</p>
+                </div>
+                <div class="frame">
+                    <div><img src="media/letters-&-letters.webp" alt=""></div>
+                    <p>letters-&-letters.jpg</p>
+                </div>
+                <div class="frame">
+                    <div><img src="media/mysterious-and-dark.jpeg" alt=""></div>
+                    <p>mysterious-and-dark.jpeg</p>
+                </div>
+                <div class="frame">
+                    <div><img src="media/mysterious-woman-entering-the-eiffel-bar.webp" alt=""></div>
+                    <p>mysterious-and-dark.jpeg</p>
+                </div>
+                <div class="frame">
+                    <div><img src="media/two-marguerites.webp" alt=""></div>
+                    <p>two-marguerites.jpg</p>
+                </div>
+                <div class="frame">
+                    <div><img src="media/mysterious-woman-entering-the-eiffel-bar.webp" alt=""></div>
+                    <p>mysterious-woman-entering-the-eiffel-bar.jpg</p>
+                </div>
+                <div class="frame">
+                    <div><img src="media/taking-care.webp" alt=""></div>
+                    <p>taking-care.jpg</p>
+                </div>
+                <div class="frame">
+                    <div><img src="media/taking-beer.webp" alt=""></div>
+                    <p>taking-beer.jpg</p>
+                </div>
+                <div class="frame">
+                    <div><img src="media/nice-shoes.webp" alt=""></div>
+                    <p>nice-shoes.jpg</p>
+                </div>
+                <div class="frame">
+                    <div><img src="media/tv-4-all.webp" alt=""></div>
+                    <p>tv-4-all.jpg</p>
+                </div>
+                <div class="frame">
+                    <div><img src="media/with-all-the-energy-inside.webp" alt=""></div>
+                    <p>with-all-the-energy-inside.jpg</p>
                 </div>
             </div>
         </div>
 
+        <div id="proverbs">
+            <h3>Proverbs<i>only the best</i></h3>
+            <div>
+                <span> "NO BIKE - NO LIFE"</span>
+                <button>another one</button>
+            </div>
+        </div>
 
-        <img src="images/effortcommun.png" alt="" class="effortCommun
-        ">
-        <small>EFFORT COMMUN,<br>Sonja Ferlov Mancoba<br>1982</small>
 
+        <div id="letter2">
+            <h3>Letter nº2</h3>
+            <div>
+            </div>
+
+            <div>
+                <img src="media/effort-commun-sonja-ferlov.webp" alt="" class="effortCommun">
+                <small>EFFORT COMMUN,<br>Sonja Ferlov Mancoba<br>1982</small>
+            </div>
+        </div>
+
+        <img src="media/cph-4-ever.png" alt="" style="width: 250px; transform: rotate(-2deg); margin: auto;">
 
     </div>
 
     <script>
 
-        function hideIt(element) {
-            element.classList.toggle('op0')
-        }
+
 
         function setMoon(source) {
             document.getElementById('moon').innerHTML = source;
@@ -357,7 +532,7 @@
 
     </script>
 
-    <script src="flickity.pkgd.min.js"></script>
+    <script src="assets/index.js"></script>
 
 
 </body>
