@@ -7,15 +7,20 @@ html {
 body {
     /* background-image: url(images/sky-6.jpg); */
     background-color: dodgerblue;
-    background-image: url('../media/best-place-in-town.webp');
+    background-image: url('../media/wallpaper.jpg');
     background-position: center;
     background-size: cover;
-    backdrop-filter: blur(30px);
+    /* backdrop-filter: blur(30px); */
     /* overflow: hidden; */
 }
 
+
 .pointer {
     cursor: pointer;
+}
+
+.center {
+    text-align: center;
 }
 
 a {
@@ -28,6 +33,7 @@ h1 {
     text-align: center;
     font-weight: 400;
     padding: 70px 0;
+    color: white;
 }
 
 h3 {
@@ -72,12 +78,12 @@ small {
 }
 
 .content>div {
-    margin: 0 20px 40px 20px;
+    margin: 30px 0;
     background-color: whitesmoke;
-    padding: 20px 20px 30px 20px;
-    border-radius: 4px;
+    padding: 40px 30px;
+    border-radius: 40px;
 
-    scroll-margin-top: 20px;
+    scroll-margin-top: 60px;
 
 }
 
@@ -91,7 +97,7 @@ small {
 /*********** QUESTION ************/
 .question {
     position: fixed;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     width: 100vw;
     z-index: 999;
     background-color: #161616;
@@ -190,7 +196,7 @@ iframe {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     position: relative;
-    border-radius: 8px;
+    border-radius: 20px;
     overflow: hidden;
 
     font-family: sans-serif;
@@ -267,34 +273,51 @@ iframe {
 
 .journal>div>div>p {
     padding: 10px;
+    border-top: 2px dotted gray;
+
 }
 
-/*********** EMBRUJADA ************/
-.embrujada p {
+/***********#lyrics ************/
+#lyrics p {
     display: flex;
     flex-direction: column;
     margin-bottom: 6px;
 }
 
-.embrujada>p span:nth-child(1) {}
+#lyrics>p span:nth-child(1) {}
 
 
-.embrujada>p span:nth-child(2) {
+#lyrics>p span:nth-child(2) {
     font-family: sans-serif;
     color: gray;
     font-size: 90%;
 }
 
+/*********** PROVERbs ************/
+#proverbs div {
+    height: 300px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    text-transform: full-width;
+    margin-bottom: 10px;
+
+    text-transform: full-width;
+    padding: 20px;
+    font-weight: 800;
+    border-radius: 10px;
+}
 
 
 /*********** IMAGES ************/
 #photos {
-    padding: 20px 0 0 0 !important;
+    /*! padding: 20px 0 0 0 !important; */
 }
 
-#photos h3 {
-    margin: 0 20px 0 20px;
-}
+#photos h3 {}
 
 #photos>div {
     display: grid;
@@ -316,17 +339,16 @@ iframe {
 }
 
 .frame>div {
-    border: 9px solid white;
     overflow: hidden;
-    border: 9px solid white;
+    border: 8px solid white;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-
+    height: 100%;
+    width: 80%;
 }
 
 .frame img {
-    width: 120px;
-    height: auto;
-    aspect-ratio: 4/3;
+
+
     object-fit: cover;
     object-position: center;
     filter: blur(5px);
@@ -342,7 +364,7 @@ iframe {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     padding: 20px;
     background-color: black;
     z-index: 9999;
