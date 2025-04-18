@@ -32,7 +32,7 @@ h1 {
     font-size: 1.4rem;
     text-align: center;
     font-weight: 400;
-    padding: 70px 0;
+    padding: 70px 0 50px 0;
     color: white;
 }
 
@@ -249,6 +249,8 @@ iframe {
 }
 
 
+
+
 /*********** JOURNAL ************/
 .journal>div>div {
     background-color: white;
@@ -284,6 +286,11 @@ iframe {
     margin-bottom: 6px;
 }
 
+#lyrics {
+    transition: all 1s ease-in-out;
+
+}
+
 #lyrics>p span:nth-child(1) {}
 
 
@@ -291,6 +298,12 @@ iframe {
     font-family: sans-serif;
     color: gray;
     font-size: 90%;
+}
+
+.divPlaying {
+    background-color: rgb(29, 29, 29) !important;
+    color: rgb(230, 101, 55) !important;
+    transition: all 1s ease-in-out;
 }
 
 /*********** PROVERbs ************/

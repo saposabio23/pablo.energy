@@ -141,7 +141,6 @@ PROVERBS
 const quotes = [
     '"NO BIKE - NO LIFE"',
     '"All 4 the STYRKE"',
-    '"A DAY: icecream and sunset"'
 ];
 
 let currentIndex = 0;
@@ -165,9 +164,11 @@ button.addEventListener('click', () => {
     if (isPlaying) {
         audio.pause();
         button.textContent = 'play';
+        document.getElementById('lyrics').classList.remove('divPlaying')
     } else {
         audio.play();
         button.textContent = 'pause';
+        document.getElementById('lyrics').classList.add('divPlaying')
     }
     isPlaying = !isPlaying;
 });
