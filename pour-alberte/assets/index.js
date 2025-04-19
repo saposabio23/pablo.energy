@@ -15,8 +15,6 @@ window.addEventListener("orientationchange", mobileWindow, false);
 /* -----------------------------------
 MOON
 // -------------------------------------- */
-
-
 function setMoon(source) {
     document.getElementById('moon').innerHTML = source;
 }
@@ -98,7 +96,27 @@ let launchMoon = function () {
 };
 
 launchMoon();
+const startColor = [60, 140, 203]; // #40a1ff
+const endColor = [0, 0, 80];       // #000050
+const moonElement = document.querySelector(".moon");
 
+function interpolateColor(start, end, factor) {
+    return start.map((startVal, i) =>
+        Math.round(startVal + (end[i] - startVal) * factor)
+    );
+}
+
+function updateMoonColor() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollFraction = Math.min(scrollTop / docHeight, 1);
+
+    const [r, g, b] = interpolateColor(startColor, endColor, scrollFraction);
+    moonElement.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+}
+
+window.addEventListener("scroll", updateMoonColor);
+updateMoonColor(); // call initially too
 
 
 /* -----------------------------------
@@ -114,15 +132,16 @@ function secondQuestion() {
 }
 
 function thirdQuestion() {
-    document.querySelector('.question').style.display = 'none';
-    // document.querySelector('body').style.overflow = 'scroll';
+    const el = document.querySelector('.question');
+    el.classList.add("fade-out");
+    setTimeout(() => {
+        el.style.display = 'none';
+    }, 2000); // same as fade duration
 }
 
 function badAwnser() {
     window.location.href = 'https://en.wikipedia.org/wiki/April_16';
 }
-
-
 /* -----------------------------------
 ACTIVIITIES
 // -------------------------------------- */
@@ -137,10 +156,14 @@ function hideIt(element) {
 PROVERBS
 // -------------------------------------- */
 
-// PROVERBS
 const quotes = [
     '"NO BIKE - NO LIFE"',
-    '"All 4 the STYRKE"',
+    '"Styrke, Lykke, Kærlighed"',
+];
+
+const backgroundColors = [
+    "beige", // yellow for first quote
+    "#2196F3", // blue for second quote
 ];
 
 let currentIndex = 0;
@@ -148,9 +171,8 @@ let currentIndex = 0;
 function changeQuote() {
     currentIndex = (currentIndex + 1) % quotes.length;
     document.getElementById("quote").innerText = quotes[currentIndex];
+    document.querySelector("#proverbs div").style.backgroundColor = backgroundColors[currentIndex];
 }
-
-
 /* -----------------------------------
 MUSIC
 // -------------------------------------- */
@@ -177,6 +199,7 @@ button.addEventListener('click', () => {
 audio.addEventListener('ended', () => {
     isPlaying = false;
     button.textContent = 'play';
+    document.getElementById('lyrics').classList.remove('divPlaying')
 });
 
 

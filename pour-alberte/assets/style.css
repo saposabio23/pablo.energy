@@ -6,12 +6,13 @@ html {
 
 body {
     /* background-image: url(images/sky-6.jpg); */
-    background-color: dodgerblue;
+    background: linear-gradient(180deg, #40a1ff 0%, #000050 100%);
     background-image: url('../media/wallpaper.jpg');
     background-position: center;
     background-size: cover;
     /* backdrop-filter: blur(30px); */
     /* overflow: hidden; */
+
 }
 
 
@@ -80,7 +81,7 @@ small {
 .content>div {
     margin: 30px 0;
     background-color: whitesmoke;
-    padding: 40px 30px;
+    padding: 25px 20px;
     border-radius: 40px;
 
     scroll-margin-top: 60px;
@@ -88,9 +89,10 @@ small {
 }
 
 .effortCommun {
-    height: 100px;
-    width: auto;
-    object-fit: contain;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 
@@ -102,6 +104,13 @@ small {
     z-index: 999;
     background-color: #161616;
     color: white;
+    transition: opacity 2s ease-in-out;
+
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
 }
 
 .question>div {
@@ -112,8 +121,7 @@ small {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 30px;
-    font-family: sans-serif;
+    gap: 10px;
     background-color: black;
     color: white;
 }
@@ -152,7 +160,7 @@ small {
     margin: 0 !important;
     border-radius: 0 0 20px 20px !important;
     padding: 10px !important;
-    background-color: MidnightBlue !important;
+    /* background-color: MidnightBlue !important; */
     color: white !important;
     position: sticky;
     top: 0;
@@ -172,6 +180,14 @@ small {
     color: white;
 }
 
+#letter2>div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
 
 /*********** MUSICS ************/
 .musics {
@@ -184,7 +200,7 @@ small {
 iframe {
     aspect-ratio: 1;
     border-radius: 9999px;
-    width: 80%;
+    width: 100%;
     margin: auto;
 
 }
@@ -210,16 +226,7 @@ iframe {
     height: auto;
     aspect-ratio: 3/4;
     z-index: 1;
-}
-
-.activities span:nth-child(odd):hover {
-    transform: rotate(5deg);
-    transition: all ease-in-out 0.3s;
-}
-
-.activities span:nth-child(even):hover {
-    transform: rotate(-5deg);
-    transition: all ease-in-out 0.3s;
+    transition: all 1s ease-in-out;
 }
 
 .activities>div>div {
@@ -238,6 +245,7 @@ iframe {
 
 .op0 {
     opacity: 0 !important;
+    transition: all 1s ease-in-out;
 }
 
 
@@ -245,7 +253,7 @@ iframe {
 #songs div {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 0;
+    gap: 30px;
 }
 
 
@@ -310,7 +318,7 @@ iframe {
 #proverbs div {
     height: 300px;
     width: 100%;
-    background-color: white;
+    background-color: beige;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -356,7 +364,7 @@ iframe {
     border: 8px solid white;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
     height: 100%;
-    width: 80%;
+    width: 70%;
 }
 
 .frame img {
@@ -390,6 +398,7 @@ iframe {
 
 .frame.fullscreen>div {
     height: calc(100% - 40px);
+    width: 100% !important;
     border: none;
     box-shadow: none;
     overflow: visible;
