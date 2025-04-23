@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opensheet example</title>
+
+</head>
+
+<body>
+
+    <script>
+        /*
+  The API's format is https://opensheet.elk.sh/spreadsheet_id/tab_name.
+  
+  
+  To get your spreadsheet ID, hit Share at the top-right and make sure ANYONE WITH THE LINK CAN VIEW. Then, copy the end of your URL in your address bar after docs.google.com/spreadsheets/d/...
+  
+  e.g.
+  https://docs.google.com/spreadsheets/d/1gLyh6gv41vl9H1fBmjFrGfKip9dKkvIu6o8sccTw2lY/edit#gid=1875797309
+  copy
+  "1gLyh6gv41vl9H1fBmjFrGfKip9dKkvIu6o8sccTw2lY" is your spreadsheet ID.
+  
+  We're using the 'Cloud' tab, so this is what we write...
+  Or instead, the number of the tab, so the first one 1, the second one 2, etc...
+
+*/
+
+        var ADDRESS = "1Qy6Agk-bemYc9P7IWfA5OzbsiFRLBU0yjJ5IYn_19UI/1";
+
+
+        fetch("https://opensheet.elk.sh/" + ADDRESS)
+            .then((res) => res.json())
+            .then((data) => {
+
+                // Ici on check (console.log) tout le contenu de la page du tableur:
+                console.log(data)
+
+
+                data.forEach((row) => {
+
+                    let block = document.createElement("div");
+
+                    let title = document.createElement("h3");
+                    title.innerHTML = row.Title;
+                    block.appendChild(title);
+
+                    if (row.Type == 'Text') {
+                        let text = document.createElement("p");
+                        text.innerHTML = row.Content;
+                        block.appendChild(text);
+                    }
+
+                    if (row.Type == 'Image') {
+                        const image = document.createElement("img");
+                        image.style.border = '4px solid ' + row.Color;
+                        image.style.width = '100px';
+                        image.src = convertToImageLink(row.Content);
+                        image.loading = "lazy";
+                        block.appendChild(image);
+                    }
+
+                    if (row.Type == 'Audio') {
+                        const iframe = document.createElement("iframe");
+                        iframe.width = "100%";
+                        iframe.height = "166";
+                        iframe.scrolling = "no";
+                        iframe.frameBorder = "no";
+                        iframe.allow = "autoplay";
+                        iframe.src = row.Content + '&color=%23' + row.Color + '&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false';
+                        block.appendChild(iframe)
+                    }
+
+                    document.querySelector('body').appendChild(block);
+                });
+            });
+
+
+        function convertToImageLink(link) {
+            const match = link.match(/\/d\/([^\/]+)\//);
+            if (match && match[1]) {
+                const fileId = match[1];
+                return `https://lh3.googleusercontent.com/d/${fileId}`;
+            } else {
+                return "Invalid Google Drive link";
+            }
+        }
+
+    </script>
+
+
+</body>
+
+</html>
