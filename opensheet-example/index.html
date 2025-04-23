@@ -56,12 +56,17 @@
                         const image = document.createElement("img");
                         image.style.border = '4px solid ' + row.Color;
                         image.style.width = '100px';
+
+                        // No more need to convert the image url, just to copy the shareable link for gogole drive, and the function will do that work
                         image.src = convertToImageLink(row.Content);
+
                         image.loading = "lazy";
                         block.appendChild(image);
                     }
 
                     if (row.Type == 'Audio') {
+
+                        // Taked from soundcloud, it can be done with onther services
                         const iframe = document.createElement("iframe");
                         iframe.width = "100%";
                         iframe.height = "166";
