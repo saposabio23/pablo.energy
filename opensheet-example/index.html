@@ -72,6 +72,17 @@
                         block.appendChild(iframe)
                     }
 
+                    if (row.Type == 'Download') {
+                        const button = document.createElement("button");
+                        const link = document.createElement("a");
+                        link.innerHTML = row.Title;
+                        link.href = row.Content;
+                        link.setAttribute('download', '')
+
+                        button.appendChild(link);
+                        block.appendChild(button);
+                    }
+
                     document.querySelector('body').appendChild(block);
                 });
             });
