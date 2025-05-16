@@ -20,7 +20,25 @@ window.addEventListener("orientationchange", mobileWindow, false);
 
 
 let index = 0;
-const texts = ["Ha", "Hav", "Have", "Have a", "Have a n", "Have a ni", "Have a nic", "Have a nice", "Have a nice d", "Have a nice da", "Have a nice day", "Have a nice day!", "Have a nice day!", "Have a nice day!", "Have a nice day!", "Have a nice day!", "Have a nice day!", "Have a nice day!", "Have a nice day! p", "Have a nice day! p.", "Have a nice day! p.m"];
+const texts = [
+    "Ne",
+    "New",
+    "New w",
+    "New we",
+    "New web",
+    "New webs",
+    "New websi",
+    "New websit",
+    "New website",
+    "New website s",
+    "New website so",
+    "New website soo",
+    "New website soon",
+    "New website soon!",
+    "New website soon!!",
+    "New website soon!!!",
+    "New website soon!!! 🫨"
+];
 
 // THREE DOTS
 function wip() {
@@ -35,11 +53,25 @@ function wip() {
 }
 
 
-// Example usage:
-document.querySelector("img").addEventListener("click", function () {
-    document.querySelector("img").classList.toggle('fullImg')
-});
+const nws = document.querySelector('img');
+const contactBtn = document.getElementById('contactBtn');
+const modal = document.getElementById('contactImageModal');
 
+contactBtn.addEventListener('click', e => {
+    e.preventDefault();
+    // toggle visibility
+    if (contactBtn.getAttribute('data-state') === 'close') {
+        contactBtn.setAttribute('data-state', 'open')
+        contactBtn.innerHTML = 'News';
+        nws.src = "media/contact.webp";
+        nws.alt = "Notebook page with some handwritting words."
+    } else {
+        contactBtn.setAttribute('data-state', 'close')
+        contactBtn.innerHTML = 'Contact';
+        nws.src = "media/new-website-soon.webp";
+        nws.alt = "A pink paper with early skeches from the future website."
+    }
+});
 
 
 
