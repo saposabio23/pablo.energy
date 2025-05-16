@@ -62,7 +62,7 @@ contactBtn.addEventListener('click', e => {
     // toggle visibility
     if (contactBtn.getAttribute('data-state') === 'close') {
         contactBtn.setAttribute('data-state', 'open')
-        contactBtn.innerHTML = 'News';
+        contactBtn.innerHTML = 'Activity';
         nws.src = "media/contact.webp";
         nws.alt = "Notebook page with some handwritting words."
     } else {
