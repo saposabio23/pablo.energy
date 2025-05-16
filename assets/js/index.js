@@ -37,7 +37,6 @@ const texts = [
     "New website soon!",
     "New website soon!!",
     "New website soon!!!",
-    "New website soon!!! 🫨"
 ];
 
 // THREE DOTS
