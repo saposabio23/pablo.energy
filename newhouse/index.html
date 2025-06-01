@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pablo in a new house</title>
+
+    <style>
+        body {
+            margin: 0;
+            background-color: yellowgreen;
+            padding: 16px;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding-bottom: 90px;
+            max-width: 400px;
+            margin: auto;
+            /* font-size: 16px; */
+        }
+
+        h1 {
+            margin: 0;
+            font-weight: 400;
+        }
+
+        p {
+            margin: 0;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        sup {
+            font-size: 60%;
+        }
+
+        /*------------ LIST ------------*/
+        details {
+            background-color: gainsboro;
+            border-radius: 12px;
+        }
+
+        details:hover {
+            /* background-color: rgb(205, 205, 205); */
+        }
+
+        details div {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            padding: 0px 16px 16px 16px;
+        }
+
+        details p {
+            margin: 0;
+            background-color: rgba(0, 0, 0, 0.1);
+            padding: 12px;
+            border-radius: 12px;
+            width: 100%;
+        }
+
+        details img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        details>summary {
+            list-style-type: '';
+            padding: 16px;
+            /* font-style: italic; */
+            cursor: pointer;
+        }
+
+        details[open]>summary {
+            list-style-type: '';
+        }
+
+
+        /*------------ CONTACT ------------*/
+
+        .contact {
+            width: 100%;
+            display: flex;
+            gap: 10px;
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            padding: 14px;
+            box-sizing: border-box;
+            background-color: yellowgreen;
+            max-width: 400px;
+            margin: auto;
+            box-sizing: border-box;
+        }
+
+        .contact a {
+            background-color: gainsboro;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            width: 100%;
+            padding: 0;
+            border-radius: 10px;
+            color: black;
+            text-decoration: none;
+            width: 100%;
+            padding: 12px;
+            box-sizing: border-box;
+            text-align: center;
+            /* font-size: 80%; */
+        }
+
+        .contact a:hover {
+            cursor: pointer;
+            background-color: rgb(205, 205, 205);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Pablo in a new house</h1>
+    <p>I'm looking for my next place to live and enjoy Amsterdam. Starting 1<sup>st</sup> of July (or around) for some
+        time (a year?). Living alone,
+        I want to
+        find
+        a place with other people, to share an enjoy all that a house contains (space, meals, laughts, movies,
+        cakes,etc.) for that, I made this website where you can know more about myself and my way of being. here the
+        list (can be extended on demand):
+    </p>
+
+    <div class="contact">
+        <a onclick="alert('Signal + Whatsapp: +34 679 79 75 73 | Call +31 6 13 38 11 41')">Phone</a>
+        <a href="https://www.instagram.com/sagesseastrale23/">Instagram</a>
+    </div>
+
+    <!-- <details>
+        <summary>Pablo in XXX</summary>
+        <div>YYYYY</div>
+    </details> -->
+
+    <details>
+        <summary>Pablo in one word</summary>
+        <div>
+            <span>⤷</span>
+            <p>Energy</p>
+        </div>
+    </details>
+    <details>
+        <summary>Pablo in one line</summary>
+        <div>
+            <span>⤷</span>
+            <p>Young creative, who likes be active, meet and enjoy with people.</p>
+        </div>
+    </details>
+    <details>
+        <summary>Pablo in a proverb</summary>
+        <div>
+            <span>⤷</span>
+            <p>"poco plato, mucho trato, y darle suela al zapato"</p>
+        </div>
+    </details>
+    <details>
+        <summary>Pablo in on album name</summary>
+        <div>
+            <span>⤷</span>
+            <p><a
+                   href="https://www.youtube.com/watch?v=BJObU6hn81o&list=PLxA687tYuMWi4Q6VQX5e-RkyyNNV9YoyZ">LIVE.LOVE.A$AP</a>
+            </p>
+        </div>
+    </details>
+    <details>
+        <summary>Pablo in one image</summary>
+        <div>
+            <span>⤷</span>
+            <p><img src="image.webp" alt="">
+            </p>
+        </div>
+    </details>
+
+
+</body>
+
+</html>
