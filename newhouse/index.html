@@ -25,6 +25,9 @@
         h1 {
             margin: 0;
             font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            line-height: 90%;
         }
 
         p {
@@ -62,8 +65,7 @@
             padding: 16px;
             border-radius: 12px;
             width: 100%;
-            background-color: rgb(109, 10, 255);
-            color: white;
+            background-color: rgb(155, 155, 155);
         }
 
         details img {
@@ -89,11 +91,7 @@
             width: 100%;
             display: flex;
             gap: 10px;
-            position: fixed;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: 0;
-            padding: 20px;
+            /* padding: 20px; */
             box-sizing: border-box;
             background-color: yellowgreen;
             max-width: 500px;
@@ -102,15 +100,15 @@
         }
 
         .contact a {
-            background-color: gainsboro;
+
             border: 1px solid rgba(0, 0, 0, 0.2);
             width: 100%;
             padding: 0;
-            border-radius: 10px;
+            border-radius: 6px;
             color: black;
             text-decoration: none;
             width: 100%;
-            padding: 12px;
+            padding: 2px 12px;
             box-sizing: border-box;
             text-align: center;
             /* font-size: 80%; */
@@ -125,7 +123,12 @@
 
 <body>
 
+
     <h1>Pablo in a new house</h1>
+    <div class="contact">
+        <a onclick="alert('Signal + Whatsapp: +34 679 79 75 73 | Call +31 6 13 38 11 41')">Phone</a>
+        <a href="https://www.instagram.com/sagesseastrale23/">Instagram</a>
+    </div>
     <p>I'm looking for my next place to live and enjoy Amsterdam. Starting 1<sup>st</sup> of July (or around) for some
         time (a year?). Living alone,
         I want to
@@ -135,10 +138,7 @@
         list (can be extended on demand):
     </p>
 
-    <div class="contact">
-        <a onclick="alert('Signal + Whatsapp: +34 679 79 75 73 | Call +31 6 13 38 11 41')">Phone</a>
-        <a href="https://www.instagram.com/sagesseastrale23/">Instagram</a>
-    </div>
+
 
     <!-- <details>
         <summary>Pablo in XXX</summary>
