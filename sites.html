@@ -36,30 +36,81 @@
             color: inherit;
         }
 
-        div {
-            display: grid;
+        /* TABLE */
+
+        table,
+        th,
+        td {
+            border: none;
+            border-collapse: collapse;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        tr {
             padding: 0 10px;
-            grid-template-columns: auto 1fr 1fr;
-            gap: 10px;
-            /* background-color: blue; */
             transition: all .3s ease-in-out;
         }
 
-        div:nth-child(odd) {
+        tr:nth-child(odd) {
             /* background-color: red; */
         }
 
-        div:hover {
+        tr:hover {
             cursor: pointer;
             background-color: black;
             color: white;
             transition: all 0s ease-in-out;
+        }
+
+        .year2019:hover {
+            background-color: blueviolet;
+        }
+
+        .year2020:hover {
+            background-color: brown;
+        }
+
+        .year2021:hover {
+            background-color: rosybrown;
+        }
+
+        .year2022:hover {
+            background-color: red;
+        }
+
+
+        /* HOVER SHOWS URL */
+        .url {
+            opacity: 0;
+        }
+
+        tr:hover .url {
+            opacity: 1;
+        }
+
+        /* STATE OF THE SITE */
+        .public {}
+
+        .private {
+            opacity: .5;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* FAVICON IMAGE */
+        img {
+            height: 20px;
+            border-radius: 100%;
         }
     </style>
 </head>
 
 <body>
 
+    <table></table>
 
     <script src="assets/js/sites.js"></script>
 
