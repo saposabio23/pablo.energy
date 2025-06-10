@@ -27,11 +27,11 @@ fetch("https://opensheet.elk.sh/" + ADDRESS)
                 fullRow.classList.add('hidden')
             }
 
-            let faviconCell = document.createElement("td");
-            let favicon = document.createElement("img");
-            favicon.src = "https://www.google.com/s2/favicons?domain=" + row.URL.replace(/^https?:\/\//, "") + "&sz=64";
-            faviconCell.appendChild(favicon);
-            fullRow.appendChild(faviconCell);
+            // let faviconCell = document.createElement("td");
+            // let favicon = document.createElement("img");
+            // favicon.src = "https://www.google.com/s2/favicons?domain=" + row.URL.replace(/^https?:\/\//, "") + "&sz=64";
+            // faviconCell.appendChild(favicon);
+            // fullRow.appendChild(faviconCell);
 
             let dateCell = document.createElement("td");
             let date = document.createElement("span");
