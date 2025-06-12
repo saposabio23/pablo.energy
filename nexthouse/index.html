@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pablo and the next house</title>
+    <link id="dynamic-favicon" rel="icon" href="">
+
+    <style>
+        :root {
+            --grey: #dcdcdc;
+            --green: #ABF35F;
+            --blue: #31AEF8;
+            --purple: #8E67D4;
+            --red: #C53747;
+            --yellow: #FFE643;
+            --orange: #FF7D3B;
+
+        }
+
+        body {
+            margin: 0;
+            font-size: 20px;
+            font-family: sans-serif;
+            padding: 24px 20px;
+            box-sizing: border-box;
+            background-color: #dcdcdc;
+            width: 100%;
+            overflow: hidden;
+
+            letter-spacing: -.8px;
+        }
+
+        h1 {
+            margin: 0;
+            font-weight: 400;
+            line-height: 90%;
+            font-size: 30px;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .enter {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            padding: 24px 20px;
+            box-sizing: border-box;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #ffffff21;
+            filter: blur;
+            backdrop-filter: blur(8px);
+            height: 100%;
+            justify-content: end;
+            border-radius: 0 0 14px 14px;
+        }
+
+        .enterOut {
+            transform: translateY(-100%);
+            transition: all 1s cubic-bezier(0.55, 0, 0, 1);
+        }
+
+        input {
+            font-size: 20px;
+            border: none;
+            background-color: inherit;
+            border-bottom: 1px solid black;
+            padding: 10px 0;
+        }
+
+        button {
+            font-size: 20px;
+            width: fit-content;
+            border: none;
+            padding: 8px 10px;
+            border-radius: 10px;
+            margin-top: 10px;
+            background-color: #c5c5c5;
+        }
+
+        .message {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="enter">
+        <p>Write down the house color:</p>
+        <form name="form">
+            <input type='text' name='texte' onkeypress="keyEnter(event)" />
+            <input name="submit" style="display: none;" />
+        </form>
+        <button onclick="clickPress()">enter!</button>
+    </div>
+    <div class="message">
+        <h1>Pablo and the next house</h1>
+        <span>Hoi, welcome!!</span>
+        <p>The site is almost ready, will be release a$ap!</p>
+        <p>thanks for visiting,<br>pablo</p>
+    </div>
+
+
+
+    <script>
+        /* --------------PASSW------------- */
+        function keyEnter() {
+            if (event.key == "Enter") {
+                clickPress()
+            }
+        }
+        function clickPress() {
+            var green = "green";
+            var blue = "blue";
+            var purple = "purple";
+            var violet = "violet";
+            var red = "red";
+            var yellow = "yellow";
+            var orange = "orange";
+            if (document.form.texte.value.match(green)) {
+                welcome('--green');
+            }
+            else if (document.form.texte.value.match(blue)) {
+                welcome('--blue');
+            }
+            else if (document.form.texte.value.match(purple)) {
+                welcome('--purple');
+            }
+            else if (document.form.texte.value.match(violet)) {
+                welcome('--purple');
+            }
+            else if (document.form.texte.value.match(red)) {
+                welcome('--red');
+            }
+            else if (document.form.texte.value.match(yellow)) {
+                welcome('--yellow');
+            }
+            else if (document.form.texte.value.match(orange)) {
+                welcome('--orange');
+            }
+            else {
+                alert('look closer!')
+            }
+
+            function welcome(color) {
+                setFaviconFromCSSVar(color);
+                document.querySelector('body').style.backgroundColor = 'var(' + color + ')';
+                document.querySelector('.enter').classList.add('enterOut')
+            }
+        }
+
+
+        function setFaviconFromCSSVar(cssVarName) {
+            const rootStyles = getComputedStyle(document.documentElement);
+            const color = rootStyles.getPropertyValue(cssVarName).trim();
+            setFaviconColor(color);
+        }
+
+        function setFaviconColor(color) {
+            const svg = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+        <rect width="32" height="32" rx="4" fill="${color}" />
+      </svg>`;
+            const url = "data:image/svg+xml," + encodeURIComponent(svg.trim());
+            document.getElementById("dynamic-favicon").href = url;
+        }
+
+        setFaviconFromCSSVar('--grey');
+    </script>
+
+</body>
+
+</html>
