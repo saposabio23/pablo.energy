@@ -287,7 +287,24 @@
         "month": "April 25",
         "cities": [
             "Amsterdam",
-            "Copenhagen"
+            "Copenhagen",
+            "Nancy",
+            "Amiens",
+            "Paris"
+        ]
+    },
+    {
+        "month": "Mai 25",
+        "cities": [
+            "Amsterdam",
+            "Rotterdam"
+        ]
+    },
+    {
+        "month": "June 25",
+        "cities": [
+            "Amsterdam",
+            "Rotterdam"
         ]
     }
 ]
