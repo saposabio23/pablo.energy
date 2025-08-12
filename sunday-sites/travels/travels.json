@@ -306,5 +306,12 @@
             "Amsterdam",
             "Rotterdam"
         ]
+    },
+    {
+        "month": "July 25",
+        "cities": [
+            "Amsterdam",
+            "Rotter                                                                           dam"
+        ]
     }
 ]

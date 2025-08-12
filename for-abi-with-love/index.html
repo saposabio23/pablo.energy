@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for Abi with Love</title>
+
+    <style>
+        body {
+            background-color: white;
+            margin: 0;
+            padding: 50px 0px;
+            font-size: large;
+            line-height: 1.4;
+        }
+
+        .map {
+            position: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh !important;
+            width: 100vw !important;
+            object-fit: cover;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            filter: blur(10px);
+            transition: all .5s ease-in-out;
+        }
+
+        .nobody {
+            filter: blur(10px);
+            opacity: 0.3 !important;
+            transition: all .5s ease-in-out;
+        }
+
+        .nomap {
+            filter: blur(0) !important;
+            transition: all .5s ease-in-out;
+        }
+
+        div {
+            margin: auto;
+            box-sizing: border-box;
+            width: 90%;
+            max-width: 520px;
+            background-color: whitesmoke;
+            padding: 50px 50px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            transition: all .5s ease-in-out;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: large;
+
+        }
+
+        p {
+            margin: 0;
+            text-indent: 20px;
+        }
+
+        p:nth-child(1),
+        p:nth-child(2) {
+            text-indent: 0;
+        }
+
+        span {
+            font-size: 2rem;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        #calder {
+            filter: blur(2px);
+            transition: all .5s ease-in-out;
+        }
+
+        #calder:hover {
+            filter: blur(00px);
+            transition: all .5s ease-in-out;
+        }
+
+        .fullscreen {
+            position: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh !important;
+            width: 100vw !important;
+            top: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.9) !important;
+            padding: 80px;
+            z-index: 999;
+            border-radius: 0 !important;
+            aspect-ratio: unset !important;
+            box-sizing: border-box;
+        }
+
+        @media screen and (max-width: 900px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            div {
+                padding: 30px 30px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <h1>Dear Abigdail,</h1>
+
+        <p><span>I</span> hope this gift arrives well and on time to Albany. I have so much memories from there, the
+            iceacreams in
+            the
+            entrance of Middleburgh to the swimming pool with Stella or the travel to Washington. A lot of water flowed
+            under the bridge (a spanish expresison to say that a lot of things (the water) passed(!) since then (the
+            bridge)) and now you are building a new bridge! I didn't ask too much about your partner, but knowing you,
+            I'm
+            sure it will be a sweet alliance with sincere(!) love.</p>
+
+        <p><span>R</span>ecently I saw a picture of your father Wes, looking(!) at you on your future weeding dress,
+            (invevitablemente)
+            droping a tear. It's very beautiful to see that this (aconcimiento) will make Annette and Wes so happy and
+            proud
+            of you. As I am. I think we are around the same age but you are already dealing with the next step in life,
+            setting(!) the pilars to build a family, so special. I hope you will have a very nice time during this
+            weeding,
+            meanwhile(!) we think about the ones who are not with us anymore but would wish the same, and that this
+            togetherness will last and be filled of love as your parents are doing.</p>
+
+        <p><span>A</span>bout the shinny orange box. It comes from Mosel, a store in Bilbao where my parents bought over
+            the years
+            beautiful objects for our house. I found this object(!) very expressive and playfull, two qualities that I
+            enjoy
+            (que je chérit), and that I also wish your alliance to have. Enjoy assembling it, here a picture <img
+                 style="height: 20px; display: inline; width: auto; background-color: gray; border-radius: 6px;  cursor: pointer;"
+                 src="calder.webp" onclick="fullscreen()" id="calder"
+                 alt="">, and hoping that it will find a nice spot somewhere next to you Abi.
+        </p>
+
+        <p><span>I</span>'m finishing this lines in the airport waiting for my flight back to Amsterdam. A lot of hugs,
+            luck and
+            passion(!) for the next hundred years.</p>
+
+        <img src="sm-signature.webp" alt="Handwritten text 'with love from spain' by Pablo">
+
+
+    </div>
+
+    <img src=" map.png" alt="" class="map">
+
+    <script>
+        function fullscreen() {
+            document.getElementById('calder').classList.toggle('fullscreen')
+        }
+
+        document.querySelector('body > div').addEventListener('mouseenter', e => {
+            document.querySelector('body div').classList.remove('nobody')
+            document.querySelector('.map').classList.remove('nomap')
+        });
+
+
+        document.querySelector('body > div').addEventListener('mouseleave', e => {
+            document.querySelector('body div').classList.add('nobody')
+            document.querySelector('.map').classList.add('nomap')
+        });
+
+
+    </script>
+
+</body>
+
+</html>
