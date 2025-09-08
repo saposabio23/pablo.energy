@@ -311,7 +311,20 @@
         "month": "July 25",
         "cities": [
             "Amsterdam",
-            "Rotter                                                                           dam"
+            "Rotterdam"
+        ]
+    },
+    {
+        "month": "August 25",
+        "cities": [
+            "Amsterdam",
+            "Paris",
+            "Bilbao",
+            "Elantxobe",
+            "Barcelona",
+            "La Masía",
+            "Castelfollit",
+            "La Toscana",
         ]
     }
 ]
