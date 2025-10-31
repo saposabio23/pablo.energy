@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remote</title>
+    <title>pablo remote</title>
 
     <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
@@ -48,7 +48,7 @@
             z-index: 99;
             padding: 18px;
             text-shadow: 0 0 20px rgba(0, 0, 0, 0.428);
-            font-size: 0.9rem;
+
         }
 
 
@@ -76,7 +76,8 @@
 
         }
 
-        .icons div:hover {
+        .icons div:hover,
+        .status div:hover {
             opacity: .7;
             cursor: not-allowed;
         }
@@ -99,7 +100,7 @@
         }
 
         .status img {
-            height: 18px;
+            height: 20px;
         }
 
         video {
@@ -124,7 +125,8 @@
 <body>
 
     <div class="video">
-        <video id="randomVideo" width="320" height="240" autoplay loop playsinline muted>
+        <video id="randomVideo" width="320" height="240" autoplay loop playsinline muted disablePictureInPicture
+               controlsList="nodownload">
             <source src="call.mp4" type='video/mp4'>
         </video>
         <span>Pablito</span>
@@ -189,12 +191,12 @@
 
         // Redirect when clicking on #dial
         document.getElementById('dial').addEventListener('click', () => {
-            window.location.href = 'https://google.com'; // ← replace with your link
+            window.location.href = 'https://haveagood.today/';
         });
 
         // Show alert when clicking on #info
         document.getElementById('info').addEventListener('click', () => {
-            alert('Thanks !'); // ← customize your message
+            alert('Thanks Analogue 🔵 friends!');
         });
 
 
