@@ -174,19 +174,26 @@
             });
         }
 
-        const video = document.getElementById('randomVideo');
+        window.addEventListener('DOMContentLoaded', () => {
+            const video = document.getElementById('randomVideo');
 
-        // wait until the metadata is loaded so we know the video duration
-        video.addEventListener('loadedmetadata', () => {
-            setInterval(() => {
-                const duration = video.duration;
-                if (!isNaN(duration) && duration > 0) {
-                    // pick a random time between 0 and duration
-                    const randomTime = Math.random() * duration;
-                    video.currentTime = randomTime;
-                    console.log(`Jumped to ${randomTime.toFixed(1)}s`);
-                }
-            }, 30000); // 40,000 ms = 40 seconds
+            // Wait until metadata is loaded (so we know the duration)
+            video.addEventListener('loadedmetadata', () => {
+                const jumpVideo = () => {
+                    const duration = video.duration;
+                    if (!isNaN(duration) && duration > 0) {
+                        const randomTime = Math.random() * duration;
+                        video.currentTime = randomTime;
+                        console.log(`Jumped to ${randomTime.toFixed(1)}s`);
+                    }
+                };
+
+                // Jump immediately once loaded
+                jumpVideo();
+
+                // Then jump every 40 seconds
+                setInterval(jumpVideo, 40000);
+            });
         });
 
         // Redirect when clicking on #dial
