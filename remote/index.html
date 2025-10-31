@@ -4,10 +4,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Remote</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Remote gift" />
+    <link rel="manifest" href="site.webmanifest" />
+
     <link href="https://fonts.cdnfonts.com/css/product-sans" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #131314;
+            height: 100vh;
+            width: 100vw;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 25px 25px 0 25px;
+            display: flex;
+            flex-direction: column;
+            font-family: sans-serif;
+            color: white;
+
+            font-family: 'Product Sans', sans-serif;
+            overflow: hidden;
+
+        }
+
+        .video {
+            height: 100%;
+            background-color: blue;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .video span {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 99;
+            padding: 18px;
+            text-shadow: 0 0 20px rgba(0, 0, 0, 0.428);
+            font-size: 0.9rem;
+        }
+
+
+        .infos {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            padding: 26px;
+            box-sizing: border-box;
+            align-items: center;
+            align-content: center;
+        }
+
+
+        .infos>div {
+            display: flex;
+            height: fit-content;
+            gap: 6px;
+            position: relative;
+            align-items: center;
+        }
+
+        .icons div {
+            height: 100%;
+
+        }
+
+        .icons div:hover {
+            opacity: .7;
+            cursor: not-allowed;
+        }
+
+        .icons img {
+            height: 50px;
+        }
+
+
+        #dial:hover,
+        #info:hover {
+            cursor: pointer !important;
+            opacity: .7;
+
+        }
+
+
+        .status {
+            gap: 18px !important;
+        }
+
+        .status img {
+            height: 18px;
+        }
+
+        video {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+
+        @media (max-width: 700px) {
+            .status div:not(#info) {
+                display: none;
+            }
+
+            .icons div:not(#dial) {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -34,10 +145,10 @@
             <div id="dial"><img src="icons/icon7.svg" alt=""></div>
         </div>
         <div class="status">
-            <div id="info"><img src="icons/side1.svg" alt=""></div>
             <div><img src="icons/side2.svg" alt=""></div>
             <div><img src="icons/side3.svg" alt=""></div>
             <div><img src="icons/side4.svg" alt=""></div>
+            <div id="info"><img src="icons/side1.svg" alt=""></div>
         </div>
     </div>
 
@@ -83,7 +194,7 @@
 
         // Show alert when clicking on #info
         document.getElementById('info').addEventListener('click', () => {
-            alert('Information: coming soon!'); // ← customize your message
+            alert('Thanks !'); // ← customize your message
         });
 
 

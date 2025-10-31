@@ -68,8 +68,11 @@ body {
 }
 
 
-#dial:hover {
+#dial:hover,
+#info:hover {
     cursor: pointer !important;
+    opacity: .7;
+
 }
 
 
