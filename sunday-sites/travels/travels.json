@@ -326,5 +326,12 @@
             "Castelfollit",
             "La Toscana",
         ]
+    },
+    {
+        "month": "September 25",
+        "cities": [
+            "Amsterdam",
+            "Rotterdam"
+        ]
     }
 ]

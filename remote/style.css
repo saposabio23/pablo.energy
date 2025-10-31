@@ -1,0 +1,99 @@
+body {
+    background-color: #131314;
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 25px 25px 0 25px;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    color: white;
+
+    font-family: 'Product Sans', sans-serif;
+    overflow: hidden;
+
+}
+
+.video {
+    height: 100%;
+    background-color: blue;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.video span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+    padding: 18px;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.428);
+    font-size: 0.9rem;
+}
+
+
+.infos {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 26px;
+    box-sizing: border-box;
+    align-items: center;
+    align-content: center;
+}
+
+
+.infos>div {
+    display: flex;
+    height: fit-content;
+    gap: 6px;
+    position: relative;
+    align-items: center;
+}
+
+.icons div {
+    height: 100%;
+
+}
+
+.icons div:hover {
+    opacity: .7;
+    cursor: not-allowed;
+}
+
+.icons img {
+    height: 50px;
+}
+
+
+#dial:hover {
+    cursor: pointer !important;
+}
+
+
+.status {
+    gap: 18px !important;
+}
+
+.status img {
+    height: 18px;
+}
+
+video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+@media (max-width: 700px) {
+    .status div:not(#info) {
+        display: none;
+    }
+
+    .icons div:not(#dial) {
+        display: none;
+    }
+}

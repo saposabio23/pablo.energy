@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.cdnfonts.com/css/product-sans" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="video">
+        <video id="randomVideo" width="320" height="240" autoplay loop playsinline muted>
+            <source src="call.mp4" type='video/mp4'>
+        </video>
+        <span>Pablito</span>
+    </div>
+
+    <div class=" infos">
+        <div>
+            <span id="clock"></span>
+            <span>⎟ Analogue</span>
+        </div>
+        <div class="icons">
+            <div><img src="icons/icon1.svg" alt=""></div>
+            <div><img src="icons/icon2.svg" alt=""></div>
+            <div><img src="icons/icon3.svg" alt=""></div>
+            <div><img src="icons/icon4.svg" alt=""></div>
+            <div><img src="icons/icon5.svg" alt=""></div>
+            <div><img src="icons/icon6.svg" alt=""></div>
+            <div id="dial"><img src="icons/icon7.svg" alt=""></div>
+        </div>
+        <div class="status">
+            <div id="info"><img src="icons/side1.svg" alt=""></div>
+            <div><img src="icons/side2.svg" alt=""></div>
+            <div><img src="icons/side3.svg" alt=""></div>
+            <div><img src="icons/side4.svg" alt=""></div>
+        </div>
+    </div>
+
+    <span id="clock"></span>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}`;
+        }
+
+        // initial call + update every second
+        updateClock();
+        setInterval(updateClock, 1000);
+
+        function enableClickToClose() {
+            window.addEventListener('click', () => {
+                window.close();
+            });
+        }
+
+        const video = document.getElementById('randomVideo');
+
+        // wait until the metadata is loaded so we know the video duration
+        video.addEventListener('loadedmetadata', () => {
+            setInterval(() => {
+                const duration = video.duration;
+                if (!isNaN(duration) && duration > 0) {
+                    // pick a random time between 0 and duration
+                    const randomTime = Math.random() * duration;
+                    video.currentTime = randomTime;
+                    console.log(`Jumped to ${randomTime.toFixed(1)}s`);
+                }
+            }, 30000); // 40,000 ms = 40 seconds
+        });
+
+        // Redirect when clicking on #dial
+        document.getElementById('dial').addEventListener('click', () => {
+            window.location.href = 'https://google.com'; // ← replace with your link
+        });
+
+        // Show alert when clicking on #info
+        document.getElementById('info').addEventListener('click', () => {
+            alert('Information: coming soon!'); // ← customize your message
+        });
+
+
+    </script>
+
+</body>
+
+</html>

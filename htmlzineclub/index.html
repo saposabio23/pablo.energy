@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htmlzine club</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            cursor: url("eyes.png") 30 30, auto !important;
+        }
+
+
+        h1 {
+            font-weight: 200;
+            letter-spacing: -10px;
+            padding-top: 40px;
+
+            height: fit-content;
+            position: relative;
+            margin: auto;
+            width: fit-content;
+            display: flex;
+
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        h1 span {
+            background-color: white;
+            padding: 16px;
+            border-radius: 999px;
+
+        }
+
+        h1 .dog1:hover {
+            cursor: url("dog1.png") 30 30, auto !important;
+        }
+
+        h1 .dog2:hover {
+            cursor: url("dog2.png") 30 30, auto !important;
+        }
+
+        /*********** SCREEN ***********/
+        .first {
+            height: 100vh;
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .second {
+            height: fit-content;
+            padding: 80px;
+
+        }
+
+        .all {
+            height: 100%;
+            width: 100%;
+
+            position: relative;
+        }
+
+        /*********** TABLE ***********/
+
+        #table {
+            height: 370px;
+            width: 600px;
+            max-width: 90%;
+            background-color: peru;
+
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+
+            border-radius: 8px 4px;
+            border: 1px solid hsla(0, 0%, 0%, 30%);
+        }
+
+        #table hr {
+            width: 1px;
+            height: 100%;
+            position: absolute;
+            padding: 0;
+            margin: 0;
+            border: none;
+            background-color: black;
+            opacity: .2;
+        }
+
+        #table hr:nth-child(1) {
+            left: 33%;
+        }
+
+        #table hr:nth-child(2) {
+            right: 33%;
+        }
+
+        #chair1 {
+            height: 60px;
+            width: 80px;
+            background-color: #4dd2fa;
+            position: absolute;
+            top: 13%;
+            left: 30%;
+            transform: translate(-50%, -50%) rotate(-5deg);
+            border-top: 8px solid white;
+        }
+
+        #chair1 {
+            height: 80px;
+            width: 110px;
+            background-color: SkyBlue;
+            position: absolute;
+            border-radius: 0 0 6px 6px;
+            top: 13%;
+            left: 20%;
+            transform: translate(-50%, -50%) rotate(-15deg);
+        }
+
+        #chair2 {
+            height: 80px;
+            width: 110px;
+            background-color: yellowgreen;
+            position: absolute;
+            border-radius: 10px 10px 0 0;
+            top: 88%;
+            left: 20%;
+            transform: translate(-50%, -50%) rotate(12deg);
+            border-bottom: 8px solid white;
+        }
+
+        #chair2 {
+            height: 80px;
+            width: 110px;
+            background-color: yellowgreen;
+            position: absolute;
+            top: 88%;
+            left: 20%;
+            transform: translate(-50%, -50%) rotate(12deg);
+            border-bottom: 8px solid white;
+        }
+
+        #chair3 {
+            height: 80px;
+            width: 100px;
+            background-color: transparent;
+            position: absolute;
+            top: 87%;
+            left: 65%;
+            transform: translate(-50%, -50%) rotate(-8deg);
+            border-bottom: 8px solid gray;
+        }
+
+        #chair4 {
+            height: 80px;
+            width: 100px;
+            background-color: transparent;
+            position: absolute;
+            top: 13%;
+            left: 75%;
+            transform: translate(-50%, -50%) rotate(-168deg);
+            border-bottom: 8px solid gray;
+        }
+
+        #chair3 div:nth-child(1),
+        #chair4 div:nth-child(1) {
+            position: absolute;
+            background-color: Silver;
+            top: 0;
+            height: 16px;
+            width: 100%;
+        }
+
+        #chair3 div:nth-child(2),
+        #chair4 div:nth-child(2) {
+            position: absolute;
+            background-color: Silver;
+            top: 33%;
+            height: 16px;
+            width: 100%;
+        }
+
+        #chair3 div:nth-child(3),
+        #chair4 div:nth-child(3) {
+            position: absolute;
+            background-color: Silver;
+            top: 66%;
+            height: 16px;
+            width: 100%;
+        }
+
+        #chair5 {
+            height: 100px;
+            width: 110px;
+            background-color: gold;
+            position: absolute;
+            top: 13%;
+            left: 51%;
+            transform: translate(-50%, -50%) rotate(-187deg);
+            border-bottom: 8px solid yellow;
+            border-radius: 8px 8px 10px 10px;
+        }
+    </style>
+
+
+</head>
+
+<body style="background-color: #f6ef7a; font-family: Arial, Helvetica, sans-serif;">
+
+
+    <div class="first">
+        <h1>
+            <div class="dog1">
+                <span style="color: gold;">H</span>
+                <span style="color: orange;">T</span>
+                <span style="color: hotpink;">M</span>
+                <span style="color: orchid;">L</span>
+                <span style="color: deepskyblue;">Z</span>
+                <span style="color: limegreen;">I</span>
+                <span style="color: gold;">N</span>
+                <span style="color: orange;">E</span>
+            </div>
+            <span style="background-color: transparent;"></span>
+            <div class="dog2">
+                <span style="color: hotpink;">C</span>
+                <span style="color: orchid;">L</span>
+                <span style="color: deepskyblue;">U</span>
+                <span style="color: limegreen;">B</span>
+            </div>
+        </h1>
+
+        <div class="all">
+            <div id="table">
+                <hr>
+                <hr>
+            </div>
+
+            <div id="chair1"></div>
+            <div id="chair2"></div>
+            <div id="chair3">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div id="chair4">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div id="chair5"></div>
+        </div>
+    </div>
+
+    <div class="second">
+        <H2>Today at the HTMLZine Club..</H2>
+    </div>
+
+
+</body>
+
+</html>
