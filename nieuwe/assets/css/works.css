@@ -1,0 +1,38 @@
+@import url(reset.css);
+@import url(variables.css);
+
+.nav__list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.nav__title--primary {
+    display: inline-block;
+    transform: translateY(0);
+    transition: transform .3s cubic-bezier(0.60, 0, 0, 1);
+    will-change: transform;
+}
+
+.nav__title {
+    color: var(--menu-off);
+}
+
+.nav__list--secondary:hover .nav__title--on {
+    color: var(--menu-off);
+}
+
+.nav__list--secondary .nav__title--on:hover {
+    color: var(--menu-on);
+}
+
+.nav__title--on {
+    color: var(--menu-on);
+    transition: var(--slow);
+}
+
+.nav__title:hover {
+    color: var(--menu-on);
+    cursor: pointer;
+    transition: var(--fast);
+}

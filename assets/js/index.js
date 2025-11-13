@@ -21,7 +21,7 @@ window.addEventListener("orientationchange", mobileWindow, false);
 
 let index = 0;
 const texts = [
-    "Ne🫨",
+    "Pablo working hard on pablo.energy",
     "New🫨",
     "New w🫨",
     "New we🫨",

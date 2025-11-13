@@ -32,33 +32,15 @@
 <body>
 
     <div class="text">
-        <span id="pm">Pablo Moreno </span>
-        <span>
-            <span id="yearsAge" style="opacity: .6;"></span> <span style="opacity: .6;">years and </span><span
-                  id="daysAge" style="opacity: .6;"></span> <span style="opacity: .6;">days on </span> 🌍</span></span>
-        <a id="contactBtn" style="opacity: .4;" data-state="close">Contact</a>
+        <span>Pablo working hard on </span><a href="https://pablo.energy"
+           style="color: yellow;">pablo.energy</a>
+        <span style="opacity: .6;"><br>(new website soon)!</span>
     </div>
 
-    <img src="media/new-website-soon.webp" class="nws"
-         alt="A pink paper with early skeches from the future website.">
-
-
-    <script>
-        function ageOfPablo() {
-            const startDate = new Date(1998, 5, 6); // May 30, 1998
-            const now = new Date();
-
-            const elapsedMilliseconds = now - startDate;
-            const totalDays = Math.floor(elapsedMilliseconds / (1000 * 60 * 60 * 24)); // Convert ms to days
-
-            const years = Math.floor(totalDays / 365.25); // Calculate total years
-            const daysInCurrentYear = totalDays % 365; // Remaining days in the current year
-
-            document.getElementById('yearsAge').textContent = years;
-            document.getElementById('daysAge').textContent = daysInCurrentYear;
-        }
-        ageOfPablo()
-    </script>
+    <video id="randomVideo" width="320" height="240" autoplay loop playsinline muted disablePictureInPicture
+           controlsList="nodownload">
+        <source src="media/working.mp4" type='video/mp4'>
+    </video>
 
     <script src="assets/js/index.js"></script>
 </body>

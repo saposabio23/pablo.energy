@@ -1,0 +1,2 @@
+TODO:
+[ ] sun changes on day progress
