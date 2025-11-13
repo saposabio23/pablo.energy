@@ -53,27 +53,27 @@ function wip() {
 }
 
 
-const nws = document.querySelector('img');
-const contactBtn = document.getElementById('contactBtn');
-const modal = document.getElementById('contactImageModal');
+window.addEventListener('DOMContentLoaded', () => {
+    const video = document.getElementById('randomVideo');
 
-contactBtn.addEventListener('click', e => {
-    e.preventDefault();
-    // toggle visibility
-    if (contactBtn.getAttribute('data-state') === 'close') {
-        contactBtn.setAttribute('data-state', 'open')
-        contactBtn.innerHTML = 'Activity';
-        nws.src = "media/contact.webp";
-        nws.alt = "Notebook page with some handwritting words."
-    } else {
-        contactBtn.setAttribute('data-state', 'close')
-        contactBtn.innerHTML = 'Contact';
-        nws.src = "media/new-website-soon.webp";
-        nws.alt = "A pink paper with early skeches from the future website."
-    }
+    // Wait until metadata is loaded (so we know the duration)
+    video.addEventListener('loadedmetadata', () => {
+        const jumpVideo = () => {
+            const duration = video.duration;
+            if (!isNaN(duration) && duration > 0) {
+                const randomTime = Math.random() * duration;
+                video.currentTime = randomTime;
+                console.log(`Jumped to ${randomTime.toFixed(1)}s`);
+            }
+        };
+
+        // Jump immediately once loaded
+        jumpVideo();
+
+        // Then jump every 40 seconds
+        setInterval(jumpVideo, 30000);
+    });
 });
-
-
 
 // let panorama;
 
