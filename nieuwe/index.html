@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pablo.works</title>
+
+
+    <link href="assets/css/output.css" rel="stylesheet">
+
+</head>
+
+<body class="scroll-smooth bg-[#F9F9F9]">
+
+
+    <!-- WINDOW -->
+    <div class="flex relative top-0 left-0 z-0 gap-2 items-end m-3 sm:fixed">
+        <div class="overflow-hidden rounded-t-full w-[80px]">
+            <img src="assets/pablo-moreno.jpg" alt="" class="w-full h-full">
+        </div>
+        <div class="flex flex-col gap-0 text-lg font-semibold leading-tight">
+            <h2 class="">Pablo Moreno</h2>
+            <span class="text-grey">Creative (web) designer</span>
+            <span class="text-grey">pablomoreno@proton.me</span>
+        </div>
+    </div>
+
+    <!-- CLOCK -->
+    <div class="absolute top-0 right-0 gap-0 m-4 mt-4 font-semibold leading-tight sm:mt-6 sm:fixed text-m text-grey">
+        <span>17:11<span class="hidden sm:inline">, Amsterdam</span></span>
+    </div>
+
+    <!-- MENU -->
+    <nav
+         class="flex sticky left-0 top-0 p-2 sm:p-0 m-0 z-10 gap-2 justify-between items-start sm:m-3 text-xl font-semibold bg-[#F9F9F9] sm:bottom-0 sm:top-auto sm:fixed h-fit sm:bg-transparent">
+
+        <div class="flex flex-col gap-1.5 nav__list nav__list--primary  w-[20px]">
+            <img
+                 class="nav__title nav__title--on nav__title--primary inline-block transform transition-transform duration-400 ease-[cubic-bezier(0.60,0,0,1)] will-change-transform"
+                 src="assets/23ball.png">
+            </img>
+        </div>
+
+        <div class="flex flex-col nav__list nav__list--secondary group">
+            <a href="#today"
+               class="leading-tight text-black transition-colors duration-200 cursor-pointer nav__title nav__title--on hover:text-black group-hover:text-grey">
+                Today
+            </a>
+            <a href="#selected"
+               class="leading-tight transition-colors duration-200 cursor-pointer nav__title text-grey hover:text-black">
+                Selected
+            </a>
+            <a href="#websites"
+               class="leading-tight transition-colors duration-200 cursor-pointer nav__title text-grey hover:text-black">
+                Websites
+            </a>
+            <a href="#resume"
+               class="leading-tight transition-colors duration-200 cursor-pointer nav__title text-grey hover:text-black">
+                Resume
+            </a>
+            <a href="#friends"
+               class="leading-tight transition-colors duration-200 cursor-pointer nav__title text-grey hover:text-black">
+                Friends
+            </a>
+            <a href="#call"
+               class="leading-tight transition-colors duration-200 cursor-pointer nav__title text-grey hover:text-black">
+                Call
+            </a>
+        </div>
+    </nav>
+
+
+    <!-- 💪💪💪 CONTENT 💪💪 -->
+    <div id="works" class="flex relative z-0 flex-col gap-10 pt-6 pb-20 font-semibold">
+
+
+        <div id="today" class="flex flex-col gap-6 scroll-mt-6 w-[500px] max-w-full p-2 sm:p-0 mx-auto">
+
+            <h3 class="p-2 w-full text-white bg-purple-500 rounded-[6px] font-semibold">TODAY</h3>
+
+        </div>
+
+        <div id="selected" class="flex flex-col gap-6 scroll-mt-6 w-[500px] max-w-full p-2 sm:p-0 mx-auto">
+
+            <h3 class="p-2 w-full text-white bg-black rounded-[6px] font-semibold flex justify-between">
+                <span>SELECTED</span> <span
+                      class="opacity-40">(3)</span>
+            </h3>
+
+            <div id="selected-1" class="flex flex-col gap-4 mb-12">
+                <div id="info" class="flex justify-between text-lg leading-tight">
+                    <div class="flex flex-col">
+                        <span class="text-black">Projects at Analogue <small>Ⓡ</small></span>
+                        <span class="text-grey">Design, Framer</span>
+                    </div>
+                    <div class="text-black">2025</div>
+                </div>
+
+                <div class="w-full">
+                    <img src="media/anthropocene.png" alt="" class="object-cover w-full rounded-xl">
+                </div>
+
+                <p class="text-lg leading-tight text-grey">A relaxing space to explain and curate the practice of Nerea.
+                    The
+                    frames
+                    of the website serve as a menu
+                    to navigate between the four diferent pages. Text wants to explain in detail the practice while the
+                    small images bring the feeling of it. </p>
+            </div>
+        </div>
+
+
+        <div id="websites" class="flex flex-col gap-6 scroll-mt-6">
+
+            <h3
+                class=" text-black bg-[#FAF5A2] rounded-[6px] font-semibold w-[500px] p-2 max-w-[calc(100vw-16px)] m-2 sm:m-0 mx-auto">
+                WEBSITES
+            </h3>
+
+            <div class="font-semibold">
+
+                <div
+                     class="p-1 text-lg leading-tight transition-all duration-200 cursor-pointer hover:bg-zinc-200 group">
+                    <div class="w-[500px] max-w-full p-2 sm:p-0 mx-auto flex justify-between">
+                        <div class="flex gap-2">
+                            <div>Tilte</div>
+                            <span
+                                  class="opacity-0 transition-all duration-200 group-hover:opacity-100 text-grey">Description</span>
+                        </div>
+                        <div>2025</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <script src="assets/js/works.js"></script>
+
+</body>
+
+</html>
