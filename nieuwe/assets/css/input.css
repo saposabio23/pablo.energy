@@ -5,6 +5,9 @@
 
     --color-grey: rgb(170, 170, 170, 0.8);
     --color-black: #303030;
+
+    --color-grad-black: rgb(0, 0, 0, .3);
+
 }
 
 @layer base {

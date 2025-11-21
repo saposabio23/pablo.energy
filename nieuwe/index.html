@@ -14,10 +14,18 @@
 <body class="scroll-smooth bg-[#F9F9F9]">
 
 
+    <!-- GRADIENT TOP -->
+    <div id="gradient-top"
+         class="h-[25px] from-grad-black to-transparent bg-linear-to-b fixed top-0 left-0 w-full z-50  opacity-0 transition duration-400">
+    </div>
+
     <!-- WINDOW -->
-    <div class="flex relative top-0 left-0 z-0 gap-2 items-end m-3 sm:fixed">
+    <div class="flex relative top-0 left-0 z-0 gap-2 items-end m-3 md:fixed">
         <div class="overflow-hidden rounded-t-full w-[80px]">
-            <img src="assets/pablo-moreno.jpg" alt="" class="w-full h-full">
+            <video id="pablo-face" width="320" height="240" playsinline muted disablePictureInPicture
+                   controlsList="nodownload" class="w-full h-full cursor-cell">
+                <source src="assets/face.mp4" type='video/mp4'>
+            </video>
         </div>
         <div class="flex flex-col gap-0 text-lg font-semibold leading-tight">
             <h2 class="">Pablo Moreno</h2>
@@ -27,65 +35,64 @@
     </div>
 
     <!-- CLOCK -->
-    <div class="absolute top-0 right-0 gap-0 m-4 mt-4 font-semibold leading-tight sm:mt-6 sm:fixed text-m text-grey">
-        <span>17:11<span class="hidden sm:inline">, Amsterdam</span></span>
+    <div class="absolute top-0 right-0 gap-0 m-4 mt-4 font-semibold leading-tight md:mt-6 md:fixed text-m text-grey">
+        <span id="clock">23:58</span><span class="hidden md:inline">, Amsterdam</span>
     </div>
 
-    <!-- MENU -->
+    <!-- NAV -->
     <nav
-         class="flex sticky left-0 top-0 p-2 sm:p-0 m-0 z-10 gap-2 justify-between items-start sm:m-3 text-xl font-semibold bg-[#F9F9F9] sm:bottom-0 sm:top-auto sm:fixed h-fit sm:bg-transparent">
+         class="fixed bottom-0 left-0 z-10 w-full text-xl font-semibold md:top-auto h-fit md:bg-transparent md:w-fit">
+        <div
+             class="grid grid-cols-3 grid-rows-2 justify-between w-full md:flex md:flex-col nav__list nav__list--secondary group bg-[#F9F9F9] md:bg-transparent p-2 md:p-3">
 
-        <div class="flex flex-col gap-1.5 nav__list nav__list--primary  w-[20px]">
-            <img
-                 class="nav__title nav__title--on nav__title--primary inline-block transform transition-transform duration-400 ease-[cubic-bezier(0.60,0,0,1)] will-change-transform"
-                 src="assets/23ball.png">
-            </img>
-        </div>
-
-        <div class="flex flex-col nav__list nav__list--secondary group">
             <a href="#today"
                class="leading-tight text-black transition-colors duration-200 cursor-pointer nav__title nav__title--on hover:text-black group-hover:text-grey">
-                Today
+                1. Today
             </a>
             <a href="#selected"
                class="leading-tight transition-colors duration-200 cursor-pointer nav__title text-grey hover:text-black">
-                Selected
+                2. Selected
             </a>
             <a href="#websites"
                class="leading-tight transition-colors duration-200 cursor-pointer nav__title text-grey hover:text-black">
-                Websites
+                3. Websites
             </a>
             <a href="#resume"
                class="leading-tight transition-colors duration-200 cursor-pointer nav__title text-grey hover:text-black">
-                Resume
+                4. Resume
             </a>
+
             <a href="#friends"
                class="leading-tight transition-colors duration-200 cursor-pointer nav__title text-grey hover:text-black">
-                Friends
+                5. Friends
             </a>
             <a href="#call"
                class="leading-tight transition-colors duration-200 cursor-pointer nav__title text-grey hover:text-black">
-                Call
+                6. Call
             </a>
         </div>
     </nav>
 
 
     <!-- 💪💪💪 CONTENT 💪💪 -->
-    <div id="works" class="flex relative z-0 flex-col gap-10 pt-6 pb-20 font-semibold">
+    <div id="works" class="flex relative z-0 flex-col gap-10 pb-20 font-semibold pointer-events-none md:pt-6">
 
 
-        <div id="today" class="flex flex-col gap-6 scroll-mt-6 w-[500px] max-w-full p-2 sm:p-0 mx-auto">
+        <div id="today"
+             class="flex flex-col gap-6 scroll-mt-6 w-[500px] max-w-full p-2 md:p-0 mx-auto pointer-events-auto">
 
-            <h3 class="p-2 w-full text-white bg-purple-500 rounded-[6px] font-semibold">TODAY</h3>
+            <h3 class="p-2 w-full text-white bg-purple-500 rounded-[6px] font-semibold">1. TODAY</h3>
+
 
         </div>
 
-        <div id="selected" class="flex flex-col gap-6 scroll-mt-6 w-[500px] max-w-full p-2 sm:p-0 mx-auto">
+        <div id="selected"
+             class="flex flex-col gap-6 scroll-mt-6 w-[500px] max-w-full p-2 md:p-0 mx-auto pointer-events-auto">
 
             <h3 class="p-2 w-full text-white bg-black rounded-[6px] font-semibold flex justify-between">
-                <span>SELECTED</span> <span
-                      class="opacity-40">(3)</span>
+                <span>2. SELECTED</span> <span
+                      class="opacity-40">3
+                    projects</span>
             </h3>
 
             <div id="selected-1" class="flex flex-col gap-4 mb-12">
@@ -110,19 +117,18 @@
             </div>
         </div>
 
-
-        <div id="websites" class="flex flex-col gap-6 scroll-mt-6">
+        <div id="websites" class="flex flex-col gap-6 pointer-events-auto scroll-mt-6">
 
             <h3
-                class=" text-black bg-[#FAF5A2] rounded-[6px] font-semibold w-[500px] p-2 max-w-[calc(100vw-16px)] m-2 sm:m-0 mx-auto">
-                WEBSITES
+                class=" text-black bg-[#FAF5A2] rounded-[6px] font-semibold w-[500px] p-2 max-w-[calc(100vw-16px)] m-2 md:m-0 md:mx-auto">
+                3. WEBSITES
             </h3>
 
             <div class="font-semibold">
 
                 <div
                      class="p-1 text-lg leading-tight transition-all duration-200 cursor-pointer hover:bg-zinc-200 group">
-                    <div class="w-[500px] max-w-full p-2 sm:p-0 mx-auto flex justify-between">
+                    <div class="w-[500px] max-w-full p-2 md:p-0 mx-auto flex justify-between">
                         <div class="flex gap-2">
                             <div>Tilte</div>
                             <span
@@ -136,7 +142,9 @@
 
         </div>
 
-        <script src="assets/js/works.js"></script>
+    </div>
+
+    <script src="assets/js/works.js"></script>
 
 </body>
 
