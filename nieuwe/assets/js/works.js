@@ -1,15 +1,19 @@
 // GRADIENT TOP APPEARS
 const gradTop = document.getElementById("gradient-top");
+const indentityText = document.getElementById("indentity-text");
+
+
 
 window.addEventListener("scroll", () => {
     if (window.scrollY > 60) {
         gradTop.style.opacity = "1";
+        indentityText.style.opacity = "0";
+
     } else {
         gradTop.style.opacity = "0";
+        indentityText.style.opacity = "1";
     }
 });
-
-
 
 // VIDEO PABLO
 const vid = document.getElementById("pablo-face");
@@ -18,50 +22,36 @@ const vid = document.getElementById("pablo-face");
 vid.pause();
 vid.currentTime = 0;
 
-/* -----------------------
-   1. PLAY ON HOVER (desktop)
------------------------ */
 vid.addEventListener("mouseenter", () => {
     playOnce();
 });
 
-/* -----------------------
-   2. PLAY ON TAP (mobile)
------------------------ */
 vid.addEventListener("click", () => {
     playOnce();
 });
 
-/* -----------------------
-   3. PLAY ONCE AFTER 40s
------------------------ */
 setTimeout(() => {
     playOnce();   // trigger auto-play once
 }, 30000);
 
-/* -----------------------
-   4. When finished → reset
------------------------ */
 vid.addEventListener("ended", () => {
     vid.currentTime = 0;
     vid.pause();
 });
 
-/* -----------------------
-   Helper function
------------------------ */
 function playOnce() {
     vid.currentTime = 0;
     vid.play();
 }
 
 // CLOCK
-
 function updateClock() {
     const now = new Date();
     const hours = now.getHours().toString().padStart(2, '0');
     const minutes = now.getMinutes().toString().padStart(2, '0');
-    document.getElementById('clock').textContent = `${hours}:${minutes}`;
+    document.getElementById('clockH').textContent = `${hours}`;
+    document.getElementById('clockM').textContent = `${minutes}`;
+
 }
 
 // initial call + update every second
@@ -69,6 +59,95 @@ updateClock();
 setInterval(updateClock, 1000);
 
 
+// IMAGES STACK
+document.querySelectorAll(".imageStack").forEach(stackEl => {
+    const imgs = stackEl.querySelectorAll(".stack-img");
+    let currentIndex = 0;
+
+    stackEl.addEventListener("click", () => {
+        const img = imgs[currentIndex];
+        if (!img) return; // no more images
+
+        // add falling effect
+        img.classList.add("fall");
+
+        // when animation ends, hide the image so it doesn't block clicks
+        img.addEventListener("transitionend", () => {
+            img.classList.add("hidden");
+        }, { once: true });
+
+        currentIndex++;
+
+        // OPTIONAL: reset this stack when all images have fallen
+        // if (currentIndex >= imgs.length) {
+        //     setTimeout(() => {
+        //         imgs.forEach(im => im.classList.remove("fall", "hidden"));
+        //         currentIndex = 0;
+        //     }, 900); // a bit longer than the 0.8s animation
+        // }
+    });
+});
+
+// WEBSITES LIST
+var ADDRESS = "1UGVXTssu8J9mBbOyPSX0qkOo13xggy_MgboicC4UlTU/1";
+
+fetch("https://opensheet.elk.sh/" + ADDRESS)
+    .then(res => res.json())
+    .then(data => {
+        const container = document.getElementById("projects-list");
+        if (!container) return;
+
+        data.forEach(row => {
+            // Skip empty rows (no Title)
+            if (!row.Title || !row.Title.trim()) return;
+
+            const title = row.Title.trim();
+            const description = (row.Description || "").trim();
+            const year = (row.Date || "").trim();
+            const url = (row.URL || "#").trim();
+
+            // Outer div (with hover state)
+            const wrapper = document.createElement("div");
+            wrapper.className =
+                "p-1 text-lg leading-tight transition-all duration-200 cursor-pointer hover:bg-zinc-200 group";
+
+            // Inner <a>
+            const link = document.createElement("a");
+            link.href = url || "#";
+            link.setAttribute('data-slideframe', 'true');
+            link.dataset.slideframe = "true";
+            link.className =
+                "w-[500px] max-w-full px-4 py-2 md:p-0 mx-auto flex justify-between";
+
+            // Left side (title + description on hover)
+            const left = document.createElement("div");
+            left.className = "flex gap-2";
+
+            const titleEl = document.createElement("div");
+            titleEl.textContent = title;
+
+            const descEl = document.createElement("span");
+            descEl.textContent = description;
+            descEl.className =
+                "opacity-0 transition-all duration-200 group-hover:opacity-100 text-grey";
+
+            left.appendChild(titleEl);
+            if (description) {
+                left.appendChild(descEl);
+            }
+
+            // Right side (year)
+            const yearEl = document.createElement("div");
+            yearEl.textContent = year;
+
+            // Assemble
+            link.appendChild(left);
+            link.appendChild(yearEl);
+            wrapper.appendChild(link);
+            container.appendChild(wrapper);
+        });
+    })
+    .catch(err => console.error("Error fetching sheet:", err));
 
 
 

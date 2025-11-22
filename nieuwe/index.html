@@ -8,6 +8,8 @@
 
 
     <link href="assets/css/output.css" rel="stylesheet">
+    <link href="assets/css/more.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/slideFrame.css" />
 
 </head>
 
@@ -27,7 +29,8 @@
                 <source src="assets/face.mp4" type='video/mp4'>
             </video>
         </div>
-        <div class="flex flex-col gap-0 text-lg font-semibold leading-tight">
+        <div id="indentity-text"
+             class="flex flex-col gap-0 text-lg font-semibold leading-tight transition duration-400">
             <h2 class="">Pablo Moreno</h2>
             <span class="text-grey">Creative (web) designer</span>
             <span class="text-grey">pablomoreno@proton.me</span>
@@ -35,8 +38,14 @@
     </div>
 
     <!-- CLOCK -->
-    <div class="absolute top-0 right-0 gap-0 m-4 mt-4 font-semibold leading-tight md:mt-6 md:fixed text-m text-grey">
-        <span id="clock">23:58</span><span class="hidden md:inline">, Amsterdam</span>
+    <div
+         class="absolute top-0 right-0 gap-0 m-3 font-semibold text-sm leading-tight md:fixed text-m text-grey border border-grey p-2 rounded-full items-center hidden md:flex aspect-square">
+
+        <div class="flex gap-0 items-center justify-center"><span id="clockH">23</span> <span class="flashing ">:</span>
+            <span
+                  id="clockM">23</span>
+        </div>
+        <span class=""></span>
     </div>
 
     <!-- NAV -->
@@ -75,19 +84,34 @@
 
 
     <!-- 💪💪💪 CONTENT 💪💪 -->
-    <div id="works" class="flex relative z-0 flex-col gap-10 pb-20 font-semibold pointer-events-none md:pt-6">
+    <div id="works"
+         class="flex relative z-0 flex-col gap-20 pt-20  pb-20 font-semibold pointer-events-none md:pt-[300px]">
 
 
         <div id="today"
-             class="flex flex-col gap-6 scroll-mt-6 w-[500px] max-w-full p-2 md:p-0 mx-auto pointer-events-auto">
+             class="flex flex-col gap-4 w-[500px] max-w-full p-2 md:p-0 mx-auto pointer-events-auto scroll-mt-8 md:scroll-mt-14">
 
             <h3 class="p-2 w-full text-white bg-purple-500 rounded-[6px] font-semibold">1. TODAY</h3>
 
+            <div class="flex flex-col gap-6 px-2">
+                <div>
+                    <h4 class="text-grey">WHERE I'M FROM</h4>
+                    <p>Blablabla</p>
+                </div>
+                <div>
+                    <h4 class="text-grey">WHAT I USED TO DO</h4>
+                    <p>Blablabla</p>
+                </div>
+                <div>
+                    <h4 class="text-grey">WHAT I’M LOOKING FOR</h4>
+                    <p>Blablabla</p>
+                </div>
+            </div>
 
         </div>
 
         <div id="selected"
-             class="flex flex-col gap-6 scroll-mt-6 w-[500px] max-w-full p-2 md:p-0 mx-auto pointer-events-auto">
+             class="flex flex-col gap-4 w-[500px] max-w-full p-2 md:p-0 mx-auto pointer-events-auto scroll-mt-8 md:scroll-mt-14">
 
             <h3 class="p-2 w-full text-white bg-black rounded-[6px] font-semibold flex justify-between">
                 <span>2. SELECTED</span> <span
@@ -95,48 +119,153 @@
                     projects</span>
             </h3>
 
-            <div id="selected-1" class="flex flex-col gap-4 mb-12">
-                <div id="info" class="flex justify-between text-lg leading-tight">
-                    <div class="flex flex-col">
-                        <span class="text-black">Projects at Analogue <small>Ⓡ</small></span>
-                        <span class="text-grey">Design, Framer</span>
+            <div class="flex flex-col gap-6 px-2">
+                <div id="PROJECT-1" class="flex flex-col gap-6 mb-12">
+                    <div id="info" class="flex justify-between text-lg leading-tight">
+                        <div class="flex flex-col">
+                            <span class="text-black">Projects at Analogue <small>Ⓡ</small></span>
+                            <span class="text-grey">Design, Framer</span>
+                        </div>
+                        <div class="text-black">2025</div>
                     </div>
-                    <div class="text-black">2025</div>
+
+                    <div class="imageStack w-full aspect-4/3 relative hover:scale-102 transition duration-300 group">
+                        <div
+                             class="absolute w-full h-full rounded-xl flex flex-col items-center justify-center ">
+                            <a href="https://www.pablo.energy" target="_blank" class="flex flex-col group">
+                                <span class="text-[100px] leading-[100%]">👀</span>
+                                <span class="group-hover:text-grey transition duration-300">Visit website</span>
+                            </a>
+                        </div>
+
+                        <img src="media/anthropocene.png" alt=""
+                             class="stack-img object-cover w-full h-full rounded-xl absolute shadow cursor-pointer transition duration-200 z-40">
+
+                        <img src="media/anthropocene.png" alt=""
+                             class="stack-img object-cover w-full h-full rounded-xl absolute group-hover:rotate-3 shadow cursor-pointer transition duration-200 z-30">
+
+                        <img src="media/anthropocene.png" alt=""
+                             class="stack-img object-cover w-full h-full rounded-xl absolute group-hover:-rotate-3 shadow cursor-pointer transition duration-200 z-20">
+                    </div>
+
+                    <p class="text-lg leading-tight text-grey">A relaxing space to explain and curate the practice
+                        of
+                        Nerea.
+                        The
+                        frames
+                        of the website serve as a menu
+                        to navigate between the four diferent pages. Text wants to explain in detail the practice
+                        while
+                        the
+                        small images bring the feeling of it. </p>
                 </div>
 
-                <div class="w-full">
-                    <img src="media/anthropocene.png" alt="" class="object-cover w-full rounded-xl">
+                <div id="PROJECT-1" class="flex flex-col gap-6 mb-12">
+                    <div id="info" class="flex justify-between text-lg leading-tight">
+                        <div class="flex flex-col">
+                            <span class="text-black">Projects at Analogue <small>Ⓡ</small></span>
+                            <span class="text-grey">Design, Framer</span>
+                        </div>
+                        <div class="text-black">2025</div>
+                    </div>
+
+                    <div class="imageStack w-full aspect-4/3 relative hover:scale-102 transition duration-300 group">
+                        <div
+                             class="absolute w-full h-full rounded-xl flex flex-col items-center justify-center ">
+                            <a href="https://www.pablo.energy" target="_blank" class="flex flex-col group">
+                                <span class="text-[100px] leading-[100%]">👀</span>
+                                <span class="group-hover:text-grey transition duration-300">Visit website</span>
+                            </a>
+                        </div>
+
+                        <img src="media/anthropocene.png" alt=""
+                             class="stack-img object-cover w-full h-full rounded-xl absolute shadow cursor-pointer transition duration-200 z-40">
+
+                        <img src="media/anthropocene.png" alt=""
+                             class="stack-img object-cover w-full h-full rounded-xl absolute group-hover:rotate-3 shadow cursor-pointer transition duration-200 z-30">
+
+                        <img src="media/anthropocene.png" alt=""
+                             class="stack-img object-cover w-full h-full rounded-xl absolute group-hover:-rotate-3 shadow cursor-pointer transition duration-200 z-20">
+                    </div>
+
+                    <p class="text-lg leading-tight text-grey">A relaxing space to explain and curate the practice
+                        of
+                        Nerea.
+                        The
+                        frames
+                        of the website serve as a menu
+                        to navigate between the four diferent pages. Text wants to explain in detail the practice
+                        while
+                        the
+                        small images bring the feeling of it. </p>
                 </div>
 
-                <p class="text-lg leading-tight text-grey">A relaxing space to explain and curate the practice of Nerea.
-                    The
-                    frames
-                    of the website serve as a menu
-                    to navigate between the four diferent pages. Text wants to explain in detail the practice while the
-                    small images bring the feeling of it. </p>
+                <div id="PROJECT-1" class="flex flex-col gap-6 mb-12">
+                    <div id="info" class="flex justify-between text-lg leading-tight">
+                        <div class="flex flex-col">
+                            <span class="text-black">Projects at Analogue <small>Ⓡ</small></span>
+                            <span class="text-grey">Design, Framer</span>
+                        </div>
+                        <div class="text-black">2025</div>
+                    </div>
+
+                    <div class="imageStack w-full aspect-4/3 relative hover:scale-102 transition duration-300 group">
+                        <div
+                             class="absolute w-full h-full rounded-xl flex flex-col items-center justify-center ">
+                            <a href="https://www.pablo.energy" target="_blank" class="flex flex-col group">
+                                <span class="text-[100px] leading-[100%]">👀</span>
+                                <span class="group-hover:text-grey transition duration-300">Visit website</span>
+                            </a>
+                        </div>
+
+                        <img src="media/anthropocene.png" alt=""
+                             class="stack-img object-cover w-full h-full rounded-xl absolute shadow cursor-pointer transition duration-200 z-40">
+
+                        <img src="media/anthropocene.png" alt=""
+                             class="stack-img object-cover w-full h-full rounded-xl absolute group-hover:rotate-3 shadow cursor-pointer transition duration-200 z-30">
+
+                        <img src="media/anthropocene.png" alt=""
+                             class="stack-img object-cover w-full h-full rounded-xl absolute group-hover:-rotate-3 shadow cursor-pointer transition duration-200 z-20">
+                    </div>
+
+                    <p class="text-lg leading-tight text-grey">A relaxing space to explain and curate the practice
+                        of
+                        Nerea.
+                        The
+                        frames
+                        of the website serve as a menu
+                        to navigate between the four diferent pages. Text wants to explain in detail the practice
+                        while
+                        the
+                        small images bring the feeling of it. </p>
+                </div>
             </div>
         </div>
 
-        <div id="websites" class="flex flex-col gap-6 pointer-events-auto scroll-mt-6">
+        <div id="websites" class="flex flex-col gap-2 pointer-events-auto scroll-mt-8 md:scroll-mt-14">
 
             <h3
                 class=" text-black bg-[#FAF5A2] rounded-[6px] font-semibold w-[500px] p-2 max-w-[calc(100vw-16px)] m-2 md:m-0 md:mx-auto">
                 3. WEBSITES
             </h3>
 
-            <div class="font-semibold">
+
+            <div id="projects-list" class="font-semibold flex flex-col-reverse">
 
                 <div
                      class="p-1 text-lg leading-tight transition-all duration-200 cursor-pointer hover:bg-zinc-200 group">
-                    <div class="w-[500px] max-w-full p-2 md:p-0 mx-auto flex justify-between">
+                    <a href="https://pablo.energy" data-slideframe="true"
+                       class="w-[500px] max-w-full px-4 py-2 md:p-0 mx-auto flex justify-between">
                         <div class="flex gap-2">
-                            <div>Tilte</div>
+                            <div>Title</div>
                             <span
                                   class="opacity-0 transition-all duration-200 group-hover:opacity-100 text-grey">Description</span>
                         </div>
                         <div>2025</div>
-                    </div>
+                    </a>
                 </div>
+
+
 
             </div>
 
@@ -145,6 +274,8 @@
     </div>
 
     <script src="assets/js/works.js"></script>
+    <script src="assets/slideFrame.min.js"></script>
+
 
 </body>
 

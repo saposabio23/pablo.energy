@@ -1,0 +1,40 @@
+/* FLASHING CLOCK */
+
+.flashing {
+    -webkit-animation: flash 2s infinite;
+    animation: flash 2s infinite;
+}
+
+@-webkit-keyframes flash {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    50.01%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes flash {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    50.01%,
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
+/* FALLING IMAGES */
+.fall {
+    transform: translateY(250%) rotate(8deg);
+    transition: transform 1.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
