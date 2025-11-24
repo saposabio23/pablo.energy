@@ -22,7 +22,7 @@
     </div>
 
     <!-- WINDOW -->
-    <div class="flex relative top-0 left-0 z-0 gap-2 items-end m-3 md:fixed">
+    <div class="flex relative top-0 left-0 z-30 gap-2 items-end m-3 md:fixed">
         <div class="overflow-hidden rounded-t-full w-[80px]">
             <video id="pablo-face" width="320" height="240" playsinline muted disablePictureInPicture
                    controlsList="nodownload" class="w-full h-full cursor-cell">
@@ -39,7 +39,7 @@
 
     <!-- CLOCK -->
     <div
-         class="absolute top-0 right-0 gap-0 m-3 font-semibold text-sm leading-tight md:fixed text-m text-grey border border-grey p-2 rounded-full items-center hidden md:flex aspect-square">
+         class="absolute top-0 right-0 gap-0 m-5 font-semibold text-sm leading-tight md:fixed text-m text-grey border border-grey p-2 rounded-full items-center hidden md:flex aspect-square">
 
         <div class="flex gap-0 items-center justify-center"><span id="clockH">23</span> <span class="flashing ">:</span>
             <span
@@ -70,15 +70,15 @@
                class="leading-tight transition-colors duration-200 cursor-pointer nav__title text-grey hover:text-black">
                 4. Resume
             </a>
-
-            <a href="#friends"
-               class="leading-tight transition-colors duration-200 cursor-pointer nav__title text-grey hover:text-black">
-                5. Friends
-            </a>
             <a href="#call"
                class="leading-tight transition-colors duration-200 cursor-pointer nav__title text-grey hover:text-black">
-                6. Call
+                5. Call
             </a>
+            <a href="#friends"
+               class="leading-tight transition-colors duration-200 cursor-pointer nav__title text-grey hover:text-black">
+                6. Friends
+            </a>
+
         </div>
     </nav>
 
@@ -113,25 +113,25 @@
         <div id="selected"
              class="flex flex-col gap-4 w-[500px] max-w-full p-2 md:p-0 mx-auto pointer-events-auto scroll-mt-8 md:scroll-mt-14">
 
-            <h3 class="p-2 w-full text-white bg-black rounded-[6px] font-semibold flex justify-between">
+            <h3 class="p-2 w-full text-white bg-black rounded-[6px] font-semibold flex justify-between items-center">
                 <span>2. SELECTED</span> <span
-                      class="opacity-40">3
+                      class="opacity-40  text-sm">3
                     projects</span>
             </h3>
 
             <div class="flex flex-col gap-6 px-2">
                 <div id="PROJECT-1" class="flex flex-col gap-6 mb-12">
-                    <div id="info" class="flex justify-between text-lg leading-tight">
+                    <div id="info" class="flex justify-between leading-tight">
                         <div class="flex flex-col">
-                            <span class="text-black">Projects at Analogue <small>Ⓡ</small></span>
-                            <span class="text-grey">Design, Framer</span>
+                            <span class="text-black text-lg">Projects at Analogue <small>Ⓡ</small></span>
+                            <span class="text-grey md:text-lg">Design, Framer</span>
                         </div>
-                        <div class="text-black">2025</div>
+                        <div class="text-black text-lg">2025</div>
                     </div>
 
                     <div class="imageStack w-full aspect-4/3 relative hover:scale-102 transition duration-300 group">
                         <div
-                             class="absolute w-full h-full rounded-xl flex flex-col items-center justify-center ">
+                             class="absolute w-full h-full rounded-xl flex flex-col items-center justify-center border border-grey">
                             <a href="https://www.pablo.energy" target="_blank" class="flex flex-col group">
                                 <span class="text-[100px] leading-[100%]">👀</span>
                                 <span class="group-hover:text-grey transition duration-300">Visit website</span>
@@ -142,13 +142,13 @@
                              class="stack-img object-cover w-full h-full rounded-xl absolute shadow cursor-pointer transition duration-200 z-40">
 
                         <img src="media/anthropocene.png" alt=""
-                             class="stack-img object-cover w-full h-full rounded-xl absolute group-hover:rotate-3 shadow cursor-pointer transition duration-200 z-30">
+                             class="stack-img object-cover w-full h-full rounded-xl absolute rotate-3 group-hover:rotate-0 shadow cursor-pointer transition duration-200 z-30">
 
                         <img src="media/anthropocene.png" alt=""
-                             class="stack-img object-cover w-full h-full rounded-xl absolute group-hover:-rotate-3 shadow cursor-pointer transition duration-200 z-20">
+                             class="stack-img object-cover w-full h-full rounded-xl absolute -rotate-3 group-hover:rotate-0 shadow cursor-pointer transition duration-200 z-20">
                     </div>
 
-                    <p class="text-lg leading-tight text-grey">A relaxing space to explain and curate the practice
+                    <p class="md:text-lg leading-tight text-grey">A relaxing space to explain and curate the practice
                         of
                         Nerea.
                         The
@@ -160,121 +160,344 @@
                         small images bring the feeling of it. </p>
                 </div>
 
-                <div id="PROJECT-1" class="flex flex-col gap-6 mb-12">
-                    <div id="info" class="flex justify-between text-lg leading-tight">
-                        <div class="flex flex-col">
-                            <span class="text-black">Projects at Analogue <small>Ⓡ</small></span>
-                            <span class="text-grey">Design, Framer</span>
-                        </div>
-                        <div class="text-black">2025</div>
-                    </div>
-
-                    <div class="imageStack w-full aspect-4/3 relative hover:scale-102 transition duration-300 group">
-                        <div
-                             class="absolute w-full h-full rounded-xl flex flex-col items-center justify-center ">
-                            <a href="https://www.pablo.energy" target="_blank" class="flex flex-col group">
-                                <span class="text-[100px] leading-[100%]">👀</span>
-                                <span class="group-hover:text-grey transition duration-300">Visit website</span>
-                            </a>
-                        </div>
-
-                        <img src="media/anthropocene.png" alt=""
-                             class="stack-img object-cover w-full h-full rounded-xl absolute shadow cursor-pointer transition duration-200 z-40">
-
-                        <img src="media/anthropocene.png" alt=""
-                             class="stack-img object-cover w-full h-full rounded-xl absolute group-hover:rotate-3 shadow cursor-pointer transition duration-200 z-30">
-
-                        <img src="media/anthropocene.png" alt=""
-                             class="stack-img object-cover w-full h-full rounded-xl absolute group-hover:-rotate-3 shadow cursor-pointer transition duration-200 z-20">
-                    </div>
-
-                    <p class="text-lg leading-tight text-grey">A relaxing space to explain and curate the practice
-                        of
-                        Nerea.
-                        The
-                        frames
-                        of the website serve as a menu
-                        to navigate between the four diferent pages. Text wants to explain in detail the practice
-                        while
-                        the
-                        small images bring the feeling of it. </p>
-                </div>
-
-                <div id="PROJECT-1" class="flex flex-col gap-6 mb-12">
-                    <div id="info" class="flex justify-between text-lg leading-tight">
-                        <div class="flex flex-col">
-                            <span class="text-black">Projects at Analogue <small>Ⓡ</small></span>
-                            <span class="text-grey">Design, Framer</span>
-                        </div>
-                        <div class="text-black">2025</div>
-                    </div>
-
-                    <div class="imageStack w-full aspect-4/3 relative hover:scale-102 transition duration-300 group">
-                        <div
-                             class="absolute w-full h-full rounded-xl flex flex-col items-center justify-center ">
-                            <a href="https://www.pablo.energy" target="_blank" class="flex flex-col group">
-                                <span class="text-[100px] leading-[100%]">👀</span>
-                                <span class="group-hover:text-grey transition duration-300">Visit website</span>
-                            </a>
-                        </div>
-
-                        <img src="media/anthropocene.png" alt=""
-                             class="stack-img object-cover w-full h-full rounded-xl absolute shadow cursor-pointer transition duration-200 z-40">
-
-                        <img src="media/anthropocene.png" alt=""
-                             class="stack-img object-cover w-full h-full rounded-xl absolute group-hover:rotate-3 shadow cursor-pointer transition duration-200 z-30">
-
-                        <img src="media/anthropocene.png" alt=""
-                             class="stack-img object-cover w-full h-full rounded-xl absolute group-hover:-rotate-3 shadow cursor-pointer transition duration-200 z-20">
-                    </div>
-
-                    <p class="text-lg leading-tight text-grey">A relaxing space to explain and curate the practice
-                        of
-                        Nerea.
-                        The
-                        frames
-                        of the website serve as a menu
-                        to navigate between the four diferent pages. Text wants to explain in detail the practice
-                        while
-                        the
-                        small images bring the feeling of it. </p>
-                </div>
             </div>
         </div>
 
         <div id="websites" class="flex flex-col gap-2 pointer-events-auto scroll-mt-8 md:scroll-mt-14">
 
-            <h3
-                class=" text-black bg-[#FAF5A2] rounded-[6px] font-semibold w-[500px] p-2 max-w-[calc(100vw-16px)] m-2 md:m-0 md:mx-auto">
-                3. WEBSITES
-            </h3>
+            <div
+                 class="text-black bg-[#FAF5A2] rounded-[6px] font-semibold w-[500px] p-2 max-w-[calc(100vw-16px)] mx-auto flex justify-between items-center">
+                <h3
+                    class="">
+                    3. WEBSITES
+                </h3>
+
+                <div id="nature-filters" class="flex gap-4 items-center text-sm text-grey">
+                    <label class="flex items-center gap-1 cursor-pointer">
+                        <input type="radio" id="filter-commissioned" value="Commissioned"
+                               class="peer h-3 w-3 cursor-pointer appearance-none rounded-full border border-grey checked:bg-grey transition-all">
+                        <span>Commissioned <span class="hidden md:inline">(10)</span></span>
+                    </label>
+
+                    <label class="flex items-center gap-1 cursor-pointer">
+                        <input type="radio" id="filter-personal" value="Personal"
+                               class="peer h-3 w-3 cursor-pointer appearance-none rounded-full border border-grey checked:bg-grey transition-all">
+                        <span>Personal <span class="hidden md:inline">(46)</span></span>
+                    </label>
+                </div>
+            </div>
 
 
             <div id="projects-list" class="font-semibold flex flex-col-reverse">
-
-                <div
-                     class="p-1 text-lg leading-tight transition-all duration-200 cursor-pointer hover:bg-zinc-200 group">
-                    <a href="https://pablo.energy" data-slideframe="true"
-                       class="w-[500px] max-w-full px-4 py-2 md:p-0 mx-auto flex justify-between">
-                        <div class="flex gap-2">
-                            <div>Title</div>
-                            <span
-                                  class="opacity-0 transition-all duration-200 group-hover:opacity-100 text-grey">Description</span>
-                        </div>
-                        <div>2025</div>
-                    </a>
-                </div>
-
-
-
             </div>
 
         </div>
 
-    </div>
+        <div id="resume"
+             class="flex flex-col gap-4 w-[500px] max-w-full p-2 md:p-0 mx-auto pointer-events-auto scroll-mt-8 md:scroll-mt-14 relative">
 
-    <script src="assets/js/works.js"></script>
-    <script src="assets/slideFrame.min.js"></script>
+            <div
+                 class="text-black bg-white rounded-[6px] font-semibold w-[500px] p-2 max-w-[calc(100vw-16px)] mx-auto flex justify-between items-center">
+                <h3
+                    class="">
+                    4. RESUME
+                </h3>
+
+                <div class="flex gap-4 items-center text-sm text-grey">
+                    <span class="text-red-600">Work</span>
+                    <span class="text-green-600">Internship</span>
+                    <span class="text-blue-700">Studies</span>
+                </div>
+            </div>
+
+            <div id="resume-popup" class="resume-popup cursor-pointer" aria-hidden="true" onclick="removeResumePopup()">
+                <div>
+                    <img src="" alt="">
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-4">
+
+                <div
+                     class="grid grid-cols-5 text-base md:text-lg group hover:bg-white p-2 rounded-[8px] transition duration-300 cursor-pointer fade-loop"
+                     data-popup-image="media/resume/looking.png">
+                    <div>
+                        <span class=" text-grey ">2026</span>
+                    </div>
+                    <div class=" col-span-4 leading-tight flex flex-col">
+                        <div class="flex gap-2 items-center">
+                            <span class="text-black ">Looking for new design colaborations</span>
+                        </div>
+                        <!-- <p class=" text-grey text-sm group-hover:text-black transition duration-300">I spent the next
+                            6
+                            months, working as a
+                            designer.</p> -->
+
+                    </div>
+                </div>
+
+
+                <!-- 2025 - DEsigner at Analogue -->
+                <div
+                     class="grid grid-cols-5 text-base md:text-lg group hover:bg-white p-2 rounded-[8px] transition duration-300 cursor-pointer">
+                    <div>
+                        <span class=" text-grey ">2025</span>
+                    </div>
+                    <div class="col-span-4 leading-tight flex flex-col">
+                        <div class="flex gap-2 items-center">
+                            <span class="text-red-600">Designer at Analogue
+                                <small>Ⓡ</small></span>
+                            <span
+                                  class=" group-hover:opacity-100 opacity-0 leading-tight text-grey transition duration-300 text-[12px] border border-grey p-1 rounded-md hidden md:inline">Amsterdam
+                                (NL)</span>
+                        </div>
+                        <p class=" text-grey text-sm group-hover:text-black transition duration-300">I spent the next
+                            6
+                            months, working as a
+                            designer.</p>
+
+                    </div>
+                </div>
+
+                <!-- 2024 – Intern at Analogue -->
+
+                <div
+                     class="grid grid-cols-5 text-base md:text-lg group hover:bg-white p-2 rounded-[8px] transition duration-300 cursor-pointer">
+                    <div>
+                        <span class="text-grey ">2024</span>
+                    </div>
+                    <div class="col-span-4 leading-tight flex flex-col">
+                        <div class="flex gap-2 items-center">
+                            <span class="text-green-600">Intern at Analogue <small>Ⓡ</small></span>
+                            <span
+                                  class=" group-hover:opacity-100 opacity-0 leading-tight text-grey transition duration-300 text-[12px] border border-grey p-1 rounded-md hidden md:inline">Amsterdam
+                                (NL)</span>
+                        </div>
+                        <p class=" text-grey text-sm group-hover:text-black transition duration-300">I spent the next
+                            6
+                            months, working as a
+                            designer.</p>
+
+                    </div>
+                </div>
+
+                <!-- 2024 – Mentor for AFEV association -->
+                <div
+                     class="grid grid-cols-5 text-base md:text-lg group hover:bg-white p-2 rounded-[8px] transition duration-300 cursor-pointer">
+                    <div>
+                        <span class="text-grey ">2024</span>
+                    </div>
+                    <div class="col-span-4 leading-tight flex flex-col">
+                        <div class="flex gap-2 items-center">
+                            <span class="text-red-600">Mentor for AFEV association</span>
+                            <span
+                                  class=" group-hover:opacity-100 opacity-0 leading-tight text-grey transition duration-300 text-[12px] border border-grey p-1 rounded-md hidden md:inline">Amiens
+                                (FR)</span>
+                        </div>
+                        <p class=" text-grey text-sm group-hover:text-black transition duration-300">I spent the next
+                            6
+                            months, working as a
+                            designer.</p>
+
+                    </div>
+                </div>
+
+
+                <!-- 2024 – Welcomer at Maison de la Culture -->
+                <div
+                     class="grid grid-cols-5 text-base md:text-lg group hover:bg-white p-2 rounded-[8px] transition duration-300 cursor-pointer">
+                    <div>
+                        <span class="text-grey">2024</span>
+                    </div>
+                    <div class="col-span-4 leading-tight flex flex-col">
+                        <div class="flex gap-2 items-center">
+                            <span class="text-red-600">Welcomer at Maison de la Culture</span>
+                            <span
+                                  class="group-hover:opacity-100 opacity-0 leading-tight text-grey transition duration-300 text-[12px] border border-grey p-1 rounded-md hidden md:inline">
+                                Amiens (FR)
+                            </span>
+                        </div>
+                        <p class="text-grey text-sm group-hover:text-black transition duration-300">
+                            I spent the next 6 months, working as a designer.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2024↑2022 – Double master in UX/UI at ESAD -->
+                <div
+                     class="grid grid-cols-5 text-base md:text-lg group hover:bg-white p-2 rounded-[8px] transition duration-300 cursor-pointer">
+                    <div>
+                        <span class="text-grey leading-tight">2024<br>↑2022</span>
+                    </div>
+                    <div class="col-span-4 leading-tight flex flex-col">
+                        <div class="flex gap-2 items-center">
+                            <span class="text-blue-700">Double master in UX/UI at ESAD</span>
+                            <span
+                                  class="group-hover:opacity-100 opacity-0 leading-tight text-grey transition duration-300 text-[12px] border border-grey p-1 rounded-md hidden md:inline">
+                                Amiens (FR)
+                            </span>
+                        </div>
+                        <p class="text-grey text-sm group-hover:text-black transition duration-300">
+                            I spent the next 6 months, working as a designer.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2022 – Internship at Cuchillo -->
+                <div
+                     class="grid grid-cols-5 text-base md:text-lg group hover:bg-white p-2 rounded-[8px] transition duration-300 cursor-pointer">
+                    <div>
+                        <span class="text-grey">2022</span>
+                    </div>
+                    <div class="col-span-4 leading-tight flex flex-col">
+                        <div class="flex gap-2 items-center">
+                            <span class="text-green-600">Internship at Cuchillo</span>
+                            <span
+                                  class="group-hover:opacity-100 opacity-0 leading-tight text-grey transition duration-300 text-[12px] border border-grey p-1 rounded-md hidden md:inline">
+                                Bilbao (ES)
+                            </span>
+                        </div>
+                        <p class="text-grey text-sm group-hover:text-black transition duration-300">
+                            I spent the next 6 months, working as a designer.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2021↑2019 – Bachelor Interactive Graphic Design at ESADHaR -->
+                <div
+                     class="grid grid-cols-5 text-base md:text-lg group hover:bg-white p-2 rounded-[8px] transition duration-300 cursor-pointer">
+                    <div>
+                        <span class="text-grey leading-tight">2021<br>↑2019</span>
+                    </div>
+                    <div class="col-span-4 leading-tight flex flex-col">
+                        <div class="flex gap-2 items-center">
+                            <span class="text-blue-700 leading-tight">Bachelor Interactive Graphic Design at
+                                ESADHaR</span>
+                            <span
+                                  class="group-hover:opacity-100 opacity-0 leading-tight text-grey transition duration-300 text-[12px] border border-grey p-1 rounded-md hidden md:inline">
+                                Le Havre (FR)
+                            </span>
+                        </div>
+                        <p class="text-grey text-sm group-hover:text-black transition duration-300">
+                            I spent the next 6 months, working as a designer.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2018 – Internship at M.U.R.R -->
+                <div
+                     class="grid grid-cols-5 text-base md:text-lg group hover:bg-white p-2 rounded-[8px] transition duration-300 cursor-pointer">
+                    <div>
+                        <span class="text-grey">2018</span>
+                    </div>
+                    <div class="col-span-4 leading-tight flex flex-col">
+                        <div class="flex gap-2 items-center">
+                            <span class="text-green-600">Internship at M.U.R.R</span>
+                            <span
+                                  class="group-hover:opacity-100 opacity-0 leading-tight text-grey transition duration-300 text-[12px] border border-grey p-1 rounded-md hidden md:inline">
+                                Paris (FR)
+                            </span>
+                        </div>
+                        <p class="text-grey text-sm group-hover:text-black transition duration-300">
+                            I spent the next 6 months, working as a designer.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2018↑2016 – License in type design at Estienne -->
+                <div
+                     class="grid grid-cols-5 text-base md:text-lg group hover:bg-white p-2 rounded-[8px] transition duration-300 cursor-pointer">
+                    <div>
+                        <span class="text-grey leading-tight">2018<br>↑2016</span>
+                    </div>
+                    <div class="col-span-4 leading-tight flex flex-col">
+                        <div class="flex gap-2 items-center">
+                            <span class="text-blue-700">License in type design at Estienne</span>
+                            <span
+                                  class="group-hover:opacity-100 opacity-0 leading-tight text-grey transition duration-300 text-[12px] border border-grey p-1 rounded-md hidden md:inline">
+                                Paris (FR)
+                            </span>
+                        </div>
+                        <p class="text-grey text-sm group-hover:text-black transition duration-300">
+                            I spent the next 6 months, working as a designer.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div id="call"
+             class="flex flex-col gap-4 w-[500px] max-w-full p-2 md:p-0 mx-auto pointer-events-auto scroll-mt-8 md:scroll-mt-14">
+
+            <h3 class="p-2 w-full text-white bg-blue-700 rounded-[6px] font-semibold flex justify-between items-center">
+                <span>5. CALL</span>
+            </h3>
+
+            <div class="video w-full rounded-2xl overflow-hidden relative hover:scale-103 transition duration-300">
+                <video id="randomVideo" width="320" height="240" autoplay loop playsinline muted disablePictureInPicture
+                       controlsList="nodownload" class="w-full">
+                    <source src="media/call.mp4" type='video/mp4'>
+                </video>
+                <span class="absolute bottom-2 left-2 text-white text-[14px] font-normal shadow">Pablo</span>
+            </div>
+
+            <a href="tel:+31">Call <img src="" alt=""></a>
+
+        </div>
+
+        <div id="friends"
+             class="flex flex-col gap-4 pointer-events-auto scroll-mt-8 md:scroll-mt-14">
+
+            <h3
+                class=" text-white bg-amber-800 rounded-[6px] font-semibold flex justify-between items-center w-[500px] max-w-full p-2 mx-auto">
+                <span>6. FRIENDS</span> <span
+                      class="opacity-40  text-sm">... with websites</span>
+            </h3>
+
+            <div class="grid grid-cols-2 gap-20 p-10">
+
+                <a class="flex items-center justify-center relative w-full aspect-video hover:scale-105 transition duration-300"
+                   href="https://elliott.computer/"
+                   data-slideframe="false">
+                    <span
+                          class="z-10 text-white">Elliott Cost</span>
+                    <img src="media/friends/elliott.svg" alt="" class="absolute w-full h-full">
+                </a>
+
+                <a class="flex items-center justify-center relative w-full aspect-video hover:scale-105 transition duration-300"
+                   href="https://samdroual.fr/"
+                   data-slideframe="false">
+                    <span
+                          class="z-10 text-white">Sam Droual</span>
+                    <img src="media/friends/sam.svg" alt="" class="absolute w-full h-full">
+                </a>
+
+                <a class="flex items-center justify-center relative w-full aspect-video hover:scale-105 transition duration-300"
+                   href="https://leobidani.com/"
+                   data-slideframe="false">
+                    <span
+                          class="z-10 text-white">Léo Bidani</span>
+                    <img src="media/friends/leo.svg" alt="" class="absolute w-full h-full">
+                </a>
+
+                <a class="flex items-center justify-center relative w-full aspect-video hover:scale-105 transition duration-300"
+                   href="https://nicolasfernandez.fr/"
+                   data-slideframe="false">
+                    <span
+                          class="z-10 text-white">Nicolas Fernandez</span>
+                    <img src="media/friends/who.svg" alt="" class="absolute w-full h-full">
+                </a>
+
+            </div>
+        </div>
+
+
+
+        <script src="assets/js/works.js"></script>
+        <script src="assets/slideFrame.min.js"></script>
 
 
 </body>

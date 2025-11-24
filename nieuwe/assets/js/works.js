@@ -101,135 +101,200 @@ fetch("https://opensheet.elk.sh/" + ADDRESS)
             // Skip empty rows (no Title)
             if (!row.Title || !row.Title.trim()) return;
 
+            // Skip rows marked as inactive (red dot)
+            const state = (row.State || "").trim();
+            if (state === "\uD83D\uDD34") return;
+
             const title = row.Title.trim();
             const description = (row.Description || "").trim();
             const year = (row.Date || "").trim();
+            const nature = (row.Nature || "").trim();
             const url = (row.URL || "#").trim();
 
             // Outer div (with hover state)
-            const wrapper = document.createElement("div");
+            const wrapper = document.createElement("a");
+            wrapper.href = url || "#";
+            wrapper.setAttribute('data-slideframe', 'true');
+            wrapper.setAttribute('title', url);
+            wrapper.setAttribute('data-nature', nature);
+            wrapper.dataset.slideframe = "true";
             wrapper.className =
-                "p-1 text-lg leading-tight transition-all duration-200 cursor-pointer hover:bg-zinc-200 group";
+                "p-1 md:text-lg leading-tight transition-all duration-200 cursor-pointer hover:bg-zinc-200 group";
 
             // Inner <a>
-            const link = document.createElement("a");
-            link.href = url || "#";
-            link.setAttribute('data-slideframe', 'true');
-            link.dataset.slideframe = "true";
+            const link = document.createElement("div");
             link.className =
-                "w-[500px] max-w-full px-4 py-2 md:p-0 mx-auto flex justify-between";
+                "w-[500px] max-w-full px-3 py-1 mx-auto flex justify-between";
 
             // Left side (title + description on hover)
             const left = document.createElement("div");
             left.className = "flex gap-2";
 
-            const titleEl = document.createElement("div");
+            const titleEl = document.createElement("h4");
             titleEl.textContent = title;
-
-            const descEl = document.createElement("span");
-            descEl.textContent = description;
-            descEl.className =
-                "opacity-0 transition-all duration-200 group-hover:opacity-100 text-grey";
-
             left.appendChild(titleEl);
-            if (description) {
-                left.appendChild(descEl);
-            }
+
+            // const descEl = document.createElement("p");
+            // descEl.textContent = description;
+            // descEl.className =
+            //     "opacity-0 transition-all duration-200 group-hover:opacity-100 text-grey";
+
+            // if (description) {
+            //     left.appendChild(descEl);
+            // }
 
             // Right side (year)
+            const right = document.createElement("div");
+            right.className = "flex gap-2";
+
             const yearEl = document.createElement("div");
             yearEl.textContent = year;
+            yearEl.className = "group-hover:hidden";
+            right.appendChild(yearEl);
+
+            const helpEl = document.createElement("div");
+            helpEl.textContent = "quick view";
+            helpEl.className = "hidden group-hover:inline text-grey";
+            right.appendChild(helpEl);
 
             // Assemble
             link.appendChild(left);
-            link.appendChild(yearEl);
+            link.appendChild(right);
             wrapper.appendChild(link);
             container.appendChild(wrapper);
         });
+
+        applyNatureFilter();
+        bindSlideFrameLinks();
     })
     .catch(err => console.error("Error fetching sheet:", err));
 
+// WEBSITES FILTER
+const chkPersonal = document.getElementById('filter-personal');
+const chkCommissioned = document.getElementById('filter-commissioned');
+
+// Default state: commissioned selected
+if (chkCommissioned) chkCommissioned.checked = true;
+
+function applyNatureFilter() {
+    // Query each time so newly fetched projects are included
+    const projects = document.querySelectorAll('#projects-list [data-nature]');
+    const activeNatures = [];
+
+    if (chkPersonal?.checked) activeNatures.push('Personal');
+    if (chkCommissioned?.checked) activeNatures.push('Commissioned');
+
+    projects.forEach(project => {
+        const nature = project.dataset.nature;
+        const shouldShow =
+            activeNatures.length === 0 || activeNatures.includes(nature);
+
+        if (shouldShow) {
+            project.classList.remove('hidden');
+        } else {
+            project.classList.add('hidden');
+        }
+    });
+}
+
+// Listen to changes on both checkboxes with a radio-like exclusivity
+if (chkPersonal && chkCommissioned) {
+    chkPersonal.addEventListener('change', () => {
+        if (chkPersonal.checked) chkCommissioned.checked = false;
+        applyNatureFilter();
+    });
+
+    chkCommissioned.addEventListener('change', () => {
+        if (chkCommissioned.checked) chkPersonal.checked = false;
+        applyNatureFilter();
+    });
+} else {
+    [chkPersonal, chkCommissioned].forEach(chk => {
+        if (!chk) return;
+        chk.addEventListener('change', applyNatureFilter);
+    });
+}
+applyNatureFilter();
 
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     const primaryList = document.querySelector('.nav__list--primary');
-//     const secondaryList = document.querySelector('.nav__list--secondary');
-//     const anchor = document.querySelector('.nav__title--primary');
-//     const targets = secondaryList ? secondaryList.querySelectorAll('.nav__title') : [];
+function bindSlideFrameLinks() {
+    // Uses the slideFrame overlay that slideFrame.min.js injects
+    const overlay = document.querySelector('.slideframe');
+    const frame = document.querySelector('.slideframe-container-frame');
+    const titleEl = document.querySelector('.slideframe-container-titlebar-title');
+    const external = document.querySelector('.slideframe-container-titlebar-external');
 
-//     if (!primaryList || !secondaryList || !anchor || !targets.length) return;
+    if (!overlay || !frame || !titleEl || !external) return;
 
-//     let baseTransform = 'translateY(0)';
+    document.querySelectorAll('#projects-list a[data-slideframe="true"]').forEach(link => {
+        if (link.dataset.slideframeBound) return;
+        link.dataset.slideframeBound = "true";
 
-//     const applyTransform = (value, { animate = true } = {}) => {
-//         if (!animate) {
-//             const previousTransition = anchor.style.transition || '';
-//             anchor.style.transition = 'none';
-//             anchor.style.transform = value;
-//             void anchor.offsetHeight; // force reflow
-//             requestAnimationFrame(() => {
-//                 anchor.style.transition = previousTransition;
-//             });
-//             return;
-//         }
-//         anchor.style.transform = value;
-//     };
+        link.addEventListener('click', e => {
+            if (e.metaKey || e.ctrlKey) return;
 
-//     const moveAnchor = (el, options) => {
-//         const primaryTop = primaryList.getBoundingClientRect().top;
-//         const targetTop = el.getBoundingClientRect().top;
-//         applyTransform(`translateY(${targetTop - primaryTop}px)`, options);
-//     };
+            const href = link.getAttribute('href') || "";
+            const isMailto = href.startsWith('mailto:');
+            const isTel = href.startsWith('tel:');
 
-//     const setBaseTransform = (value, options) => {
-//         baseTransform = value;
-//         applyTransform(baseTransform, options);
-//     };
+            // Only hijack external links
+            if (!href || href === "#" || isMailto || isTel) return;
+            if (link.hostname === window.location.hostname) return;
 
-//     const resetAnchor = (options) => {
-//         applyTransform(baseTransform, options);
-//     };
+            e.preventDefault();
+            overlay.classList.add('slideframe--visible');
+            document.body.classList.add('slideframe-body--noscroll', 'slideframe-body--loading');
 
-//     const getPathSlug = () => {
-//         const path = window.location.pathname.toLowerCase();
-//         if (path.includes('works')) return 'works';
-//         if (path.includes('sites')) return 'sites';
-//         if (path.includes('cv')) return 'cv';
-//         if (path.includes('friends')) return 'friends';
-//         if (path.includes('today')) return 'today';
-//         return 'energy';
-//     };
+            frame.setAttribute('src', href);
+            const title = link.hasAttribute('title') ? link.getAttribute('title') : link.innerText;
+            frame.setAttribute('title', title);
+            titleEl.innerText = title;
+            external.setAttribute('href', href);
+        });
+    });
+}
 
-//     const findNavItem = (slug) => {
-//         return Array.from(targets).find(
-//             (title) => title.textContent.trim().toLowerCase() === slug
-//         );
-//     };
 
-//     const setInitialAnchor = () => {
-//         const slug = getPathSlug();
-//         if (slug === 'energy') {
-//             setBaseTransform('translateY(0)', { animate: false });
-//             return;
-//         }
-//         const initialTarget = findNavItem(slug);
-//         if (initialTarget) {
-//             const primaryTop = primaryList.getBoundingClientRect().top;
-//             const targetTop = initialTarget.getBoundingClientRect().top;
-//             setBaseTransform(`translateY(${targetTop - primaryTop}px)`, { animate: false });
-//         } else {
-//             setBaseTransform('translateY(0)', { animate: false });
-//         }
-//     };
+// IMAGES ON THE SREUSME
+function setupResumePopup() {
+    const resume = document.getElementById('resume');
+    const popup = document.getElementById('resume-popup');
+    const popupDiv = document.querySelector('#resume-popup>div');
+    const imgEl = popup?.querySelector('img');
 
-//     targets.forEach((title) => {
-//         title.addEventListener('mouseenter', () => moveAnchor(title));
-//         title.addEventListener('focus', () => moveAnchor(title));
-//         title.addEventListener('mouseleave', resetAnchor);
-//         title.addEventListener('blur', resetAnchor);
-//     });
+    if (!resume || !popup || !imgEl) return;
 
-//     secondaryList.addEventListener('mouseleave', resetAnchor);
+    const defaultImage = 'assets/pablo-moreno.jpg';
+    let hideTimer;
 
-//     setInitialAnchor();
-// });
+    resume.querySelectorAll('.grid.grid-cols-5').forEach(item => {
+        item.addEventListener('click', () => {
+            const src = item.dataset.popupImage || defaultImage;
+            if (!src) return;
+
+            // random entre -3 y +3 grados
+            const randomDeg = (Math.random() * 6) - 3;
+            popupDiv.style.transform = `rotate(${randomDeg}deg)`;
+
+            imgEl.src = src;
+            popup.classList.add('show');
+            popup.setAttribute('aria-hidden', 'false');
+
+            clearTimeout(hideTimer);
+            hideTimer = setTimeout(() => {
+                popup.classList.remove('show');
+                popup.setAttribute('aria-hidden', 'true');
+            }, 2500);
+        });
+    });
+}
+
+function removeResumePopup() {
+    document.getElementById('resume-popup').classList.remove('show');
+    document.getElementById('resume-popup').setAttribute('aria-hidden', 'true');
+}
+
+window.addEventListener('load', () => {
+    bindSlideFrameLinks();
+    setupResumePopup();
+});

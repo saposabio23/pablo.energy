@@ -62,7 +62,8 @@
 .slideframe-container-titlebar {
   height: 40px !important;
   line-height: 40px !important;
-  background: #fff !important;
+  background: #ffffffa1 !important;
+  backdrop-filter: blur(20px);
   color: #000 !important;
   -webkit-font-smoothing: antialiased !important;
   display: flex !important;
@@ -73,9 +74,9 @@
 }
 
 .slideframe-container-titlebar strong {
-  font-weight: normal !important;
   color: inherit !important;
   font: inherit !important;
+  font-weight: 600 !important;
 }
 
 .slideframe-container-frame {
@@ -144,6 +145,6 @@
 
 @media (max-width: 500px) {
   .slideframe-container {
-    width: 100% !important;
+    width: 90% !important;
   }
 }
