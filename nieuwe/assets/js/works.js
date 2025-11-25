@@ -60,33 +60,33 @@ setInterval(updateClock, 1000);
 
 
 // IMAGES STACK
-document.querySelectorAll(".imageStack").forEach(stackEl => {
-    const imgs = stackEl.querySelectorAll(".stack-img");
-    let currentIndex = 0;
+// document.querySelectorAll(".imageStack").forEach(stackEl => {
+//     const imgs = stackEl.querySelectorAll(".stack-img");
+//     let currentIndex = 0;
 
-    stackEl.addEventListener("click", () => {
-        const img = imgs[currentIndex];
-        if (!img) return; // no more images
+//     stackEl.addEventListener("click", () => {
+//         const img = imgs[currentIndex];
+//         if (!img) return; // no more images
 
-        // add falling effect
-        img.classList.add("fall");
+//         // add falling effect
+//         img.classList.add("fall");
 
-        // when animation ends, hide the image so it doesn't block clicks
-        img.addEventListener("transitionend", () => {
-            img.classList.add("hidden");
-        }, { once: true });
+//         // when animation ends, hide the image so it doesn't block clicks
+//         img.addEventListener("transitionend", () => {
+//             img.classList.add("hidden");
+//         }, { once: true });
 
-        currentIndex++;
+//         currentIndex++;
 
-        // OPTIONAL: reset this stack when all images have fallen
-        // if (currentIndex >= imgs.length) {
-        //     setTimeout(() => {
-        //         imgs.forEach(im => im.classList.remove("fall", "hidden"));
-        //         currentIndex = 0;
-        //     }, 900); // a bit longer than the 0.8s animation
-        // }
-    });
-});
+//         // OPTIONAL: reset this stack when all images have fallen
+//         // if (currentIndex >= imgs.length) {
+//         //     setTimeout(() => {
+//         //         imgs.forEach(im => im.classList.remove("fall", "hidden"));
+//         //         currentIndex = 0;
+//         //     }, 900); // a bit longer than the 0.8s animation
+//         // }
+//     });
+// });
 
 // WEBSITES LIST
 var ADDRESS = "1UGVXTssu8J9mBbOyPSX0qkOo13xggy_MgboicC4UlTU/1";
@@ -124,7 +124,7 @@ fetch("https://opensheet.elk.sh/" + ADDRESS)
             // Inner <a>
             const link = document.createElement("div");
             link.className =
-                "w-[500px] max-w-full px-3 py-1 mx-auto flex justify-between";
+                "px-3 py-1 mx-auto flex justify-between";
 
             // Left side (title + description on hover)
             const left = document.createElement("div");
@@ -134,14 +134,14 @@ fetch("https://opensheet.elk.sh/" + ADDRESS)
             titleEl.textContent = title;
             left.appendChild(titleEl);
 
-            // const descEl = document.createElement("p");
-            // descEl.textContent = description;
-            // descEl.className =
-            //     "opacity-0 transition-all duration-200 group-hover:opacity-100 text-grey";
+            const descEl = document.createElement("p");
+            descEl.textContent = description;
+            descEl.className =
+                "opacity-0 transition-all duration-200 group-hover:opacity-100 text-grey";
 
-            // if (description) {
-            //     left.appendChild(descEl);
-            // }
+            if (description) {
+                left.appendChild(descEl);
+            }
 
             // Right side (year)
             const right = document.createElement("div");
@@ -152,10 +152,10 @@ fetch("https://opensheet.elk.sh/" + ADDRESS)
             yearEl.className = "group-hover:hidden";
             right.appendChild(yearEl);
 
-            const helpEl = document.createElement("div");
-            helpEl.textContent = "quick view";
-            helpEl.className = "hidden group-hover:inline text-grey";
-            right.appendChild(helpEl);
+            // const helpEl = document.createElement("div");
+            // helpEl.textContent = "quick view";
+            // helpEl.className = "hidden group-hover:inline text-grey";
+            // right.appendChild(helpEl);
 
             // Assemble
             link.appendChild(left);
@@ -179,15 +179,16 @@ if (chkCommissioned) chkCommissioned.checked = true;
 function applyNatureFilter() {
     // Query each time so newly fetched projects are included
     const projects = document.querySelectorAll('#projects-list [data-nature]');
-    const activeNatures = [];
+    const activeNatures = new Set();
 
-    if (chkPersonal?.checked) activeNatures.push('Personal');
-    if (chkCommissioned?.checked) activeNatures.push('Commissioned');
+    if (chkPersonal?.checked) activeNatures.add('personal');
+    if (chkCommissioned?.checked) activeNatures.add('commissioned');
 
     projects.forEach(project => {
-        const nature = project.dataset.nature;
+        const nature = project.dataset.nature || "";
+        const normalizedNature = nature.trim().toLowerCase();
         const shouldShow =
-            activeNatures.length === 0 || activeNatures.includes(nature);
+            activeNatures.size === 0 || activeNatures.has(normalizedNature);
 
         if (shouldShow) {
             project.classList.remove('hidden');
@@ -267,7 +268,7 @@ function setupResumePopup() {
     const defaultImage = 'assets/pablo-moreno.jpg';
     let hideTimer;
 
-    resume.querySelectorAll('.grid.grid-cols-5').forEach(item => {
+    resume.querySelectorAll('.listStack').forEach(item => {
         item.addEventListener('click', () => {
             const src = item.dataset.popupImage || defaultImage;
             if (!src) return;
