@@ -1,19 +1,19 @@
 // GRADIENT TOP APPEARS
-const gradTop = document.getElementById("gradient-top");
-const indentityText = document.getElementById("indentity-text");
+// const gradTop = document.getElementById("gradient-top");
+// const indentityText = document.getElementById("indentity-text");
 
 
 
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 60) {
-        gradTop.style.opacity = "1";
-        indentityText.style.opacity = "0";
+// window.addEventListener("scroll", () => {
+//     if (window.scrollY > 60) {
+//         gradTop.style.opacity = "1";
+//         indentityText.style.opacity = "0";
 
-    } else {
-        gradTop.style.opacity = "0";
-        indentityText.style.opacity = "1";
-    }
-});
+//     } else {
+//         gradTop.style.opacity = "0";
+//         indentityText.style.opacity = "1";
+//     }
+// });
 
 // VIDEO PABLO
 const vid = document.getElementById("pablo-face");
@@ -55,8 +55,8 @@ function updateClock() {
 }
 
 // initial call + update every second
-updateClock();
-setInterval(updateClock, 1000);
+// updateClock();
+// setInterval(updateClock, 1000);
 
 
 // IMAGES STACK
@@ -119,12 +119,12 @@ fetch("https://opensheet.elk.sh/" + ADDRESS)
             wrapper.setAttribute('data-nature', nature);
             wrapper.dataset.slideframe = "true";
             wrapper.className =
-                "p-1 md:text-lg leading-tight transition-all duration-200 cursor-pointer hover:bg-zinc-200 group";
+                "md:text-lg leading-tight transition-all duration-200 cursor-pointer hover:bg-zinc-200 group";
 
             // Inner <a>
             const link = document.createElement("div");
             link.className =
-                "px-3 py-1 mx-auto flex justify-between";
+                "px-3 py-2 mx-auto flex justify-between";
 
             // Left side (title + description on hover)
             const left = document.createElement("div");
@@ -152,10 +152,10 @@ fetch("https://opensheet.elk.sh/" + ADDRESS)
             yearEl.className = "group-hover:hidden";
             right.appendChild(yearEl);
 
-            // const helpEl = document.createElement("div");
-            // helpEl.textContent = "quick view";
-            // helpEl.className = "hidden group-hover:inline text-grey";
-            // right.appendChild(helpEl);
+            const helpEl = document.createElement("div");
+            helpEl.textContent = "↗︎";
+            helpEl.className = "hidden group-hover:inline text-grey";
+            right.appendChild(helpEl);
 
             // Assemble
             link.appendChild(left);
@@ -179,16 +179,15 @@ if (chkCommissioned) chkCommissioned.checked = true;
 function applyNatureFilter() {
     // Query each time so newly fetched projects are included
     const projects = document.querySelectorAll('#projects-list [data-nature]');
-    const activeNatures = new Set();
+    const activeNatures = [];
 
-    if (chkPersonal?.checked) activeNatures.add('personal');
-    if (chkCommissioned?.checked) activeNatures.add('commissioned');
+    if (chkPersonal?.checked) activeNatures.push('Personal');
+    if (chkCommissioned?.checked) activeNatures.push('Commissioned');
 
     projects.forEach(project => {
-        const nature = project.dataset.nature || "";
-        const normalizedNature = nature.trim().toLowerCase();
+        const nature = project.dataset.nature;
         const shouldShow =
-            activeNatures.size === 0 || activeNatures.has(normalizedNature);
+            activeNatures.length === 0 || activeNatures.includes(nature);
 
         if (shouldShow) {
             project.classList.remove('hidden');
