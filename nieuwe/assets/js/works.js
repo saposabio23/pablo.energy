@@ -2,6 +2,9 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("intro-photo").classList.remove("opacity-0");
     document.getElementById("intro-texto").classList.remove("opacity-0");
     document.getElementById("intro-menu").classList.remove("opacity-0");
+    setTimeout(() => {
+        document.getElementById("ball").classList.remove("opacity-0");
+    }, 900);
 });
 
 
@@ -166,7 +169,7 @@ fetch("https://opensheet.elk.sh/" + ADDRESS)
             wrapper.setAttribute('data-nature', nature);
             wrapper.dataset.slideframe = "true";
             wrapper.className =
-                "md:text-lg leading-tight transition-all duration-200 cursor-pointer hover:bg-zinc-200 group w-full ";
+                "md:text-lg leading-tight transition-all duration-200 cursor-pointer hover:bg-zinc-200 rounded-[6px] group w-full ";
 
             // Inner <a>
             const link = document.createElement("div");
@@ -184,7 +187,7 @@ fetch("https://opensheet.elk.sh/" + ADDRESS)
             const descEl = document.createElement("p");
             descEl.textContent = description;
             descEl.className =
-                "opacity-0 transition-all duration-200 group-hover:opacity-100 text-grey";
+                "opacity-0 transition-all duration-200 group-hover:opacity-100 text-grey hidden md:inline";
 
             if (description) {
                 left.appendChild(descEl);

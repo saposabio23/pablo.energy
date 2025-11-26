@@ -34,45 +34,49 @@
 
 
     <div id="works"
-         class="flex relative flex-col font-semibold pointer-events-none p-3 md:pt-[calc(50vh-30px)]">
+         class="flex relative flex-col font-semibold pointer-events-none p-3 pt-0 md:pt-[calc(50vh-30px)]">
 
         <div id="pablo"
-             class="gap-1 md:gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-8 md:scroll-mt-[55px] sticky top-0 py-4 md:py-3 mb-[50vh]">
+             class="gap-3 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-8 md:scroll-mt-[calc] md:sticky top-0 py-4 md:py-3 mb-10 md:mb-[50vh] z-10 h-screen md:h-fit justify-between">
 
             <div
-                 class="absolute top-0 left-0 h-[110px] md:h-[100px] w-full bg-linear-to-b from-[#EAEAEA] from-60% to-transparent ">
+                 class="absolute top-0 left-0 h-[110px] md:h-[80px] w-full bg-linear-to-b from-[#EAEAEA] from-60% to-transparent">
             </div>
 
+            <div class="inline md:hidden"></div>
+
             <div
-                 class="col-span-2 md:sticky top-0 text-sm h-fit flex items-center justify-between gap-1 pb-[35vh] md:pb-0">
+                 class="col-span-2 sticky top-3 text-sm h-fit flex items-center justify-between gap-1 md:pb-0 z-10">
 
                 <div id="intro-photo"
-                     class="rounded-full overflow-hidden w-[30px] h-[30px] group relative transition-opacity delay-150 duration-1000 opacity-0 <">
+                     class="rounded-full aspect-square group relative transition-opacity delay-150 duration-1000 opacity-0 h-[30px] w-[30px] cursor-pointer shadow-big">
                     <img src="assets/pablo-moreno.jpg" alt=""
-                         class="absolute group-hover:opacity-0 transition-transform duration-600 ease-out">
-                    <img src="assets/ball.png" alt=""
-                         class="rotate-360 absolute opacity-0 group-hover:opacity-100 group-hover:rotate-0 transition-transform duration-600 ease-out">
+                         class="absolute transition duration-600 ease-out aspect-square h-[30px] w-[30px] rounded-full group-hover:scale-90">
+                    <img src="assets/ball.png" id="ball" alt=""
+                         class="rotate-360 absolute translate-x-[120%] group-hover:opacity-100 group-hover:rotate-0 group-hover:translate-none transition opacity-0 duration-600 ease-out aspect-square h-[30px] w-[30px] rounded-full z-0">
                 </div>
 
                 <h3 id="intro-texto"
-                    class="w-full text-black bg-white px-2 h-[30px] rounded-[6px] flex items-center gap-1 transition-opacity delay-300 duration-1000 opacity-0">
-                    PABLO MORENO <span class="text-grey">Handmade (web) designer </span>
+                    class="w-full text-white bg-black px-2 h-[30px] rounded-[6px] flex items-center gap-2 transition-opacity delay-300 duration-1000 opacity-0 z-10 shadow-big">
+                    PABLO <span class="inline md:hidden">M.</span> <span class="hidden md:inline">MORENO</span><span
+                          class="text-grey">Handmade (web) designer
+                    </span>
                 </h3>
 
             </div>
 
             <div id="intro-menu"
-                 class="content-center w-full col-span-4 items-center text-sm mb-[25vh] md:mb-0 z-10 transition-opacity delay-450 duration-1000 opacity-0">
+                 class="content-center w-full col-span-4 items-center text-base md:text-sm md:mb-0 z-0 transition-opacity delay-450 duration-1000 opacity-0">
                 <a href="#today"
                    class="mx-px leading-tight transition-colors duration-200 cursor-pointer text-grey hover:text-[#11C3FF]">
                     TODAY
                 </a> I whom to show my
-                <a href="#selected"
-                   class="mx-px leading-tight transition-colors duration-200 cursor-pointer text-grey hover:text-[#3F0200]">
+                <a href="#highlighted"
+                   class="mx-px leading-tight transition-colors duration-200 cursor-pointer text-grey hover:text-[#E90801]">
                     HIGHLIGHTED
                 </a> projects and a list of
                 <a href="#websites"
-                   class="mx-px leading-tight transition-colors duration-200 cursor-pointer text-grey hover:text-black">
+                   class="mx-px leading-tight transition-colors duration-200 cursor-pointer text-grey hover:text-[#fad74b]">
                     WEBSITES
                 </a> I made, along with my
                 <a href="#resume"
@@ -80,7 +84,7 @@
                     RESUME
                 </a> and a way to
                 <a href="#contact"
-                   class="mx-px leading-tight transition-colors duration-200 cursor-pointer text-grey hover:text-[#0000FF]">
+                   class="mx-px leading-tight transition-colors duration-200 cursor-pointer text-grey hover:text-[#0000D9]">
                     CONTACT
                 </a> me. <a id="fleche" href="#today"
                    class="duration-300 hover:text-black text-grey">↓</a>
@@ -88,52 +92,51 @@
 
         </div>
 
-
         <div id="today"
-             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-8 md:scroll-mt-[55px] mb-[25vh] mt-[100vh]">
+             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-8 md:scroll-mt-[calc] mb-20 md:mb-[25vh]">
 
             <div
-                 class="col-span-2 sticky top-[90px] md:top-[55px] text-sm  h-fit flex items-center justify-between gap-1">
+                 class="col-span-2 sticky top-4 md:top-[calc(50vh-30px)] text-sm  h-fit flex items-center justify-between gap-1 ">
 
                 <div
-                     class="text-sm text-[#FFFF2A] bg-[#11C3FF] px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center">
+                     class="text-sm text-[#FFFF2A] bg-[#11C3FF] px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center shadow-big">
                     1
                 </div>
                 <h3
-                    class="w-full text-[#FFFF2A] bg-[#11C3FF] px-2 h-[30px] rounded-[6px] flex items-center">
+                    class="w-full text-[#FFFF2A] bg-[#11C3FF] px-2 h-[30px] rounded-[6px] flex items-center shadow-big">
                     TODAY
                 </h3>
 
             </div>
 
-            <div class="grid grid-cols-2 gap-4 col-span-4">
+            <div class="flex flex-col md:grid grid-cols-2 gap-4 col-span-4 ml-9">
                 <div>
-                    <h4 class="text-grey">WHERE I'M FROM</h4>
-                    <p>Blablabla</p>
+                    <h4 class="text-grey text-sm">WHERE I'M FROM</h4>
+                    <p class="text-lg">Blablabla</p>
                 </div>
                 <div>
-                    <h4 class="text-grey">WHAT I USED TO DO</h4>
-                    <p>Blablabla</p>
+                    <h4 class="text-grey text-sm">WHAT I USED TO DO</h4>
+                    <p class="text-lg">Blablabla</p>
                 </div>
                 <div>
-                    <h4 class="text-grey">WHAT I'M LOOKING FOR</h4>
-                    <p>Blablabla</p>
+                    <h4 class="text-grey text-sm">WHAT I'M LOOKING FOR</h4>
+                    <p class="text-lg">Blablabla</p>
                 </div>
             </div>
 
         </div>
 
-        <div id="selected"
-             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-8 md:scroll-mt-[55px] mb-[25vh]">
+        <div id="highlighted"
+             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-8 md:scroll-mt-[calc] mb-20 md:mb-[25vh]">
 
             <div
-                 class="col-span-2 sticky top-[90px] md:top-[55px] text-sm  h-fit flex items-center justify-between gap-1 ">
+                 class="col-span-2 sticky top-4 md:top-[calc(50vh-30px)] text-sm  h-fit flex items-center justify-between gap-1 z-10">
 
                 <div
-                     class="text-sm text-[#FF7800] bg-[#3F0200] px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center">
+                     class="text-sm text-red-100 bg-[#E90801] px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center shadow-big">
                     2</div>
                 <h3
-                    class="w-full text-[#FF7800] bg-[#3F0200] px-2 h-[30px] rounded-[6px] flex items-center">
+                    class="w-full text-red-100 bg-[#E90801] px-2 h-[30px] rounded-[6px] flex items-center shadow-big">
                     HIGHLIGHTED PROJECTS
                 </h3>
             </div>
@@ -214,7 +217,8 @@
                         </div>
                         <div class="flex flex-col items-end">
                             <div class="text-black text-lg w-fit leading-tight">2025</div>
-                            <a href="" class="text-grey leading-tight text-base">Visit website</a>
+                            <a href="" class="text-grey group-hover:text-black transition duration-300 text-base">Visit
+                                website</a>
                         </div>
                     </div>
 
@@ -263,23 +267,23 @@
         </div>
 
         <div id="websites"
-             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-8 md:scroll-mt-[55px] mb-[25vh]">
+             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-8 md:scroll-mt-[calc] mb-20 md:mb-[25vh]">
 
             <div
-                 class="col-span-2 sticky top-[90px] md:top-[55px] text-sm  h-fit flex items-center justify-between gap-1">
+                 class="col-span-2 sticky top-4 md:top-[calc(50vh-30px)] text-sm  h-fit flex items-center justify-between gap-1">
                 <div
-                     class="text-black bg-[#FAF5A2] px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center">
+                     class="text-[#917400] bg-[#fad74b] px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center shadow-big">
                     3</div>
 
                 <div
-                     class=" text-black bg-[#FAF5A2] px-2 h-[30px] rounded-[6px] flex items-center  justify-between w-full">
+                     class=" text-[#917400] bg-[#fad74b] px-2 h-[30px] rounded-[6px] flex items-center  justify-between w-full shadow-big">
                     <h3>WEBSITES
                     </h3>
 
-                    <div id="nature-filters" class="flex gap-4 items-center text-sm text-grey">
+                    <div id="nature-filters" class="flex gap-4 items-center text-sm text-[#917400]">
                         <label class="flex items-center gap-1 cursor-pointer">
                             <input type="radio" id="filter-commissioned" value="Commissioned"
-                                   class="peer h-3 w-3 cursor-pointer appearance-none rounded-full border border-grey checked:bg-grey transition-all">
+                                   class="peer h-3 w-3 cursor-pointer appearance-none rounded-full border border-[#917400] checked:bg-[#917400] transition-all">
                             <span class="items-start gap-1 hidden md:flex">Commissioned <span
                                       class="hidden md:inline text-[8px]">10</span></span>
                             <span class="flex items-start gap-1 md:hidden">Com. <span
@@ -288,7 +292,7 @@
 
                         <label class="flex items-center gap-1 cursor-pointer">
                             <input type="radio" id="filter-personal" value="Personal"
-                                   class="peer h-3 w-3 cursor-pointer appearance-none rounded-full border border-grey checked:bg-grey transition-all">
+                                   class="peer h-3 w-3 cursor-pointer appearance-none rounded-full border border-[#917400] checked:bg-[#917400] transition-all">
                             <span class="flex items-start gap-1">Personal <span
                                       class="hidden md:inline text-[8px]">46</span></span>
                         </label>
@@ -304,21 +308,21 @@
         </div>
 
         <div id="resume"
-             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-8 md:scroll-mt-[55px] mb-[25vh]">
+             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-8 md:scroll-mt-[calc] mb-20 md:mb-[25vh]">
 
             <div
-                 class="col-span-2 sticky top-[90px] md:top-[55px] text-sm  h-fit flex items-center justify-between gap-1">
+                 class="col-span-2 sticky top-4 md:top-[calc(50vh-30px)] text-sm  h-fit flex items-center justify-between gap-1">
 
                 <div
-                     class="text-black bg-white px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center">
+                     class="text-black bg-white px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center shadow-big">
                     4</div>
                 <div
-                     class="text-black bg-white px-2 h-[30px] rounded-[6px] flex items-center w-full  justify-between">
+                     class="text-black bg-white px-2 h-[30px] rounded-[6px] flex items-center w-full  justify-between shadow-big">
                     <h4>
                         RESUME
                     </h4>
 
-                    <div class="flex gap-4">
+                    <div class="flex gap-3">
                         <span class="text-red-600">Work</span>
                         <span class="text-green-600">Internship</span>
                         <span class="text-blue-700">Studies</span>
@@ -337,14 +341,17 @@
             <div class="flex flex-col gap-4 col-span-4">
 
                 <div
-                     class="listStack flex gap-4 text-base md:text-lg group hover:bg-white p-2 rounded-[8px] transition duration-300 cursor-pointer fade-loop">
+                     class="listStack flex gap-4 text-base md:text-lg group hover:bg-zinc-200 p-2 rounded-[8px] transition duration-300 cursor-pointer group fade-loop">
                     <div class="w-[70px]">
-                        <span class=" text-grey ">2026</span>
+                        <span class="">2026</span>
                     </div>
-                    <div class="leading-tight flex flex-col w-full">
+                    <div class="leading-tight flex flex-col w-full gap-1">
                         <div class="flex gap-2 items-center">
                             <span class="text-black ">Looking for new design colaborations</span>
                         </div>
+                        <p class=" text-grey group-hover:text-black transition duration-300 text-sm">I would like to
+                            find a studio or freelancer who works with websites projects to bring my ideas and
+                            expertise</p>
                     </div>
                     <div class="h-full flex items-center justify-center">
                         <span
@@ -355,18 +362,18 @@
 
                 <!-- 2025 - DEsigner at Analogue -->
                 <div
-                     class="listStack flex gap-4 text-base md:text-lg group hover:bg-white p-2 rounded-[8px] transition duration-300 cursor-pointer">
+                     class="listStack flex gap-4 text-base md:text-lg group hover:bg-zinc-200 p-2 rounded-[8px] transition duration-300 cursor-pointer group">
                     <div class="w-[70px]">
-                        <span class=" text-grey ">2025</span>
+                        <span class="text-grey group-hover:text-black transition duration-300">2025</span>
                     </div>
-                    <div class="leading-tight flex flex-col w-full">
+                    <div class="leading-tight flex flex-col w-full gap-1">
                         <div class="flex gap-2 items-center">
                             <span class="text-red-600">Designer at Analogue
                                 <small>Ⓡ</small></span>
                         </div>
                         <p class=" text-grey group-hover:text-black transition duration-300 text-sm">As an
                             junior
-                            designer, I worked on complete identities, web design and Framer development.</p>
+                            designer, I worked on complete identities, web design and Framer development</p>
 
                     </div>
                     <div class="h-full flex items-center justify-center">
@@ -377,17 +384,17 @@
 
                 <!-- 2024 – Intern at Analogue -->
                 <div
-                     class="listStack flex gap-4 text-base md:text-lg group hover:bg-white p-2 rounded-[8px] transition duration-300 cursor-pointer">
+                     class="listStack flex gap-4 text-base md:text-lg group hover:bg-zinc-200 p-2 rounded-[8px] transition duration-300 cursor-pointer group">
                     <div class="w-[70px]">
-                        <span class=" text-grey ">2024</span>
+                        <span class="text-grey group-hover:text-black transition duration-300">2024</span>
                     </div>
-                    <div class="leading-tight flex flex-col w-full">
+                    <div class="leading-tight flex flex-col w-full gap-1">
                         <div class="flex gap-2 items-center">
                             <span class="text-green-600">Intern at Analogue
                                 <small>Ⓡ</small></span>
                         </div>
                         <p class=" text-grey group-hover:text-black transition duration-300 text-sm">Six-month
-                            internship assisting on explorations, rebrandings, animations, and multiple tasks.</p>
+                            internship assisting on explorations, rebrandings, animations, and multiple tasks</p>
 
                     </div>
                     <div class="h-full flex items-center justify-center">
@@ -398,17 +405,17 @@
 
                 <!-- 2024 – Mentor for AFEV association -->
                 <div
-                     class="listStack flex gap-4 text-base md:text-lg group hover:bg-white p-2 rounded-[8px] transition duration-300 cursor-pointer">
+                     class="listStack flex gap-4 text-base md:text-lg group hover:bg-zinc-200 p-2 rounded-[8px] transition duration-300 cursor-pointer group">
                     <div class="w-[70px]">
-                        <span class=" text-grey ">2024</span>
+                        <span class="text-grey group-hover:text-black transition duration-300">2024</span>
                     </div>
-                    <div class="leading-tight flex flex-col w-full">
+                    <div class="leading-tight flex flex-col w-full gap-1">
                         <div class="flex gap-2 items-center">
                             <span class="text-red-600">Mentor for AFEV association</span>
                         </div>
                         <p class=" text-grey group-hover:text-black transition duration-300 text-sm">Volunteer
                             helping
-                            siblings with homework and social activities.</p>
+                            siblings with homework and social activities</p>
 
                     </div>
                     <div class="h-full flex items-center justify-center">
@@ -419,16 +426,16 @@
 
                 <!-- 2024 – Welcomer at Maison de la Culture -->
                 <div
-                     class="listStack flex gap-4 text-base md:text-lg group hover:bg-white p-2 rounded-[8px] transition duration-300 cursor-pointer">
+                     class="listStack flex gap-4 text-base md:text-lg group hover:bg-zinc-200 p-2 rounded-[8px] transition duration-300 cursor-pointer group">
                     <div class="w-[70px]">
-                        <span class=" text-grey ">2024</span>
+                        <span class="text-grey group-hover:text-black transition duration-300">2024</span>
                     </div>
-                    <div class="leading-tight flex flex-col w-full">
+                    <div class="leading-tight flex flex-col w-full gap-1">
                         <div class="flex gap-2 items-center">
                             <span class="text-red-600">Welcomer at Maison de la Culture</span>
                         </div>
                         <p class=" text-grey group-hover:text-black transition duration-300 text-sm">Welcoming
-                            spectators, assistant during the shows, responsable of the cinema.</p>
+                            spectators, assistant during the shows, responsable of the cinema</p>
 
                     </div>
                     <div class="h-full flex items-center justify-center">
@@ -440,17 +447,17 @@
 
                 <!-- 2024↑2022 – Double master in UX/UI at ESAD -->
                 <div
-                     class="listStack flex gap-4 text-base md:text-lg group hover:bg-white p-2 rounded-[8px] transition duration-300 cursor-pointer">
+                     class="listStack flex gap-4 text-base md:text-lg group hover:bg-zinc-200 p-2 rounded-[8px] transition duration-300 cursor-pointer group">
                     <div class="w-[70px]">
-                        <span class="text-grey leading-tight">2024<br>↑2022</span>
+                        <span class="text-grey group-hover:text-black transition duration-300">2024<br>↑2022</span>
                     </div>
-                    <div class="leading-tight flex flex-col w-full">
+                    <div class="leading-tight flex flex-col w-full gap-1">
                         <div class="flex gap-2 items-center">
                             <span class="text-blue-700">Double master in UX/UI at ESAD</span>
                         </div>
                         <p class=" text-grey group-hover:text-black transition duration-300 text-sm">This dual
                             course
-                            prepared me to work as a digital designer in modern business ecosystems.</p>
+                            prepared me to work as a digital designer in modern business ecosystems</p>
 
                     </div>
                     <div class="h-full flex items-center justify-center">
@@ -461,17 +468,17 @@
 
                 <!-- 2022 – Internship at Cuchillo -->
                 <div
-                     class="listStack flex gap-4 text-base md:text-lg group hover:bg-white p-2 rounded-[8px] transition duration-300 cursor-pointer">
+                     class="listStack flex gap-4 text-base md:text-lg group hover:bg-zinc-200 p-2 rounded-[8px] transition duration-300 cursor-pointer group">
                     <div class="w-[70px]">
-                        <span class="text-grey">2022</span>
+                        <span class="text-grey group-hover:text-black transition duration-300">2022</span>
                     </div>
-                    <div class="leading-tight flex flex-col w-full">
+                    <div class="leading-tight flex flex-col w-full gap-1">
                         <div class="flex gap-2 items-center">
                             <span class="text-green-600">Internship at Cuchillo</span>
                         </div>
                         <p class=" text-grey group-hover:text-black transition duration-300 text-sm">Different
                             works,
-                            from identities to designs for textiles or motion-design.</p>
+                            from identities to designs for textiles or motion-design</p>
 
                     </div>
                     <div class="h-full flex items-center justify-center">
@@ -482,17 +489,17 @@
 
                 <!-- 2021↑2019 – Bachelor Interactive Graphic Design at ESADHaR -->
                 <div
-                     class="listStack flex gap-4 text-base md:text-lg group hover:bg-white p-2 rounded-[8px] transition duration-300 cursor-pointer">
+                     class="listStack flex gap-4 text-base md:text-lg group hover:bg-zinc-200 p-2 rounded-[8px] transition duration-300 cursor-pointer group">
                     <div class="w-[70px]">
-                        <span class="text-grey leading-tight">2021<br>↑2019</span>
+                        <span class="text-grey group-hover:text-black transition duration-300">2021<br>↑2019</span>
                     </div>
-                    <div class="leading-tight flex flex-col w-full">
+                    <div class="leading-tight flex flex-col w-full gap-1">
                         <div class="flex gap-2 items-center">
                             <span class="text-blue-700 leading-tight">Bachelor Interactive Graphic Design at
                                 ESADHaR</span>
                         </div>
                         <p class=" text-grey group-hover:text-black transition duration-300 text-sm">Studies
-                            continuation towards a more artistic creation with digital experiments.</p>
+                            continuation towards a more artistic creation with digital experiments</p>
 
                     </div>
                     <div class="h-full flex items-center justify-center">
@@ -504,9 +511,9 @@
 
                 <!-- 2018 – Internship at M.U.R.R -->
                 <div
-                     class="listStack flex gap-4 text-base md:text-lg group hover:bg-white p-2 rounded-[8px] transition duration-300 cursor-pointer">
+                     class="listStack flex gap-4 text-base md:text-lg group hover:bg-zinc-200 p-2 rounded-[8px] transition duration-300 cursor-pointer group">
                     <div class="w-[70px]">
-                        <span class="text-grey">2018</span>
+                        <span class="text-grey group-hover:text-black transition duration-300">2018</span>
                     </div>
                     <div class="leading-tight flex flex-col w-full">
                         <div class="flex gap-2 items-center">
@@ -514,7 +521,7 @@
                         </div>
                         <p class=" text-grey group-hover:text-black transition duration-300 text-sm">Helped to
                             print
-                            the vinyl cover of Zuur Köol. Further collaborations.</p>
+                            the vinyl cover of Zuur Köol. Further collaborations</p>
 
                     </div>
                     <div class="h-full flex items-center justify-center">
@@ -525,9 +532,9 @@
 
                 <!-- 2018↑2016 – License in type design at Estienne -->
                 <div
-                     class="listStack flex gap-4 text-base md:text-lg group hover:bg-white p-2 rounded-[8px] transition duration-300 cursor-pointer">
+                     class="listStack flex gap-4 text-base md:text-lg group hover:bg-zinc-200 p-2 rounded-[8px] transition duration-300 cursor-pointer group">
                     <div class="w-[70px]">
-                        <span class="text-grey leading-tight">2018<br>↑2016</span>
+                        <span class="text-grey group-hover:text-black transition duration-300">2018<br>↑2016</span>
                     </div>
                     <div class="leading-tight flex flex-col w-full">
                         <div class="flex gap-2 items-center">
@@ -535,7 +542,7 @@
                         </div>
                         <p class=" text-grey group-hover:text-black transition duration-300 text-sm">First
                             higher
-                            studies, focused on printed graphic design and books.</p>
+                            studies, focused on printed graphic design and books</p>
 
                     </div>
                     <div class="h-full flex items-center justify-center">
@@ -549,93 +556,100 @@
         </div>
 
         <div id="contact"
-             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-8 md:scroll-mt-[55px] mb-10">
+             class="gap-4 w-full flex flex-col pointer-events-auto scroll-mt-8 md:scroll-mt-[calc] mb-10">
 
-            <div
-                 class="col-span-2 sticky top-[90px] md:top-[55px] text-sm  h-fit flex items-center justify-between gap-1">
-
+            <div class="flex flex-col gap-4 w-full md:grid grid-cols-6">
                 <div
-                     class="text-sm text-white bg-black px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center">
-                    5</div>
-                <h3
-                    class="w-full text-white bg-black px-2 h-[30px] rounded-[6px] flex items-center">
-                    CONTACT
-                </h3>
+                     class="col-span-2 sticky top-4 md:top-[calc(50vh-30px)] text-sm h-fit flex items-center justify-between gap-1">
 
-            </div>
-
-            <div class="flex flex-col col-span-4 gap-4">
-
-                <div class="flex flex-col md:grid md:grid-cols-3 gap-4 pl-[35px] md:pl-0">
-                    <div class="flex flex-col">
-                        <span class="text-grey text-sm">Phone</span>
-                        <a href="">+31 (0)6 13 38 11 41</a>
-                    </div>
-
-                    <div class="flex flex-col">
-                        <span class="text-grey text-sm">Email</span>
-                        <a href="">pablomoreno@proton.me</a>
-                    </div>
-
-                    <div class="flex flex-col">
-                        <span class="text-grey text-sm">Adress</span>
-                        <a href="">Voorburgstraat<br>1062 JB<br>Amsterdam</a>
-                    </div>
+                    <div
+                         class="text-sm text-blue-200 bg-[#0000D9] px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center shadow-big">
+                        5</div>
+                    <h3
+                        class="w-full text-blue-200 bg-[#0000D9] px-2 h-[30px] rounded-[6px] flex items-center shadow-big">
+                        CONTACT
+                    </h3>
                 </div>
 
+
+                <div class="flex flex-col md:grid grid-cols-3 gap-4 col-span-4 ml-9 md:ml-0">
+                    <div>
+                        <h4 class="text-grey text-sm uppercase">PHONE</h4>
+                        <a href="tel:+31613381141" class="hover:text-grey duration-300 text-lg">+31 (0)6 13 38 11 41</a>
+                    </div>
+                    <div>
+                        <h4 class="text-grey text-sm uppercase">Email</h4>
+                        <a href="mailto:pablomoreno@proton.me"
+                           class="hover:text-grey duration-300 text-lg">pablomoreno@proton.me</a>
+                    </div>
+                    <div>
+                        <h4 class="text-grey text-sm uppercase">Adress</h4>
+                        <a href="" class="hover:text-grey duration-300 text-lg">Voorburgstraat 123<br>1062 JB,
+                            Amsterdam</a>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="flex flex-col md:grid grid-cols-6 gap-8 h-[90vh] md:h-[95vh] items-center justify-center">
-            <div
-                 class="video w-full h-fit rounded-2xl overflow-hidden relative transition duration-300 bg-white col-span-3 col-start-2">
-                <video id="randomVideo" width="320" height="240" autoplay loop playsinline muted
-                       disablePictureInPicture
-                       controlsList="nodownload" class="w-full aspect-[4/2.5] object-cover">
-                    <source src="media/pablo-in-his-room.mp4" type='video/mp4'>
-                </video>
+
+
+            <div id="call"
+                 class="flex flex-col md:grid grid-cols-8 gap-4 md:gap-10 h-[70vh] md:h-[90vh] items-center justify-center pointer-events-auto px-3">
+                <div
+                     class="video w-full h-fit rounded-4xl overflow-hidden relative transition duration-300 bg-white col-span-4 col-start-2">
+                    <video id="randomVideo" width="320" height="240" autoplay loop playsinline muted
+                           disablePictureInPicture
+                           controlsList="nodownload" class="w-full aspect-[4/2.5] object-cover">
+                        <source src="media/pablo-in-his-room.mp4" type='video/mp4'>
+                    </video>
+                </div>
+
+                <div class="flex flex-col items-center justify-center col-span-2">
+                    <h4 class="text-center leading-tight text-lg font-semibold uppercase">Extended presentation</h4>
+                    <p class="text-center text-grey group-hover:text-black transition duration-300">For a 15 minutes
+                        presentation,
+                        to go deeper on the projects and abilities I can provide.</p>
+
+                    <a href="tel:+31613381141"
+                       class="bg-black inline-flex gap-3 rounded-full py-3 justify-center text-white px-20 hover:bg-[#35C759] mx-auto transition duration-300 items-center mt-6 text-xl shadow-big">Call
+                        <svg
+                             xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 24 24"
+                             fill="currentColor"
+                             class="size-5">
+                            <path fill-rule="evenodd"
+                                  d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"
+                                  clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
             </div>
 
-            <div class="flex flex-col max-w-[450px] items-center justify-center col-span-1">
-                <h4 class="text-center text-base uppercase">Extended presentation</h4>
-                <p class="text-center text-grey leading-tight">For a 15 minutes presentation,
-                    to go deeper on the projects and abilities I can provide.</p>
 
-                <a href="tel:+31613381141"
-                   class="bg-[#35C759] hover:bg-amber-300 flex gap-2 rounded-full px-5 py-2 text-white w-fit mx-auto transition duration-300 items-center mt-6">Call
-
-                    <svg
-                         xmlns="http://www.w3.org/2000/svg"
-                         viewBox="0 0 24 24"
-                         fill="currentColor"
-                         class="size-5">
-                        <path fill-rule="evenodd"
-                              d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"
-                              clip-rule="evenodd" />
-                    </svg>
-                </a>
-            </div>
         </div>
 
         <div id="thanks"
-             class="gap-2 md:gap-4 w-full flex flex-col-reverse md:grid grid-cols-6 pointer-events-auto scroll-mt-8 md:scroll-mt-[55px]">
+             class="gap-2 md:gap-4 w-full flex flex-col-reverse md:grid grid-cols-6 pointer-events-auto scroll-mt-8 md:scroll-mt-[calc]">
 
             <div
-                 class="col-span-2 sticky top-[55px] text-sm  h-fit flex items-center justify-between gap-1">
+                 class="col-span-6 sticky top-[55px] text-sm  h-fit flex items-center justify-between gap-1">
 
                 <div
-                     class="text-amber-500 bg-amber-200 px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center text-2xl">
-                    ℗</div>
+                     class="text-zinc-500 bg-zinc-200 px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center shadow-big hover:shadow-none">
+                    ⏳</div>
                 <h3
-                    class="w-full text-amber-500 bg-amber-200 px-2 h-[30px] rounded-[6px] flex items-center">
+                    class="w-full text-zinc-500 bg-zinc-200 px-2 h-[30px] rounded-[6px] flex items-center justify-between shadow-big">
                     THANKS FOR YOUR TIME
+                    <div
+                         class="flex gap-2 col-span-4 justify-end items-center text-sm">
+                        <p class="text-zinc-400"><span class="hidden md:inline">You have spent</span> <span
+                                  id="visit-timer"></span> in this
+                            website</p>
+                    </div>
                 </h3>
+
             </div>
 
-            <div
-                 class="flex gap-2 col-span-4 justify-start items-center md:pr-4 text-sm w-full">
-                <p class="text-grey">⏳ You have spent <span id="visit-timer"></span> in this website</p>
-            </div>
+
         </div>
     </div>
 
