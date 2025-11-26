@@ -16,33 +16,33 @@
 // });
 
 // VIDEO PABLO
-const vid = document.getElementById("pablo-face");
+// const vid = document.getElementById("pablo-face");
 
-// Always start paused and at frame 0
-vid.pause();
-vid.currentTime = 0;
+// // Always start paused and at frame 0
+// vid.pause();
+// vid.currentTime = 0;
 
-vid.addEventListener("mouseenter", () => {
-    playOnce();
-});
+// vid.addEventListener("mouseenter", () => {
+//     playOnce();
+// });
 
-vid.addEventListener("click", () => {
-    playOnce();
-});
+// vid.addEventListener("click", () => {
+//     playOnce();
+// });
 
-setTimeout(() => {
-    playOnce();   // trigger auto-play once
-}, 30000);
+// setTimeout(() => {
+//     playOnce();   // trigger auto-play once
+// }, 30000);
 
-vid.addEventListener("ended", () => {
-    vid.currentTime = 0;
-    vid.pause();
-});
+// vid.addEventListener("ended", () => {
+//     vid.currentTime = 0;
+//     vid.pause();
+// });
 
-function playOnce() {
-    vid.currentTime = 0;
-    vid.play();
-}
+// function playOnce() {
+//     vid.currentTime = 0;
+//     vid.play();
+// }
 
 // CLOCK
 function updateClock() {
@@ -51,8 +51,27 @@ function updateClock() {
     const minutes = now.getMinutes().toString().padStart(2, '0');
     document.getElementById('clockH').textContent = `${hours}`;
     document.getElementById('clockM').textContent = `${minutes}`;
-
 }
+
+// Start time
+const startTime = Date.now();
+
+function updateTimer() {
+    const now = Date.now();
+    const diff = Math.floor((now - startTime) / 1000);
+
+    const minutes = Math.floor(diff / 60);
+    const seconds = diff % 60;
+
+    document.getElementById('visit-timer').textContent =
+        `${String(minutes).padStart(1, "0")} minutes and ${String(seconds).padStart(1, "0")} seconds`;
+}
+
+// Update every second
+setInterval(updateTimer, 1000);
+
+// Run once immediately
+updateTimer();
 
 // initial call + update every second
 // updateClock();
@@ -119,7 +138,7 @@ fetch("https://opensheet.elk.sh/" + ADDRESS)
             wrapper.setAttribute('data-nature', nature);
             wrapper.dataset.slideframe = "true";
             wrapper.className =
-                "md:text-lg leading-tight transition-all duration-200 cursor-pointer hover:bg-zinc-200 group";
+                "md:text-lg leading-tight transition-all duration-200 cursor-pointer hover:bg-zinc-200 group w-full pr-10";
 
             // Inner <a>
             const link = document.createElement("div");

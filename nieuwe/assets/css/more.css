@@ -100,3 +100,10 @@
     border-radius: 6px;
 
 }
+
+
+
+
+.shadowFull {
+    box-shadow: 0 0 20px 20px #EAEAEA;
+}
