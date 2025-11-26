@@ -102,8 +102,32 @@
 }
 
 
+.carousel-cell {
+    width: 70%;
+    aspect-ratio: 4/2.5;
+    height: auto;
+    margin-right: 10px;
+}
 
+/* position dots up a bit */
+.flickity-page-dots {
+    bottom: 0 !important;
+    display: flex !important;
+    padding-top: 20px !important;
+    position: relative !important;
+    width: 100% !important;
+    display: none !important;
+}
 
-.shadowFull {
-    box-shadow: 0 0 20px 20px #EAEAEA;
+/* dots are lines */
+.flickity-page-dots .dot {
+    height: 4px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    background: #909090;
+}
+
+.flickity-viewport {
+    transition: height 0.2s;
 }

@@ -1,20 +1,36 @@
+window.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("intro-photo").classList.remove("opacity-0");
+    document.getElementById("intro-texto").classList.remove("opacity-0");
+    document.getElementById("intro-menu").classList.remove("opacity-0");
+});
+
+
 // GRADIENT TOP APPEARS
-// const gradTop = document.getElementById("gradient-top");
-// const indentityText = document.getElementById("indentity-text");
+const fleche = document.getElementById("fleche");
 
+window.addEventListener("scroll", () => {
+    const scrollPos = window.scrollY;
+    const viewportHeight = window.innerHeight;
+    const fullHeight = document.body.offsetHeight;
 
+    const atBottom = scrollPos + viewportHeight >= fullHeight - 10;
 
-// window.addEventListener("scroll", () => {
-//     if (window.scrollY > 60) {
-//         gradTop.style.opacity = "1";
-//         indentityText.style.opacity = "0";
-
-//     } else {
-//         gradTop.style.opacity = "0";
-//         indentityText.style.opacity = "1";
-//     }
-// });
-
+    if (atBottom) {
+        // Mostrar flecha, apuntar arriba
+        fleche.style.opacity = "1";
+        fleche.href = "#top";
+        fleche.textContent = "↑";
+        fleche.style.pointerEvents = "auto"
+    } else if (scrollPos > 100) {
+        fleche.style.opacity = "0";
+        fleche.style.pointerEvents = "none"; // para que no se pueda clicar cuando está oculta
+    } else {
+        fleche.style.opacity = "1";
+        fleche.style.pointerEvents = "auto";
+        fleche.href = "#today";
+        fleche.textContent = "↓";
+    }
+});
 // VIDEO PABLO
 // const vid = document.getElementById("pablo-face");
 
@@ -63,8 +79,20 @@ function updateTimer() {
     const minutes = Math.floor(diff / 60);
     const seconds = diff % 60;
 
-    document.getElementById('visit-timer').textContent =
-        `${String(minutes).padStart(1, "0")} minutes and ${String(seconds).padStart(1, "0")} seconds`;
+    let text = "";
+
+    if (minutes === 0) {
+        // Under 1 minute → show seconds only
+        text = `${seconds} seconds`;
+    } else if (minutes === 1) {
+        // Exactly 1 minute
+        text = `1 minute`;
+    } else {
+        // Multiple minutes
+        text = `${minutes} minutes`;
+    }
+
+    document.getElementById('visit-timer').textContent = text;
 }
 
 // Update every second
@@ -138,7 +166,7 @@ fetch("https://opensheet.elk.sh/" + ADDRESS)
             wrapper.setAttribute('data-nature', nature);
             wrapper.dataset.slideframe = "true";
             wrapper.className =
-                "md:text-lg leading-tight transition-all duration-200 cursor-pointer hover:bg-zinc-200 group w-full pr-10";
+                "md:text-lg leading-tight transition-all duration-200 cursor-pointer hover:bg-zinc-200 group w-full ";
 
             // Inner <a>
             const link = document.createElement("div");

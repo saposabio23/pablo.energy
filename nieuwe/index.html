@@ -10,31 +10,15 @@
     <link href="assets/css/output.css" rel="stylesheet">
     <link href="assets/css/more.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/slideFrame.css" />
+    <link rel="stylesheet" type="text/css" href="assets/flickity.min.css" />
 
 </head>
 
 <body class="scroll-smooth bg-[#EAEAEA]">
 
-
     <!-- GRADIENT TOP -->
     <!-- <div id="gradient-top"
          class="h-[25px] from-grad-black to-transparent bg-linear-to-b fixed top-0 left-0 w-full z-50  opacity-0 transition duration-400">
-    </div> -->
-
-    <!-- WINDOW -->
-    <!-- <div class="flex relative top-0 left-0 z-30 gap-2 items-end m-3 md:fixed">
-        <div class="overflow-hidden rounded-t-full w-[80px]">
-            <video id="pablo-face" width="320" height="240" playsinline muted disablePictureInPicture
-                   controlsList="nodownload" class="w-full h-full cursor-cell">
-                <source src="assets/face.mp4" type='video/mp4'>
-            </video>
-        </div>
-        <div id="indentity-text"
-             class="flex flex-col gap-0 text-lg font-semibold leading-tight transition duration-400">
-            <h2 class="">Pablo Moreno</h2>
-            <span class="text-grey">Creative (web) designer</span>
-            <span class="text-grey">pablomoreno@proton.me</span>
-        </div>
     </div> -->
 
     <!-- CLOCK -->
@@ -48,90 +32,68 @@
         <span class=""></span>
     </div> -->
 
-    <!-- NAV -->
-    <!-- <nav
-         class="fixed bottom-0 left-0 z-10 w-full text-xl font-semibold md:top-auto h-fit md:bg-transparent md:w-fit">
-        <div
-             class="grid grid-cols-3 grid-rows-2 justify-between w-full md:flex md:flex-col nav__list nav__list--secondary group bg-[#F9F9F9] md:bg-transparent p-2 md:p-3">
 
-            <a href="#today"
-               class="leading-tight text-black transition-colors duration-200 cursor-pointer nav__title nav__title--on hover:text-black group-hover:text-grey">
-                1. Today
-            </a>
-            <a href="#selected"
-               class="leading-tight transition-colors duration-200 cursor-pointer nav__title text-grey hover:text-black">
-                2. Selected
-            </a>
-            <a href="#websites"
-               class="leading-tight transition-colors duration-200 cursor-pointer nav__title text-grey hover:text-black">
-                3. Websites
-            </a>
-            <a href="#resume"
-               class="leading-tight transition-colors duration-200 cursor-pointer nav__title text-grey hover:text-black">
-                4. Resume
-            </a>
-            <a href="#contact"
-               class="leading-tight transition-colors duration-200 cursor-pointer nav__title text-grey hover:text-black">
-                5. Contact
-            </a>
-        </div>
-    </nav> -->
-
-
-    <!-- 💪💪💪 CONTENT 💪💪 -->
     <div id="works"
-         class="flex relative z-0 flex-col pt-[calc(50vh-30px)] font-semibold pointer-events-none p-2  pb-4">
+         class="flex relative flex-col font-semibold pointer-events-none p-3 md:pt-[calc(50vh-30px)]">
 
         <div id="pablo"
-             class="gap-4 w-full grid grid-cols-6 pointer-events-auto scroll-mt-8 md:scroll-mt-[calc(50vh-30px)] sticky top-0 py-2 z-50 mb-[50vh]">
+             class="gap-1 md:gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-8 md:scroll-mt-[55px] sticky top-0 py-4 md:py-3 mb-[50vh]">
 
             <div
-                 class="absolute top-0 left-0 h-[140%] w-full z-0 bg-linear-to-b from-[#EAEAEA] from-60% to-transparent ">
+                 class="absolute top-0 left-0 h-[110px] md:h-[100px] w-full bg-linear-to-b from-[#EAEAEA] from-60% to-transparent ">
             </div>
 
             <div
-                 class="col-span-2 sticky top-[calc(50vh-30px)] text-sm h-fit flex items-center justify-between gap-1 z-10 ">
-                <img src="assets/pablo-moreno.jpg" alt=""
-                     class="rounded-full w-[30px] h-[30px] aspect-square flex items-center justify-center">
-                <h3
-                    class="w-full text-black bg-white px-2 h-[30px] rounded-[6px] flex items-center">
-                    PABLO MORENO
+                 class="col-span-2 md:sticky top-0 text-sm h-fit flex items-center justify-between gap-1 pb-[35vh] md:pb-0">
+
+                <div id="intro-photo"
+                     class="rounded-full overflow-hidden w-[30px] h-[30px] group relative transition-opacity delay-150 duration-1000 opacity-0 <">
+                    <img src="assets/pablo-moreno.jpg" alt=""
+                         class="absolute group-hover:opacity-0 transition-transform duration-600 ease-out">
+                    <img src="assets/ball.png" alt=""
+                         class="rotate-360 absolute opacity-0 group-hover:opacity-100 group-hover:rotate-0 transition-transform duration-600 ease-out">
+                </div>
+
+                <h3 id="intro-texto"
+                    class="w-full text-black bg-white px-2 h-[30px] rounded-[6px] flex items-center gap-1 transition-opacity delay-300 duration-1000 opacity-0">
+                    PABLO MORENO <span class="text-grey">Handmade (web) designer </span>
                 </h3>
 
             </div>
 
-            <div
-                 class="inline content-center gap-1 w-full col-span-4 items-center z-10 pr-10 text-sm h-[30px] ">
+            <div id="intro-menu"
+                 class="content-center w-full col-span-4 items-center text-sm mb-[25vh] md:mb-0 z-10 transition-opacity delay-450 duration-1000 opacity-0">
                 <a href="#today"
-                   class="leading-tight transition-colors duration-200 cursor-pointer text-grey hover:text-[#11C3FF]">
+                   class="mx-px leading-tight transition-colors duration-200 cursor-pointer text-grey hover:text-[#11C3FF]">
                     TODAY
-                </a> I want to show my
+                </a> I whom to show my
                 <a href="#selected"
-                   class="leading-tight transition-colors duration-200 cursor-pointer text-grey hover:text-[#3F0200]">
+                   class="mx-px leading-tight transition-colors duration-200 cursor-pointer text-grey hover:text-[#3F0200]">
                     HIGHLIGHTED
                 </a> projects and a list of
                 <a href="#websites"
-                   class="leading-tight transition-colors duration-200 cursor-pointer text-grey hover:text-black">
+                   class="mx-px leading-tight transition-colors duration-200 cursor-pointer text-grey hover:text-black">
                     WEBSITES
-                </a> I made, including my
+                </a> I made, along with my
                 <a href="#resume"
-                   class="leading-tight transition-colors duration-200 cursor-pointer text-grey hover:text-white">
+                   class="mx-px leading-tight transition-colors duration-200 cursor-pointer text-grey hover:text-white">
                     RESUME
                 </a> and a way to
                 <a href="#contact"
-                   class="leading-tight transition-colors duration-200 cursor-pointer text-grey hover:text-[#0000FF]">
+                   class="mx-px leading-tight transition-colors duration-200 cursor-pointer text-grey hover:text-[#0000FF]">
                     CONTACT
-                </a> me.
+                </a> me. <a id="fleche" href="#today"
+                   class="duration-300 hover:text-black text-grey">↓</a>
             </div>
 
         </div>
 
 
         <div id="today"
-             class="gap-4 w-full grid grid-cols-6 pointer-events-auto scroll-mt-8 md:scroll-mt-[calc(50vh-30px)] mb-[50vh] ">
+             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-8 md:scroll-mt-[55px] mb-[25vh] mt-[100vh]">
 
             <div
-                 class="col-span-2 sticky top-[calc(50vh-30px)] text-sm  h-fit flex items-center justify-between gap-1">
+                 class="col-span-2 sticky top-[90px] md:top-[55px] text-sm  h-fit flex items-center justify-between gap-1">
 
                 <div
                      class="text-sm text-[#FFFF2A] bg-[#11C3FF] px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center">
@@ -161,40 +123,17 @@
 
         </div>
 
-        <!-- 
-        <div id="today"
-             class="flex flex-col gap-4 w-[500px] max-w-full p-2 md:p-0 mx-auto pointer-events-auto scroll-mt-8 md:scroll-mt-[calc(50vh-30px)] mb-[50vh]">
-
-            <h3 class="p-2 w-full text-white bg-green-600  font-semibold">1. TODAY</h3>
-
-            <div class="flex flex-col gap-6 px-2">
-                <div>
-                    <h4 class="text-grey">WHERE I'M FROM</h4>
-                    <p>Blablabla</p>
-                </div>
-                <div>
-                    <h4 class="text-grey">WHAT I USED TO DO</h4>
-                    <p>Blablabla</p>
-                </div>
-                <div>
-                    <h4 class="text-grey">WHAT I’M LOOKING FOR</h4>
-                    <p>Blablabla</p>
-                </div>
-            </div>
-
-        </div> -->
-
         <div id="selected"
-             class="gap-4 w-full grid grid-cols-6 pointer-events-auto scroll-mt-8 md:scroll-mt-[calc(50vh-30px)] mb-[50vh]">
+             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-8 md:scroll-mt-[55px] mb-[25vh]">
 
             <div
-                 class="col-span-2 sticky top-[calc(50vh-30px)] text-sm  h-fit flex items-center justify-between gap-1">
+                 class="col-span-2 sticky top-[90px] md:top-[55px] text-sm  h-fit flex items-center justify-between gap-1 ">
 
                 <div
-                     class="text-sm text-[#FF3D00] bg-[#3F0200] px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center">
+                     class="text-sm text-[#FF7800] bg-[#3F0200] px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center">
                     2</div>
                 <h3
-                    class="w-full text-[#FF3D00] bg-[#3F0200] px-2 h-[30px] rounded-[6px] flex items-center">
+                    class="w-full text-[#FF7800] bg-[#3F0200] px-2 h-[30px] rounded-[6px] flex items-center">
                     HIGHLIGHTED PROJECTS
                 </h3>
             </div>
@@ -202,24 +141,54 @@
             <div class="flex flex-col gap-20 col-span-4">
 
                 <div id="PROJECT-1" class="flex flex-col gap-4">
-                    <div id="info" class="flex justify-between leading-tight w-full pr-10">
+                    <div id="info" class="flex justify-between w-full pr-4">
                         <div class="flex flex-col">
-                            <span class="text-black text-lg">Projects at Analogue <small>Ⓡ</small></span>
-                            <span class="text-grey md:text-lg">Design, Framer</span>
+                            <span class="text-black text-lg leading-tight flex gap-1 items-center">Projects with
+                                Analogue <div
+                                     class="h-[16px] w-[16px] bg-blue-800 rounded-full"></div></span>
+                            <span class="text-grey md:text-lg leading-tight">Design, Framer</span>
                         </div>
-                        <div class="text-black text-lg">2025</div>
+                        <div class="text-black text-lg leading-tight">2025</div>
                     </div>
 
                     <div
-                         class="imageStack w-full grid grid-cols-3 gap-2 relative  transition duration-300 group">
-                        <img src="media/analogue-guiker.png" alt=""
-                             class="stack-img object-cover rounded-[6px] shadow cursor-pointer transition duration-200">
+                         class="main-carousel"
+                         data-flickity='{ "cellAlign": "left", "contain": true, "wrapAround": false, "autoPlay": false, "imagesLoaded": true, "prevNextButtons": false, "selectedAttraction": 0.2, "friction": 0.8, "lazyLoad": true, "adaptiveHeight": true}'>
 
-                        <img src="media/analogue-m1capital.png" alt=""
-                             class="stack-img object-cover rounded-[6px] shadow cursor-pointer transition duration-200">
+                        <div
+                             class="h-full carousel-cell">
+                            <video width="320" height="240" autoplay loop playsinline muted
+                                   disablePictureInPicture
+                                   controlsList="nodownload" class="object-cover w-full h-full rounded-lg">
+                                <source src="media/analogue/guiker-intro.mp4" type='video/mp4'>
+                            </video>
+                        </div>
 
-                        <img src="media/analogue-erwin.png" alt=""
-                             class="stack-img object-cover rounded-[6px] shadow cursor-pointer transition duration-200">
+                        <div
+                             class="h-full carousel-cell">
+                            <video width="320" height="240" autoplay loop playsinline muted
+                                   disablePictureInPicture
+                                   controlsList="nodownload" class="object-cover w-full h-full rounded-lg">
+                                <source src="media/analogue/guiker-icons.mp4" type='video/mp4'>
+                            </video>
+                        </div>
+
+                        <div
+                             class="h-full carousel-cell">
+                            <img
+                                 loading="lazy" src="media/analogue/askphill-flags.jpeg"
+                                 class="object-cover w-full h-full rounded-lg"
+                                 alt="" />
+                        </div>
+
+                        <div
+                             class="h-full carousel-cell">
+                            <video width="320" height="240" autoplay loop playsinline muted
+                                   disablePictureInPicture
+                                   controlsList="nodownload" class="object-cover w-full h-full rounded-lg">
+                                <source src="media/analogue/erwin-olaf-intro.mp4" type='video/mp4'>
+                            </video>
+                        </div>
                     </div>
 
                     <p class="leading-tight text-grey">A relaxing space to explain and curate
@@ -238,29 +207,44 @@
                 </div>
 
                 <div id="PROJECT-1" class="flex flex-col gap-4">
-                    <div id="info" class="flex justify-between leading-tight w-full pr-10">
+                    <div id="info" class="flex justify-between w-full pr-4">
                         <div class="flex flex-col">
-                            <span class="text-black text-lg">Tot el cos cap a que</span>
-                            <span class="text-grey md:text-lg">Design, Framer</span>
+                            <span class="text-black text-lg leading-tight">Tot el cos cap a que</span>
+                            <span class="text-grey md:text-lg leading-tight">Design, Framer</span>
                         </div>
                         <div class="flex flex-col items-end">
-                            <div class="text-black text-lg w-fit">2025</div>
-                            <a href="" class="text-grey md:text-lg">Visit website</a>
+                            <div class="text-black text-lg w-fit leading-tight">2025</div>
+                            <a href="" class="text-grey leading-tight text-base">Visit website</a>
                         </div>
                     </div>
 
                     <div
-                         class="imageStack w-full grid grid-cols-3 gap-2 relative  transition duration-300 group">
-                        <img src="media/totelcoscapaque-1.png" alt=""
-                             class="stack-img object-cover rounded-[6px] shadow cursor-pointer transition duration-200 z-40">
+                         class="main-carousel"
+                         data-flickity='{ "cellAlign": "left", "contain": true, "wrapAround": false, "autoPlay": false, "imagesLoaded": true, "prevNextButtons": false, "selectedAttraction": 0.2, "friction": 0.8, "lazyLoad": true}'>
 
-                        <img src="media/totelcoscapaque-1.png" alt=""
-                             class="stack-img object-cover rounded-[6px] shadow cursor-pointer transition duration-200 z-40">
+                        <div
+                             class="h-full carousel-cell">
+                            <img
+                                 loading="lazy" src="media/totelcoscapaque-1.png"
+                                 class="object-cover w-full h-full rounded-lg"
+                                 alt="" />
+                        </div>
 
-                        <img src="media/totelcoscapaque-1.png" alt=""
-                             class="stack-img object-cover rounded-[6px] shadow cursor-pointer transition duration-200 z-40">
+                        <div
+                             class="h-full carousel-cell">
+                            <img
+                                 loading="lazy" src="media/analogue-guiker.png"
+                                 class="object-cover w-full h-full rounded-lg"
+                                 alt="" />
+                        </div>
+                        <div
+                             class="h-full carousel-cell">
+                            <img
+                                 loading="lazy" src="media/analogue-m1capital.png"
+                                 class="object-cover w-full h-full rounded-lg"
+                                 alt="" />
+                        </div>
                     </div>
-
                     <p class="leading-tight text-grey">A relaxing space to explain and curate
                         the
                         practice
@@ -278,144 +262,17 @@
             </div>
         </div>
 
-        <!-- <div id="selected"
-             class="flex flex-col gap-4 w-[500px] max-w-full p-2 md:p-0 mx-auto pointer-events-auto scroll-mt-8 md:scroll-mt-[calc(50vh-30px)] mb-[50vh]">
-
-            <h3 class="p-2 w-full text-white bg-black rounded-[6px] font-semibold flex justify-between items-center">
-                <span>2. SELECTED</span> <span
-                      class="opacity-40  text-sm">3
-                    projects</span>
-            </h3>
-
-            <div class="flex flex-col gap-6 px-2">
-
-                <div id="PROJECT-1" class="flex flex-col gap-6 mb-12">
-                    <div id="info" class="flex justify-between leading-tight">
-                        <div class="flex flex-col">
-                            <span class="text-black text-lg">Projects at Analogue <small>Ⓡ</small></span>
-                            <span class="text-grey md:text-lg">Design, Framer</span>
-                        </div>
-                        <div class="text-black text-lg">2025</div>
-                    </div>
-
-                    <div class="imageStack w-full aspect-4/3 relative hover:scale-102 transition duration-300 group">
-                        <img src="media/analogue-guiker.png" alt=""
-                             class="stack-img object-cover w-full h-full rounded-xl absolute shadow cursor-pointer transition duration-200 z-40">
-
-                        <img src="media/analogue-m1capital.png" alt=""
-                             class="stack-img object-cover w-full h-full rounded-xl absolute rotate-3 group-hover:rotate-0 shadow cursor-pointer transition duration-200 z-30">
-
-                        <img src="media/analogue-erwin.png" alt=""
-                             class="stack-img object-cover w-full h-full rounded-xl absolute -rotate-3 group-hover:rotate-0 shadow cursor-pointer transition duration-200 z-20">
-                    </div>
-
-                    <p class="md:text-lg leading-tight text-grey">A relaxing space to explain and curate the practice
-                        of
-                        Nerea.
-                        The
-                        frames
-                        of the website serve as a menu
-                        to navigate between the four diferent pages. Text wants to explain in detail the practice
-                        while
-                        the
-                        small images bring the feeling of it. </p>
-                </div>
-
-                <div id="PROJECT-2" class="flex flex-col gap-6 mb-12">
-                    <div id="info" class="flex justify-between leading-tight">
-                        <div class="flex flex-col">
-                            <span class="text-black text-lg">Collaborative</span>
-                            <span class="text-grey md:text-lg">Design, Framer</span>
-                        </div>
-                        <div class="text-black text-lg">2025</div>
-                    </div>
-
-                    <div class="imageStack w-full aspect-4/3 relative hover:scale-102 transition duration-300 group">
-                        <div
-                             class="absolute w-full h-full rounded-xl flex flex-col items-center justify-center border border-grey">
-                            <a href="https://www.pablo.energy" target="_blank" class="flex flex-col group">
-                                <span class="text-[100px] leading-[100%]">👀</span>
-                                <span class="group-hover:text-grey transition duration-300">Visit website</span>
-                            </a>
-                        </div>
-
-                        <img src="media/anthropocene.png" alt=""
-                             class="stack-img object-cover w-full h-full rounded-xl absolute shadow cursor-pointer transition duration-200 z-40">
-
-                        <img src="media/anthropocene.png" alt=""
-                             class="stack-img object-cover w-full h-full rounded-xl absolute rotate-3 group-hover:rotate-0 shadow cursor-pointer transition duration-200 z-30">
-
-                        <img src="media/anthropocene.png" alt=""
-                             class="stack-img object-cover w-full h-full rounded-xl absolute -rotate-3 group-hover:rotate-0 shadow cursor-pointer transition duration-200 z-20">
-                    </div>
-
-                    <p class="md:text-lg leading-tight text-grey">A relaxing space to explain and curate the practice
-                        of
-                        Nerea.
-                        The
-                        frames
-                        of the website serve as a menu
-                        to navigate between the four diferent pages. Text wants to explain in detail the practice
-                        while
-                        the
-                        small images bring the feeling of it. </p>
-                </div>
-
-                <div id="PROJECT-3" class="flex flex-col gap-6 mb-12">
-                    <div id="info" class="flex justify-between leading-tight">
-                        <div class="flex flex-col">
-                            <span class="text-black text-lg">Tot el cos cap a que</span>
-                            <span class="text-grey md:text-lg">Design, Code</span>
-                        </div>
-                        <div class="text-black text-lg">2025</div>
-                    </div>
-
-                    <div class="imageStack w-full aspect-4/3 relative hover:scale-102 transition duration-300 group">
-                        <div
-                             class="absolute w-full h-full rounded-xl flex flex-col items-center justify-center">
-                            <a href="https://totelcoscapaque.cat" target="_blank"
-                               class="flex flex-col group items-center justify-center">
-                                <span class="text-[80px] leading-[100%]">👀</span>
-                                <span class="group-hover:text-grey transition duration-300">Visit website</span>
-                            </a>
-                        </div>
-
-                        <img src="media/totelcoscapaque-1.png" alt=""
-                             class="stack-img object-cover w-full h-full rounded-xl absolute shadow cursor-pointer transition duration-200 z-40">
-
-                        <img src="media/anthropocene.png" alt=""
-                             class="stack-img object-cover w-full h-full rounded-xl absolute rotate-3 group-hover:rotate-0 shadow cursor-pointer transition duration-200 z-30">
-
-                        <img src="media/anthropocene.png" alt=""
-                             class="stack-img object-cover w-full h-full rounded-xl absolute -rotate-3 group-hover:rotate-0 shadow cursor-pointer transition duration-200 z-20">
-                    </div>
-
-                    <p class="md:text-lg leading-tight text-grey">A relaxing space to explain and curate the practice
-                        of
-                        Nerea.
-                        The
-                        frames
-                        of the website serve as a menu
-                        to navigate between the four diferent pages. Text wants to explain in detail the practice
-                        while
-                        the
-                        small images bring the feeling of it. </p>
-                </div>
-
-            </div>
-        </div> -->
-
         <div id="websites"
-             class="gap-4 w-full grid grid-cols-6 pointer-events-auto scroll-mt-8 md:scroll-mt-[calc(50vh-30px)] mb-[50vh]">
+             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-8 md:scroll-mt-[55px] mb-[25vh]">
 
             <div
-                 class="col-span-2 sticky top-[calc(50vh-30px)] text-sm h-fit flex items-center justify-between gap-1">
+                 class="col-span-2 sticky top-[90px] md:top-[55px] text-sm  h-fit flex items-center justify-between gap-1">
                 <div
                      class="text-black bg-[#FAF5A2] px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center">
                     3</div>
 
                 <div
-                     class=" text-black bg-[#FAF5A2] px-2 h-[30px] rounded-[6px] flex items-center flex justify-between w-full">
+                     class=" text-black bg-[#FAF5A2] px-2 h-[30px] rounded-[6px] flex items-center  justify-between w-full">
                     <h3>WEBSITES
                     </h3>
 
@@ -423,7 +280,9 @@
                         <label class="flex items-center gap-1 cursor-pointer">
                             <input type="radio" id="filter-commissioned" value="Commissioned"
                                    class="peer h-3 w-3 cursor-pointer appearance-none rounded-full border border-grey checked:bg-grey transition-all">
-                            <span class="flex items-start gap-1">Commissioned <span
+                            <span class="items-start gap-1 hidden md:flex">Commissioned <span
+                                      class="hidden md:inline text-[8px]">10</span></span>
+                            <span class="flex items-start gap-1 md:hidden">Com. <span
                                       class="hidden md:inline text-[8px]">10</span></span>
                         </label>
 
@@ -444,47 +303,17 @@
             </div>
         </div>
 
-        <!-- <div id="websites" class="flex flex-col gap-2 pointer-events-auto scroll-mt-8 md:scroll-mt-[calc(50vh-30px)] mb-[50vh]">
-
-            <div
-                 class="text-black bg-[#FAF5A2] rounded-[6px] font-semibold w-[500px] p-2 max-w-[calc(100vw-16px)] mx-auto flex justify-between items-center">
-                <h3
-                    class="">
-                    3. WEBSITES
-                </h3>
-
-                <div id="nature-filters" class="flex gap-4 items-center text-sm text-grey">
-                    <label class="flex items-center gap-1 cursor-pointer">
-                        <input type="radio" id="filter-commissioned" value="Commissioned"
-                               class="peer h-3 w-3 cursor-pointer appearance-none rounded-full border border-grey checked:bg-grey transition-all">
-                        <span>Commissioned <span class="hidden md:inline">(10)</span></span>
-                    </label>
-
-                    <label class="flex items-center gap-1 cursor-pointer">
-                        <input type="radio" id="filter-personal" value="Personal"
-                               class="peer h-3 w-3 cursor-pointer appearance-none rounded-full border border-grey checked:bg-grey transition-all">
-                        <span>Personal <span class="hidden md:inline">(46)</span></span>
-                    </label>
-                </div>
-            </div>
-
-
-            <div id="projects-list" class="font-semibold flex flex-col-reverse">
-            </div>
-
-        </div> -->
-
         <div id="resume"
-             class="gap-4 w-full grid grid-cols-6 pointer-events-auto scroll-mt-8 md:scroll-mt-[calc(50vh-30px)] mb-[50vh]">
+             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-8 md:scroll-mt-[55px] mb-[25vh]">
 
             <div
-                 class="col-span-2 sticky top-[calc(50vh-30px)] text-sm h-fit flex items-center justify-between gap-1">
+                 class="col-span-2 sticky top-[90px] md:top-[55px] text-sm  h-fit flex items-center justify-between gap-1">
 
                 <div
                      class="text-black bg-white px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center">
                     4</div>
                 <div
-                     class="text-black bg-white px-2 h-[30px] rounded-[6px] flex items-center w-full flex justify-between">
+                     class="text-black bg-white px-2 h-[30px] rounded-[6px] flex items-center w-full  justify-between">
                     <h4>
                         RESUME
                     </h4>
@@ -519,7 +348,7 @@
                     </div>
                     <div class="h-full flex items-center justify-center">
                         <span
-                              class=" group-hover:opacity-100 opacity-0 leading-tight text-grey transition duration-300 text-[12px] border border-grey p-1 rounded-md hidden md:block">Amsterdam</span>
+                              class=" group-hover:opacity-100 opacity-0 leading-tight text-grey transition duration-300 text-[12px] border border-grey p-1 mr-4 rounded-md hidden md:block">Amsterdam</span>
                     </div>
                 </div>
 
@@ -535,13 +364,14 @@
                             <span class="text-red-600">Designer at Analogue
                                 <small>Ⓡ</small></span>
                         </div>
-                        <p class=" text-grey text-base group-hover:text-black transition duration-300">As an junior
+                        <p class=" text-grey group-hover:text-black transition duration-300 text-sm">As an
+                            junior
                             designer, I worked on complete identities, web design and Framer development.</p>
 
                     </div>
                     <div class="h-full flex items-center justify-center">
                         <span
-                              class=" group-hover:opacity-100 opacity-0 leading-tight text-grey transition duration-300 text-[12px] border border-grey p-1 rounded-md hidden md:block">Amsterdam</span>
+                              class=" group-hover:opacity-100 opacity-0 leading-tight text-grey transition duration-300 text-[12px] border border-grey p-1 mr-4 rounded-md hidden md:block">Amsterdam</span>
                     </div>
                 </div>
 
@@ -556,13 +386,13 @@
                             <span class="text-green-600">Intern at Analogue
                                 <small>Ⓡ</small></span>
                         </div>
-                        <p class=" text-grey text-base group-hover:text-black transition duration-300">Six-month
+                        <p class=" text-grey group-hover:text-black transition duration-300 text-sm">Six-month
                             internship assisting on explorations, rebrandings, animations, and multiple tasks.</p>
 
                     </div>
                     <div class="h-full flex items-center justify-center">
                         <span
-                              class=" group-hover:opacity-100 opacity-0 leading-tight text-grey transition duration-300 text-[12px] border border-grey p-1 rounded-md hidden md:block">Amsterdam</span>
+                              class=" group-hover:opacity-100 opacity-0 leading-tight text-grey transition duration-300 text-[12px] border border-grey p-1 mr-4 rounded-md hidden md:block">Amsterdam</span>
                     </div>
                 </div>
 
@@ -576,13 +406,14 @@
                         <div class="flex gap-2 items-center">
                             <span class="text-red-600">Mentor for AFEV association</span>
                         </div>
-                        <p class=" text-grey text-base group-hover:text-black transition duration-300">Volunteer helping
+                        <p class=" text-grey group-hover:text-black transition duration-300 text-sm">Volunteer
+                            helping
                             siblings with homework and social activities.</p>
 
                     </div>
                     <div class="h-full flex items-center justify-center">
                         <span
-                              class=" group-hover:opacity-100 opacity-0 leading-tight text-grey transition duration-300 text-[12px] border border-grey p-1 rounded-md hidden md:block">Amiens</span>
+                              class=" group-hover:opacity-100 opacity-0 leading-tight text-grey transition duration-300 text-[12px] border border-grey p-1 mr-4 rounded-md hidden md:block">Amiens</span>
                     </div>
                 </div>
 
@@ -596,13 +427,13 @@
                         <div class="flex gap-2 items-center">
                             <span class="text-red-600">Welcomer at Maison de la Culture</span>
                         </div>
-                        <p class=" text-grey text-base group-hover:text-black transition duration-300">Welcoming
+                        <p class=" text-grey group-hover:text-black transition duration-300 text-sm">Welcoming
                             spectators, assistant during the shows, responsable of the cinema.</p>
 
                     </div>
                     <div class="h-full flex items-center justify-center">
                         <span
-                              class=" group-hover:opacity-100 opacity-0 leading-tight text-grey transition duration-300 text-[12px] border border-grey p-1 rounded-md hidden md:block">Amiens</span>
+                              class=" group-hover:opacity-100 opacity-0 leading-tight text-grey transition duration-300 text-[12px] border border-grey p-1 mr-4 rounded-md hidden md:block">Amiens</span>
                     </div>
                 </div>
 
@@ -617,13 +448,14 @@
                         <div class="flex gap-2 items-center">
                             <span class="text-blue-700">Double master in UX/UI at ESAD</span>
                         </div>
-                        <p class=" text-grey text-base group-hover:text-black transition duration-300">This dual course
+                        <p class=" text-grey group-hover:text-black transition duration-300 text-sm">This dual
+                            course
                             prepared me to work as a digital designer in modern business ecosystems.</p>
 
                     </div>
                     <div class="h-full flex items-center justify-center">
                         <span
-                              class=" group-hover:opacity-100 opacity-0 leading-tight text-grey transition duration-300 text-[12px] border border-grey p-1 rounded-md hidden md:block">Amiens</span>
+                              class=" group-hover:opacity-100 opacity-0 leading-tight text-grey transition duration-300 text-[12px] border border-grey p-1 mr-4 rounded-md hidden md:block">Amiens</span>
                     </div>
                 </div>
 
@@ -637,13 +469,14 @@
                         <div class="flex gap-2 items-center">
                             <span class="text-green-600">Internship at Cuchillo</span>
                         </div>
-                        <p class=" text-grey text-base group-hover:text-black transition duration-300">Different works,
+                        <p class=" text-grey group-hover:text-black transition duration-300 text-sm">Different
+                            works,
                             from identities to designs for textiles or motion-design.</p>
 
                     </div>
                     <div class="h-full flex items-center justify-center">
                         <span
-                              class=" group-hover:opacity-100 opacity-0 leading-tight text-grey transition duration-300 text-[12px] border border-grey p-1 rounded-md hidden md:block">Bilbao</span>
+                              class=" group-hover:opacity-100 opacity-0 leading-tight text-grey transition duration-300 text-[12px] border border-grey p-1 mr-4 rounded-md hidden md:block">Bilbao</span>
                     </div>
                 </div>
 
@@ -658,13 +491,13 @@
                             <span class="text-blue-700 leading-tight">Bachelor Interactive Graphic Design at
                                 ESADHaR</span>
                         </div>
-                        <p class=" text-grey text-base group-hover:text-black transition duration-300">Studies
+                        <p class=" text-grey group-hover:text-black transition duration-300 text-sm">Studies
                             continuation towards a more artistic creation with digital experiments.</p>
 
                     </div>
                     <div class="h-full flex items-center justify-center">
                         <span
-                              class=" group-hover:opacity-100 opacity-0 leading-tight text-grey transition duration-300 text-[12px] border border-grey p-1 rounded-md hidden md:block">Le
+                              class=" group-hover:opacity-100 opacity-0 leading-tight text-grey transition duration-300 text-[12px] border border-grey p-1 mr-4 rounded-md hidden md:block">Le
                             Havre</span>
                     </div>
                 </div>
@@ -679,13 +512,14 @@
                         <div class="flex gap-2 items-center">
                             <span class="text-green-600">Internship at M.U.R.R</span>
                         </div>
-                        <p class=" text-grey text-base group-hover:text-black transition duration-300">Helped to print
+                        <p class=" text-grey group-hover:text-black transition duration-300 text-sm">Helped to
+                            print
                             the vinyl cover of Zuur Köol. Further collaborations.</p>
 
                     </div>
                     <div class="h-full flex items-center justify-center">
                         <span
-                              class=" group-hover:opacity-100 opacity-0 leading-tight text-grey transition duration-300 text-[12px] border border-grey p-1 rounded-md hidden md:block">Paris</span>
+                              class=" group-hover:opacity-100 opacity-0 leading-tight text-grey transition duration-300 text-[12px] border border-grey p-1 mr-4 rounded-md hidden md:block">Paris</span>
                     </div>
                 </div>
 
@@ -699,179 +533,115 @@
                         <div class="flex gap-2 items-center">
                             <span class="text-blue-700">License in type design at Estienne</span>
                         </div>
-                        <p class=" text-grey text-base group-hover:text-black transition duration-300">First higher
+                        <p class=" text-grey group-hover:text-black transition duration-300 text-sm">First
+                            higher
                             studies, focused on printed graphic design and books.</p>
 
                     </div>
                     <div class="h-full flex items-center justify-center">
                         <span
-                              class=" group-hover:opacity-100 opacity-0 leading-tight text-grey transition duration-300 text-[12px] border border-grey p-1 rounded-md hidden md:block">Paris</span>
+                              class=" group-hover:opacity-100 opacity-0 leading-tight text-grey transition duration-300 text-[12px] border border-grey p-1 mr-4 rounded-md hidden md:block">Paris</span>
                     </div>
                 </div>
-
             </div>
 
 
         </div>
 
-        <!-- <div id="contact"
-             class="flex flex-col gap-4 w-[500px] max-w-full p-2 md:p-0 mx-auto pointer-events-auto scroll-mt-8 md:scroll-mt-[calc(50vh-30px)] mb-[50vh]">
-
-            <h3
-                class="p-2 w-full text-white bg-blue-700 rounded-[6px] font-semibold flex justify-between items-center">
-                <span>5. Contact</span>
-            </h3>
-
-            <p class="text-grey">While</p>
-
-            <div class="video w-full rounded-2xl overflow-hidden relative transition duration-300 bg-white">
-                <video id="randomVideo" width="320" height="240" autoplay loop playsinline muted
-                       disablePictureInPicture
-                       controlsList="nodownload" class="w-full">
-                    <source src="media/pablo-in-his-room.mp4" type='video/mp4'>
-                </video>
-            </div>
-
-            <a href="tel:+31"
-               class="bg-[#35C759] flex gap-2 rounded-full px-5 py-2 text-white w-fit mx-auto hover:scale-105 transition duration-300 items-center">Call
-                Pablo
-                <svg
-                     xmlns="http://www.w3.org/2000/svg"
-                     viewBox="0 0 24 24"
-                     fill="currentColor"
-                     class="size-5">
-                    <path fill-rule="evenodd"
-                          d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"
-                          clip-rule="evenodd" />
-                </svg>
-            </a>
-
-        </div> -->
-
         <div id="contact"
-             class="gap-4 w-full grid grid-cols-6 pointer-events-auto scroll-mt-8 md:scroll-mt-[calc(50vh-30px)] mb-[25vh]">
+             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-8 md:scroll-mt-[55px] mb-10">
 
             <div
-                 class="col-span-2 sticky top-[calc(50vh-30px)] text-sm  h-fit flex items-center justify-between gap-1">
+                 class="col-span-2 sticky top-[90px] md:top-[55px] text-sm  h-fit flex items-center justify-between gap-1">
 
                 <div
-                     class="text-sm text-white bg-[#0000FF] px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center">
+                     class="text-sm text-white bg-black px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center">
                     5</div>
                 <h3
-                    class="w-full text-white bg-[#0000FF] px-2 h-[30px] rounded-[6px] flex items-center">
+                    class="w-full text-white bg-black px-2 h-[30px] rounded-[6px] flex items-center">
                     CONTACT
                 </h3>
 
             </div>
 
-            <div class="grid grid-cols-6 gap-4 col-span-4 ">
+            <div class="flex flex-col col-span-4 gap-4">
 
-                <div
-                     class="video w-full h-fit rounded-2xl overflow-hidden relative transition duration-300 bg-white col-span-4">
-                    <video id="randomVideo" width="320" height="240" autoplay loop playsinline muted
-                           disablePictureInPicture
-                           controlsList="nodownload" class="w-full">
-                        <source src="media/pablo-in-his-room.mp4" type='video/mp4'>
-                    </video>
-                </div>
+                <div class="flex flex-col md:grid md:grid-cols-3 gap-4 pl-[35px] md:pl-0">
+                    <div class="flex flex-col">
+                        <span class="text-grey text-sm">Phone</span>
+                        <a href="">+31 (0)6 13 38 11 41</a>
+                    </div>
 
-                <div class="flex flex-col max-w-[350px] items-center justify-center col-span-2">
+                    <div class="flex flex-col">
+                        <span class="text-grey text-sm">Email</span>
+                        <a href="">pablomoreno@proton.me</a>
+                    </div>
 
-                    <h4 class="text-center text-lg max-w-[250px]">Meeting with Pablo</h4>
-                    <p class="text-center text-grey max-w-[250px]">For a 15 minutes presentation,
-                        to go deeper on the projects and abilities I can provide.</p>
-
-                    <a href="tel:+31"
-                       class="bg-[#35C759] flex gap-2 rounded-full px-5 py-2 text-white w-fit mx-auto transition duration-300 items-center mt-6">Call
-                        Pablo
-                        <svg
-                             xmlns="http://www.w3.org/2000/svg"
-                             viewBox="0 0 24 24"
-                             fill="currentColor"
-                             class="size-5">
-                            <path fill-rule="evenodd"
-                                  d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"
-                                  clip-rule="evenodd" />
-                        </svg>
-                    </a>
+                    <div class="flex flex-col">
+                        <span class="text-grey text-sm">Adress</span>
+                        <a href="">Voorburgstraat<br>1062 JB<br>Amsterdam</a>
+                    </div>
                 </div>
 
             </div>
+        </div>
 
+        <div class="flex flex-col md:grid grid-cols-6 gap-8 h-[90vh] md:h-[95vh] items-center justify-center">
+            <div
+                 class="video w-full h-fit rounded-2xl overflow-hidden relative transition duration-300 bg-white col-span-3 col-start-2">
+                <video id="randomVideo" width="320" height="240" autoplay loop playsinline muted
+                       disablePictureInPicture
+                       controlsList="nodownload" class="w-full aspect-[4/2.5] object-cover">
+                    <source src="media/pablo-in-his-room.mp4" type='video/mp4'>
+                </video>
+            </div>
+
+            <div class="flex flex-col max-w-[450px] items-center justify-center col-span-1">
+                <h4 class="text-center text-base uppercase">Extended presentation</h4>
+                <p class="text-center text-grey leading-tight">For a 15 minutes presentation,
+                    to go deeper on the projects and abilities I can provide.</p>
+
+                <a href="tel:+31613381141"
+                   class="bg-[#35C759] hover:bg-amber-300 flex gap-2 rounded-full px-5 py-2 text-white w-fit mx-auto transition duration-300 items-center mt-6">Call
+
+                    <svg
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24"
+                         fill="currentColor"
+                         class="size-5">
+                        <path fill-rule="evenodd"
+                              d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"
+                              clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
         </div>
 
         <div id="thanks"
-             class="gap-4 w-full grid grid-cols-6 pointer-events-auto scroll-mt-8 md:scroll-mt-[calc(50vh-30px)]">
+             class="gap-2 md:gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-8 md:scroll-mt-[55px]">
 
             <div
-                 class="col-span-2 sticky top-[calc(50vh-30px)] text-sm  h-fit flex items-center justify-between gap-1">
+                 class="col-span-2 sticky top-[55px] text-sm  h-fit flex items-center justify-between gap-1">
 
                 <div
-                     class="text-sm text-yellow-600 bg-yellow-200 px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center">
-                    X</div>
+                     class="text-amber-500 bg-amber-200 px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center text-2xl">
+                    ℗</div>
                 <h3
-                    class="w-full text-yellow-600 bg-yellow-200 px-2 h-[30px] rounded-[6px] flex items-center">
+                    class="w-full text-amber-500 bg-amber-200 px-2 h-[30px] rounded-[6px] flex items-center">
                     THANKS FOR YOUR TIME
                 </h3>
             </div>
 
-            <div class="flex gap-20 col-span-4 justify-between items-center pr-10">
-                <p class="text-grey">You have spent <span id="visit-timer"></span> in this website.</p>
-                <a href="#top"
-                   class="text-grey hover:text-black">↑</a>
+            <div
+                 class="flex gap-2 col-span-4 justify-start items-center md:pr-4 text-sm w-full">
+                <p class="text-grey">⏳ You have spent <span id="visit-timer"></span> in this website</p>
             </div>
         </div>
-
     </div>
-    <!-- 
-        <div id="friends"
-             class="flex flex-col g pointer-events-auto scroll-mt-8 md:scroll-mt-[calc(50vh-30px)]">
-
-            <h3
-                class=" text-white bg-amber-800 rounded-[6px] font-semibold flex justify-between items-center w-[500px] max-w-full p-2 mx-auto">
-                <span>6. FRIENDS</span> <span
-                      class="opacity-40  text-sm">... with websites</span>
-            </h3>
-
-            <div class="grid grid-cols-2 gap-20 p-10">
-
-                <a class="flex items-center justify-center relative w-full aspect-video hover:scale-105 transition duration-300"
-                   href="https://elliott.computer/"
-                   data-slideframe="false">
-                    <span
-                          class="z-10 text-white">Elliott Cost</span>
-                    <img src="media/friends/elliott.svg" alt="" class="absolute w-full h-full">
-                </a>
-
-                <a class="flex items-center justify-center relative w-full aspect-video hover:scale-105 transition duration-300"
-                   href="https://samdroual.fr/"
-                   data-slideframe="false">
-                    <span
-                          class="z-10 text-white">Sam Droual</span>
-                    <img src="media/friends/sam.svg" alt="" class="absolute w-full h-full">
-                </a>
-
-                <a class="flex items-center justify-center relative w-full aspect-video hover:scale-105 transition duration-300"
-                   href="https://leobidani.com/"
-                   data-slideframe="false">
-                    <span
-                          class="z-10 text-white">Léo Bidani</span>
-                    <img src="media/friends/leo.svg" alt="" class="absolute w-full h-full">
-                </a>
-
-                <a class="flex items-center justify-center relative w-full aspect-video hover:scale-105 transition duration-300"
-                   href="https://nicolasfernandez.fr/"
-                   data-slideframe="false">
-                    <span
-                          class="z-10 text-white">Nicolas Fernandez</span>
-                    <img src="media/friends/who.svg" alt="" class="absolute w-full h-full">
-                </a>
-
-            </div>
-        </div> -->
 
     <script src="assets/js/works.js"></script>
     <script src="assets/slideFrame.min.js"></script>
+    <script src="assets/flickity.pkgd.min.js"></script>
 
 
 </body>
