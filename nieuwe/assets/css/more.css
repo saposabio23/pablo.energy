@@ -131,3 +131,13 @@
 .flickity-viewport {
     transition: height 0.2s;
 }
+
+
+@media (max-width: 500px) {
+    .carousel-cell {
+        width: 90%;
+        aspect-ratio: 4/2.5;
+        height: auto;
+        margin-right: 10px;
+    }
+}
