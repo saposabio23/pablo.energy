@@ -143,8 +143,19 @@
   line-height: inherit !important;
 }
 
+.slideframe-container-titlebar strong {
+  color: black !important;
+}
+
 @media (max-width: 500px) {
   .slideframe-container {
     width: 90% !important;
+  }
+
+  .slideframe-container-titlebar {
+    position: absolute !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    flex-direction: row-reverse !important;
   }
 }

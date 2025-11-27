@@ -287,11 +287,11 @@ function bindSlideFrameLinks() {
             const isMailto = href.startsWith('mailto:');
             const isTel = href.startsWith('tel:');
 
-            // Only hijack external links
+            // Only skip empty/#/mailto/tel
             if (!href || href === "#" || isMailto || isTel) return;
-            if (link.hostname === window.location.hostname) return;
 
             e.preventDefault();
+
             overlay.classList.add('slideframe--visible');
             document.body.classList.add('slideframe-body--noscroll', 'slideframe-body--loading');
 
