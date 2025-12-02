@@ -1,36 +1,28 @@
 /* FLASHING CLOCK */
 
+
 .flashing {
-    -webkit-animation: flash 2s infinite;
-    animation: flash 2s infinite;
-}
-
-@-webkit-keyframes flash {
-
-    0%,
-    50% {
-        opacity: 1;
-    }
-
-    50.01%,
-    100% {
-        opacity: 0;
-    }
+    -webkit-animation: flash 8s infinite;
+    animation: flash 8s infinite;
 }
 
 @keyframes flash {
+    0% {
+        opacity: 0;
+    }
 
-    0%,
-    50% {
+    10% {
         opacity: 1;
     }
 
-    50.01%,
+    90% {
+        opacity: 1;
+    }
+
     100% {
         opacity: 0;
     }
 }
-
 
 
 /* FALLING IMAGES */
@@ -42,20 +34,24 @@
 
 /* FADE IN FADE OUT */
 .fade-loop {
-    animation: fadeLoop 2s ease-in-out infinite;
+    animation: fadeLoop 4s ease-in-out infinite;
 }
 
 @keyframes fadeLoop {
     0% {
-        opacity: 1;
-    }
-
-    50% {
         opacity: 0;
     }
 
-    100% {
+    20% {
         opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
     }
 }
 
@@ -78,7 +74,7 @@
 
 #resume-popup>div {
     height: fit-content;
-    width: fit-content;
+    width: 50%;
     background: #fff;
     border: 1px solid #e5e5e5;
     border-radius: 8px;
@@ -95,7 +91,6 @@
 
 #resume-popup img {
     display: block;
-    width: 250px;
     height: auto;
     border-radius: 6px;
 
@@ -127,7 +122,7 @@
     width: 100% !important;
     margin: 0 !important;
     border-radius: 0 !important;
-    background: #909090;
+    background: var(--color-grey) !important;
 }
 
 .flickity-viewport {
@@ -141,5 +136,9 @@
         aspect-ratio: 4/2.5;
         height: auto;
         margin-right: 10px;
+    }
+
+    #resume-popup>div {
+        width: 80%;
     }
 }

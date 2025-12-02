@@ -102,6 +102,7 @@
   animation: sl-circle infinite .8s !important;
   opacity: 0 !important;
   transition: opacity .4s !important;
+  color: #B0FD45 !important;
 }
 
 .slideframe-body--loading .slideframe-container-titlebar-title:before {

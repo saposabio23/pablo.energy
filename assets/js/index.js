@@ -186,7 +186,7 @@ fetch("https://opensheet.elk.sh/" + ADDRESS)
             const wrapper = document.createElement("a");
             wrapper.href = url || "#";
             wrapper.setAttribute('data-slideframe', 'true');
-            wrapper.setAttribute('title', url);
+            wrapper.setAttribute('title', title);
             wrapper.setAttribute('data-nature', nature);
             wrapper.dataset.slideframe = "true";
             wrapper.className =
@@ -199,7 +199,7 @@ fetch("https://opensheet.elk.sh/" + ADDRESS)
 
             // Left side (title + description on hover)
             const left = document.createElement("div");
-            left.className = "flex gap-2";
+            left.className = "flex gap-1 flex-col md:flex-row";
 
             const titleEl = document.createElement("h4");
             titleEl.textContent = title;
@@ -208,7 +208,7 @@ fetch("https://opensheet.elk.sh/" + ADDRESS)
             const descEl = document.createElement("p");
             descEl.textContent = description;
             descEl.className =
-                "opacity-0 transition-all duration-200 group-hover:opacity-100 text-grey hidden md:inline";
+                "opacity-100 transition-all duration-200 group-hover:opacity-100 text-grey md:inline";
 
             if (description) {
                 left.appendChild(descEl);
@@ -216,7 +216,7 @@ fetch("https://opensheet.elk.sh/" + ADDRESS)
 
             // Right side (year)
             const right = document.createElement("div");
-            right.className = "flex gap-2";
+            right.className = "flex gap-2 text-sm hidden md:inline";
 
             const yearEl = document.createElement("div");
             yearEl.textContent = year;
@@ -335,7 +335,7 @@ function setupResumePopup() {
 
     if (!resume || !popup || !imgEl) return;
 
-    const defaultImage = 'assets/pablo-moreno.jpg';
+    const defaultImage = 'pablo-moreno.jpg';
     let hideTimer;
 
     resume.querySelectorAll('.listStack').forEach(item => {
@@ -347,7 +347,7 @@ function setupResumePopup() {
             const randomDeg = (Math.random() * 6) - 3;
             popupDiv.style.transform = `rotate(${randomDeg}deg)`;
 
-            imgEl.src = src;
+            imgEl.src = 'media/resume/' + src;
             popup.classList.add('show');
             popup.setAttribute('aria-hidden', 'false');
 
