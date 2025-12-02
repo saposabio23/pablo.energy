@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100vw;
+
+  font-family: sans-serif;
+
+  background-color: black;
+  color: whitesmoke;
+  overflow: hidden;
+
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+a {
+  text-decoration: underline;
+  transition: all .3s ease-in-out;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.text {
+
+  gap: 8px;
+  position: fixed;
+  top: 16px;
+  left: 16px;
+}
+
+
+#randomVideo {
+  height: 80vh;
+  width: auto;
+  object-fit: contain;
+  transition: all 1s cubic-bezier(.45, .05, .55, .95);
+}
+
+
+@media screen and (max-width: 700px) {
+  body {
+    padding: 15px 20px;
+  }
+
+  #randomVideo {
+    height: 200vw !important;
+    width: auto;
+    transform: rotate(-90deg);
+    transition: all 1s cubic-bezier(.45, .05, .55, .95);
+  }
+}

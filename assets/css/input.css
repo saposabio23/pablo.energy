@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+    --shadow-big: 0 0 12px rgba(0, 0, 0, 0.1);
+
+    --color-grey: rgb(170, 170, 170, 0.9);
+    --color-black: #000000;
+
+    --color-grad-black: rgb(0, 0, 0, .3);
+
+}
+
+@layer base {
+    html {
+        @apply scroll-smooth;
+    }
+}

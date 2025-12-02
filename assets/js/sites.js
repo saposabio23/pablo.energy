@@ -12,12 +12,13 @@ fetch("https://opensheet.elk.sh/" + ADDRESS)
 
         data.forEach((row) => {
 
-            // let link = document.createElement("a");
-            // link.href = row.URL;
+            let fullRow = document.createElement("div");
+            fullRow.classList.add('line');
 
-            let fullRow = document.createElement("tr");
-            // link.appendChild(fullRow);
-            fullRow.classList.add("year" + row.Date.split('/')[0]);
+            const year = (row.Date || '').toString().slice(0, 4);
+            if (year) {
+                fullRow.dataset.year = year;
+            }
 
             if (row.State.includes('🟢')) {
                 fullRow.classList.add('public')
@@ -33,33 +34,29 @@ fetch("https://opensheet.elk.sh/" + ADDRESS)
             // faviconCell.appendChild(favicon);
             // fullRow.appendChild(faviconCell);
 
-            let dateCell = document.createElement("td");
-            let date = document.createElement("span");
+            let info = document.createElement("div");
+            info.classList.add('info');
+            fullRow.appendChild(info);
+
+            let date = document.createElement("div");
             date.innerHTML = row.Date;
-            dateCell.appendChild(date);
-            fullRow.appendChild(dateCell);
+            info.appendChild(date);
 
-            let titleCell = document.createElement("td");
-            let title = document.createElement("h6");
+            let title = document.createElement("div");
             title.innerHTML = row.Title;
-            titleCell.appendChild(title);
-            fullRow.appendChild(titleCell);
+            info.appendChild(title);
 
-            let descriptionCell = document.createElement("td");
-            let description = document.createElement("p");
+            let description = document.createElement("div");
             description.className = 'description'
             description.innerHTML = row.Description;
-            descriptionCell.appendChild(description);
-            fullRow.appendChild(descriptionCell);
+            info.appendChild(description);
 
-            let urlCell = document.createElement("td");
-            let url = document.createElement("span");
+            let url = document.createElement("a");
             url.className = 'url'
-            url.innerHTML = row.URL;
-            urlCell.appendChild(url);
-            fullRow.appendChild(urlCell);
+            url.href = row.URL;
+            url.innerHTML = "👀";
+            fullRow.appendChild(url);
 
-
-            document.querySelector('table').appendChild(fullRow);
+            document.querySelector('.list').appendChild(fullRow);
         });
     });
