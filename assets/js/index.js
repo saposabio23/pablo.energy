@@ -355,7 +355,7 @@ function setupResumePopup() {
             hideTimer = setTimeout(() => {
                 popup.classList.remove('show');
                 popup.setAttribute('aria-hidden', 'true');
-            }, 2500);
+            }, 5000);
         });
     });
 }

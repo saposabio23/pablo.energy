@@ -73,8 +73,7 @@
 }
 
 #resume-popup>div {
-    height: fit-content;
-    width: 50%;
+    height: 75%;
     background: #fff;
     border: 1px solid #e5e5e5;
     border-radius: 8px;
@@ -91,7 +90,8 @@
 
 #resume-popup img {
     display: block;
-    height: auto;
+    height: 100%;
+    width: fit-content;
     border-radius: 6px;
 
 }
