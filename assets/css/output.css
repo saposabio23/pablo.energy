@@ -506,6 +506,12 @@
   .mt-8 {
     margin-top: calc(var(--spacing) * 8);
   }
+  .mt-20 {
+    margin-top: calc(var(--spacing) * 20);
+  }
+  .mt-50 {
+    margin-top: calc(var(--spacing) * 50);
+  }
   .mr-1 {
     margin-right: calc(var(--spacing) * 1);
   }
@@ -529,6 +535,9 @@
   }
   .mb-20 {
     margin-bottom: calc(var(--spacing) * 20);
+  }
+  .mb-\[200px\] {
+    margin-bottom: 200px;
   }
   .ml-3 {
     margin-left: calc(var(--spacing) * 3);
