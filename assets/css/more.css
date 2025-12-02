@@ -73,13 +73,12 @@
 }
 
 #resume-popup>div {
-    height: 75%;
+    max-height: 75%;
     background: #fff;
     border: 1px solid #e5e5e5;
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
     padding: 8px;
-
     transform: rotate(-2deg);
 }
 
@@ -90,8 +89,7 @@
 
 #resume-popup img {
     display: block;
-    height: 100%;
-    width: fit-content;
+    object-fit: contain;
     border-radius: 6px;
 
 }
