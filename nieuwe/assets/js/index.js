@@ -99,13 +99,13 @@ window.addEventListener("scroll", () => {
 // }
 
 // CLOCK
-function updateClock() {
-    const now = new Date();
-    const hours = now.getHours().toString().padStart(2, '0');
-    const minutes = now.getMinutes().toString().padStart(2, '0');
-    document.getElementById('clockH').textContent = `${hours}`;
-    document.getElementById('clockM').textContent = `${minutes}`;
-}
+// function updateClock() {
+//     const now = new Date();
+//     const hours = now.getHours().toString().padStart(2, '0');
+//     const minutes = now.getMinutes().toString().padStart(2, '0');
+//     document.getElementById('clockH').textContent = `${hours}`;
+//     document.getElementById('clockM').textContent = `${minutes}`;
+// }
 
 // Start time
 const startTime = Date.now();
@@ -139,39 +139,25 @@ setInterval(updateTimer, 1000);
 // Run once immediately
 updateTimer();
 
-// initial call + update every second
-// updateClock();
-// setInterval(updateClock, 1000);
+// FLICKITY CLICK TO NEXT
+document.addEventListener("DOMContentLoaded", () => {
+    // Select ALL carousels on the page
+    const carousels = document.querySelectorAll(".main-carousel");
+    if (!carousels.length) return;
 
+    carousels.forEach(carouselEl => {
+        const flkty = Flickity.data(carouselEl);
+        if (!flkty) return;
 
-// IMAGES STACK
-// document.querySelectorAll(".imageStack").forEach(stackEl => {
-//     const imgs = stackEl.querySelectorAll(".stack-img");
-//     let currentIndex = 0;
+        // Click anywhere → next slide
+        carouselEl.addEventListener("click", (e) => {
+            // OPTIONAL: ignore clicks on videos
+            if (e.target.tagName === "VIDEO") return;
 
-//     stackEl.addEventListener("click", () => {
-//         const img = imgs[currentIndex];
-//         if (!img) return; // no more images
-
-//         // add falling effect
-//         img.classList.add("fall");
-
-//         // when animation ends, hide the image so it doesn't block clicks
-//         img.addEventListener("transitionend", () => {
-//             img.classList.add("hidden");
-//         }, { once: true });
-
-//         currentIndex++;
-
-//         // OPTIONAL: reset this stack when all images have fallen
-//         // if (currentIndex >= imgs.length) {
-//         //     setTimeout(() => {
-//         //         imgs.forEach(im => im.classList.remove("fall", "hidden"));
-//         //         currentIndex = 0;
-//         //     }, 900); // a bit longer than the 0.8s animation
-//         // }
-//     });
-// });
+            flkty.next();
+        });
+    });
+});
 
 // WEBSITES LIST
 var ADDRESS = "1UGVXTssu8J9mBbOyPSX0qkOo13xggy_MgboicC4UlTU/1";

@@ -1,0 +1,275 @@
+html {
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+button {
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.concluded img {
+    height: 30px;
+}
+
+.concluded {
+    /* height: calc(var(--vh, 1vh) * 100); */
+    width: 100vw;
+    /* background-color: rgba(255, 255, 255, .8); */
+    display: flex;
+
+    align-items: start;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 1;
+    gap: var(--spacing-l);
+    padding: var(--spacing-m);
+
+}
+
+
+.video {}
+
+
+.show {
+    display: grid;
+    margin: auto;
+    gap: var(--spacing-l);
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-s);
+    padding: var(--spacing-m) var(--spacing-m) var(--spacing-m) var(--spacing-m);
+    /*! max-width: 970px; */
+}
+
+.show>div {
+    /*! position: sticky; */
+    top: 0;
+    height: calc(var(--vh, 1vh) * 60);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.show>h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: auto;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: -1;
+
+    width: 100%;
+    justify-content: center;
+    background-image: url(../logos/bk-collection.png);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-family: 'Zapfino';
+    font-size: 4rem;
+    margin: 0;
+}
+
+h2 {
+
+    font-family: 'Zapfino';
+    font-size: 3rem;
+
+}
+
+
+h4 {
+    position: absolute;
+    /* font-family: 'InstrumentalRegular'; */
+    /* font-family: 'Zapfino'; */
+    font-weight: 400;
+    bottom: 0;
+    margin: 0;
+    left: 0;
+    width: 100%;
+    padding: var(--spacing-m);
+    background-color: #00000091;
+    color: var(--color-secondary);
+    background: linear-gradient(1deg, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.block {
+    position: relative;
+    width: 100%;
+}
+
+.frame {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px #40403d3d;
+    background-color: var(--color-secondary);
+    position: relative;
+}
+
+.block a {
+    position: absolute;
+    top: var(--spacing-s);
+    right: var(--spacing-s);
+
+    background-color: var(--color-special);
+    color: var(--color-secondary);
+    height: fit-content;
+    width: fit-content;
+    border-radius: 99px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    z-index: 99;
+    font-size: 80%;
+    transition: all .3s ease-in-out;
+
+    opacity: 0;
+}
+
+
+.block:hover a {
+    opacity: 100%;
+}
+
+.show img,
+.gallery img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#credits {
+    font-family: sans-serif;
+    text-align: center;
+    min-height: 100vh;
+    /* padding: 200px 0; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    letter-spacing: 0.7px;
+}
+
+#credits p:hover {
+    color: blue;
+}
+
+#credits p {
+    max-width: 590px;
+}
+
+#credits span {
+    font-family: 'Zapfino';
+    font-size: 120%;
+    margin-right: 5px;
+}
+
+
+/* the full-viewport wrapper */
+#video-container {
+    z-index: 2;
+    width: 100vw;
+    height: calc(var(--vh, 1vh) * 100);
+    overflow: hidden;
+    background: black;
+    position: sticky;
+    top: 0;
+}
+
+/* center & scale the iframe to always cover */
+#video-container iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* these two lines make sure it always at least fills one dimension */
+    min-width: 100vw;
+    min-height: calc(var(--vh, 1vh) * 100);
+    /* center it and crop the excess */
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: auto;
+}
+
+/* make the <h2> span all 3 columns & center it */
+.gallery>h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: auto;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: -1;
+}
+
+.gallery img {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background-image: url(../logos/main.svg);
+    background-size: 150px;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+/* when active, make it cover the viewport */
+.cover-fullscreen {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: calc(var(--vh, 1vh) * 100) !important;
+    object-fit: contain !important;
+    z-index: 9999 !important;
+    cursor: zoom-out !important;
+    transform: none !important;
+    background-color: #000000de;
+    backdrop-filter: blur(20px);
+}
+
+@media screen and (max-width: 750px) {
+    .show {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .block a {
+        opacity: 1;
+    }
+
+    .show>h2 {
+        height: 70vh;
+    }
+
+    .show>div {
+        height: calc(var(--vh, 1vh) * 40);
+    }
+
+    .gallery {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    #credits {
+        padding: 30px 20px 100px 20px;
+    }
+}
