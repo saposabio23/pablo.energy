@@ -4,7 +4,7 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("intro-menu").classList.remove("opacity-0");
     setTimeout(() => {
         document.getElementById("ball").classList.remove("opacity-0");
-    }, 900);
+    }, 1000);
 });
 
 // FAVICON
