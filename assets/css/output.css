@@ -530,6 +530,15 @@
   .mb-20 {
     margin-bottom: calc(var(--spacing) * 20);
   }
+  .ml-3 {
+    margin-left: calc(var(--spacing) * 3);
+  }
+  .ml-5 {
+    margin-left: calc(var(--spacing) * 5);
+  }
+  .ml-6 {
+    margin-left: calc(var(--spacing) * 6);
+  }
   .ml-9 {
     margin-left: calc(var(--spacing) * 9);
   }
@@ -649,6 +658,9 @@
   }
   .min-h-screen {
     min-height: 100vh;
+  }
+  .w-2\/3 {
+    width: calc(2/3 * 100%);
   }
   .w-3 {
     width: calc(var(--spacing) * 3);
@@ -786,6 +798,12 @@
   .gap-6 {
     gap: calc(var(--spacing) * 6);
   }
+  .gap-8 {
+    gap: calc(var(--spacing) * 8);
+  }
+  .gap-12 {
+    gap: calc(var(--spacing) * 12);
+  }
   .gap-20 {
     gap: calc(var(--spacing) * 20);
   }
@@ -835,9 +853,6 @@
   }
   .border-black {
     border-color: var(--color-black);
-  }
-  .border-grey {
-    border-color: var(--color-grey);
   }
   .bg-\[\#0000D9\] {
     background-color: #0000D9;
@@ -1239,21 +1254,11 @@
   .delay-100 {
     transition-delay: 100ms;
   }
-  .delay-150 {
-    transition-delay: 150ms;
-  }
   .delay-200 {
     transition-delay: 200ms;
   }
   .delay-300 {
     transition-delay: 300ms;
-  }
-  .delay-450 {
-    transition-delay: 450ms;
-  }
-  .duration-5 {
-    --tw-duration: 5ms;
-    transition-duration: 5ms;
   }
   .duration-200 {
     --tw-duration: 200ms;
@@ -1589,6 +1594,11 @@
   .md\:h-fit {
     @media (width >= 48rem) {
       height: fit-content;
+    }
+  }
+  .md\:w-2\/3 {
+    @media (width >= 48rem) {
+      width: calc(2/3 * 100%);
     }
   }
   .md\:w-\[20vw\] {
