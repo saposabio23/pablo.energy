@@ -73,7 +73,8 @@
 }
 
 #resume-popup>div {
-    max-height: 75%;
+    height: fit-content;
+    width: fit-content;
     background: #fff;
     border: 1px solid #e5e5e5;
     border-radius: 8px;
@@ -91,6 +92,7 @@
     display: block;
     object-fit: contain;
     border-radius: 6px;
+    height: 600px;
 
 }
 
@@ -136,7 +138,7 @@
         margin-right: 10px;
     }
 
-    #resume-popup>div {
-        width: 80%;
+    #resume-popup>img {
+        height: 400px;
     }
 }
