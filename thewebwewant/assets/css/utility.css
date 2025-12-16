@@ -1,0 +1,165 @@
+/******************* UTILITY CLASSES *******************/
+.pointer:hover {
+    cursor: pointer;
+}
+
+.pointer img:hover {
+    cursor: pointer;
+}
+
+.underline {
+    text-decoration: underline !important;
+}
+
+.no-indent {
+    text-indent: 0 !important;
+}
+
+.uppercase {
+    text-transform: uppercase !important;
+}
+
+.hidden {
+    display: none;
+}
+
+.hiddenHard {
+    display: none !important;
+}
+
+small {
+    /* font-size: 8px;
+    transform: translate(-3px, -120%);
+    position: absolute; */
+}
+
+b {
+    /* text-shadow: 0 0 10px var(--thisColor); */
+}
+
+#partieFin li {
+    margin-bottom: var(--space-s);
+}
+
+a {
+    text-shadow: 0 0 6px var(--thisColor);
+    text-decoration: none;
+}
+
+.sommairePage a {
+    text-shadow: none;
+}
+
+.sommairePage a:hover {
+    text-shadow: none;
+    color: inherit;
+}
+
+
+.op50 {
+    opacity: 0.5 !important;
+}
+
+.space-top {
+    margin-top: var(--space-xl);
+}
+
+.bold {
+    font-weight: 900;
+}
+
+textarea {
+    border: none;
+    overflow: auto;
+    outline: none;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    resize: none;
+}
+
+
+
+#tooltip {
+    position: absolute;
+    display: none;
+    z-index: 99;
+    border-radius: 999px;
+    font-size: var(--fs-small);
+    padding: 0px 8px;
+    margin-top: 5px;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    box-shadow: 0 0 6px 0 var(--color-black);
+}
+
+
+#tooltip span {
+    cursor: pointer;
+    background-color: var(--color-secondary-light);
+    color: black;
+    opacity: .6;
+    height: 18px;
+    width: 18px;
+    position: relative;
+    align-content: center;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    border-radius: 100%;
+    margin-left: 0px;
+}
+
+#tooltip span:hover {
+    opacity: 1;
+}
+
+#cal1 {
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    top: 100px;
+    left: 100px;
+    overflow: none;
+    z-index: -100;
+}
+
+#cal2 {
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    top: 0px;
+    left: 0px;
+    overflow: none;
+    z-index: -100;
+}
+
+.buttonsStart {
+    visibility: hidden;
+    display: none;
+    opacity: 0;
+}
+
+.appear {
+    animation: appear 2s ease-in forwards;
+}
+
+@keyframes appear {
+    0% {
+        transform: scale(0.2) translateY(100vh);
+        visibility: visible;
+    }
+
+
+    100% {
+        transform: scale(1) translateY(0px);
+        visibility: visible;
+    }
+}
+
+#fin-biblio,
+#fin-articles {
+    position: relative;
+}

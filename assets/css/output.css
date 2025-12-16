@@ -45,6 +45,7 @@
     --radius-xl: 0.75rem;
     --radius-2xl: 1rem;
     --radius-3xl: 1.5rem;
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --blur-md: 12px;
@@ -506,12 +507,6 @@
   .mt-8 {
     margin-top: calc(var(--spacing) * 8);
   }
-  .mt-20 {
-    margin-top: calc(var(--spacing) * 20);
-  }
-  .mt-50 {
-    margin-top: calc(var(--spacing) * 50);
-  }
   .mr-1 {
     margin-right: calc(var(--spacing) * 1);
   }
@@ -538,15 +533,6 @@
   }
   .mb-\[200px\] {
     margin-bottom: 200px;
-  }
-  .ml-3 {
-    margin-left: calc(var(--spacing) * 3);
-  }
-  .ml-5 {
-    margin-left: calc(var(--spacing) * 5);
-  }
-  .ml-6 {
-    margin-left: calc(var(--spacing) * 6);
   }
   .ml-9 {
     margin-left: calc(var(--spacing) * 9);
@@ -667,9 +653,6 @@
   }
   .min-h-screen {
     min-height: 100vh;
-  }
-  .w-2\/3 {
-    width: calc(2/3 * 100%);
   }
   .w-3 {
     width: calc(var(--spacing) * 3);
@@ -806,9 +789,6 @@
   }
   .gap-6 {
     gap: calc(var(--spacing) * 6);
-  }
-  .gap-8 {
-    gap: calc(var(--spacing) * 8);
   }
   .gap-12 {
     gap: calc(var(--spacing) * 12);
@@ -1296,6 +1276,10 @@
   .duration-\[\.8s\] {
     --tw-duration: .8s;
     transition-duration: .8s;
+  }
+  .ease-in {
+    --tw-ease: var(--ease-in);
+    transition-timing-function: var(--ease-in);
   }
   .ease-in-out {
     --tw-ease: var(--ease-in-out);

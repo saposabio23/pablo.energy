@@ -1,0 +1,523 @@
+/******************* BOOKMARKS *******************/
+
+#bookmarkPartieI {
+  right: 75px;
+  z-index: 3;
+}
+
+#bookmarkPartieII {
+  right: 50px;
+  z-index: 2;
+}
+
+#bookmarkPartieIII {
+  right: 25px;
+  z-index: 1;
+}
+
+#bookmarkPartieFin {
+  right: 0;
+  z-index: 0;
+
+}
+
+
+
+#bookmarkPartieIOff {
+  left: 0px;
+  z-index: 3;
+  display: none;
+}
+
+
+#bookmarkPartieIIOff {
+  left: 15px;
+  z-index: 4;
+  display: none;
+}
+
+
+#bookmarkPartieIIIOff {
+  left: 30px;
+  z-index: 5;
+  display: none;
+}
+
+#bookmarkPartieFinOff {
+  left: 45px;
+  z-index: 6;
+  display: none;
+}
+
+.bookmarks {
+  width: 120px;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  right: 0;
+  display: flex;
+  height: 100%;
+}
+
+.bookmarks div {
+  font-weight: 400;
+  width: 100px;
+  /* writing-mode: sideways-rl; */
+  font-size: var(--fs-middle);
+  height: 100vh;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px 0 var(--color-shadow);
+  padding-top: 12px;
+  padding-right: 8px;
+  text-transform: uppercase;
+  transition: var(--trans-quick);
+  font-family: var(--ff-titles);
+  position: absolute;
+  background-color: var(--color-white);
+  height: 100%;
+  display: flex;
+  border-radius: 0 12px 0 0;
+
+}
+
+
+.bookmarks div:hover {
+  /* color: rgb(137, 137, 137);
+    background-color: red; */
+}
+
+.bookmarksOff {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  width: 50px;
+  height: 100%;
+  background-color: var(--color-special-1);
+}
+
+.bookmarksOff div {
+  position: absolute;
+  height: 100%;
+  width: 100px;
+  background-color: var(--color-white);
+  box-shadow: 0 0 10px 0 var(--color-shadow);
+  border-radius: 12px 0 0 0;
+}
+
+
+.bookmarks>div>span {
+  position: sticky;
+  top: 12px;
+  display: flex;
+  width: fit-content;
+  writing-mode: vertical-rl;
+  transform: translateX(250%);
+}
+
+
+.bookmarks>div>span>span {
+  writing-mode: tb;
+  font-size: var(--fs-big);
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  font-family: var(--ff-text) !important;
+
+  width: fit-content;
+}
+
+/******************* LEFT SIDE *******************/
+
+.panel h2 {
+  padding: 0 !important;
+  margin: 0;
+  font-family: Commonsans, sans-serif;
+  font-weight: 400;
+  padding-top: var(--space-l);
+  text-transform: uppercase;
+  font-family: var(--ff-titles);
+}
+
+.panel h4 {
+  margin: var(--space-m) 0 var(--space-s) 0;
+}
+
+.panel {
+  position: sticky;
+  top: var(--space-xl);
+  left: 0;
+  top: 0;
+  margin: calc(var(--space-xl) * -1);
+  z-index: 0;
+  height: 100vh;
+  width: calc(100% + var(--space-xl) * 2);
+  display: none;
+  transition: var(--trans-quick);
+  z-index: 990;
+}
+
+.displayed {
+  display: flex;
+  transition: var(--trans-quick);
+  z-index: 999;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: fit-content;
+  height: 100%;
+  flex-direction: column;
+  position: fixed;
+  border-radius: var(--border-s) 0 0 var(--border-s);
+
+}
+
+.header>div {
+  width: 30px;
+  height: calc(100% / 3);
+  font-weight: 400;
+  font-size: 16px;
+  display: flex;
+  box-sizing: border-box;
+  padding: var(--space-s) 0;
+  /* writing-mode: sideways-lr; */
+  box-shadow: -5px 0 20px 0 var(--color-shadow);
+  font-family: var(--ff-text);
+  color: white;
+  text-transform: uppercase;
+}
+
+.headerTitles {
+  transform: rotate(180deg);
+  width: 100%;
+  writing-mode: vertical-rl;
+}
+
+.header div:nth-child(1) {
+  border-radius: var(--border-s) 0 0 0px;
+}
+
+
+.header div:nth-child(3) {
+  border-radius: 0px 0 0 var(--border-s);
+}
+
+.header div:hover {}
+
+.panel>div {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: scroll !important;
+  width: inherit;
+  height: 100%;
+  padding: var(--space-m);
+  box-sizing: border-box;
+  z-index: 5;
+  display: none;
+  color: white !important;
+}
+
+.panel>div::-webkit-scrollbar {
+  display: none;
+}
+
+.sommaireButtonOn {
+  justify-content: center;
+}
+
+.sommaireButtonOn:hover span {}
+
+#sommaireButton {
+  background-color: var(--color-special-1);
+}
+
+#notesButton {
+  background-color: var(--color-special-2);
+}
+
+#optionsButton {
+  background-color: var(--color-special-3);
+}
+
+.sommairePage {
+  background-color: var(--color-special-1);
+}
+
+.notesPage {
+  background-color: var(--color-special-2);
+}
+
+.optionsPage {
+  background-color: var(--color-special-3);
+}
+
+
+
+/******************* SOMMAIRE *******************/
+
+.sommairePage h3 {
+  margin: var(--space-l) 0 0 0;
+  font-weight: 400;
+}
+
+.sommairePage h4 {
+  margin: 0 0 2px 0;
+  font-family: var(--ff-titles);
+  font-size: var(--fs-middle);
+  line-height: var(--lh-middle);
+}
+
+.sommairePage h4 span {
+  font-size: var(--fs-normal);
+  font-family: var(--ff-text);
+}
+
+
+.sommairePage div {
+  border-radius: var(--border-m);
+  border: 1px dashed white;
+  background-color: transparent;
+  padding: var(--space-s);
+  margin: var(--space-m) 0;
+  transition: var(--trans-quick);
+  color: white;
+  text-transform: unset;
+}
+
+.sommairePage div:hover {
+  cursor: pointer;
+
+  background-color: #00000091;
+  transition: var(--trans-quick);
+}
+
+.sommairePage a {
+  text-decoration: none !important;
+}
+
+.sommairePage a:hover {
+  text-decoration: underline !important;
+}
+
+.indexSelected {
+  background-color: white !important;
+  color: black !important;
+}
+
+.sommairePage ul {
+  margin: 0 0 var(--space-s) 7px;
+}
+
+.sommairePage ul {
+  list-style: none;
+}
+
+.sommairePage ul li::before {
+  content: "・ ";
+}
+
+.sommairePage details>summary {
+  list-style-type: "→ ";
+  margin-left: var(--space-l);
+  width: fit-content;
+}
+
+.sommairePage details[open]>summary {
+  list-style-type: "⤵ ";
+}
+
+::marker:hover {
+  opacity: 0.5 !important;
+}
+
+.sommairePage details {
+  font-size: var(--fs-middle);
+  line-height: var(--lh-normal);
+}
+
+/******************* NOTE PAGE *******************/
+
+.notesPage::-webkit-scrollbar {
+  width: 10px;
+}
+
+.notesPage::-webkit-scrollbar-track {
+  border-radius: var(--border-s);
+  background-color: #e7e7e7;
+  border: 1px solid #cacaca;
+}
+
+.notesPage::-webkit-scrollbar-thumb {
+  border-radius: var(--border-s);
+  background-color: #d55959;
+}
+
+.panel>div>p {
+  font-size: var(--fs-middle);
+  line-height: var(--lh-middle);
+  margin: var(--space-s) var(--space-s) 0 var(--space-s) !important;
+  text-indent: 0;
+
+  border-radius: 10px;
+}
+
+.littleNote {
+  position: absolute;
+  font-size: 12px;
+  color: var(--color-special-2);
+  text-align: right;
+  padding: 0 7px;
+  z-index: 999;
+  height: 25px;
+  width: fit-content;
+  border: 1px solid var(--color-special-2);
+  right: var(--space-s);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+
+.notesCopy {
+  border-radius: 10px;
+  margin: var(--space-m) 0;
+  font-size: var(--fs-middle);
+  line-height: var(--lh-middle);
+  background-color: var(--color-secondary-light);
+}
+
+.notesCopyHeader {
+  font-size: var(--fs-middle);
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  padding: calc(var(--space-s)/2) var(--space-s);
+}
+
+.notesCopyHeader span:nth-child(2) {
+  opacity: .6;
+}
+
+.notesCopy p {
+  padding: var(--space-s);
+  text-indent: 0 !important;
+  margin: 0 !important;
+}
+
+.notesCopy:last-child {
+  margin-bottom: 0 !important;
+}
+
+.notesCopy textarea {
+  border: none;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  resize: none;
+  /* min-width: 150px; */
+  min-height: 20px !important;
+
+  background-color: transparent;
+  color: black;
+
+  padding: var(--space-s) var(--space-s) 0 var(--space-s);
+
+}
+
+.notesCopySelection {
+  background-color: var(--color-secondary);
+  color: var(--color-black);
+}
+
+/* TEXTAREA AUTO RESIZE STYLES BEGIN */
+
+/* The .hiddendiv styles are added with JS.
+   You can remove the JS lines and use CSS instead
+.hiddendiv {
+  display: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}*/
+
+/* the styles for 'txta' are applied to both the textarea and the hidden clone */
+/* these must be the same for both */
+.txta {
+  width: 100%;
+  max-width: 500px;
+  font-family: var(--ff-text);
+  font-size: var(--fs-middle);
+  line-height: var(--lh-middle);
+  overflow: hidden;
+  padding: var(--space-s);
+}
+
+/* TEXTAREA AUTO RESIZE STYLES END */
+
+/******************* OPTIONS PAGE *******************/
+
+.options:hover {
+  background-color: var(--color-white);
+  opacity: 0.6;
+  width: 50vw;
+  z-index: 1;
+  position: absolute;
+  height: 100%;
+  right: 0;
+}
+
+.closer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  border-radius: 999px;
+  border: 1px solid var(--color-secondary);
+  margin: var(--space-m);
+  text-align: center;
+}
+
+
+.notesPage>span:nth-child(1) {
+  background-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+
+.optionsPage div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-s);
+  margin-top: var(--space-m);
+}
+
+.optionsPage>div>button,
+.optionsPage>div>a {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column !important;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 120px;
+  color: white;
+  text-decoration: none !important;
+}
+
+.optionsPage>div>a>button {
+  flex-direction: column;
+  align-items: center;
+  justify-content: inherit;
+  height: 100%;
+  min-height: 120px;
+  width: 100%;
+}
+
+.optionsPage>div>a>button:hover {
+  color: inherit;
+}
+
+.optionsPage img {
+  max-height: 30px;
+  width: max-content;
+  filter: invert(1);
+}

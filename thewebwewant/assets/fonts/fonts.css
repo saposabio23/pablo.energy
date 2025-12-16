@@ -1,0 +1,37 @@
+@font-face {
+    font-display: swap;
+    font-family: 'Uncut';
+    font-style: normal;
+    font-weight: 400;
+    src: url('UncutSans-Regular.woff') format('woff');
+    font-feature-settings: "ss06" on;
+    font-feature-settings: "ss02" on;
+  }
+
+
+  @font-face {
+    font-display: swap;
+    font-family: 'Uncut';
+    font-style: normal;
+    font-weight: 400;
+    src: url('UncutSans-Regular.woff2') format('woff2');
+    font-feature-settings: "ss06" on;
+    font-feature-settings: "ss02" on;
+  }
+
+
+@font-face {
+    font-display: swap;
+    font-family: 'BIZ UDPMincho Regular';
+    font-style: normal;
+    font-weight: 400;
+    src: url('biz-udpmincho-v9-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: 'BIZ-UDPMincho-Bold';
+    font-style: normal;
+    font-weight: 700;
+    src: url('biz-udpmincho-v9-latin-700.woff2') format('woff2'); 
+  }
