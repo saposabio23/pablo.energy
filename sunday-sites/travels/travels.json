@@ -324,7 +324,7 @@
             "Barcelona",
             "La Masía",
             "Castelfollit",
-            "La Toscana",
+            "La Toscana"
         ]
     },
     {
@@ -332,6 +332,31 @@
         "cities": [
             "Amsterdam",
             "Rotterdam"
+        ]
+    },
+    {
+        "month": "October 25",
+        "cities": [
+            "Amsterdam",
+            "Zandaam"
+        ]
+    },
+    {
+        "month": "November 25",
+        "cities": [
+            "Amsterdam",
+            "Hoorn"
+        ]
+    },
+    {
+        "month": "December 25",
+        "cities": [
+            "Amsterdam",
+            "Paris",
+            "Donostia",
+            "Bilbao",
+            "Castro",
+            "Paris"
         ]
     }
 ]
