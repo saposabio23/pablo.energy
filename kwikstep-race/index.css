@@ -111,3 +111,13 @@ img {
 small {
     font-size: 1rem;
 }
+
+button {
+    position: absolute;
+    top: 35px;
+    right: 35px;
+    z-index: 1000;
+    font-size: 1rem;
+    cursor: pointer;
+    opacity: .5;
+}

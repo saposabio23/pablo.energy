@@ -15,12 +15,12 @@
 
 <body>
 
+    <button onclick="toggleMute()" id="unmuteBtn">unmute</button>
 
     <div class="player">
         <video autoplay loop playsinline muted
-               disablePictureInPicture
-               controlsList="nodownload" poster="media/poster.webp">
-            <source src="media/Untitled.mp4" type='video/mp4'>
+               disablePictureInPicture poster="media/poster.webp" id="video">
+            <source src="media/untitled.mp4" type='video/mp4'>
         </video>
     </div>
 
@@ -31,7 +31,7 @@
         <div>
             <h1>KWIKSTEP RACE 🔜</h1>
 
-            <p>Allô allô all Kwikstep riders! A race wants to be organized this year to meet all of us and...</p>
+            <p>Allô allô all Kwikstep riders! A race wants to be organized this year to meet all of us and....</p>
 
             <form name="subscription" method="POST" data-netlify="true">
                 <input type="email" name="email" required placeholder="your e-mail">
@@ -45,7 +45,13 @@
     </div>
 
 
-
+    <script>
+        function toggleMute() {
+            var video = document.getElementById("video");
+            video.muted = !video.muted;
+            document.getElementById("unmuteBtn").style.display = "none";
+        }
+    </script>
 </body>
 
 </html>
