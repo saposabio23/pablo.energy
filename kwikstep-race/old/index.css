@@ -10,36 +10,19 @@ body {
     font-family: 'Alte Haas Grotesk', sans-serif;
     font-weight: 700;
     font-size: 1rem;
+    background-color: var(--bk);
     color: white;
-    background-color: #44643d;
 }
 
 
 .player {
     position: fixed;
     object-fit: cover;
-    height: calc(30svh);
+    height: calc(100svh - 40px);
     width: calc(100vw - 40px);
     overflow: hidden;
-    border-radius: 12px;
-    top: 0;
-    left: 0;
-    margin: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 999 !important;
-    transition: all 0.8s ease-in-out;
-    cursor: pointer;
-}
-
-
-img {
-    height: 80%;
-    position: relative;
-    z-index: 10;
-    object-fit: contain;
-    max-width: 80%;
+    border-radius: 4px;
+    top: 20px;
 }
 
 
@@ -47,35 +30,41 @@ video {
     object-fit: cover;
     height: 100%;
     width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-
 }
 
 h1 {
-    font-size: 1.8rem;
-    letter-spacing: 2px;
+    font-size: 1.4rem;
+    letter-spacing: 3px;
     text-align: center;
 }
 
 .info {
-    z-index: 998;
+    z-index: 999;
     position: fixed;
-    height: fit-content;
+    height: calc(100vh - 20px);
+    width: calc(100vw - 40px);
     overflow: scroll;
-    top: calc(30vh + 20px);
-    left: 0;
-    padding: 20px;
+    top: 20px;
+    left: 20px;
+    padding: 0 5% 40px 5%;
+}
+
+.info div {
+    padding: 30px 30px 20px 30px;
+    border-radius: 4px;
+
+    width: 100%;
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
+    background-color: #44643d;
 }
 
-
-p {
-    text-indent: 14px;
-}
+/* p {
+    margin: 0 10px;
+} */
 
 form {
     background-color: var(--bk);
@@ -83,21 +72,18 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-items: center;
     border-radius: 20px;
-    gap: 10px;
+    gap: 6px;
     background-color: transparent;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    padding: 0 20px 20px 20px;
 }
 
 
 input[type="email"],
 input[type="text"] {
     width: 100%;
-    padding: 10px;
-    border-radius: 8px;
+    padding: 14px;
+    border-radius: 12px;
     color: black;
     background-color: white;
     text-align: left;
@@ -122,9 +108,9 @@ input[type="submit"] {
     padding: 10px;
     border-radius: 12px;
     cursor: pointer;
+    font-size: 1.2rem;
+    margin-top: 10px;
     transition: all .4s ease-in-out;
-    width: 100%;
-    text-align: center;
 }
 
 input[type="submit"]:active {
@@ -136,6 +122,10 @@ input[type="submit"]:active {
 
 
 
+img {
+    height: 80vh;
+    object-fit: contain;
+}
 
 small {
     font-size: 1rem;
@@ -144,8 +134,12 @@ small {
     opacity: .5;
 }
 
-.playerOn {
-    height: calc(100svh - 40px) !important;
-    transition: all 0.8s ease-in-out;
-
+button {
+    position: absolute;
+    top: 35px;
+    right: 35px;
+    z-index: 1000;
+    font-size: 1rem;
+    cursor: pointer;
+    opacity: .5;
 }

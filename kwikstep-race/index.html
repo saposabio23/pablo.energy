@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KWIKSTEP RACE 🔜</title>
+    <title>KWIKSTEP RACE 2026</title>
 
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="index.css">
@@ -15,9 +15,11 @@
 
 <body>
 
-    <button onclick="toggleMute()" id="unmuteBtn">unmute</button>
+    <!-- <button onclick="toggleMute()" id="unmuteBtn">unmute</button> -->
 
-    <div class="player">
+    <div class="player" onclick="openplayer()">
+        <img src="media/2-Photoroom.webp" alt="" id="velo">
+
         <video autoplay loop playsinline muted
                disablePictureInPicture poster="media/poster.webp" id="video">
             <source src="media/untitled.mp4" type='video/mp4'>
@@ -25,30 +27,32 @@
     </div>
 
     <div class="info">
-        <img src="media/kwikstep.gif" alt="">
-        <div>
-            <h1>KWIKSTEP RACE 🔜</h1>
+        <h1>KWIKSTEP RACE</h1>
 
-            <p>Allô allô all Kwikstep riders! A race wants to be organized this year to meet all of us and....</p>
-
-            <form name="subscription" method="POST" data-netlify="true">
-                <input type="email" name="email" required placeholder="your e-mail">
-                <input type="text" name="city" required placeholder="your city">
-                <input type="submit" value="Receive news!">
-            </form>
-
-            <!-- <small>The 𝒦wikstep ℛide 𝒜ssociation ©</small> -->
-
-        </div>
-
+        <p>Allô allô all Kwikstep riders! A race wants to be organized this year to meet all of us and....</p>
+        <!-- <small>The 𝒦wikstep ℛide 𝒜ssociation ©</small> -->
     </div>
+
+    <form name="subscription" method="POST" data-netlify="true">
+        <div style="display: flex; gap: 10px; width: 100%;">
+            <input type="text" name="name" required placeholder="Name">
+            <input type="text" name="city" required placeholder="City">
+        </div>
+        <input type="email" name="email" required placeholder="Email">
+        <input type="submit" value="Receive news!">
+    </form>
 
 
     <script>
-        function toggleMute() {
+        function openplayer() {
             var video = document.getElementById("video");
             video.muted = !video.muted;
-            document.getElementById("unmuteBtn").style.display = "none";
+
+            var player = document.querySelector(".player");
+            player.classList.toggle('playerOn')
+
+            var velo = document.getElementById("velo");
+            velo.src = "media/1-Photoroom.webp"
         }
     </script>
 </body>
