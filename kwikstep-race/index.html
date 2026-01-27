@@ -20,18 +20,19 @@
     <div class="player" onclick="openplayer()">
         <img src="media/2-Photoroom.webp" alt="" id="velo">
 
-        <video autoplay loop playsinline muted
-               disablePictureInPicture poster="media/poster.webp" id="video">
-            <source src="media/untitled.mp4" type='video/mp4'>
-        </video>
+        <h1>KWIKSTEP RACE 2026</h1>
+
+        <p>Allô allô all Kwikstep riders! A race wants to be organized this year to meet all of us and....<br><br>
+            The Kwikstep Ride Association
+        </p>
+
     </div>
 
-    <div class="info">
-        <h1>KWIKSTEP RACE</h1>
 
-        <p>Allô allô all Kwikstep riders! A race wants to be organized this year to meet all of us and....</p>
-        <!-- <small>The 𝒦wikstep ℛide 𝒜ssociation ©</small> -->
-    </div>
+    <video autoplay loop playsinline muted
+           disablePictureInPicture poster="media/poster.webp" id="video">
+        <source src="media/untitled.mp4" type='video/mp4'>
+    </video>
 
     <form name="subscription" method="POST" data-netlify="true">
         <div style="display: flex; gap: 10px; width: 100%;">
@@ -39,7 +40,7 @@
             <input type="text" name="city" required placeholder="City">
         </div>
         <input type="email" name="email" required placeholder="Email">
-        <input type="submit" value="Receive news!">
+        <input type="submit" value="Receive news !">
     </form>
 
 
@@ -48,11 +49,17 @@
             var video = document.getElementById("video");
             video.muted = !video.muted;
 
-            var player = document.querySelector(".player");
-            player.classList.toggle('playerOn')
 
             var velo = document.getElementById("velo");
-            velo.src = "media/1-Photoroom.webp"
+            velo.classList.toggle('playerOn')
+
+            if (velo.src.includes("1-Photoroom")) {
+                velo.src = "media/2-Photoroom.webp";
+            } else {
+                velo.src = "media/1-Photoroom.webp";
+            }
+
+            document.querySelector('body').classList.toggle('textOn')
         }
     </script>
 </body>

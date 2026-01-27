@@ -12,25 +12,21 @@ body {
     font-size: 1rem;
     color: white;
     background-color: #44643d;
+    transition: all .5s ease-in-out;
+
 }
 
 
 .player {
-    position: fixed;
-    object-fit: cover;
-    height: calc(30svh);
-    width: calc(100vw - 40px);
-    overflow: hidden;
-    border-radius: 12px;
-    top: 0;
-    left: 0;
-    margin: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 999 !important;
-    transition: all 0.8s ease-in-out;
+    transition: all .5s ease-in-out;
     cursor: pointer;
+    position: relative;
+    flex-direction: column;
+    gap: 20px;
 }
 
 
@@ -40,6 +36,8 @@ img {
     z-index: 10;
     object-fit: contain;
     max-width: 80%;
+    transition: all .5s ease-in-out;
+
 }
 
 
@@ -47,9 +45,10 @@ video {
     object-fit: cover;
     height: 100%;
     width: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
+    z-index: 0;
 
 }
 
@@ -57,6 +56,7 @@ h1 {
     font-size: 1.8rem;
     letter-spacing: 2px;
     text-align: center;
+    text-shadow: 0 0 10px red;
 }
 
 .info {
@@ -64,7 +64,7 @@ h1 {
     position: fixed;
     height: fit-content;
     overflow: scroll;
-    top: calc(30vh + 0px);
+    top: calc(30vh + 20px);
     left: 0;
     padding: 20px;
     display: flex;
@@ -89,6 +89,7 @@ form {
     position: fixed;
     bottom: 0;
     left: 0;
+    z-index: 999;
     padding: 0 20px 20px 20px;
 }
 
@@ -137,15 +138,14 @@ input[type="submit"]:active {
 
 
 
-small {
-    font-size: 1rem;
-    text-align: center;
-    width: 100%;
-    opacity: .5;
+.playerOn {
+    height: 70vh !important;
+    max-width: 95% !important;
+    transition: all .5s ease-in-out;
 }
 
-.playerOn {
-    height: calc(100svh - 40px) !important;
-    transition: all 0.8s ease-in-out;
-
+.textOn {
+    color: transparent;
+    transition: all .5s ease-in-out;
+    text-shadow: 0 0 0 transparent !important;
 }
