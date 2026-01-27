@@ -31,7 +31,6 @@ body {
 
 
 img {
-    height: 80%;
     position: relative;
     z-index: 10;
     object-fit: contain;
