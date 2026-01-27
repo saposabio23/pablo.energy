@@ -64,7 +64,7 @@ h1 {
     position: fixed;
     height: fit-content;
     overflow: scroll;
-    top: calc(30vh + 20px);
+    top: calc(30vh + 0px);
     left: 0;
     padding: 20px;
     display: flex;
