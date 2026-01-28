@@ -18,13 +18,11 @@
     <!-- <button onclick="toggleMute()" id="unmuteBtn">unmute</button> -->
 
     <div class="player" onclick="openplayer()">
-        <img src="media/2-Photoroom.webp" alt="" id="velo">
-
         <h1>KWIKSTEP RACE 2026</h1>
-
-        <p>Allô allô all Kwikstep riders! A race wants to be organized this year to meet all of us and....<br><br>
-            The Kwikstep Ride Association
+        <img src="media/2-Photoroom.webp" alt="" id="velo">
+        <p>Hallo hallo Kwikstep riders! A race wants to be organized this year to meet all of us.
         </p>
+        <i>The Kwikstep Ride Association</i>
 
     </div>
 
@@ -35,11 +33,7 @@
     </video>
 
     <form name="subscription" method="POST" data-netlify="true">
-        <div style="display: flex; gap: 10px; width: 100%;">
-            <input type="text" name="name" required placeholder="Name">
-            <input type="text" name="city" required placeholder="City">
-        </div>
-        <input type="email" name="email" required placeholder="Email">
+        <input type="email" name="email" required placeholder="your email here">
         <input type="submit" value="Receive news !">
     </form>
 
@@ -59,7 +53,8 @@
                 velo.src = "media/1-Photoroom.webp";
             }
 
-            document.querySelector('body').classList.toggle('textOn')
+            document.querySelector('.player').classList.toggle('textOn')
+            document.querySelector('body h1').classList.toggle('titleOn')
         }
     </script>
 </body>
