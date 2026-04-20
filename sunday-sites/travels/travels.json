@@ -358,5 +358,27 @@
             "Castro",
             "Paris"
         ]
+    },
+    {
+        "month": "January 26",
+        "cities": [
+            "Amsterdam"
+        ]
+    },
+    {
+        "month": "February 26",
+        "cities": [
+            "Amsterdam",
+            "Herleem"
+        ]
+    },
+    {
+        "month": "March 26",
+        "cities": [
+            "Amsterdam",
+            "Eindhoven",
+            "Rotterdam",
+            "Tilburg"
+        ]
     }
 ]
