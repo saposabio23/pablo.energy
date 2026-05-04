@@ -108,7 +108,7 @@ function showImage(index) {
         viewer_img.style.display = 'block';
         viewer_img.src = img.dataset.large;
         currentImageIndex = index;
-        const p = thumbs[index].querySelector('caption').innerHTML;
+        const p = thumbs[index].querySelector('span').innerHTML;
         console.log(p)
         viewer_title.innerHTML = p;
     }

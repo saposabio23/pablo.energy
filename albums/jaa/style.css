@@ -14,11 +14,10 @@ h1 {
 }
 
 h1 {
-    /* background-color: #00a;
+    background-color: #00a;
     color: white;
-     */
-    border: 1px solid #00a;
-    color: #00a;
+    border: 1px solid white;
+
 
     margin-bottom: 4px;
     height: fit-content;
@@ -31,8 +30,10 @@ a {
 
 
 a:hover h1 {
-    color: white;
-    background-color: #00a;
+    background-color: transparent;
+
+    border: 1px solid #00a;
+    color: #00a;
 
     text-decoration: none;
 }
@@ -86,9 +87,7 @@ i {
     bottom: 30px;
     color: white;
     font-size: 14px;
-    /* background-color: #00a; */
-
-    border: 1px solid white1px solid #00a;
+    background-color: #00a;
 }
 
 #thumbs .thumb img {
