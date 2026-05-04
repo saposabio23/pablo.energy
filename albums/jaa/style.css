@@ -1,0 +1,162 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body,
+h1 {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    color: #00a;
+}
+
+h1 {
+    /* background-color: #00a;
+    color: white;
+     */
+    border: 1px solid #00a;
+    color: #00a;
+
+    margin-bottom: 4px;
+    height: fit-content;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+a:hover h1 {
+    color: white;
+    background-color: #00a;
+
+    text-decoration: none;
+}
+
+i {
+    /* color: #00a; */
+    max-width: 500px;
+    display: block;
+}
+
+#thumbs {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0;
+    width: 100%;
+    z-index: 100;
+    gap: 4px;
+    padding: 6px;
+}
+
+#viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1000;
+    display: none;
+    cursor: zoom-out;
+    background-color: #fff0;
+    backdrop-filter: blur(20px);
+}
+
+#viewer img {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 20px;
+    display: none;
+}
+
+#viewer p {
+    position: absolute;
+    bottom: 30px;
+    color: white;
+    font-size: 14px;
+    /* background-color: #00a; */
+
+    border: 1px solid white1px solid #00a;
+    ;
+}
+
+#thumbs .thumb img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+#thumbs .thumb {
+    /* color: azure; */
+    cursor: zoom-in;
+    height: fit-content;
+}
+
+caption {
+    width: 100%;
+    padding: 4px 4px 12px 4px;
+
+    text-align: center;
+    color: black;
+}
+
+a {
+    color: brown;
+}
+
+
+
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    z-index: 1;
+    font-size: 14px;
+}
+
+#loading p {
+    color: gray;
+}
+
+@media(max-width:600px) {
+    #thumbs {
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+}
+
+@media(min-width:600px) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+
+
+
+
+/* mine */
+
+nav {
+    padding: 6px;
+}
