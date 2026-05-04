@@ -147,6 +147,10 @@ a {
         display: flex;
         justify-content: space-between;
     }
+
+    #viewer img {
+        object-fit: unset !important;
+    }
 }
 
 
