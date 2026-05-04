@@ -23,7 +23,7 @@ function createThumbnail(item) {
         thumb_el.classList.add('thumb');
         thumb_el.innerHTML = `<img src="${item.image.thumb.url}" data-large="${item.image.display.url}">`;
         thumb_el.classList.add('image');
-        let thumb_title = document.createElement('caption');
+        let thumb_title = document.createElement('span');
         thumb_title.innerHTML = item.title;
         thumb_el.appendChild(thumb_title);
 
