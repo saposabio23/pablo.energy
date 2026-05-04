@@ -107,6 +107,7 @@ i {
 span {
     width: 100%;
     padding: 4px 4px 12px 4px;
+    display: block;
 
     text-align: center;
     color: black;
