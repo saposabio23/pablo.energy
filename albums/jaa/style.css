@@ -69,8 +69,8 @@ i {
     z-index: 1000;
     display: none;
     cursor: zoom-out;
-    background-color: #fff0;
-    backdrop-filter: blur(20px);
+    background-color: #000000;
+    /* backdrop-filter: blur(20px); */
 }
 
 #viewer img {
