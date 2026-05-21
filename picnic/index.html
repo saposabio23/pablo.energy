@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>you are invited to my birthday!</title>
+
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Pablo's BD!" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <!-- FIXED -->
+    <button id="download">
+        Click to add it to your
+        calendar</button>
+
+    <img src="pablo-2.png" alt="" id="pablo">
+
+    <!-- INTRO -->
+    <span>This is about: 🫂🧺🌆🍇.</span>
+
+
+    <h1>Dear <textarea
+                  placeholder="your name"></textarea>, I want to invite you to
+        my 28 <sup></sup> birthday!</h1>
+
+
+    <!-- TEXT -->
+
+    <p style="font-style: oblique;">
+        ➙ Saturday 30<sup>th</sup> May <sup>(next
+            Saturday)</sup> at <a
+           href="https://maps.app.goo.gl/KWCnPn6fTqmp622K6">Het Stenen Hoofd</a> from 14h to 20h!
+    </p>
+
+    <p>It will be an afternoon picnic 🧺, with friends, food and drinks. Some games, some presentations, some
+        juices...</p>
+
+    <div class="separator">✿✿✿</div>
+
+    <!-- COMING -->
+    <fieldset>
+        <legend>The most important is to see each other so don't mind to come:</legend>
+
+        <div>
+            <input type="radio" id="huey" name="drone" value="huey" checked />
+            <label for="huey">for all the afternoon</label>
+        </div>
+
+        <div>
+            <input type="radio" id="dewey" name="drone" value="dewey" />
+            <label for="dewey">to play a game</label>
+        </div>
+
+        <div>
+            <input type="radio" id="louie" name="drone" value="louie" />
+            <label for="louie">just to shake hands!
+            </label>
+        </div>
+    </fieldset>
+
+    <div class="separator">✿✿✿</div>
+
+    <!-- ACTIVITIES -->
+    <fieldset>
+        <legend>To spend better time, you can bring with you:</legend>
+
+        <div>
+            <input type="checkbox" id="scales" name="scales" checked />
+            <label for="scales">gluten-free beer</label>
+        </div>
+
+        <div>
+            <input type="checkbox" name="horns" />
+            <label for="horns">fries to share</label>
+        </div>
+
+        <div>
+            <input type="checkbox" name="horns" />
+            <label for="horns">an UNO game</label>
+        </div>
+
+        <div>
+            <input type="checkbox" name="horns" />
+            <label for="horns">a game to play without anything</label>
+        </div>
+
+        <div>
+            <input type="checkbox" name="horns" />
+            <label for="horns">some fruits</label>
+        </div>
+
+        <div>
+            <input type="checkbox" name="horns" />
+            <label for="horns">a nice story to tell</label>
+        </div>
+
+        <div>
+            <input type="checkbox" name="horns" />
+            <label for="horns">a bike to repair together</label>
+        </div>
+
+        <div>
+            <input type="checkbox" name="horns" />
+            <label for="horns">a song to play on the guitar</label>
+        </div>
+
+        <div>
+            <input type="checkbox" name="horns" />
+            <label for="horns">a small chair</label>
+        </div>
+
+        <div>
+            <input type="checkbox" name="horns" />
+            <label for="horns">a friend to present</label>
+        </div>
+
+        <div>
+            <input type="checkbox" name="horns" />
+            <label for="horns">this <div
+                     style="height: 12px; aspect-ratio: 1; border: 1px solid black;display:inline-block;">
+                </div> color
+                t-shirt</label>
+        </div>
+
+        <div>
+            <input type="checkbox" name="horns" />
+            <label for="horns">a song to rap</label>
+        </div>
+
+        <div>
+            <input type="checkbox" name="horns" />
+            <label for="horns">a house plan to share</label>
+        </div>
+
+        <div>
+            <input type="checkbox" name="horns" />
+            <label for="horns">your parents</label>
+        </div>
+    </fieldset>
+
+    <div id="maps">
+        <img src="cal.png" alt="" style="height: 40%; transform: rotate(-10deg);">
+        <span>Next Saturday!</span>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        const icsData = `BEGIN:VCALENDAR
+        VERSION:2.0
+        PRODID:Calendar Event
+        BEGIN:VEVENT
+        UID:123
+        DTSTAMP:${new Date().toISOString()}
+        DTSTART:20260530T120000Z
+        DTEND:20260530T180000Z  
+        SUMMARY:Pablo's picnic birthday!
+        LOCATION:https://maps.app.goo.gl/KWCnPn6fTqmp622K6
+        DESCRIPTION: All afternoon picnic at the peaceful Het Stenen Hoofd to meet, talk and play on that day!
+        END:VEVENT
+        END:VCALENDAR`
+
+        const downloadButton = document.getElementById('download');
+
+        downloadButton.addEventListener('click', () => {
+            const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+
+            const a = document.createElement('a');
+            a.setAttribute('href', url);
+            a.setAttribute('download', 'event.ics');
+            document.body.appendChild(a);
+            a.click();
+
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+    </script>
+
+</body>
+
+</html>
