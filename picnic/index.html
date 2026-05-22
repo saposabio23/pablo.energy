@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>you are invited to my birthday!</title>
+    <title>Birthday invitation!</title>
 
     <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
@@ -20,40 +20,49 @@
 
     <!-- FIXED -->
     <button id="download">
-        Click to add it to your
-        calendar</button>
+        Click to add to your
+        calendar!</button>
 
     <img src="pablo-2.png" alt="" id="pablo">
 
     <!-- INTRO -->
-    <span>This is about 🫂🧺🌆🍇.</span>
-
+    <div style="display: flex; justify-content: start; align-items: center;; top: 0; padding: var(--space) var(--space) 0 var(--space); height: fit-content; z-index: 99;
+">
+        <img src="cal.png" alt="" style="height: 10vw;">
+    </div>
 
     <h1>Dear <textarea
                   placeholder="your name"></textarea>, I want to invite you to
-        my 28 <sup></sup> birthday!</h1>
+        my (28) birthday!</h1>
 
+    <div id="maps">
+        <div style="position: absolute; bottom: 10px; right: 20px;">⤴︎</div>
+        <p>Saturday 30<sup>th</sup> May at<br><a
+               href="https://maps.app.goo.gl/KWCnPn6fTqmp622K6">Het Stenen Hoofd</a><br>from 14h to 20h!</p>
+    </div>
 
     <!-- TEXT -->
 
-    <p style="font-style: oblique;">
-        ➙ Saturday 30<sup>th</sup> May <sup>(next
-            Saturday)</sup> at <a
-           href="https://maps.app.goo.gl/KWCnPn6fTqmp622K6">Het Stenen Hoofd</a> from 14h to 20h!
+    <p style="font-style: oblique; margin-top: 0; opacity: .4;">
+
     </p>
 
     <p>It will be an afternoon picnic 🧺, with friends, food and drinks. Some games, some presentations, some
         juices...</p>
 
-    <div class="separator">✿✿✿</div>
+
+    <hr>
+    <div class="separator">✿ Presence</div>
+
 
     <!-- COMING -->
     <fieldset>
         <legend>The most important is to see each other so don't mind to come:</legend>
 
         <div>
-            <input type="radio" id="huey" name="drone" value="huey" checked />
-            <label for="huey">for all the afternoon</label>
+            <input type="radio" id="louie" name="drone" value="louie" checked />
+            <label for="louie">just to shake hands!
+            </label>
         </div>
 
         <div>
@@ -62,13 +71,13 @@
         </div>
 
         <div>
-            <input type="radio" id="louie" name="drone" value="louie" />
-            <label for="louie">just to shake hands!
-            </label>
+            <input type="radio" id="huey" name="drone" value="huey" />
+            <label for="huey">all the afternoon</label>
         </div>
     </fieldset>
 
-    <div class="separator">✿✿✿</div>
+    <hr>
+    <div class="separator">✿✿ Activities</div>
 
     <!-- ACTIVITIES -->
     <fieldset>
@@ -114,44 +123,49 @@
             <label for="horns">a song to play on the guitar</label>
         </div>
 
-        <div>
-            <input type="checkbox" name="horns" />
-            <label for="horns">a small chair</label>
-        </div>
+        <button style="width: 100%; padding: 6px; margin: 12px 0; border: none; font-weight: bold;"
+                id="showMore">...</button>
 
-        <div>
-            <input type="checkbox" name="horns" />
-            <label for="horns">a friend to present</label>
-        </div>
+        <div class="extra">
+            <div>
+                <input type="checkbox" name="horns" />
+                <label for="horns">a small chair</label>
+            </div>
 
-        <div>
-            <input type="checkbox" name="horns" />
-            <label for="horns">this <div
-                     style="height: 12px; aspect-ratio: 1; border: 1px solid black;display:inline-block;">
-                </div> color
-                t-shirt</label>
-        </div>
+            <div>
+                <input type="checkbox" name="horns" />
+                <label for="horns">a friend to present</label>
+            </div>
 
-        <div>
-            <input type="checkbox" name="horns" />
-            <label for="horns">a song to rap</label>
-        </div>
+            <div>
+                <input type="checkbox" name="horns" />
+                <label for="horns">this <div
+                         style="height: 12px; aspect-ratio: 1; border: 1px solid black; background-color: greenyellow; display:inline-block;">
+                    </div> color
+                    t-shirt</label>
+            </div>
 
-        <div>
-            <input type="checkbox" name="horns" />
-            <label for="horns">a house plan to share</label>
-        </div>
+            <div>
+                <input type="checkbox" name="horns" />
+                <label for="horns">a song to rap</label>
+            </div>
 
-        <div>
-            <input type="checkbox" name="horns" />
-            <label for="horns">your parents</label>
+            <div>
+                <input type="checkbox" name="horns" />
+                <label for="horns">a house plan to share</label>
+            </div>
+
+            <div>
+                <input type="checkbox" name="horns" />
+                <label for="horns">your parents</label>
+            </div>
         </div>
     </fieldset>
 
-    <div id="maps">
-        <img src="cal.png" alt="" style="height: 40%; transform: rotate(-10deg);">
-        <span>Next Saturday!</span>
-    </div>
+    <hr>
+    <div class="separator">✿✿✿ Additional</div>
+
+
 
 
 
@@ -164,24 +178,52 @@
 
 
     <script>
+
+        const showMore = document.getElementById('showMore');
+
+        showMore.addEventListener('click', () => {
+            document.querySelector('.extra').style.display = 'block'
+            document.getElementById('showMore').style.display = 'none';
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // 1. Grab the map element using its ID
+            const mapElement = document.getElementById("maps");
+
+            if (mapElement) {
+                // 2. Add a click event listener to the map
+                mapElement.addEventListener("click", () => {
+                    // 3. Toggle the CSS class on and off automatically
+                    mapElement.classList.toggle("show-lines");
+                });
+            }
+        });
+
+
+
         const icsData = `BEGIN:VCALENDAR
-        VERSION:2.0
-        PRODID:Calendar Event
-        BEGIN:VEVENT
-        UID:123
-        DTSTAMP:${new Date().toISOString()}
-        DTSTART:20260530T120000Z
-        DTEND:20260530T180000Z  
-        SUMMARY:Pablo's picnic birthday!
-        LOCATION:https://maps.app.goo.gl/KWCnPn6fTqmp622K6
-        DESCRIPTION: All afternoon picnic at the peaceful Het Stenen Hoofd to meet, talk and play on that day!
-        END:VEVENT
-        END:VCALENDAR`
+VERSION:2.0
+PRODID:Calendar Event
+BEGIN:VEVENT
+UID:123
+DTSTAMP:20260522T100655Z
+DTSTART:20260530T120000Z
+DTEND:20260530T180000Z
+SUMMARY:Pablo's picnic birthday!
+LOCATION:https://maps.app.goo.gl/mKYrFnJAoufT8i4R9
+DESCRIPTION:All afternoon picnic at the peaceful Het Stenen Hoofd to meet\\, talk and play on that day!
+END:VEVENT
+END:VCALENDAR`
 
         const downloadButton = document.getElementById('download');
 
         downloadButton.addEventListener('click', () => {
-            const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
+            // --- THE FIX: Convert standard web line-endings (\n) to strict iCalendar line-endings (\r\n) ---
+            // We ensure we don't accidentally double-encode lines that might already have \r
+            const formattedIcsData = icsData.replace(/\r?\n/g, '\r\n');
+
+            // Pass the properly formatted data into the Blob
+            const blob = new Blob([formattedIcsData], { type: 'text/calendar;charset=utf-8' });
             const url = URL.createObjectURL(blob);
 
             const a = document.createElement('a');
