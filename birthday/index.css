@@ -54,6 +54,9 @@ p {
     left: -3vw;
     z-index: 9999;
     width: 60%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
     pointer-events: none;
 }
@@ -106,6 +109,8 @@ p {
 
 textarea {
     resize: none;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     field-sizing: content;
     font-size: 10vw;
