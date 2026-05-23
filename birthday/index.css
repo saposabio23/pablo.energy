@@ -5,7 +5,6 @@
 body {
     margin: 0;
     font-size: 8vw;
-    padding-bottom: 200px;
     overflow-x: hidden;
 }
 
@@ -19,6 +18,14 @@ h3 {
 
 a {
     color: inherit;
+}
+
+small {
+    font-size: 3vw;
+    opacity: .3;
+    padding: 0 var(--space);
+    display: block;
+
 }
 
 h1 {
@@ -42,16 +49,18 @@ p {
     padding: 0 var(--space);
 }
 
+hr {
+    margin: var(--space);
+    border: 1px solid gainsboro;
+}
+
 .separator {
     width: 100vw;
-    text-align: ce;
+    /* text-align: ce; */
     padding: 0 var(--space);
 }
 
 #pablo {
-    position: fixed;
-    bottom: 0;
-    left: -3vw;
     z-index: 9999;
     width: 60%;
     -webkit-user-select: none;
@@ -63,15 +72,32 @@ p {
 
 #download {
     position: fixed;
-    bottom: 18vw;
-    right: var(--space);
+    bottom: 5vw;
+    right: 3vw;
     z-index: 9999;
-    width: 50%;
-    padding: var(--space);
-    border-radius: 30px 30px 30px 0;
-    font-size: 6vw;
+    cursor: pointer;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 12px;
+    text-align: center;
+    border-radius: 12px;
+    font-size: 5vw;
     border: none;
     font-family: 'Times New Roman', Times, serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    transform: rotate(-5deg);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+}
+
+#download img {
+    height: 24px;
 }
 
 #maps {
@@ -105,6 +131,22 @@ p {
     background-image: url('map.png');
 }
 
+#credits {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    /* background-color: red; */
+    align-items: flex-start;
+    gap: 6px;
+    margin-bottom: 20px;
+    z-index: 1;
+    position: relative;
+}
+
+#credits img {
+    width: 100%;
+}
+
 /* TECHNICAL */
 
 textarea {
@@ -124,7 +166,7 @@ textarea {
     overflow-Y: none !important;
     background-color: transparent;
     z-index: -1;
-    position: relative;
+
 }
 
 

@@ -4,7 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Birthday invitation!</title>
+
+    <title>Pablo's birthday picnic!</title>
+    <meta property="og:image"
+          content="poster.png">
+    <meta property="og:description"
+          content="Saturday 30 May at Het Stenen Hoofdfrom 14h to 20h!">
+
 
     <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
@@ -17,23 +23,17 @@
 </head>
 
 <body>
-
-    <!-- FIXED -->
     <button id="download">
-        Add it to your
-        calendar here!</button>
+
+        Click to add! <img src="cal.png" alt=""></button>
 
     <img src="pablo-2.png" alt="" id="pablo">
 
-    <!-- INTRO -->
-    <div style="display: flex; justify-content: start; align-items: center;; top: 0; padding: var(--space) var(--space) 0 var(--space); height: fit-content; z-index: 99;
-">
-        <img src="cal.png" alt="" style="height: 10vw;">
-    </div>
-
     <h1>Dear <textarea
-                  placeholder="your name"></textarea>, I want to invite you to
-        my (28) birthday!</h1>
+                  placeholder="your name"></textarea>
+        , I want to invite you to
+        my 28 birthday!
+    </h1>
 
     <div id="maps">
         <div style="position: absolute; bottom: 10px; right: 20px;">⤴︎</div>
@@ -60,19 +60,19 @@
         <legend>The most important is to see each other so don't mind to come:</legend>
 
         <div>
-            <input type="radio" id="louie" name="drone" value="louie" checked />
+            <input type="radio" id="fast" name="fast" value="fast" checked />
             <label for="louie">just to shake hands!
             </label>
         </div>
 
         <div>
-            <input type="radio" id="dewey" name="drone" value="dewey" />
-            <label for="dewey">to play a game</label>
+            <input type="radio" id="normal" name="normal" value="normal" />
+            <label for="dewey">to play a petanque game</label>
         </div>
 
         <div>
-            <input type="radio" id="huey" name="drone" value="huey" />
-            <label for="huey">all the afternoon</label>
+            <input type="radio" id="slow" name="slow" value="slow" />
+            <label for="huey">until the sunset</label>
         </div>
     </fieldset>
 
@@ -84,43 +84,49 @@
         <legend>To spend better time, you can bring with you:</legend>
 
         <div>
-            <input type="checkbox" id="scales" name="scales" checked />
-            <label for="scales">gluten-free beer</label>
+            <input type="checkbox" id="1" name="1" checked />
+            <label for="1">gluten-free beer</label>
         </div>
 
         <div>
-            <input type="checkbox" name="horns" />
-            <label for="horns">fries to share</label>
+            <input type="checkbox" id="2" name="2" />
+            <label for="2">fries to share</label>
         </div>
 
         <div>
-            <input type="checkbox" name="horns" />
-            <label for="horns">an UNO game</label>
+            <input type="checkbox" id="3" name="3" />
+            <label for="3">an UNO game</label>
+        </div>
+
+
+        <div>
+            <input type="checkbox" id="4" name="4" />
+            <label for="4">a swimsuit</label>
         </div>
 
         <div>
-            <input type="checkbox" name="horns" />
-            <label for="horns">a game to play with the mind</label>
+            <input type="checkbox" id="5" name="5" />
+            <label for="5">a game to play with the mind and the imagination</label>
         </div>
 
         <div>
-            <input type="checkbox" name="horns" />
-            <label for="horns">some fruits</label>
+            <input type="checkbox" id="6" name="6" />
+            <label for="6">some fruits</label>
         </div>
 
         <div>
-            <input type="checkbox" name="horns" />
-            <label for="horns">a nice story to tell</label>
+            <input type="checkbox" id="7" name="7" />
+            <label for="7">a nice story to tell</label>
         </div>
 
         <div>
-            <input type="checkbox" name="horns" />
-            <label for="horns">a bike to repair together</label>
+            <input type="checkbox" id="8" name="8" />
+            <label for="8">a bike to repair together</label>
         </div>
 
         <div>
-            <input type="checkbox" name="horns" />
-            <label for="horns">a song to play on the guitar</label>
+            <input type="checkbox" id="9" name="9" />
+            <label for="9">a song to play on the guitar</label>
         </div>
 
         <button style="width: 100%; padding: 6px; margin: 12px 0; border: none; font-weight: bold;"
@@ -128,44 +134,59 @@
 
         <div class="extra">
             <div>
-                <input type="checkbox" name="horns" />
-                <label for="horns">a small chair</label>
+                <input type="checkbox" id="10" name="10" />
+                <label for="10">a small chair</label>
             </div>
 
             <div>
-                <input type="checkbox" name="horns" />
-                <label for="horns">a friend to present</label>
+                <input type="checkbox" id="11" name="11" />
+                <label for="11">a friend to present</label>
             </div>
 
             <div>
-                <input type="checkbox" name="horns" />
-                <label for="horns">this <div
+                <input type="checkbox" id="12" name="12" />
+                <label for="12">this <div
                          style="height: 12px; aspect-ratio: 1; border: 1px solid black; background-color: greenyellow; display:inline-block;">
                     </div> color
-                    t-shirt</label>
+                    outfit</label>
             </div>
 
             <div>
-                <input type="checkbox" name="horns" />
-                <label for="horns">a song to rap</label>
+                <input type="checkbox" id="13" name="13" />
+                <label for="13">your parents</label>
             </div>
 
             <div>
-                <input type="checkbox" name="horns" />
-                <label for="horns">a house plan to share</label>
+                <input type="checkbox" id="14" name="14" />
+                <label for="14">a house plan to share</label>
             </div>
 
             <div>
-                <input type="checkbox" name="horns" />
-                <label for="horns">your parents</label>
+                <input type="checkbox" id="15" name="15" />
+                <label for="15">something to put on the BBQ</label>
             </div>
+
+            <div>
+                <input type="checkbox" id="16" name="16" />
+                <label for="16">sardines??</label>
+            </div>
+
+
         </div>
     </fieldset>
 
     <hr>
-    <div class="separator">✿✿✿ Additional</div>
+    <div class="separator">✿✿✿ Extra</div>
 
+    <p>In September it will be two years that I arrived to Amsterdam. I have been very grateful and lucky on all the
+        things did and people I meet thanks to friends, places and events. This picnic is a way to remember all of this
+        and to say that it's not finish, that we have still a lot of adventures to do together. Thank you all for
+        this!<br><br>Pablo</p>
 
+    <div id="credits">
+        <img src="pablo-2.png" alt="" id="pablo">
+        <small>(thanks Jette for the drawing)</small>
+    </div>
 
 
 
