@@ -161,11 +161,12 @@ textarea {
     padding: 2px 6px;
     /* font-weight: bold; */
     border-radius: 6px;
-    transform: translateY(8px);
+    transform: translateY(3vw);
     /* border: none; */
     overflow-Y: none !important;
     background-color: transparent;
     z-index: -1;
+    color: red;
 
 }
 
