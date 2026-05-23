@@ -79,7 +79,7 @@ hr {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
-    padding: 12px;
+    padding: 8px;
     text-align: center;
     border-radius: 12px;
     font-size: 5vw;
@@ -94,10 +94,12 @@ hr {
     transform: rotate(-5deg);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
+    color: black;
+
 }
 
 #download img {
-    height: 24px;
+    height: 30px;
 }
 
 #maps {
