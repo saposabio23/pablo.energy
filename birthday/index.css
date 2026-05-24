@@ -79,7 +79,6 @@ hr {
 }
 
 #download {
-    display: none !;
 
     position: fixed;
     bottom: 3vw;
@@ -112,6 +111,8 @@ hr {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+
+    display: none !important;
 
 }
 
