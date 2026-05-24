@@ -10,20 +10,20 @@
           content="https://pablo.energy/birthday/poster.png">
 
     <meta name="description"
-          content="Saturday 30 May at Het Stenen Hoofdfrom 14h to 20h! Afternoon picnic 🧺, with friends, food and drinks.">
+          content="Saturday 30 May at Het Stenen Hoofdfrom 14h to 20h! Afternoon picnic 🧺, with friends, food and drinks...">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pablo.energy/birthday/">
     <meta property="og:title" content="Pablo's birthday 30/05!">
     <meta property="og:description"
-          content="Saturday 30 May at Het Stenen Hoofdfrom 14h to 20h! Afternoon picnic 🧺, with friends, food and drinks.">
+          content="Saturday 30 May at Het Stenen Hoofdfrom 14h to 20h! Afternoon picnic 🧺, with friends, food and drinks...">
     <meta property="og:image" content="https://pablo.energy/birthday/poster.png">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://pablo.energy/birthday/">
     <meta name="twitter:title" content="Pablo's birthday 30/05!">
     <meta name="twitter:description"
-          content="Saturday 30 May at Het Stenen Hoofdfrom 14h to 20h! Afternoon picnic 🧺, with friends, food and drinks.">
+          content="Saturday 30 May at Het Stenen Hoofdfrom 14h to 20h! Afternoon picnic 🧺, with friends, food and drinks...">
     <meta name="twitter:image" content="https://pablo.energy/birthday/poster.png">
 
     <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
@@ -41,7 +41,7 @@
         <img src="cal.png" alt="">
         Click to add! </button>
 
-    <img src="pablo-2.png" alt="" id="pablo">
+    <img src="pablo-2.png" alt="" id="pablo" onclick="alert('Thanks Jette for the drawing!')">
 
     <h1>Dear <textarea
                   placeholder="your name"></textarea>
@@ -66,7 +66,7 @@
 
 
     <hr>
-    <div class="separator">✿ Visit</div>
+    <div class="separator">✿ People</div>
 
 
     <!-- COMING -->
@@ -75,7 +75,7 @@
 
         <div>
             <input type="radio" id="fast" name="radio" value="fast" checked />
-            <label for="fast">just to shake hands!
+            <label for="fast">just to shake hands
             </label>
         </div>
 
@@ -190,12 +190,18 @@
     </fieldset>
 
     <hr>
-    <div class="separator">✿✿✿ Extra</div>
+    <div class="separator">✿✿✿ Words</div>
 
     <p>In September it will be two years that I arrived to Amsterdam. I have been very grateful and lucky on all the
         things did and people I meet thanks to friends, places and events. This picnic is a way to remember all of this
         and to say that it's not finish, that we have still a lot of adventures to do together. Thank you for all of
         this!<br><br>Pablo :)</p>
+
+    <span
+          style="font-size: 3vw; background-color: gainsboro; width: 100%; display: block; text-align: center; padding: 8px 0 12px 0; color: gray;">No
+        data from this website is
+        sent, it's just copied to the
+        calendar event.</span>
 
 
 
@@ -231,7 +237,46 @@
 
 
 
-        const icsData = `BEGIN:VCALENDAR
+        const downloadButton = document.getElementById('download');
+
+        downloadButton.addEventListener('click', () => {
+            // 1. GET THE SELECTED RADIO BUTTON VALUE
+            const selectedRadio = document.querySelector('input[name="radio"]:checked');
+            let dynamicPlan = "";
+            if (selectedRadio) {
+                const labelForRadio = document.querySelector(`label[for="${selectedRadio.id}"]`);
+                dynamicPlan = labelForRadio ? labelForRadio.textContent.trim() : "";
+            }
+
+            // 2. GET ALL CHECKED CHECKBOXES & FORMAT THEM AS BULLET POINTS
+            const checkedBoxes = document.querySelectorAll('fieldset input[type="checkbox"]:checked');
+            let itemsToBring = [];
+
+            checkedBoxes.forEach(box => {
+                const labelForBox = document.querySelector(`label[for="${box.id}"]`);
+                if (labelForBox) {
+                    let text = labelForBox.textContent.replace(/\s+/g, ' ').trim();
+                    text = text.replace(/,/g, '\\,');
+                    itemsToBring.push(`- ${text}`);
+                }
+            });
+
+            // 3. CONSTRUCT THE DYNAMIC DESCRIPTION TEXT (With safe escaped commas)
+            let descriptionText = "It will be an afternoon picnic 🧺\\, with friends\\, food and drinks. Some games\\, some presentations\\, some juices...";
+
+            if (itemsToBring.length > 0) {
+                descriptionText += `\\n\\nBringing:\\n${itemsToBring.join('\\n')}`;
+            }
+
+            // 4. CONSTRUCT THE DYNAMIC SUMMARY (TITLE)
+            let summaryText = "Birthday Pablo!";
+            if (dynamicPlan) {
+                const cleanPlan = dynamicPlan.replace(/[!.]+$/, '');
+                summaryText = `Birthday Pablo (${cleanPlan})!`;
+            }
+
+            // 5. GENERATE THE ICS TEMPLATE DATA
+            const icsData = `BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:Calendar Event
 BEGIN:VEVENT
@@ -239,21 +284,21 @@ UID:123
 DTSTAMP:20260522T100655Z
 DTSTART:20260530T120000Z
 DTEND:20260530T180000Z
-SUMMARY:Pablo's picnic birthday!
+SUMMARY:${summaryText}
 LOCATION:https://maps.app.goo.gl/mKYrFnJAoufT8i4R9
-DESCRIPTION:All afternoon picnic at the peaceful Het Stenen Hoofd to meet\\, talk and play on that day!
+DESCRIPTION:${descriptionText}
 END:VEVENT
-END:VCALENDAR`
+END:VCALENDAR`;
 
-        const downloadButton = document.getElementById('download');
-
-        downloadButton.addEventListener('click', () => {
-            // --- THE FIX: Convert standard web line-endings (\n) to strict iCalendar line-endings (\r\n) ---
-            // We ensure we don't accidentally double-encode lines that might already have \r
+            // 6. REGULAR LINE ENDINGS SANITIZATION (\n -> \r\n)
             const formattedIcsData = icsData.replace(/\r?\n/g, '\r\n');
 
-            // Pass the properly formatted data into the Blob
-            const blob = new Blob([formattedIcsData], { type: 'text/calendar;charset=utf-8' });
+            // --- THE FIX: ENCODE AS UTF-8 ARRAY FOR EMOJI SUPPORT ---
+            const encoder = new TextEncoder();
+            const u8Array = encoder.encode(formattedIcsData);
+
+            // 7. TRIGGER DOWNLOAD BLOB WITH FIXED BYTE ARRAY
+            const blob = new Blob([u8Array], { type: 'text/calendar;charset=utf-8' });
             const url = URL.createObjectURL(blob);
 
             const a = document.createElement('a');
