@@ -89,7 +89,7 @@ hr {
     padding: 12px;
     padding-top: 25px;
     text-align: center;
-    font-size: 4vw;
+    font-size: 6vw;
     border: none;
     box-sizing: border-box;
     font-family: 'Times New Roman', Times, serif;
@@ -163,27 +163,41 @@ hr {
 
 /* TECHNICAL */
 
+.invitation-text {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    /* Forces everything to line up perfectly on the text baseline */
+    font-size: 10vw;
+    font-family: "Times New Roman", Times, serif;
+    color: black;
+    /* Or whatever color your main text is */
+}
+
 textarea {
+    transform: translateY(3vw);
     resize: none;
-
-    /* 1. Standard fallback height for iOS Safari */
+    display: inline;
     height: auto;
-    min-height: 1.2em;
-
-    /* 2. Modern auto-sizing for Chrome/Android */
+    min-height: 1.1em;
     field-sizing: content;
 
     font-size: 10vw;
+    /* Keeps font size identical to the "Dear" text */
     font-family: "Times New Roman", Times, serif;
-    padding: 2px 6px;
+    padding: 0px 6px;
     border-radius: 6px;
-    transform: translateY(3vw);
 
-    /* Use hidden instead of none for overflow properties */
+    /* --- CRUCIAL CHANGES --- */
+    vertical-align: baseline;
+    /* Align box bottom with text baseline */
+    margin: 0 2px;
+    /* Adds a tiny clean space after "Dear" and before the comma */
+    /* REMOVED: transform: translateY(3vw); <- Delete this line entirely! */
+
     overflow-y: hidden !important;
     background-color: transparent;
     z-index: 1;
-    /* Note: Changed to 1 so users can easily tap it on mobile Safari */
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.6);
 
