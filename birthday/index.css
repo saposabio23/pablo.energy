@@ -2,11 +2,19 @@
     --space: 4vw;
 }
 
+
 body {
     margin: 0;
     font-size: 8vw;
     overflow-x: hidden;
     width: inherit;
+    background-image: url("stock-photo-white-clouds-sky-3491496778\ copy\ 2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
 }
 
 h1,
@@ -52,7 +60,7 @@ p {
 
 hr {
     margin: var(--space);
-    border: 1px solid gainsboro;
+    border: .5px dotted white;
 }
 
 .separator {
@@ -69,35 +77,56 @@ hr {
     -ms-user-select: none;
     user-select: none;
     pointer-events: none;
+    padding: var(--space) var(--space) 0 var(--space);
+
 }
 
 #download {
     position: fixed;
-    bottom: 5vw;
+    bottom: 2vw;
     right: 3vw;
     z-index: 9999;
     cursor: pointer;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    padding: 8px;
+    padding: 12px;
+    padding-top: 25px;
     text-align: center;
-    border-radius: 12px;
     font-size: 5vw;
     border: none;
+    box-sizing: border-box;
     font-family: 'Times New Roman', Times, serif;
 
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
+    background-color: transparent !important;
+    height: 30vw;
+    overflow: visible;
 
-    transform: rotate(-5deg);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
-    color: black;
+    -webkit-animation: move 6s ease infinite;
+
+
+    animation: move 6s ease infinite;
+    background-image: url('cloud.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 
 }
+
+@-webkit-keyframes move {
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes move {
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
 
 #download img {
     height: 30px;
@@ -153,15 +182,42 @@ textarea {
     overflow-Y: none !important;
     background-color: transparent;
     z-index: -1;
-    color: red;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.6);
 
+
+}
+
+textarea::-webkit-input-placeholder {
+    color: white;
+    opacity: .6;
+}
+
+textarea::-moz-placeholder {
+    color: white;
+    opacity: .6;
+}
+
+textarea:-ms-input-placeholder {
+    color: white;
+    opacity: .6;
+}
+
+textarea::-ms-input-placeholder {
+    color: white;
+    opacity: .6;
+}
+
+textarea::placeholder {
+    color: white;
+    opacity: .6;
 }
 
 
 textarea:focus {
     outline: none !important;
-    border: 1px solid black;
-    box-shadow: 0 0 5px black;
+    border: 1px solid white;
+    box-shadow: 0 0 5px white;
 }
 
 legend {
