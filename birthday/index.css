@@ -7,7 +7,6 @@ body {
     margin: 0;
     font-size: 8vw;
     overflow-x: hidden;
-    width: inherit;
     background-image: url("stock-photo-white-clouds-sky-3491496778\ copy\ 2.webp");
     background-repeat: no-repeat;
     background-size: cover;
@@ -15,6 +14,7 @@ body {
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
+    width: 100vw;
 }
 
 h1,
@@ -97,7 +97,7 @@ hr {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 4px;
     aspect-ratio: 2/1;
     background-color: transparent !important;
     overflow: visible;
