@@ -6,6 +6,7 @@ body {
     margin: 0;
     font-size: 8vw;
     overflow-x: hidden;
+    width: inherit;
 }
 
 h1,
@@ -133,22 +134,6 @@ hr {
     background-image: url('map.png');
 }
 
-#credits {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    /* background-color: red; */
-    align-items: flex-start;
-    gap: 6px;
-    margin-bottom: 20px;
-    z-index: 1;
-    position: relative;
-}
-
-#credits img {
-    width: 100%;
-}
-
 /* TECHNICAL */
 
 textarea {
@@ -189,6 +174,31 @@ fieldset {
     padding: 0 var(--space);
 }
 
+fieldset label,
+fieldset input,
+fieldset div {
+    cursor: pointer;
+}
+
 .extra {
     display: none;
+}
+
+#credits {
+    font-size: 3vw;
+    background-color: gainsboro;
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 8px 0 12px 0;
+    color: gray;
+}
+
+
+
+@media (min-width: 700px) {
+
+    #pablo {
+        width: 30%;
+    }
 }
