@@ -61,6 +61,8 @@ p {
 hr {
     margin: var(--space);
     border: .5px dotted white;
+    margin-top: 60px;
+
 }
 
 .separator {
@@ -72,27 +74,22 @@ hr {
 #pablo {
     z-index: 9999;
     width: 60%;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    pointer-events: none;
+    cursor: pointer;
     padding: var(--space) var(--space) 0 var(--space);
-
 }
 
 #download {
     display: none !;
 
     position: fixed;
-    bottom: 2vw;
+    bottom: 3vw;
     right: 3vw;
     z-index: 9999;
     cursor: pointer;
     padding: 12px;
     padding-top: 25px;
     text-align: center;
-    font-size: 5vw;
+    font-size: 4vw;
     border: none;
     box-sizing: border-box;
     font-family: 'Times New Roman', Times, serif;
@@ -101,8 +98,8 @@ hr {
     align-items: center;
     justify-content: center;
     gap: 8px;
+    aspect-ratio: 2/1;
     background-color: transparent !important;
-    height: 30vw;
     overflow: visible;
 
 
@@ -131,7 +128,7 @@ hr {
 
 
 #download img {
-    height: 30px;
+    height: 6vw;
 }
 
 #maps {
@@ -168,24 +165,27 @@ hr {
 
 textarea {
     resize: none;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    field-sizing: content;
-    font-size: 10vw;
 
+    /* 1. Standard fallback height for iOS Safari */
+    height: auto;
+    min-height: 1.2em;
+
+    /* 2. Modern auto-sizing for Chrome/Android */
+    field-sizing: content;
+
+    font-size: 10vw;
     font-family: "Times New Roman", Times, serif;
     padding: 2px 6px;
-    /* font-weight: bold; */
     border-radius: 6px;
     transform: translateY(3vw);
-    /* border: none; */
-    overflow-Y: none !important;
+
+    /* Use hidden instead of none for overflow properties */
+    overflow-y: hidden !important;
     background-color: transparent;
-    z-index: -1;
+    z-index: 1;
+    /* Note: Changed to 1 so users can easily tap it on mobile Safari */
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.6);
-
 
 }
 
@@ -254,7 +254,6 @@ fieldset div {
 
 
 @media (min-width: 700px) {
-
     #pablo {
         width: 30%;
     }

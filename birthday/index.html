@@ -11,20 +11,20 @@
     <meta property="og:image:type" content="image/jpeg">
 
     <meta name="description"
-          content="Saturday 30th May close to Centraal from 14h to 20h! Afternoon picnic 🧺, with friends, food and drinks... (check this website!)">
+          content="Next Saturday 30th May, close to Centraal from 14h to 20h! Afternoon picnic 🧺, with friends, food and drinks... (check this website!)">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pablo.energy/birthday/">
     <meta property="og:title" content="Pablo's birthday invitation!">
     <meta property="og:description"
-          content="Saturday 30th May close to Centraal from 14h to 20h! Afternoon picnic 🧺, with friends, food and drinks... (check this website!)">
+          content="Next Saturday 30th May, close to Centraal from 14h to 20h! Afternoon picnic 🧺, with friends, food and drinks... (check this website!)">
     <meta property="og:image" content="https://pablo.energy/birthday/og-preview.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://pablo.energy/birthday/">
     <meta name="twitter:title" content="Pablo's birthday invitation!">
     <meta name="twitter:description"
-          content="Saturday 30th May close to Centraal from 14h to 20h! Afternoon picnic 🧺, with friends, food and drinks... (check this website!)">
+          content="Next Saturday 30th May, close to Centraal from 14h to 20h! Afternoon picnic 🧺, with friends, food and drinks... (check this website!)">
     <meta name="twitter:image" content="https://pablo.energy/birthday/og-preview.jpg">
 
     <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
@@ -34,6 +34,7 @@
     <meta name="apple-mobile-web-app-title" content="Pablo's BD!" />
     <link rel="manifest" href="/favicon/site.webmanifest" />
 
+    <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="index.css">
 </head>
 
@@ -45,7 +46,7 @@
     <img src="pablo-2.webp" alt="" id="pablo" onclick="alert('Thanks Jette for the drawing!')">
 
     <h1>Dear <textarea
-                  placeholder="your name"></textarea>,<br> I want to invite you to
+                  placeholder="your name" rows="1"></textarea>,<br> I want to invite you to
         my 28 birthday!
     </h1>
 
@@ -71,7 +72,7 @@
 
     <!-- COMING -->
     <fieldset>
-        <legend>The most important is to see each other so don't mind to come:</legend>
+        <legend>Most important is to see each other so don't mind to come:</legend>
 
         <div>
             <input type="radio" id="fast" name="radio" value="fast" checked />
@@ -199,20 +200,29 @@
 
     <span id="credits">No
         data from this website is
-        sent, it's just copied to the
+        collected, just used for the
         calendar event!</span>
 
 
 
-
-
-
-
-
-
-
-
     <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const textarea = document.getElementById("userName");
+
+            if (textarea) {
+                // Only run JavaScript resizing if the browser lacks native field-sizing support
+                if (!CSS.supports('field-sizing', 'content')) {
+                    // Set initial row height calculation
+                    textarea.style.height = textarea.scrollHeight + 'px';
+
+                    textarea.addEventListener('input', function () {
+                        this.style.height = 'auto'; // Reset height
+                        this.style.height = this.scrollHeight + 'px'; // Set to content depth
+                    });
+                }
+            }
+        });
 
         const showMore = document.getElementById('showMore');
 
