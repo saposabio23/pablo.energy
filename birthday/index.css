@@ -8,7 +8,7 @@ body {
     font-size: 8vw;
     overflow-x: hidden;
     width: inherit;
-    background-image: url("stock-photo-white-clouds-sky-3491496778\ copy\ 2.png");
+    background-image: url("stock-photo-white-clouds-sky-3491496778\ copy\ 2.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -82,6 +82,8 @@ hr {
 }
 
 #download {
+    display: none !;
+
     position: fixed;
     bottom: 2vw;
     right: 3vw;
@@ -144,7 +146,6 @@ hr {
     width: calc(100% - (var(--space)*2));
     height: auto;
     aspect-ratio: 4/3;
-    background-image: url('photo.png');
     background-size: cover;
     border-radius: 30px;
     background-position: center;
@@ -160,7 +161,7 @@ hr {
 
 /* When this class is added via JS, the background image swaps seamlessly */
 #maps.show-lines {
-    background-image: url('map.png');
+    background-image: url('map.webp');
 }
 
 /* TECHNICAL */
