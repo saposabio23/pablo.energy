@@ -166,6 +166,14 @@ hr {
     text-shadow: none;
 }
 
+#maps:hover {
+    box-shadow: 0 0 5px white;
+}
+
+#maps a:hover {
+    text-decoration: none;
+}
+
 /* TECHNICAL */
 blockquote {
     padding: 0;
