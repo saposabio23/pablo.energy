@@ -7,7 +7,7 @@
 
     <title>Pablo's birthday invitation!</title>
     <meta property="og:image"
-          content="https://pablo.energy/birthday/preview.jpg">
+          content="https://pablo.energy/birthday/niew-preview.jpg">
     <meta property="og:image:type" content="image/jpg">
 
     <meta name="description"
@@ -18,14 +18,14 @@
     <meta property="og:title" content="Pablo's birthday invitation!">
     <meta property="og:description"
           content="Next Saturday 30th May, at Erasmuspark from 16h! Afternoon picnic 🧺, with friends, food and drinks... (check this website!)">
-    <meta property="og:image" content="https://pablo.energy/birthday/og-preview.jpg">
+    <meta property="og:image" content="https://pablo.energy/birthday/niew-preview.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://pablo.energy/birthday/">
     <meta name="twitter:title" content="Pablo's birthday invitation!">
     <meta name="twitter:description"
           content="Next Saturday 30th May, at Erasmuspark from 16h! Afternoon picnic 🧺, with friends, food and drinks... (check this website!)">
-    <meta name="twitter:image" content="https://pablo.energy/birthday/og-preview.jpg">
+    <meta name="twitter:image" content="https://pablo.energy/birthday/niew-preview.jpg">
 
     <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
@@ -43,8 +43,8 @@
 
 <body>
     <button id="download">
-        <img src="cal.webp" alt="">
-        𝒞lick to add! </button>
+        𝒞lick to<br>remember!
+        <img src="cloud.svg" alt=""></button>
 
     <img src="pablo-2.webp" alt="" id="pablo" onclick="alert('Thanks Jette for the drawing!')">
 
@@ -56,7 +56,7 @@
     <div id="maps">
         <div style="position: absolute; bottom: 10px; right: 20px;">⤴︎</div>
         <p>𝒮aturday 30<sup>th</sup> ℳay<br><a
-               href="https://maps.app.goo.gl/TFNAQ5xjpEdTkfQq7">Erasmuspark</a><br>from 16h!</p>
+               href="https://maps.app.goo.gl/dB9Yf7buKwiKbcHa6">Erasmuspark</a><br>from 16h!</p>
     </div>
 
     <!-- TEXT -->
@@ -265,7 +265,8 @@
         blockquote.addEventListener('click', () => {
             blockquote.innerHTML = ''
             blockquote.style.opacity = '1';
-            console.log('frf')
+            // blockquote.style.boxShadow = 'none';
+            blockquote.style.fontSize = '12vw';
         })
 
 
@@ -301,10 +302,10 @@
             }
 
             // 4. CONSTRUCT THE DYNAMIC SUMMARY (TITLE)
-            let summaryText = "Birthday Pablo!";
+            let summaryText = "Birthday Pablo 🧺!";
             if (dynamicPlan) {
                 const cleanPlan = dynamicPlan.replace(/[!.]+$/, '');
-                summaryText = `Birthday Pablo (${cleanPlan})!`;
+                summaryText = `Birthday Pablo 🧺 (${cleanPlan})!`;
             }
 
             // 5. GENERATE THE ICS TEMPLATE DATA
@@ -317,7 +318,7 @@ DTSTAMP:20260522T100655Z
 DTSTART:20260530T120000Z
 DTEND:20260530T180000Z
 SUMMARY:${summaryText}
-LOCATION:https://maps.app.goo.gl/mKYrFnJAoufT8i4R9
+LOCATION:https://maps.app.goo.gl/dB9Yf7buKwiKbcHa6
 DESCRIPTION:${descriptionText}
 END:VEVENT
 END:VCALENDAR`;

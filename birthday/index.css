@@ -83,12 +83,12 @@ hr {
 #download {
 
     position: fixed;
-    bottom: 3vw;
+    bottom: 1vw;
     right: 3vw;
     z-index: 9999;
     cursor: pointer;
-    padding: 12px;
-    padding-top: 25px;
+    padding: 20px;
+    line-height: .8;
     text-align: center;
     font-size: 6vw;
     border: none;
@@ -109,11 +109,13 @@ hr {
     color: black;
 
     animation: move 6s ease infinite;
-    background-image: url('cloud.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+}
 
+#download img {
+    position: absolute;
+    width: 100%;
+    object-fit: contain;
+    z-index: -1;
 }
 
 @-webkit-keyframes move {
@@ -129,12 +131,8 @@ hr {
 }
 
 
-#download img {
-    height: 6vw;
-}
-
 #maps {
-    border: 1px solid white;
+    /* border: 1px solid white; */
     position: relative;
     display: flex;
     flex-direction: column;
@@ -157,6 +155,8 @@ hr {
 
     color: white;
     text-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    box-shadow: 0 0 5px white;
+    transition: all ease-in-out .5s;
 }
 
 /* When this class is added via JS, the background image swaps seamlessly */
@@ -164,6 +164,7 @@ hr {
     background-image: url('map.webp');
     color: transparent;
     text-shadow: none;
+    transition: all ease-in-out .5s
 }
 
 #maps:hover {
@@ -179,9 +180,11 @@ blockquote {
     padding: 0;
     margin: 0;
     color: white;
-    opacity: .5;
+    opacity: .7;
     display: inline;
-    border: 1px solid white;
+    border: none;
+    box-shadow: 0 0 5px white;
+
     padding: 4px 6px 0px 6px;
     border-radius: 6px;
 }
