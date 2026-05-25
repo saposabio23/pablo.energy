@@ -11,20 +11,20 @@
     <meta property="og:image:type" content="image/jpeg">
 
     <meta name="description"
-          content="Next Saturday 30th May, at Erasmuspark from 16h! Afternoon picnic 🧺, with friends, food and drinks... (check this website!)">
+          content="Next Saturday 30th May, close to Centraal from 14h to 20h! Afternoon picnic 🧺, with friends, food and drinks... (check this website!)">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pablo.energy/birthday/">
     <meta property="og:title" content="Pablo's birthday invitation!">
     <meta property="og:description"
-          content="Next Saturday 30th May, at Erasmuspark from 16h! Afternoon picnic 🧺, with friends, food and drinks... (check this website!)">
+          content="Next Saturday 30th May, close to Centraal from 14h to 20h! Afternoon picnic 🧺, with friends, food and drinks... (check this website!)">
     <meta property="og:image" content="https://pablo.energy/birthday/og-preview.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://pablo.energy/birthday/">
     <meta name="twitter:title" content="Pablo's birthday invitation!">
     <meta name="twitter:description"
-          content="Next Saturday 30th May, at Erasmuspark from 16h! Afternoon picnic 🧺, with friends, food and drinks... (check this website!)">
+          content="Next Saturday 30th May, close to Centraal from 14h to 20h! Afternoon picnic 🧺, with friends, food and drinks... (check this website!)">
     <meta name="twitter:image" content="https://pablo.energy/birthday/og-preview.jpg">
 
     <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
@@ -36,9 +36,6 @@
 
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="index.css">
-
-    <link rel="preload" href="map.webp" as="image" type="image/webp" />
-
 </head>
 
 <body>
@@ -48,15 +45,15 @@
 
     <img src="pablo-2.webp" alt="" id="pablo" onclick="alert('Thanks Jette for the drawing!')">
 
-    <h1>Dear <blockquote contenteditable="true">your name
-        </blockquote>,<br> I want to invite you to
+    <h1>Dear <textarea
+                  placeholder="your name" rows="1"></textarea>,<br> I want to invite you to
         my 28 birthday!
     </h1>
 
     <div id="maps">
         <div style="position: absolute; bottom: 10px; right: 20px;">⤴︎</div>
-        <p>Saturday 30<sup>th</sup> May<br><a
-               href="https://maps.app.goo.gl/TFNAQ5xjpEdTkfQq7">Erasmuspark</a><br>from 16h!</p>
+        <p>Saturday 30<sup>th</sup> May at<br><a
+               href="https://maps.app.goo.gl/KWCnPn6fTqmp622K6">Het Stenen Hoofd</a><br>from 14h to 20h!</p>
     </div>
 
     <!-- TEXT -->
@@ -205,20 +202,7 @@
     </fieldset>
 
     <hr>
-    <div class="separator">✿✿✿ Cards</div>
-
-    <p>If you cannot come but still want to be present I will be very happy to receive postcards at the following
-        address:</p>
-    <p><i>Pablo Moreno</i><br>
-        Voorburgstraat 323
-        <br>
-        1062JB Amsterdam
-        <br>
-        The Netherlands
-    </p>
-
-    <hr>
-    <div class="separator">Some words</div>
+    <div class="separator">✿✿✿ Words</div>
 
     <p>In September it will be two years that I arrived to Amsterdam. I have been very grateful and lucky on all the
         things did and people I meet thanks to friends, places and events. This picnic is a way to remember all of this
@@ -234,6 +218,22 @@
 
     <script>
 
+        document.addEventListener("DOMContentLoaded", () => {
+            const textarea = document.getElementById("userName");
+
+            if (textarea) {
+                // Only run JavaScript resizing if the browser lacks native field-sizing support
+                if (!CSS.supports('field-sizing', 'content')) {
+                    // Set initial row height calculation
+                    textarea.style.height = textarea.scrollHeight + 'px';
+
+                    textarea.addEventListener('input', function () {
+                        this.style.height = 'auto'; // Reset height
+                        this.style.height = this.scrollHeight + 'px'; // Set to content depth
+                    });
+                }
+            }
+        });
 
         const showMore = document.getElementById('showMore');
 
@@ -255,14 +255,6 @@
             }
         });
 
-
-        const blockquote = document.querySelector('blockquote');
-
-        blockquote.addEventListener('click', () => {
-            blockquote.innerHTML = ''
-            blockquote.style.opacity = '1';
-            console.log('frf')
-        })
 
 
         const downloadButton = document.getElementById('download');
