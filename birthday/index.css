@@ -161,7 +161,7 @@ hr {
 
 /* When this class is added via JS, the background image swaps seamlessly */
 #maps.show-lines {
-    background-image: url('map.png');
+    background-image: url('map.webp');
     color: transparent;
     text-shadow: none;
 }
