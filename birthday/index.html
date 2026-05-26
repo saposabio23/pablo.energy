@@ -234,89 +234,95 @@
         cinemas... –
         and events: football, walking club, presentations....<br>This picnic is a way to remember all of this
         and to say that it's not finished, that we still have a lot of adventures to do together. <br><br>Thank you so
-        much for this!<br><br>𝒫ablo <3 </p>
+        much for this!<br><br>𝒫ablo <span style="color: orange; text-shadow: 0 0 3px white;">
+            <3< /span>
+    </p>
 
-            <span id="credits">No
-                data from this website is
-                collected, just used for the
-                calendar event!</span>
+    <img src="kwik repared!.webp" alt="" style="width: 70%; margin: auto;
+            text-align: center; aspect-ratio: 1; object-fit: cover; border-radius: 99%;
+            margin-left: 15%;margin-bottom: 20px;">
+
+    <span id="credits">No
+        data from this website is
+        collected, just used for the
+        calendar event!</span>
 
 
 
-            <script>
+    <script>
 
 
-                const showMore = document.getElementById('showMore');
+        const showMore = document.getElementById('showMore');
 
-                showMore.addEventListener('click', () => {
-                    document.querySelector('.extra').style.display = 'block'
-                    document.getElementById('showMore').style.display = 'none';
+        showMore.addEventListener('click', () => {
+            document.querySelector('.extra').style.display = 'block'
+            document.getElementById('showMore').style.display = 'none';
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // 1. Grab the map element using its ID
+            const mapElement = document.getElementById("maps");
+
+            if (mapElement) {
+                // 2. Add a click event listener to the map
+                mapElement.addEventListener("click", () => {
+                    // 3. Toggle the CSS class on and off automatically
+                    mapElement.classList.toggle("show-lines");
                 });
-
-                document.addEventListener("DOMContentLoaded", () => {
-                    // 1. Grab the map element using its ID
-                    const mapElement = document.getElementById("maps");
-
-                    if (mapElement) {
-                        // 2. Add a click event listener to the map
-                        mapElement.addEventListener("click", () => {
-                            // 3. Toggle the CSS class on and off automatically
-                            mapElement.classList.toggle("show-lines");
-                        });
-                    }
-                });
+            }
+        });
 
 
-                const blockquote = document.querySelector('blockquote');
+        const blockquote = document.querySelector('blockquote');
 
-                blockquote.addEventListener('click', () => {
-                    blockquote.innerHTML = ''
-                    blockquote.style.opacity = '1';
-                    // blockquote.style.boxShadow = 'none';
-                    blockquote.style.fontSize = '12vw';
-                })
+        blockquote.addEventListener('click', () => {
+            blockquote.innerHTML = ''
+            blockquote.style.opacity = '1';
+            // blockquote.style.boxShadow = 'none';
+            blockquote.style.fontSize = '12vw';
+        })
 
 
-                const downloadButton = document.getElementById('download');
+        const downloadButton = document.getElementById('download');
 
-                downloadButton.addEventListener('click', () => {
-                    // 1. GET THE SELECTED RADIO BUTTON VALUE
-                    const selectedRadio = document.querySelector('input[name="radio"]:checked');
-                    let dynamicPlan = "";
-                    if (selectedRadio) {
-                        const labelForRadio = document.querySelector(`label[for="${selectedRadio.id}"]`);
-                        dynamicPlan = labelForRadio ? labelForRadio.textContent.trim() : "";
-                    }
+        downloadButton.addEventListener('click', () => {
+            // 1. GET THE SELECTED RADIO BUTTON VALUE
+            const selectedRadio = document.querySelector('input[name="radio"]:checked');
+            let dynamicPlan = "";
+            if (selectedRadio) {
+                const labelForRadio = document.querySelector(`label[for="${selectedRadio.id}"]`);
+                dynamicPlan = labelForRadio ? labelForRadio.textContent.trim() : "";
+            }
 
-                    // 2. GET ALL CHECKED CHECKBOXES & FORMAT THEM AS BULLET POINTS
-                    const checkedBoxes = document.querySelectorAll('fieldset input[type="checkbox"]:checked');
-                    let itemsToBring = [];
+            // 2. GET ALL CHECKED CHECKBOXES & FORMAT THEM AS BULLET POINTS
+            const checkedBoxes = document.querySelectorAll('fieldset input[type="checkbox"]:checked');
+            let itemsToBring = [];
 
-                    checkedBoxes.forEach(box => {
-                        const labelForBox = document.querySelector(`label[for="${box.id}"]`);
-                        if (labelForBox) {
-                            let text = labelForBox.textContent.replace(/\s+/g, ' ').trim();
-                            text = text.replace(/,/g, '\\,');
-                            itemsToBring.push(`- ${text}`);
-                        }
-                    });
+            checkedBoxes.forEach(box => {
+                const labelForBox = document.querySelector(`label[for="${box.id}"]`);
+                if (labelForBox) {
+                    let text = labelForBox.textContent.replace(/\s+/g, ' ').trim();
+                    text = text.replace(/,/g, '\\,');
+                    itemsToBring.push(`- ${text}`);
+                }
+            });
 
-                    // 3. CONSTRUCT THE DYNAMIC DESCRIPTION TEXT (With safe escaped commas)
-                    let descriptionText = "It will be an afternoon picnic\\, with friends\\, food and drinks. Some games\\, some presentations\\, some juices...";
+            // 3. CONSTRUCT THE DYNAMIC DESCRIPTION TEXT (With safe escaped commas)
+            let descriptionText = "It will be an afternoon picnic\\, with friends\\, food and drinks. Some games\\, some presentations\\, some juices...";
 
-                    if (itemsToBring.length > 0) {
-                        descriptionText += `\\n\\nBringing:\\n${itemsToBring.join('\\n')}`;
-                    }
+            if (itemsToBring.length > 0) {
+                descriptionText += `\\n\\nBringing:\\n${itemsToBring.join('\\n')}`;
+            }
 
-                    // 4. CONSTRUCT THE DYNAMIC SUMMARY (TITLE)
-                    let summaryText = "Birthday Pablo 🧺!";
-                    if (dynamicPlan) {
-                        const cleanPlan = dynamicPlan.replace(/[!.]+$/, '');
-                        summaryText = `Birthday Pablo 🧺 (${cleanPlan})!`;
-                    }
+            // 4. CONSTRUCT THE DYNAMIC SUMMARY (TITLE)
+            let summaryText = "Birthday Pablo 🧺!";
+            if (dynamicPlan) {
+                const cleanPlan = dynamicPlan.replace(/[!.]+$/, '');
+                summaryText = `Birthday Pablo 🧺 (${cleanPlan})!`;
+            }
 
-                    // 5. GENERATE THE ICS TEMPLATE DATA
-                    const icsData = `BEGIN:VCALENDAR
+            // 5. GENERATE THE ICS TEMPLATE DATA
+            const icsData = `BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:Calendar Event
 BEGIN:VEVENT
@@ -330,27 +336,27 @@ DESCRIPTION:${descriptionText}
 END:VEVENT
 END:VCALENDAR`;
 
-                    // 6. REGULAR LINE ENDINGS SANITIZATION (\n -> \r\n)
-                    const formattedIcsData = icsData.replace(/\r?\n/g, '\r\n');
+            // 6. REGULAR LINE ENDINGS SANITIZATION (\n -> \r\n)
+            const formattedIcsData = icsData.replace(/\r?\n/g, '\r\n');
 
-                    // --- THE FIX: ENCODE AS UTF-8 ARRAY FOR EMOJI SUPPORT ---
-                    const encoder = new TextEncoder();
-                    const u8Array = encoder.encode(formattedIcsData);
+            // --- THE FIX: ENCODE AS UTF-8 ARRAY FOR EMOJI SUPPORT ---
+            const encoder = new TextEncoder();
+            const u8Array = encoder.encode(formattedIcsData);
 
-                    // 7. TRIGGER DOWNLOAD BLOB WITH FIXED BYTE ARRAY
-                    const blob = new Blob([u8Array], { type: 'text/calendar;charset=utf-8' });
-                    const url = URL.createObjectURL(blob);
+            // 7. TRIGGER DOWNLOAD BLOB WITH FIXED BYTE ARRAY
+            const blob = new Blob([u8Array], { type: 'text/calendar;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
 
-                    const a = document.createElement('a');
-                    a.setAttribute('href', url);
-                    a.setAttribute('download', 'event.ics');
-                    document.body.appendChild(a);
-                    a.click();
+            const a = document.createElement('a');
+            a.setAttribute('href', url);
+            a.setAttribute('download', 'event.ics');
+            document.body.appendChild(a);
+            a.click();
 
-                    document.body.removeChild(a);
-                    URL.revokeObjectURL(url);
-                });
-            </script>
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+    </script>
 
 </body>
 
