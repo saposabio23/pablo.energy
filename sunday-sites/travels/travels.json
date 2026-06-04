@@ -380,5 +380,19 @@
             "Rotterdam",
             "Tilburg"
         ]
+    },
+    {
+        "month": "April 26",
+        "cities": [
+            "Amsterdam",
+        ]
+    },
+    {
+        "month": "May 26",
+        "cities": [
+            "Amsterdam",
+            "Paris",
+            "Rouen"
+        ]
     }
 ]
