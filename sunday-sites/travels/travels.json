@@ -394,5 +394,13 @@
             "Paris",
             "Rouen"
         ]
+    },
+    {
+        "month": "June 26",
+        "cities": [
+            "Amsterdam",
+            "Gent",
+            "Mesnil-Val"
+        ]
     }
 ]
