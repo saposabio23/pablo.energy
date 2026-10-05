@@ -1,13 +1,10 @@
 @import url("../../../assets/fonts/fonts.css");
 
 body {
-    font-family: "Inter";
-    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
     background-color: black;
-}
-
-body:hover {
-    cursor: pointer;
+    color: white;
 }
 
 .night {
@@ -90,43 +87,19 @@ body:hover {
     max-height: 245px;
 }
 
-#texte {
-    margin: 0;
-    padding: 0 16px;
-    text-align: center;
-}
-
-.info {
-    height: calc(var(--vh, 1vh) * 100);
-    width: 100vw;
+#place {
     position: fixed;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    top: 0;
+    bottom: 40px;
     left: 0;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+    width: 100%;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 12px;
+    color: white;
+    opacity: 0.3;
     z-index: 2;
-
-    color: blak;
-    
-
-    background-image: -o-radial-gradient(circle, #fffafae5 0vmin, darkslateblue 100vmin);
-    
-
-    background-image: radial-gradient(circle, #fffafae5 0vmin, darkslateblue 100vmin);
-    opacity: 0;
-
-    -webkit-transition: all 3s ease-in-out;
-
-    -o-transition: all 3s ease-in-out;
-
-    transition: all 3s ease-in-out;
 }
 
 .opening {
@@ -163,44 +136,5 @@ body:hover {
     100% {
         opacity: 1;
         display: block;
-    }
-}
-
-.closing {
-    -webkit-animation: closing 2s ease-in-out forwards;
-    animation: closing 2s ease-in-out forwards;
-}
-
-@-webkit-keyframes closing {
-    0% {
-        opacity: 1;
-        display: block;
-    }
-
-    99% {
-        display: block;
-    }
-
-    100% {
-
-        opacity: 0;
-        display: none;
-    }
-}
-
-@keyframes closing {
-    0% {
-        opacity: 1;
-        display: block;
-    }
-
-    99% {
-        display: block;
-    }
-
-    100% {
-
-        opacity: 0;
-        display: none;
     }
 }
