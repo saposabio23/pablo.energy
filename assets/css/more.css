@@ -142,3 +142,30 @@
         height: 400px;
     }
 }
+
+/* WEBSITES FILTER SLIDER */
+.nature-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 2px;
+    background: #917400;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.nature-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #917400;
+}
+
+.nature-slider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border: none;
+    border-radius: 50%;
+    background: #917400;
+}

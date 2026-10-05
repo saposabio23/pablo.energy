@@ -165,10 +165,12 @@ var ADDRESS = "1UGVXTssu8J9mBbOyPSX0qkOo13xggy_MgboicC4UlTU/1";
 fetch("https://opensheet.elk.sh/" + ADDRESS)
     .then(res => res.json())
     .then(data => {
-        const container = document.getElementById("projects-list");
-        if (!container) return;
+        const grid = document.getElementById("projects-grid");
+        if (!grid) return;
 
-        data.forEach(row => {
+        // Newest year first; within a year, rows lower in the sheet first
+        const year = row => parseInt(row.Date, 10) || 0;
+        data.slice().reverse().sort((a, b) => year(b) - year(a)).forEach(row => {
             // Skip empty rows (no Title)
             if (!row.Title || !row.Title.trim()) return;
 
@@ -176,154 +178,105 @@ fetch("https://opensheet.elk.sh/" + ADDRESS)
             const state = (row.State || "").trim();
             if (state === "\uD83D\uDD34") return;
 
-            const title = row.Title.trim();
-            const description = (row.Description || "").trim();
-            const year = (row.Date || "").trim();
-            const nature = (row.Nature || "").trim();
-            const url = (row.URL || "#").trim();
+            const site = {
+                title: row.Title.trim(),
+                description: (row.Description || "").trim(),
+                year: (row.Date || "").trim(),
+                url: (row.URL || "#").trim() || "#",
+                image: previewUrl(row.Preview),
+                nature: (row.Nature || "").trim()
+            };
 
-            // Outer div (with hover state)
-            const wrapper = document.createElement("a");
-            wrapper.href = url || "#";
-            wrapper.setAttribute('data-slideframe', 'true');
-            wrapper.setAttribute('title', title);
-            wrapper.setAttribute('data-nature', nature);
-            wrapper.dataset.slideframe = "true";
-            wrapper.className =
-                "md:text-lg leading-tight transition-all duration-200 cursor-pointer hover:bg-zinc-200 rounded-[6px] group w-full ";
-
-            // Inner <a>
-            const link = document.createElement("div");
-            link.className =
-                "px-3 py-2 mx-auto flex justify-between";
-
-            // Left side (title + description on hover)
-            const left = document.createElement("div");
-            left.className = "flex gap-1 flex-col md:flex-row";
-
-            const titleEl = document.createElement("h4");
-            titleEl.textContent = title;
-            left.appendChild(titleEl);
-
-            const descEl = document.createElement("p");
-            descEl.textContent = description;
-            descEl.className =
-                "opacity-100 transition-all duration-200 group-hover:opacity-100 text-grey md:inline";
-
-            if (description) {
-                left.appendChild(descEl);
-            }
-
-            // Right side (year)
-            const right = document.createElement("div");
-            right.className = "flex gap-2 text-sm hidden md:inline";
-
-            const yearEl = document.createElement("div");
-            yearEl.textContent = year;
-            yearEl.className = "group-hover:hidden";
-            right.appendChild(yearEl);
-
-            const helpEl = document.createElement("div");
-            helpEl.textContent = "↗︎";
-            helpEl.className = "hidden group-hover:inline text-grey";
-            right.appendChild(helpEl);
-
-            // Assemble
-            link.appendChild(left);
-            link.appendChild(right);
-            wrapper.appendChild(link);
-            container.appendChild(wrapper);
+            grid.appendChild(createProjectRow(site));
         });
 
         applyNatureFilter();
-        bindSlideFrameLinks();
     })
     .catch(err => console.error("Error fetching sheet:", err));
 
-// WEBSITES FILTER
-const chkPersonal = document.getElementById('filter-personal');
-const chkCommissioned = document.getElementById('filter-commissioned');
+// Turn a Google Drive share link from the sheet's Preview column into an image URL
+function previewUrl(value) {
+    const link = (value || "").trim();
+    const id = link.match(/\/d\/([\w-]+)/)?.[1] || link.match(/[?&]id=([\w-]+)/)?.[1];
+    return id ? "https://drive.google.com/thumbnail?id=" + id + "&sz=w400" : link;
+}
 
-// Default state: commissioned selected
-if (chkCommissioned) chkCommissioned.checked = true;
+// Preview (black until a screenshot is set in the sheet's Preview column)
+function createPreview(site, className) {
+    const preview = document.createElement("div");
+    preview.className =
+        "aspect-[4/3] bg-black rounded-lg overflow-hidden transition duration-300 group-hover:opacity-80 " + className;
+
+    if (site.image) {
+        const img = document.createElement("img");
+        img.src = site.image;
+        img.alt = site.title;
+        img.loading = "lazy";
+        img.className = "w-full h-full object-cover";
+        preview.appendChild(img);
+    }
+
+    return preview;
+}
+
+function createProjectRow(site) {
+    // Row (preview on the left, text on the right)
+    const row = document.createElement("a");
+    row.href = site.url;
+    row.target = "_blank";
+    row.setAttribute('title', site.title);
+    row.dataset.nature = site.nature.toLowerCase();
+    row.className =
+        "flex gap-3 items-center p-2 leading-tight transition-all duration-200 hover:bg-zinc-200 rounded-[8px] group";
+
+    // Title + description
+    const text = document.createElement("div");
+    text.className = "flex flex-col gap-1 min-w-0";
+
+    const titleEl = document.createElement("h4");
+    titleEl.textContent = site.title;
+    text.appendChild(titleEl);
+
+    if (site.description) {
+        const descEl = document.createElement("p");
+        descEl.textContent = site.description;
+        descEl.className = "text-grey";
+        text.appendChild(descEl);
+    }
+
+    if (site.year) {
+        const yearEl = document.createElement("span");
+        yearEl.textContent = site.year;
+        yearEl.className = "text-grey text-sm";
+        text.appendChild(yearEl);
+    }
+
+    row.appendChild(createPreview(site, "h-[80px] shrink-0"));
+    row.appendChild(text);
+    return row;
+}
+
+// WEBSITES FILTER (slider)
+const NATURES = ["Commissioned", "Personal", "Friends", "Experimental"];
+const natureSlider = document.getElementById("nature-slider");
+const natureLabel = document.getElementById("nature-label");
 
 function applyNatureFilter() {
-    // Query each time so newly fetched projects are included
-    const projects = document.querySelectorAll('#projects-list [data-nature]');
-    const activeNatures = [];
+    if (!natureSlider) return;
+    const nature = NATURES[natureSlider.value];
+    if (natureLabel) natureLabel.textContent = nature;
 
-    if (chkPersonal?.checked) activeNatures.push('Personal');
-    if (chkCommissioned?.checked) activeNatures.push('Commissioned');
-
-    projects.forEach(project => {
-        const nature = project.dataset.nature;
-        const shouldShow =
-            activeNatures.length === 0 || activeNatures.includes(nature);
-
-        if (shouldShow) {
-            project.classList.remove('hidden');
-        } else {
-            project.classList.add('hidden');
-        }
+    let shown = 0;
+    document.querySelectorAll("#projects-grid [data-nature]").forEach(card => {
+        const match = card.dataset.nature === nature.toLowerCase();
+        card.classList.toggle("hidden", !match);
+        if (match) shown++;
     });
+
+    document.getElementById("projects-empty")?.classList.toggle("hidden", shown > 0);
 }
 
-// Listen to changes on both checkboxes with a radio-like exclusivity
-if (chkPersonal && chkCommissioned) {
-    chkPersonal.addEventListener('change', () => {
-        if (chkPersonal.checked) chkCommissioned.checked = false;
-        applyNatureFilter();
-    });
-
-    chkCommissioned.addEventListener('change', () => {
-        if (chkCommissioned.checked) chkPersonal.checked = false;
-        applyNatureFilter();
-    });
-} else {
-    [chkPersonal, chkCommissioned].forEach(chk => {
-        if (!chk) return;
-        chk.addEventListener('change', applyNatureFilter);
-    });
-}
-applyNatureFilter();
-
-
-function bindSlideFrameLinks() {
-    // Uses the slideFrame overlay that slideFrame.min.js injects
-    const overlay = document.querySelector('.slideframe');
-    const frame = document.querySelector('.slideframe-container-frame');
-    const titleEl = document.querySelector('.slideframe-container-titlebar-title');
-    const external = document.querySelector('.slideframe-container-titlebar-external');
-
-    if (!overlay || !frame || !titleEl || !external) return;
-
-    document.querySelectorAll('#projects-list a[data-slideframe="true"]').forEach(link => {
-        if (link.dataset.slideframeBound) return;
-        link.dataset.slideframeBound = "true";
-
-        link.addEventListener('click', e => {
-            if (e.metaKey || e.ctrlKey) return;
-
-            const href = link.getAttribute('href') || "";
-            const isMailto = href.startsWith('mailto:');
-            const isTel = href.startsWith('tel:');
-
-            // Only skip empty/#/mailto/tel
-            if (!href || href === "#" || isMailto || isTel) return;
-
-            e.preventDefault();
-
-            overlay.classList.add('slideframe--visible');
-            document.body.classList.add('slideframe-body--noscroll', 'slideframe-body--loading');
-
-            frame.setAttribute('src', href);
-            const title = link.hasAttribute('title') ? link.getAttribute('title') : link.innerText;
-            frame.setAttribute('title', title);
-            titleEl.innerText = title;
-            external.setAttribute('href', href);
-        });
-    });
-}
+natureSlider?.addEventListener("input", applyNatureFilter);
 
 
 // IMAGES ON THE SREUSME
@@ -366,6 +319,22 @@ function removeResumePopup() {
 }
 
 window.addEventListener('load', () => {
-    bindSlideFrameLinks();
     setupResumePopup();
 });
+
+
+// AMSTERDAM TIME
+const amsterdamTime = document.getElementById("amsterdam-time");
+const amsterdamFormat = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/Amsterdam",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false
+});
+
+function updateAmsterdamTime() {
+    if (amsterdamTime) amsterdamTime.textContent = amsterdamFormat.format(new Date());
+}
+
+updateAmsterdamTime();
+setInterval(updateAmsterdamTime, 1000);

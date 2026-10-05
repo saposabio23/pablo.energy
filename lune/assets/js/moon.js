@@ -9,13 +9,12 @@ function favicon(source) {
 }
 
 var night = document.querySelector('.night')
-var texte = document.querySelector('#texte')
+var place = document.querySelector('#place')
 
-function setMoon(source, text) {
+function setMoon(source) {
     var moon = document.createElement("img");
     moon.className = 'moon';
     moon.src = "assets/emojis/" + source;
-    texte.innerHTML = text;
     night.appendChild(moon)
 }
 
@@ -39,95 +38,52 @@ function getMoonPhase(year, month, day) {
         b = 0; //0 and 8 are the same so turn 8 into 0
     }
 
-
-    // 0 => New Moon 37.5 [show circle, hide rect]
-    // 1 => Waxing Crescent Moon 50.5 [show circle, hide rect]
-    // 2 => Quarter Moon //translateX(50%), [display rect, hide circle]
-    // 3 => Waxing Gibbous Moon 70.5 [show circle, hide rect]
-    // 4 => Full Moon [hide circle and rect]
-    // 5 => Waning Gibbous Moon, -15.5 [show circle, hide rect]
-    // 6 => Last Quarter Moon //transform: translateX(-50%) [display rect, hide circle]
-    // 7 => Waning Crescent Moon 30.5 [show circle, hide rect]
+    // 0 => New Moon
+    // 1 => Waxing Crescent Moon
+    // 2 => First Quarter Moon
+    // 3 => Waxing Gibbous Moon
+    // 4 => Full Moon
+    // 5 => Waning Gibbous Moon
+    // 6 => Last Quarter Moon
+    // 7 => Waning Crescent Moon
 
     return b;
 }
 
-let callback = function () {
+var phases = [
+    "new.png",
+    "wax-crescent.png",
+    "first-quarter.png",
+    "wax-gibbous.png",
+    "full.png",
+    "wan-gibbous.png",
+    "last-quarter.png",
+    "wan-crescent.png"
+];
 
-    let d = new Date();
-    let i = 0;
+let d = new Date();
+let phase = getMoonPhase(d.getFullYear(), d.getMonth() + 1, d.getDate())
+console.log(phase)
 
-    let phase = getMoonPhase(d.getFullYear(), d.getMonth() + 1, d.getDate() + i)
-    i += 4
-
-    console.log(phase)
-
-    if (phase == 0) {
-        var source = "new.png"
-        var text = "Bientôt il y aura une nouvelle lune";
-        favicon(source)
-        setMoon(source, text)
-    }
-
-    if (phase == 1) {
-        var source = "wax-crescent.png";
-        var text = "Ce soir la lune sera croissante";
-        favicon(source)
-        setMoon(source, text)
-    }
-    if (phase == 2) {
-        var source = "first-quarter.png";
-        var text = "Ce soir la lune sera à moitié pleine";
-        favicon(source)
-        setMoon(source, text)
-    }
-    if (phase == 3) {
-        var source = "wax-gibbous.png";
-        var text = "Ce soir la lune sera gibbeuse croissante";
-        favicon(source)
-        setMoon(source, text)
-    }
-    if (phase == 4) {
-        var source = "full.png";
-        var text = "Ce soir la lune sera à rabord";
-        favicon(source)
-        setMoon(source, text)
-    }
-    if (phase == 5) {
-        var source = "wan-gibbous.png";
-        var text = "Ce soir la lune sera gibbeuse décroissante";
-        favicon(source)
-        setMoon(source, text)
-    }
-    if (phase == 6) {
-        var source = "last-quarter.png";
-        var text = "Ce soir la lune sera à moitié vide";
-        favicon(source)
-        setMoon(source, text)
-    }
-    if (phase == 7) {
-        var source = "assets/img/wan-crescent.png";
-        var text = "Ce soir la lune sera décroissante";
-        favicon(source)
-        setMoon(source, text)
-    }
-};
-
-callback();
+favicon(phases[phase])
+setMoon(phases[phase])
 
 
 
-var info = document.querySelector('.info')
+// City + country of the visitor (approximate, from IP).
+// Falls back to the city of the device timezone if the lookup fails.
 
-function showInfo() {
-    if (info.classList.contains("opening")) {
-        info.classList.remove("opening")
-        info.classList.add("closing")
-    }
-    else {
-        info.classList.add("opening")
-        info.classList.remove("closing")
-    }
+function timezoneCity() {
+    var zone = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+    return zone.split("/").pop().replace(/_/g, " ");
 }
 
-document.body.addEventListener("click", showInfo)
+fetch("https://ipapi.co/json/")
+    .then(function (res) { return res.json(); })
+    .then(function (data) {
+        if (!data.city) throw new Error("no city");
+        place.textContent = data.city + ", " + data.country_code;
+    })
+    .catch(function () {
+        place.textContent = timezoneCity();
+    });

@@ -15,7 +15,6 @@
 
     <link href="assets/css/output.css" rel="stylesheet">
     <link href="assets/css/more.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/css/slideFrame.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/flickity.min.css" />
 
     <link id="dynamic-favicon" rel="icon" href="">
@@ -46,9 +45,9 @@
                 <div id="intro-photo"
                      class="rounded-full aspect-square group relative transition-opacity delay-100 duration-1000 opacity-0 h-[30px] w-[30px] cursor-pointer shadow-big"
                      onclick="alert('♻️ Presentation website made by Pablo on November 2025. Hancoded using HTML+CSS+JS and Tailwind CSS. Hosted in Netlify. ♻️')">
-                    <img src="assets/pablo-moreno.webp" alt=""
+                    <img src="assets/ball.webp" alt=""
                          class="absolute transition duration-600 ease-out aspect-square h-[30px] w-[30px] rounded-full group-hover:scale-90">
-                    <img src="assets/ball.webp" id="ball" alt=""
+                    <img src="assets/pablo-moreno.webp" id="ball" alt=""
                          class="rotate-360 absolute translate-x-[120%] group-hover:opacity-100 group-hover:rotate-0 group-hover:translate-none transition opacity-0 duration-600 ease-out aspect-square h-[30px] w-[30px] rounded-full z-0">
                 </div>
 
@@ -56,7 +55,7 @@
                     class="w-full text-black bg-[#B0FD45] px-2 h-[30px] rounded-[6px] flex items-center gap-2 transition-opacity delay-200 duration-1000 opacity-0 z-10 shadow-big">
                     <span class="inline md:hidden">PABLO M.</span><span class="hidden md:inline">PABLO
                         MORENO</span><span
-                          class="italic">Handmade &lt;web&gt; designer
+                          class="italic">Freelancer &lt;web&gt; designer
                     </span>
                 </h3>
 
@@ -68,10 +67,10 @@
                    class="mx-px leading-tight transition-colors duration-200 cursor-pointer text-grey hover:text-[#11C3FF]">
                     TODAY
                 </a> I'm showing my
-                <a href="#last"
+                <a href="#work"
                    class="mx-px leading-tight transition-colors duration-200 cursor-pointer text-grey hover:text-[#E90801]">
-                    LAST PROJECTS
-                </a> and a list of
+                    WORK
+                </a> and a laboratory of
                 <a href="#websites"
                    class="mx-px leading-tight transition-colors duration-200 cursor-pointer text-grey hover:text-[#fad74b]">
                     WEBSITES
@@ -100,8 +99,8 @@
                     1
                 </div>
                 <h3
-                    class="w-full text-[#FFFF2A] bg-[#11C3FF] px-2 h-[30px] rounded-[6px] flex items-center shadow-big">
-                    TODAY
+                    class="w-full text-[#FFFF2A] bg-[#11C3FF] px-2 h-[30px] rounded-[6px] flex items-center shadow-big uppercase">
+                    <span>It’s <span id="amsterdam-time">00:00</span> in Amsterdam and...</span>
                 </h3>
 
             </div>
@@ -132,7 +131,7 @@
                            target="_blank">UTC Compiègne</a>,
                         during which I wrote my thesis
                         <a href="https://pablo.energy/thewebwewant" class="italic hover:text-grey duration-300"
-                           data-slideframe="true" title="The Web We Want" data-slideframe-bound="true">
+                           target="_blank">
                             The Web We Want</a>,
                         reflecting on the notion of the designer-coder as a response to today's increasingly "templated"
                         web landscape.
@@ -159,7 +158,7 @@
 
         </div>
 
-        <div id="last"
+        <div id="work"
              class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-3 md:scroll-mt-[calc(50vh-30px)] mb-20 md:mb-[50vh]">
 
             <div
@@ -170,7 +169,7 @@
                     2</div>
                 <h3
                     class="w-full text-white bg-[#E90801] px-2 h-[30px] rounded-[6px] flex items-center shadow-big">
-                    LAST PROJECTS
+                    WORK
                 </h3>
             </div>
 
@@ -410,8 +409,7 @@
                         people. Thanks to a lightweight spreadsheet-based CMS, students and staff can easily add and
                         update entries, fostering connection and participation within the school community. <a
                            href="https://esadikoi.netlify.app/"
-                           class="text-grey hover:text-black duration-300" data-slideframe="true"
-                           title="éSADIKOI" data-slideframe-bound="true">Visit
+                           class="text-grey hover:text-black duration-300" target="_blank">Visit
                             website</a></p>
 
                 </div>
@@ -482,8 +480,7 @@
                         a balanced contrast. The limited number of pages allows navigation through the colored blocks
                         that frames
                         the website, keeping the experience clean and smart. <a href="https://totelcoscapaque.cat/"
-                           class="text-grey hover:text-black duration-300" data-slideframe="true"
-                           title="Tot el cos cap a què" data-slideframe-bound="true">Visit
+                           class="text-grey hover:text-black duration-300" target="_blank">Visit
                             website</a></p>
 
                 </div>
@@ -501,31 +498,21 @@
 
                 <div
                      class=" text-[#917400] bg-[#fad74b] px-2 h-[30px] rounded-[6px] flex items-center  justify-between w-full shadow-big">
-                    <h3>SITES
+                    <h3>WEBSITES
                     </h3>
 
-                    <div id="nature-filters" class="flex gap-1 md:gap-4 items-center text-sm text-[#917400]">
-                        <label class="flex items-center gap-1 cursor-pointer">
-                            <input type="radio" id="filter-commissioned" value="Commissioned"
-                                   class="peer h-3 w-3 cursor-pointer appearance-none rounded-full border border-[#917400] checked:bg-[#917400] transition-all">
-                            <span class="flex items-start gap-1">Commissioned <span
-                                      class="text-[8px]">9</span></span>
-                        </label>
-
-                        <label class="flex items-center gap-1 cursor-pointer">
-                            <input type="radio" id="filter-personal" value="Personal"
-                                   class="peer h-3 w-3 cursor-pointer appearance-none rounded-full border border-[#917400] checked:bg-[#917400] transition-all">
-                            <span class="flex items-start gap-1">Personal <span
-                                      class="text-[8px]">36</span></span>
-                        </label>
-                    </div>
+                    <label for="nature-slider" class="flex items-center gap-2 text-sm text-[#917400] cursor-pointer">
+                        <span id="nature-label" class="w-fit">Commissioned</span>
+                        <input type="range" id="nature-slider" min="0" max="3" step="1" value="0"
+                               class="nature-slider w-[60px] md:w-[70px]">
+                    </label>
                 </div>
             </div>
 
             <div class="flex flex-col gap-20 col-span-4">
-                <div id="projects-list" class="font-semibold flex flex-col-reverse">
+                <div id="projects-grid" class="font-semibold grid grid-cols-1 md:grid-cols-2 gap-x-3 gap-y-1">
                 </div>
-
+                <p id="projects-empty" class="text-grey hidden">Nothing here yet.</p>
             </div>
         </div>
 
@@ -917,7 +904,6 @@
 
 
     <script src="assets/js/index.js"></script>
-    <script src="assets/js/slideFrame.min.js"></script>
     <script src="assets/js/flickity.pkgd.min.js"></script>
 
 
