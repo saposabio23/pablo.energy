@@ -148,7 +148,11 @@
     -webkit-appearance: none;
     appearance: none;
     height: 2px;
-    background: #917400;
+    /* overhang the tick row so the 12px thumb centers on the 2px end ticks */
+    width: calc(100% + 10px);
+    margin-inline: -5px;
+    /* draw the line only between the thumb's end positions (tick to tick) */
+    background: linear-gradient(#917400, #917400) center / calc(100% - 12px) 100% no-repeat;
     border-radius: 2px;
     cursor: pointer;
 }
