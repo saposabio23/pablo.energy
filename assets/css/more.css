@@ -169,3 +169,11 @@
     border-radius: 50%;
     background: #917400;
 }
+
+
+/* HAMMER */
+#hammer {
+    width: 80px;
+    height: 80px;
+    opacity: 0.4;
+}
