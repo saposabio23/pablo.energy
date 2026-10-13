@@ -174,9 +174,8 @@ fetch("https://opensheet.elk.sh/" + ADDRESS)
             // Skip empty rows (no Title)
             if (!row.Title || !row.Title.trim()) return;
 
-            // Skip rows marked as inactive (red dot)
-            const state = (row.State || "").trim();
-            if (state === "\uD83D\uDD34") return;
+            // Skip rows marked as hidden
+            if ((row.Nature || "").trim().toLowerCase() === "hidden") return;
 
             const site = {
                 title: row.Title.trim(),
@@ -257,18 +256,19 @@ function createProjectRow(site) {
 }
 
 // WEBSITES FILTER (slider)
-const NATURES = ["Commissioned", "Personal", "Friends", "Experimental"];
+// Slider levels, matching the sheet's Nature column ("hidden" rows never show)
+const CATEGORIES = ["for people", "for friends", "for me"];
 const natureSlider = document.getElementById("nature-slider");
 const natureLabel = document.getElementById("nature-label");
 
 function applyNatureFilter() {
     if (!natureSlider) return;
-    const nature = NATURES[natureSlider.value];
-    if (natureLabel) natureLabel.textContent = nature;
+    const category = CATEGORIES[natureSlider.value];
+    if (natureLabel) natureLabel.textContent = category;
 
     let shown = 0;
     document.querySelectorAll("#projects-grid [data-nature]").forEach(card => {
-        const match = card.dataset.nature === nature.toLowerCase();
+        const match = card.dataset.nature === category;
         card.classList.toggle("hidden", !match);
         if (match) shown++;
     });
