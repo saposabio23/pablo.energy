@@ -43,32 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// GRADIENT TOP APPEARS
-const fleche = document.getElementById("fleche");
-
-window.addEventListener("scroll", () => {
-    const scrollPos = window.scrollY;
-    const viewportHeight = window.innerHeight;
-    const fullHeight = document.body.offsetHeight;
-
-    const atBottom = scrollPos + viewportHeight >= fullHeight - 10;
-
-    if (atBottom) {
-        // Mostrar flecha, apuntar arriba
-        fleche.style.opacity = "1";
-        fleche.href = "#top";
-        fleche.textContent = "↑";
-        fleche.style.pointerEvents = "auto"
-    } else if (scrollPos > 100) {
-        fleche.style.opacity = "0";
-        fleche.style.pointerEvents = "none"; // para que no se pueda clicar cuando está oculta
-    } else {
-        fleche.style.opacity = "1";
-        fleche.style.pointerEvents = "auto";
-        fleche.href = "#today";
-        fleche.textContent = "↓";
-    }
-});
 // VIDEO PABLO
 // const vid = document.getElementById("pablo-face");
 
@@ -162,6 +136,9 @@ document.addEventListener("DOMContentLoaded", () => {
 // WEBSITES LIST
 var ADDRESS = "1UGVXTssu8J9mBbOyPSX0qkOo13xggy_MgboicC4UlTU/1";
 
+// Groups, in page order, matching the sheet's Nature column (other values, like "hidden", never show)
+const CATEGORIES = ["for people", "for friends", "for me"];
+
 fetch("https://opensheet.elk.sh/" + ADDRESS)
     .then(res => res.json())
     .then(data => {
@@ -170,157 +147,175 @@ fetch("https://opensheet.elk.sh/" + ADDRESS)
 
         // Newest year first; within a year, rows lower in the sheet first
         const year = row => parseInt(row.Date, 10) || 0;
+        const sites = [];
         data.slice().reverse().sort((a, b) => year(b) - year(a)).forEach(row => {
             // Skip empty rows (no Title)
             if (!row.Title || !row.Title.trim()) return;
 
-            // Skip rows marked as hidden
-            if ((row.Nature || "").trim().toLowerCase() === "hidden") return;
-
-            const site = {
+            sites.push({
                 title: row.Title.trim(),
                 description: (row.Description || "").trim(),
                 year: (row.Date || "").trim(),
                 url: (row.URL || "#").trim() || "#",
                 image: previewUrl(row.Preview),
-                nature: (row.Nature || "").trim()
-            };
-
-            grid.appendChild(createProjectRow(site));
+                nature: (row.Nature || "").trim().toLowerCase()
+            });
         });
 
-        applyNatureFilter();
+        CATEGORIES.forEach(category => {
+            const group = sites.filter(site => site.nature === category);
+            if (group.length) grid.appendChild(createProjectGroup(category, group));
+        });
+
+        document.getElementById("projects-empty")?.classList.toggle("hidden", grid.children.length > 0);
     })
     .catch(err => console.error("Error fetching sheet:", err));
 
-// Turn a Google Drive share link from the sheet's Preview column into an image URL
+// Category heading, then its websites as a list
+function createProjectGroup(category, sites) {
+    const group = document.createElement("div");
+    group.className = "flex flex-col gap-1";
+
+    const heading = document.createElement("h4");
+    heading.textContent = category;
+    heading.className = "text-sm text-grey uppercase mb-1";
+    group.appendChild(heading);
+
+    sites.forEach(site => group.appendChild(createProjectRow(site)));
+    return group;
+}
+
+// Turn a Google Drive share link from the sheet's Preview column into a small thumbnail URL
 function previewUrl(value) {
     const link = (value || "").trim();
     const id = link.match(/\/d\/([\w-]+)/)?.[1] || link.match(/[?&]id=([\w-]+)/)?.[1];
-    return id ? "https://drive.google.com/thumbnail?id=" + id + "&sz=w400" : link;
+    return id ? "https://drive.google.com/thumbnail?id=" + id + "&sz=w100" : link;
 }
 
-// Preview (black until a screenshot is set in the sheet's Preview column)
-function createPreview(site, className) {
-    const preview = document.createElement("div");
-    preview.className =
-        "aspect-[4/3] bg-black rounded-lg overflow-hidden transition duration-300 group-hover:opacity-80 " + className;
+// Tiny preview next to the title (black until a screenshot is set in the sheet's Preview column)
+function createPreview(site) {
+    const base = "h-[20px] aspect-[16/10] shrink-0 self-center rounded-[3px] transition duration-300 group-hover:opacity-60";
 
-    if (site.image) {
-        const img = document.createElement("img");
-        img.src = site.image;
-        img.alt = site.title;
-        img.loading = "lazy";
-        img.className = "w-full h-full object-cover";
-        preview.appendChild(img);
+    if (!site.image) {
+        const placeholder = document.createElement("span");
+        placeholder.className = "bg-black " + base;
+        return placeholder;
     }
 
-    return preview;
+    const img = document.createElement("img");
+    img.src = site.image;
+    img.alt = "";
+    img.loading = "lazy";
+    img.className = "object-cover " + base;
+    return img;
 }
 
+// Row: preview, title, description (truncates), year
 function createProjectRow(site) {
-    // Row (preview on the left, text on the right)
     const row = document.createElement("a");
     row.href = site.url;
     row.target = "_blank";
+    row.rel = "noopener";
     row.setAttribute('title', site.title);
-    row.dataset.nature = site.nature.toLowerCase();
-    row.className =
-        "flex gap-3 items-center p-2 leading-tight transition-all duration-200 hover:bg-zinc-200 rounded-[8px] group";
+    row.className = "flex items-baseline gap-3 leading-tight hover:text-grey transition duration-300 group";
 
-    // Title + description
-    const text = document.createElement("div");
-    text.className = "flex flex-col gap-1 min-w-0";
+    row.appendChild(createPreview(site));
 
-    const titleEl = document.createElement("h4");
+    const titleEl = document.createElement("span");
     titleEl.textContent = site.title;
-    text.appendChild(titleEl);
+    titleEl.className = "shrink-0 text-lg";
+    row.appendChild(titleEl);
 
-    if (site.description) {
-        const descEl = document.createElement("p");
-        descEl.textContent = site.description;
-        descEl.className = "text-grey";
-        text.appendChild(descEl);
-    }
+    const descEl = document.createElement("span");
+    descEl.textContent = site.description;
+    descEl.className = "text-grey truncate min-w-0 flex-1";
+    row.appendChild(descEl);
 
     if (site.year) {
         const yearEl = document.createElement("span");
         yearEl.textContent = site.year;
-        yearEl.className = "text-grey text-sm";
-        text.appendChild(yearEl);
+        yearEl.className = "text-grey text-sm shrink-0";
+        row.appendChild(yearEl);
     }
 
-    row.appendChild(createPreview(site, "h-[80px] shrink-0"));
-    row.appendChild(text);
     return row;
 }
 
-// WEBSITES FILTER (slider)
-// Slider levels, matching the sheet's Nature column ("hidden" rows never show)
-const CATEGORIES = ["for people", "for friends", "for me"];
-const natureSlider = document.getElementById("nature-slider");
-const natureLabel = document.getElementById("nature-label");
 
-function applyNatureFilter() {
-    if (!natureSlider) return;
-    const category = CATEGORIES[natureSlider.value];
-    if (natureLabel) natureLabel.textContent = category;
+// SECTION INDEX (desktop)
+// The section labels work as an index of the page: they all stay stacked at the top left,
+// and only the current section keeps its color (the others turn white).
+// Clicking a label scrolls to its section.
+const desktopQuery = window.matchMedia("(min-width: 768px)");
+const LABEL_GAP = 8;
+const LABEL_EDGE = 12;
+let labelFrame = 0;
 
-    let shown = 0;
-    document.querySelectorAll("#projects-grid [data-nature]").forEach(card => {
-        const match = card.dataset.nature === category;
-        card.classList.toggle("hidden", !match);
-        if (match) shown++;
+const sectionLabels = [...document.querySelectorAll("[data-section-label]")].map(label => {
+    // Invisible copy that keeps the label's place in the grid, to read its left edge and width
+    const slot = document.createElement("div");
+    slot.className = label.className;
+    slot.setAttribute("aria-hidden", "true");
+    slot.style.visibility = "hidden";
+    slot.style.display = "none";
+    label.before(slot);
+
+    const section = label.closest("[id]");
+
+    label.classList.add("cursor-pointer");
+    label.addEventListener("click", e => {
+        // The photo inside the intro label keeps its own behaviour
+        if (e.target.closest("#intro-photo")) return;
+        section?.scrollIntoView({ behavior: "smooth" });
     });
 
-    document.getElementById("projects-empty")?.classList.toggle("hidden", shown > 0);
-}
-
-natureSlider?.addEventListener("input", applyNatureFilter);
-
-
-// IMAGES ON THE SREUSME
-function setupResumePopup() {
-    const resume = document.getElementById('resume');
-    const popup = document.getElementById('resume-popup');
-    const popupDiv = document.querySelector('#resume-popup>div');
-    const imgEl = popup?.querySelector('img');
-
-    if (!resume || !popup || !imgEl) return;
-
-    const defaultImage = 'pablo-moreno.jpg';
-    let hideTimer;
-
-    resume.querySelectorAll('.listStack').forEach(item => {
-        item.addEventListener('click', () => {
-            const src = item.dataset.popupImage || defaultImage;
-            if (!src) return;
-
-            // random entre -3 y +3 grados
-            const randomDeg = (Math.random() * 6) - 3;
-            popupDiv.style.transform = `rotate(${randomDeg}deg)`;
-
-            imgEl.src = 'media/resume/' + src;
-            popup.classList.add('show');
-            popup.setAttribute('aria-hidden', 'false');
-
-            clearTimeout(hideTimer);
-            hideTimer = setTimeout(() => {
-                popup.classList.remove('show');
-                popup.setAttribute('aria-hidden', 'true');
-            }, 5000);
-        });
-    });
-}
-
-function removeResumePopup() {
-    document.getElementById('resume-popup').classList.remove('show');
-    document.getElementById('resume-popup').setAttribute('aria-hidden', 'true');
-}
-
-window.addEventListener('load', () => {
-    setupResumePopup();
+    return { label, slot, section };
 });
+
+function placeSectionLabels() {
+    labelFrame = 0;
+
+    // Current section: the last one whose top has passed the upper third of the screen,
+    // or the last section once the page is scrolled to the bottom
+    const line = window.innerHeight / 3;
+    const atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 10;
+    let current = 0;
+    sectionLabels.forEach(({ section }, i) => {
+        if (section && section.getBoundingClientRect().top <= line) current = i;
+    });
+    if (atBottom) current = sectionLabels.length - 1;
+
+    let y = LABEL_EDGE;
+    sectionLabels.forEach(({ label, slot }, i) => {
+        if (!desktopQuery.matches) {
+            slot.style.display = "none";
+            label.style.cssText = "";
+            label.classList.remove("is-idle");
+            return;
+        }
+
+        slot.style.display = "";
+        slot.style.height = label.offsetHeight + "px";
+        const box = slot.getBoundingClientRect();
+
+        label.style.cssText =
+            `position: fixed; top: ${y}px; left: ${box.left}px; width: ${box.width}px; z-index: 40;`;
+        // Shared with the corner video, which grows to this width on hover
+        if (i === 0) document.documentElement.style.setProperty("--index-width", box.width + "px");
+        label.classList.toggle("is-idle", i !== current);
+        y += box.height + LABEL_GAP;
+    });
+}
+
+function requestLabelPlacement() {
+    if (!labelFrame) labelFrame = requestAnimationFrame(placeSectionLabels);
+}
+
+window.addEventListener("scroll", requestLabelPlacement, { passive: true });
+window.addEventListener("resize", requestLabelPlacement);
+desktopQuery.addEventListener("change", requestLabelPlacement);
+new ResizeObserver(requestLabelPlacement).observe(document.body);
+placeSectionLabels();
 
 
 // AMSTERDAM TIME

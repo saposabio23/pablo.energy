@@ -1,0 +1,1892 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Web We Want - MÉMOIRE DNSEP</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/mobile.css">
+
+    <link id="favicon" rel="shortcut icon" type="image/png" href="assets/icons/icon-green.ico" />
+
+</head>
+
+<body>
+
+    <!-- <div class="scrollbar">
+        <div class="progressbar"></div>
+    </div> -->
+
+    <div class="start">
+        <div class="titleStart">
+            <div>
+                <span class="supertitleback">&lt;h1&gt;THE WEB WE WANT&lt;/h1&gt;</span>
+                <textarea class="supertitlefront pointer"></textarea>
+            </div>
+            <p>L’importance d’imaginer et de concevoir des espaces web<br>fait-main pour enrichir nos vies numériques
+            </p>
+            <span id="infoStart">Veuillez recopier le titre pour commencer. Sinon, <span onclick="lancerTout()"
+                      class="pointer">passez-le</span></span>
+
+            <p class="no-indent">Pablo MORENO &nbsp;&nbsp;→&nbsp;&nbsp; Mémoire DNSEP &nbsp;&nbsp;→&nbsp;&nbsp; ESAD
+                Amiens 2023/2024</p>
+
+
+        </div>
+
+    </div>
+
+    <div class="tout">
+
+        <div class="header">
+            <div id="sommaireButton" class="sideLeft pointer"><span class="headerTitles">🗂 <span
+                          class="titleHide">Sommaire</span></span>
+            </div>
+            <div id="notesButton" class="sideLeft pointer"><span class="headerTitles">📝 <span class="titleHide">Prises
+                        de
+                        notes</span> <span class="numbernotes">(0)</span></span></div>
+            <div id="optionsButton" class="sideLeft pointer"><span class="headerTitles">⚙️ <span
+                          class="titleHide">Options</span></span>
+            </div>
+        </div>
+
+        <div class="bookmarksOff">
+            <div id="bookmarkPartieIOff" class="bookmark pointer"></div>
+            <div id="bookmarkPartieIIOff" class="bookmark pointer"></div>
+            <div id="bookmarkPartieIIIOff" class="bookmark pointer"></div>
+            <div id="bookmarkPartieFinOff" class="bookmark pointer"></div>
+        </div>
+
+        <div class="book" data-reading="partieIntro">
+            <div class="bookFolded foldleft"></div>
+            <div class="bookFolded foldright"></div>
+
+            <main class="bookLeft">
+
+                <div class="panel">
+                    <div class="sommairePage">
+                        <h2>🗂 Sommaire</h2>
+
+                        <p>Tout le contenu du mémoire sous forme d'index. Clickez sur "→" pour déployer les
+                            sous-parties.</p>
+
+                        <div class="sommairePartieIntro" onclick="lecturePartieIntro()">
+                            <h4><span>◎</span> <a href="#partie-Intro">Introduction</a></h4>
+                        </div>
+
+                        <div class="sommairePartieI" onclick="lecturePartieI()">
+                            <h4><span>❶</span> <a href="#partie-I">Des nouveaux mondes à bâtir</a>
+                            </h4>
+                            <details>
+                                <summary><a>a. La naissance d'Internet</a>
+                                </summary>
+                                <ul>
+                                    <li><a href="#I-reseaux">Tout commence par les réseaux</a></li>
+                                    <li><a href="#I-utilisateurices">Qui les utilise?</a></li>
+                                    <li><a href="#I-service">À quoi servent-ils à ce moment là?</a>
+                                    </li>
+                                    <li><a href="#I-interconnexion">Interconnexion des réseaux:
+                                            Internet</a></li>
+                                    <li><a href="#I-croissance">Croissance de l'Internet toujours
+                                            très
+                                            dirigée</a></li>
+                                    <li><a href="#I-hippies">La culture hippie s'empare des
+                                            ordinateurs et réseaux</a></li>
+                                </ul>
+                            </details>
+
+                            <details>
+                                <summary><a>b. Imaginer cet espace vierge</a>
+                                </summary>
+                                <ul>
+                                    <li><a href="#I-visions">Quels visions pour les réseaux et
+                                            Internet?</a></li>
+                                    <li><a href="#I-html">Un nouveau langage au sein d'Internet:
+                                            HTML</a></li>
+                                    <li><a href="#I-ascendante">Innovation ascendante</a></li>
+                                    <li><a href="#I-conception">Conception de la part des
+                                            utilisateurs</a></li>
+                                    <li><a href="#I-territoire">Territoire foisonnant: désir de créer
+                                            et de partager</a></li>
+                                </ul>
+                            </details>
+                        </div>
+
+                        <div class="sommairePartieII" onclick="lecturePartieII()">
+                            <h4><span>❷</span> <a href="#partie-II">Au web de nos jours</a></h4>
+                            <details>
+                                <summary><a>a. Le web devient adulte</a></summary>
+                                <ul>
+                                    <li><a href="#II-evolution">Comment a t-il évolué?</a></li>
+                                    <li><a href="#II-marchand">Un web marchand</a></li>
+                                    <li><a href="#II-observation">De la participation à l'observation</a></li>
+                                </ul>
+                            </details>
+                            <details>
+                                <summary><a>b. Un web dicté par l'outil</a></summary>
+                                <ul>
+                                    <li><a href="#II-virtuel">Quand le monde virtuel devient tout notre monde</a></li>
+                                    <li><a href="#II-architectes">Mais bâtit par les mêmes architectes</a></li>
+                                    <li><a href="#II-defaut">Le design “par défaut”</a></li>
+                                    <li><a href="#II-utopies">Où se trouvent les utopies?</a></li>
+                                </ul>
+                            </details>
+                        </div>
+
+                        <div class="sommairePartieIII" onclick="lecturePartieIII()">
+                            <h4><span>❸</span> <a href="#partie-III">Ré-occuper ces espaces</a>
+                            </h4>
+                            <details>
+                                <summary><a>a. Imaginer un autre web</a></summary>
+                                <ul>
+                                    <li><a href="#III-handmade">Handmade web</a></li>
+                                    <li><a href="#III-sain">Un web plus sain</a></li>
+                                    <li><a href="#III-individus">Bricolé et pensé pour les individus</a></li>
+                                </ul>
+                            </details>
+                        </div>
+
+                        <div class="sommairePartieFin" onclick="lecturePartieFin()">
+                            <h4><span>⦿</span> <a href="#partie-Fin">Conclusion</a></h4>
+                            <details>
+                                <summary><a href="#fin-references">Références</a></summary>
+                            </details>
+                            <details>
+                                <summary><a href="#fin-colophon">Colophon</a></summary>
+                            </details>
+                        </div>
+
+                    </div>
+
+                    <div class="notesPage">
+                        <h2>📝 Prises de notes <span class="numbernotes">(0)</span></h2>
+
+                        <p>Sélectionnez du texte et appuyez
+                            sur
+                            les touches [Alt + N] pour le prendre en note! Vous pouvez
+                            <a
+                               id="downloadTxt">télécharger une copie</a> de ces notes pour les imprimer ou les
+                            sauvegarder au format PDF.
+                        </p>
+
+                        <div class="prisedenotes"></div>
+
+                    </div>
+
+                    <div class="optionsPage">
+                        <h2>⚙️ Options</h2>
+
+                        <p>L'interface et fonctionnalités de ce site peuvent être modifiés subtilement pour répondre aux
+                            besoin des
+                            différentes lectrices et lecteurs!</p>
+
+                        <div>
+                            <button onclick="decreaseFontSize()" class="pointer">
+                                <img src="assets/icons/text-reduce.svg">Réduire taille du
+                                texte</button>
+                            <button onclick="resetFontSize()" class="pointer"><img
+                                     src="assets/icons/text-default.svg">Taille du texte par
+                                défaut</button>
+                            <button onclick="increaseFontSize()" class="pointer"><img
+                                     src="assets/icons/text-big.svg">Agrandir la taille du
+                                texte</button>
+                            <button class="fullscreen pointer"><img src="assets/icons/fs.svg">Plein écran</button>
+                            <button class="switcher pointer" onclick="switchTheme()"><img
+                                     src="assets/icons/night.svg">Changer au thème sombre</button>
+                            <button id="reload"><img src="assets/icons/reload.svg">Recharger la page</button>
+                            <button id="tooltipOpt"><img src="assets/icons/tooltip.svg">Cacher l'aide au notes</button>
+                            <a href="THE-WEB-WE-WANT.zip" download><button id="down-pdf"><img
+                                         src="assets/icons/offline.svg">Version hors-ligne</button></a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="titlesSticky" id="ciblePartieIntro">
+                    <h1><span>○</span> Introduction</h1>
+                </div>
+
+                <div class="titlesSticky" id="ciblePartieI">
+                    <h1><span>❶</span> Des nouveaux mondes à bâtir</h1>
+                    <h2 id="I-naissance-cible">→ Première partie: Naissance d'Internet</h2>
+                    <h2 id="I-vierge-cible">→ Deuxième partie: Imaginer cet espace vierge</h2>
+                </div>
+
+                <div class="titlesSticky" id="ciblePartieII">
+                    <h1><span>❷</span> Au web de nos jours</h1>
+                    <h2 id="II-adulte-cible">→ Première partie: Le web devient adulte</h2>
+                    <h2 id="II-machine-cible">→ Deuxième partie: Un web dicté par l'outil</h2>
+                </div>
+
+                <div class="titlesSticky" id="ciblePartieIII">
+                    <h1><span>❸</span> Réoccuper ces espaces autrement</h1>
+                    <h2 id="III-autre-cible">→ Unique partie: Imaginer un autre web</h2>
+                </div>
+
+                <div class="titlesSticky" id="ciblePartieFin">
+                    <h1 id="cibleFinChange"><span>●</span> Conclusion</h1>
+                </div>
+
+                <div id="notesPartieIntro">
+                    <div class="footnote" data-footnote="99">
+                        <img src="images/server-cern.jpg">
+                        <span><sup>Fig. 1</sup> Visitant le célèbre premier server web, mis en place au CERN en
+                            1994. Source: personnelle</span>
+                    </div>
+                </div>
+
+                <div id="notesPartieI" class="hidden">
+                    <div class="footnote" data-footnote="1">
+                        <img src="images/arpanet1974.png">
+                        <span><sup>Fig. 2</sup> Sites des États-Unis reliés à ARPANet en 1974. Source: <a
+                               target="_blank"
+                               href="https://fr.wikipedia.org/wiki/ARPANET">www.fr.wikipedia.org/wiki/ARPANET</a></span>
+                    </div>
+
+                    <div class="footnote" data-footnote="2">
+                        <span><sup>1</sup> Lawrence Lessig, <b>«L'Avenir des idées»</b>, Presses universitaires de Lyon,
+                            2005. Consultable ici: <a target="_blank"
+                               href="https://presses.univ-lyon2.fr/sdx/livres/pul/2005/avenir-idee">www.presses.univ-lyon2.fr/sdx/livres/pul/2005/avenir-idee</a></span>
+                    </div>
+
+                    <div class="footnote" data-footnote="3">
+                        <span><sup>2</sup> Dominique Cardon, <b>«Culture Numérique»</b> Paris: Presses de Sciences Po,
+                            2019. Page 50</span>
+                    </div>
+
+                    <div class="footnote" data-footnote="4">
+                        <span><sup>3</sup> Dominique Cardon, <b>«Culture Numérique»</b> Paris: Presses de Sciences Po,
+                            2019. Page 61</span>
+                    </div>
+
+                    <div class="footnote" data-footnote="5">
+                        <span><sup>4</sup> Dominique Cardon, <b>«La Démocratie Internet. Promesses et Limites»</b>
+                            Paris: Seuil, 2010. Page 40</span>
+                    </div>
+
+                    <div class="footnote" data-footnote="6">
+                        <img src="images/proposition-cern.png">
+                        <span><sup>Fig. 3</sup> Proposition de Tim Berners-Lee du système Hypertexte pour le
+                            CERN. Source: <a target="_blank"
+                               href="https://en.wikipedia.org/wiki/History_of_the_World_Wide_Web">www.en.wikipedia.org/wiki/History_of_the_World_Wide_Web</a></span>
+                    </div>
+
+                    <div class="footnote" data-footnote="7">
+                        <span><sup>5</sup> Tim Berners-Lee, <b>«Information Management: A Proposal»</b>, W3 Archive,
+                            1990. Consultable ici: <a target="_blank"
+                               href="https://www.w3.org/History/1989/proposal.html">www.w3.org/History/1989/proposal.html</a></a></span>
+                    </div>
+
+                    <div class="footnote" data-footnote="8">
+                        <span><sup>6</sup> Dominique Cardon, <b>«Culture Numérique»</b> Paris: Presses de Sciences Po,
+                            2019. Page 134</span>
+                    </div>
+
+                    <div class="footnote" data-footnote="9">
+                        <img src="images/html-chimero.png">
+                        <span><sup>Fig. 4</sup> Code basique qui suffit à créer un site web. Source: <a
+                               target="_blank"
+                               href="https://frankchimero.com/blog/2018/everything-easy/">www.frankchimero.com/blog/2018/everything-easy/</a></span>
+                    </div>
+
+                    <div class="footnote" data-footnote="10">
+                        <span><sup>7</sup> Dominique Cardon, <b>«Culture Numérique»</b> Paris: Presses de Sciences Po,
+                            2019. Pages 101-110</span>
+                    </div>
+
+                    <div class="footnote" data-footnote="11">
+                        <img src="images/fogcam.png" alt="">
+                        <span><sup>Fig. 5</sup> Site web du San Francisco FogCam. Source: <a target="_blank"
+                               href="https://fogcam.org">www.fogcam.org</a></span>
+                    </div>
+
+                    <div class="footnote" data-footnote="12">
+                        <img src="images/imbd.png" alt="">
+                        <span><sup>Fig. 6</sup> Ancienne interface du site IMBD. Source: <a target="_blank"
+                               href="https://www.imdb.com">www.imdb.com</a></span>
+                    </div>
+
+
+                    <div class="footnote" data-footnote="13">
+                        <img src="images/wikipedia.png" alt="">
+                        <span><sup>Fig. 7</sup> Une des premières interfaces de Wikipedia. Source: <a
+                               target="_blank" href=" https://wikipedia.org">www.wikipedia.org</a></span>
+                    </div>
+
+                    <div class="footnote" data-footnote="14">
+                        <img src="images/yahoo.png" alt="">
+                        <span><sup>Fig. 8</sup> Prémices de Yahoo!. Source: <a target="_blank"
+                               href="https://yahoo.com">www.yahoo.com</a></span>
+                    </div>
+
+                    <div class="footnote" data-footnote="15">
+                        <img src="images/quora-ray-basso.png" alt="">
+                        <span><sup>Fig. 9</sup> Capture d'écran de la réponse de l'utilisateur Ray Basso postée sur
+                            Quora. Source: <a target="_blank"
+                               href="https://www.quora.com/What-was-the-first-website-you-built-and-in-what-year-did-you-build-it">www.quora.com/What-was-the-first-website-you-built-and-in-what-year-did-you-build-it</a></span>
+                    </div>
+
+                    <div class="footnote" data-footnote="16">
+                        <span><sup>8</sup> Bernard Stiegler (dir.), <b>«La toile que nous voulons»</b> FYP Éditions,
+                            2017.</span>
+                    </div>
+
+                    <div class="footnote" data-footnote="17">
+                        <span><sup>9</sup> Bernard Stiegler (dir.), <b>«La toile que nous voulons»</b> FYP Éditions,
+                            2017. Page 43</span>
+                    </div>
+
+                    <div class="footnote" data-footnote="18">
+                        <span><sup>10</sup> <b>Internet Live Stats</b> Source: <a target="_blank"
+                               href="https://www.internetlivestats.com/total-number-of-websites">www.internetlivestats.com/total-number-of-websites</a></span>
+                    </div>
+
+                    <div class="footnote" data-footnote="19">
+                        <span><sup>11</sup> <b>Stackoverflow: 2023 Developer Survey</b> Source: <a target="_blank"
+                               href="https://survey.stackoverflow.co/2023">www.survey.stackoverflow.co/2023</a></span>
+                    </div>
+                </div>
+
+                <div id="notesPartieII" class="hidden">
+
+                    <div class="footnote" data-footnote="20">
+                        <img src="images/list.png" alt="">
+                        <span><sup>Fig. 10</sup> Liste de la transformation des services web, publié en 2005 par Tim
+                            O'Reilly
+                            sur son site. Source: <a target="_blank"
+                               href="https://www.oreilly.com/pub/a/web2/archive/what-is-web-20.html">www.oreilly.com/pub/a/web2/archive/what-is-web-20.html</a></span>
+                    </div>
+                    <div class="footnote" data-footnote="21">
+                        <img src="images/blogger.png" alt="">
+                        <span><sup>Fig. 11</sup> Écran de personnalisation d'un blog sur Blogger. Source: <a
+                               target="_blank"
+                               href="https://blogger.googleblog.com/2010/06/blogger-template-designer-now-available.html">www.blogger.googleblog.com/2010/06/blogger-template-designer-now-available.html</a></span>
+                    </div>
+
+                    <div class="footnote" data-footnote="22">
+                        <span><sup>12</sup> Frank Chimero, <b>«The Good Room»</b>, Web personnelle, 15 février
+                            2018. Source: <a target="_blank"
+                               href="https://frankchimero.com/blog/2018/the-good-room">www.frankchimero.com/blog/2018/the-good-room</a></span>
+                    </div>
+
+                    <div class="footnote" data-footnote="23">
+                        <span><sup>13</sup> Colleen McClain, Emily A. Vogels, Andrew Perrin, Stella Sechopoulos et Lee
+                            Rainie, <b>«The Internet and the Pandemic»</b>, Pew Research Center, 1<sup>er</sup>
+                            septembre 2021. Source: <a target="_blank"
+                               href="https://www.pewresearch.org/internet/2021/09/01/the-internet-and-the-pandemic/">www.pewresearch.org/internet/2021/09/01/the-internet-and-the-pandemic/</a></span>
+                    </div>
+                    <div class="footnote" data-footnote="24">
+                        <span><sup>14</sup> Aigars Silkalns, <b>«WordPress Statistics: How Many Websites Use WordPress
+                                in
+                                2023?»</b>, Pew Research Center, 2 novembre 2023. Source: <a target="_blank"
+                               href="https://colorlib.com/wp/wordpress-statistics/">www.colorlib.com/wp/wordpress-statistics/</a></span>
+                    </div>
+
+                    <div class="footnote" data-footnote="25">
+                        <img src="images/unique-web.png" alt="">
+                        <span><sup>Fig. 12</sup> Exemple de sites web aux éléments plus que ressemblants. Source: <a
+                               target="_blank"
+                               href="https://99designs.com/blog/web-digital/unique-web-design-best-practices">www.99designs.com/blog/web-digital/unique-web-design-best-practices</a></span>
+                    </div>
+
+                    <div class="footnote" data-footnote="26">
+                        <span><sup>Fig. 13</sup> Sam Goree, <b>«Yes, websites really are starting to look more
+                                similar»</b>, The
+                            Conversation, 6 mai 2020. Source: <a target="_blank"
+                               href="https://theconversation.com/yes-websites-really-are-starting-to-look-more-similar-136484">www.theconversation.com/yes-websites-really-are-starting-to-look-more-similar-136484</a></span>
+                    </div>
+
+                    <div class="footnote" data-footnote="27">
+                        <span><sup>15</sup>Solana Larsen (editor), <b>«How healthy is the Internet?»</b>, Mozilla
+                            Foundation,
+                            2018. Source: <a target="_blank"
+                               href="https://internethealthreport.org/2018">www.internethealthreport.org/2018</a></span>
+                    </div>
+
+                    <div class="footnote" data-footnote="28">
+                        <img src="images/experience-the-web.png" alt="">
+                        <span><sup>Fig. 14</sup> Site web <b>«How I Experience The Web Today»</b>.
+                            Source: <a target="_blank"
+                               href="https://how-i-experience-web-today.com/">www.how-i-experience-web-today.com/</a></span>
+                    </div>
+
+                    <div class="footnote" data-footnote="29">
+                        <span><sup>16</sup>Définition du terme <b>"par défaut"</b> — Wiktionnaire, le dictionnaire
+                            libre. Source: <a target="_blank"
+                               href="https://fr.wiktionary.org/wiki/par_d%C3%A9faut">www.fr.wiktionary.org/wiki/par_d%C3%A9faut</a></span>
+                    </div>
+
+                    <div class="footnote" data-footnote="30">
+                        <span><sup>17</sup>Loup Cellard, Guillaume Heuguet, <b>«Tèque 1»</b> Revue Tèque, 2022</span>
+                    </div>
+
+                    <div class="footnote" data-footnote="31">
+                        <span><sup>18</sup>Ibid.</span>
+                    </div>
+
+                    <div class="footnote" data-footnote="32">
+                        <span><sup>19</sup>Olia Lialina, <b>«Turing Complete User: Resisting Alienation in Human
+                                Computer
+                                Interaction»</b> Heidelberg: arthistoricum.net-ART-Books, 2021. Source: <a
+                               target="_blank"
+                               href="https://books.ub.uni-heidelberg.de//arthistoricum/catalog/book/972">www.qz.com/333313/milliions-of-facebook-users-have-no-idea-theyre-using-the-internet</a></span>
+                    </div>
+
+                    <div class="footnote" data-footnote="33">
+                        <span><sup>20</sup>Leo Mirani, <b>«Millions of Facebook users have no idea they're using the
+                                internet»</b>, Quartz, 9 février 2015. Source: <a target="_blank"
+                               href="https://qz.com/333313/milliions-of-facebook-users-have-no-idea-theyre-using-the-internet">www.qz.com/333313/milliions-of-facebook-users-have-no-idea-theyre-using-the-internet</a></span>
+                    </div>
+                </div>
+
+                <div id="notesPartieIII" class="hidden">
+
+                    <div class="footnote" data-footnote="34">
+                        <span><sup>21</sup>J. R. Carpenter, <b>«A Handmade Web»</b>, Blog personnel, 1<sup>er</sup>
+                            décembre 2015. Source: <a target="_blank"
+                               href="https://luckysoap.com/statements/handmadeweb.html">www.luckysoap.com/statements/handmadeweb.html</a></span>
+                    </div>
+
+
+                    <div class="footnote" data-footnote="35">
+                        <span><sup>22</sup>Olia Lialina, <b>«A Vernacular Web»</b> Web personnelle, janvier
+                            2005. Source: <a target="_blank"
+                               href="https://art.teleportacia.org/observation/vernacular">www.art.teleportacia.org/observation/vernacular</a></span>
+                    </div>
+
+                    <div class="footnote" data-footnote="36">
+                        <img src="images/allmyfriendsatonce.png" alt="">
+                        <span><sup>Fig. 15</sup> Laurel Schwulst, <b>«When all of my friends are on at once»</b> (<a
+                               target="_blank"
+                               href="https://allmyfriendsatonce.com">www.allmyfriendsatonce.com</a>)</span>
+                    </div>
+
+                    <div class="footnote" data-footnote="37">
+                        <img src="images/gossips-cafe.png" alt="">
+                        <span><sup>Fig. 16</sup> Elliott Cost, <b>«Gossips Cafe»</b> (<a
+                               target="_blank" href="https://gossips.cafe/">www.gossips.cafe/</a>)</span>
+                    </div>
+
+                    <div class="footnote" data-footnote="38">
+                        <img src="images/the-sound-of-love.png" alt="">
+                        <span><sup>Fig. 17</sup>Chi Amisola, <b>«The Sound Of Love»</b> (<a
+                               target="_blank" href="https://thesoundof.love">www.thesoundof.love</a>)</span>
+                    </div>
+
+
+                    <div class="footnote" data-footnote="39">
+                        <img src="images/alt-text-as-poetry.png" alt="">
+                        <span><sup>Fig. 18</sup>Taichi Wi and Laurel Schwulst, <b>«Alt Text as Poetry»</b> (<a
+                               target="_blank"
+                               href="https://alt-text-as-poetry.net">www.alt-text-as-poetry.net</a>)</span>
+                    </div>
+
+
+                    <div class="footnote" data-footnote="40">
+                        <span><sup>23</sup> HTML Energy Goals, <b>«HTML Energy»</b> (<a
+                               target="_blank"
+                               href="https://html.energy/goals.html">www.html.energy/goals.html</a>)</span>
+                    </div>
+
+                    <div class="footnote" data-footnote="41">
+                        <img src="images/timeseries-of-total-kilo.png" alt="">
+                        <span><sup>Fig. 19</sup> HTTP Archive:
+                            <b>«Page Weight»</b>, mis à jour régulièrement. Source: <a target="_blank"
+                               href="https://httparchive.org/reports/page-weight">www.httparchive.org/reports/page-weight</a></span>
+                    </div>
+
+                    <div class="footnote" data-footnote="42">
+                        <span><sup>24</sup> Laurel Schwulst, <b>«My website is a shifting house next to a river of
+                                knowledge. What could yours be?»</b>, The Creative Independent, 21 mai 2018. Source:
+                            <a target="_blank"
+                               href="https://thecreativeindependent.com/essays/laurel-schwulst-my-website-is-a-shifting-house-next-to-a-river-of-knowledge-what-could-yours-be/">www.thecreativeindependent.com/essays/laurel-schwulst-my-website-is-a-shifting-house-next-to-a-river-of-knowledge-what-could-yours-be/</a></span>
+                    </div>
+
+                    <div class="footnote" data-footnote="43">
+                        <span><sup>25</sup> Lionel Scheepmans, <b>«Introduction à la bricologie»</b>, Wikiversity, 11
+                            juin 2011. Source:
+                            <a target="_blank"
+                               href="https://fr.wikiversity.org/wiki/Recherche:Introduction_à_la_bricologie#La_bricologie_pour_un_changement_de_paradigme">www.fr.wikiversity.org/wiki/Recherche:Introduction_à_la_bricologie#La_bricologie_pour_un_changement_de_paradigme</a></span>
+                    </div>
+
+                    <div class="footnote" data-footnote="44">
+                        <span><sup>26</sup> Benjamin Good, <b>«How Websites Learn: A Conversation with Laurel
+                                Schwulst»</b> Source:
+                            <a target="_blank"
+                               href="https://www.takeshapemag.com/issuethree">www.takeshapemag.com/issuethree</a></span>
+                    </div>
+
+
+                    <div class="footnote" data-footnote="45">
+                        <span><sup>27</sup> Connor Miller, <b>«Interview 025 | Elliott Cost, Creator of
+                                special.fish»</b>, Youtube, 26 mars 2020 Source:
+                            <a target="_blank"
+                               href="https://www.youtube.com/watch?v=p8B33h8EkBU&t">www.youtube.com/watch?v=p8B33h8EkBU&t</a></span>
+                    </div>
+
+                    <div class="footnote" data-footnote="46">
+                        <img src="images/cafe-button.png" alt="" style="max-height: 150px;">
+                        <span><sup>Fig. 19</sup> Elliott Cost, détail du site <b>«Gossips Cafe»</b> (<a
+                               target="_blank" href="https://gossips.cafe/">www.gossips.cafe/</a>)</span>
+                    </div>
+
+                </div>
+
+                <div id="notesPartieFin" class="hidden">
+
+                    <div class="footnote" data-footnote="47">
+                        <span><sup>28</sup> Marshall McLuhan, <b>«Pour comprendre les médias»</b>, Paris: Seuil,
+                            1977.</span>
+                    </div>
+
+
+
+
+                </div>
+
+
+            </main>
+
+            <main class="bookRight">
+
+                <div id="partieIntro" class="">
+
+                    <div class="pagePartie" id="partie-Intro">
+
+                        <div class="numPartie">○</div>
+
+                        <h1>Introduction</h1>
+
+                    </div>
+
+
+                    <p>Les sites web ont émergé voilà 30 ans de la main de Tim Berners-Lee, qui cherchait un système
+                        pour organiser, parcourir et enrichir les données numériques de son laboratoire. Une succession
+                        d'étapes clé a fait qu'aujourd'hui le web est comme il l'est: créatif, diversifié et global.
+                    </p>
+
+                    <p>Ce qui est intéressant avec la naissance des réseaux informatiques, c'est que leur qualité
+                        principale (la transmission d'informations à distance) participait exponentiellement à leur
+                        développement. Les laboratoires étaient reliés instantanément (une révolution!) par l'outil
+                        qu'ils concevaient, et en le perfectionnant ils amélioraient aussi la qualité et vitesse de
+                        leurs
+                        échanges. À la façon de la boule-de-neige qui grossit au fur et à mesure qu'elle avance,
+                        l'évolution s'est faite à grands pas, et en trois décennies, ce petit outil de partage de
+                        résultats de recherche est devenu l'objet du XXI<sup>e</sup> siècle.</p>
+
+                    <p><span class="footnote-anchor"
+                              data-anchor="99"><span>Je me suis penché sur les choix pris lors de son développement
+                                (années 1980)</span><sup>Fig. 1</sup></span>, choix qui ont permis l'ouverture et la
+                        richesse des technologies qui arriveraient par la suite. La plus remarquable de ces technologies
+                        est l'hypertexte, qui deviendra un terrain de jeu pour le premiers utilisateurs de la toile
+                        (années 1990 - partie ❶). Le peuplement accru de cet espace qui est dorénavant global,
+                        entraînera
+                        l'apparition des grandes entreprises technologiques et la mutation à un web outillé (années
+                        2000). L'utilisation que ces groupes ont faite du web est devenue très marchande et standardisée
+                        (années 2010 - partie ❷), et aujourd'hui nous pouvons voir que ce modèle s'est imposé</p>
+
+                    <p>Dans cette progression, on peut remarquer des individus ou collectifs qui œuvrent d'une toute
+                        autre façon (partie ❸). Laissant les outils préfabriqués de côté, ces designers imaginent un web
+                        à la fois plus sobre et plus profond, car c'est à partir du code de base du Web, que ces
+                        designers
+                        imaginent et développent leurs projets. Ces derniers peuvent être des sites pour des communautés
+                        Artists Space (<a target="_blank"
+                           href="https://artistsspace.org">www.artistsspace.org</a>) ou artistes Tjorven Stein
+                        (<a target="_blank" href="https://www.tjorvenstein.com">www.tjorvenstein.com</a>), mais
+                        aussi des endroits pour se rencontrer Gossips Cafe (<a target="_blank"
+                           href="https://gossips.cafe">www.gossips.cafe</a>) ou partager des moments Cloud Watching
+                        (<a
+                           target="_blank" href="https://cloudwatching.glitch.me">www.cloudwatching.glitch.me</a>).
+                        Cette façon de concevoir cherche à s'émanciper des standards ajoutés au fur et à mesure par
+                        les grandes entreprises du numérique, en pensant différemment l'utilisation mais surtout la
+                        conception et comment les internautes vont se sentir face à leurs écrans. Je vous laisser
+                        commencer en clickant sur la page suivante...
+                    </p>
+
+                </div>
+
+                <div id="partieI" class="hidden">
+
+                    <div class="pagePartie" id="partie-I">
+
+                        <div class="numPartie">❶</div>
+
+                        <h1>Des nouveaux mondes à bâtir</h1>
+
+                        <h2 id="I-naissance">Première partie:<br>
+                            <span class="uppercase">Naissance d'Internet</span>
+                        </h2>
+
+                    </div>
+
+                    <h3 id="I-reseaux">Tout commence par les réseaux</h3>
+
+                    <p>Début des années 60 aux États-Unis, en pleine guerre froide et en réponse au lancement soviétique
+                        du Sputnik 1, le gouvernement américain fonde la
+                        ARPA (<i>Advanced Research Projects Agency Network</i>). En collaboration avec des universités,
+                        des industriels et d'autres gouvernements, cette agence est chargée de la recherche et
+                        développement de nouvelles technologies destinées à un usage militaire.</p>
+
+                    <p>Un des projets était de développer un réseau de communication décentralisé. Ce besoin de
+                        communication était très important: si une base était détruite, les données
+                        devraient emprunter d'autres chemins pour atteindre les destinataires désignés. Ce projet mettra
+                        en route le futur Internet : un réseau constitué d'une multitude de réseaux.</p>
+
+                    <p>Dirigé par l'ingénieur Paul Baran, le projet s'alimentera des recherches théorique et pratiques
+                        en cours dans différentes universités américaines, trois en Californie, une au Utah:</p>
+
+                    <ul>
+                        <li>la théorie de commutation par paquets, développée par Leonard Kleinrock à l'Université de
+                            Californie de Los Angeles (UCLA)</li>
+                        <li>le projet sur l'augmentation de l'intelligence humaine (qui comprenait le premier système
+                            hypertexte: liens, information organisée par importance, etc.) par Doug Engelbart à
+                            l'Institut de
+                            Recherche de (SRI)</li>
+                        <li>des projets de visualisation d'applications, qui étudiaient des méthodes pour l'affichage de
+                            fonctions mathématiques à l'écran, développés par Glen Culler et Burton Fried à l'Université
+                            de California de Santa Barbara (UCSB)</li>
+                        <li>des méthodes de représentations en 3D étudiées par Robert Taylor et Ivan Sutherland à
+                            l'Université de Computation de Utah</li>
+                    </ul>
+
+                    <p>Côté infrastructure, la société américaine BBN (Bolt, Beranek and Newman) se chargea de concevoir
+                        un petit ordinateur qui, rattaché aux ordinateurs déjà existants, pouvait transmettre des
+                        paquets d'information à d'autres ordinateurs de son genre. On parle des IMP (<i>Interface
+                            Message Processor</i>) qui sont, de nos jours, les boitiers wifi qu'on a chez nous. On
+                        installa ces IMPs au sein des laboratoires de ces universités, et c'est ainsi que verra le jour
+                        le premier réseau à transfert de paquets de données. En 1969 le premier mail est envoyé à
+                        travers l'ARPANet, abréviation de ARPA et <i>Network</i>.
+                    </p>
+
+                    <h3 id="I-utilisateurices">Qui les utilise? </h3>
+
+                    <p><span class="footnote-anchor" data-anchor="1"><span>Tandis que ce réseau
+                                grandissant</span><sup>Fig. 2</sup></span> était validé et utilisé expérimentalement -
+                        13 nœuds en 1971,
+                        111 en 1977 - parmi ces chercheurs en sciences
+                        informatiques, d'autres réseaux et technologies de liaisons étaient recherchées. L'utilité des
+                        réseaux informatiques, en particulier le courrier électronique, n'avait pas échappé aux autres
+                        communautés et disciplines, de sorte qu'au milieu des années 1970, des réseaux alternatifs
+                        commencèrent à surgir:</p>
+
+
+
+                    <ul>
+                        <li>Le département américain de l'Énergie (DoE) établit le MFENet pour ses chercheurs en énergie
+                            de fusion magnétique</li>
+                        <li>les physiciens des hautes énergies du DoE se lancèrent dans la construction du HEPNet</li>
+                        <li>Les physiciens de la NASA suivirent avec SPAN</li>
+                        <li>CSNET pour la communauté (académique et industrielle) des sciences informatiques</li>
+                    </ul>
+
+                    <p>Face à cette croissance de réseaux dédiés à chaque groupe de recherche, mais incommuniqués
+                        entre-eux, on se retrouve rapidement confrontés au besoin de les relier. Le réseau
+                        ARPANet laissera place au NSFNet (<i>National Science Foundation Network</i>), qui optera pour
+                        une ouverture de son utilisation à d'autres groupes de recherches. Les choix suivants
+                        annonceront cette volonté unificatrice:</p>
+
+                    <ul>
+                        <li>ce sera un réseau pour la recherche en général, et non silotés comme on avait pu le voir
+                            auparavant (pas besoin de nouveaux réseaux pour des nouveaux champs de recherche)</li>
+                        <li>son architecture se déploiera entre les villes grâce à des super-ordinateurs qui à son tour
+                            se raccorderont aux différents laboratoires et campus universitaires</li>
+                        <li>il n'y aura pas de limites de connexions (toute université ou centre de recherche pourra se
+                            brancher au super-ordinateurs de sa ville)</li>
+                    </ul>
+
+                    <p>Le NSFNet se développa très rapidement, puisqu'ouvert à tout type de recherche, et comptera avec
+                        près de 4 millions de nœuds interconnectés en 1984.</p>
+
+                    <h3 id="I-service">À quoi servent-ils à ce moment là?</h3>
+
+                    <p>Le réseau n'était qu'à ses débuts et il ne servait qu'à une très petit nombre de personnes.
+                        L'ouverture à une utilisation commerciale n'était pas encore arrivée et les principaux usages
+                        restaient académiques et militaires. À cette époque, Internet n'avait qu'une seule
+                        utilité: l'envoi et la réception d'emails.</p>
+
+                    <p>Cette nouvelle façon de communiquer était installée au sein des universités et des labos de
+                        recherche, et va accélérer tous les domaines sur lesquels travaillent ces organismes. On va
+                        pouvoir mettre en lien chercheurs et scientifiques de différents laboratoires et institutions
+                        d'une façon beaucoup plus rapide. Cela va faciliter le partage d'informations, de résultats de
+                        recherche et d'idées. Rappelons-nous que la naissance de l'ARPANet se fera en mettant en commun
+                        des projets émanant de 4 universités différentes.</p>
+                    <p>Qui dit email dit aussi transfert de fichiers. On va donc transférer très rapidement des données
+                        entre différents sites de recherche et ainsi remplacer les transferts physiques. Avant ça, un
+                        laboratoire
+                        devait attendre presque trois jours des résultats qu'il allait recevoir sur bandes magnétiques
+                        par la poste, tandis que maintenant, il pouvait avoir ces informations presque instantanément et
+                        ne pas devoir mettre en pause ses recherches. Tous les secteurs académiques allaient gagner en
+                        fluidité de travail. Mais celui qui sera en tête, vous l'aurez deviné, sera celui des
+                        technologies de réseau. En effet les avancées sur son propre domaine, notamment en sécurité et
+                        en vitesse de transmission de données, rendra son développement presque exponentiel, puisque
+                        plus il se perfectionne, plus rapidement ses concepteurs communiquent.</p>
+
+                    <h3 id="I-interconnexion">Interconnexion des réseaux: Internet</h3>
+
+                    <p>Mais que se passe-t-il de l'autre côté de l'Atlantique? En 1970, après la visite d'une délégation
+                        française chez BBN aux États-Unis, le projet ARPANet se fait connaître en France. Deux années
+                        plus tard l'INRIA (Institut national de recherche en informatique et en automatique) charge
+                        Louis Pouzin de mettre en place un réseau similaire en France. Le réseau CYCLADES branchera les
+                        villes de Rocquencourt, Paris, Grenoble, Toulouse et Rennes, avec leurs connexions régionales
+                        respectives. Mais Pouzin développera certains points faibles qu'il avait pu trouver au réseau
+                        américain. Il sera le pionnier à la mise en place de la stratégie bout en bout (end-to-end en
+                        anglais), qui est le basculement de la “responsabilité”, qui passe d'être “assurée” par le
+                        réseau à l'être par utilisateur. Jusqu'alors, les ordinateurs émetteurs envoyaient des
+                        informations au réseau, qui les déchiffraient et les amenaient jusqu'aux ordinateurs
+                        destinataires. Le réseau assurait, au prix d'énergie et complexité, la bonne livraison de
+                        l'information, tandis que l'utilisateur avait juste besoin à attendre la réception.</p>
+
+                    <p>Le nouveau réseau CYCLADES va mettre en place la stratégie inverse. Le chiffrement prendra
+                        place au sein des ordinateurs émetteurs et le réseau servira juste comme un
+                        relayeur. L'ordinateur destinataire devra donc déchiffrer cette information pour que
+                        l'utilisateur puisse la lire. Cela réduit la charge du réseau, évitant des erreurs et la
+                        complexité de devoir chiffrer toutes les informations reçues.</p>
+
+                    <p class="citation footnote-anchor" data-anchor="2"><span>« Plutôt que d'installer l'intelligence au
+                            cœur du réseau, il faut la situer aux extrémités : les ordinateurs au sein du réseau n'ont à
+                            exécuter que les fonctions très simples qui sont nécessaires pour les applications les plus
+                            diverses, alors que les fonctions qui sont requises par certaines applications spécifiques
+                            seulement doivent être exécutées en bordure de réseau. Ainsi, la complexité et
+                            l'intelligence du réseau sont repoussées vers ses lisières. Des réseaux simples pour des
+                            applications intelligentes. »</span><sup>1</sup></p>
+
+
+                    <p>Cette proposition du groupe de recherche français va amener les ingénieurs de tout le globe à
+                        concevoir le réseau d'une autre façon. Il ne manquera plus qu'une dernière pierre pour que le
+                        réseau devienne ce qu'il est aujourd'hui: la mise en service d'une norme internationale qui
+                        indiquera comment les ordinateurs doivent envoyer les données, puisque c'est à eux maintenant de
+                        prendre en charge la préparation de l'information à envoyer. Auparavant chaque réseau suivait un
+                        protocole de transmission propre (comme si chaque réseau parlait une langue différente), ce qui
+                        les rendait totalement hermétiques aux autres, d'où l'émergence des différents réseaux
+                        pour chaque champ de recherche. En unissant toutes les transmissions mondiales sous un même
+                        protocole d'envoi (comme une seule langue), tous les réseaux pourront se comprendre entre eux,
+                        peu importe leur architecture ou usage. Ce protocole ouvrira la porte aux interconnexions de
+                        réseaux ou en anglais <i>interconnections of networks</i>, qui donnera un mot que tout le
+                        monde connaît de nos jours: Internet.</p>
+
+                    <h3 id="I-croissance">Croissance de l'Internet toujours très dirigée</h3>
+
+                    <p>Une des clés de la croissance rapide de l'Internet a été l'accès libre et instantané à sa propre
+                        documentation. Lors des débuts des réseaux, la communauté de recherche dédiée à Internet
+                        maintenait la traditionnelle publication des nouvelles idées et résultats des recherches.
+                        Publier sur papier en suivant les rigoureuses règles utilisées jusque-là prenait du temps et
+                        n'était pas adapté aux nouveaux moyens de distribution numérique. En 1969 une étape importante
+                        fut mise
+                        en place: les RFC ou <i>Request for Comments</i>. Ce sont des notes ‒ la longueur minimale était
+                        d'une seule phrase ‒ qui ont pour objectif de partager rapidement des idées ou des propositions
+                        avec d'autres chercheurs. En créant une boucle d'évaluation positive, un RFC déclenchait un
+                        autre RFC avec des idées supplémentaires et ainsi de suite, ce qui permettait de déboucher sur
+                        un consensus, que l'on utilisait comme base pour la mise en œuvre par les différentes équipes de
+                        recherche.</p>
+
+                    <p>Le rôle principal d'Internet était donc celui de partager les ressources sur sa propre conception
+                        et fonctionnement, à travers ces documents RFC. Cette méthode pour le développement de nouvelles
+                        capacités de l'outil continuera d'être essentielle à l'évolution du médium. L'utilisation des
+                        RFC a encouragé la participation de groupes très hétérogènes de personnes, allant des étudiants
+                        gradués aux professeurs ou aux chercheurs. Elle a permis de refléter ouvertement tous les buts
+                        et idées que les utilisateurs avaient et voulaient atteindre. Avec le temps un organisme s'est
+                        porté responsable des standards d'Internet et des RFC, c'est l'<i>Internet Engineering Task
+                            Force</i> (IETF). De nos jours il compte plus de 75 groupes de travail, travaillant sur
+                        différents aspects du développement d'Internet.</p>
+
+                    <h3 id="I-hippies">La culture hippie s'empare des ordinateurs et réseaux</h3>
+
+                    <p>L'endroit et l'époque où se développent les réseaux entre universités et centres de recherche,
+                        coïncident avec la mouvance hippie de la fin des années 60. Cette communauté qui, d'après leurs
+                        slogans, “veut changer la société sans prendre le pouvoir”, cherche à transformer les individus
+                        et les modes d'existence. Un des principaux organisateurs de ces communautés utopiques est
+                        Stewart Brand. Personnage multifacette, ancien parachutiste, journaliste ou écrivain,
+                        fréquentant les laboratoires de recherche, il filmera un des premiers envois d'email sur le
+                        réseau. C'est lui qui va concevoir un objet très singulier mais séminal: le <i>Whole Earth
+                            Catalog</i>, que l'on pourra qualifier de “bible des hippies”. Ce livre qui va apparaître
+                        tous les
+                        ans entre 1968 et 1972 est rempli d'idées, de tutoriels ou d'astuces. On peut retrouver tout un
+                        tas de choses, depuis des recettes de cuisine végétariennes, des résumés de livres scientifiques
+                        ou des techniques de bricolage, jusqu'à des conseils environnementalistes ou des calendriers
+                        bouddhistes. Les notices qui remplissent ce “guide de savoirs” émanent directement des
+                        lecteurs, qui par voie postale, partagent aux éditeurs leur dernières découvertes ou leur
+                        parlent de sujets qui pourraient intéresser le reste de la communauté. Les notices sont souvent
+                        commentées par d'autres lecteurs dans la parution suivante. Ce n'est pas un timide fanzine
+                        puisqu'en 1971 le catalogue est tiré à près d'un million d'exemplaires et remporte le
+                        <i>National
+                            Book Award</i> américain. Ce projet inclut beaucoup des notions qui constitueront le futur
+                        web — qui
+                        n'existe pas encore — comme le mélange de savoirs hétéroclites, la contribution par les
+                        utilisateurs ou les commentaires entre ces derniers. <span class="footnote-anchor"
+                              data-anchor="3"><span>Ce projet sera vu comme une préfiguration sur papier du futur
+                                Internet.</span><sup>2</sup></span>
+                    </p>
+
+                    <p>La communauté hippie apportera encore une autre pierre au développement des
+                        ordinateurs. À l'époque, les grands ordinateurs étaient réservés aux entreprises et aux
+                        universités, et les sociétés informatiques « ne voyaient aucune raison d'installer des
+                        ordinateurs dans les foyers américains ». Cette vision ne plaira pas à ces communautés, qui
+                        demanderont aux industriels que l'ordinateur, un outil qui “augmente l'individu”, puisse être
+                        personnel, et que chacun puisse le fabriquer, le bricoler, le programmer. À partir de là,
+                        commence à se développer des clubs de fabrication informatiques, qui par le
+                        <i>do-it-yourself</i>, vont fabriquer les premiers ordinateurs personnels. C'est dans ce milieu
+                        des années 70, autour de la ville de San Francisco, que vont naître les premières entreprises
+                        d'informatique moderne (Apple, Microsoft, etc.) qui contribueront à fonder la bien connue de nos
+                        jours, <i>Silicon Valley</i> (le “silice” étant le principal matériel
+                        utilisé pour les puces informatiques dont sont remplis les ordinateurs).
+                    </p>
+
+                    <p>Enfin on doit une dernière contribution à la communauté hippie. Dans ces années 1980 on retrouve
+                        trois communautés qui utilisent les ordinateurs connectés: les militaires (qui en font une
+                        utilisation discrète), les laboratoires de recherches qui fabriquent Internet (ces personnes
+                        sont très actives puisque augmentés par leurs propres outils: emails et fichiers) et les
+                        passionnés dont on vient de parler plus haut (qui rêvent d'émancipation par le biais de cette
+                        technologie). Tandis que la communauté scientifique se
+                        précipitait pour améliorer la vitesse de connexion et l'infrastructure du réseau, les hippies
+                        vont l'utiliser pour créer une des premières communautés en ligne, comme un prolongement de
+                        leurs propres communautés. Successeur du <i>The Whole Earth Catalog</i>, Stewart Brand va
+                        présenter en 1985 unes des versions en ligne de ce dernier, qui prendra le nom de <i>The
+                            Well</i>, pour <i>The Whole Earth 'Lectronic Link</i>. Dans cet espace numérique se
+                        retrouvent journalistes, développeurs, militants ou artistes pour discuter autour du contenu du
+                        catalogue. On est face à une utilisation précoce de ce que l'on appellera par la suite “les
+                        forums”, et qui sera un des premiers outils à élargir le public des réseaux au-delà des cercles
+                        militaires ou scientifiques.</p>
+
+
+                    <h2 id="I-vierge">Deuxième partie:<br>
+                        <span class="uppercase">Imaginer cet espace vierge</span>
+                    </h2>
+
+                    <h3 id="I-visions">Quels visions pour les réseaux et Internet?</h3>
+
+                    <p>Lors de ces débuts d'Internet, on a pu constater deux types d'utopies. Certaines étaient de
+                        l'ordre techniques, appuyés par les
+                        groupes scientifiques qui imaginaient les réseaux, tandis que d'autres étaient manifestement
+                        sociales, poussés par la cause hippie.</p>
+
+                    <p>Commençons par les premières. Pour le chercheur Doug Engelbart le but des ordinateurs n'était pas
+                        d'être des machines intelligentes - il serait bien contrarié de voir l'explosion de l'IA - mais
+                        de rendre l'humain plus intelligent grâce à ces machines. Il considérait l'informatique comme
+                        une prothèse de l'être humain dont la fonction est de permettre le développement de ce dernier.
+                        La principale qualité des machines, comme ce fut le cas pour l'écriture, était de stocker de
+                        l'information, et c'est en cela qu'elles pouvaient aider l'humain. Une autre utopie qui était
+                        reliée explicitement aux réseaux, était le fait d'abolir les distances. Elles l'avaient déjà été
+                        auparavant avec le télégraphe, le téléphone, mais c'est avec ces nouvelles technologies qu'on
+                        pourra aller plus loin dans ces formes de “téléprésence”.</p>
+
+                    <p>D'un autre côté, les premiers utilisateurs des réseaux vont voir très rapidement les bienfaits
+                        de l'ordinateur, mais c'est surtout dans le réseau qu'ils voyaient un outil pour changer la vie
+                        sociale. À l'époque, il existait une vraie frontière entre la vie physique et la vie virtuelle,
+                        et on pensait pouvoir, grâce à lui, aborder autrement les problèmes d'inégalités sociales. Le
+                        réseau pourrait libérer la société américaine du poids que le travail à la chaîne avait instauré
+                        au début du XX<sup>e</sup> siècle. Non seulement il allait pouvoir épanouir la société avec des
+                        nouveaux
+                        outils de partage et de divertissement, mais aussi tenter, comme l'on pensé les hippies, de
+                        permettre aux communautés physiques d'acquérir davantage de maturité. <span
+                              class="footnote-anchor" data-anchor="4"><span>Le virtuel serait un espace pour réinventer
+                                en mieux, les relations sociales,</span><sup>3</sup></span> avec des nouvelles
+                        conditions, puisque les règles du réseau n'étaient pas (encore) les mêmes que celles de la vraie
+                        vie. <span class="footnote-anchor" data-anchor="5"><span>La vie publique prête particulièrement
+                                attention à la condition sociale, sexuelle ou raciale</span><sup>4</sup></span> et le
+                        réseau viendrait réduire ces discriminations grâce à son caractère anonyme, puisque sur beaucoup
+                        d'endroits du web la seule identité était le pseudo choisi. Grâce à cela, les réseaux
+                        pourraient valoriser la communauté, pouvant échanger de façon plus libre et donnant aux
+                        utilisateurs le pouvoir de choisir sa communauté. À partir de l'individualisme des ordinateurs
+                        personnels, le réseau allait placer les utilisateurs dans un environnement plus apte à son
+                        développement personnel et en fin de compte, à leur bonheur.</p>
+
+                    <h3 id="I-html">Un nouveau langage au sein d'Internet: HTML</h3>
+
+                    <p>Le réseau Internet continua de se développer, et les laboratoires de recherche à travailler sur
+                        des nouvelles façons d'envoyer et de partager les données. On revient au continent européen, au
+                        sein du Conseil Européen pour la Recherche Nucléaire (CERN), situé à Genève encore de nos jours.
+                        Le chercheur Tim Berners-Lee se demande comment organiser l'avancé de leurs projets de façon à
+                        pouvoir explorer plus facilement cette information, surtout par des personnes pouvant rejoindre
+                        des projets déjà en cours. Il imagine les questions que pourrait se poser une nouvelle
+                        arrivante: “Où se trouve le module utilisé?”, “Quels documents existent à propos de ce
+                        concept?”, “Quels laboratoires travaillent dans ce projet?”, “Quels documents se réfèrent à
+                        celui-ci?”. Souvent, pour décrire un système complexe, on dessine des schémas avec des flèches
+                        et des cercles pour informer des relations entre les éléments (ces relations ne pourraient pas
+                        être montrées dans un tableau par exemple). <span class="footnote-anchor"
+                              data-anchor="6"><span>Le système auquel le chercheur réfléchi essaye de matérialiser ces
+                                flèches et cercles.</span><sup>Fig. 3</sup></span> Tim Berners-Lee pressent d'avance que
+                        ce système profitera à beaucoup plus de monde que le CERN, puisque à ce moment-là Internet
+                        commence à s'ouvrir à l'utilisation commerciale et donc à mettre en lien plus
+                        d'individus, centres, structures ou pays.</p>
+
+                    <p class="citation footnote-anchor" data-anchor="7"><span>« Les problèmes de perte d'informations
+                            peuvent être particulièrement aigus au CERN, [...]. Le CERN est
+                            aujourd'hui confronté à des problèmes auxquels le reste du monde devra bientôt faire face.
+                            Dans 10 ans, il y aura peut-être de nombreuses solutions commerciales aux problèmes évoqués,
+                            alors qu'aujourd'hui nous avons besoin de quelque chose qui nous permette de continuer.
+                            »</span><sup>5</sup>
+                    </p>
+
+                    <p>Ce système de liens d'interrelations va l'amener à imaginer les “hyperliens” qui constitueront le
+                        langage HTML (<i>HyperText Markup Language</i>). Une liste des possibilités de ce nouveau
+                        langage est
+                        proposée par le chercheur, confirmant par l'usage que l'on fait de nos jours, de la grande
+                        puissance de son invention. C'est ce qu'il nommera le <i>World Wide Web</i> ou le Web.</p>
+
+                    <ul>
+                        <li>Données générales de référence - encyclopédie, etc.</li>
+                        <li>Publication entièrement centralisée - aide en ligne, documentation, tutoriel, etc.</li>
+                        <li>Diffusion plus ou moins centralisée d'informations ayant une durée de vie limitée</li>
+                        <li>Rédaction collaborative</li>
+                        <li>Conception collaborative d'autre chose que l'hypertexte lui-même</li>
+                        <li>Journal intime</li>
+                    </ul>
+
+                    <p>Le territoire d'Internet devient très vaste et aux premiers abords désorganisés, mais grâce à
+                        l'hyperlien, on peut naviguer entre touts ces documents sans avoir besoin à les chercher à
+                        l'endroit où ils sont stockés. Au temps des premiers réseaux, on devait naviguer entre dossiers
+                        pour tomber sur l'information que l'on cherchait, comme dans une bibliothèque (type de livre >
+                        genre > auteur). Les hyperliens, et c'est pour ça qu'ils sont “hypers”, c'est comme demander au
+                        bibliothécaire un livre et qu'il nous le présente devant nous sans avoir fini de dire le nom de
+                        l'écrivaine. Cette technique de navigation permet de parcourir l'information à la vitesse de la
+                        lumière (ou de la vitesse de connexion), d'un endroit à un autre, d'un sujet à l'autre, d'un
+                        service à un autre. L'hyperlien a aussi amené les noms de domaine, c'est à dire aux adresses
+                        grâce auxquelles on arrive aux fichiers (<a
+                           href="https://thewebwewant.online">www.thewebwewant.online</a> par exemple). Le simple fait
+                        d'avoir des URL
+                        (<i>Uniform Resource Locator</i>) va fomenter l'échange et la découverte de nouveaux endroits du
+                        web, au même temps qu'il poussera les utilisateurs à regrouper des liens traitant de mêmes
+                        sujets. Cette organisation, établie par les utilisateurs, donnera lieu aux communautés, qui
+                        partageront sans crainte tout type d'informations ou liens qui puissent intéresser les autres,
+                        créant des connaissances communes, exploitables par toute la communauté. Une qualité, sinon la
+                        plus importante de l'information numérique est ce qu'on appelle des “bien non-rivaux”, en
+                        opposition aux biens rivaux. Comme l'explique Dominique Cardon,
+                    <p class="footnote-anchor citation"
+                       data-anchor="8"><span>« l'information numérique est un bien non-rival puisque sa
+                            consommation par un utilisateur n'empêche pas un autre de consommer la même
+                            information »</span><sup>6</sup></p>
+                    Ceci sera une des caractéristiques la plus importante de la dématérialisation qui s'est opérée
+                    avec les ordinateurs, révolutionnant pas seulement le marché (imaginez pouvoir vendre un seul
+                    produit à l'infini) mais le partage d'information, qui pourra se faire instantanément et
+                    indéfiniment. Tout ce qui (se) passe dans le web contribue à le rendre plus grand, sans presque
+                    jamais réduire son contenu (cela arrive quand des contenus sont effacés).</p>
+
+                    <h3 id="I-ascendante">Innovation ascendante</h3>
+
+                    <p>L'arrivée de l'hypertexte va inverser la façon des innovations et du développement d'Internet.
+                        Jusqu'à là, seulement les laboratoires de recherches et les chercheurs travaillaient activement
+                        sur les avancées du réseau, qui était de l'ordre de l'infrastructure, et donc très délicates et
+                        complexes. Une fois les améliorations testées, elles étaient mises en ligne et se rependaient
+                        jusqu'aux utilisateurs. Les fichiers HTML et par conséquent les sites web, sont un outil qui se
+                        greffe au réseau (comme l'e-mail ou le transfert de fichier) et son code est beaucoup plus
+                        simple et accessible que celui d'Internet. Dorénavant, <span class="footnote-anchor"
+                              data-anchor="9"><span>il suffira juste de mettre en ligne ces fichiers pour que le reste
+                                d'utilisateurs puisent les consulter, et tout ça avec des connaissances minimes en
+                                informatique.</span><sup>Fig. 4</sup></span>
+                        À titre d'exemple, si le travail sur l'Internet concernait 10 utilisateurs sur 100 (les
+                        spécialistes), le travail sur le langage HTML concernerait les 90 autres utilisateurs (mais les
+                        spécialistes aussi!), qui pourront apporter leurs contributions et idées. Cette extraordinaire
+                        ouverture va laisser place à toute l'imagination et envies de presque tous les utilisateurs. Les
+                        logiciels libres, le wifi, le <i>peer-to-peer</i>, les blogs et beaucoup de services web
+                        innovants <span class="footnote-anchor" data-anchor="10"><span> arriveront de la périphérie des
+                                réseaux.</span><sup>7</sup></span>
+                        Non seulement les idées ne sont plus issues de la recherche universitaire ou de grandes
+                        entreprises, mais en plus, elles se génèrent et se nourrissent de façon communautaire, le réseau
+                        étant l'accès au plus grand groupe du travail possible (tous les utilisateurs sur Terre).
+                        L'économiste et professeur du MIT, Eric von Hippel a proposé en 2005 le nom d'«innovations
+                        horizontales», que l'on appelle aussi «innovations ascendantes» (<i>bottom-up innovations</i>).
+                    </p>
+
+                    <p>Pour observer cette horizontalité on peut parler des «<i>barcamps</i>», qui constituent la
+                        meilleure illustration des effets de la coopération horizontale dans le processus d'innovation.
+                        Le premier <i>barcamp</i> eut lien à côté de San Francisco en 2005. Cet événement invite les
+                        amateurs du web à une conférence sans programme préalable, dans laquelle chaque participant est
+                        invité à ne pas être seulement spectateur, mais aussi un acteur proposant un sujet de
+                        discussion, d'échange ou de travail. La journée de <i>barcamp</i> peut en effet se conclure par
+                        une seconde journée de <i>mashpit</i> qui est un processus de construction collaborative: les
+                        participants choisissent quelques idées d'applications et les développent dans un travail en
+                        groupe. Cela peut rappeler l'emploi que font les spécialistes des RFC (chapitre précédent) quant
+                        au développement collaboratif d'idées communes. On va maintenant regarder de plus près certains
+                        sites web qui sont nés d'idées et de la main des utilisateurs.</p>
+
+                    <h3 id="I-conception">Conception de la part des utilisateurs</h3>
+
+                    <p><span class="footnote-anchor underline" data-anchor="11"><span>San Francisco FogCam, projet de
+                                clase</span><sup>Fig. 5</sup></span><br>Ce qui a commencé par un projet à l'école en
+                        1991 est devenu une pièce dans l'histoire du web, puisque — toujours disponible — ce fut la
+                        première webcam mise en ligne [Fig. 5]. Des élèves installèrent cette webcam qui postait chaque
+                        20 secondes une images de leur campus. Avec le temps, ceci est devenu courant, comme on retrouve
+                        des utilisations similaires pour les stations de ski ou les plages.</p>
+
+                    <p><span class="footnote-anchor underline" data-anchor="12"><span>IMDB, de cinéphile à
+                                cinéphiles</span><sup>Fig. 6</sup></span><br>L'Internet Movie Database, plus connu sous
+                        son acronyme IMDb, qui est une base de données en ligne sur le cinéma mondial. En 1990, Col
+                        Needham, un étudiant britannique passionné de cinéma, un peu obsessionnel, crée des listes de
+                        films en indiquant pour chacun les acteurs, le metteur en scène, le décorateur, les
+                        accessoiristes, etc. Il décide de partager ces listes sur Internet et, immédiatement, d'autres
+                        cinéphiles l'aident à les compléter ; les catégories de films s'étendent, les descriptions
+                        s'affinent, les groupes de contributeurs se spécialisent dans différentes cultures
+                        cinématographiques. Ce site contributif est un des premiers immenses succès du web. Acheté en
+                        1998 par Amazon, on peut observer une ressemblance quant au design avec celui du magasin en
+                        ligne.</p>
+
+
+                    <p><span class="footnote-anchor underline" data-anchor="13"><span>Wikipedia, garantir un l'accès
+                                libre
+                                à l'information</span><sup>11</sup></span><br>Alors que dans l'année 2000 Jimmy Wales
+                        gérait un portail d'accès à des sites érotiques, il lance un nouveau projet d'encyclopédie libre
+                        en ligne. Cette idée ne lui a pas venu de nulle part, puisque dans sa jeunesse, il a enduré les
+                        prix élevés des livres scolaires, qu'il veut déjouer grâce à ce projet de diffusion de
+                        connaissance gratuite à destination de tout le monde. Un des sites plus consultés de nos jours,
+                        Wikipedia, n'a pas été l'idée d'éditeurs d'encyclopédies ou de livres, ni par une université,
+                        mais par un entrepreneur qui avait envie de proposer un accès différent. Au début, Jimmy Wales
+                        demande à des experts d'écrire les articles de la future encyclopédie, de façon désintéressée
+                        (il eut seulement le retour de 20 articles dans la première année). Au même moment, il constata
+                        que les internautes discutaient avec passion entre eux à propos des articles, et qu'ils
+                        produisaient eux-mêmes des commentaires très pertinents, sans pour autant être des experts. À ce
+                        moment-là, le projet changea radicalement de philosophie, et deviendra une encyclopédie dans
+                        laquelle n'importe qui peut-y contribuer, puisque tout le monde pouvait apporter quelque chose.
+                        Des règles de publication et révision seront mises en place pour aider à la rédaction et
+                        amélioration des articles.</p>
+
+                    <p>Ceci nous montrera une des leçons de l'esprit du web: le progrès n'est pas intrinsèquement lié à
+                        un statut ou diplôme (celui d'expert ou d'entreprise), mais c'est quelque chose que l'on
+                        démontre par l'implication et la présence d'une communauté. C'est une nouvelle économie
+                        participative qui se crée et qui s'alimente par elle-même, s'exauçant par le plaisir de mettre
+                        en commun et de faire évoluer l'espace où ils et elles y participent.</p>
+
+
+                    <p><span class="footnote-anchor underline" data-anchor="14"><span>Yahoo!, Google ou Facebook, idées
+                                d'étudiantes</span><sup>12</sup></span><br>Yahoo! et Google sont nées du désir de
+                        disposer d'un annuaire avec les liens vers les sites préférés des étudiants d'universités
+                        américaines. Pour le cas de Facebook c'était l'envie d'avoir un annuaire des étudiants de
+                        l'Université de Harvard, qui pourrait servir comme site de rencontres. Ces sites deviennent
+                        populaires très rapidement, puisqu'ils sont conçus au sein des campus où les jeunes font leurs
+                        premiers pas sur Internet, et deviennent très utilisées.</p>
+
+                    <p class="footnote-anchor underline" data-anchor="15">“What was the first website you have built and
+                        what year?”</p>
+
+                    <section>
+                        <p class="citation">“J'ai écrit ma première page web en mars 1995. C'était une page web destinée
+                            à collecter des assurances-vie sur Internet. À l'époque, je vendais des assurances pour une
+                            grande compagnie de la côte est. J'ai construit cette première page web à l'aide du
+                            bloc-notes de mon ordinateur. Afin de m'éviter d'avoir des ennuis avec la compagnie pour
+                            laquelle je travaillais, j'ai demandé au siège social de vérifier la conformité légale du
+                            site, pour but de l'utiliser comme aide à la vente. Il leur a fallu environ deux mois pour
+                            l'approuver, car les grands avocats n'avaient jamais vu de page web et n'en comprenaient pas
+                            le concept.<br>Tous ceux que je connaissais et avec qui je travaillais à l'époque pensaient
+                            que j'étais fou. Parce que j'étais sûr de pouvoir vendre des assurances-vie sur Internet.
+                            Lorsque j'ai lancé ce site pour la première fois à la fin de 1994, je n'ai trouvé qu'une
+                            seul autre site qui traitait le domaine, et personne n'essayait de vendre ça sur Internet.
+                            Je ne peux pas donner le nom de lu site web d'origine car je l'ai vendu plus tard et le nom
+                            de domaine est toujours utilisé. J'ai prouvé que je n'étais pas fou et j'ai vendu une tonne
+                            d'assurances, gagnant beaucoup d'argent pour moi et pour beaucoup d'autres personnes grâce à
+                            ce premier site web.”</p>
+                    </section>
+
+                    <p>Avec ces quelques exemples, on peut voir comment des nouveaux sites web sont faits par les
+                        propres utilisateurices. On ne va pas se mentir, ce n'est pas des simples utilisateurices, mais
+                        des personnes assez engagées, passionnées et ingénieuses de ce nouveau domaine. On pourra les
+                        appeler “utilisateurs avancés”. Ces utilisateurs commençaient par bricoler un outil pour leur
+                        propre usage, pour résoudre ou leur aider face à un problème pratique, et c'est ensuite que
+                        l'innovation se diffuse pour arriver à un public qui avait le même problème. Ce qui est excitant
+                        dans l'internet passé et dans celui de nos jours c'est que, grâce à son énorme public, on peut
+                        être certain·e que quelqu'un à trouvé la solution à la situation dont on est confronté·es (où à
+                        demandé a qu'elle soit crée). L'innovation par l'utilisateur n'apporte pas seulement une
+                        solution mais est ouverte à un enrichissement de celle-ci, puisque les nouveaux utilisateurs
+                        vont participer au développement du projet au même niveau que le concepteur. C'est ce que l'on
+                        appelle modèle d'innovation ouvert, qui au contraire du fermé (qui se garde secret en
+                        entreprise), permet de mélanger des idées et connaissances pour construire des services plus
+                        fiables, riches et profitables. C'est le principe de l'open-source — une façon de partager les
+                        logiciels de façon libre de droit pour qu'ils puissent être modifiés et redistribués par
+                        quiconque — qui sont considérés plus robustes puisqu'ils sont testé et améliorés par un plus
+                        grand nombre de personnes. Wikipedia en est la preuve, puisque <span class="footnote-anchor"
+                              data-anchor="16"><span>“la qualité d'un article dépend, de manière statistique, du seul
+                                nombre de personnes qui sont intervenues sur l'article en
+                                question.”</span><sup>8</sup></span>
+                    </p>
+
+
+                    <h3 id="I-territoire">Territoire foisonnant: désir de créer et de partager</h3>
+
+                    <p>Jusque-là, on a vu comment les premiers espaces en ligne sont nés, par qui ils ont été réfléchis
+                        et avec quelles idées. Ces 10 premières années du web nous montrent comment il s'est <span
+                              class="footnote-anchor" data-anchor="17"><span>“construit par le
+                                bas”</span><sup>9</sup></span> laissant l'imagination des utilisateurs (certes avancés)
+                        mettre en ligne et bricoler toute sorte d'idée ou service. Certains de ces services existaient
+                        déjà dans la vraie vie (l'exemple du vendeur d'assurances), mais d'autres ont été monté de toute
+                        pièces, puisqu'ils étaient intrinsèquement liés au web (les moteurs de recherche par exemple,
+                        qui n'était finalement pas plus différent qu'un annuaire).</p>
+
+                    <p>Le web a ouvert la porte à la conception en masse d'une multitude de projets, qui se sont étendus
+                        au fur et à mesure dans cet espace encore assez vide. En 1995, on retrouve 23,500 sites web sur
+                        Internet, consultés par 44 millions d'utilisateurs. Cela fait 1900 d'utilisateurs par site. Le
+                        web se remplit très vite, l'année suivante le nombre de sites grandit de presque 1000%,
+                        c'est-à-dire qu'on retrouve plus de 2,350,000 de sites web, et la moyenne d'utilisateurs par
+                        site descend à 300. La colonisation du continent numérique continue à se faire jusqu'à nos
+                        jours, atteignant son sommet en 2018, où on retrouve presque <span class="footnote-anchor"
+                              data-anchor="18"><span>1,8 milliards sites web en ligne.</span><sup>10</sup></span>
+                    </p>
+
+                    <p>Le code est le matériau principal des sites web, et il peut s'apprendre dès le moment que l'on a
+                        accès à un ordinateur et à Internet (deux choses qui deviennent de plus en plus populaires et
+                        accessibles depuis les années 90). On n'a pas besoin d'une formation très poussée ou de longues
+                        études pour mettre en ligne un site web et il existe de plus en plus de documentation sur le
+                        domaine. Rappelez-vous que l'information numérique est un bien non-rival, c'est-à-dire qu'elle
+                        ne se consomme pas quand on la lit, et que d'autres personnes peuvent lire la même information
+                        par la suite et au même moment (à contrario du dernier livre acheté dans un rayon de librairie,
+                        qui emporte avec lui son contenu). Au fur et à mesure que le web se remplit de documentation et
+                        tutoriels, naissent aussi des communautés de développeurs qui s'entraident. On retrouve le très
+                        connu site <i>Stack Overflow</i>, où les usagers peuvent poser des questions sur leur code, où
+                        d'autres usagers vont y répondre.
+                        répondre. <span class="footnote-anchor" data-anchor="19"><span>Actuellement 82% des dévéloppeurs
+                                s'y
+                                rendent
+                                au moins une fois par semaine!</span><sup>11</sup></span></p>
+
+                    <p>Cette richesse du monde web, ouvre de nombreuses opportunités pour les personnes de tout niveau
+                        de compétence de créer, et comme on a vu avec les exemples cités plus haut, il suffit d'avoir
+                        une bonne idée pour que le projet démarre. L'envie de partager est la première motivation que
+                        l'on retrouve dans les sites web de cette première époque. On verra comment par la suite,
+                        certains de ces sites vont grandir à tel point que d'autres critères vont prendre le dessus.</p>
+
+                </div>
+
+                <div id="partieII" class="hidden">
+
+                    <div class="pagePartie" id="partie-II">
+
+                        <div class="numPartie">❷</div>
+
+                        <h1>Au web de nos jours</h1>
+
+
+                        <h2 id="II-adulte">Première partie:<br>
+                            <span class="uppercase">Le web devient adulte</span>
+                        </h2>
+
+                    </div>
+
+                    <h3 id="II-evolution">Comment a t-il évolué?</h3>
+
+                    <p>Dans cette partie, on va voir ce qui s'est passé dans les 10 années suivantes, où le web et ses
+                        services passeront à la version “2.0”. La première époque décrite dans le chapitre précédent
+                        peut être appelée “web statique”, où les utilisateurs du réseau concevaient et publiaient à la
+                        main, où l'intelligence (de concevoir, d'innover) venait des utilisateurs. L'arrivé au web “2.0”
+                        vient du développement des technologies web (AJAX, CMS, gabarits), qui fait passer le web
+                        “statique” à “dynamique”. Quel effet cela a eu sur notre façon de concevoir? On
+                        peut toujours publier à la main ou façonner ses propres outils, mais des entreprises dédiés au
+                        web ont commencé à mettre en place des outils déjà prêts, où les utilisateurs n'ont qu'à
+                        soumettre leur contenu pour que ça soit immédiatement en ligne. Cette “mise en boîte” des
+                        actions a changé la façon de “faire” le web puisque l'utilisateur, autrefois
+                        concepteur-publicateur, n'est plus qu'un simple publicateur, laissant à des tiers le travail de
+                        concevoir l'environnement dans lequel il se déplace.</p>
+
+                    <h3 id="II-marchand">Un web marchand</h3>
+
+                    <p><span class="footnote-anchor" data-anchor="20"><span>Dans ce tableau</span><sup>Fig.
+                                10</sup></span>, on peut observer l'évolution de différents aspects ou services du web
+                        lorsque celui-ci a fait le passage de sa forme statique à la forme dynamique. Les
+                        sites web personnels se transforment en blogs. La conception des blogs se fera souvent par le
+                        biais des plateformes comme Blogger ou Skyblog, qui simplifient la tâche de publication. Certes,
+                        il y aura encore des “utilisateurs avancés” qui continueront à publier leurs sites web à la
+                        main, mais la plupart des nouveaux utilisateurs, comme ce fut mon cas, passera par ces outils
+                        intermédiaires. Ces derniers ouvriront la publication à beaucoup de personnes, de par leur
+                        simple utilisation, mais aussi de par leur gratuité (ils se financent par la publicité affichée
+                        sur les sites). Vu le grand public visé par ces outils, ils vont limiter les possibilités de
+                        personnalisation des sites, limitant les modifications à un changement des couleurs ou
+                        typographies utilisées et à l'ajout de widgets (petites extensions, comme un compteur de
+                        visites). Mais je tiens à dire, par expérience propre, que ces petites possibilités pouvaient
+                        aussi être une introduction au code, et donc à redevenir un “utilisateur avancé”, puisque pour
+                        réaliser ces changements, il fallait chercher des lignes de code dans des forums, demander de
+                        l'aide, les tester…. Comme dit le proverbe: “d'un défaut, on retrouve une vertu”. Mais je tiens
+                        à dire, par expérience propre, que ces petites possibilités pouvaient aussi être une
+                        introduction au code, et donc à redevenir un “utilisateur avancé”, puisque pour réaliser ces
+                        changements, il fallait chercher des lignes de code dans des forums, demander de l'aide, les
+                        tester…. À ses débuts, chaque site avait un univers unique, avec son propre design,
+                        typographies, formes et couleur. Les blogs ont limité le choix de ces univers, <span
+                              class="footnote-anchor" data-anchor="21"><span>catégorisant les gabarits par “simple”,
+                                “sérieux” ou “cool”.</span><sup>Fig. 11</sup></span>
+                    </p>
+
+
+                    <h3 id="II-observation">De la participation à l'observation</h3>
+
+                    <p>En 2007, un produit a créé un avant et un après dans la façon dont nous utilisons le web. C'est
+                        l'introduction de l'iPhone, un des premiers téléphones à pouvoir afficher des pages HTML, le
+                        format standard des sites web sur ordinateur. Avant cela, si un site voulait pouvoir être
+                        affiché sur un téléphone, il devait disposer d'une version cHTML ou iHTML, dédiée exclusivement
+                        aux téléphones, qui n'étaient pas très pratique puisqu'on avait à maintenir deux versions. Un
+                        fossé commença à se creuser entre la lecture et l'écriture du web avec l'arrivée de ces nouveaux
+                        téléphones, qui pouvaient afficher les sites web sans avoir besoin d'une version spéciale.
+                        Depuis ses débuts et toujours de nos jours, l'ordinateur a été l'outil de prédilection pour
+                        publier sur Internet, grâce à lui, on consulte le web, mais surtout, on le conçoit. L'écriture
+                        du code est plus commode grâce aux grands écrans, et même écrans multiples, la souris est
+                        nécessaire pour imaginer et tester les interactions (par exemple le <i>hover</i> qui est le
+                        terme utilisé lorsqu'on survole un élément avec notre curseur), et des logiciels spécialisés
+                        existent pour mettre en ligne les sites. Le téléphone n'est pas un outil qui permet de concevoir
+                        le web, il permet juste de l'observer, et nous place en tant que simples spectateurs.</p>
+
+                    <h2 id="II-machine">Deuxième partie:<br>
+                        <span class="uppercase">Un web dicté par l'outil</span>
+                    </h2>
+
+                    <h3 id="II-virtuel">Quand le monde virtuel devient tout notre monde</h3>
+
+                    <p>Le designer Frank Chimero avait commencé une de ses conférences en 2018 avec cette phrase:</p>
+
+                    <section>
+                        <p class="citation footnote-anchor" data-anchor="22"><span>« Laissez-moi commencer par quelque
+                                chose d'évident: dans la dernière décennie, la technologie s'est transformée d'un outil
+                                qu'on utilise à un endroit où l'on vit »</span><sup>12</sup></p>
+                    </section>
+
+                    <p>Cette remarque prend davantage de sens après l'étrange période que vécut la terre entière fin
+                        2019. La crise sanitaire nous a plongés pendant des longs mois dans un nouveau quotidien, celui
+                        de vivre le monde à travers nos écrans de téléphone ou ordinateur depuis chez nous. Cette
+                        période a mis en évidence leur rôle crucial du web pour continuer nos activités
+                        professionnelles, éducatives ou sociales. La plupart de nos interactions avec le monde se
+                        vivaient à travers ces outils: nous nous rencontrions en visioconférence pour suivre nos cours
+                        ou travailler en groupe, on passait plus souvent par le mail, on observait le quotidien des
+                        autres sur les réseaux sociaux, on passait beaucoup de temps à regarder des films ou séries. À
+                        cause des confinements, le monde individuel s'est réduit à notre appartement, nos livres ou
+                        notre chat. On ne pouvait toucher l'extérieur qu'à travers nos écrans, <span
+                              class="footnote-anchor"
+                              data-anchor="23"><span>grâce à la multitude de sites web qui se sont offerts à nous
+                                (réseaux sociaux, sites de partage, streaming ou e-commerce…)</span><sup>13</sup></span>
+                    </p>
+
+
+
+                    <h3 id="II-architectes">Mais bâtit par les mêmes architectes</h3>
+
+                    <p>On passe une grande partie de notre journée à utiliser ces sites, et lors de notre navigation, on
+                        se rend compte que les interfaces de ces sites se ressemblent énormément. Ceci n'est pas une
+                        surprise, sachant qu'un même CMS (Wordpress), est utilisé par <span class="footnote-anchor"
+                              data-anchor="24"><span>43% des sites web mondiaux.</span><sup>14</sup></span> Le terme CMS
+                        vient de Content Management System, et est un outil web qui nous permet de publier des sites et
+                        informations sans nécessité de passer par le code. On choisit les options dont on a besoin, et
+                        on n'a qu'à remplir les casses pour que ça devienne un site web. C'est l'outil de prédilection
+                        pour les blogs ou magasins en ligne. C'est l'outil par prédilection pour <span
+                              class="footnote-anchor" data-anchor="25"><span>les blogs ou magasins en
+                                ligne.</span><sup>Fig. 12</sup></span> L'utilisation d'un même outil, qui propose une
+                        série de gabarits, de typographies ou de couleurs fait que beaucoup de ces sites soient très
+                        similaires.</p>
+
+                    <p>Un autre outil qui tend à homogénéiser le design des sites web est l'utilisation de librairies
+                        externes. Ces librairies sont des morceaux de code “prêts à l'emploi”, suivant les indications
+                        d'utilisation de l'auteur. On les appelle externes puisque ce n'est pas le concepteur du site
+                        qui les code, et qu'elles sont souvent stockés dans un serveur propre. L'article <span
+                              class="footnote-anchor" data-anchor="26"><span>“Yes, websites really are starting to look
+                                similar”</span><sup>Fig. 13</sup></span> conduit par des étudiants en sciences
+                        informatiques de l'université d'Indiana, nous montre deux courbes à ce propos. Elles mettent en
+                        lumière le code source des sites web des 1000 entreprises les plus côtés des États-Unis
+                        (regroupées dans un index appelé Russell 1000). Dans la courbe de gauche on retrouve un
+                        similarité dans le code des différents sites. À droite, c'est la similarité des librairies
+                        utilisées.</p>
+
+                    <p>Le code source devient de plus en plus différent entre les sites web (a). Cela pourrait dire que
+                        chaque équipe de développeurs travaille plutôt à leur manière, ou qu'il y a de plus en plus de
+                        développeurs et donc de diversité dans leur façon de coder. Ce qui attire notre attention ici
+                        est l'augmentation de l'utilisation des mêmes librairies dans les 10 dernières années (b). Ces
+                        librairies aident à construire plus rapidement les sites web, en fournissant des unités de
+                        mesure, interactions ou fonctionnalités, que l'on peut inclure dans notre site dans la foulée.
+                        Certaines d'entre-elles (Bootstrap ou TailwindCSS par exemple) proposent aussi des éléments
+                        visuels, comme des typographies, couleurs ou arrondis par défaut. Utilisées par les designers et
+                        développeurs, ces options par défaut vont venir peupler les sites web, qui tendront à avoir les
+                        mêmes composants. Dans son rapport de 2018 <span class="footnote-anchor"
+                              data-anchor="27"><span>“Internet Health Report”</span><sup>15</sup></span> la fondation
+                        Mozilla (qui propulse le célèbre navigateur Firefox) mettra l'accent sur le manque de diversité
+                        visuelle dans la toile. Dans ce temps de confinement, le monde physique, remplit de contrastes
+                        et de pluralités, est substitué par les écrans, et on se rend compte que son homologue
+                        numérique, peine à traduire cette diversité. Observant le riche territoire qu'avait existé lors
+                        des premières années du web, comment pouvons-nous nous contenter de cette monotonie qui a envahi
+                        la navigation sur Internet?</p>
+
+
+                    <h3 id="II-defaut">Le design “par défaut”</h3>
+
+                    <p><span class="footnote-anchor" data-anchor="28"><span>Ce site vient ironiser l'expérience que l'on
+                                vit lors de cette navigation.</span><sup>Fig. 14</sup></span> On est souvent envahi de
+                        petites fenêtres (pop-ups en anglais) qui s'ouvrent quand on ne le veut pas, des éléments qui
+                        nous suivent quand on scroll Ou des choses qui nous distraient dans notre lecture. Ce web
+                        marchant, se sert souvent des outils et moyens dont on a parlé plus haut pour se mettre en
+                        place. Quoi de plus rapide que d'utiliser un gabarit déjà conçu pour lancer un énième blog pour
+                        la vente de produits. De plus, le CMS choisi permet d'installer en un click: liens vers les
+                        réseaux sociaux, fenêtre de chat avec un robot, trois placements pour des publicités ciblés le
+                        long de chaque article et un coupon de réduction pour un autre site marchand. Le recours aux CMS
+                        vitaminés est le plus court chemin pour mettre en place un site web. Comme on a vu, le web de
+                        nos jours est un web de gabarits et librairies, remplit d'options “par défaut”. Je me suis
+                        intéressé de plus près à ce que veut dire cette locution, qui se définit comme “une façon d'agir
+                        déterminée par l'habitude”. À ma bonne surprise, je tombe sur une autre définition sous-jacente,
+                        qui explique que le “par défaut” est aussi <span class="footnote-anchor"
+                              data-anchor="29"><span>“une absence d'autres possibilités".</span><sup>16</sup></span>
+                        L'utilisation de ces outils offrent (paradoxalement) une absence de possibilités de ne faire
+                        autrement que les schémas standards. Lors des débuts du web, et de l'écriture à la main des
+                        sites, il y avait aussi des standards par défaut, comme la taille des titres (balises h1, h2…)
+                        ou les liens (balises a) soulignées avec ce bleu tant relié aux débuts du web, mais on ne
+                        retrouvait pas des standards par rapport aux menus, aux images… Pour chaque site, le concepteur
+                        imaginait une navigation, une place pour le menu (ou non), des couleurs ou formes de fond qui
+                        appartiendraient exclusivement à ce site web. Les choix “par défaut” des CMS permettent aux
+                        concepteurs modernes de mettre en ligne d'une façon rapide et fonctionnelle, sans trop se
+                        prendre la tête. Mais cela nous a donné des sites sans prises de risques quant au design ou à
+                        leur navigation. Le web a gagné en quantité puisqu'il est plus facile de créer un espace web,
+                        mais on a perdu en qualité, puisque ces espaces se ressemblent énormément. Les premiers temps du
+                        web où chaque site était un petit monde ont l'air bien loin derrière nous. On pourrait comparer
+                        ces sites à des grands bâtiments d'habitation, tous pareil, mais surtout tous standard
+                        puisqu'ils doivent satisfaire aux usages de tous son divers public.</p>
+
+
+                    <h3 id="II-utopies">Où se trouvent les utopies?</h3>
+
+                    <p>Nous sommes plus connectés que jamais, au monde et à notre entourage, mais cela est devenu de
+                        plus en plus une activité solitaire. L'informatique personnelle de la première époque, conçue
+                        pour augmenter les possibilités des utilisateurs, est devenue <span class="footnote-anchor"
+                              data-anchor="30"><span>une informatique impersonnelle</span><sup>17</sup></span> où l'on
+                        dispose d'outils destinés à un public très large (réseaux sociaux par exemple), ce qui fait que
+                        leur utilisation est de plus en plus minimaliste. À travers ces intermédiaires, l'utilisateur a
+                        perdu le savoir-faire de la conception et reçoit dorénavant une expérience taillée sur
+                        mesure.<span class="footnote-anchor" data-anchor="31"><span>une expérience taillé sur
+                                mesure.</span><sup>18</sup></span> Ce “taillé sur mesure” veut plutôt dire l'inverse
+                        puisque ces plateformes ne sont pas adaptées à chaque utilisateur, mais à tous ses utilisateurs.
+                        Olia liliana nous rappelle que <span class="footnote-anchor" data-anchor="32"><span>“la
+                                condition de l'utilisateur est un
+                                rappel de
+                                l'existence d'un système programmé par quelqu'un d'autre”.</span><sup>19</sup></span>
+                        J'aimerais nuancer cela: l'utilisateur ancien était pour moi un utilisateur du code et de
+                        l'ordinateur en général, et au fur et à mesure, il est devenu utilisateur des plateformes en
+                        questions. Dans l'actualité, <span class="footnote-anchor" data-anchor="33"><span>beaucoup de
+                                personnes pensent que Facebook est
+                                Internet.</span><sup>20</sup></span></p>
+
+                    <p>Au même temps que le web laisse de côté la diversité et effervescence de ses débuts, il devient
+                        au fil des années, le plus grand puits de connaissance de la planète, rassemblant des
+                        encyclopédies, video-tutoriels, livres, cours en ligne, etc. La capacité des ordinateurs à
+                        stocker ces informations et aux réseaux de les partager rapidement et souvent de manière
+                        gratuite, fait que l'on peut manier très bien l'outil qu'on a entre nos mains. Ainsi, le web
+                        sert de canal principal à son propre développement, pour que ses utilisateurs continuent de le
+                        réinventer.</p>
+
+
+                </div>
+
+                <div id="partieIII" class="hidden">
+
+                    <div class="pagePartie" id="partie-III">
+
+                        <div class="numPartie">❸</div>
+
+                        <h1>Ré-occuper ces espaces autrement</h1>
+
+                        <h2 id="III-autre">Unique partie:<br>
+                            <span class="uppercase">Imaginer un autre web</span>
+                        </h2>
+                    </div>
+
+
+                    <h3 id="III-handmade"><i>Handmade web</i></h3>
+
+                    <p>Je vais maintenant introduire le terme <span class="footnote-anchor"
+                              data-anchor="34"><span>"<i>handmade</i>”</span><sup>21</sup></span> (on pourrait le
+                        traduire par "web fait-main" en français) proposé par l'artiste, écrivaine et chercheuse J.R.
+                        Carpenter, pour se référer aux sites web codés à la main plutôt que par des outils. Des sites
+                        web entretenus par des individus comme vous et moi, plutôt que par des entreprises. Des sites
+                        web qui sont à une seule utilisation, temporaires ou uniques en son genre. Elle veut qualifier
+                        les sites
+                        qui défient les conventions de lecture, d'écriture, de design, de propriété, de privacité, de
+                        sécurité ou d'identité. Peut-être que la liste est un peu longue par rapport aux sites que j'ai
+                        en tête, mais elle décrit l'esprit de la création web qui eut lieu à l'aube d'Internet, situé
+                        entre les débuts du web et l'arrivée du web marchand. Olia Liliana, figure phare du
+                        <i></i>NetArt</i>, ou art de l'Internet (connue entre autres par ce récit intéractif: <i>My
+                            Boyfriend Came Back from the War</i>, 1996. Visible ici: <a target="_blank"
+                           href="http://www.teleportacia.org/war/">www.teleportacia.org/war/</a>) définit cet
+                        esprit comme il suit:
+                    </p>
+
+                    <section>
+                        <p class="citation footnote-anchor" data-anchor="35"><span>« Lumineux, riche, personnel, lent et
+                                toujours en construction. C'était un réseau de connexions soudaines et de liens
+                                personnels. Les pages ont été construites aux limites du présent, pleines d'espoir pour
+                                une connexion plus rapide et un ordinateur plus puissant... C'était un réseau d'amateurs
+                                qui allaient bientôt être emportés par les ambitions de dot.com, des outils
+                                professionnels de création et directives conçus par des experts en ergonomie.
+                                »</span><sup>22</sup></p>
+                    </section>
+
+                    <p>Ce terme ne fait surface qu'en cette troisième partie puisqu'il vient faire opposition à tous les
+                        outils de conception “prêts à l'emploi” que j'ai évoqué dans la partie précédente. Quand on a
+                        parlé dans la première partie, de la naissance du web et de l'innovation grâce à ses
+                        utilisateurs, on parlait en effet d'un web d'individus, conçu à la main. Ce web avait apporté
+                        une très grande effervescence au milieu, puisque le partage favorisait l'imagination qui
+                        favorisait à son tour la création, et la boucle se répétait comme une boule-de-neige. Les
+                        avantages d'un web plus manuel sont multiples, je peux citer les points principaux: une durée de
+                        vie plus longue des sites, une consommation moins importante, un partage plus facile et un gain
+                        en originalité.</p>
+
+                    <p>J'observe depuis quelques années des personnes qui travaillent énergétiquement sur cette voie,
+                        celle de proposer des designs uniques, jouant avec les mille-et-une possibilités qu'offre la
+                        technologie web de base. Parmi elles et eux, Laurel Schwulst, mais aussi Elliott Cost, Chi
+                        Amisola, Tiger Dingsun, Taichi Wi ou Raphaël Bastide. Pour observer ces pas de côté répartis sur
+                        toute la longueur et largeur de la toile (mais pas du tout exhaustif), vous pouvez visiter
+                        <i><b>My Cartography Of Internet</b></i> (<a target="_blank"
+                           href="https://pablo.energy/wip-cartography">www.pablo.energy/wip-cartography/</a>), un projet
+                        encore en cours sous forme de catalogue où je recueille des sites faits mains aux natures
+                        singulières. Mais ne
+                        partez pas si vite, je vais aussi présenter ici quelques sites web conçus par ces personnalités.
+                        Je vous invite à ne pas vous contenter de ces descriptions et à visiter leurs projets, pour
+                        avoir conscience de la diversité et des possibilités de ce web fait main.
+                    </p>
+
+                    <p><span class="footnote-anchor underline" data-anchor="36"><span class="bold">Laurel
+                                Schwulst</span><sup>Fig. 15</sup></span><br>C'est le premier site de Laurel sur lequel
+                        je suis tombé. Une liste de ses amis, représentés par des morceaux de rochers colorés (pas de
+                        photos, ni d'icône de profil) où chaque personne décrit ses premiers souvenirs d'être en ligne.
+                        Par une photo, un texte ou une image, on revit les premiers pas de toutes ces personnes, même
+                        ceux de Laure. Ce site m'avait interpellé de par le design puis j'ai pu découvrir beaucoup de
+                        choses sur le web de part son contenu.</p>
+
+                    <p><span class="footnote-anchor underline" data-anchor="37"><span class="bold">Elliott
+                                Cost</span><sup>Fig. 16</sup></span><br>Le Gossip's Café se révèle comme un vrai café
+                        sur Internet. Il est temporellement fermé à cause de problème de spams, vous pouvez apercevoir
+                        son utilisation dans cette vidéo (<a target="_blank"
+                           href="https://youtu.be/pnXBV5eM3dQ?t=632">www.youtu.be/pnXBV5eM3dQ?t=632</a>). On
+                        retrouve un petit endroit pour poster des messages, un lieu ou passer sa commande ou sa
+                        recommandation de musique. Tout cela est public de l'instant où on le poste, mais ne restera que
+                        24 heures, puisque le site a des horaires de fermeture et se clôture la nuit tombée. Elliott m'a
+                        même expliqué que le bouton pour éteindre ou allumer la “lumière” (similaire à un mode sombre)
+                        influence toutes les personnes qui le visitent, c'est-à-dire que si quelqu'un éteint la lumière
+                        les autres personnes subiront le changement. Un site qu'il faut visiter habilement pour
+                        découvrir toutes ces subtilités.</p>
+
+                    <p><span class="footnote-anchor underline" data-anchor="38"><span class="bold">Chi
+                                Amisola</span><sup>Fig. 17</sup></span><br>Ferveur lecteur des commentaires des vidéos
+                        Youtube, ce site m'a interpellé par son fond. À chaque visite du site, on tombe sur une phrase
+                        et une musique, qui sont liées puisque le texte est un commentaire de la chanson. Ce que
+                        possèdent en commun à tous ces commentaires est le caractère d'amour qu'ils portent. Dédié à une
+                        personne chère, ce sont des souvenirs intimes que ces gens dévoilent grâce au plaisir mutuel de
+                        la chanson. Il m'a rappelé aussi <i>Get Well Soon</i> (<a target="_blank"
+                           href="https://getwellsoon.labr.io">www.getwellsoon.labr.io</a>) où l'on retrouve des
+                        commentaires postés dans une plateforme de récolte de dons pour des projets médicaux.</p>
+
+
+                    <p><span class="footnote-anchor underline" data-anchor="39"><span class="bold">Taichi
+                                Wi</span><sup>Fig. 18</sup></span> Site réalisé avec Laurel Schwulst, pour le compte
+                        d'artistes New Yorkais qui possèdent une faible vision. Ce texte met en exergue un outil
+                        moyennement connu du web qui est le texte alternatif. Cet outil d'accessibilité accompagne les
+                        images affichées sur les sites, se montrant comme légende si l'image ne charge pas ou si
+                        l'utilisateur demande à son ordinateur de lire à voix haute le contenu de la page. Un site web
+                        aussi beau pour parler d'un outil aussi fonctionnel m'avait paru curieux, et finalement un site
+                        assez pertinent pour son but.</p>
+
+                    <p>
+                        Comme vous pouvez le voir, le web <i>handmade</i> est mis en place par des individuels. Le
+                        proverbe “on n'est jamais si bien servi que par soi-même” le dit bien, le faire à sa façon est
+                        forcément solitaire. Avec cet esprit où le design et la conception est faite par
+                        une seule et même personne, il n'y a pas d'échange comme il pourrait y en avoir au sein
+                        d'équipes
+                        plus larges. Cela a ses points positifs (poursuivre des idées dont on est convaincu, travailler
+                        d'une façon plus personnelle) mais aussi des point négatifs (manque de feedback ou aide de son
+                        équipe, imposition de la façon de travailler, etc.). De ce fait les communautés en ligne on été
+                        très importantes aux débuts du web et le sont toujours de nos jours. Des communautés où des
+                        collectifs peuvent se créer autour d'une idée ou pratique, groupes qui permettent de se
+                        rejoindre ponctuellement ou régulièrement pour échanger à propos des projets ou d'outils, mais
+                        aussi pour concevoir ensemble. De ce fait, je pense à plusieurs communautés comme <i>HTML
+                            Energy</i> (<a target="_blank" href="https://html.energy/">www.html.energy/</a>) où l'on
+                        retrouve des podcasts sur l'utilisation minimaliste du code, ou <i>Sunday Sites</i> (<a
+                           target="_blank" href="https://sundaysites.cafe/">www.sundaysites.cafe/</a>) qui
+                        mensuellement, réunit des personnes pour coder pendant deux
+                        heures un petit site sur une thématique donnée. Ces deux communautés vont aussi organiser
+                        des rencontres-événements pour partager et coder ensemble. Comme on l'a vu, le code fait main
+                        est propice à être partagé de par sa simplicité et ces rencontres servent souvent à échanger,
+                        améliorer et apprendre davantage sur les différentes visions que chaque participant a de son
+                        emploi. Elles ouvrent aussi la porte aux personnes extérieures, qui peuvent s'initier aux bases
+                        du code. En fait ces deux collectifs, cherchent à montrer que le code le plus simple,, celui
+                        imaginé par Tim Berners-Lee il y a 30 ans, permet toujours de créer des sites web, sans avoir
+                        besoin de recourir aux outils et aux librairies modernes qui sont venus se rajouter par-dessus
+                        et complexifier la conception du web. On peut observer cette dynamique dans le “manifeste” de
+                        HTML Energy, qui propose trois buts:
+                    </p>
+
+                    <p class="citation footnote-anchor" data-anchor="40"><span>
+                            1. Montrer que le web est vivant, humain et fait main.<br>
+                            2. Apprendre et ouvrir cette écriture aux gens de tout âge et métier.<br>
+                            3. Montrer les possibilités du code HTML.</span><sup>23</sup></p>
+
+
+                    <h3 id="III-sain">Un web plus sain</h3>
+
+                    <p>Ce web alternatif possède des avantages qui aident à une utilisation plus saine de l'outil qu'est
+                        le Web, des ressources énergétiques et des échanges entre utilisateurs. Voici certains de ces
+                        bénéfices:</p>
+
+                    <p><span class="underline">Vit plus longtemps</span><br>Le changement dans le code des librairies ou
+                        des
+                        CMS
+                        rendent leur utilisation instable puisqu'elle demande à être mise à jour, chose qui n'est pas
+                        toujours possible ou souhaitable. Certaines de ces librairies ne sont pas lues
+                        dans
+                        des navigateurs anciens ou minoritaires, ce qui diminue la durée de vie des projets.<i>World
+                            Wide Web</i> (<a
+                           href="https://info.cern.ch/hypertext/WWW/TheProject.html">www.info.cern.ch/hypertext/WWW/TheProject.html</a>)
+                        est
+                        le
+                        premier site qui paraîtra sur le web, codé par Tim Berners-Lee en 1991. On peut
+                        toujours
+                        le visiter et son aspect est resté inchangé.</p>
+
+                    <p><span class="underline">Consomme moins </span><br>
+                        Un code simple, consomme moins d'énergie et est plus rapide. D'après le site de statistiques web
+                        HTTP Archive (<a target="_blank" href="https://httparchive.org"></a>), <span
+                              class="footnote-anchor" data-anchor="41"><span> le poids d'un site a augmenté de plus de
+                                400% entre 2010 et
+                                2023.</span><sup>Fig. 19</sup></span> L'être humain a un vilain défaut: plus il améliore
+                        ses
+                        outils plus il en profite. Il n'arrive pas à améliorer quelque chose et à continuer à l'utiliser
+                        tel quel. Je mets l'exemple de la vitesse internet: 3G, 4G, 4G+, 5G, au fur et à mesure des
+                        années la vitesse de téléchargement devient de plus en plus puissante, mais le temps de
+                        chargement des sites reste toujours le même: 4 secondes en moyenne (en 2016 le temps de
+                        chargement d'un site était de 3.9 secondes, en 2023 il est de 4.3 secondes). Comment ça alors?
+                        Ça
+                        veut simplement dire qu'on profite d'avoir des vitesses plus rapides pour mettre plus de choses
+                        dans les sites. Imaginez que pour faire marcher un site web on a un câble qui relie notre
+                        navigateur au serveur où le site est stocké. Mais qu'est-ce qui se passe quand on fait appel à
+                        des librairies externes? Que vous devez tendre un nouveau câble vers un autre serveur, cela vous
+                        fait deux câbles (ou demandes de connexions dans le jargon Internet). Chaque fois qu'on fait
+                        appel à quelque chose d'externe on renouvelle des demandes de connexions, ce qui demande plus de
+                        bande passante, et plus de calculs de la part de notre navigateur. Quand le code est conçu à la
+                        main on retrouve les fonctionnalités exactes dont le site a besoin. Quand on utilise une
+                        librairie externe on fait appel à un code qui a été conçu pour toute une série de besoins, dont
+                        celui du site en question, mais aussi d'autres fonctionnalités dont il n'aura pas besoin, mais
+                        que le navigateur va quand même lire et nous faire payer le prix en temps de chargement.</p>
+
+                    <p><span class="underline">Plus facile à partager</span><br>Les CMS et autres outils de génération
+                        de sites déploient le code source à notre place. Le fait de les utiliser pour produire notre
+                        code va rendre ce dernier forcément plus codifié, ce qui n'est pas trop un problème puisque
+                        c'est une autre machine (le navigateur) qui va le déchiffrer. Mais que se passe-t-il quand nous,
+                        êtres qui ne peuvent pas lire 10,000 lignes de code par seconde veulent observer au code source?
+                        Je pense que vous aurez vu l'impasse de la situation. En délégant la création du code à la
+                        machine, on crée un pont entre elles, qui nous pousse en dehors du circuit de lecture. Perdant
+                        la capacité de lire le code, on perd la possibilité de le partager. Ce partage, était un des
+                        points forts lors des débuts du web, où l'on transformait et améliorait le code reçu, qu'on
+                        venait à notre tour partager. Si on ne peut partager, comment peut-on l'améliorer? Vous me direz
+                        que des personnes compétentes s'attaqueront à la tâche, mais rappelez-vous de la raison qu'avait
+                        fait que Wikipedia soit ce qu'elle est de nos jours: “le progrès n'est pas intrinsèquement lié à
+                        un statut ou diplôme, mais c'est quelque chose que l'on démontre par la contribution et la
+                        présence d'une communauté”.</p>
+
+                    <p><span class="underline">Plus riche et divers</span><br>J'ai déjà fait une longue partie sur la
+                        monotonie qu'apporte la réutilisation systématique des mêmes outils et du manque de singularité
+                        que l'on retrouve quand on les utilise. Je ne préconise pas qu'il faut réinventer la roue à
+                        chaque site, ou qu'il faut retourner à la conception des sites web comme il y a 30 ans, mais que
+                        si on veut un Internet puissant, chargé de diversités et de mélanges, on ne peut pas se
+                        contenter des “par défaut”. Il est nécessaire de donner une âme singulière à chaque site. La
+                        comparaison de ces sites avec des grands bâtiments n'est pas gratuite, elle vient s'opposer à ce
+                        qui pourrait être une belle maison de campagne, métaphore des sites web fait-mains. Cette idée
+                        de maisonnette vient de l'article <span class="footnote-anchor" data-anchor="42"><span>“My
+                                website is a shifting house
+                                next to a
+                                river
+                                of knowledge. What could yours be?”</span><sup>24</sup></span> écrit en 2018 par Laurel
+                        Schwulst dans <i>The Creative Independent</i> (<a target="_blank"
+                           href="https://thecreativeindependent.com/">www.thecreativeindependent.com</a>).
+                        Ce texte personnifie les sites web en tout une série d'éléments physiques, les comparants à une
+                        chambre, à une étagère, à un petit jardin ou à une rivière. Le texte a influencé beaucoup de
+                        designers et développeurs qui ont pu reprendre ces métaphores. Dans cet article destiné à ses
+                        élèves et toute autre personne qui code, on retrouve certaines notions très intéressantes sur la
+                        façon dont peut-être perçu le web. Laurel évoque l'importante dualité que l'on retrouve quand on
+                        code un site web, puisque ce dernier est à la fois contenant et contenu. Quand on code ses
+                        propres sites, on est l'auteur ou l'autrice du contenu qui sera dedans, mais aussi du contenant
+                        qui est le site web en lui-même.</p>
+
+                    <p>Elle explique que ce sont les individuels au lieu des corporations qui doivent mener le web vers
+                        ce qu'il deviendra plus tard. Ce sont les designers ou artistes qui peuvent enrichir le web de
+                        la façon qu'il le fut lors de sa création: ouvert, communautaire et surprenant. Elle sollicite
+                        les artistes et designers, qui souvent excellent dans la création d'univers propres, à imaginer
+                        leurs propres sites, remplis de leurs identités, idées et rêves. En concevant ces sites comme
+                        des actes individuels on nourrit l'ambition collective qui s'est perdu.</p>
+
+
+                    <h3 id="III-individus">Bricolé et pensé pour les individus</h3>
+
+                    <p>Le domaine de travail de ces personnes est plus près du design que du code. Mais l'envie de
+                        façonner par leur main propre leurs commandes, mais aussi des idées personnelles (<i>«Gossips
+                            Cafe»</i> ou <i>«The Sound Of Love»</i> par exemple) les a conduit à apprendre et avoir un
+                        point de vu personnel de l'écriture du code. Ce ne sont pas des novices, puisque la mise en
+                        ligne de ces
+                        sites demande des connaissances assez poussées sur la mise en place de bases de données, gestion
+                        de contenu, etc. mais c'est sûrement la façon dont iels l'ont appris qui a influencé leurs
+                        façons de créer le web. Cette façon de concevoir me rappelle un peu le bricolage, où l'on
+                        simplifie, combine ou détourne l'utilisation pour arriver à ses fins. Ce type de web n'utilise
+                        pas les dernières technologies (très gourmandes d'ailleurs), mais se contente du code de base
+                        pour se mettre en place. Ce n'est pas un nostalgique retour en arrière, mais plutôt l'envie
+                        d'exploiter ce que l'on possède déjà - le code HTML et le langage CSS - pour créer et innover. À
+                        la façon du bricolage <span class="footnote-anchor" data-anchor="43"><span>« Le bricoleur ne
+                                subordonne pas les tâches qu'il mène, à l'obtention de matières premières et d'outils,
+                                conçus et procurés à la mesure de son projet : son univers instrumental est clos, et la
+                                règle de son jeu est de toujours s'arranger avec les moyens du bord
+                                »</span><sup>25</sup></span>, cet esprit cherche à s'inspirer du monde extérieur et des
+                        outils existants pour imaginer des sites web très différents les uns des autres.</p>
+                    <p>Je pense notamment à deux projets, <i>ARTISTS SPACE</i> (<a target="_blank"
+                           href="https://artistsspace.org/]">www.artistsspace.org</a>) et a <i>Gossips Cafe</i> (<a
+                           href="https://gossips.cafe/">www.gossips.cafe/</a>). Pour le premier, conçu par Laurel
+                        Schwulst, c'était une propriété physique du lieu où est établie cette institution new-yorkaise
+                        qui a défini la structure du site. Cette espace d'art possède deux entrées, et <span
+                              class="footnote-anchor" data-anchor="44"><span>c'est cette condition physique qui a guidé
+                                l'idée du site web.</span><sup>26</sup></span><br>Laurel a démultiplié l'entrée au site
+                        web en 5 chemins, pouvant accéder à tout son contenu par le biais de pages, d'images, de textes,
+                        de vidéos ou des artistes. La transcription sur le web des conditions physiques permet d'ores et
+                        déjà de donner des informations sur la raison de ce lieu, qui accueille toute sorte d'artistes
+                        et reste très ouvert à la nature de leurs pratiques.</p>
+
+                    <p>Un deuxième site qui montre une sorte de matérialité (pas par rapport à un endroit spécifique
+                        cette fois-ci) est le deuxième site que je citais dans le paragraphe antérieur, <i>Gossips
+                            Cafe</i> (<a href="https://gossips.cafe/">www.gossips.cafe/</a>) conçu par Elliott Cost.
+                        Outre son contenu et ses intentions, on retrouve <span class="footnote-anchor"
+                              data-anchor="46"><span>ce petit bouton</span><sup>Fig. 20</sup></span> en haut à droite
+                        qui ressemble
+                        à un interrupteur de lumière. Quand on l'actionne, le site s'assombrit, passant dans une espèce
+                        de mode nuit. Mais la curiosité est que ce bouton n'active pas juste le mode nuit dans notre
+                        navigateur, mais chez toutes les personnes qui visitent le site. C'est en fait un vrai
+                        interrupteur, qui peut être actionné par les visiteurs et qui influencera l'ambiance de tout le
+                        site! Ce détail crée tout d'un coup le sentiment d'un endroit physique, que l'on partage avec
+                        les autres. Ça m'a rapidement rappelé cet autre site qui met en avant la présence des autres
+                        visiteurs lors de nos navigations: <i>Together Online</i> (<a target="_blank"
+                           href="https://together-online.net/editorial">www.together-online.net/editorial</a>). Ces
+                        sites montrent l'importance de se tourner vers l'extérieur au moment où ils ont été imaginés, et
+                        mettent en
+                        évidence l'existence d'autres qualités du web qui ne sont pas souvent exploitées.</p>
+
+                    <p>Elliott a proposé plusieurs projets sous forme de réseaux sociaux. Je pense notamment à
+                        <i>Special Fish</i> (<a target="_blank" href="https://special.fish/">www.special.fish/</a>),
+                        qui se présente sous forme d'index des personnes inscrites. Pas d'images ou de fil d'actualité,
+                        juste des pages de profil où le texte est le seul moyen de publier. Dans son <span
+                              class="footnote-anchor" data-anchor="45"><span>interview,</span><sup>27</sup></span>il
+                        explique que ce qui lui plaît le plus dans les réseaux sociaux sont les pages personnelles, où
+                        l'on se présente et on partage nos intérêts. Il va donc construire ce site autour de ce seul
+                        principe, et laisser les futurs utilisateurs remplir et imaginer le contenu de leur page de
+                        présentation. Il imagine certains de ses projets comme des vaisseaux vides que les utilisateurs
+                        viendront remplir (“<i>making like an empty vessel and letting the users fill it in”</i>) à
+                        contrario des sites standards qui guident les utilisateurs à suivre des chemins précis.
+                    </p>
+                </div>
+
+                <div id="partieFin" class="hidden">
+
+                    <div class="pagePartie" id="partie-Fin">
+
+                        <div class="numPartie">●</div>
+
+                        <h1>Conclusion</h1>
+
+                    </div>
+
+                    <p>Cette petite histoire d'Internet montre les différentes trajectoires qu'a eu cet outil
+                        révolutionnaire que
+                        sont les sites web. Les envies des pionniers, les besoins naissants des uns et les solutions
+                        proposées par des autres, les jeux et l'exploration de ces espaces, jusqu'à sa marchandisation
+                        systèmatique. Certains chemprojets ins se finissent ou sont très spécifiques, mais d'autres
+                        naissent et amènent des
+                        nouvelles idées et possibilités. Ces derniers possèdent en eux l'optimisme de s'améliorer et
+                        d'enrichir les personnes qui les parcourent. La pratique que l'on fait du web est arrivée à des
+                        endroits inattendus, dans le bon et le mauvais sens, et l'appétit du web marchand risque de
+                        nous engloutir dans un monde numérique inhumain. D'où l'importance de maintenir à flot d'autres
+                        façons de l'imaginer et le faire vivre comme nous le démontre le web <i>handmade</i>.
+                        Celui-ci laisse de côté les règles qui ont été établies pour pouvoir s'imprégner de toutes les
+                        autres possibilités que l'outil offre et qui n'ont pas encore été exploitées. J'aimerais citer
+                        le très important “Pour comprendre les médias” de Marshall McLuhan, qui écrit sur la façon dont
+                        nous appréhendons les outils technologiques:</p>
+
+                    <p class="citation footnote-anchor" data-anchor="47"><span>« En réalité et en pratique, le vrai
+                            message, c'est le médium lui-même, c'est-à-dire, tout simplement, que les effets d'un médium
+                            sur l'individu ou sur la société dépendent du changement d'échelle que produit chaque
+                            nouvelle technologie, chaque prolongement de nous-mêmes, dans notre
+                            vie. »</span><sup>28</sup></p>
+
+
+                    <p>Internet a radicalement changé l'échelle de nos échanges et le rapport à notre vécu. La totalité
+                        de ces transformations ne se sont sûrement pas encore opérées, et ont doit beaucoup d'entre
+                        elles à la façon dont on nous propose le web et la façon dont on l'utilise. Pour montrer la
+                        pertinence de ces questionnements j'ajoute aussi un extrait de mail que je viens de recevoir de
+                        la part de la Fondation Mozilla, parlant des futurs chemins à emprunter: “[…] La seconde voie
+                        est différente. C'est un Internet où chacun peut choisir quelles informations partager et
+                        comment ses données personnelles sont utilisées. Un Internet sûr et sécurisé, où les entreprises
+                        de la tech peu scrupuleuses doivent rendre des comptes, où l'IA inspire confiance. Un Internet
+                        où les individus sont aux commandes.” Dans cet écrit je n'ai pas voulu entrer dans les
+                        questions de respect de la vie privé ou de l'exploitation de nos données, mais on peut bien
+                        imaginer que les motivations derrière ce web fait main sont naturellement opposées à ces
+                        sujets-là. C'est un web d'individus pour des individus, prônant la création, l'échange et
+                        l'expression personnelle.</p>
+
+                    <p>
+                        En présentant une autre façon de concevoir le web, je veux montrer le vaste champ d'action dont
+                        disposent les designers (et surtout nous graphistes) pour agir avec des approches et intuitions
+                        propres. Notre capacité à penser des expériences visuelles nous donne le pouvoir de façonner un
+                        web plus dynamique et captivant, offrant aux utilisateurs des espaces en ligne aussi variés et
+                        uniques que le sont les individus eux-mêmes.</p>
+
+                    <h1 id="fin-references" class="space-top">Références</h1>
+
+                    <h3 id="fin-biblio">BIBLIOGRAPHIE</h3>
+
+                    <ul>
+                        <li>Bernard Stiegler (dir.), <b>«La toile que nous voulons»</b> FYP Éditions, 2017</li>
+                        <li>Dominique Cardon, <b>«La Démocratie Internet. Promesses et Limites»</b> Paris: Seuil, 2010
+                        </li>
+                        <li>Dominique Cardon, <b>«Culture Numérique»</b> Paris: Presses de Sciences Po, 2019</li>
+                        <li>Loup Cellard, Guillaume Heuguet, <b>«Tèque 1»</b> Revue Tèque, 2022</li>
+                        <li>Stéphane Vial, <b>«L'être et l'écran»</b> PUF, 2013</li>
+                        <li>Graphisme en France, <b>«Création, outils, recherche»</b> n°28, 2022</li>
+                        <li>Rob Ford, <b>«Web Design. The Evolution of the Digital World 1990 -Today»</b> TASCHEN, 2019
+                        </li>
+                        <li>Neeltje van der Vlugt, <b>«Taking a walk on the internet»</b> Amsterdam: Gerrit Rietveld
+                            Academie
+                            DesignLAB, 2023</li>
+                        <li>Willa Köerner et Tommy Martinez, <b>«Untethering the Web»</b> Brooklyn: Pionner Works Press,
+                            2022
+                        </li>
+                        <li>Willa Köerner, <b>«Building better realities»</b> Brooklyn: Pionner Works Press, 2020</li>
+                        <li>Geert Lovink, <b>«Stuck on teh platform»</b> Amsterdam: Valiz, 2022</li>
+                        <li>Marshall McLuhan, <b>«Pour comprendre les médias»</b> Paris: Seuil, 1977</li>
+                    </ul>
+
+                    <h3 id="fin-articles">ARTICLES</h3>
+                    <ul>
+                        <li>Tim Berners-Lee, <b>«Information Management: A Proposal»</b>, W3 Archive,
+                            1990. Consultable ici: <a target="_blank"
+                               href="https://www.w3.org/History/1989/proposal.html">www.w3.org/History/1989/proposal.html</a>
+                        </li>
+
+                        <li>Stewart Brand, <b>«We owe it all to the hippies»</b>, nº spécial « Welcome To Cyberspace
+                            Enter Here », Time Magazine, Volume 145, nº 12, Été 1995. Consultable ici: <a
+                               target="_blank"
+                               href="https://culturalhistoryoftheinternet.com/wp-content/uploads/2020/07/brand-we-owe-it-all-to-the-hippies.pdf">www.culturalhistoryoftheinternet.com/wp-content/uploads/2020/07/brand-we-owe-it-all-to-the-hippies.pdf</a>
+                        </li>
+                        <li>Olia Lialina, <b>«Turing Complete User: Resisting Alienation in Human Computer
+                                Interaction»</b>, Heidelberg: arthistoricum.net-ART-Books, 2021. Consultable ici: <a
+                               target="_blank"
+                               href="https://books.ub.uni-heidelberg.de//arthistoricum/catalog/book/972">www.books.ub.uni-heidelberg.de//arthistoricum/catalog/book/972</a>
+                        </li>
+
+                        <li>Olia Lialina, <b>«A Vernacular Web»</b>, Web personnelle, janvier 2005. Consultable ici:
+                            <a target="_blank"
+                               href="https://art.teleportacia.org/observation/vernacular/">www.art.teleportacia.org/observation/vernacular/</a>
+                        </li>
+                        <li>Valérie Beaudouin, Serge Fleury, Marie Pasquier, Benoît Habert, Christian Licoppe,
+                            <b>«Decrire la toile pour mieux comprendre les parcours»</b>, nº 116, «Parcours sur
+                            Internet», RÉSEAUX, 2002/6, pages 19 à 51. Consultable ici: <a target="_blank"
+                               href="https://www.cairn.info/revue-reseaux1-2002-6-page-19.htm">www.cairn.info/revue-reseaux1-2002-6-page-19.htm</a>
+                        </li>
+                        <li>Craig Timberg, <b>«Net of Insecurity»</b>, Washington Post, 30 mai 2015. Consultable ici:
+                            <a target="_blank"
+                               href="https://www.washingtonpost.com/sf/business/2015/05/30/net-of-insecurity-part-1/">www.washingtonpost.com/sf/business/2015/05/30/net-of-insecurity-part-1/</a>
+                        </li>
+                        <li>Wen Chen David J. Crandall Norman Makoto Su, <b>«Understanding the Aesthetic Evolution of
+                                Websites: Towards a Notion of Design Periods»</b>, Indiana University, 2 mai
+                            2017. Consultable ici: <a target="_blank"
+                               href="https://dl.acm.org/doi/10.1145/3025453.3025607">www.dl.acm.org/doi/10.1145/3025453.3025607</a>
+                        </li>
+                        <li>Frank Chimero, <b>«The Good Room»</b>, Blog personnel, 15 février 2018. Consultable ici:
+                            <a target="_blank"
+                               href="https://frankchimero.com/blog/2018/the-good-room/">www.frankchimero.com/blog/2018/the-good-room/</a>
+                        </li>
+                        <li>Colleen McClain, Emily A. Vogels, Andrew Perrin, Stella Sechopoulos et Lee Rainie, <b>«The
+                                Internet and the Pandemic»</b>, Pew Research Center, 1er septembre 2021. Consultable
+                            ici: <a target="_blank"
+                               href="https://www.pewresearch.org/internet/2021/09/01/the-internet-and-the-pandemic/">www.pewresearch.org/internet/2021/09/01/the-internet-and-the-pandemic/</a>
+                        </li>
+                        <li>Aigars Silkalns, <b>«WordPress Statistics: How Many Websites Use WordPress in 2023?»</b>,
+                            Pew Research Center, 2 novembre 2023. Consultable ici: <a target="_blank"
+                               href="https://colorlib.com/wp/wordpress-statistics/">www.colorlib.com/wp/wordpress-statistics/</a>
+                        </li>
+                        <li>Sam Goree, <b>«Yes, websites really are starting to look more similar»</b>, The
+                            Conversation, 6 mai 2020. Consultable ici: <a target="_blank"
+                               href="https://theconversation.com/yes-websites-really-are-starting-to-look-more-similar-136484">www.theconversation.com/yes-websites-really-are-starting-to-look-more-similar-136484</a>
+                        </li>
+                        <li>Solana Larsen (editor), <b>«How healthy is the Internet?»</b>, Mozilla Foundation,
+                            2018. Consultable ici: <a target="_blank"
+                               href="https://internethealthreport.org/2018">www.internethealthreport.org/2018</a>
+                        </li>
+                        <li>Leo Mirani, <b>«Millions of Facebook users have no idea they’re using the internet»</b>,
+                            Quartz, 9 février 2015. Consultable ici: <a target="_blank"
+                               href="https://qz.com/333313/milliions-of-facebook-users-have-no-idea-theyre-using-the-internet">www.qz.com/333313/milliions-of-facebook-users-have-no-idea-theyre-using-the-internet</a>
+                        </li>
+                        <li>J. R. Carpenter, <b>«A Handmade Web»</b>, Blog personnel, 1 décembre 2015. Consultable
+                            ici: <a target="_blank"
+                               href="https://luckysoap.com/statements/handmadeweb.html">www.luckysoap.com/statements/handmadeweb.html</a>
+                        </li>
+                        <li>Laurel Schwulst, <b>«My website is a shifting house next to a river of knowledge. What could
+                                yours be?»</b>, The Creative Independent, 21 mai 2018. Consultable ici: <a
+                               target="_blank"
+                               href="https://thecreativeindependent.com/essays/laurel-schwulst-my-website-is-a-shifting-house-next-to-a-river-of-knowledge-what-could-yours-be/">www.thecreativeindependent.com/essays/laurel-schwulst-my-website-is-a-shifting-house-next-to-a-river-of-knowledge-what-could-yours-be/</a>
+                        </li>
+                        <li>Lawrence Lessig, <b>«L'Avenir des idées»</b>, Presses universitaires de
+                            Lyon, 2005. Consultable ici: <a target="_blank"
+                               href="https://presses.univ-lyon2.fr/sdx/livres/pul/2005/avenir-idee">www.presses.univ-lyon2.fr/sdx/livres/pul/2005/avenir-idee</a>
+                        </li>
+                        <li>Lionel Scheepmans, <b>«Introduction à la bricologie»</b>, Wikiversity, 11 juin
+                            2011. Consultable ici: <a target="_blank"
+                               href="https://fr.wikiversity.org/wiki/Recherche:Introduction_à_la_bricologie#La_bricologie_pour_un_changement_de_paradigme">www.fr.wikiversity.org/wiki/Recherche:Introduction_à_la_bricologie#La_bricologie_pour_un_changement_de_paradigme</a>
+                        </li>
+                        <li>Benjamin Good, <b>«How Websites Learn: A Conversation with Laurel
+                                Schwulst»</b>. Consultable ici: <a target="_blank"
+                               href="https://www.takeshapemag.com/issuethree">www.takeshapemag.com/issuethree</a>
+                        </li>
+
+
+                    </ul>
+
+
+                    <h1 id="fin-colophon" class="space-top">Colophon</h1>
+
+                    <p>Très chaleureux remerciements à Patrick Doan qui a suivi ce mémoire, et spécialement a son
+                        énergie et plaisir de partager, à propos de ce sujet et mille autres. À Clara Pasteau, avec qui
+                        j'eus la chance de discuter courant novembre pour échanger sur ce sujet dont elle est aussi
+                        actrice. À Elliott Cost et Tiana Dueck, que j'ai pu rencontrer à Rotterdam et qui m'ont nourri
+                        dans la façon dont je vois le web. À mes divers enseignant·es de l'ESAD et l'UTC qui m'on épaulé
+                        dans ce master, à mes ami.es d'Amiens et Compiègne qui m'ont poussé à aller jusqu'au bout. Et à
+                        tout·es les designers qui font du web un endroit toujours plus surprenant! </p>
+
+                    <p>Le terme «The Web We Want» provient d'une initiative de la <b>World Wide Web Fondation</b>
+                        (<a target="_blank"
+                           href="https://webfoundation.org/">www.webfoundation.org</a>), fondée par Tim Berners-Lee
+                        lui-même. Elle défend le
+                        web comme un bien public et un droit fondamental. En umpruntant ce titre je veux revindiquer ces
+                        principes et mettre l'accent sur le fait que pour "vouloir" il faut "faire".</p>
+
+                    <div class="credits">
+                        ・ Écriture, concept et développement par <a target="_blank"
+                           href="https://pablo.energy">Pablo Moreno</a> 〠<br>
+                        ・ Typographies libres de droits, <a target="_blank"
+                           href="https://fonts.google.com/specimen/BIZ+UDMincho">BIZ UDMincho</a> pour les titres
+                        et <a target="_blank"
+                           href="https://github.com/kaspernordkvist/uncut_sans/">Uncut Sans</a> pour le texte de labeur
+                        <br>
+                        ・ Codé à la main sur VSCodium et Firefox Developper Edition, hébergé grâce à Netlify<br>
+                        ・ Publié en décembre 2023 à l'ESAD d'Amiens<br>
+                        ・ Si question quelconque: pablomoreno@proton.me<br>
+                    </div>
+
+                </div>
+
+            </main>
+
+        </div>
+
+        <div class="bookmarks">
+            <div id="bookmarkPartieI" class="pointer"><span><span>❶</span>Des nouveaux mondes à bâtir</span>
+            </div>
+            <div id="bookmarkPartieII" class="pointer"><span><span>❷</span>Au web de nos jours</span></div>
+            <div id="bookmarkPartieIII" class="pointer"><span><span>❸</span>Réoccuper ces espaces</span></div>
+            <div id="bookmarkPartieFin" class="pointer"><span><span>◉</span>Conclusion</span></div>
+        </div>
+
+
+    </div>
+
+    <div id="cal1">&nbsp;</div>
+    <div id="cal2">&nbsp;</div>
+    <div id="tooltip">📝 [Alt + N]</div>
+
+    <script id="script" src="assets/js/thisColor.js"></script>
+    <script id="script" src="assets/js/script.js"></script>
+    <script id="script" src="assets/js/options.js"></script>
+    <script id="script" src="assets/js/notes.js"></script>
+    <script id="script" src="assets/js/bookmarks.js"></script>
+
+</body>
+
+</html>

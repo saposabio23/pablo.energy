@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔗🔗🔗</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="PABLO ⚡️" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+    <!-- Links -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+
+    <style>
+        body {
+            font-size: 12px;
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        h6 {
+            font-size: 12px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* TABLE */
+
+        table,
+        th,
+        td {
+            border: none;
+            border-collapse: collapse;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        tr {
+            padding: 0 10px;
+            transition: all .3s ease-in-out;
+        }
+
+        tr:nth-child(odd) {
+            /* background-color: red; */
+        }
+
+        tr:hover {
+            cursor: pointer;
+            background-color: black;
+            color: white;
+            transition: all 0s ease-in-out;
+        }
+
+        .year2019:hover {
+            background-color: blueviolet;
+        }
+
+        .year2020:hover {
+            background-color: brown;
+        }
+
+        .year2021:hover {
+            background-color: rosybrown;
+        }
+
+        .year2022:hover {
+            background-color: red;
+        }
+
+
+        /* HOVER SHOWS URL */
+        .url {
+            opacity: 0;
+        }
+
+        tr:hover .url {
+            opacity: 1;
+        }
+
+        /* STATE OF THE SITE */
+        .public {}
+
+        .private {
+            opacity: .5;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* FAVICON IMAGE */
+        img {
+            height: 20px;
+            border-radius: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table></table>
+
+    <script src="assets/js/sites.js"></script>
+
+</body>
+
+</html>

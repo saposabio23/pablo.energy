@@ -55,48 +55,6 @@
     }
 }
 
-/* Resume popup */
-#resume-popup {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 100vw;
-    transform: translateX(100%);
-    opacity: 0;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
-
-}
-
-#resume-popup>div {
-    height: fit-content;
-    width: fit-content;
-    background: #fff;
-    border: 1px solid #e5e5e5;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-    padding: 8px;
-    transform: rotate(-2deg);
-}
-
-#resume-popup.show {
-    transform: translateX(0%);
-    opacity: 1;
-}
-
-#resume-popup img {
-    display: block;
-    object-fit: contain;
-    border-radius: 6px;
-    height: 600px;
-
-}
-
-
 .carousel-cell {
     width: 90%;
     aspect-ratio: 4/2.5;
@@ -137,39 +95,14 @@
         height: auto;
         margin-right: 10px;
     }
-
-    #resume-popup>img {
-        height: 400px;
-    }
 }
 
-/* WEBSITES FILTER SLIDER */
-.nature-slider {
-    -webkit-appearance: none;
-    appearance: none;
-    height: 2px;
-    /* overhang the tick row so the 12px thumb centers on the 2px end ticks */
-    width: calc(100% + 10px);
-    margin-inline: -5px;
-    /* draw the line only between the thumb's end positions (tick to tick) */
-    background: linear-gradient(#917400, #917400) center / calc(100% - 12px) 100% no-repeat;
-    border-radius: 2px;
-    cursor: pointer;
+/* SECTION LABELS: white unless it's the current section (set in index.js) */
+[data-section-label]> :not(#intro-photo) {
+    transition: background-color 0.4s, color 0.4s, opacity 1s 0.2s;
 }
 
-.nature-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #917400;
-}
-
-.nature-slider::-moz-range-thumb {
-    width: 12px;
-    height: 12px;
-    border: none;
-    border-radius: 50%;
-    background: #917400;
+[data-section-label].is-idle> :not(#intro-photo) {
+    background-color: #fff;
+    color: #000;
 }

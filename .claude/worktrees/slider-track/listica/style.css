@@ -1,0 +1,149 @@
+        body {
+            background-color: black;
+            margin: 0;
+            overflow: hidden;
+
+            background-image: url(IMG_1441.JPG);
+            background-size: cover;
+            /*! background-origin: padding-box; */
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+        }
+
+        header {
+            width: 100vw;
+            /*! background-color: black; */
+            color: white;
+            /*! box-shadow: 0px 0px 10px black; */
+            padding: 10px;
+            height: 50px;
+            box-sizing: border-box;
+            position: relative;
+            padding: 0 0 0 20PX;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 99;
+        }
+
+        h1 {
+            /*! border: 2px dotted yellow; */
+            border-radius: 10px;
+            display: block ruby;
+            padding: 4px 10px;
+            align-items: center;
+            text-align: center;
+            color: yellow;
+            background-color: black;
+            box-shadow: 0 0 10px yellow;
+            font-size: 1rem;
+            font-weight: 400;
+
+            /*! margin-right: 10px; */
+            user-select: none;
+            position: relative;
+            z-index: 99;
+            /*! top: -5px; */
+            /*! left: 5px; */
+            margin: 0;
+            /*! padding: 0; */
+        }
+
+        h1:hover {
+            cursor: pointer;
+            color: black;
+            background-color: yellow;
+        }
+
+        .i {
+            text-decoration: double;
+            font-size: 2rem;
+            color: yellow;
+            width: fit-content;
+            position: relative;
+            z-index: 999;
+            margin: 0 10px 0 2px;
+        }
+
+        .i:hover {
+            cursor: pointer;
+        }
+
+        .container {
+            width: 100%;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            overflow-x: scroll;
+            white-space: nowrap;
+            color: yellow;
+            /*! -webkit-text-stroke: 1px black; */
+            text-shadow: -2px 0px black, 0 1px black, 1px 0 black, 0 -1px black;
+            line-height: 1;
+            position: absolute;
+        }
+
+        #letra {
+            padding-right: 100vw;
+        }
+
+        .caras {
+            position: absolute;
+            height: 200px;
+            width: 200px;
+            border-radius: 100%;
+            z-index: 98;
+            bottom: 0;
+            filter: blur(20px);
+            transition: all .1s cubic-bezier(0.39, 0.575, 0.565, 1);
+        }
+
+        .caras:hover {
+            filter: blur(0px);
+
+        }
+
+        #n {
+            left: 0px;
+            top: 0;
+        }
+
+        #p {
+            right: 0px;
+        }
+
+        iframe {
+            height: 100vh;
+            width: auto;
+            border-radius: 23%;
+            top: 0;
+            position: absolute;
+            aspect-ratio: 1/1;
+            left: 50vw;
+            transform: translateX(-50%);
+            box-shadow: 0 0 10px yellow;
+            opacity: 1;
+        }
+
+        .startLyrics {
+            animation: scroll 30s linear forwards;
+        }
+
+        @keyframes scroll {
+            from {
+                transform: translateX(var(--width));
+            }
+
+            to {
+                transform: translateX(-100% + var(--width));
+            }
+        }
+
+        @media screen and (max-width: 720px) {
+            iframe {
+                width: 100vw;
+                border-radius: 150px !important;
+            }
+        }

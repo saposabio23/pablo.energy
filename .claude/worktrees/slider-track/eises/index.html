@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eises</title>
+
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+
+    <div id="intro">
+        <span>Ei</span><span id="inside"></span><span>ses</span>
+    </div>
+
+    <div class="lista">
+        <div id="lista-container"></div>
+        <span id="counter">0</span>
+    </div>
+
+    <div class="content">
+        <div class="palabra">
+            <div id="input" class="span-like-textarea" contenteditable="true"
+                 placeholder="Type something and press Enter"></div>
+            <span>es</span>
+        </div>
+        <button id="enter" onclick="copyInput()">→</button>
+    </div>
+
+    <script src="versioning.js"></script>
+    <script>
+        const messageInput = document.getElementById('input');
+        const messageEnter = document.getElementById('enter');
+        const listaContainer = document.getElementById('lista-container');
+
+
+        setTimeout(() => {
+            messageInput.focus();
+        }, 0);
+
+        const counter = document.getElementById('counter');
+
+        messageInput.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                copyInput();
+            }
+        });
+
+        messageEnter.addEventListener('click', (event) => {
+            copyInput();
+            messageInput.focus();
+        });
+
+        function copyInput() {
+            const text = messageInput.textContent.trim();
+            if (text) {
+                const newDiv = document.createElement('div');
+                newDiv.className = 'output';
+                newDiv.textContent = '- ' + text + 'es';
+                listaContainer.appendChild(newDiv);
+                messageInput.textContent = '';
+            }
+            updateCount(text);
+        }
+
+
+        function updateCount(text) {
+            const count = listaContainer.children.length;
+            counter.textContent = count;
+            // document.title = text + ' (' + count + ')';
+        }
+
+        // EIIIIII LETTER
+
+        const span = document.getElementById('intro');
+        let addInterval, removeInterval; // Intervals for adding and removing 'i'
+
+        const speed = 50;
+
+        span.addEventListener('mouseenter', () => {
+            clearInterval(removeInterval); // Stop removing if it's happening
+            let addedCount = 0;
+
+            addInterval = setInterval(() => {
+                if (addedCount < 23) {
+                    const extraI = document.createElement('span');
+                    extraI.textContent = 'i';
+                    extraI.className = 'extra-i';
+                    document.getElementById('inside').appendChild(extraI);
+                    addedCount++;
+                } else {
+                    clearInterval(addInterval);
+                }
+            }, speed);
+        });
+
+        function addCharacter(element) {
+            const extraII = document.createElement('span');
+            extraII.textContent = element;
+            extraII.className = 'extra-i';
+            span.appendChild(extraII);
+        }
+
+        span.addEventListener('mouseleave', () => {
+            clearInterval(addInterval);
+            removeInterval = setInterval(() => {
+                const extraIs = document.querySelectorAll('.extra-i');
+                if (extraIs.length > 0) {
+                    const lastI = extraIs[extraIs.length - 1];
+                    lastI.remove();
+                } else {
+                    clearInterval(removeInterval);
+                }
+            }, speed);
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Process</title>
+
+    <meta name="title" content="Collaborative Narratives">
+    <meta name="description" content="Our project emphasizes limitless creativity, blurring the lines between final output and ongoing
+        evolution, and promoting holistic growth guided by principles of communication, documentation, humility,
+        action, reflection, environmental consciousness, and global collaboration.">
+    <meta name="author" content="Pablo Moreno">
+
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <div class="secondBack"></div>
+
+    <div class="background">
+        <div class="textIntro">
+            <h1>COLLABORATIVE NARRATIVES</h1>
+            <p>Our project emphasizes limitless creativity, blurring the lines between final output and ongoing
+                evolution, and promoting holistic growth guided by principles of communication, documentation, humility,
+                action, reflection, environmental consciousness, and global collaboration</p>
+            <button onclick="start()" id="buttonStart">PLAY</button>
+
+        </div>
+
+        <div id="rotateGadget" onclick="start()" src="assets/logos/process.png" preload="auto">
+        </div>
+    </div>
+
+    <div class="header">
+        <div>
+            <div class="filter categoryFilter">
+                <button id="catButton">CATEGORIES&nbsp;<span>▼</span></button>
+                <div class="selector">
+                    <div class="selection">
+                        <div class="selectorButton" onclick="checkCategories(this)" id="Storyline">
+                            <input type="checkbox" id="checkStoryline" name="Storyline" onclick="toggleCategories(this)"
+                                   checked />
+                            <label>Storyline</label>
+                        </div>
+                        <span>✶ Is the narration between each participant, focusing on the alignment of concepts and
+                            practice through creative ways of narration.
+
+                        </span>
+                    </div>
+
+                    <div class="selection">
+                        <div class="selectorButton" onclick="checkCategories(this)" id="Reference">
+                            <input type="checkbox" id="checkReference" name="Reference" onclick="toggleCategories(this)"
+                                   checked />
+                            <label>References</label>
+                        </div>
+                        <span>✶ Virtual and real material for research work and cross references to other people’s work
+                            (inside / outside of the group).</span>
+                    </div>
+
+
+                    <div class="selection">
+                        <div class="selectorButton" onclick="checkCategories(this)" id="Material">
+                            <input type="checkbox" id="checkMaterial" name="Material" onclick="toggleCategories(this)"
+                                   checked />
+                            <label>Material</label>
+                        </div>
+                        <span>✶ Collected material, which is used for the work, non-virtual things, can be as well
+                            created throughout the Development of projects.</span>
+                    </div>
+
+                    <div class="selection">
+                        <div class="selectorButton" onclick="checkCategories(this)" id="Developpement">
+                            <input type="checkbox" id="checkDeveloppement" name="Developpement"
+                                   onclick="toggleCategories(this)" checked />
+                            <label>Developpement</label>
+                        </div>
+                        <span>✶ Precise process for the development of specific projects, sketches etc.</span>
+                    </div>
+
+                    <div class="selection">
+                        <div class="selectorButton" onclick="checkCategories(this)" id="Final">
+                            <input type="checkbox" id="checkFinal" name="Final" onclick="toggleCategories(this)"
+                                   checked />
+                            <label>Finals</label>
+                        </div>
+                        <span>✶ Finalized Projects of a creative person: can be further developed and are then back in
+                            development stage.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fixHeader">
+            <!-- <button onclick="restarGrid()" id="randomButton">Random</button> -->
+            <button onclick="stateScroll()" id="buttonPlay">PAUSE</button>
+            <button onclick="cleanBlocks()" id="buttonClean">CLEAN&nbsp;<div id="cleanCounter">(0)</div></button>
+            <button onclick="switchColors()" id="buttonSwitch">SWITCH</button>
+        </div>
+
+        <div>
+            <div class="filter peopleFilter">
+                <button id="catButton"><span>▼</span>&nbsp;PEOPLE</button>
+
+                <div class="selector">
+                    <div class="selection">
+                        <span>✶ Tim Keuschnig is an Austrian/German Fashion Designer, living in Berlin. He studied at
+                            the
+                            University of the Arts Berlin and the National School of Decorative Arts in Paris fashion
+                            design. Working early on his brand Concluded fosters his interest in collaboration and which
+                            formed the next program, Collaborative Narratives.</span>
+                        <div class="selectorButton" onclick="checkCategories(this)" id="Tim">
+                            <label>Tim Keuschnig</label>
+                            <input type="checkbox" id="checkTim" name="Tim" onclick="toggleCategories(this)" checked />
+                        </div>
+                    </div>
+
+                    <div class="selection">
+                        <span>✶ Yu Lu is a performance artist originally from China. After studying fashion at the Esmod
+                            Berlin she transferred her practice into the fine arts. There she is exploring the field of
+                            labor and concentrating her practice and master thesis on the Topic of the Female
+                            Plumber.</span>
+                        <div class="selectorButton" onclick="checkCategories(this)" id="Yu">
+                            <label>Yu Lu</label>
+                            <input type="checkbox" id="checkYu" name="Yu" onclick="toggleCategories(this)" checked />
+                        </div>
+                    </div>
+
+                    <div class="selection">
+                        <span>✶ Till Zettl is a hairdresser who formed his practice at the globally renowned Salon
+                            Sassoon
+                            in Munich, he continued to work on for various prestige haircutters in Munich and moved to
+                            Berlin in 2023 to start at Kurkowitz.</span>
+                        <div class="selectorButton" onclick="checkCategories(this)" id="Till">
+                            <label>Till Zettl</label>
+                            <input type="checkbox" id="checkTill" name="Till" onclick="toggleCategories(this)"
+                                   checked />
+                        </div>
+                    </div>
+
+                    <div class="selection">
+                        <span>✶ Paula Breuer is Painter from West Germany who studied Fine Arts at Kunsthochschule
+                            Weißensee Berlin and held various exhibition about her work across Europe.</span>
+                        <div class="selectorButton" onclick="checkCategories(this)" id="Laura">
+                            <label>Paula Breuer</label>
+                            <input type="checkbox" id="checkLaura" name="Laura" onclick="toggleCategories(this)"
+                                   checked />
+                        </div>
+                    </div>
+
+                    <div class="selection">
+                        <span>✶ Anton Floth is an Austrian cook who took his formation under the renowned restaurant
+                            Mraz
+                            & Sohn in Vienna. After moving he moved to Berlin to start working at Barra Berlin. He works
+                            as Sue Chef and the field of contemporary food. His next endeavor is to work for Stoke a
+                            famous Yakitori Restaurant which works between Bangkok and Berlin.</span>
+                        <div class="selectorButton" onclick="checkCategories(this)" id="Anton">
+                            <label>Anton Floth</label>
+                            <input type="checkbox" id="checkAnton" name="Anton" onclick="toggleCategories(this)"
+                                   checked />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    </div>
+
+    <div class="content"></div>
+
+    <audio id="sound" src="assets/sound.mp3" preload="auto"></audio>
+    <audio id="magic" src="assets/magic.mp3" preload="auto"></audio>
+    <audio id="button" src="assets/button.mp3" preload="auto"></audio>
+
+    <script id="script" src="assets/js/emptydata.js"></script>
+    <script id="script" src="assets/js/import.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

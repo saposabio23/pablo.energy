@@ -22,24 +22,17 @@
 
 <body class="scroll-smooth bg-[#EAEAEA]">
 
-    <!-- GRADIENT TOP -->
-    <div id="gradient-top"
-         class="h-[25px] from-grad-black to-transparent bg-linear-to-b fixed top-0 left-0 w-full z-50  opacity-0 transition duration-400">
-    </div>
-
     <div
-         class="flex relative flex-col font-semibold pointer-events-none p-3 pt-0 md:pt-[calc(50vh-30px)]">
+         class="flex relative flex-col font-semibold pointer-events-none p-3 pt-0">
 
         <div id="pablo"
-             class="gap-3 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-3 md:scroll-mt-[calc(50vh-30px)] md:sticky top-0 py-4 md:py-3 mb-10 md:mb-[50vh] h-svh md:h-fit justify-between z-30">
+             class="gap-3 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-3 md:sticky top-0 py-4 md:py-1.5 mb-[calc(50svh-62px)] md:mb-0 h-fit justify-between z-30">
+        </div>
 
-            <div
-                 class="absolute top-0 left-0 h-[110px] md:h-[80px] w-full bg-linear-to-b from-[#EAEAEA] from-60% to-transparent">
-            </div>
+        <div id="today"
+             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-3 mb-[40vh]">
 
-            <div class="inline md:hidden"></div>
-
-            <div
+            <div data-section-label
                  class="col-span-2 sticky top-3 text-sm h-fit flex items-center justify-between gap-1 md:pb-0 z-10">
 
                 <div id="intro-photo"
@@ -52,62 +45,21 @@
                 </div>
 
                 <h3 id="intro-texto"
-                    class="w-full text-black bg-[#B0FD45] px-2 h-[30px] rounded-[6px] flex items-center gap-2 transition-opacity delay-200 duration-1000 opacity-0 z-10 shadow-big">
+                    class="w-full text-black bg-[#B0FD45] px-2 h-[30px] rounded-[6px] flex items-center gap-1 transition-opacity delay-200 duration-1000 opacity-0 z-10 shadow-big">
                     <span class="inline md:hidden">PABLO M.</span><span class="hidden md:inline">PABLO
                         MORENO</span><span
-                          class="italic">Freelancer &lt;web&gt; designer
+                          class="italic">is a freelancer &lt;web&gt; designer
                     </span>
                 </h3>
 
             </div>
 
-            <div id="intro-menu"
-                 class="content-center w-full col-span-4 items-center text-base md:text-sm md:mb-0 z-0 transition-opacity delay-300 duration-1000 opacity-0">
-                <a href="#today"
-                   class="mx-px leading-tight transition-colors duration-200 cursor-pointer text-grey hover:text-[#11C3FF]">
-                    TODAY
-                </a> I'm showing my
-                <a href="#work"
-                   class="mx-px leading-tight transition-colors duration-200 cursor-pointer text-grey hover:text-[#E90801]">
-                    WORK
-                </a> and a laboratory of
-                <a href="#websites"
-                   class="mx-px leading-tight transition-colors duration-200 cursor-pointer text-grey hover:text-[#fad74b]">
-                    WEBSITES
-                </a> I coded, along with my
-                <a href="#resume"
-                   class="mx-px leading-tight transition-colors duration-200 cursor-pointer text-grey hover:text-white">
-                    RESUME
-                </a> and a way to
-                <a href="#contact"
-                   class="mx-px leading-tight transition-colors duration-200 cursor-pointer text-grey hover:text-[#0000D9]">
-                    CONTACT
-                </a> me. <a id="fleche" href="#today"
-                   class="duration-300 hover:text-black text-grey">↓</a>
-            </div>
-
-        </div>
-
-        <div id="today"
-             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-3 md:scroll-mt-[calc(50vh-30px)] mb-20 md:mb-[50vh]">
-
-            <div
-                 class="col-span-2 sticky top-4 md:top-[calc(50vh-30px)] text-sm  h-fit flex items-center justify-between gap-1 mb-2 ">
-
-                <div
-                     class="text-sm text-[#FFFF2A] bg-[#11C3FF] px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center shadow-big">
-                    1
-                </div>
-                <h3
-                    class="w-full text-[#FFFF2A] bg-[#11C3FF] px-2 h-[30px] rounded-[6px] flex items-center shadow-big uppercase">
-                    <span>It’s <span id="amsterdam-time">00:00</span> in Amsterdam and...</span>
-                </h3>
-
-            </div>
-
-            <div class="flex flex-col gap-12 col-span-4  md:w-2/3">
+            <div class="flex flex-col gap-6 col-span-4  md:w-2/3">
                 <div>
-                    <h4 class="text-grey text-sm">WHERE I'M FROM</h4>
+                    <h4 class="text-grey text-md uppercase mb-1">It's <span id="amsterdam-time">00:00</span> in
+                        Amsterdam
+                        and...</h4>
+
                     <p class="">I was born and raised in Bilbao, Spain, until the age of 13, when I moved to a
                         boarding school in the south of France. Over the following six years, I studied art and design
                         in diferent cities: Bayonne, Paris, Le Havre and Amiens. Graduating with a Master's in
@@ -115,680 +67,245 @@
                         Design, I pursued my life in Amsterdam, where I began working as a junior designer.
                     </p>
                 </div>
-                <div>
-                    <h4 class="text-grey text-sm">WHAT I USED TO DO</h4>
-                    <p>
-                        During my studies journey, I began with a degree in Graphic Design at the
-                        <a href="https://www.ecole-estienne.paris/" class="hover:text-grey duration-300 inline"
-                           target="_blank">École Estienne</a>,
-                        followed by a Bachelor's in Interactive Design at
-                        <a href="https://esadhar.fr/" class="hover:text-grey duration-300 inline"
-                           target="_blank">ESADHaR</a>.
-                        I completed my studies with a professional double Master's in UI/UX shared between
-                        the <a href="https://www.esad-amiens.fr/" class="hover:text-grey duration-300 inline"
-                           target="_blank">ÉSAD Amiens</a>
-                        and the <a href="https://www.utc.fr/" class="hover:text-grey duration-300 inline"
-                           target="_blank">UTC Compiègne</a>,
-                        during which I wrote my thesis
-                        <a href="https://pablo.energy/thewebwewant" class="italic hover:text-grey duration-300"
-                           target="_blank">
-                            The Web We Want</a>,
-                        reflecting on the notion of the designer-coder as a response to today's increasingly "templated"
-                        web landscape.
-                    </p>
-                    </p>
-                </div>
-                <div>
-                    <h4 class="text-grey text-sm">WHERE I'M NOW</h4>
-                    <p class="">
-                        After a year of designing and learning at the polished <a
-                           href="https://analogueagency.com/"
-                           class="hover:text-grey duration-300 inline" target="_blank">Analogue
-                            Agency </a> — where I
-                        crafted
-                        identities and built websites on Framer — I've entered a new phase that's pushing me to
-                        diversify my collaborations and working on more hand-coded websites. I'm now looking to work
-                        with
-                        studios and freelancers around Amsterdam where I can bring my ideas, skills and energy to
-                        expressive digital work, while stepping a bit outside the agency bubble and connecting with new
-                        creative peers.
-                    </p>
-                </div>
+
             </div>
 
         </div>
 
         <div id="work"
-             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-3 md:scroll-mt-[calc(50vh-30px)] mb-20 md:mb-[50vh]">
+             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-3 mb-[40vh]">
 
-            <div
-                 class="col-span-2 sticky top-4 md:top-[calc(50vh-30px)] text-sm  h-fit flex items-center justify-between gap-1 mb-2 z-10">
+            <div data-section-label
+                 class="col-span-2 sticky top-4 text-sm  h-fit flex items-center justify-between gap-1 mb-2 z-10">
 
                 <div
                      class="text-sm text-white bg-[#E90801] px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center shadow-big">
-                    2</div>
+                    ✏️</div>
                 <h3
-                    class="w-full text-white bg-[#E90801] px-2 h-[30px] rounded-[6px] flex items-center shadow-big">
-                    WORK
+                    class="w-full text-white bg-[#E90801] px-2 h-[30px] rounded-[6px] flex items-center shadow-big gap-1">
+                    <span
+                          class="">Proposing
+                    </span>
+                    <span class="inline">GRAPHIC SERVICES</span>
                 </h3>
             </div>
 
-            <div class="flex flex-col gap-20 col-span-4">
-
-                <div id="PROJECT-1" class="flex flex-col gap-4">
-                    <div id="info" class="flex justify-between w-full pr-4">
-                        <div class="flex flex-col">
-                            <span class="text-black text-lg leading-tight inline gap-1 uppercase">Made at
-                                <a href="https://analogueagency.com/"
-                                   class="hover:text-grey duration-300 inline" target="_blank">Analogue
-                                    Agency <div
-                                         class="h-[12px] w-[12px] bg-blue-800 rounded-full inline-flex"></div></a>
-
-                            </span>
-                            <span class="text-grey md:text-lg leading-tight">Identities, UX, animation,
-                                Framer, print</span>
-                        </div>
-                    </div>
-
-                    <div
-                         class="main-carousel"
-                         data-flickity='{ "cellAlign": "left", "contain": true, "wrapAround": false, "autoPlay": false, "imagesLoaded": true, "prevNextButtons": false, "selectedAttraction": 0.2, "friction": 0.8, "lazyLoad": true, "adaptiveHeight": true}'>
-                        <div
-                             class="h-full carousel-cell flex gap-2">
-                            <div class="h-full flex gap-2">
-                                <video autoplay loop playsinline muted
-                                       disablePictureInPicture
-                                       controlsList="nodownload" class="object-cover w-full h-full rounded-lg">
-                                    <source src="media/analogue-guiker-2.mp4" type='video/mp4'>
-                                </video>
-                                <img
-                                     loading="lazy" src="media/analogue-guiker-3.webp"
-                                     class="object-cover w-full h-full rounded-lg"
-                                     alt="" />
-                            </div>
-                        </div>
-
-                        <div
-                             class="h-full carousel-cell flex flex-col gap-2">
-                            <video autoplay loop playsinline muted
-                                   disablePictureInPicture
-                                   controlsList="nodownload" class="object-cover w-full h-full rounded-lg">
-                                <source src="media/analogue-guiker-1.mp4" type='video/mp4'>
-                            </video>
-                        </div>
-
-                        <div
-                             class="h-full carousel-cell flex gap-2">
-                            <video autoplay loop playsinline muted
-                                   disablePictureInPicture
-                                   controlsList="nodownload" class="object-cover w-full h-full rounded-lg">
-                                <source src="media/analogue-guiker-4.mp4" type='video/mp4'>
-                            </video>
-                        </div>
-
-                        <div
-                             class="h-full carousel-cell flex gap-2">
-                            <img
-                                 loading="lazy" src="media/analogue-fyron-1.webp"
-                                 class="object-cover w-full h-full rounded-lg"
-                                 alt="" />
-                        </div>
-                        <div
-                             class="h-full carousel-cell flex gap-2">
-                            <img
-                                 loading="lazy" src="media/analogue-fyron-2.webp"
-                                 class="object-cover w-full h-full rounded-lg"
-                                 alt="" />
-                            <img
-                                 loading="lazy" src="media/analogue-fyron-3.webp"
-                                 class="object-cover w-full h-full rounded-lg"
-                                 alt="" />
-                        </div>
-
-
-                        <div
-                             class="h-full carousel-cell flex flex-col gap-2">
-                            <video autoplay loop playsinline muted
-                                   disablePictureInPicture
-                                   controlsList="nodownload" class="object-cover w-full h-full rounded-lg">
-                                <source src="media/analogue-vasti-1.mp4" type='video/mp4'>
-                            </video>
-                        </div>
-
-                        <div
-                             class="h-full carousel-cell flex flex-col gap-2">
-                            <video autoplay loop playsinline muted
-                                   disablePictureInPicture
-                                   controlsList="nodownload" class="object-cover w-full h-full rounded-lg">
-                                <source src="media/analogue-vasti-2.mp4" type='video/mp4'>
-                            </video>
-                        </div>
-
-                        <div
-                             class="h-full carousel-cell flex flex-col gap-2">
-                            <video autoplay loop playsinline muted
-                                   disablePictureInPicture
-                                   controlsList="nodownload" class="object-cover w-full h-full rounded-lg">
-                                <source src="media/analogue-vasti-3.mp4" type='video/mp4'>
-                            </video>
-                        </div>
-
-                        <div
-                             class="h-full carousel-cell flex gap-2">
-                            <video autoplay loop playsinline muted
-                                   disablePictureInPicture
-                                   controlsList="nodownload" class="object-cover w-full h-full rounded-lg">
-                                <source src="media/analogue-nextc-1.mp4" type='video/mp4'>
-                            </video>
-                        </div>
-
-                        <div
-                             class="h-full carousel-cell flex gap-2">
-                            <img
-                                 loading="lazy" src="media/analogue-nextc-2.webp"
-                                 class="object-cover w-full h-full rounded-lg"
-                                 alt="" />
-                            <img
-                                 loading="lazy" src="media/analogue-nextc-3.webp"
-                                 class="object-cover w-full h-full rounded-lg"
-                                 alt="" />
-                        </div>
-
-                        <div
-                             class="h-full carousel-cell flex gap-2">
-                            <video autoplay loop playsinline muted
-                                   disablePictureInPicture
-                                   controlsList="nodownload" class="object-cover w-full h-full rounded-lg">
-                                <source src="media/analogue-erwinolaf-1.mp4" type='video/mp4'>
-                            </video>
-                        </div>
-
-
-                        <div
-                             class="h-full carousel-cell flex gap-2">
-                            <video autoplay loop playsinline muted
-                                   disablePictureInPicture
-                                   controlsList="nodownload" class="object-cover w-full h-full rounded-lg">
-                                <source src="media/analogue-m1capital-1.mp4" type='video/mp4'>
-                            </video>
-                        </div>
-
-                    </div>
-
-                    <p class="leading-tight text-black">During my year at Analogue, I worked across branding, web
-                        design, and everything in between. From refreshing <span
-                              class="italic">Guiker</span>'s identity
-                        — introducing
-                        expressive
-                        animations and a cohesive design system for their campaigns — to creating print materials for
-                        the
-                        <span
-                              class="italic">Fyron</span> event. I also developed the identity and iconography for <span
-                              class="italic">Vasti</span>, and led the animations and
-                        social content for the <span
-                              class="italic">NXT·C Summit</span>. Additionally, I built several complex Framer websites,
-                        including those for <span
-                              class="italic">M1 Capital</span> and the <span
-                              class="italic">Erwin Olaf Magazine</span>. At Analogue, I learned to work
-                        effectively under a Creative Director, delivering refined, high-quality results while meeting
-                        the deadlines set by the project manager. Thank you for this big impression!
+            <div class="flex flex-col gap-4 col-span-4">
+                <div>
+                    <h4 class="text-grey text-md uppercase mb-1">GRAPHIC SERVICES</h4>
+                    <p class="text-lg">I was born and raised in Bilbao, Spain, until the age of 13, when I moved to a
+                        boarding school in the south of France. Over the following six years, I studied art and design
+                        in diferent cities: Bayonne, Paris, Le Havre and Amiens. Graduating with a Master's in
+                        UI/UX
+                        Design, I pursued my life in Amsterdam, where I began working as a junior designer.
                     </p>
+                </div>
+                <div class="grid grid-cols-6 gap-2">
+                    <div class="col-span-6 aspect-video relative">
+                        <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
+                               class="object-cover w-full h-full rounded-lg">
+                            <source src="media/analogue-guiker-1.mp4" type='video/mp4'>
+                        </video>
+                        <span
+                              class="absolute bottom-3 left-3 flex items-center gap-1 text-xs font-light text-white">
+                            <span class="h-[10px] w-[10px] bg-blue-800 rounded-full"></span><span
+                                  class="opacity-40">Made at Analogue Agency</span>
+                        </span>
+                    </div>
+
+                    <div class="col-span-3 aspect-[4/5] relative">
+                        <img loading="lazy" src="media/analogue-fyron-2.webp"
+                             class="object-cover w-full h-full rounded-lg" alt="" />
+                        <span
+                              class="absolute bottom-3 left-3 flex items-center gap-1 text-xs font-light text-white">
+                            <span class="h-[10px] w-[10px] bg-blue-800 rounded-full"></span><span
+                                  class="opacity-40">Made at Analogue Agency</span>
+                        </span>
+                    </div>
+
+                    <div class="col-span-3 aspect-[4/5] relative">
+                        <img loading="lazy" src="media/analogue-fyron-3.webp"
+                             class="object-cover w-full h-full rounded-lg" alt="" />
+                        <span
+                              class="absolute bottom-3 left-3 flex items-center gap-1 text-xs font-light text-white">
+                            <span class="h-[10px] w-[10px] bg-blue-800 rounded-full"></span><span
+                                  class="opacity-40">Made at Analogue Agency</span>
+                        </span>
+                    </div>
+
+                    <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
+                           class="col-span-6 aspect-video object-cover w-full h-full rounded-lg">
+                        <source src="media/esaidkoi-2.mp4" type='video/mp4'>
+                    </video>
+
+                    <img loading="lazy" src="media/analogue-nextc-2.webp"
+                         class="col-span-2 aspect-[3/4] object-cover w-full h-full rounded-lg" alt="" />
+
+                    <img loading="lazy" src="media/analogue-nextc-3.webp"
+                         class="col-span-2 aspect-[3/4] object-cover w-full h-full rounded-lg" alt="" />
+
+                    <img loading="lazy" src="media/totelcoscapaque-7.webp"
+                         class="col-span-2 aspect-[3/4] object-cover w-full h-full rounded-lg" alt="" />
+
+                    <img loading="lazy" src="media/totelcoscapaque-2.webp"
+                         class="col-span-3 aspect-[4/5] object-cover w-full h-full rounded-lg" alt="" />
+
+                    <img loading="lazy" src="media/totelcoscapaque-3.webp"
+                         class="col-span-3 aspect-[4/5] object-cover w-full h-full rounded-lg" alt="" />
 
                 </div>
 
-                <div id="PROJECT-2" class="flex flex-col gap-4">
-                    <div id="info" class="flex justify-between w-full pr-4">
-                        <div class="flex flex-col">
-                            <span class="text-black text-lg leading-tight uppercase">éSADIKOI [diploma project]</span>
-                            <span class="text-grey md:text-lg leading-tight">Research, Design, Code, CMS</span>
-                        </div>
-
-                    </div>
-
-                    <div
-                         class=" main-carousel"
-                         data-flickity='{ "cellAlign": "left", "contain": true, "wrapAround": false, "autoPlay": false, "imagesLoaded": true, "prevNextButtons": false, "selectedAttraction": 0.2, "friction": 0.8, "lazyLoad": true}'>
-
-
-
-                        <div
-                             class="h-full carousel-cell flex gap-2">
-                            <video autoplay loop playsinline muted
-                                   disablePictureInPicture
-                                   controlsList="nodownload" class="object-cover w-full h-full rounded-lg">
-                                <source src="media/esaidkoi-2.mp4" type='video/mp4'>
-                            </video>
-                        </div>
-                        <div
-                             class="h-full carousel-cell flex gap-2">
-                            <video autoplay loop playsinline muted
-                                   disablePictureInPicture
-                                   controlsList="nodownload" class="object-cover w-full h-full rounded-lg">
-                                <source src="media/esaidkoi-3.mp4" type='video/mp4'>
-                            </video>
-                        </div>
-                        <div
-                             class="h-full carousel-cell flex gap-2">
-                            <img
-                                 loading="lazy" src="media/esaidkoi-4.webp"
-                                 class="object-cover w-full h-full rounded-lg"
-                                 alt="" />
-                        </div>
-                        <div
-                             class="h-full carousel-cell flex gap-2">
-                            <img
-                                 loading="lazy" src="media/esaidkoi-5.webp"
-                                 class="object-cover w-full h-full rounded-lg"
-                                 alt="" />
-                        </div>
-
-                        <div
-                             class="h-full carousel-cell flex gap-2">
-                            <img
-                                 loading="lazy" src="media/esaidkoi-1.webp"
-                                 class="object-cover w-full h-full rounded-lg"
-                                 alt="" />
-                            <img
-                                 loading="lazy" src="media/esaidkoi-0.webp"
-                                 class="object-cover w-full h-full rounded-lg"
-                                 alt="" />
-
-                        </div>
-
-                    </div>
-                    <p class="leading-tight text-black">The idea behind my diploma project was to design digital tools
-                        that simplify and <span
-                              class="italic">enhance everyday life</span> at school — and beyond it. As part of my
-                        research, I
-                        focused on identifying the key features the platform should offer and explored different
-                        interfaces concepts for them. Elements such as taxonomy, temporality, and the relationships
-                        between people were carefully considered to shape <span
-                              class="italic">how information is connected and experienced</span>.
-                        Later on, I built éSADIKOI <span
-                              class="italic">[eh! ça dit quoi?]</span> around three main pillars: events, places and
-                        people. Thanks to a lightweight spreadsheet-based CMS, students and staff can easily add and
-                        update entries, fostering connection and participation within the school community. <a
-                           href="https://esadikoi.netlify.app/"
-                           class="text-grey hover:text-black duration-300" target="_blank">Visit
-                            website</a></p>
-
-                </div>
-
-                <div id="PROJECT-3" class="flex flex-col gap-4">
-                    <div id="info" class="flex justify-between w-full pr-4">
-                        <div class="flex flex-col">
-                            <span class="text-black text-lg leading-tight uppercase">Tot el cos cap a què</span>
-                            <span class="text-grey md:text-lg leading-tight">Design, Code, Multilingual</span>
-                        </div>
-
-                    </div>
-
-                    <div
-                         class=" main-carousel"
-                         data-flickity='{ "cellAlign": "left", "contain": true, "wrapAround": false, "autoPlay": false, "imagesLoaded": true, "prevNextButtons": false, "selectedAttraction": 0.2, "friction": 0.8, "lazyLoad": true}'>
-
-                        <div
-                             class="h-full carousel-cell flex gap-2">
-                            <img
-                                 loading="lazy" src="media/totelcoscapaque-2.webp"
-                                 class="object-cover w-full h-full rounded-lg"
-                                 alt="" />
-                            <img
-                                 loading="lazy" src="media/totelcoscapaque-3.webp"
-                                 class="object-cover w-full h-full rounded-lg"
-                                 alt="" />
-                        </div>
-
-                        <div
-                             class="h-full carousel-cell flex gap-2">
-                            <video autoplay loop playsinline muted
-                                   disablePictureInPicture
-                                   controlsList="nodownload"
-                                   class="object-cover w-full h-full rounded-lg">
-                                <source src="media/totelcoscapaque-1.mp4" type='video/mp4'>
-                            </video>
-                        </div>
-
-                        <div
-                             class="h-full carousel-cell flex gap-2">
-                            <img
-                                 loading="lazy" src="media/totelcoscapaque-7.webp"
-                                 class="object-cover w-full h-full rounded-lg"
-                                 alt="" />
-                            <video autoplay loop playsinline muted
-                                   disablePictureInPicture
-                                   controlsList="nodownload"
-                                   class="object-cover w-full h-full rounded-lg">
-                                <source src="media/totelcoscapaque-6.mp4" type='video/mp4'>
-                            </video>
-
-                        </div>
-
-                        <div
-                             class="h-full carousel-cell flex gap-2">
-                            <img
-                                 loading="lazy" src="media/totelcoscapaque-4.webp"
-                                 class="object-cover w-full h-full rounded-lg"
-                                 alt="" />
-                        </div>
-
-                    </div>
-                    <p class="leading-tight text-black">Aiming to explain Nerea's somatic dancing practice, the website
-                        relies
-                        on a very text-based content that offers a literary reading experience while maintaining a
-                        digital rhythm. Images appear either as small visual accents or in full-screen frames, creating
-                        a balanced contrast. The limited number of pages allows navigation through the colored blocks
-                        that frames
-                        the website, keeping the experience clean and smart. <a href="https://totelcoscapaque.cat/"
-                           class="text-grey hover:text-black duration-300" target="_blank">Visit
-                            website</a></p>
-
-                </div>
             </div>
         </div>
 
         <div id="websites"
-             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-3 md:scroll-mt-[calc(50vh-30px)] mb-20 md:mb-[50vh]">
+             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-3 mb-[40vh]">
 
-            <div
-                 class="col-span-2 sticky top-4 md:top-[calc(50vh-30px)] text-sm  h-fit flex items-center justify-between gap-1 mb-2">
+            <div data-section-label
+                 class="col-span-2 sticky top-4 text-sm  h-fit flex items-center justify-between gap-1 mb-2">
                 <div
-                     class="text-[#917400] bg-[#fad74b] px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center shadow-big">
-                    3</div>
+                     class="text-white bg-[#C725F9] px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center shadow-big">
+                    🌐</div>
 
                 <div
-                     class=" text-[#917400] bg-[#fad74b] px-2 h-[30px] rounded-[6px] flex items-center  justify-between w-full shadow-big">
-                    <h3>WEBSITES
-                    </h3>
-
-                    <label for="nature-slider" class="flex items-center gap-2 text-sm text-[#917400] cursor-pointer">
-                        <span id="nature-label" class="w-fit">for people</span>
-                        <input type="range" id="nature-slider" min="0" max="2" step="1" value="0"
-                               class="nature-slider w-[60px] md:w-[70px]">
-                    </label>
+                     class=" text-white bg-[#C725F9] px-2 h-[30px] rounded-[6px] flex items-center justify-between w-full shadow-big gap-1">
+                    <p class="truncate min-w-0">Building WEBSITES</p>
                 </div>
             </div>
 
-            <div class="flex flex-col gap-20 col-span-4">
-                <div id="projects-grid" class="font-semibold grid grid-cols-1 md:grid-cols-2 gap-x-3 gap-y-1">
+            <div class="flex flex-col gap-2 col-span-4">
+                <div>
+                    <h4 class="text-grey text-md uppercase mb-1">WEBSITES BUILDING</h4>
+                    <p class="text-lg">I have spent the last years making a lot of websites: for friends, as tools, for
+                        fun, to
+                        show only one thing...
+                    </p>
+                </div>
+                <!-- Filled by index.js: one list per Nature (For people / For friends / For me), each under its own heading -->
+                <div id="projects-grid" class="font-semibold flex flex-col gap-10 mt-6">
                 </div>
                 <p id="projects-empty" class="text-grey hidden">Nothing here yet.</p>
+
             </div>
+
+
+
+
         </div>
 
         <div id="resume"
-             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-3 md:scroll-mt-[calc(50vh-30px)] mb-20 md:mb-[50vh]">
+             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-3 mb-[40vh]">
 
-            <div
-                 class="col-span-2 sticky top-4 md:top-[calc(50vh-30px)] text-sm  h-fit flex items-center justify-between gap-1 mb-2 z-10">
+            <div data-section-label
+                 class="col-span-2 sticky top-4 text-sm  h-fit flex items-center justify-between gap-1 mb-2 z-10">
 
                 <div
-                     class="text-black bg-white px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center shadow-big">
-                    4</div>
+                     class="text-white bg-[#8D4A13] px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center shadow-big">
+                    🗂️</div>
                 <div
-                     class="text-black bg-white px-2 h-[30px] rounded-[6px] flex items-center w-full  justify-between shadow-big">
+                     class="text-white bg-[#8D4A13] px-2 h-[30px] rounded-[6px] flex items-center w-full  justify-between shadow-big gap-1">
                     <h4>
-                        RESUME
+                        <span
+                              class="">More in this
+                        </span>
+                        <span class="inline">RESUME</span>
                     </h4>
 
-                    <div class="flex gap-3">
-                        <span class="text-red-600">Work</span>
-                        <span class="text-green-600">Internship</span>
-                        <span class="text-blue-700">Studies</span>
-                    </div>
+                    <!-- <div class="flex gap-3">
+                        <span>Work</span>
+                        <span>Internship</span>
+                        <span>Studies</span>
+                    </div> -->
                 </div>
             </div>
 
 
-            <div id="resume-popup" class="resume-popup cursor-pointer" aria-hidden="true"
-                 onclick="removeResumePopup()">
+            <div class="flex flex-col gap-12 col-span-4">
                 <div>
-                    <img src="" alt="">
-                </div>
-            </div>
-
-            <div class="flex flex-col gap-4 col-span-4">
-
-                <div
-                     class="listStack flex gap-4 text-base md:text-lg group hover:bg-zinc-200 p-2 rounded-[8px] transition duration-300 cursor-pointer group fade-loop"
-                     data-popup-image="looking.webp">
-                    <div class="w-[90px]">
-                        <span class="">Now</span>
-                    </div>
-                    <div class="leading-tight flex flex-col w-full gap-1">
-                        <div class="flex gap-2 items-center">
-                            <span class="text-black ">Looking for new design colaborations</span>
-                        </div>
-                        <p class=" text-grey group-hover:text-black transition duration-300 text-sm">I would like to
-                            collaborate with studios or freelancers dealing with more coding projects to bring them my
-                            ideas, abilities and energy.</p>
-                    </div>
-                    <div class="h-full flex items-center justify-center">
-                        <span
-                              class=" group-hover:opacity-100 opacity-0 leading-tight text-black transition duration-300 text-[12px] border border-black p-1 mr-4 rounded-md hidden md:block">Amsterdam</span>
-                    </div>
+                    <h4 class="text-grey text-md uppercase mb-1">CURRICULUM</h4>
+                    <p class="text-lg">Six years of art and design studies in France, then agency work in Amsterdam.
+                        Freelancing since 2026.
+                    </p>
                 </div>
 
+                <!-- Experience and Education: each row links to the agency or school page -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-x-6">
+                    <div class="flex flex-col gap-1">
+                        <h4 class="text-sm text-grey mb-1 uppercase">Experience</h4>
 
-                <!-- 2025 - DEsigner at Analogue -->
-                <div
-                     class="listStack flex gap-4 text-base md:text-lg group hover:bg-zinc-200 p-2 rounded-[8px] transition duration-300 cursor-pointer group"
-                     data-popup-image="analogue-designer.webp">
-                    <div class="w-[90px]">
-                        <span
-                              class="text-grey group-hover:text-black transition duration-300">2025</span>
-                    </div>
-                    <div class="leading-tight flex flex-col w-full gap-1">
-                        <div class="flex gap-2 items-center">
-                            <span class="text-red-600">Designer at Analogue</span>
-                        </div>
-                        <p class=" text-grey group-hover:text-black transition duration-300 text-sm">As
-                            an
-                            junior
-                            designer, I worked on complete identities, web design and Framer development
-                        </p>
+                        <a href="/" target="_blank" rel="noopener"
+                           class="flex items-baseline gap-3 leading-tight hover:text-grey transition duration-300 group">
+                            <span class="shrink-0 text-right text-base text-grey">2026</span>
+                            <span class="min-w-0 flex-1 text-lg">Freelancer</span>
+                        </a>
 
-                    </div>
-                    <div class="h-full flex items-center justify-center">
-                        <span
-                              class=" group-hover:opacity-100 opacity-0 leading-tight text-black transition duration-300 text-[12px] border border-black p-1 mr-4 rounded-md hidden md:block">Amsterdam</span>
-                    </div>
-                </div>
+                        <a href="https://analogueagency.com/" target="_blank" rel="noopener"
+                           class="flex items-baseline gap-3 leading-tight hover:text-grey transition duration-300 group">
+                            <span class="shrink-0 text-right text-base text-grey">2025</span>
+                            <span class="min-w-0 flex-1 text-lg">Designer at Analogue</span>
+                        </a>
 
-                <!-- 2024 – Intern at Analogue -->
-                <div
-                     class="listStack flex gap-4 text-base md:text-lg group hover:bg-zinc-200 p-2 rounded-[8px] transition duration-300 cursor-pointer group"
-                     data-popup-image="analogue-intern.webp">
-                    <div class="w-[90px]">
-                        <span
-                              class="text-grey group-hover:text-black transition duration-300">2024</span>
-                    </div>
-                    <div class="leading-tight flex flex-col w-full gap-1">
-                        <div class="flex gap-2 items-center">
-                            <span class="text-green-600">Intern at Analogue</span>
-                        </div>
-                        <p class=" text-grey group-hover:text-black transition duration-300 text-sm">
-                            Six-month
-                            internship assisting on explorations, rebrandings, animations, and multiple
-                            tasks
-                        </p>
+                        <a href="https://www.somoscuchillo.com/" target="_blank" rel="noopener"
+                           class="flex items-baseline gap-3 leading-tight hover:text-grey transition duration-300 group">
+                            <span class="shrink-0 text-right text-base text-grey">2022</span>
+                            <span class="min-w-0 flex-1 text-lg">Internship at Cuchillo <small>Ⓒ</small></span>
+                        </a>
 
+                        <a href="http://ateliermurr.com/" target="_blank" rel="noopener"
+                           class="flex items-baseline gap-3 leading-tight hover:text-grey transition duration-300 group">
+                            <span class="shrink-0 text-right text-base text-grey">2018</span>
+                            <span class="min-w-0 flex-1 text-lg">Internship at M.U.R.R</span>
+                        </a>
                     </div>
-                    <div class="h-full flex items-center justify-center">
-                        <span
-                              class=" group-hover:opacity-100 opacity-0 leading-tight text-black transition duration-300 text-[12px] border border-black p-1 mr-4 rounded-md hidden md:block">Amsterdam</span>
+
+                    <div class="flex flex-col gap-1">
+                        <h4 class="text-sm text-grey mb-1 uppercase">Education</h4>
+
+                        <a href="https://www.utc.fr/formations/diplome-de-master/mention-humanites-et-industries-creatives-hic/parcours-design-et-creation-dexperience-dcx/"
+                           target="_blank" rel="noopener"
+                           class="flex items-baseline gap-3 leading-tight hover:text-grey transition duration-300 group">
+                            <span class="shrink-0 text-right text-base text-grey">2024-2022</span>
+                            <span class="min-w-0 flex-1 text-lg">Double master in UX/UI at ESAD</span>
+                        </a>
+
+                        <a href="https://esadhar.fr/formations/dna/" target="_blank" rel="noopener"
+                           class="flex items-baseline gap-3 leading-tight hover:text-grey transition duration-300 group">
+                            <span class="shrink-0 text-right text-base text-grey">2021-2019</span>
+                            <span class="min-w-0 flex-1 text-lg">Bachelor Interactive Design at ESADHaR</span>
+                        </a>
+
+                        <a href="https://www.ecole-estienne.paris/formation/dn-made-designer-typographe/dn-made-designer-typographe/"
+                           target="_blank" rel="noopener"
+                           class="flex items-baseline gap-3 leading-tight hover:text-grey transition duration-300 group">
+                            <span class="shrink-0 text-right text-base text-grey">2018-2016</span>
+                            <span class="min-w-0 flex-1 text-lg">License in type design at Estienne</span>
+                        </a>
                     </div>
                 </div>
 
-                <!-- 2024 – Mentor for AFEV association -->
-                <div
-                     class="listStack flex gap-4 text-base md:text-lg group hover:bg-zinc-200 p-2 rounded-[8px] transition duration-300 cursor-pointer group"
-                     data-popup-image="afev.webp">
-                    <div class="w-[90px]">
-                        <span
-                              class="text-grey group-hover:text-black transition duration-300">2024</span>
-                    </div>
-                    <div class="leading-tight flex flex-col w-full gap-1">
-                        <div class="flex gap-2 items-center">
-                            <span class="text-red-600">Mentor for AFEV association</span>
-                        </div>
-                        <p class=" text-grey group-hover:text-black transition duration-300 text-sm">
-                            Volunteer
-                            helping
-                            siblings with homework and social activities</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-x-6">
+                    <div class="flex flex-col gap-1">
+                        <h4 class="text-sm text-grey mb-1 uppercase">Skills</h4>
 
+                        <span class="text-lg">Identity design</span>
+                        <span class="text-lg">UI/UX design</span>
+                        <span class="text-lg">Motion design</span>
+                        <span class="text-lg">3D renders</span>
+                        <span class="text-lg">Social media</span>
+                        <span class="text-lg">Packaging</span>
                     </div>
-                    <div class="h-full flex items-center justify-center">
-                        <span
-                              class=" group-hover:opacity-100 opacity-0 leading-tight text-black transition duration-300 text-[12px] border border-black p-1 mr-4 rounded-md hidden md:block">Amiens</span>
-                    </div>
-                </div>
 
-                <!-- 2024 – Welcomer at Maison de la Culture -->
-                <div
-                     class="listStack flex gap-4 text-base md:text-lg group hover:bg-zinc-200 p-2 rounded-[8px] transition duration-300 cursor-pointer group"
-                     data-popup-image="mca.webp">
-                    <div class="w-[90px]">
-                        <span
-                              class="text-grey group-hover:text-black transition duration-300">2024</span>
-                    </div>
-                    <div class="leading-tight flex flex-col w-full gap-1">
-                        <div class="flex gap-2 items-center">
-                            <span class="text-red-600">Welcomer at Maison de la Culture</span>
-                        </div>
-                        <p class=" text-grey group-hover:text-black transition duration-300 text-sm">
-                            Welcoming
-                            spectators, assistant during the shows, responsable of the cinema</p>
+                    <div class="flex flex-col gap-1">
+                        <h4 class="text-sm text-grey mb-1 uppercase">Tools</h4>
 
-                    </div>
-                    <div class="h-full flex items-center justify-center">
-                        <span
-                              class=" group-hover:opacity-100 opacity-0 leading-tight text-black transition duration-300 text-[12px] border border-black p-1 mr-4 rounded-md hidden md:block">Amiens</span>
-                    </div>
-                </div>
-
-
-                <!-- 2024↑2022 – Double master in UX/UI at ESAD -->
-                <div
-                     class="listStack flex gap-4 text-base md:text-lg group hover:bg-zinc-200 p-2 rounded-[8px] transition duration-300 cursor-pointer group"
-                     data-popup-image="esad.webp">
-                    <div class="w-[90px]">
-                        <span
-                              class="text-grey group-hover:text-black transition duration-300">2024<br>↑2022</span>
-                    </div>
-                    <div class="leading-tight flex flex-col w-full gap-1">
-                        <div class="flex gap-2 items-center">
-                            <span class="text-blue-700">Double master in UX/UI at ESAD</span>
-                        </div>
-                        <p class=" text-grey group-hover:text-black transition duration-300 text-sm">
-                            This
-                            dual
-                            course
-                            prepared me to work as a digital designer in modern business ecosystems</p>
-
-                    </div>
-                    <div class="h-full flex items-center justify-center">
-                        <span
-                              class=" group-hover:opacity-100 opacity-0 leading-tight text-black transition duration-300 text-[12px] border border-black p-1 mr-4 rounded-md hidden md:block">Amiens</span>
-                    </div>
-                </div>
-
-                <!-- 2022 – Internship at Cuchillo -->
-                <div
-                     class="listStack flex gap-4 text-base md:text-lg group hover:bg-zinc-200 p-2 rounded-[8px] transition duration-300 cursor-pointer group"
-                     data-popup-image="cuchillo.webp">
-                    <div class="w-[90px]">
-                        <span
-                              class="text-grey group-hover:text-black transition duration-300">2022</span>
-                    </div>
-                    <div class="leading-tight flex flex-col w-full gap-1">
-                        <div class="flex gap-2 items-center">
-                            <span class="text-green-600">Internship at Cuchillo <small>Ⓒ</small></span>
-                        </div>
-                        <p class=" text-grey group-hover:text-black transition duration-300 text-sm">
-                            Different
-                            works,
-                            from identities to designs for textiles or motion-design</p>
-
-                    </div>
-                    <div class="h-full flex items-center justify-center">
-                        <span
-                              class=" group-hover:opacity-100 opacity-0 leading-tight text-black transition duration-300 text-[12px] border border-black p-1 mr-4 rounded-md hidden md:block">Bilbao</span>
-                    </div>
-                </div>
-
-                <!-- 2021↑2019 – Bachelor Interactive Graphic Design at ESADHaR -->
-                <div
-                     class="listStack flex gap-4 text-base md:text-lg group hover:bg-zinc-200 p-2 rounded-[8px] transition duration-300 cursor-pointer group"
-                     data-popup-image="esadhar.webp">
-                    <div class="w-[90px]">
-                        <span
-                              class="text-grey group-hover:text-black transition duration-300">2021<br>↑2019</span>
-                    </div>
-                    <div class="leading-tight flex flex-col w-full gap-1">
-                        <div class="flex gap-2 items-center">
-                            <span class="text-blue-700 leading-tight">Bachelor Interactive Graphic
-                                Design at
-                                ESADHaR</span>
-                        </div>
-                        <p class=" text-grey group-hover:text-black transition duration-300 text-sm">
-                            Studies
-                            continuation towards a more artistic creation with digital experiments</p>
-
-                    </div>
-                    <div class="h-full flex items-center justify-center">
-                        <span
-                              class=" group-hover:opacity-100 opacity-0 leading-tight text-black transition duration-300 text-[12px] border border-black p-1 mr-4 rounded-md hidden md:block">Le
-                            Havre</span>
-                    </div>
-                </div>
-
-                <!-- 2018 – Internship at M.U.R.R -->
-                <div
-                     class="listStack flex gap-4 text-base md:text-lg group hover:bg-zinc-200 p-2 rounded-[8px] transition duration-300 cursor-pointer group"
-                     data-popup-image="murr2.webp">
-                    <div class="w-[90px]">
-                        <span
-                              class="text-grey group-hover:text-black transition duration-300">2018</span>
-                    </div>
-                    <div class="leading-tight flex flex-col w-full">
-                        <div class="flex gap-2 items-center">
-                            <span class="text-green-600">Internship at M.U.R.R</span>
-                        </div>
-                        <p class=" text-grey group-hover:text-black transition duration-300 text-sm">
-                            Helped
-                            to
-                            print
-                            the vinyl cover of Zuur Köol. Further collaborations</p>
-
-                    </div>
-                    <div class="h-full flex items-center justify-center">
-                        <span
-                              class=" group-hover:opacity-100 opacity-0 leading-tight text-black transition duration-300 text-[12px] border border-black p-1 mr-4 rounded-md hidden md:block">Paris</span>
-                    </div>
-                </div>
-
-                <!-- 2018↑2016 – License in type design at Estienne -->
-                <div
-                     class="listStack flex gap-4 text-base md:text-lg group hover:bg-zinc-200 p-2 rounded-[8px] transition duration-300 cursor-pointer group"
-                     data-popup-image="estienne.webp">
-                    <div class="w-[90px]">
-                        <span
-                              class="text-grey group-hover:text-black transition duration-300">2018<br>↑2016</span>
-                    </div>
-                    <div class="leading-tight flex flex-col w-full">
-                        <div class="flex gap-2 items-center">
-                            <span class="text-blue-700">License in type design at Estienne</span>
-                        </div>
-                        <p class=" text-grey group-hover:text-black transition duration-300 text-sm">
-                            First
-                            higher
-                            studies, focused on printed graphic design and books</p>
-
-                    </div>
-                    <div class="h-full flex items-center justify-center">
-                        <span
-                              class=" group-hover:opacity-100 opacity-0 leading-tight text-black transition duration-300 text-[12px] border border-black p-1 mr-4 rounded-md hidden md:block">Paris</span>
+                        <span class="text-lg">Figma</span>
+                        <span class="text-lg">Framer development</span>
+                        <span class="text-lg">Adobe suite</span>
+                        <span class="text-lg">HTML, CSS, JS</span>
+                        <span class="text-lg">Kirby CMS</span>
+                        <span class="text-lg">Wordpress CMS</span>
+                        <span class="text-lg">Claude AI</span>
+                        <span class="text-lg">MacOS expert</span>
                     </div>
                 </div>
             </div>
@@ -797,89 +314,50 @@
         </div>
 
         <div id="contact"
-             class="gap-4 w-full flex flex-col pointer-events-auto scroll-mt-3 md:scroll-mt-[calc(50vh-30px)] mb-10">
+             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-3 mb-[40vh]">
 
-            <div class="flex flex-col gap-4 w-full md:grid grid-cols-6 mb-[200px]">
+            <div data-section-label
+                 class="col-span-2 sticky top-4 text-sm h-fit flex items-center justify-between gap-1 mb-2 z-10">
                 <div
-                     class="col-span-2 sticky top-4 md:top-[calc(50vh-30px)] text-sm h-fit flex items-center justify-between gap-1">
-
-                    <div
-                         class="text-sm text-blue-200 bg-[#0000D9] px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center shadow-big">
-                        5</div>
-                    <h3
-                        class="w-full text-blue-200 bg-[#0000D9] px-2 h-[30px] rounded-[6px] flex items-center shadow-big">
-                        CONTACT
-                    </h3>
-                </div>
-
-
-                <div class="flex flex-col md:grid grid-cols-2 gap-4 col-span-4 ml-9 md:ml-0">
-                    <div>
-                        <h4 class="text-grey text-sm uppercase">PHONE</h4>
-                        <a href="tel:+31613381141" class="hover:text-grey duration-300 text-lg">+31 (0)6
-                            13
-                            38
-                            11 41</a>
-                    </div>
-                    <div>
-                        <h4 class="text-grey text-sm uppercase">Email</h4>
-                        <a href="mailto:pablomoreno@proton.me"
-                           class="hover:text-grey duration-300 text-lg">pablomoreno@proton.me</a>
-                    </div>
-                    <div>
-                        <h4 class="text-grey text-sm uppercase">Adress</h4>
-                        <span class="text-lg leading-tight">Voorburgstraat 123<br>
-                            Amsterdam</span>
-                    </div>
-                    <div>
-                        <h4 class="text-grey text-sm uppercase">BTW-VAT</h4>
-                        <span class="text-lg leading-tight">NL005382423B66</span>
-                    </div>
-                </div>
+                     class="text-white bg-[#0000D9] px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center shadow-big">
+                    ☎️</div>
+                <h3
+                    class="w-full text-white bg-[#0000D9] px-2 h-[30px] rounded-[6px] flex items-center shadow-big gap-1">
+                    <span
+                          class="">Or by
+                    </span>
+                    <span class="inline">CONTACT</span>
+                </h3>
             </div>
 
-
-
-            <div id="call"
-                 class="flex h-[calc(100vh-150px)] md:h-[85vh] items-center justify-center pointer-events-auto ">
-
-                <div
-                     class="p-3 rounded-3xl duration-300 flex flex-col md:grid grid-cols-8 gap-4 md:gap-10 items-center justify-center pointer-events-auto w-fit">
-
-                    <div
-                         class="video w-full h-fit rounded-2xl overflow-hidden relative transition duration-300 bg-white col-span-4 col-start-2">
-                        <video id="randomVideo" autoplay loop playsinline muted
-                               disablePictureInPicture
-                               controlsList="nodownload" class="w-full aspect-[4/2.5] object-cover">
-                            <source src="media/pablo-in-his-room.mp4" type='video/mp4'>
-                        </video>
-                    </div>
-
-                    <div class="flex flex-col items-center justify-center col-span-2">
-                        <h4 class="text-center leading-tight text-lg font-semibold uppercase">+15 minutes presentation
-                        </h4>
-                        <p
-                           class="text-center transition duration-300 leading-tight text-grey mt-1">
-                            If you're interested in a more in-depth presentation, feel free to reach out.
-                            I'd be happy to walk you through my work and the value I can bring to your projects</p>
-
-                        <a href="tel:+31613381141"
-                           class="bg-[#35C759] inline-flex gap-3 rounded-full py-3 justify-center text-white px-20 hover:bg-[#22aa44] mx-auto transition duration-300 items-center mt-6 text-xl shadow-big">Call
-                            me
-
-                        </a>
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-x-6 col-span-4">
+                <div class="flex flex-col gap-1">
+                    <h4 class="text-sm text-grey mb-1 uppercase">Phone</h4>
+                    <a href="tel:+31613381141"
+                       class="text-lg leading-tight w-fit hover:text-grey transition duration-300">+31 (0)6 13 38 11
+                        41</a>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <h4 class="text-sm text-grey mb-1 uppercase">Email</h4>
+                    <a href="mailto:pablomoreno@proton.me"
+                       class="text-lg leading-tight w-fit hover:text-grey transition duration-300">pablomoreno@proton.me</a>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <h4 class="text-sm text-grey mb-1 uppercase">Address</h4>
+                    <span class="text-lg leading-tight">Voorburgstraat 123<br>Amsterdam</span>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <h4 class="text-sm text-grey mb-1 uppercase">BTW-VAT</h4>
+                    <span class="text-lg leading-tight">NL005382423B66</span>
                 </div>
             </div>
-
-
         </div>
 
         <div id="thanks"
-             class="gap-2 md:gap-4 w-full flex flex-col-reverse md:grid grid-cols-6 pointer-events-auto scroll-mt-3 md:scroll-mt-[calc(50vh-30px)]">
+             class="w-full md:grid grid-cols-6 gap-4 pointer-events-auto">
 
             <div
-                 class="col-span-6 sticky top-[55px] text-sm  h-fit flex items-center justify-between gap-1">
+                 class="md:col-start-3 md:col-span-4 text-sm h-fit flex items-center justify-between gap-1">
 
                 <div
                      class="text-black bg-white px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center shadow-big hover:shadow-none">
@@ -902,6 +380,23 @@
 
     </div>
 
+
+    <!-- CORNER VIDEO (desktop): small 4:3 video fixed at the bottom left, under the section labels' column.
+         On hover it grows to the width of the labels' column (--index-width, set by index.js), keeping 4:3,
+         and shows a caption at the top and a green call button at its bottom -->
+    <div
+         class="hidden md:block fixed bottom-3 left-3 z-50 w-[160px] h-[120px] hover:w-[var(--index-width,33vw)] hover:h-[calc(var(--index-width,33vw)*3/4)] rounded-[8px] overflow-hidden shadow-big bg-black font-semibold transition-[width,height] duration-500 group">
+        <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
+               class="w-full h-full object-cover">
+            <source src="media/pablo-in-his-room-medium.mp4" type="video/mp4">
+        </video>
+        <p
+           class="absolute top-0 inset-x-0 px-3 pt-2.5 pb-6 text-sm text-white bg-linear-to-b from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 pointer-events-none">
+            Pablo is already on the phone...</p>
+        <a href="tel:+31613381141"
+           class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-2 px-6 py-2 rounded-full bg-[#35C759] hover:bg-[#22aa44] text-white text-lg opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition duration-300">
+            Call</a>
+    </div>
 
     <script src="assets/js/index.js"></script>
     <script src="assets/js/flickity.pkgd.min.js"></script>
