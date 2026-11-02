@@ -5,19 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Freelance <web> designer</title>
+    <meta name="description" content="Pablo Moreno is a freelance web designer based in Amsterdam.">
+    <link rel="canonical" href="https://pablo.energy/">
 
-    <!-- <link rel="icon" type="image/webp" href="/assets/favicon/favicon-96x96.webp" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.webp" />
-    <meta name="apple-mobile-web-app-title" content="Pablo M." />
-    <link rel="manifest" href="/assets/favicon/site.webmanifest" /> -->
+    <!-- SOCIALS: URLs must be absolute, or the preview image won't load when the link is shared -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pablo.energy/">
+    <meta property="og:site_name" content="Pablo Moreno">
+    <meta property="og:title" content="Pablo Moreno, freelance &lt;web&gt; designer">
+    <meta property="og:description" content="Pablo Moreno is a freelance web designer based in Amsterdam.">
+    <meta property="og:image" content="https://pablo.energy/assets/pablo-moreno.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="Portrait of Pablo Moreno">
+    <meta name="twitter:card" content="summary">
 
     <link href="assets/css/output.css" rel="stylesheet">
     <link href="assets/css/more.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/flickity.min.css" />
 
-    <link id="dynamic-favicon" rel="icon" href="">
+    <!-- Static icon for crawlers and no-JS visitors; index.js swaps in the animated one -->
+    <link id="dynamic-favicon" rel="icon" href="assets/favicon/favicon-96x96.png">
+    <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
 </head>
 
 <body class="scroll-smooth bg-[#EAEAEA]">
@@ -38,10 +48,10 @@
 
                 <div id="intro-photo"
                      class="rounded-full aspect-square group relative h-[30px] w-[30px] cursor-pointer shadow-big"
-                     onclick="alert('♻️ Presentation website made by Pablo on November 2025. Hancoded using HTML+CSS+JS and Tailwind CSS. Hosted in Netlify. ♻️')">
-                    <img src="assets/pablo-moreno.webp" alt=""
+                     onclick="alert('♻️ Presentation website made by Pablo in November 2025. Hand-coded using HTML+CSS+JS and Tailwind CSS. Hosted on Netlify. ♻️')">
+                    <img src="assets/pablo-moreno.webp" alt="Portrait of Pablo Moreno"
                          class="absolute transition duration-600 ease-out aspect-square h-[30px] w-[30px] rounded-full group-hover:scale-90">
-                    <img src="assets/ball.webp" id="ball" alt=""
+                    <img src="assets/ball.webp" id="ball" alt="Black pool ball with the number 23"
                          class="rotate-360 absolute translate-x-[120%] group-hover:opacity-100 group-hover:rotate-0 group-hover:translate-none transition opacity-0 duration-600 ease-out aspect-square h-[30px] w-[30px] rounded-full z-0">
                 </div>
 
@@ -49,7 +59,7 @@
                     class="w-full text-black bg-[#B0FD45] px-2 h-[30px] rounded-[6px] flex items-center gap-1 z-10 shadow-big">
                     <span class="inline md:hidden">PABLO M.</span><span class="hidden md:inline">PABLO
                         MORENO</span><span
-                          class="italic">&lt;web&gt; designer
+                          class="italic opacity-40">Freelance &lt;web&gt; designer
                     </span>
                 </h3>
 
@@ -58,12 +68,12 @@
             <div class="flex flex-col gap-6 col-span-4  md:w-2/3">
                 <p class="text-lg ">It's <span id="amsterdam-time">00:00</span> in
                     Amsterdam
-                    and I welcome you to my website. was born and raised in Bilbao, Spain, until the age of 13, when I
+                    and I welcome you to my website. Born and raised in Bilbao, I
                     moved to a
                     boarding school in the south of France. Over the following six years, I studied art and design
-                    in diferent cities: Bayonne, Paris, Le Havre and Amiens. Graduating with a Master's in
+                    in different cities. Graduating with a master in
                     UI/UX
-                    Design, I pursued my life in Amsterdam, where I began working as a junior designer.
+                    Design, I pursued my life in Amsterdam, where I work as a freelancer.
                 </p>
             </div>
 
@@ -99,28 +109,29 @@
                         <h4>JETTE KELHOLT</h4>
                         <p>Design, Website, Animations</p>
                     </div> -->
-                    <div
-                         class="col-span-6 aspect-video relative flex items-center justify-center bg-[#7bb8d4] rounded-lg">
 
+
+                    <div class="col-span-6 aspect-video relative">
                         <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
-                               class="object-contain w-auto h-[80%] rounded-lg">
-                            <source src="media/jette-desktop.mp4" type='video/mp4'>
+                               class="object-cover w-full h-full rounded-lg">
+                            <source src="media/analogue-guiker-full.mp4" type='video/mp4'>
                         </video>
+                        <span
+                              class="h-[8px] w-[8px] md:h-[12px] md:w-[12px] bg-blue-800 rounded-full absolute bottom-2 left-2"></span>
 
                     </div>
+
 
                     <!-- <div
                          class="col-span-3 aspect-[4/5] relative flex items-center justify-center bg-[#d6d6d6] rounded-lg">
                         <img loading="lazy" src="media/not-used/jette-mobile.png"
                              class="object-contain w-auto h-[80%] rounded-lg" alt="" />
                     </div> -->
-
                     <div
-                         class="col-span-3 aspect-[4/5] relative flex items-center justify-center bg-[#d6d6d6] rounded-lg">
-                        <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
-                               class="object-contain w-auto h-[80%] rounded-lg">
-                            <source src="media/jette-insta.mp4" type='video/mp4'>
-                        </video>
+                         class="col-span-3 aspect-[4/5] relative flex items-center justify-center bg-[#d6d6d6] rounded-lg overflow-clip">
+                        <img loading="lazy" src="media/antoine-livres.webp"
+                             class="object-cover w-full h-full rounded-lg"
+                             alt="Stack of books wrapped in black plastic on a wooden pallet in a white gallery" />
                     </div>
 
                     <div
@@ -141,6 +152,47 @@
                         <p>Design, Programming, CMS</p>
                     </div> -->
 
+
+
+                    <div
+                         class="col-span-6 aspect-video relative flex items-center justify-center bg-[#9ecfe6] rounded-lg">
+
+                        <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
+                               class="object-contain w-auto h-[80%] rounded-lg">
+                            <source src="media/jette-desktop.mp4" type='video/mp4'>
+                        </video>
+
+                    </div>
+
+
+                    <div
+                         class="col-span-3 aspect-[4/5] relative flex items-center justify-center bg-[#d6d6d6] rounded-lg">
+                        <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
+                               class="object-contain w-auto h-[80%] rounded-lg">
+                            <source src="media/jette-insta.mp4" type='video/mp4'>
+                        </video>
+                    </div>
+
+                    <div class="col-span-3 aspect-[4/5] relative">
+                        <img loading="lazy" src="media/analogue-fyron-3.webp"
+                             class="object-cover w-full h-full rounded-lg"
+                             alt="Fyron schedule sign standing in a furnished lobby" />
+                        <span
+                              class="h-[8px] w-[8px] md:h-[12px] md:w-[12px] bg-blue-800 rounded-full absolute bottom-2 left-2"></span>
+
+                    </div>
+
+
+
+                    <!-- GUIKER -->
+                    <!-- <div class="justify-between col-span-6 relative flex mt-2 text-grey">
+                        <h4 class="flex gap-2 items-center"><span
+                                  class="block h-[10px] w-[10px] bg-blue-800 rounded-full"></span>GUIKER</h4>
+                        <p>UX, Rebrand, Guidelines, Website
+                        </p>
+                    </div> -->
+
+
                     <div
                          class="col-span-6 aspect-video relative flex items-center justify-center bg-[rgb(49,36,35)] rounded-lg">
 
@@ -152,54 +204,25 @@
                     </div>
 
 
+                    <div class="col-span-3 aspect-[4/5] relative">
+                        <img loading="lazy" src="media/analogue-guiker-3.webp"
+                             class="object-cover w-full h-full rounded-lg"
+                             alt="Guiker investment figures on four cards: first year cashflow, IRR, estimated sale price and holding period" />
+                        <span
+                              class="h-[8px] w-[8px] md:h-[12px] md:w-[12px] bg-blue-800 rounded-full absolute bottom-2 left-2"></span>
 
-                    <div
-                         class="col-span-3 aspect-[4/5] relative flex items-center justify-center bg-[#d6d6d6] rounded-lg overflow-clip">
-                        <img loading="lazy" src="media/antoine-livres.webp"
-                             class="object-cover w-full h-full rounded-lg" alt="" />
                     </div>
 
-                    <!-- GUIKER -->
-                    <!-- <div class="justify-between col-span-6 relative flex mt-2 text-grey">
-                        <h4 class="flex gap-2 items-center"><span
-                                  class="block h-[10px] w-[10px] bg-blue-800 rounded-full"></span>GUIKER</h4>
-                        <p>UX, Rebrand, Guidelines, Website
-                        </p>
-                    </div> -->
                     <div class="col-span-3 aspect-[4/5] relative">
                         <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
                                class="object-cover w-full h-full rounded-lg">
                             <source src="media/analogue-guiker-2.mp4" type='video/mp4'>
                         </video>
-                        <span class="h-[8px] w-[8px] md:h-[12px] md:w-[12px] bg-blue-800 rounded-full absolute bottom-2 left-2"></span>
-
-                    </div>
-
-                    <div class="col-span-6 aspect-video relative">
-                        <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
-                               class="object-cover w-full h-full rounded-lg">
-                            <source src="media/analogue-guiker-full.mp4" type='video/mp4'>
-                        </video>
-                        <span class="h-[8px] w-[8px] md:h-[12px] md:w-[12px] bg-blue-800 rounded-full absolute bottom-2 left-2"></span>
-
-                    </div>
-
-
-                    <div class="col-span-3 aspect-[4/5] relative">
-                        <img loading="lazy" src="media/analogue-guiker-3.webp"
-                             class="object-cover w-full h-full rounded-lg" alt="" />
                         <span
                               class="h-[8px] w-[8px] md:h-[12px] md:w-[12px] bg-blue-800 rounded-full absolute bottom-2 left-2"></span>
 
                     </div>
 
-                    <div class="col-span-3 aspect-[4/5] relative">
-                        <img loading="lazy" src="media/analogue-fyron-3.webp"
-                             class="object-cover w-full h-full rounded-lg" alt="" />
-                        <span
-                              class="h-[8px] w-[8px] md:h-[12px] md:w-[12px] bg-blue-800 rounded-full absolute bottom-2 left-2"></span>
-
-                    </div>
 
 
                     <!-- FYRON-->
@@ -236,7 +259,8 @@
                             <source src="media/analogue-vasti-3.mp4" type='video/mp4'>
                         </video>
 
-                        <span class="h-[8px] w-[8px] md:h-[12px] md:w-[12px] bg-blue-800 rounded-full absolute bottom-2 left-2"></span>
+                        <span
+                              class="h-[8px] w-[8px] md:h-[12px] md:w-[12px] bg-blue-800 rounded-full absolute bottom-2 left-2"></span>
                     </div>
 
                     <!-- <div class="col-span-3 aspect-[4/5] relative bg-[#101113] rounded-lg">
@@ -250,15 +274,31 @@
                     </div> -->
 
                 </div>
-                <span
-                      class="flex items-center gap-1 text-xs font-light text-black">
-                    <span class="h-[8px] w-[8px] md:h-[10px] md:w-[10px] bg-blue-800 rounded-full"></span><span
-                          class="opacity-40 font-medium">Made at Analogue Agency</span>
-                </span>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-x-6 items-start">
+
+                    <span
+                          class="flex items-center gap-1 text-xs font-light text-black">
+                        <span class="h-[8px] w-[8px] md:h-[10px] md:w-[10px] bg-blue-800 rounded-full"></span><span
+                              class="opacity-40 font-medium">Made at Analogue Agency</span>
+                    </span>
+
+                    <div class="flex flex-col gap-1">
+                        <h4 class="text-sm text-grey mb-1 uppercase">Skills</h4>
+
+                        <span class="text-lg">Identity design</span>
+                        <span class="text-lg">UI/UX design</span>
+                        <span class="text-lg">Motion design</span>
+                        <span class="text-lg">3D renders</span>
+                        <span class="text-lg">Social media</span>
+                        <span class="text-lg">Packaging</span>
+                    </div>
+
+                </div>
             </div>
         </div>
 
-        <div id="websites"
+        <div id="programming"
              class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-3 md:scroll-mt-[calc(50vh-30px)] mb-[15vh] md:mb-[40vh]">
 
             <div data-section-label
@@ -269,7 +309,7 @@
 
                 <div
                      class=" text-white bg-[#C725F9] px-2 h-[30px] rounded-[6px] flex items-center justify-between w-full shadow-big gap-1">
-                    <p class="truncate min-w-0">WEBSITES</p>
+                    <p class="truncate min-w-0">PROGRAMMING</p>
                 </div>
             </div>
 
@@ -318,7 +358,7 @@
                     <div class="flex flex-col gap-1">
                         <h4 class="text-sm text-grey mb-1 uppercase">Experience</h4>
 
-                        <a href="/" target="_blank" rel="noopener"
+                        <a href="#" target="" rel="noopener"
                            class="flex items-baseline gap-3 leading-tight hover:text-grey transition duration-300 group">
                             <span class="shrink-0 text-right text-base text-grey">2026</span>
                             <span class="min-w-0 flex-1 text-lg">Freelancer</span>
@@ -370,7 +410,19 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-x-6">
                     <div class="flex flex-col gap-1">
-                        <h4 class="text-sm text-grey mb-1 uppercase">Skills</h4>
+                        <h4 class="text-sm text-grey mb-1 uppercase">Tools</h4>
+
+                        <span class="text-lg">Figma</span>
+                        <span class="text-lg">Framer development</span>
+                        <span class="text-lg">Jitter video</span>
+                        <span class="text-lg">After Effects, Illustrator, InDesign</span>
+                        <span class="text-lg">HTML, CSS, JS</span>
+                        <span class="text-lg">Kirby CMS, WordPress CMS</span>
+                        <span class="text-lg">Claude AI</span>
+                        <span class="text-lg">Notion, Slack, MacOS</span>
+                    </div>
+                    <!-- <div class="flex flex-col gap-1">
+                        <h4 class="text-sm text-grey mb-1 uppercase">Others</h4>
 
                         <span class="text-lg">Identity design</span>
                         <span class="text-lg">UI/UX design</span>
@@ -378,21 +430,7 @@
                         <span class="text-lg">3D renders</span>
                         <span class="text-lg">Social media</span>
                         <span class="text-lg">Packaging</span>
-                    </div>
-
-                    <div class="flex flex-col gap-1">
-                        <h4 class="text-sm text-grey mb-1 uppercase">Tools</h4>
-
-                        <span class="text-lg">Figma</span>
-                        <span class="text-lg">Framer development</span>
-                        <span class="text-lg">After Effects, Illustrator, InDesign</span>
-                        <span class="text-lg">Jitter Video</span>
-                        <span class="text-lg">HTML, CSS, JS</span>
-                        <span class="text-lg">Kirby CMS</span>
-                        <span class="text-lg">Wordpress CMS</span>
-                        <span class="text-lg">Claude AI</span>
-                        <span class="text-lg">MacOS expert</span>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -402,7 +440,7 @@
         <!-- On mobile, min-h leaves just enough page below for the label to stick at the top with Phone right under it:
              100lvh minus top-4 (16px), mb-6 (24px), the thanks row (30px) and the page's bottom padding (12px) -->
         <div id="contact"
-             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-3 md:scroll-mt-[calc(50vh-30px)] min-h-[calc(100lvh-82px)] md:min-h-0 mb-6 md:mb-[40vh]">
+             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-3 md:scroll-mt-[calc(50vh-30px)] min-h-[calc(100lvh-82px)] md:min-h-0 mb-6 md:mb-0">
 
             <div data-section-label
                  class="col-span-2 sticky top-4 md:top-[calc(50vh-30px)] text-sm h-fit flex items-center justify-between gap-1 mb-2 z-10">
@@ -432,34 +470,38 @@
                     <span class="text-lg leading-tight">Voorburgstraat 123<br>1062JB Amsterdam</span>
                 </div>
                 <div class="flex flex-col gap-1">
+                    <h4 class="text-sm text-grey mb-1 uppercase">KVK</h4>
+                    <span class="text-lg leading-tight">99361248</span>
+                </div>
+                <div class="flex flex-col gap-1">
                     <h4 class="text-sm text-grey mb-1 uppercase">BTW-VAT</h4>
                     <span class="text-lg leading-tight">NL005382423B66</span>
                 </div>
             </div>
         </div>
 
+        <!-- Desktop: fills the last screen (100vh minus the page's 12px bottom padding), so contact is gone and its label has
+             joined the stack when the page ends. The line sits at its bottom, kept clear of the corner video (160px + 12px).
+             Mobile: a full-width bar -->
         <div id="thanks"
-             class="w-full md:grid grid-cols-6 gap-4 pointer-events-auto">
+             class="w-full md:grid grid-cols-6 gap-4 pointer-events-auto md:min-h-[calc(100vh-12px)]">
 
             <div
-                 class="md:col-span-2 text-sm h-fit flex items-center justify-between gap-1">
+                 class="md:hidden text-sm h-fit flex items-center justify-between gap-1">
 
                 <div
                      class="text-black bg-white px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center shadow-big hover:shadow-none">
                     ⏳</div>
                 <h3
-                    class="w-full text-black bg-white px-2 h-[30px] rounded-[6px] flex items-center justify-between shadow-big">
-                    <span>
-                        THANKS <span class="hidden xl:inline">FOR YOUR TIME</span></span>
-                    <div
-                         class="flex gap-2 col-span-4 justify-end items-center text-sm">
-                        <p class="text-grey whitespace-nowrap"><span class="hidden xl:inline">You spent</span> <span
-                                  id="visit-timer"></span> here</p>
-                    </div>
+                    class="w-full text-black bg-white px-2 h-[30px] rounded-[6px] flex items-center shadow-big whitespace-nowrap">
+                    <span class="opacity-40">Thanks, you spent <span data-visit-timer></span> here</span>
                 </h3>
 
             </div>
 
+            <h3 class="hidden md:block col-start-3 col-span-4 self-end pr-[172px] text-lg">
+                ⏳ <span class="opacity-40">Thanks for your time, you spent <span data-visit-timer></span> here.</span>
+            </h3>
 
         </div>
 
@@ -472,7 +514,7 @@
          Mobile: 25% width; a tap toggles data-open (index.js), which grows it to 80% width.
          At the end of the page index.js lifts it above the full-width thanks bar -->
     <div id="corner-video"
-         class="fixed bottom-3 right-3 z-50 w-[25vw] h-[18.75vw] md:w-[160px] md:h-[120px] max-md:data-open:w-[80vw] max-md:data-open:h-[60vw] md:hover:w-[calc(var(--index-width,33vw)*0.7)] md:hover:h-[calc(var(--index-width,33vw)*0.7*3/4)] rounded-[8px] overflow-hidden shadow-big bg-black font-semibold transition-[width,height] duration-500 group">
+         class="fixed bottom-3 right-3 z-50 w-[25vw] h-[18.75vw] md:w-[160px] md:h-[120px] max-md:data-open:w-[80vw] max-md:data-open:h-[60vw] md:hover:w-[calc(var(--index-width,33vw)*0.7)] md:hover:h-[calc(var(--index-width,33vw)*0.7*3/4)] rounded-[8px] md:hover:rounded-[20px] max-md:data-open:rounded-[20px] overflow-hidden shadow-big bg-black font-semibold transition-[width,height,border-radius] duration-500 group">
         <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
                class="w-full h-full object-cover">
             <source src="media/pablo-in-his-room-medium.mp4" type="video/mp4">

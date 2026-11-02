@@ -86,7 +86,7 @@ function updateTimer() {
 
     if (minutes === 0) {
         // Under 1 minute → show seconds only
-        text = `${seconds} seconds`;
+        text = seconds === 1 ? `1 second` : `${seconds} seconds`;
     } else if (minutes === 1) {
         // Exactly 1 minute
         text = `1 minute`;
@@ -95,7 +95,7 @@ function updateTimer() {
         text = `${minutes} minutes`;
     }
 
-    document.getElementById('visit-timer').textContent = text;
+    document.querySelectorAll('[data-visit-timer]').forEach(el => el.textContent = text);
 }
 
 // Update every second
