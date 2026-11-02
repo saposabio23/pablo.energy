@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p-e</title>
+
+    <!-- <link rel="icon" type="image/webp" href="/assets/favicon/favicon-96x96.webp" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.webp" />
+    <meta name="apple-mobile-web-app-title" content="Pablo M." />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" /> -->
+
+    <link href="assets/css/output.css" rel="stylesheet">
+    <link href="assets/css/more.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/flickity.min.css" />
+
+    <link id="dynamic-favicon" rel="icon" href="">
+</head>
+
+<body class="scroll-smooth bg-[#EAEAEA]">
+
+
+    <div id="pablo"
+         class="w-full flex flex-col gap-6 md:flex-row pointer-events-auto h-svh justify-center md:justify-between items-center z-30 p-3 font-semibold">
+
+        <div
+             class="w-full md:w-auto text-sm h-fit flex items-center justify-between gap-1 z-10">
+
+            <div id="intro-photo"
+                 class="rounded-full aspect-square group relative transition-opacity delay-100 duration-1000 opacity-0 h-[30px] w-[30px] cursor-pointer shadow-big"
+                 onclick="alert('♻️ Site by Pablo on November 2025, using HTML+CSS+JS and Tailwind CSS. Hosted in Netlify. ♻️')">
+                <img src="assets/ball.webp" alt=""
+                     class="absolute transition duration-600 ease-out aspect-square h-[30px] w-[30px] rounded-full group-hover:scale-90">
+                <img src="assets/pablo-moreno.webp" id="ball" alt=""
+                     class="rotate-360 absolute translate-x-[120%] group-hover:opacity-100 group-hover:rotate-0 group-hover:translate-none transition opacity-0 duration-600 ease-out aspect-square h-[30px] w-[30px] rounded-full z-0">
+            </div>
+
+            <h3 id="intro-texto"
+                class="w-full text-black bg-[#B0FD45] px-3 h-[30px] rounded-[6px] flex items-center gap-2 transition-opacity delay-200 duration-1000 opacity-0 z-10 shadow-big">
+                <span class="md:hidden">Pablo M.</span><span class="hidden md:inline">Pablo Moreno</span>
+                <span
+                      class="italic opacity-50">Freelancer &lt;web&gt; designer
+                </span>
+            </h3>
+        </div>
+
+        <a id="contact" href="#" data-user="pablomoreno" data-domain="proton.me"
+           class="fixed bottom-0 inset-x-0 mx-auto mb-5 w-fit md:static md:m-0 p-2 px-4 inline rounded-full z-40 text-sm font-semibold text-black bg-stone-300 shadow-big hover:scale-105 transition-all">e-mail
+            📮</a>
+
+    </div>
+
+    <script src="assets/js/index.js"></script>
+</body>
+
+</html>

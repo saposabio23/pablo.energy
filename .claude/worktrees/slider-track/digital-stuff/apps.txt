@@ -1,0 +1,37 @@
+WEBSITES I VISIT OFTEN
+- radio.garden
+- are.na
+- cnrtl.fr
+- whereby.com
+
+
+COMPUTER
+- Chromium · browser
+- Swinsian · music player
+- Eagle · image collector
+- Notion · note-taking
+- Blender · 3d soft
+- Figma · UI soft
+- VSCodium · code
+- Fierfox Developer Edition · tester
+- Image2Icon · custom finder icons
+
+ * System
+- KeepassXC · password collector
+- Keyboard Maestro · shortcuts
+- Little Snitch · firewall
+- Caffeine · screen on
+- Onyx · maintenance
+- Displaperture · round corners!
+- Keka · little unzipper
+
+
+*Browser extensions
+- Are.na
+- Eagle
+- KeePassXC
+- Enhancer for Youtube
+- Save to Notion
+- uBlock Origin
+- xBowserSync
+- Custom extensions!

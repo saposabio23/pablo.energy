@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KWIKSTEP RACE 2026</title>
+
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="index.css">
+
+    <link href="https://fonts.cdnfonts.com/css/alte-haas-grotesk?styles=10514" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- <button onclick="toggleMute()" id="unmuteBtn">unmute</button> -->
+
+    <div class="player" onclick="openplayer()">
+        <h1>KWIKSTEP RACE 2026</h1>
+        <img src="media/2-Photoroom.webp" alt="" id="velo">
+        <p>Hallo hallo Kwikstep riders! A race wants to be organized this year to meet all of us.
+        </p>
+        <i>The Kwikstep Ride Association</i>
+
+    </div>
+
+
+    <video autoplay loop playsinline muted
+           disablePictureInPicture poster="media/poster.webp" id="video">
+        <source src="media/untitled.mp4" type='video/mp4'>
+    </video>
+
+    <form name="subscription" method="POST" data-netlify="true">
+        <input type="email" name="email" required placeholder="your email here">
+        <input type="submit" value="Receive news !">
+    </form>
+
+
+    <script>
+        function openplayer() {
+            var video = document.getElementById("video");
+            video.muted = !video.muted;
+
+
+            var velo = document.getElementById("velo");
+            velo.classList.toggle('playerOn')
+
+            if (velo.src.includes("1-Photoroom")) {
+                velo.src = "media/2-Photoroom.webp";
+            } else {
+                velo.src = "media/1-Photoroom.webp";
+            }
+
+            document.querySelector('.player').classList.toggle('textOn')
+            document.querySelector('body h1').classList.toggle('titleOn')
+        }
+    </script>
+</body>
+
+</html>

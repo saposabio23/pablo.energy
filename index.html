@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>p-e</title>
+    <title>Freelance <web> designer</title>
 
     <!-- <link rel="icon" type="image/webp" href="/assets/favicon/favicon-96x96.webp" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
@@ -22,38 +22,473 @@
 
 <body class="scroll-smooth bg-[#EAEAEA]">
 
+    <div
+         class="flex relative flex-col font-semibold pointer-events-none p-3 pt-0">
 
-    <div id="pablo"
-         class="w-full flex flex-col gap-6 md:flex-row pointer-events-auto h-svh justify-center md:justify-between items-center z-30 p-3 font-semibold">
-
-        <div
-             class="w-full md:w-auto text-sm h-fit flex items-center justify-between gap-1 z-10">
-
-            <div id="intro-photo"
-                 class="rounded-full aspect-square group relative transition-opacity delay-100 duration-1000 opacity-0 h-[30px] w-[30px] cursor-pointer shadow-big"
-                 onclick="alert('♻️ Site by Pablo on November 2025, using HTML+CSS+JS and Tailwind CSS. Hosted in Netlify. ♻️')">
-                <img src="assets/ball.webp" alt=""
-                     class="absolute transition duration-600 ease-out aspect-square h-[30px] w-[30px] rounded-full group-hover:scale-90">
-                <img src="assets/pablo-moreno.webp" id="ball" alt=""
-                     class="rotate-360 absolute translate-x-[120%] group-hover:opacity-100 group-hover:rotate-0 group-hover:translate-none transition opacity-0 duration-600 ease-out aspect-square h-[30px] w-[30px] rounded-full z-0">
-            </div>
-
-            <h3 id="intro-texto"
-                class="w-full text-black bg-[#B0FD45] px-3 h-[30px] rounded-[6px] flex items-center gap-2 transition-opacity delay-200 duration-1000 opacity-0 z-10 shadow-big">
-                <span class="md:hidden">Pablo M.</span><span class="hidden md:inline">Pablo Moreno</span>
-                <span
-                      class="italic opacity-50">Freelancer &lt;web&gt; designer
-                </span>
-            </h3>
+        <div id="pablo"
+             class="gap-3 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-3 md:sticky top-0 py-1.5 md:mb-[calc(50vh-42px)] h-fit justify-between z-30">
         </div>
 
-        <a id="contact" href="#" data-user="pablomoreno" data-domain="proton.me"
-           class="fixed bottom-0 inset-x-0 mx-auto mb-5 w-fit md:static md:m-0 p-2 px-4 inline rounded-full z-40 text-sm font-semibold text-black bg-stone-300 shadow-big hover:scale-105 transition-all">e-mail
-            📮</a>
+        <!-- Fills the first screen alone. Mobile: starts at 12px, so 100svh-12px. Desktop: starts at 50vh-30px with a 40vh margin below, so 10vh+30px -->
+        <div id="today"
+             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-3 md:scroll-mt-[calc(50vh-30px)] min-h-[calc(100svh-12px)] md:min-h-[calc(10vh+30px)] md:mb-[40vh]">
+
+            <div data-section-label
+                 class="col-span-2 sticky top-3 md:top-[calc(50vh-30px)] text-sm h-fit flex items-center justify-between gap-1 md:pb-0 z-10">
+
+                <div id="intro-photo"
+                     class="rounded-full aspect-square group relative h-[30px] w-[30px] cursor-pointer shadow-big"
+                     onclick="alert('♻️ Presentation website made by Pablo on November 2025. Hancoded using HTML+CSS+JS and Tailwind CSS. Hosted in Netlify. ♻️')">
+                    <img src="assets/pablo-moreno.webp" alt=""
+                         class="absolute transition duration-600 ease-out aspect-square h-[30px] w-[30px] rounded-full group-hover:scale-90">
+                    <img src="assets/ball.webp" id="ball" alt=""
+                         class="rotate-360 absolute translate-x-[120%] group-hover:opacity-100 group-hover:rotate-0 group-hover:translate-none transition opacity-0 duration-600 ease-out aspect-square h-[30px] w-[30px] rounded-full z-0">
+                </div>
+
+                <h3 id="intro-texto"
+                    class="w-full text-black bg-[#B0FD45] px-2 h-[30px] rounded-[6px] flex items-center gap-1 z-10 shadow-big">
+                    <span class="inline md:hidden">PABLO M.</span><span class="hidden md:inline">PABLO
+                        MORENO</span><span
+                          class="italic">&lt;web&gt; designer
+                    </span>
+                </h3>
+
+            </div>
+
+            <div class="flex flex-col gap-6 col-span-4  md:w-2/3">
+                <p class="text-lg ">It's <span id="amsterdam-time">00:00</span> in
+                    Amsterdam
+                    and I welcome you to my website. was born and raised in Bilbao, Spain, until the age of 13, when I
+                    moved to a
+                    boarding school in the south of France. Over the following six years, I studied art and design
+                    in diferent cities: Bayonne, Paris, Le Havre and Amiens. Graduating with a Master's in
+                    UI/UX
+                    Design, I pursued my life in Amsterdam, where I began working as a junior designer.
+                </p>
+            </div>
+
+        </div>
+
+        <div id="work"
+             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-3 md:scroll-mt-[calc(50vh-30px)] mb-[15vh] md:mb-[40vh]">
+
+            <div data-section-label
+                 class="col-span-2 sticky top-4 md:top-[calc(50vh-30px)] text-sm  h-fit flex items-center justify-between gap-1 mb-2 z-10">
+
+                <div
+                     class="text-sm text-white bg-[#E90801] px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center shadow-big">
+                    1</div>
+                <h3
+                    class="w-full text-white bg-[#E90801] px-2 h-[30px] rounded-[6px] flex items-center shadow-big gap-1">
+                    <span class="inline">GRAPHIC SERVICES</span>
+                </h3>
+            </div>
+
+            <div class="flex flex-col gap-4 col-span-4">
+                <div class="grid grid-cols-6 gap-2">
+
+                    <!-- HIDE AND SEEK -->
+                    <!-- <div class="justify-between col-span-6 relative flex mt-2 text-grey">
+                        <h4>HIDE AND SEEK</h4>
+                        <p>Design, Website, CMS</p>
+                    </div> -->
+
+
+                    <!-- JETTE KELHOLT -->
+                    <!-- <div class="justify-between col-span-6 relative flex mt-2 text-grey">
+                        <h4>JETTE KELHOLT</h4>
+                        <p>Design, Website, Animations</p>
+                    </div> -->
+                    <div
+                         class="col-span-6 aspect-video relative flex items-center justify-center bg-[#7bb8d4] rounded-lg">
+
+                        <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
+                               class="object-contain w-auto h-[80%] rounded-lg">
+                            <source src="media/jette-desktop.mp4" type='video/mp4'>
+                        </video>
+
+                    </div>
+
+                    <!-- <div
+                         class="col-span-3 aspect-[4/5] relative flex items-center justify-center bg-[#d6d6d6] rounded-lg">
+                        <img loading="lazy" src="media/not-used/jette-mobile.png"
+                             class="object-contain w-auto h-[80%] rounded-lg" alt="" />
+                    </div> -->
+
+                    <div
+                         class="col-span-3 aspect-[4/5] relative flex items-center justify-center bg-[#d6d6d6] rounded-lg">
+                        <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
+                               class="object-contain w-auto h-[80%] rounded-lg">
+                            <source src="media/jette-insta.mp4" type='video/mp4'>
+                        </video>
+                    </div>
+
+                    <div
+                         class="col-span-3 aspect-[4/5] relative flex items-center justify-center bg-[#d6d6d6] rounded-lg">
+                        <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
+                               class="object-contain w-auto h-[80%] rounded-lg">
+                            <source src="media/antoine-intro.mp4" type='video/mp4'>
+                        </video>
+                    </div>
+
+
+
+
+
+                    <!-- ANTOINE SAVIGNAT -->
+                    <!-- <div class="justify-between col-span-6 relative flex mt-2 text-grey">
+                        <h4>ANTOINE SAVIGNAT</h4>
+                        <p>Design, Programming, CMS</p>
+                    </div> -->
+
+                    <div
+                         class="col-span-6 aspect-video relative flex items-center justify-center bg-[rgb(49,36,35)] rounded-lg">
+
+                        <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
+                               class="object-contain w-auto h-[80%] rounded-lg">
+                            <source src="media/antoine-full.mp4" type='video/mp4'>
+                        </video>
+
+                    </div>
+
+
+
+                    <div
+                         class="col-span-3 aspect-[4/5] relative flex items-center justify-center bg-[#d6d6d6] rounded-lg overflow-clip">
+                        <img loading="lazy" src="media/antoine-livres.webp"
+                             class="object-cover w-full h-full rounded-lg" alt="" />
+                    </div>
+
+                    <!-- GUIKER -->
+                    <!-- <div class="justify-between col-span-6 relative flex mt-2 text-grey">
+                        <h4 class="flex gap-2 items-center"><span
+                                  class="block h-[10px] w-[10px] bg-blue-800 rounded-full"></span>GUIKER</h4>
+                        <p>UX, Rebrand, Guidelines, Website
+                        </p>
+                    </div> -->
+                    <div class="col-span-3 aspect-[4/5] relative">
+                        <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
+                               class="object-cover w-full h-full rounded-lg">
+                            <source src="media/analogue-guiker-2.mp4" type='video/mp4'>
+                        </video>
+                        <span class="h-[8px] w-[8px] md:h-[12px] md:w-[12px] bg-blue-800 rounded-full absolute bottom-2 left-2"></span>
+
+                    </div>
+
+                    <div class="col-span-6 aspect-video relative">
+                        <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
+                               class="object-cover w-full h-full rounded-lg">
+                            <source src="media/analogue-guiker-full.mp4" type='video/mp4'>
+                        </video>
+                        <span class="h-[8px] w-[8px] md:h-[12px] md:w-[12px] bg-blue-800 rounded-full absolute bottom-2 left-2"></span>
+
+                    </div>
+
+
+                    <div class="col-span-3 aspect-[4/5] relative">
+                        <img loading="lazy" src="media/analogue-guiker-3.webp"
+                             class="object-cover w-full h-full rounded-lg" alt="" />
+                        <span
+                              class="h-[8px] w-[8px] md:h-[12px] md:w-[12px] bg-blue-800 rounded-full absolute bottom-2 left-2"></span>
+
+                    </div>
+
+                    <div class="col-span-3 aspect-[4/5] relative">
+                        <img loading="lazy" src="media/analogue-fyron-3.webp"
+                             class="object-cover w-full h-full rounded-lg" alt="" />
+                        <span
+                              class="h-[8px] w-[8px] md:h-[12px] md:w-[12px] bg-blue-800 rounded-full absolute bottom-2 left-2"></span>
+
+                    </div>
+
+
+                    <!-- FYRON-->
+                    <!-- <div class="justify-between col-span-6 relative flex mt-2 text-grey">
+                        <h4 class="flex gap-2 items-center"><span
+                                  class="block h-[10px] w-[10px] bg-blue-800 rounded-full"></span>FYRON GROUP</h4>
+                        <p>Printing files, Animations</p>
+                    </div> -->
+                    <!-- <div class="col-span-6 aspect-video relative">
+                        <img loading="lazy" src="media/not-used/analogue-fyron-1.webp"
+                             class="object-cover w-full h-full rounded-lg" alt="" />
+                    </div>
+
+
+                    <div class="col-span-3 aspect-[4/5] relative">
+                        <img loading="lazy" src="media/analogue-fyron-3.webp"
+                             class="object-cover w-full h-full rounded-lg" alt="" />
+                    </div> -->
+
+
+                    <!-- VASTI-->
+
+                    <!-- <div class="justify-between col-span-6 relative flex mt-2 text-grey">
+                        <h4 class="flex gap-2 items-center"><span
+                                  class="block h-[10px] w-[10px] bg-blue-800 rounded-full"></span>VASTI</h4>
+                        <p>Brand Identity, Design, Website</p>
+                    </div> -->
+
+                    <div
+                         class="col-span-6 aspect-video relative flex items-center justify-center bg-[#1b201c] rounded-lg">
+
+                        <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
+                               class="object-contain w-auto h-[80%] rounded-lg">
+                            <source src="media/analogue-vasti-3.mp4" type='video/mp4'>
+                        </video>
+
+                        <span class="h-[8px] w-[8px] md:h-[12px] md:w-[12px] bg-blue-800 rounded-full absolute bottom-2 left-2"></span>
+                    </div>
+
+                    <!-- <div class="col-span-3 aspect-[4/5] relative bg-[#101113] rounded-lg">
+                        <img loading="lazy" src="media/not-used/analogue-vasti-1.jpg"
+                             class="object-contain w-full h-full rounded-lg" alt="" />
+                    </div>
+
+                    <div class="col-span-3 aspect-[4/5] relative rounded-lg">
+                        <img loading="lazy" src="media/not-used/analogue-vasti-2.jpg"
+                             class="object-cover w-full h-full rounded-lg" alt="" />
+                    </div> -->
+
+                </div>
+                <span
+                      class="flex items-center gap-1 text-xs font-light text-black">
+                    <span class="h-[8px] w-[8px] md:h-[10px] md:w-[10px] bg-blue-800 rounded-full"></span><span
+                          class="opacity-40 font-medium">Made at Analogue Agency</span>
+                </span>
+            </div>
+        </div>
+
+        <div id="websites"
+             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-3 md:scroll-mt-[calc(50vh-30px)] mb-[15vh] md:mb-[40vh]">
+
+            <div data-section-label
+                 class="col-span-2 sticky top-4 md:top-[calc(50vh-30px)] text-sm  h-fit flex items-center justify-between gap-1 mb-2">
+                <div
+                     class="text-white bg-[#C725F9] px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center shadow-big">
+                    2</div>
+
+                <div
+                     class=" text-white bg-[#C725F9] px-2 h-[30px] rounded-[6px] flex items-center justify-between w-full shadow-big gap-1">
+                    <p class="truncate min-w-0">WEBSITES</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-2 col-span-4">
+
+                <!-- Filled by index.js: one list per Nature (For people / For friends / For me), each under its own heading -->
+                <div id="projects-grid" class="font-semibold flex flex-col gap-10">
+                </div>
+                <p id="projects-empty" class="text-grey hidden">Nothing here yet.</p>
+
+            </div>
+
+
+
+
+        </div>
+
+        <div id="resume"
+             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-3 md:scroll-mt-[calc(50vh-30px)] mb-[15vh] md:mb-[40vh]">
+
+            <div data-section-label
+                 class="col-span-2 sticky top-4 md:top-[calc(50vh-30px)] text-sm  h-fit flex items-center justify-between gap-1 mb-2 z-10">
+
+                <div
+                     class="text-white bg-[#8D4A13] px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center shadow-big">
+                    3</div>
+                <div
+                     class="text-white bg-[#8D4A13] px-2 h-[30px] rounded-[6px] flex items-center w-full  justify-between shadow-big gap-1">
+                    <h4>
+                        <span class="inline">RESUME</span>
+                    </h4>
+
+                    <!-- <div class="flex gap-3">
+                        <span>Work</span>
+                        <span>Internship</span>
+                        <span>Studies</span>
+                    </div> -->
+                </div>
+            </div>
+
+
+            <div class="flex flex-col gap-12 col-span-4">
+
+                <!-- Experience and Education: each row links to the agency or school page -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-x-6">
+                    <div class="flex flex-col gap-1">
+                        <h4 class="text-sm text-grey mb-1 uppercase">Experience</h4>
+
+                        <a href="/" target="_blank" rel="noopener"
+                           class="flex items-baseline gap-3 leading-tight hover:text-grey transition duration-300 group">
+                            <span class="shrink-0 text-right text-base text-grey">2026</span>
+                            <span class="min-w-0 flex-1 text-lg">Freelancer</span>
+                        </a>
+
+                        <a href="https://analogueagency.com/" target="_blank" rel="noopener"
+                           class="flex items-baseline gap-3 leading-tight hover:text-grey transition duration-300 group">
+                            <span class="shrink-0 text-right text-base text-grey">2025</span>
+                            <span class="min-w-0 flex-1 text-lg">Designer at Analogue</span>
+                        </a>
+
+                        <a href="https://www.somoscuchillo.com/" target="_blank" rel="noopener"
+                           class="flex items-baseline gap-3 leading-tight hover:text-grey transition duration-300 group">
+                            <span class="shrink-0 text-right text-base text-grey">2022</span>
+                            <span class="min-w-0 flex-1 text-lg">Internship at Cuchillo <small>Ⓒ</small></span>
+                        </a>
+
+                        <a href="http://ateliermurr.com/" target="_blank" rel="noopener"
+                           class="flex items-baseline gap-3 leading-tight hover:text-grey transition duration-300 group">
+                            <span class="shrink-0 text-right text-base text-grey">2018</span>
+                            <span class="min-w-0 flex-1 text-lg">Internship at M.U.R.R</span>
+                        </a>
+                    </div>
+
+                    <div class="flex flex-col gap-1">
+                        <h4 class="text-sm text-grey mb-1 uppercase">Education</h4>
+
+                        <a href="https://www.utc.fr/formations/diplome-de-master/mention-humanites-et-industries-creatives-hic/parcours-design-et-creation-dexperience-dcx/"
+                           target="_blank" rel="noopener"
+                           class="flex items-baseline gap-3 leading-tight hover:text-grey transition duration-300 group">
+                            <span class="shrink-0 text-left text-base text-grey">2022</span>
+                            <span class="min-w-0 flex-1 text-lg">Double master UX/UI</span>
+                        </a>
+
+                        <a href="https://esadhar.fr/formations/dna/" target="_blank" rel="noopener"
+                           class="flex items-baseline gap-3 leading-tight hover:text-grey transition duration-300 group">
+                            <span class="shrink-0 text-left text-base text-grey">2019</span>
+                            <span class="min-w-0 flex-1 text-lg">Bachelor Interactive Design</span>
+                        </a>
+
+                        <a href="https://www.ecole-estienne.paris/formation/dn-made-designer-typographe/dn-made-designer-typographe/"
+                           target="_blank" rel="noopener"
+                           class="flex items-baseline gap-3 leading-tight hover:text-grey transition duration-300 group">
+                            <span class="shrink-0 text-left text-base text-grey">2016</span>
+                            <span class="min-w-0 flex-1 text-lg">License in Type Design</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-x-6">
+                    <div class="flex flex-col gap-1">
+                        <h4 class="text-sm text-grey mb-1 uppercase">Skills</h4>
+
+                        <span class="text-lg">Identity design</span>
+                        <span class="text-lg">UI/UX design</span>
+                        <span class="text-lg">Motion design</span>
+                        <span class="text-lg">3D renders</span>
+                        <span class="text-lg">Social media</span>
+                        <span class="text-lg">Packaging</span>
+                    </div>
+
+                    <div class="flex flex-col gap-1">
+                        <h4 class="text-sm text-grey mb-1 uppercase">Tools</h4>
+
+                        <span class="text-lg">Figma</span>
+                        <span class="text-lg">Framer development</span>
+                        <span class="text-lg">After Effects, Illustrator, InDesign</span>
+                        <span class="text-lg">Jitter Video</span>
+                        <span class="text-lg">HTML, CSS, JS</span>
+                        <span class="text-lg">Kirby CMS</span>
+                        <span class="text-lg">Wordpress CMS</span>
+                        <span class="text-lg">Claude AI</span>
+                        <span class="text-lg">MacOS expert</span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- On mobile, min-h leaves just enough page below for the label to stick at the top with Phone right under it:
+             100lvh minus top-4 (16px), mb-6 (24px), the thanks row (30px) and the page's bottom padding (12px) -->
+        <div id="contact"
+             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-3 md:scroll-mt-[calc(50vh-30px)] min-h-[calc(100lvh-82px)] md:min-h-0 mb-6 md:mb-[40vh]">
+
+            <div data-section-label
+                 class="col-span-2 sticky top-4 md:top-[calc(50vh-30px)] text-sm h-fit flex items-center justify-between gap-1 mb-2 z-10">
+                <div
+                     class="text-white bg-[#0000D9] px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center shadow-big">
+                    4</div>
+                <h3
+                    class="w-full text-white bg-[#0000D9] px-2 h-[30px] rounded-[6px] flex items-center shadow-big gap-1">
+                    <span class="inline">CONTACT</span>
+                </h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-x-6 col-span-4">
+                <div class="flex flex-col gap-1">
+                    <h4 class="text-sm text-grey mb-1 uppercase">Phone</h4>
+                    <a href="tel:+31613381141"
+                       class="text-lg leading-tight w-fit hover:text-grey transition duration-300">+31 (0)6 13 38 11
+                        41</a>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <h4 class="text-sm text-grey mb-1 uppercase">Email</h4>
+                    <a href="mailto:pablomoreno@proton.me"
+                       class="text-lg leading-tight w-fit hover:text-grey transition duration-300">pablomoreno@proton.me</a>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <h4 class="text-sm text-grey mb-1 uppercase">Address</h4>
+                    <span class="text-lg leading-tight">Voorburgstraat 123<br>1062JB Amsterdam</span>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <h4 class="text-sm text-grey mb-1 uppercase">BTW-VAT</h4>
+                    <span class="text-lg leading-tight">NL005382423B66</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="thanks"
+             class="w-full md:grid grid-cols-6 gap-4 pointer-events-auto">
+
+            <div
+                 class="md:col-span-2 text-sm h-fit flex items-center justify-between gap-1">
+
+                <div
+                     class="text-black bg-white px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center shadow-big hover:shadow-none">
+                    ⏳</div>
+                <h3
+                    class="w-full text-black bg-white px-2 h-[30px] rounded-[6px] flex items-center justify-between shadow-big">
+                    <span>
+                        THANKS <span class="hidden xl:inline">FOR YOUR TIME</span></span>
+                    <div
+                         class="flex gap-2 col-span-4 justify-end items-center text-sm">
+                        <p class="text-grey whitespace-nowrap"><span class="hidden xl:inline">You spent</span> <span
+                                  id="visit-timer"></span> here</p>
+                    </div>
+                </h3>
+
+            </div>
+
+
+        </div>
 
     </div>
 
+
+    <!-- CORNER VIDEO: small 4:3 video fixed at the bottom right, showing a caption at the top and a green call button
+         at its bottom when grown.
+         Desktop: on hover it grows to 70% of the section labels' column width (--index-width, set by index.js).
+         Mobile: 25% width; a tap toggles data-open (index.js), which grows it to 80% width.
+         At the end of the page index.js lifts it above the full-width thanks bar -->
+    <div id="corner-video"
+         class="fixed bottom-3 right-3 z-50 w-[25vw] h-[18.75vw] md:w-[160px] md:h-[120px] max-md:data-open:w-[80vw] max-md:data-open:h-[60vw] md:hover:w-[calc(var(--index-width,33vw)*0.7)] md:hover:h-[calc(var(--index-width,33vw)*0.7*3/4)] rounded-[8px] overflow-hidden shadow-big bg-black font-semibold transition-[width,height] duration-500 group">
+        <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
+               class="w-full h-full object-cover">
+            <source src="media/pablo-in-his-room-medium.mp4" type="video/mp4">
+        </video>
+        <p
+           class="absolute top-0 inset-x-0 px-3 pt-2.5 pb-6 text-sm text-white bg-linear-to-b from-black/50 to-transparent opacity-0 md:group-hover:opacity-100 max-md:group-data-open:opacity-100 transition duration-300 pointer-events-none">
+            Pablo is available for a new call...</p>
+        <a href="tel:+31613381141"
+           class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-2 px-12 py-1 rounded-full bg-[#35C759] hover:bg-[#22aa44] text-white text-lg opacity-0 md:group-hover:opacity-100 md:group-hover:translate-y-0 max-md:group-data-open:opacity-100 max-md:group-data-open:translate-y-0 max-md:pointer-events-none max-md:group-data-open:pointer-events-auto transition duration-300">
+            Call</a>
+    </div>
+
     <script src="assets/js/index.js"></script>
+    <script src="assets/js/flickity.pkgd.min.js"></script>
+
+
 </body>
 
 </html>

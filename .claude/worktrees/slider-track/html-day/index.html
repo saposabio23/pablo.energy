@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html is 🍀</title>
+
+    <style>
+        /************ SUMMARY ************/
+        summary {
+            font-size: 20px;
+            padding: 15px;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        details>summary {
+            list-style: none;
+        }
+
+        summary::-webkit-details-marker {
+            display: none
+        }
+
+        summary::after {
+            content: '‣';
+        }
+
+        details[open] summary:after {
+            content: "▾";
+        }
+
+        /************ DETAIL ************/
+        details {
+            text-align: center;
+            font-size: 100px;
+            border: 1px dotted black;
+            width: 80%;
+            max-width: 600px;
+            margin: auto;
+            border-radius: 20px;
+        }
+
+        /* details[open] summary {
+            border-bottom: 1px solid black;
+        } */
+
+        details details {
+            width: 80%;
+        }
+
+        /************ SPAN ************/
+        div {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 0;
+            flex-direction: column;
+            gap: 30px;
+        }
+    </style>
+</head>
+
+<body style="background-color: YellowGreen; margin: 30px;">
+
+    <details>
+        <summary>What gives you energy?</summary>
+        <div>🥝
+
+            <details>
+                <summary>How you take it?</summary>
+                <div>🥄
+
+                    <details>
+                        <summary>How you feel after?</summary>
+                        <div>🤩
+
+                            <details>
+                                <summary>And then?</summary>
+                                <div>🦦
+
+                                    <details>
+                                        <summary>Ehehe, ok truly... </summary>
+                                        <div>🧑‍💻
+
+                                            <details>
+                                                <summary>Yes, the day started super well!!!</summary>
+                                                <div style="padding: 0;">
+
+                                                    <span style="font-size: 1rem;text-align: left;
+  padding: 15px;">For the <a
+                                                           href="https://html.energy/html-day/2025/index.html">HTML
+                                                            Day 2025</a> (August 2<small>nd</small>)
+                                                        made at <u>Filmhuis Cavia</u>, Amsterdam <br>by <a
+                                                           href="pablo.energy">pablo.energy</a>
+                                                    </span>
+                                                </div>
+                                            </details>
+
+                                        </div>
+                                    </details>
+
+                                </div>
+                            </details>
+
+                        </div>
+                    </details>
+                </div>
+            </details>
+        </div>
+
+
+
+    </details>
+
+
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+body {
+  overflow-x: hidden;
+  background-color: white;
+}
+
+.tout{
+  position: absolute;
+  width: 100%;
+  margin:0; padding:0;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.plus{
+  display: block;
+}
+
+#love{
+  position: fixed;
+  left: 50vw; top: calc(var(--vh, 1vh) * 50);
+  transform: translate(-50%,-50%);
+  transform-origin: center;
+  height: 150px;
+  width: auto;
+  -webkit-animation-name: biglove;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+}
+
+#love:hover{
+  cursor: pointer;
+}
+
+
+  @-webkit-keyframes biglove {
+    0% {
+      -webkit-transform: scale(90%) translate(-50%,-50%);
+    }
+    100% {
+      -webkit-transform: scale(120%) translate(-50%,-50%);
+    }
+}
+
+.fadein {
+  height: 100%;
+  width: 100%;
+  left:0; top: 0;
+  margin: 0; padding:0;
+  position: fixed;
+  background-color: gainsboro;
+  opacity: 1;
+  transition: all 2s ease-in-out;
+  animation-name: background;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  z-index: 3;
+}
+
+.fadeinoff {
+  visibility: hidden;
+  opacity: 0;
+}
+
+@keyframes background {
+  0% {
+        background: pink;
+  }
+  100% {
+    background: gainsboro;
+  }
+}
+
+
+@media screen and (min-width: 1000px) {
+  #love{
+    top: 50vh;
+  }
+
+  .tout{
+    max-width: 600px;
+    left: 50vw;
+    transform: translateX(-50%);
+  }
+
+}

@@ -1,0 +1,93 @@
+
+body{
+  margin: 0px;
+  overflow: hidden;
+  position: fixed;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+a, a:hover, a:visited{
+  color: white;
+  text-decoration: none;
+}
+
+
+  /*------------CONTACT------------*/
+  #projets {
+    height: 60vh;
+    background-color: #ff0000;
+    overflow-y: scroll;
+  }
+
+  #proj{
+  margin: 20px;
+  }
+
+  .pro {
+    max-height: 300px;
+    max-width: 300px;
+    padding: 20px;
+  }
+
+/*------------INFO------------*/
+  #info {
+    height: 20vh;
+    background-color: #0092ff;
+    overflow-y: scroll;
+  }
+
+  .inf{
+    font-family: sans-serif;
+    font-size: 5vw;
+    padding-left: 15px;
+    padding-right: 10px;
+    padding-top: 0px;
+  }
+
+/*------------VIEOS------------*/
+  #videos {
+  display: none;
+  }
+
+/*------------CONTACT------------*/
+  #contact {
+    height: 7vh;
+    background-color: #ffe64d;
+  }
+
+  .cont{
+    display: none;
+  }
+  .contpho{
+    font-family: monospace;
+    font-size: 3.3vw;
+    padding-left: 15px;
+    padding-right: 10px;
+    padding-top: 15px;
+    margin: 0px !important;
+  }
+}
+
+/* TO ADD MAYBE
+
+  .lang{
+    font-family: monospace;
+    font-size: 14px;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .tech {
+    font-family: sans-serif;
+    font-size: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0px;
+    color: white;
+  }
+*/

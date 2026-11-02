@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Primary Meta Tags -->
+    <title>SUPER PABLO ENERGY</title>
+    <meta name="title" content="Copa Alzár">
+    <meta name="description"
+          content="Pablo Moreno">
+    <meta name="author" content="Pablo Moreno">
+    <meta name="keywords" content="Pablo Moreno, webdesign, code, energy, fullspeed">
+    <link rel="canonical" href="https://pablo.energy">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Links -->
+    <link href="assets/css/output.css" rel="stylesheet" />
+
+    <link rel="preload" as="image" href="media/videos/poster.jpg" fetchpriority="high">
+</head>
+
+<body class="bg-special-white">
+
+    <!------------ 🎥 VIDEOS ------------>
+
+    <div id="videoPanel"
+         class="md:flex overflow-hidden w-[calc(100vw-2rem)] md:h-auto md:w-[30vw] relative md:fixed top-4 left-4 md:right-4 md:left-auto justify-center items-center aspect-[16/9] rounded-xl transition-all z-10 mb-4">
+
+        <video id="videoWaiting" playsinline autoplay muted controls loop
+               class="object-cover absolute z-20 w-full h-full rounded-xl transition-all duration-500"
+               poster="media/videos/nunchak-poster.jpg">
+            <source type="video/webm" src="media/videos/nunchak-waiting.webm" />
+            <source type="video/mp4" src="media/videos/nunchak-wainting.mp4" />
+        </video>
+
+        <video id="videoPresenting" playsinline controls
+               class="object-cover absolute z-10 w-full h-full transition-opacity duration-[.8s] rounded-xl">
+            <source type="video/webm" src="media/videos/nunchak-presenting.webm" />
+            <source type="video/mp4" src="media/videos/nunchak-presenting.mp4" />
+        </video>
+
+    </div>
+
+    <div id="photoFinish"
+         class="hidden relative top-4 left-4 z-30 h-[30vh] md:w-[20vw] md:h-fit md:fixed md:right-4 md:left-auto mb-4">
+        <img src="media/ummm.JPG" alt="" class="h-full rounded-xl">
+        <span class="absolute bottom-0 p-2 text-xs text-white">Waiting for that e-mail... I'm joking hehe</span>
+    </div>
+
+
+    <!------------ 🌏 INFO ------------>
+    <div id="infoPanel"
+         class="flex relative flex-col justify-between  p-4 pb-0 max-w-[620px] min-h-screen transition-all duration-500 w-fit">
+
+        <div>
+            <!------------ HEADER ------------>
+            <div class="box-content flex relative z-50 gap-2 mb-2 md:items-center">
+                <a href=""
+                   class="transition-all  text-xl hover:rotate-[360deg] hover:no-underline duration-1000 hidden md:block">🌀</a>
+                <h1 class="inline text-xl">
+                    <a href=""
+                       class="transition-all  text-xl hover:rotate-[360deg] hover:no-underline duration-1000 inline md:hidden">🌀</a>
+                    Pablo
+                    Moreno is
+                    a
+                    <span
+                          id="isWhat"> web designer and coder...</span>
+                </h1>
+            </div>
+
+            <!------------ MORE INFO ------------>
+
+            <div id="infoText" class="text-lg">
+                <div class="relative">
+                    <p class="mb-2">Creative in all
+                        ways, I really enjoy making and designing websites for people, for events or for fun. I
+                        always try to learn new things and tools making them. Finishing my styudies in France, I'm
+                        wainting to
+                        relocate in Rotterdam next september!
+                    </p>
+                    <p>You can
+                        <a id="seeMore"
+                           class="text-[green]">read
+                            more</a> if <span id="noCurious">you are curious :)</span>
+                    </p>
+
+                </div>
+
+                <div id="moreInfo"
+                     class="hidden opacity-0 transition-all"
+                     data-state="close">
+                    <span class="mt-2 font-bold" id="life">Life</span>
+                    <p class="mb-2">Actually I'm living in <a
+                           href="https://maps.app.goo.gl/6ntymCLiUkz1Bkdo6"
+                           class="" target="_blank">Amiens</a>, where I'm
+                        finishing my double
+                        master in UX+UI between the <a
+                           href="https://esad-amiens.design/fr/design-numerique/dnsep"
+                           class="" target="_blank">ÉSAD</a> and the <a
+                           href="https://www.utc.fr/en/courses-and-training/the-french-masters-degree/humanities-and-creative-industries-hic/specialty-design-and-experience-creation-dcx/"
+                           class="" target="_blank">UTC</a>. I do a
+                        student job welcoming people at the <a href="https://maps.app.goo.gl/6nhrgyCSwHABf6jk9"
+                           class="" target="_blank">Maison de la Culture
+                            d'Amiens</a> who's a big cultural place in the city. On the weekends I spend some
+                        time with two kids thanks to the <a href="https://afev.org/hauts-france/amiens"
+                           class="" target="_blank">AFEV</a> association.
+                    </p>
+                    <span class="mt-2 font-bold">Tools</span>
+                    <p class="mb-2">
+                        My projects have taken me to learn HTML, CSS,
+                        Javascript, Kirby and Indexhibit CMS, Stripe, VSCodium,
+                        Figma, Blender... you can see all these things at <a
+                           class="" target="_blank"
+                           href='https://pablo.energy/digital-stuff'>my
+                            digital stuff</a>. I recently made a video-tutorial
+                        showing the way I like to <a class=""
+                           target="_blank" href='https://youtu.be/qUKxkIZCRuI'>put websites
+                            online</a> and update them quickly, like I'm doing right now.</p>
+                    <span class="mt-2 font-bold">People</span>
+                    <p class="mb-2">I like to work with friends, and develop ideas together. These
+                        people
+                        can be from my school,
+                        like <a class="" target="_blank"
+                           href='https://www.samdroual.fr/'>Sam</a> or
+                        <a class="" target="_blank"
+                           href='https://www.leo.doctor/'>Léo</a>, or far
+                        from me like <a
+                           class=""
+                           target="_blank" href='https://www.instagram.com/angieblingmaker'>Angèle</a>, for whom I'm
+                        making a portfolio/shop website. I also
+                        made
+                        friends in
+                        Rotterdam at
+                        <a
+                           class="" target="_blank"
+                           href='https://extrapractice.space/'>Extra Practice</a>, where I meet designers who
+                        inspire me like <a
+                           class="" target="_blank"
+                           href='https://elliott.computer/'>Elliott</a> or
+                        <a class="" target="_blank"
+                           href='https://tiana.computer/'>Tiana</a>.
+                    </p>
+                    <span class="mt-2 font-bold">Some projects</span>
+                    <ul>
+                        <li><img src="assets/icons/memoire.png" alt="" class="w-[15px] inline mr-1"><a
+                               class="cursor-pointer hover:underline"
+                               href="https://thewebwewant.online" target="_blank">The Web We Want</a> ·
+                            <span
+                                  class="opacity-30">My
+                                master
+                                writing about handmade web</span>
+                        </li>
+                        <li><img src="assets/icons/map.png" alt="" class="w-[15px] inline mr-1"><a
+                               class="cursor-pointer hover:underline"
+                               href="https://a-map-of-inter.net" target="_blank">A map of Internet</a> · <span
+                                  class="opacity-30">A way to discover my favorties websites</span>
+                        </li>
+                        <li><img src="assets/icons/collaborative.png" alt="" class="w-[15px] inline mr-1"><a
+                               class="cursor-pointer hover:underline"
+                               href="https://collaborative-narratives.online/" target="_blank">Collaborative
+                                Narratives</a> · <span
+                                  class="opacity-30">Image waterfall of Tim's graduation project</span>
+                        </li>
+                    </ul>
+
+                    <p class="mt-8 text-base">Over the years this website was <a
+                           href="web-archive/index.html" class="">updated</a> reflecting me.<br>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div
+             class="flex sticky z-10 justify-between py-4 pt-6 text-base bg-gradient-to-t from-special-white from-80% to-transparent bottom-0 ">
+
+            <div class="flex gap-2">
+                <a href="downloads/PMORENO-CV.pdf"
+                   class="flex items-center px-2 py-1 text-black bg-black bg-opacity-10 rounded-md cursor-pointer hover:bg-[green] hover:no-underline transition-all duration-300 hover:text-white"
+                   target="_blank">CV</a>
+
+                <script
+                        type="text/javascript">var email = "pablomoreno", domain = "proton.me", text = "E-mail"; document.write("<a href=javascript:location='" + "mail" + "to:" + email + "@" + domain + "' class='flex items-center px-2 py-1 text-black bg-black bg-opacity-10 rounded-md transition-all duration-300 cursor-pointer hover:bg-yellow-400 hover:no-underline hover:text-black'>" + text + "</a>");</script>
+
+                <a href="https://www.are.na/pablo-moreno/"
+                   class="flex items-center px-2 py-1 text-black bg-black bg-opacity-10 rounded-md cursor-pointer hover:bg-[black] hover:no-underline transition-all duration-300 hover:text-white"
+                   target="_blank">Are.na</a>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!------------ FOOTER ------------>
+
+
+
+    <div id="screensaver"
+         class="hidden fixed top-0 left-0 z-50 p-8 w-screen h-screen bg-opacity-70 opacity-100 backdrop-blur-md transition-all duration-1000 bg-neutral-100">
+        <span class="text-3xl">Here are some other stuffs I do or like to do:</span>
+    </div>
+
+    <div id="nightScreen" class="hidden fixed top-0 left-0 z-50 w-screen h-screen bg-black">
+        <p>♻️ ⤼ 💤 ⤼ ⏳ ⤼ 🌄</p>
+    </div>
+
+
+
+    <!-- <script src="assets/js/import.js"></script> -->
+    <script src="assets/js/script.js"></script>
+
+
+</body>
+
+</html>
