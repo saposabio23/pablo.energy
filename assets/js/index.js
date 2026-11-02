@@ -1,12 +1,3 @@
-window.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("intro-photo").classList.remove("opacity-0");
-    document.getElementById("intro-texto").classList.remove("opacity-0");
-    document.getElementById("intro-menu").classList.remove("opacity-0");
-    setTimeout(() => {
-        document.getElementById("ball").classList.remove("opacity-0");
-    }, 1000);
-});
-
 // FAVICON
 function setFaviconCircle(opacity = 1) {
     const color = "#B0FD45";
@@ -137,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
 var ADDRESS = "1UGVXTssu8J9mBbOyPSX0qkOo13xggy_MgboicC4UlTU/1";
 
 // Groups, in page order, matching the sheet's Nature column (other values, like "hidden", never show)
-const CATEGORIES = ["for people", "for friends", "for me"];
+const CATEGORIES = ["for people", "for friends"];
 
 fetch("https://opensheet.elk.sh/" + ADDRESS)
     .then(res => res.json())
@@ -210,7 +201,7 @@ function createPreview(site) {
     return img;
 }
 
-// Row: preview, title, description (truncates), year
+// Row: preview, title, description (truncates, desktop only), year
 function createProjectRow(site) {
     const row = document.createElement("a");
     row.href = site.url;
@@ -228,13 +219,13 @@ function createProjectRow(site) {
 
     const descEl = document.createElement("span");
     descEl.textContent = site.description;
-    descEl.className = "text-grey truncate min-w-0 flex-1";
+    descEl.className = "hidden md:block text-grey truncate min-w-0 flex-1";
     row.appendChild(descEl);
 
     if (site.year) {
         const yearEl = document.createElement("span");
         yearEl.textContent = site.year;
-        yearEl.className = "text-grey text-sm shrink-0";
+        yearEl.className = "ml-auto md:ml-0 text-grey text-sm shrink-0";
         row.appendChild(yearEl);
     }
 
@@ -243,9 +234,9 @@ function createProjectRow(site) {
 
 
 // SECTION INDEX (desktop)
-// The section labels work as an index of the page: they all stay stacked at the top left,
-// and only the current section keeps its color (the others turn white).
-// Clicking a label scrolls to its section.
+// Each section label scrolls in with its section and sticks mid-screen during it (CSS sticky).
+// Once its section ends, it rides up and stays stacked under the previous labels at the top left,
+// turning white. Clicking a label scrolls to its section.
 const desktopQuery = window.matchMedia("(min-width: 768px)");
 const LABEL_GAP = 8;
 const LABEL_EDGE = 12;
@@ -269,24 +260,17 @@ const sectionLabels = [...document.querySelectorAll("[data-section-label]")].map
         section?.scrollIntoView({ behavior: "smooth" });
     });
 
-    return { label, slot, section };
+    // Sticky stops at the section's end minus this margin, which is where the label joins the stack
+    const margin = parseFloat(getComputedStyle(label).marginBottom) || 0;
+
+    return { label, slot, section, margin };
 });
 
 function placeSectionLabels() {
     labelFrame = 0;
 
-    // Current section: the last one whose top has passed the upper third of the screen,
-    // or the last section once the page is scrolled to the bottom
-    const line = window.innerHeight / 3;
-    const atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 10;
-    let current = 0;
-    sectionLabels.forEach(({ section }, i) => {
-        if (section && section.getBoundingClientRect().top <= line) current = i;
-    });
-    if (atBottom) current = sectionLabels.length - 1;
-
     let y = LABEL_EDGE;
-    sectionLabels.forEach(({ label, slot }, i) => {
+    sectionLabels.forEach(({ label, slot, section, margin }, i) => {
         if (!desktopQuery.matches) {
             slot.style.display = "none";
             label.style.cssText = "";
@@ -294,16 +278,25 @@ function placeSectionLabels() {
             return;
         }
 
-        slot.style.display = "";
-        slot.style.height = label.offsetHeight + "px";
-        const box = slot.getBoundingClientRect();
+        const height = label.offsetHeight;
+        const finished = section.getBoundingClientRect().bottom - margin - height <= y;
 
-        label.style.cssText =
-            `position: fixed; top: ${y}px; left: ${box.left}px; width: ${box.width}px; z-index: 40;`;
+        if (finished) {
+            slot.style.display = "";
+            slot.style.height = height + "px";
+            const box = slot.getBoundingClientRect();
+
+            label.style.cssText =
+                `position: fixed; top: ${y}px; left: ${box.left}px; width: ${box.width}px; z-index: 40;`;
+        } else {
+            slot.style.display = "none";
+            label.style.cssText = "";
+        }
+
         // Shared with the corner video, which grows to this width on hover
-        if (i === 0) document.documentElement.style.setProperty("--index-width", box.width + "px");
-        label.classList.toggle("is-idle", i !== current);
-        y += box.height + LABEL_GAP;
+        if (i === 0) document.documentElement.style.setProperty("--index-width", label.offsetWidth + "px");
+        label.classList.toggle("is-idle", finished);
+        y += height + LABEL_GAP;
     });
 }
 
@@ -316,6 +309,31 @@ window.addEventListener("resize", requestLabelPlacement);
 desktopQuery.addEventListener("change", requestLabelPlacement);
 new ResizeObserver(requestLabelPlacement).observe(document.body);
 placeSectionLabels();
+
+
+// CORNER VIDEO (mobile)
+// A tap grows it and shows the caption and call button; another tap shrinks it back.
+const cornerVideo = document.getElementById("corner-video");
+
+cornerVideo?.addEventListener("click", e => {
+    // The call button keeps its own behaviour
+    if (e.target.closest("a")) return;
+    cornerVideo.toggleAttribute("data-open");
+});
+
+// On mobile it rides up with the full-width thanks bar as the page ends, so it sits above it instead of
+// covering it. On desktop the bar stays in the left column, clear of the video.
+const thanksBar = document.getElementById("thanks");
+
+function placeCornerVideo() {
+    const overlap = window.innerHeight - thanksBar.getBoundingClientRect().top;
+    cornerVideo.style.bottom = desktopQuery.matches ? "" : Math.max(LABEL_EDGE, overlap + LABEL_GAP) + "px";
+}
+
+window.addEventListener("scroll", placeCornerVideo, { passive: true });
+window.addEventListener("resize", placeCornerVideo);
+new ResizeObserver(placeCornerVideo).observe(document.body);
+placeCornerVideo();
 
 
 // AMSTERDAM TIME

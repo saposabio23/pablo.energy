@@ -99,7 +99,7 @@
 
 /* SECTION LABELS: white unless it's the current section (set in index.js) */
 [data-section-label]> :not(#intro-photo) {
-    transition: background-color 0.4s, color 0.4s, opacity 1s 0.2s;
+    transition: background-color 0.4s, color 0.4s;
 }
 
 [data-section-label].is-idle> :not(#intro-photo) {
