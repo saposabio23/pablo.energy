@@ -632,11 +632,8 @@
   .aspect-video {
     aspect-ratio: var(--aspect-video);
   }
-  .h-4 {
-    height: calc(var(--spacing) * 4);
-  }
-  .h-8 {
-    height: calc(var(--spacing) * 8);
+  .h-5 {
+    height: calc(var(--spacing) * 5);
   }
   .h-\[8px\] {
     height: 8px;
@@ -652,6 +649,9 @@
   }
   .h-\[30vh\] {
     height: 30vh;
+  }
+  .h-\[52px\] {
+    height: 52px;
   }
   .h-\[80\%\] {
     height: 80%;
@@ -683,11 +683,8 @@
   .min-h-screen {
     min-height: 100vh;
   }
-  .w-4 {
-    width: calc(var(--spacing) * 4);
-  }
-  .w-8 {
-    width: calc(var(--spacing) * 8);
+  .w-5 {
+    width: calc(var(--spacing) * 5);
   }
   .w-\[8px\] {
     width: 8px;
@@ -706,6 +703,9 @@
   }
   .w-\[40px\] {
     width: 40px;
+  }
+  .w-\[52px\] {
+    width: 52px;
   }
   .w-\[200px\] {
     width: 200px;
@@ -845,9 +845,6 @@
   }
   .self-center {
     align-self: center;
-  }
-  .self-end {
-    align-self: flex-end;
   }
   .justify-self-end {
     justify-self: flex-end;
@@ -1751,6 +1748,11 @@
   .md\:gap-x-6 {
     @media (width >= 48rem) {
       column-gap: calc(var(--spacing) * 6);
+    }
+  }
+  .md\:self-end {
+    @media (width >= 48rem) {
+      align-self: flex-end;
     }
   }
   .md\:pb-0 {
