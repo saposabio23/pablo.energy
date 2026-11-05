@@ -43,8 +43,12 @@
         <div id="today"
              class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-3 md:scroll-mt-[calc(50vh-30px)] min-h-[calc(100svh-12px)] md:min-h-[calc(10vh+30px)] md:mb-[40vh]">
 
+            <!-- Mobile: the margin above starts the label halfway down the screen, right above the text, so the text
+                 starts at 50svh (the section starts 12px down, the label is 30px tall, then the 16px gap). Scrolling, the
+                 label rides up and sticks at the top. mb-3 keeps a gap between this label and the next section's as they
+                 scroll past each other -->
             <div data-section-label
-                 class="col-span-2 sticky top-3 md:top-[calc(50vh-30px)] text-sm h-fit flex items-center justify-between gap-1 md:pb-0 z-10">
+                 class="col-span-2 sticky top-3 md:top-[calc(50vh-30px)] text-sm h-fit flex items-center justify-between gap-1 md:pb-0 max-md:mt-[calc(50svh-58px)] max-md:mb-3 z-10">
 
                 <div id="intro-photo"
                      class="rounded-full aspect-square group relative h-[30px] w-[30px] cursor-pointer shadow-big"
@@ -179,30 +183,6 @@
                         <p>Design, Programming, CMS</p>
                     </div> -->
 
-                    <div
-                         class="col-span-6 aspect-video relative flex items-center justify-center bg-[rgb(49,36,35)] rounded-lg">
-
-                        <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
-                               class="object-contain w-auto h-[80%] rounded-lg">
-                            <source src="media/antoine-full.mp4" type='video/mp4'>
-                        </video>
-
-                    </div>
-
-                    <div
-                         class="col-span-3 aspect-[4/5] relative flex items-center justify-center bg-[#d6d6d6] rounded-lg overflow-clip">
-                        <img loading="lazy" src="media/antoine-livres.webp"
-                             class="object-cover w-full h-full rounded-lg"
-                             alt="Stack of books wrapped in black plastic on a wooden pallet in a white gallery" />
-                    </div>
-
-                    <div
-                         class="col-span-3 aspect-[4/5] relative flex items-center justify-center bg-[#d6d6d6] rounded-lg">
-                        <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
-                               class="object-contain w-auto h-[80%] rounded-lg">
-                            <source src="media/antoine-intro.mp4" type='video/mp4'>
-                        </video>
-                    </div>
 
 
                     <!-- JETTE KELHOLT -->
@@ -222,7 +202,7 @@
                     </div>
 
                     <div
-                         class="col-span-3 aspect-[4/5] relative flex items-center justify-center bg-[rgb(40,40,40)] rounded-lg">
+                         class="col-span-3 aspect-[4/5] relative flex items-center justify-center bg-[#d6d6d6] rounded-lg">
                         <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
                                class="object-contain w-auto h-[80%] rounded-lg">
                             <source src="media/jette-insta.mp4" type='video/mp4'>
@@ -230,7 +210,7 @@
                     </div>
 
                     <div
-                         class="col-span-3 aspect-[4/5] relative flex items-center justify-center bg-[rgb(40,40,40)] rounded-lg">
+                         class="col-span-3 aspect-[4/5] relative flex items-center justify-center bg-[#d6d6d6] rounded-lg">
                         <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
                                class="object-contain w-auto h-[80%] rounded-lg">
                             <source src="media/jette-intro.mp4" type='video/mp4'>
@@ -255,36 +235,12 @@
                     <div
                          class="col-span-6 aspect-video relative flex items-center justify-center bg-[#1b201c] rounded-lg">
 
-                        <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
-                               class="object-contain w-auto h-[80%] rounded-lg">
-                            <source src="media/analogue-vasti-3.mp4" type='video/mp4'>
-                        </video>
-
+                        <img loading="lazy" src="media/analogue-fyron-1.webp"
+                             class="object-cover w-full h-full rounded-lg"
+                             alt="Big shot of the Fyron Group reception desk." />
                         <span
                               class="h-[8px] w-[8px] md:h-[12px] md:w-[12px] bg-blue-800 rounded-full absolute bottom-2 left-2"></span>
                     </div>
-
-                    <!-- <div class="col-span-3 aspect-[4/5] relative bg-[#101113] rounded-lg">
-                        <img loading="lazy" src="media/not-used/analogue-vasti-1.jpg"
-                             class="object-contain w-full h-full rounded-lg" alt="" />
-                    </div>
-
-                    <div class="col-span-3 aspect-[4/5] relative rounded-lg">
-                        <img loading="lazy" src="media/not-used/analogue-vasti-2.jpg"
-                             class="object-cover w-full h-full rounded-lg" alt="" />
-                    </div> -->
-
-
-                    <!-- FYRON-->
-                    <!-- <div class="justify-between col-span-6 relative flex mt-2 text-grey">
-                        <h4 class="flex gap-2 items-center"><span
-                                  class="block h-[10px] w-[10px] bg-blue-800 rounded-full"></span>FYRON GROUP</h4>
-                        <p>Printing files, Animations</p>
-                    </div> -->
-                    <!-- <div class="col-span-6 aspect-video relative">
-                        <img loading="lazy" src="media/not-used/analogue-fyron-1.webp"
-                             class="object-cover w-full h-full rounded-lg" alt="" />
-                    </div> -->
 
                     <div class="col-span-3 aspect-[4/5] relative">
                         <img loading="lazy" src="media/analogue-fyron-2.webp"
@@ -304,14 +260,71 @@
 
                     </div>
 
+                    <div
+                         class="col-span-6 aspect-video relative flex items-center justify-center bg-[rgb(49,36,35)] rounded-lg">
+
+                        <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
+                               class="object-contain w-auto h-[80%] rounded-lg">
+                            <source src="media/antoine-full.mp4" type='video/mp4'>
+                        </video>
+
+                    </div>
+
+                    <div
+                         class="col-span-3 aspect-[4/5] relative flex items-center justify-center bg-[#d6d6d6] rounded-lg">
+                        <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
+                               class="object-contain w-auto h-[80%] rounded-lg">
+                            <source src="media/antoine-intro.mp4" type='video/mp4'>
+                        </video>
+                    </div>
+                    <div
+                         class="col-span-3 aspect-[4/5] relative flex items-center justify-center bg-[#d6d6d6] rounded-lg overflow-clip">
+                        <img loading="lazy" src="media/antoine-livres.webp"
+                             class="object-cover w-full h-full rounded-lg"
+                             alt="Stack of books wrapped in black plastic on a wooden pallet in a white gallery" />
+                    </div>
+
+
+
+                    <!-- NXT:COMMERCE SUMMIT -->
+
+                    <div class="col-span-6 aspect-video relative">
+                        <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
+                               class="object-cover w-full h-full rounded-lg">
+                            <source src="media/analogue-nextc-1.mp4" type='video/mp4'>
+                        </video>
+                        <span
+                              class="h-[8px] w-[8px] md:h-[12px] md:w-[12px] bg-blue-800 rounded-full absolute bottom-2 left-2"></span>
+
+                    </div>
+
+                    <div class="col-span-3 aspect-[4/5] relative">
+                        <img loading="lazy" src="media/analogue-nextc-2.webp"
+                             class="object-cover w-full h-full rounded-lg"
+                             alt="NXT:Commerce Summit 2025 day schedule on a blue background, from welcome coffee to the afterparty" />
+                        <span
+                              class="h-[8px] w-[8px] md:h-[12px] md:w-[12px] bg-blue-800 rounded-full absolute bottom-2 left-2"></span>
+
+                    </div>
+
+                    <div class="col-span-3 aspect-[4/5] relative">
+                        <img loading="lazy" src="media/analogue-nextc-3.webp"
+                             class="object-cover w-full h-full rounded-lg"
+                             alt="Two NXT:C Summit flags hanging from a stone building on an Amsterdam canal street" />
+                        <span
+                              class="h-[8px] w-[8px] md:h-[12px] md:w-[12px] bg-blue-800 rounded-full absolute bottom-2 left-2"></span>
+
+                    </div>
+
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-x-6 items-start">
+                <!-- Mobile: the text comes first, the Analogue note right under it -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-10 md:gap-x-6 items-start">
 
                     <span
-                          class="flex items-center gap-1 text-xs font-light text-black">
+                          class="flex items-center gap-1 text-xs font-light text-grey max-md:justify-self-start max-md:order-2">
                         <span class="h-[8px] w-[8px] md:h-[10px] md:w-[10px] bg-blue-800 rounded-full"></span><span
-                              class="opacity-40 font-medium">Made at Analogue Agency</span>
+                              class="font-medium">Made at Analogue Agency</span>
                     </span>
 
                     <p class="text-lg">For these clients I worked on brand identities, UI/UX, design systems,
@@ -377,62 +390,67 @@
             <div class="flex flex-col gap-12 col-span-4">
 
                 <!-- Experience and Education: full-width rows (dates, title, city), each linking to the agency or school page.
-                     The dates are placeholders for now -->
-                <div class="flex flex-col gap-1">
+                     Mobile: the dates on their own line, then the title on the left and the city on the right -->
+                <div class="flex flex-col gap-3 md:gap-1">
                     <h4 class="text-sm text-grey mb-1 uppercase">Experience</h4>
 
                     <a href="#" target="" rel="noopener"
-                       class="flex items-baseline gap-3 leading-tight hover:text-grey transition duration-300 group">
-                        <span class="shrink-0 text-base text-grey">01. 2026 - Present</span>
+                       class="flex flex-wrap md:flex-nowrap items-baseline gap-x-3 leading-tight hover:text-grey transition duration-300 group">
+                        <span class="w-full md:w-auto shrink-0 text-base text-grey">01. 2026 - Present</span>
                         <span class="min-w-0 flex-1 text-lg">Freelance Designer</span>
                         <span class="shrink-0 text-base text-grey">Amsterdam</span>
                     </a>
 
                     <a href="https://analogueagency.com/" target="_blank" rel="noopener"
-                       class="flex items-baseline gap-3 leading-tight hover:text-grey transition duration-300 group">
-                        <span class="shrink-0 text-base text-grey">09. 2024 - 10. 2025</span>
-                        <span class="min-w-0 flex-1 text-lg">Designer at Analogue</span>
+                       class="flex flex-wrap md:flex-nowrap items-baseline gap-x-3 leading-tight hover:text-grey transition duration-300 group">
+                        <span class="w-full md:w-auto shrink-0 text-base text-grey">09. 2024 - 10. 2025</span>
+                        <span class="min-w-0 flex-1 text-lg">Designer at
+                            Analogue</span>
                         <span class="shrink-0 text-base text-grey">Amsterdam</span>
                     </a>
 
                     <a href="https://www.somoscuchillo.com/" target="_blank" rel="noopener"
-                       class="flex items-baseline gap-3 leading-tight hover:text-grey transition duration-300 group">
-                        <span class="shrink-0 text-base text-grey">04. 2022 - 06. 2022</span>
-                        <span class="min-w-0 flex-1 text-lg">Internship at Cuchillo <small>Ⓒ</small></span>
+                       class="flex flex-wrap md:flex-nowrap items-baseline gap-x-3 leading-tight hover:text-grey transition duration-300 group">
+                        <span class="w-full md:w-auto shrink-0 text-base text-grey">04. 2022 - 06. 2022</span>
+                        <span class="min-w-0 flex-1 text-lg">Internship at Cuchillo
+                            <small>Ⓒ</small></span>
                         <span class="shrink-0 text-base text-grey">Bilbao</span>
                     </a>
 
                     <a href="http://ateliermurr.com/" target="_blank" rel="noopener"
-                       class="flex items-baseline gap-3 leading-tight hover:text-grey transition duration-300 group">
-                        <span class="shrink-0 text-base text-grey">06. 2017 - 07. 2017</span>
-                        <span class="min-w-0 flex-1 text-lg">Internship at M.U.R.R</span>
+                       class="flex flex-wrap md:flex-nowrap items-baseline gap-x-3 leading-tight hover:text-grey transition duration-300 group">
+                        <span class="w-full md:w-auto shrink-0 text-base text-grey">06. 2017 - 07. 2017</span>
+                        <span class="min-w-0 flex-1 text-lg">Internship at
+                            M.U.R.R</span>
                         <span class="shrink-0 text-base text-grey">Paris</span>
                     </a>
                 </div>
 
-                <div class="flex flex-col gap-1">
+                <div class="flex flex-col gap-3 md:gap-1">
                     <h4 class="text-sm text-grey mb-1 uppercase">Education</h4>
 
                     <a href="https://www.utc.fr/formations/diplome-de-master/mention-humanites-et-industries-creatives-hic/parcours-design-et-creation-dexperience-dcx/"
                        target="_blank" rel="noopener"
-                       class="flex items-baseline gap-3 leading-tight hover:text-grey transition duration-300 group">
-                        <span class="shrink-0 text-base text-grey">09. 2022 - 07. 2024</span>
+                       class="flex flex-wrap md:flex-nowrap items-baseline gap-x-3 leading-tight hover:text-grey transition duration-300 group">
+                        <span class="w-full md:w-auto shrink-0 text-base text-grey">09. 2022 - 07. 2024</span>
                         <span class="min-w-0 flex-1 text-lg">Double master UX/UI</span>
                         <span class="shrink-0 text-base text-grey">Amiens</span>
                     </a>
 
                     <a href="https://esadhar.fr/formations/dna/" target="_blank" rel="noopener"
-                       class="flex items-baseline gap-3 leading-tight hover:text-grey transition duration-300 group">
-                        <span class="shrink-0 text-base text-grey">09. 2019 - 07. 2021</span>
-                        <span class="min-w-0 flex-1 text-lg">Bachelor Interactive Design</span>
+                       class="flex flex-wrap md:flex-nowrap items-baseline gap-x-3 leading-tight hover:text-grey transition duration-300 group">
+                        <span class="w-full md:w-auto shrink-0 text-base text-grey">09. 2019 - 07. 2021</span>
+                        <span class="min-w-0 flex-1 text-lg">Bachelor Interactive
+                            Design</span>
                         <span class="shrink-0 text-base text-grey">Le Havre</span>
                     </a>
 
                     <a href="https://www.ecole-estienne.paris/formation/dn-made-designer-typographe/dn-made-designer-typographe/"
                        target="_blank" rel="noopener"
-                       class="flex items-baseline gap-3 leading-tight hover:text-grey transition duration-300 group">
-                        <span class="shrink-0 text-base text-grey">09. 2016 - 07. 2018</span>
-                        <span class="min-w-0 flex-1 text-lg">License in Type Design</span>
+                       class="flex flex-wrap md:flex-nowrap items-baseline gap-x-3 leading-tight hover:text-grey transition duration-300 group">
+                        <span class="w-full md:w-auto shrink-0 text-base text-grey">09. 2016 - 07. 2018</span>
+                        <span class="min-w-0 flex-1 text-lg">License in Type
+                            Design</span>
                         <span class="shrink-0 text-base text-grey">Paris</span>
                     </a>
                 </div>
@@ -454,7 +472,7 @@
                     <div class="flex flex-col gap-1">
                         <h4 class="text-sm text-grey mb-1 uppercase">Tools</h4>
 
-                        <span class="text-lg">Figma advanced (animations, prototypes, ds)</span>
+                        <span class="text-lg">Figma advanced</span>
                         <span class="text-lg">Jitter video</span>
                         <span class="text-lg">Framer development</span>
                         <span class="text-lg">After Effects, Illustrator, InDesign</span>
@@ -469,13 +487,17 @@
 
         </div>
 
-        <!-- On mobile, min-h leaves just enough page below for the label to stick at the top with Phone right under it:
-             100lvh minus top-4 (16px), mb-6 (24px), the thanks row (30px) and the page's bottom padding (12px) -->
+        <!-- The last section: at the end of the page it fills the screen, details at the top, visit timer and credit at
+             the bottom. Desktop: a full screen (100vh minus the page's 12px bottom padding, so the page ends with the
+             section's top at 0, where anchors land too). Instead of sticking mid-screen the label scrolls up with the
+             section and sticks at 164px, its own slot in the top-left stack (12px + 4 labels above × (30px + 8px gap));
+             the section never ends, so the label stays blue.
+             Mobile: min-h is 100lvh minus top-4 (16px) and the bottom padding (12px), so the label sticks at the top -->
         <div id="contact"
-             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-3 md:scroll-mt-[calc(50vh-30px)] min-h-[calc(100lvh-82px)] md:min-h-0 mb-6 md:mb-0">
+             class="gap-4 w-full flex flex-col md:grid grid-cols-6 md:grid-rows-[auto_1fr] pointer-events-auto scroll-mt-3 md:scroll-mt-0 min-h-[calc(100lvh-28px)] md:min-h-[calc(100vh-12px)] pt-4">
 
             <div data-section-label
-                 class="col-span-2 sticky top-4 md:top-[calc(50vh-30px)] text-sm h-fit flex items-center justify-between gap-1 mb-2 z-10">
+                 class="col-span-2 sticky top-4 md:top-[164px] text-sm h-fit flex items-center justify-between gap-1 mb-2 z-10">
                 <div
                      class="text-white bg-[#0000D9] px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center shadow-big">
                     4</div>
@@ -510,49 +532,46 @@
                     <span class="text-lg leading-tight">NL005382423B66</span>
                 </div>
             </div>
-        </div>
 
-        <!-- Desktop: fills the last screen (100vh minus the page's 12px bottom padding), so contact is gone and its label has
-             joined the stack when the page ends. The line sits at its bottom.
-             Mobile: a full-width bar -->
-        <div id="thanks"
-             class="w-full md:grid grid-cols-6 gap-4 pointer-events-auto md:min-h-[calc(100vh-12px)]">
-
-            <div
-                 class="md:hidden text-sm h-fit flex items-center justify-between gap-1">
-
-                <div
-                     class="text-black bg-white px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center shadow-big hover:shadow-none">
-                    ⏳</div>
-                <h3
-                    class="w-full text-black bg-white px-2 h-[30px] rounded-[6px] flex items-center shadow-big whitespace-nowrap">
-                    <span class="opacity-40">Thanks, you spent <span data-visit-timer></span> here</span>
-                </h3>
-
+            <!-- Bottom of the screen: visit timer and credit. Desktop: in the right columns, clear of the corner video -->
+            <div id="contact-footer"
+                 class="md:col-start-3 md:col-span-4 self-end mt-auto flex flex-col md:flex-row md:justify-between gap-1 md:gap-6 text-sm md:text-md">
+                <p>⏳ <span class="opacity-40">Thanks for your time, you spent <span data-visit-timer></span>
+                        here.</span></p>
+                <p class="opacity-40">© Pablo Moreno, 2026</p>
             </div>
-
-            <h3 class="hidden md:block col-start-3 col-span-4 self-end text-lg">
-                ⏳ <span class="opacity-40">Thanks for your time, you spent <span data-visit-timer></span> here.</span>
-            </h3>
-
         </div>
 
     </div>
 
 
-    <!-- CORNER VIDEO: small dark grey card fixed at the bottom left: caption, 4:3 video, green call button.
-         index.js sets data-visible (fades it in) only once the contact section reaches the screen, and at the end of
-         the page on mobile lifts it above the full-width thanks bar -->
+    <!-- CORNER VIDEO: fixed at the bottom left (bottom right on mobile), always on screen. Small, it shows just the video;
+         hovered (desktop) or tapped (mobile, index.js toggles data-open) it grows into the light grey card (the projects' grey): caption,
+         video, green call button and email button -->
     <div id="corner-video"
-         class="fixed bottom-3 left-3 z-50 w-[220px] md:w-[360px] p-2 flex flex-col gap-2 rounded-[10px] bg-[rgb(40,40,40)] shadow-big font-semibold text-white opacity-0 translate-y-4 pointer-events-none data-visible:opacity-100 data-visible:translate-y-0 data-visible:pointer-events-auto transition duration-500">
-        <p class="text-xs md:text-sm leading-tight">Pablo is available for a new call...</p>
+         class="group fixed bottom-3 right-3 md:right-auto md:left-3 z-50 w-[25vw] md:w-[160px] md:hover:w-[360px] max-md:data-open:w-[80vw] md:hover:p-2 max-md:data-open:p-2 flex flex-col rounded-lg bg-[#d6d6d6] shadow-big font-semibold text-black transition-all duration-500">
+        <p
+           class="max-h-0 opacity-0 overflow-hidden md:group-hover:max-h-20 md:group-hover:opacity-100 md:group-hover:pb-2 max-md:group-data-open:max-h-20 max-md:group-data-open:opacity-100 max-md:group-data-open:pb-2 leading-tight transition-all duration-500">
+            Pablo is available for new projects...</p>
         <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
-               class="w-full aspect-[4/3] object-cover rounded-[4px]">
+               class="w-full aspect-[4/3] object-cover rounded-lg">
             <source src="media/pablo-in-his-room-medium.mp4" type="video/mp4">
         </video>
-        <a href="tel:+31613381141"
-           class="py-1 rounded-full bg-[#35C759] hover:bg-[#22aa44] text-center text-sm md:text-base transition duration-300">
-            Call</a>
+        <!-- Buttons: call (half the width, centered) and a small email button on the right -->
+        <div
+             class="grid grid-cols-4 items-center max-h-0 opacity-0 overflow-hidden md:group-hover:max-h-20 md:group-hover:opacity-100 md:group-hover:mt-2 max-md:group-data-open:max-h-20 max-md:group-data-open:opacity-100 max-md:group-data-open:mt-2 transition-all duration-500">
+            <a href="tel:+31613381141"
+               class="col-start-2 col-span-2 rounded-full bg-[#35C759] hover:bg-[#22aa44] text-white text-center leading-8 py-2.5 transition duration-300">
+                Call</a>
+            <a href="mailto:pablomoreno@proton.me" aria-label="Email Pablo" title="pablomoreno@proton.me"
+               class="justify-self-end h-8 w-8 rounded-full bg-white hover:bg-black hover:text-white flex items-center justify-center transition duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true">
+                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                    <path d="m3 7 9 6 9-6" />
+                </svg>
+            </a>
+        </div>
     </div>
 
     <script src="assets/js/index.js"></script>

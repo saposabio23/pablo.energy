@@ -205,7 +205,7 @@ function createProjectRow(site) {
     if (site.type) {
         const typeEl = document.createElement("span");
         typeEl.textContent = site.type;
-        typeEl.className = "ml-auto md:ml-0 text-grey text-sm shrink-0";
+        typeEl.className = "ml-auto md:ml-0 text-grey text-base shrink-0";
         row.appendChild(typeEl);
     }
 
@@ -289,25 +289,15 @@ new ResizeObserver(requestLabelPlacement).observe(document.body);
 placeSectionLabels();
 
 
-// CORNER VIDEO
-// Shows only once the contact section reaches the screen, and stays to the end of the page.
-// On mobile it rides up with the full-width thanks bar as the page ends, so it sits above it instead of
-// covering it. On desktop the bar stays in the right columns, clear of the video.
+// CORNER VIDEO (mobile)
+// A tap grows it into the card with the caption and call button; another tap shrinks it back.
 const cornerVideo = document.getElementById("corner-video");
-const contactSection = document.getElementById("contact");
-const thanksBar = document.getElementById("thanks");
 
-function placeCornerVideo() {
-    cornerVideo.toggleAttribute("data-visible", contactSection.getBoundingClientRect().top < window.innerHeight);
-
-    const overlap = window.innerHeight - thanksBar.getBoundingClientRect().top;
-    cornerVideo.style.bottom = desktopQuery.matches ? "" : Math.max(LABEL_EDGE, overlap + LABEL_GAP) + "px";
-}
-
-window.addEventListener("scroll", placeCornerVideo, { passive: true });
-window.addEventListener("resize", placeCornerVideo);
-new ResizeObserver(placeCornerVideo).observe(document.body);
-placeCornerVideo();
+cornerVideo?.addEventListener("click", e => {
+    // The call button keeps its own behaviour
+    if (e.target.closest("a")) return;
+    cornerVideo.toggleAttribute("data-open");
+});
 
 
 // AMSTERDAM TIME
