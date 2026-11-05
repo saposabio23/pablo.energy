@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // WEBSITES LIST
 var ADDRESS = "1UGVXTssu8J9mBbOyPSX0qkOo13xggy_MgboicC4UlTU/1";
 
-// Groups, in page order, matching the sheet's Nature column (other values, like "hidden", never show)
+// Nature values that show, all in one list (other values, like "for me" or "hidden", never show)
 const CATEGORIES = ["for people", "for friends"];
 
 fetch("https://opensheet.elk.sh/" + ADDRESS)
@@ -138,43 +138,23 @@ fetch("https://opensheet.elk.sh/" + ADDRESS)
 
         // Newest year first; within a year, rows lower in the sheet first
         const year = row => parseInt(row.Date, 10) || 0;
-        const sites = [];
         data.slice().reverse().sort((a, b) => year(b) - year(a)).forEach(row => {
-            // Skip empty rows (no Title)
+            // Skip empty rows (no Title) and rows whose Nature doesn't show
             if (!row.Title || !row.Title.trim()) return;
+            if (!CATEGORIES.includes((row.Nature || "").trim().toLowerCase())) return;
 
-            sites.push({
+            grid.appendChild(createProjectRow({
                 title: row.Title.trim(),
                 description: (row.Description || "").trim(),
-                year: (row.Date || "").trim(),
+                type: (row.Type || "").trim(),
                 url: (row.URL || "#").trim() || "#",
-                image: previewUrl(row.Preview),
-                nature: (row.Nature || "").trim().toLowerCase()
-            });
-        });
-
-        CATEGORIES.forEach(category => {
-            const group = sites.filter(site => site.nature === category);
-            if (group.length) grid.appendChild(createProjectGroup(category, group));
+                image: previewUrl(row.Preview)
+            }));
         });
 
         document.getElementById("projects-empty")?.classList.toggle("hidden", grid.children.length > 0);
     })
     .catch(err => console.error("Error fetching sheet:", err));
-
-// Category heading, then its websites as a list
-function createProjectGroup(category, sites) {
-    const group = document.createElement("div");
-    group.className = "flex flex-col gap-1";
-
-    const heading = document.createElement("h4");
-    heading.textContent = category;
-    heading.className = "text-sm text-grey uppercase mb-1";
-    group.appendChild(heading);
-
-    sites.forEach(site => group.appendChild(createProjectRow(site)));
-    return group;
-}
 
 // Turn a Google Drive share link from the sheet's Preview column into a small thumbnail URL
 function previewUrl(value) {
@@ -201,7 +181,7 @@ function createPreview(site) {
     return img;
 }
 
-// Row: preview, title, description (truncates, desktop only), year
+// Row: preview, title, description (truncates, desktop only), type
 function createProjectRow(site) {
     const row = document.createElement("a");
     row.href = site.url;
@@ -222,11 +202,11 @@ function createProjectRow(site) {
     descEl.className = "hidden md:block text-grey truncate min-w-0 flex-1";
     row.appendChild(descEl);
 
-    if (site.year) {
-        const yearEl = document.createElement("span");
-        yearEl.textContent = site.year;
-        yearEl.className = "ml-auto md:ml-0 text-grey text-sm shrink-0";
-        row.appendChild(yearEl);
+    if (site.type) {
+        const typeEl = document.createElement("span");
+        typeEl.textContent = site.type;
+        typeEl.className = "ml-auto md:ml-0 text-grey text-sm shrink-0";
+        row.appendChild(typeEl);
     }
 
     return row;
@@ -270,7 +250,7 @@ function placeSectionLabels() {
     labelFrame = 0;
 
     let y = LABEL_EDGE;
-    sectionLabels.forEach(({ label, slot, section, margin }, i) => {
+    sectionLabels.forEach(({ label, slot, section, margin }) => {
         if (!desktopQuery.matches) {
             slot.style.display = "none";
             label.style.cssText = "";
@@ -293,8 +273,6 @@ function placeSectionLabels() {
             label.style.cssText = "";
         }
 
-        // Shared with the corner video, which grows to this width on hover
-        if (i === 0) document.documentElement.style.setProperty("--index-width", label.offsetWidth + "px");
         label.classList.toggle("is-idle", finished);
         y += height + LABEL_GAP;
     });
@@ -311,21 +289,17 @@ new ResizeObserver(requestLabelPlacement).observe(document.body);
 placeSectionLabels();
 
 
-// CORNER VIDEO (mobile)
-// A tap grows it and shows the caption and call button; another tap shrinks it back.
-const cornerVideo = document.getElementById("corner-video");
-
-cornerVideo?.addEventListener("click", e => {
-    // The call button keeps its own behaviour
-    if (e.target.closest("a")) return;
-    cornerVideo.toggleAttribute("data-open");
-});
-
+// CORNER VIDEO
+// Shows only once the contact section reaches the screen, and stays to the end of the page.
 // On mobile it rides up with the full-width thanks bar as the page ends, so it sits above it instead of
-// covering it. On desktop the bar stays in the left column, clear of the video.
+// covering it. On desktop the bar stays in the right columns, clear of the video.
+const cornerVideo = document.getElementById("corner-video");
+const contactSection = document.getElementById("contact");
 const thanksBar = document.getElementById("thanks");
 
 function placeCornerVideo() {
+    cornerVideo.toggleAttribute("data-visible", contactSection.getBoundingClientRect().top < window.innerHeight);
+
     const overlap = window.innerHeight - thanksBar.getBoundingClientRect().top;
     cornerVideo.style.bottom = desktopQuery.matches ? "" : Math.max(LABEL_EDGE, overlap + LABEL_GAP) + "px";
 }
