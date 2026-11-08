@@ -512,8 +512,8 @@
   .mt-8 {
     margin-top: calc(var(--spacing) * 8);
   }
-  .mt-20 {
-    margin-top: calc(var(--spacing) * 20);
+  .mt-\[20px\] {
+    margin-top: 20px;
   }
   .mt-auto {
     margin-top: auto;
@@ -765,9 +765,6 @@
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
-  }
-  .cursor-move {
-    cursor: move;
   }
   .cursor-pointer {
     cursor: pointer;
@@ -1496,9 +1493,9 @@
       order: 2;
     }
   }
-  .max-md\:mt-\[calc\(50svh-58px\)\] {
+  .max-md\:mt-\[calc\(50svh-50px\)\] {
     @media (width < 48rem) {
-      margin-top: calc(50svh - 58px);
+      margin-top: calc(50svh - 50px);
     }
   }
   .max-md\:mb-3 {
@@ -1509,6 +1506,11 @@
   .max-md\:justify-self-start {
     @media (width < 48rem) {
       justify-self: flex-start;
+    }
+  }
+  .md\:absolute {
+    @media (width >= 48rem) {
+      position: absolute;
     }
   }
   .md\:fixed {
@@ -1529,6 +1531,11 @@
   .md\:top-\[164px\] {
     @media (width >= 48rem) {
       top: 164px;
+    }
+  }
+  .md\:top-\[calc\(50vh\+18px\)\] {
+    @media (width >= 48rem) {
+      top: calc(50vh + 18px);
     }
   }
   .md\:top-\[calc\(50vh-30px\)\] {
@@ -1571,11 +1578,6 @@
       margin: calc(var(--spacing) * 0);
     }
   }
-  .md\:mt-32 {
-    @media (width >= 48rem) {
-      margin-top: calc(var(--spacing) * 32);
-    }
-  }
   .md\:mb-\[40vh\] {
     @media (width >= 48rem) {
       margin-bottom: 40vh;
@@ -1616,11 +1618,6 @@
       display: inline;
     }
   }
-  .md\:h-\[10px\] {
-    @media (width >= 48rem) {
-      height: 10px;
-    }
-  }
   .md\:h-auto {
     @media (width >= 48rem) {
       height: auto;
@@ -1646,11 +1643,6 @@
       width: calc(2/3 * 100%);
     }
   }
-  .md\:w-\[10px\] {
-    @media (width >= 48rem) {
-      width: 10px;
-    }
-  }
   .md\:w-\[20vw\] {
     @media (width >= 48rem) {
       width: 20vw;
@@ -1674,6 +1666,12 @@
   .md\:origin-bottom-left {
     @media (width >= 48rem) {
       transform-origin: 0 100%;
+    }
+  }
+  .md\:-translate-y-full {
+    @media (width >= 48rem) {
+      --tw-translate-y: -100%;
+      translate: var(--tw-translate-x) var(--tw-translate-y);
     }
   }
   .md\:scroll-mt-0 {

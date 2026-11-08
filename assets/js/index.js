@@ -124,11 +124,44 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+// SCROLL HINT
+// "(Scroll for more)" on the first screen fades out as soon as the page scrolls, and back in at the very top
+const scrollHint = document.getElementById("scroll-hint");
+if (scrollHint) {
+    const toggleScrollHint = () => scrollHint.classList.toggle("is-hidden", window.scrollY > 0);
+    window.addEventListener("scroll", toggleScrollHint, { passive: true });
+    toggleScrollHint();
+}
+
+// LAZY VIDEOS
+// Project videos come with <source data-src>, so nothing downloads on load. Each one gets its src
+// about a screen before it scrolls into view, then autoplay starts it as usual.
+const lazyVideos = document.querySelectorAll("video source[data-src]");
+
+function loadVideo(source) {
+    source.src = source.dataset.src;
+    source.removeAttribute("data-src");
+    source.parentElement.load();
+}
+
+if ("IntersectionObserver" in window) {
+    const videoObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            videoObserver.unobserve(entry.target);
+            entry.target.querySelectorAll("source[data-src]").forEach(loadVideo);
+        });
+    }, { rootMargin: "100% 0px" });
+    lazyVideos.forEach(source => videoObserver.observe(source.parentElement));
+} else {
+    lazyVideos.forEach(loadVideo);
+}
+
 // WEBSITES LIST
 var ADDRESS = "1UGVXTssu8J9mBbOyPSX0qkOo13xggy_MgboicC4UlTU/1";
 
-// Nature values that show, all in one list (other values, like "for me" or "hidden", never show)
-const CATEGORIES = ["for people", "for friends"];
+// The sheet's Visibility column decides what shows: "Yes" shows the row, anything else ("No", empty) hides it
+const isVisible = row => (row.Visibility || "").trim().toLowerCase() === "yes";
 
 fetch("https://opensheet.elk.sh/" + ADDRESS)
     .then(res => res.json())
@@ -139,9 +172,9 @@ fetch("https://opensheet.elk.sh/" + ADDRESS)
         // Newest year first; within a year, rows lower in the sheet first
         const year = row => parseInt(row.Date, 10) || 0;
         data.slice().reverse().sort((a, b) => year(b) - year(a)).forEach(row => {
-            // Skip empty rows (no Title) and rows whose Nature doesn't show
+            // Skip empty rows (no Title) and rows set to hide in Visibility
             if (!row.Title || !row.Title.trim()) return;
-            if (!CATEGORIES.includes((row.Nature || "").trim().toLowerCase())) return;
+            if (!isVisible(row)) return;
 
             grid.appendChild(createProjectRow({
                 title: row.Title.trim(),

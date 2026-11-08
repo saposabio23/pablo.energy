@@ -106,3 +106,85 @@
     background-color: #fff;
     color: #000;
 }
+
+/* Hovering a label (circle + pill) fades its text to 60%, the colored pill stays solid.
+   color-mix halves the color each text element inherits, so the intro's faded italic fades with the rest */
+[data-section-label]> :not(#intro-photo)>* {
+    transition: color 0.3s;
+}
+
+@media (hover: hover) {
+    [data-section-label]:hover> :not(#intro-photo)>* {
+        color: color-mix(in srgb, currentColor 60%, transparent);
+    }
+}
+
+/* BLINK: the "(Scroll for more)" hint on the first screen, from its grey down to 5% and back */
+.blink {
+    animation: blink 2.8s ease-in-out infinite;
+    transition: filter 0.3s;
+}
+
+/* Hidden once the page scrolls (index.js). filter, not opacity, so it fades out without fighting the blink */
+.blink.is-hidden {
+    filter: opacity(0);
+}
+
+@keyframes blink {
+    0%,
+    100% {
+        opacity: 0.05;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .blink {
+        animation: none;
+    }
+}
+
+/* INTRO ANIMATION: on load, each part fades in from opacity 0 in its place, one after the other:
+   the photo (0s), the lime pill with its text (0.3s), the paragraph (0.6s). The corner video slides up into the
+   screen at 5s. fill-mode backwards keeps each part hidden during its delay, and drops the animation once done,
+   so hovers, dragging and the section-label styles work as before */
+#intro-photo {
+    animation: intro-fade 0.5s ease-out backwards;
+}
+
+#intro-texto {
+    animation: intro-fade 0.5s ease-out 0.3s backwards;
+}
+
+.intro-paragraph {
+    animation: intro-fade 0.5s ease-out 0.6s backwards;
+}
+
+@keyframes intro-fade {
+    from {
+        opacity: 0;
+    }
+}
+
+#corner-video {
+    animation: corner-video-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 5s backwards;
+}
+
+@keyframes corner-video-in {
+    from {
+        transform: translateY(calc(100% + 24px));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    #intro-photo,
+    #intro-texto,
+    .intro-paragraph,
+    #corner-video {
+        animation: none;
+    }
+}

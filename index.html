@@ -21,6 +21,45 @@
     <meta property="og:image:alt" content="Portrait of Pablo Moreno">
     <meta name="twitter:card" content="summary">
 
+    <!-- STRUCTURED DATA (schema.org, read by Google): WebSite gives the site name shown above the search result,
+         Person ties pablo.energy and LinkedIn to Pablo. Check it at search.google.com/test/rich-results -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "https://pablo.energy/#website",
+                "url": "https://pablo.energy/",
+                "name": "Pablo Moreno",
+                "alternateName": "pablo.energy",
+                "inLanguage": "en",
+                "publisher": { "@id": "https://pablo.energy/#person" }
+            },
+            {
+                "@type": "Person",
+                "@id": "https://pablo.energy/#person",
+                "name": "Pablo Moreno",
+                "url": "https://pablo.energy/",
+                "image": "https://pablo.energy/assets/pablo-moreno.jpg",
+                "jobTitle": "Freelance designer",
+                "description": "Pablo Moreno is a freelance web designer based in Amsterdam.",
+                "email": "mailto:pablomoreno@proton.me",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Amsterdam",
+                    "addressCountry": "NL"
+                },
+                "knowsAbout": ["Identity design", "Website development", "UI/UX design", "Motion design"],
+                "sameAs": ["https://www.linkedin.com/in/pablo-energy/"]
+            }
+        ]
+    }
+    </script>
+
+    <!-- The websites list is fetched from this server (index.js): connecting early saves ~300ms -->
+    <link rel="preconnect" href="https://opensheet.elk.sh" crossorigin>
+
     <link href="assets/css/output.css" rel="stylesheet">
     <link href="assets/css/more.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/flickity.min.css" />
@@ -41,21 +80,22 @@
 
         <!-- Fills the first screen alone. Mobile: starts at 12px, so 100svh-12px. Desktop: starts at 50vh-30px with a 40vh margin below, so 10vh+30px -->
         <div id="today"
-             class="gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-3 md:scroll-mt-[calc(50vh-30px)] min-h-[calc(100svh-12px)] md:min-h-[calc(10vh+30px)] md:mb-[40vh]">
+             class="relative gap-1 md:gap-4 w-full flex flex-col md:grid grid-cols-6 pointer-events-auto scroll-mt-3 md:scroll-mt-[calc(50vh-30px)] min-h-[calc(100svh-12px)] md:min-h-[calc(10vh+30px)] md:mb-[40vh]">
 
             <!-- Mobile: the margin above starts the label halfway down the screen, right above the text, so the text
-                 starts at 50svh (the section starts 12px down, the label is 30px tall, then the 16px gap). Scrolling, the
+                 starts at 50svh+12px (12px down + this margin + the 30px label + mb-3 + the 8px gap-2). Scrolling, the
                  label rides up and sticks at the top. mb-3 keeps a gap between this label and the next section's as they
                  scroll past each other -->
             <div data-section-label
-                 class="col-span-2 sticky top-3 md:top-[calc(50vh-30px)] text-sm h-fit flex items-center justify-between gap-1 md:pb-0 max-md:mt-[calc(50svh-58px)] max-md:mb-3 z-10">
+                 class="col-span-2 sticky top-3 md:top-[calc(50vh-30px)] text-sm h-fit flex items-center justify-between gap-1 md:pb-0 max-md:mt-[calc(50svh-50px)] max-md:mb-3 z-10">
 
                 <div id="intro-photo"
                      class="rounded-full aspect-square group relative h-[30px] w-[30px] cursor-pointer shadow-big"
                      onclick="alert('♻️ Presentation website made by Pablo in November 2025. Hand-coded using HTML+CSS+JS and Tailwind CSS. Hosted on Netlify. ♻️')">
-                    <img src="assets/pablo-moreno.webp" alt="Portrait of Pablo Moreno"
+                    <img src="assets/pablo-moreno-96.webp" width="96" height="96" alt="Portrait of Pablo Moreno"
                          class="absolute transition duration-600 ease-out aspect-square h-[30px] w-[30px] rounded-full group-hover:scale-90">
-                    <img src="assets/ball.webp" id="ball" alt="Black pool ball with the number 23"
+                    <img src="assets/ball-96.webp" width="96" height="96" id="ball"
+                         alt="Black pool ball with the number 23"
                          class="rotate-360 absolute translate-x-[120%] group-hover:opacity-100 group-hover:rotate-0 group-hover:translate-none transition opacity-0 duration-600 ease-out aspect-square h-[30px] w-[30px] rounded-full z-0">
                 </div>
 
@@ -71,7 +111,8 @@
 
             <div class="flex flex-col gap-6 col-span-4  md:w-2/3">
                 <!-- The links jump to the projects in the graphic design section -->
-                <p class="text-lg">Freelance designer based in Amsterdam, working worldwide. I work on brands identity,
+                <p class="intro-paragraph text-lg">Freelance designer based in Amsterdam, working worldwide. I work on
+                    brands identity,
                     motion design,
                     websites design, and programming, often taking a project from its identity all the way to the code.
                     Clients include <a href="#jette-kelholt"
@@ -80,6 +121,14 @@
                        class="text-grey hover:text-black transition duration-300">Guiker</a>.
                 </p>
             </div>
+
+            <!-- Blinking hint at the bottom of the first screen, lined up with the paragraph (blink in more.css).
+                 Mobile: mt-auto pushes it to the end of the section, which ends at the bottom of the screen.
+                 Desktop: placed in the paragraph's columns, 50vh+18px below the section top (which sits at 50vh-30px),
+                 so its bottom edge lands 12px above the bottom of the screen. index.js fades it out once the page scrolls -->
+            <p id="scroll-hint" aria-hidden="true"
+               class="blink text-base text-grey mt-auto mb-3 md:m-0 md:absolute md:col-start-3 md:col-span-4 md:top-[calc(50vh+18px)] md:-translate-y-full">
+                (scroll for more)</p>
 
         </div>
 
@@ -91,7 +140,8 @@
 
                 <div
                      class="text-sm text-white bg-[#E90801] px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center shadow-big">
-                    1</div>
+                    <span>1</span>
+                </div>
                 <h3
                     class="w-full text-white bg-[#E90801] px-2 h-[30px] rounded-[6px] flex items-center shadow-big gap-1">
                     <span class="inline">GRAPHIC DESIGN</span>
@@ -117,7 +167,7 @@
 
                         <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
                                class="object-contain w-auto h-[80%] rounded-lg">
-                            <source src="media/hideandseek-full.mp4" type='video/mp4'>
+                            <source data-src="media/hideandseek-full.mp4" type='video/mp4'>
                         </video>
 
                     </div>
@@ -126,23 +176,27 @@
                          class="col-span-3 aspect-[4/5] relative flex items-center justify-center bg-[#d6d6d6] rounded-lg">
                         <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
                                class="object-contain w-auto h-[80%] rounded-lg">
-                            <source src="media/hideandseek-services.mp4" type='video/mp4'>
+                            <source data-src="media/hideandseek-services.mp4" type='video/mp4'>
                         </video>
                     </div>
 
                     <div
                          class="col-span-3 aspect-[4/5] relative flex items-center justify-center bg-[#d6d6d6] rounded-lg">
-                        <img loading="lazy" src="media/hideandseek-contact.webp"
+                        <img loading="lazy" src="media/hideandseek-contact.webp" width="778" height="1540"
+                             srcset="media/hideandseek-contact-400.webp 400w, media/hideandseek-contact.webp 778w"
+                             sizes="(min-width: 768px) 17vw, 25vw"
                              class="object-contain w-auto h-[80%] rounded-lg"
                              alt="Hide and Seek contact page on a phone: email, direct line and a contact form" />
                     </div>
 
 
-                    <!-- Each project is one big tile and two small ones. The ids are linked from the intro paragraph -->
+                    <!-- Each project is one big tile and two small ones. The ids are linked from the intro paragraph.
+                         Videos use <source data-src>: index.js loads each one when it gets near the screen.
+                         Images list smaller copies (-480/-800.webp, made with cwebp) in srcset so phones don't load the full size -->
 
                     <!-- GUIKER -->
                     <div
-                         class="col-span-6 relative flex flex-col md:flex-row md:justify-between md:gap-4 md:items-baseline mt-20 md:mt-32">
+                         class="col-span-6 relative flex flex-col md:flex-row md:justify-between md:gap-4 md:items-baseline mt-[20px]">
                         <p class="text-lg">Rebrand and website for the real estate platform Guiker<a
                                href="#analogue-note" aria-label="Made as part of Analogue Agency"
                                class="inline-block h-[8px] w-[8px] bg-blue-800 rounded-full ml-1 align-super hover:opacity-60 transition duration-300"></a>
@@ -153,12 +207,14 @@
                     <div id="guiker" class="col-span-6 aspect-video relative scroll-mt-3">
                         <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
                                class="object-cover w-full h-full rounded-lg">
-                            <source src="media/analogue-guiker-full.mp4" type='video/mp4'>
+                            <source data-src="media/analogue-guiker-full.mp4" type='video/mp4'>
                         </video>
                     </div>
 
                     <div class="col-span-3 aspect-[4/5] relative">
-                        <img loading="lazy" src="media/analogue-guiker-3.webp"
+                        <img loading="lazy" src="media/analogue-guiker-3.webp" width="2419" height="3200"
+                             srcset="media/analogue-guiker-3-480.webp 480w, media/analogue-guiker-3-800.webp 800w, media/analogue-guiker-3.webp 2419w"
+                             sizes="(min-width: 768px) 33vw, 50vw"
                              class="object-cover w-full h-full rounded-lg"
                              alt="Guiker investment figures on four cards: first year cashflow, IRR, estimated sale price and holding period" />
                     </div>
@@ -166,19 +222,21 @@
                     <div class="col-span-3 aspect-[4/5] relative">
                         <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
                                class="object-cover w-full h-full rounded-lg">
-                            <source src="media/analogue-guiker-2.mp4" type='video/mp4'>
+                            <source data-src="media/analogue-guiker-2.mp4" type='video/mp4'>
                         </video>
                     </div>
 
                     <div class="col-span-6 aspect-video relative">
                         <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
                                class="object-cover w-full h-full rounded-lg">
-                            <source src="media/guiker-colors.mp4" type='video/mp4'>
+                            <source data-src="media/guiker-colors.mp4" type='video/mp4'>
                         </video>
                     </div>
 
                     <div class="col-span-3 aspect-[4/5] relative">
-                        <img loading="lazy" src="media/guiker-phone.webp"
+                        <img loading="lazy" src="media/guiker-phone.webp" width="1600" height="1066"
+                             srcset="media/guiker-phone-800.webp 800w, media/guiker-phone.webp 1600w"
+                             sizes="(min-width: 768px) 62vw, 94vw"
                              class="object-cover w-full h-full rounded-lg"
                              alt="Phone on a wooden table showing the Guiker assistant answering a question about application approval" />
                     </div>
@@ -186,14 +244,14 @@
                     <div class="col-span-3 aspect-[4/5] relative">
                         <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
                                class="object-cover w-full h-full rounded-lg">
-                            <source src="media/guiker-reviews.mp4" type='video/mp4'>
+                            <source data-src="media/guiker-reviews.mp4" type='video/mp4'>
                         </video>
                     </div>
 
 
                     <!-- JETTE KELHOLT -->
                     <div
-                         class="col-span-6 relative flex flex-col md:flex-row md:justify-between md:gap-4 md:items-baseline mt-20 md:mt-32">
+                         class="col-span-6 relative flex flex-col md:flex-row md:justify-between md:gap-4 md:items-baseline mt-[20px]">
                         <p class="text-lg">Portfolio website for the contemporary artist Jette Kelholt</p>
                         <p class="text-grey md:text-right">Design, Website, Animations</p>
                     </div>
@@ -203,13 +261,15 @@
 
                         <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
                                class="object-contain w-auto h-[80%] rounded-lg">
-                            <source src="media/jette-desktop.mp4" type='video/mp4'>
+                            <source data-src="media/jette-desktop.mp4" type='video/mp4'>
                         </video>
 
                     </div>
 
                     <div class="col-span-3 aspect-[4/5] relative">
-                        <img loading="lazy" src="media/jettekelholt-graduation.webp"
+                        <img loading="lazy" src="media/jettekelholt-graduation.webp" width="960" height="1440"
+                             srcset="media/jettekelholt-graduation-480.webp 480w, media/jettekelholt-graduation-800.webp 800w, media/jettekelholt-graduation.webp 960w"
+                             sizes="(min-width: 768px) 33vw, 50vw"
                              class="object-cover w-full h-full rounded-lg"
                              alt="Jette Kelholt sculpture in a bright glass-walled hall: a stained white panel next to bent metal ribs draped in canvas, on a plywood base" />
                     </div>
@@ -219,13 +279,13 @@
                          class="col-span-3 aspect-[4/5] relative flex items-center justify-center bg-[#d6d6d6] rounded-lg">
                         <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
                                class="object-contain w-auto h-[80%] rounded-lg">
-                            <source src="media/jette-insta.mp4" type='video/mp4'>
+                            <source data-src="media/jette-insta.mp4" type='video/mp4'>
                         </video>
                     </div>
 
                     <!-- FYRON GROUP -->
                     <div
-                         class="col-span-6 relative flex flex-col md:flex-row md:justify-between md:gap-4 md:items-baseline mt-20 md:mt-32">
+                         class="col-span-6 relative flex flex-col md:flex-row md:justify-between md:gap-4 md:items-baseline mt-[20px]">
                         <p class="text-lg">Print identity for the Fyron Global Dealer Day<a href="#analogue-note"
                                aria-label="Made as part of Analogue Agency"
                                class="inline-block h-[8px] w-[8px] bg-blue-800 rounded-full ml-1 align-super hover:opacity-60 transition duration-300"></a>
@@ -236,26 +296,32 @@
                     <div
                          class="col-span-6 aspect-video relative flex items-center justify-center bg-[#1b201c] rounded-lg">
 
-                        <img loading="lazy" src="media/analogue-fyron-1.webp"
+                        <img loading="lazy" src="media/analogue-fyron-1.webp" width="2840" height="1800"
+                             srcset="media/analogue-fyron-1-800.webp 800w, media/analogue-fyron-1-1600.webp 1600w, media/analogue-fyron-1.webp 2840w"
+                             sizes="(min-width: 768px) 66vw, 100vw"
                              class="object-cover w-full h-full rounded-lg"
                              alt="Big shot of the Fyron Group reception desk." />
                     </div>
 
                     <div class="col-span-3 aspect-[4/5] relative">
-                        <img loading="lazy" src="media/analogue-fyron-2.webp"
+                        <img loading="lazy" src="media/analogue-fyron-2.webp" width="1404" height="1800"
+                             srcset="media/analogue-fyron-2-480.webp 480w, media/analogue-fyron-2-800.webp 800w, media/analogue-fyron-2.webp 1404w"
+                             sizes="(min-width: 768px) 33vw, 50vw"
                              class="object-cover w-full h-full rounded-lg"
                              alt="Orange Fyron name badge for the Global Dealer Day, hanging from a black lanyard" />
                     </div>
 
                     <div class="col-span-3 aspect-[4/5] relative">
-                        <img loading="lazy" src="media/analogue-fyron-3.webp"
+                        <img loading="lazy" src="media/analogue-fyron-3.webp" width="1404" height="1800"
+                             srcset="media/analogue-fyron-3-480.webp 480w, media/analogue-fyron-3-800.webp 800w, media/analogue-fyron-3.webp 1404w"
+                             sizes="(min-width: 768px) 33vw, 50vw"
                              class="object-cover w-full h-full rounded-lg"
                              alt="Fyron schedule sign standing in a furnished lobby" />
                     </div>
 
                     <!-- ANTOINE SAVIGNAT -->
                     <div
-                         class="col-span-6 relative flex flex-col md:flex-row md:justify-between md:gap-4 md:items-baseline mt-20 md:mt-32">
+                         class="col-span-6 relative flex flex-col md:flex-row md:justify-between md:gap-4 md:items-baseline mt-[20px]">
                         <p class="text-lg">Portfolio website for the engraver Antoine Savignat</p>
                         <p class="text-grey md:text-right">Design, Programming, CMS</p>
                     </div>
@@ -265,7 +331,7 @@
 
                         <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
                                class="object-contain w-auto h-[80%] rounded-lg">
-                            <source src="media/antoine-full.mp4" type='video/mp4'>
+                            <source data-src="media/antoine-full.mp4" type='video/mp4'>
                         </video>
 
                     </div>
@@ -274,12 +340,14 @@
                          class="col-span-3 aspect-[4/5] relative flex items-center justify-center bg-[#d6d6d6] rounded-lg">
                         <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
                                class="object-contain w-auto h-[80%] rounded-lg">
-                            <source src="media/antoine-intro.mp4" type='video/mp4'>
+                            <source data-src="media/antoine-intro.mp4" type='video/mp4'>
                         </video>
                     </div>
                     <div
                          class="col-span-3 aspect-[4/5] relative flex items-center justify-center bg-[#d6d6d6] rounded-lg overflow-clip">
-                        <img loading="lazy" src="media/antoine-livres.webp"
+                        <img loading="lazy" src="media/antoine-livres.webp" width="1600" height="1067"
+                             srcset="media/antoine-livres-800.webp 800w, media/antoine-livres.webp 1600w"
+                             sizes="(min-width: 768px) 62vw, 94vw"
                              class="object-cover w-full h-full rounded-lg"
                              alt="Stack of books wrapped in black plastic on a wooden pallet in a white gallery" />
                     </div>
@@ -288,7 +356,7 @@
 
                     <!-- NXT:COMMERCE SUMMIT -->
                     <div
-                         class="col-span-6 relative flex flex-col md:flex-row md:justify-between md:gap-4 md:items-baseline mt-20 md:mt-32">
+                         class="col-span-6 relative flex flex-col md:flex-row md:justify-between md:gap-4 md:items-baseline mt-[20px]">
                         <p class="text-lg">Identity for the NXT:Commerce Summit 2025 in Amsterdam<a
                                href="#analogue-note" aria-label="Made as part of Analogue Agency"
                                class="inline-block h-[8px] w-[8px] bg-blue-800 rounded-full ml-1 align-super hover:opacity-60 transition duration-300"></a>
@@ -299,18 +367,22 @@
                     <div class="col-span-6 aspect-video relative">
                         <video autoplay loop playsinline muted disablePictureInPicture controlsList="nodownload"
                                class="object-cover w-full h-full rounded-lg">
-                            <source src="media/analogue-nextc-1.mp4" type='video/mp4'>
+                            <source data-src="media/analogue-nextc-1.mp4" type='video/mp4'>
                         </video>
                     </div>
 
                     <div class="col-span-3 aspect-[4/5] relative">
-                        <img loading="lazy" src="media/analogue-nextc-2.webp"
+                        <img loading="lazy" src="media/analogue-nextc-2.webp" width="1404" height="1756"
+                             srcset="media/analogue-nextc-2-480.webp 480w, media/analogue-nextc-2-800.webp 800w, media/analogue-nextc-2.webp 1404w"
+                             sizes="(min-width: 768px) 33vw, 50vw"
                              class="object-cover w-full h-full rounded-lg"
                              alt="NXT:Commerce Summit 2025 day schedule on a blue background, from welcome coffee to the afterparty" />
                     </div>
 
                     <div class="col-span-3 aspect-[4/5] relative">
-                        <img loading="lazy" src="media/analogue-nextc-3.webp"
+                        <img loading="lazy" src="media/analogue-nextc-3.webp" width="1404" height="2154"
+                             srcset="media/analogue-nextc-3-480.webp 480w, media/analogue-nextc-3-800.webp 800w, media/analogue-nextc-3.webp 1404w"
+                             sizes="(min-width: 768px) 33vw, 50vw"
                              class="object-cover w-full h-full rounded-lg"
                              alt="Two NXT:C Summit flags hanging from a stone building on an Amsterdam canal street" />
                     </div>
@@ -341,7 +413,8 @@
                  class="col-span-2 sticky top-4 md:top-[calc(50vh-30px)] text-sm  h-fit flex items-center justify-between gap-1 mb-2">
                 <div
                      class="text-white bg-[#C725F9] px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center shadow-big">
-                    2</div>
+                    <span>2</span>
+                </div>
 
                 <div
                      class=" text-white bg-[#C725F9] px-2 h-[30px] rounded-[6px] flex items-center justify-between w-full shadow-big gap-1">
@@ -371,7 +444,8 @@
 
                 <div
                      class="text-white bg-[#8D4A13] px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center shadow-big">
-                    3</div>
+                    <span>3</span>
+                </div>
                 <div
                      class="text-white bg-[#8D4A13] px-2 h-[30px] rounded-[6px] flex items-center w-full  justify-between shadow-big gap-1">
                     <h4>
@@ -501,7 +575,8 @@
                  class="col-span-2 sticky top-4 md:top-[164px] text-sm h-fit flex items-center justify-between gap-1 mb-2 z-10">
                 <div
                      class="text-white bg-[#0000D9] px-2 py-1 rounded-full aspect-square w-[30px] h-[30px] flex items-center justify-center shadow-big">
-                    4</div>
+                    <span>4</span>
+                </div>
                 <h3
                     class="w-full text-white bg-[#0000D9] px-2 h-[30px] rounded-[6px] flex items-center shadow-big gap-1">
                     <span class="inline">CONTACT</span>
@@ -567,7 +642,8 @@
         <!-- Call button, bottom center (shown and clickable once open) -->
         <a href="tel:+31613381141" aria-label="Call Pablo"
            class="absolute bottom-3 left-1/2 -translate-x-1/2 w-1/3 h-12 flex items-center justify-center rounded-full bg-[#35C759] hover:bg-[#22aa44] text-white invisible opacity-0 group-data-open:visible group-data-open:opacity-100 transition-all duration-500 hover:scale-105">
-            <img src="assets/phone-call.png" alt="" aria-hidden="true" draggable="false" class="w-4 h-4 invert"></a>
+            <img src="assets/phone-call.webp" width="64" height="64" alt="" aria-hidden="true" draggable="false"
+                 class="w-4 h-4 invert"></a>
     </div>
 
     <script src="assets/js/index.js"></script>
