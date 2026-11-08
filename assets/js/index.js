@@ -289,15 +289,96 @@ new ResizeObserver(requestLabelPlacement).observe(document.body);
 placeSectionLabels();
 
 
-// CORNER VIDEO (mobile)
-// A tap grows it into the card with the caption and call button; another tap shrinks it back.
+// CORNER VIDEO
+// A click or tap grows the video and shows the caption and call button over it; another one shrinks it back.
+// Pressing and moving drags it anywhere. On drop it is held from the screen edges nearest to it,
+// so it opens toward the middle of the screen, and it always stays EDGE px inside the screen.
 const cornerVideo = document.getElementById("corner-video");
+const EDGE = 12;     // same gap as bottom-3 / left-3
+let drag = null;     // pointer and box position when the press started
+let dragged = false; // the last press moved it, so its click doesn't open or close it
+let anchor = null;   // nearest edges and distances after a drop; null until the first drag
 
-cornerVideo?.addEventListener("click", e => {
-    // The call button keeps its own behaviour
-    if (e.target.closest("a")) return;
-    cornerVideo.toggleAttribute("data-open");
-});
+const clamp = (value, max) => Math.max(EDGE, Math.min(value, max));
+
+// Space left for the box on each axis (clientWidth leaves out the desktop scrollbar)
+function maxOffsets() {
+    return {
+        x: document.documentElement.clientWidth - cornerVideo.offsetWidth - EDGE,
+        y: document.documentElement.clientHeight - cornerVideo.offsetHeight - EDGE
+    };
+}
+
+function setInsets(left, top, right = "auto", bottom = "auto") {
+    Object.assign(cornerVideo.style, { left, top, right, bottom });
+}
+
+// Puts it at its anchor, pushed back inside when the open card or a smaller window would overflow.
+// anchor keeps the dropped distances, so closing it returns it to where it was dropped.
+function placeCornerVideo() {
+    if (!anchor || drag) return;
+    const max = maxOffsets();
+    const insets = { left: "auto", top: "auto", right: "auto", bottom: "auto" };
+    insets[anchor.x] = clamp(anchor.dx, max.x) + "px";
+    insets[anchor.y] = clamp(anchor.dy, max.y) + "px";
+    setInsets(insets.left, insets.top, insets.right, insets.bottom);
+    cornerVideo.style.transformOrigin = `${anchor.y} ${anchor.x}`;
+}
+
+if (cornerVideo) {
+    cornerVideo.addEventListener("pointerdown", e => {
+        // The call button keeps its own behaviour
+        if (e.button !== 0 || e.target.closest("a")) return;
+        const style = getComputedStyle(cornerVideo);
+        drag = { x: e.clientX, y: e.clientY, left: parseFloat(style.left), top: parseFloat(style.top) };
+        dragged = false;
+    });
+
+    cornerVideo.addEventListener("pointermove", e => {
+        if (!drag) return;
+        const dx = e.clientX - drag.x;
+        const dy = e.clientY - drag.y;
+        // A few px of wobble still counts as a click
+        if (!dragged && Math.hypot(dx, dy) < 5) return;
+        if (!dragged) {
+            dragged = true;
+            cornerVideo.setPointerCapture(e.pointerId);
+            cornerVideo.setAttribute("data-dragging", "");
+        }
+        const max = maxOffsets();
+        setInsets(clamp(drag.left + dx, max.x) + "px", clamp(drag.top + dy, max.y) + "px");
+    });
+
+    const endDrag = () => {
+        if (!drag) return;
+        drag = null;
+        if (!dragged) return;
+        cornerVideo.removeAttribute("data-dragging");
+
+        const left = parseFloat(cornerVideo.style.left);
+        const top = parseFloat(cornerVideo.style.top);
+        const right = document.documentElement.clientWidth - left - cornerVideo.offsetWidth;
+        const bottom = document.documentElement.clientHeight - top - cornerVideo.offsetHeight;
+        anchor = {
+            x: left < right ? "left" : "right",
+            y: top < bottom ? "top" : "bottom",
+            dx: Math.min(left, right),
+            dy: Math.min(top, bottom)
+        };
+        placeCornerVideo();
+    };
+    cornerVideo.addEventListener("pointerup", endDrag);
+    cornerVideo.addEventListener("pointercancel", endDrag);
+
+    cornerVideo.addEventListener("click", e => {
+        if (e.target.closest("a") || dragged) return;
+        cornerVideo.toggleAttribute("data-open");
+    });
+
+    // Re-check while it opens or closes (its size animates) and when the window changes
+    new ResizeObserver(placeCornerVideo).observe(cornerVideo);
+    window.addEventListener("resize", placeCornerVideo);
+}
 
 
 // AMSTERDAM TIME
